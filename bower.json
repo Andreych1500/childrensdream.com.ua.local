@@ -1,0 +1,21 @@
+{
+  "name": "childrensdream.com.ua.local",
+  "authors": [
+    "Andreych1500 <Savitskuy@ukr.net>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4"
+  }
+}
