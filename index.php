@@ -4,6 +4,10 @@ ini_set('display_errors',1);
 header('Content-Type: text/html; charset=utf-8'); 
 session_start();
 
+//if($_SERVER['DOCUMENT_ROOT'] != '5.58.26.194'){
+//	header('Location: http://childrens-dream.uaprom.net');
+//}
+
 // Конфіг сайта
 include_once './config.php';
 include_once './libs/default.php';

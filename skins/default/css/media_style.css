@@ -1,0 +1,125 @@
+@charset "utf-8";
+
+@media screen and (max-width: 980px){
+    .top-menu ul li{
+        font-size: 15pt;
+    }
+}
+
+@media screen and (max-width: 960px){
+    .basketIcon{
+        margin-left:5%;
+    }
+}
+
+@media screen and (max-width: 920px){
+    .top-menu ul li{
+        font-size: 14pt;
+    }
+}
+
+@media screen and (max-width: 900px){
+    .basketIcon{
+        margin-left:0%;
+    }
+}
+
+
+@media screen and (max-width: 854px){
+    .top-menu ul li{
+        margin: 15px 0px 0px 1.7%;
+    }
+}
+
+@media screen and (max-width: 848px){
+    .information p{
+        padding-left:0px;
+    }
+
+    .icon-basket:before{
+        font-size: 42pt;
+    }
+
+    .basketDesc {
+        font-size: 13pt;
+        margin-left: 3%;
+    }
+
+    .information p a b{
+        font-size: 16pt;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    div.top-menu{
+        display:none;
+    }
+}
+
+
+@media screen and (max-width: 720px){
+    .information p:nth-child(2) a b{
+        font-size:16pt;
+    }
+
+    .basketDesc{
+        font-size:12pt;
+    }
+
+    .icon-basket:before{
+        font-size:34pt;
+    }
+
+    div.HcItem .information{
+        width:36%;
+        margin-left: 15px;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    div.basket {
+        float: left;
+        width: 94%;
+        text-align: center;
+        margin-left: 2%;
+        padding: 5px 5px;
+        margin:0px 2% 10px 2%;
+    }
+
+    .basketDesc{
+        font-size:14pt;
+    }
+
+    .icon-basket:before{
+        font-size:38pt;
+    }
+
+    div.HcItem .information,
+    .HcItem .logo{
+        width:48%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    div.HcItem .information,
+    .HcItem .logo{
+        width:94% !important;
+        text-align: center;
+    }
+
+    div.basket{
+        margin: 20px 1% 10px 1%;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    div.container-push, div.push-push {
+        -webkit-transform: translate3d(167px,0,0);
+        -moz-transform: translate3d(167px,0,0);
+        -ms-transform: translate3d(167px,0,0);
+        -o-transform: translate3d(167px,0,0);
+        transform: translate3d(167px,0,0);
+    }
+}
