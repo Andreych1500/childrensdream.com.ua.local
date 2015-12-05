@@ -1,7 +1,20 @@
 @charset "utf-8";
 
+@media screen and (max-width: 1024px){
+    .slider{
+        margin-top:20px;
+    }
+
+    .descriptinText{
+        font-weight: 300;
+        margin-left: 10px;
+        width:90%;
+    }
+}
+
+
 @media screen and (max-width: 980px){
-    .top-menu ul li{
+    .top-menu ul li {
         font-size: 15pt;
     }
 }
@@ -56,6 +69,10 @@
     div.top-menu{
         display:none;
     }
+
+    .slider {
+        margin-top: 20px;
+    }
 }
 
 
@@ -100,6 +117,18 @@
     .HcItem .logo{
         width:48%;
     }
+
+    div.langs{
+        width: 75px;
+        bottom: -30px;
+        text-align: center;
+    }
+
+    div.langs a{
+        width: 35px;
+        display: inline-block;
+    }
+
 }
 
 @media screen and (max-width: 480px) {
@@ -112,7 +141,20 @@
     div.basket{
         margin: 20px 1% 10px 1%;
     }
+
+    .slide-list,
+    .slide-item,
+    .slider{
+        min-width: 320px;
+    }
+
+    .descriptinText{
+        font-weight: 300;
+        width: 86%;
+        margin-left: 10px;
+    }
 }
+
 
 @media screen and (max-width: 360px) {
     div.container-push, div.push-push {

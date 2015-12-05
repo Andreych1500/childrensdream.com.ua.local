@@ -2,25 +2,32 @@
 //обробка Rewrite
 if(isset($_GET['route'])){
 	$temp = explode('/',$_GET['route']);
-	
+
 	if($temp[0] == 'admin'){
 		Core::$CONT = Core::$CONT.'/admin';
 		Core::$SKIN = 'admin';	
 		unset($temp[0]);
+	} elseif($temp[0] == 'ru') {
+		Core::$CONT['castom'] = 'ru/'.Core::$CONT['default'];
+		unset($temp[0]);
 	}
+
 	$i = 0;
 	foreach($temp as $k => $v){
 		if($i == 0){
 			if(!empty($v)){
 				$_GET['module'] = $v;
+				Core::$SITE_DIR = $v;
 			}
 		} elseif($i == 1){
 			if(!empty($v)){
 				$_GET['page'] = $v;
+				Core::$SITE_DIR .= '/'.$v;
 			}
 		} else {
 			if(!empty($v)){		
 				$_GET['key'.($k-1)] = $v;
+				Core::$SITE_DIR .= '/'.$v;
 			}
 		}
 		++$i;

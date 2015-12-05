@@ -18682,3 +18682,123 @@ line: 85
 date: 2015-10-17 21:18:15
 ===================================
 
+QUERY:
+		SELECT *
+		FROM `pages`
+		WHERE `module` = 'asdads'
+		LIMIT 1
+	
+Table 'childrens.pages' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\variables.php
+line: 40
+date: 2015-12-03 21:01:20
+===================================
+
+QUERY:
+		SELECT *
+		FROM `pages`
+		WHERE `module` = 'asdads'
+		LIMIT 1
+	
+Table 'childrens.pages' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\variables.php
+line: 40
+date: 2015-12-03 21:01:21
+===================================
+
+QUERY:
+		SELECT *
+		FROM `pages`
+		WHERE `module` = 'asdads'
+		LIMIT 1
+	
+Table 'childrens.pages' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\variables.php
+line: 40
+date: 2015-12-03 21:01:29
+===================================
+
+QUERY:
+		SELECT *
+		FROM `pages`
+		WHERE `module` = 'asdads'
+		LIMIT 1
+	
+Table 'childrens.pages' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\variables.php
+line: 40
+date: 2015-12-03 21:01:29
+===================================
+
+QUERY:
+		SELECT *
+		FROM `pages`
+		WHERE `module` = 'fdsfsd'
+		LIMIT 1
+	
+Table 'childrens.pages' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\variables.php
+line: 40
+date: 2015-12-03 21:01:48
+===================================
+
+QUERY:
+		SELECT *
+		FROM `pages`
+		WHERE `module` = 'fdsfsd'
+		LIMIT 1
+	
+Table 'childrens.pages' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\variables.php
+line: 40
+date: 2015-12-03 21:02:34
+===================================
+
+QUERY:
+		SELECT *
+		FROM `pages`
+		WHERE `module` = 'fdsfsd'
+		LIMIT 1
+	
+Table 'childrens.pages' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\variables.php
+line: 40
+date: 2015-12-03 21:03:14
+===================================
+
+QUERY:
+		SELECT *
+		FROM `pages`
+		WHERE `module` = 'fdsfsd'
+		LIMIT 1
+	
+Table 'childrens.pages' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\variables.php
+line: 40
+date: 2015-12-03 21:03:14
+===================================
+
+QUERY:
+		SELECT *
+		FROM `pages`
+		WHERE `module` = 'fdsfsd'
+		LIMIT 1
+	
+Table 'childrens.pages' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\variables.php
+line: 40
+date: 2015-12-03 21:03:14
+===================================
+
+QUERY:
+		SELECT *
+		FROM `pages`
+		WHERE `module` = 'dsadas'
+		LIMIT 1
+	
+Table 'childrens.pages' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\variables.php
+line: 40
+date: 2015-12-03 21:03:21
+===================================
+

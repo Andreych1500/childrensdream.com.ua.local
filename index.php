@@ -15,15 +15,24 @@ include_once './variables.php';
 
 // FRONT-CONTROLLER
 ob_start();
-	if(!file_exists('./'.Core::$CONT.'/'.$_GET['module'].'/'.$_GET['page'].'.php') || !file_exists('./skins/'.Core::$SKIN.'/'.$_GET['module'].'/'.$_GET['page'].'.tpl')){
+	if(preg_match('#^ru#ius',Core::$CONT['castom']) && Core::$LANGUAGE['status']){
+		$lang = Core::$LANGUAGE['allow']['ru'];
+	}
+
+	if (!file_exists('./' . Core::$CONT['default'] . '/' . $_GET['module'] . '/' . $_GET['page'] . '.php') || !file_exists('./skins/' . Core::$SKIN . '/' . $_GET['module'] . '/' . $_GET['page'] . '.tpl') || !file_exists('./'. Core::$CONT['default'].'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php')) {
 		header("Location: /404");
 		exit();
 	}
+
+	// LANG
+	include './'.Core::$CONT['default'].'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php';
+	// END LANG
+
 	// PAGE_MODEL
-	include './'.Core::$CONT.'/allpages.php';
-	include './'.Core::$CONT.'/'.$_GET['module'].'/'.$_GET['page'].'.php';
+	include './'.Core::$CONT['default'].'/allpages.php';
+	include './'.Core::$CONT['default'].'/'.$_GET['module'].'/'.$_GET['page'].'.php';
 	// PAGE_MODEL END
-	
+
 	// PAGE_VIEW
 	include './skins/'.Core::$SKIN.'/'.$_GET['module'].'/'.$_GET['page'].'.tpl';
     // PAGE_VIEW END

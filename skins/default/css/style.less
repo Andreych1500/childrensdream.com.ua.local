@@ -9,7 +9,7 @@ src: url(/work/Rockletter-Simple-Regular.ttf);
   src: url(/work/MagistralC-Bold.otf);
 }
 
-body, footer{
+body, footer, .slide-list, .slide-item{
 max-width: 1024px;
 }
 
@@ -19,7 +19,7 @@ min-height: 100%;
 
 body{
 margin: 0 auto;
-margin-bottom: 100px;
+margin-bottom: 200px;
 }
 
 footer{
@@ -32,7 +32,7 @@ padding: 10px 0px;
 footer,
 .info-link p a,
 #container{
-  color: #FFF;
+color: #FFF;
 }
 
 div, p, h1, h2, h3, h4, h5, h6, a, i, table, tr, td, span, ul, li{
@@ -41,7 +41,7 @@ margin: 0px;
 padding:0px;
 }
 
-html, .content, header div, .content div, header, .basketDesc{
+html, .content, header div, .content div, header, .basketDesc, ul,li{
 position: relative;
 }
 
@@ -60,12 +60,14 @@ color:#000;
 }
 
 .top-menu a,
-#container{
+#containerm,
+.hText span,
+.top-menu ul li{
 font-family: RockletterSimpleRegular;
 }
 
 .top-menu ul{
-  list-style: none;
+list-style: none;
 }
 
 .clear{
@@ -78,7 +80,11 @@ header,
 .info-link,
 .top-menu,
 .top-menu ul,
-div.top-menu ul li:hover a span{
+div.top-menu ul li:hover a span,
+.content,
+.staticText,
+.hText,
+.descriptinText{
 width:100%;
 }
 
@@ -106,12 +112,6 @@ border-bottom: 2px solid #78ABFF;
 margin-left:20px;
 }
 
-.information p a,
-header p,
-header span{
-
-}
-
 .information p:nth-child(2){
 font-size:12pt;
 }
@@ -132,7 +132,7 @@ float: right;
 width: 24%;
 border-radius: 10px;
 border-color: #78ABFF;
-margin-top: 50px;
+margin: 32px 5px 0px 0px;
 padding: 20px 5px;
 }
 
@@ -145,7 +145,8 @@ font-size: 14pt;
 margin-left:10%;
 }
 
-.info-link p{
+.info-link p,
+.hText{
 text-align: center;
 margin: 5px 0px;
 }
@@ -158,11 +159,12 @@ font-size:15pt;
 
 .top-menu ul li{
 font-size: 16pt;
-font-family: RockletterSimpleRegular;
 margin: 15px 0px 0px 2%;
 }
 
-div.top-menu ul li a{
+div.top-menu ul li a,
+.langs a,
+.hText span{
 color:#78ABFF;
 }
 
@@ -175,6 +177,7 @@ background-position: 0px 0px;
 div.top-menu ul li:hover a span{
 display:block;
 height: 7px;
+position: absolute;
 }
 
 .menu-btn{
@@ -183,31 +186,106 @@ padding:15px;
 }
 
 #container{
-margin: 15px 0px 0px 15px;
+margin: 5px 0px 0px 5px;
 background-color: #78ABFF;
 font-size: 18pt;
 border-radius: 3px;
 cursor: pointer;
 }
 
+div.langs{
+position: absolute;
+width: 70px;
+bottom: 0px;
+right: 0px;
+text-align: right;
+margin:32px 5px 0px 0px;
+}
 
+.langs a:hover{
+color:#FFE30E;
+}
 
+a.act-lang{
+color:#FFE30E;
+}
 
+.slider {
+margin-top:20px;
+max-width: 100%;
+max-height: 350px;
+}
 
+.slide-list{
+min-width: 100%;
+overflow: hidden;
+z-index: 0;
+margin: 0 auto;
+max-height: inherit;
+width:100%;
+}
 
+.slide-wrap {
+left: 0px;
+top: 0;
+width: 10000000px;
+}
 
+div.next-slide, div.prev-slide{
+max-height: 100%;
+width: 40px;
+background: #CECECE;
+position: absolute;
+opacity: 0.3;
+z-index: 1;
+cursor:pointer;
+display: table-cell;
+top: 43%;
+}
 
+.prev-slide{
+right: 0px;
+}
 
+.icon-icon-right,
+.icon-icon-left{
+position: relative;
+font-size: 30pt;
+left: 0px;
+}
 
+div.next-slide:hover,
+div.prev-slide:hover{
+opacity: 0.7;
+color:#000;
+}
 
+.slide-item img{
+height:auto;
+width: 100%;
+}
 
+.descriptinText{
+border-left: 2px solid #78ABFF;
+padding-left: 15px;
+}
 
+.hText span{
+font-size: 32pt;
+}
 
+.hText{
+padding-bottom: 30px;
+margin: 45px 0px 45px 0px;
+border-bottom: 1px solid #78ABFF;
+}
 
-
-
-
-
+.descriptinText{
+color:#8e8c8c;
+font-size: 11pt;
+line-height: 17pt;
+width: 96%;
+}
 
 
 
@@ -224,26 +302,39 @@ cursor: pointer;
 
 @font-face {
   font-family: 'icomoon';
-  src:url('fonts/icomoon.eot?6yywet');
-  src:url('fonts/icomoon.eot?6yywet#iefix') format('embedded-opentype'),
-  url('fonts/icomoon.ttf?6yywet') format('truetype'),
-  url('fonts/icomoon.woff?6yywet') format('woff'),
-  url('fonts/icomoon.svg?6yywet#icomoon') format('svg');
+  src:url('fonts/icomoon.eot?ts3s2r');
+  src:url('fonts/icomoon.eot?ts3s2r#iefix') format('embedded-opentype'),
+  url('fonts/icomoon.ttf?ts3s2r') format('truetype'),
+  url('fonts/icomoon.woff?ts3s2r') format('woff'),
+  url('fonts/icomoon.svg?ts3s2r#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 [class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
+  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
   line-height: 1;
 
+  /* Enable Ligatures ================ */
+  letter-spacing: 0;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga=1";
+  -moz-font-feature-settings: "liga";
+  -ms-font-feature-settings: "liga" 1;
+  -o-font-feature-settings: "liga";
+  font-feature-settings: "liga";
+
+  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 
 .information span[class*="icon-"]{
   position: relative;
@@ -253,28 +344,34 @@ cursor: pointer;
 }
 
 .icon-basket:before {
-content: "\e902";
-font-size: 48pt;
-color: #ccc;
+  content: "\e900";
+  font-size: 48pt;
+  color: #ccc;
+}
+.icon-icon-left:before {
+  content: "\e314";
+}
+.icon-icon-right:before {
+  content: "\e315";
 }
 .icon-phone:before {
-content: "\e900";
-}
-.icon-skype:before {
-content: "\e901";
+  content: "\e901";
+  position: relative;
+  right: 5px;
+  top: 1px;
 }
 .icon-mob-menu:before {
-content: "\e906";
-position: relative;
-right: 5px;
-top: 1px;
+  content: "\e902";
 }
 .icon-google:before {
-content: "\e903";
+  content: "\e903";
 }
 .icon-facebook:before {
-content: "\e904";
+  content: "\e904";
 }
 .icon-twitter:before {
-content: "\e905";
+  content: "\e905";
+}
+.icon-skype:before {
+  content: "\e906";
 }
