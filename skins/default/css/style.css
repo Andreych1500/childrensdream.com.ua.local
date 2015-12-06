@@ -3,10 +3,6 @@
   font-family: RockletterSimpleRegular;
   src: url(/work/Rockletter-Simple-Regular.ttf);
 }
-@font-face {
-  font-family: MagistralC-Bold;
-  src: url(/work/MagistralC-Bold.otf);
-}
 body,
 footer,
 .slide-list,
@@ -262,6 +258,12 @@ div.prev-slide:hover {
   font-size: 11pt;
   line-height: 17pt;
   width: 96%;
+}
+.descriptinText ul {
+  padding-left: 25px;
+}
+.descriptinText ul + p {
+  margin-top: 5px;
 }
 /* icons */
 @font-face {

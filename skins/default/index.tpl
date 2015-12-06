@@ -25,8 +25,8 @@
       </div>
       <div class="information">
         <p><?=$mess['CONTACT_INFO'];?></p>
-        <p><a href="tel: +3800000006"><span class="icon-phone"></span> +380-(00)<b>000-00-00</b></a></p>
-        <p><a href="skype: skepenikename"><span class="icon-skype"></span> skepenikename</a></p>
+        <p><a href="tel: +380962634728"><span class="icon-phone"></span> +380-(96)<b>263-47-28</b></a></p>
+        <p><a href="skype: andrioshka_i"><span class="icon-skype"></span> andrioshka_i</a></p>
       </div>
       <div class="basket">
         <span class="basketIcon">
