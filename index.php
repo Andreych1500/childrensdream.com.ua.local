@@ -4,7 +4,7 @@ ini_set('display_errors',1);
 header('Content-Type: text/html; charset=utf-8'); 
 session_start();
 
-//if($_SERVER['DOCUMENT_ROOT'] != '5.58.26.194'){
+//if($_SERVER['REMOTE_ADDR'] != '5.58.26.194'){
 //	header('Location: http://childrens-dream.uaprom.net');
 //}
 
@@ -19,13 +19,13 @@ ob_start();
 		$lang = Core::$LANGUAGE['allow']['ru'];
 	}
 
-	if (!file_exists('./' . Core::$CONT['default'] . '/' . $_GET['module'] . '/' . $_GET['page'] . '.php') || !file_exists('./skins/' . Core::$SKIN . '/' . $_GET['module'] . '/' . $_GET['page'] . '.tpl') || !file_exists('./'. Core::$CONT['default'].'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php')) {
+	if (!file_exists('./' . Core::$CONT['default'] . '/' . $_GET['module'] . '/' . $_GET['page'] . '.php') || !file_exists('./skins/' . Core::$SKIN . '/' . $_GET['module'] . '/' . $_GET['page'] . '.tpl') || !file_exists('./'. ((Core::$CONT['default'] == 'modules/admin')? 'modules' : Core::$CONT['default']).'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php')) {
 		header("Location: /404");
 		exit();
 	}
 
 	// LANG
-	include './'.Core::$CONT['default'].'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php';
+	include './'.((Core::$CONT['default'] == 'modules/admin')? 'modules' : Core::$CONT['default']).'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php';
 	// END LANG
 
 	// PAGE_MODEL

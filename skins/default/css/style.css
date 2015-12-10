@@ -12,15 +12,29 @@ footer,
 html {
   min-height: 100%;
 }
+.slide-list,
 body {
   margin: 0 auto;
+}
+body {
   margin-bottom: 200px;
 }
 footer {
-  position: absolute;
   bottom: 0;
-  background-color: #78ABFF;
   padding: 10px 0px;
+}
+footer,
+div.top-menu ul li:hover a span,
+div.langs,
+div.next-slide,
+div.prev-slide {
+  position: absolute !important;
+}
+footer,
+#container,
+.form-comment form input[type='submit'],
+.line {
+  background-color: #78ABFF;
 }
 footer,
 .info-link p a,
@@ -54,7 +68,9 @@ header div,
 header,
 .basketDesc,
 ul,
-li {
+li,
+.icon-icon-right,
+.icon-icon-left {
   position: relative;
 }
 header div,
@@ -62,24 +78,18 @@ header div,
 header,
 .content,
 .top-menu ul,
-.top-menu ul li {
+.top-menu ul li,
+.line span,
+.line-silver,
+.line {
   float: left;
 }
-a {
-  text-decoration: none;
-  color: #000;
-}
-.top-menu a,
-#containerm,
-.hText span,
-.top-menu ul li {
-  font-family: RockletterSimpleRegular;
-}
-.top-menu ul {
-  list-style: none;
-}
-.clear {
-  clear: both;
+.line-silver,
+.line,
+.line span,
+.form-comment form input[type='submit'],
+div.top-menu ul li:hover a span {
+  display: block;
 }
 .HcItem,
 footer,
@@ -91,16 +101,66 @@ div.top-menu ul li:hover a span,
 .content,
 .staticText,
 .hText,
-.descriptinText {
+.descriptinText,
+.line,
+.line-silver,
+.commentview,
+.slide-list,
+.slide-item img,
+.comment-list,
+.comment-item,
+.form-comment,
+.thanks {
   width: 100%;
 }
-.mar5 {
+.comment-item .text {
+  width: 98%;
+}
+div.top-menu ul li a,
+.langs a,
+.hText span,
+.no-item,
+.thanks {
+  color: #78ABFF;
+}
+.info-link p a,
+.comment-item span {
+  display: inline-block;
+}
+a,
+div.next-slide:hover,
+div.prev-slide:hover {
+  color: #000;
+}
+.descriptinText,
+.comment-item .text,
+.comment-item span {
+  color: #8e8c8c;
+}
+a {
+  text-decoration: none;
+}
+.top-menu a,
+#containerm,
+.hText span,
+.top-menu ul li,
+.no-item {
+  font-family: RockletterSimpleRegular;
+}
+.top-menu ul {
+  list-style: none;
+}
+.clear {
+  clear: both;
+}
+.comment-item .text {
   margin-top: 5px;
 }
 .HcItem {
   margin-top: 10px;
 }
-.information p {
+.information p,
+.commentview {
   margin-top: 15px;
 }
 .HcItem div {
@@ -109,13 +169,15 @@ div.top-menu ul li:hover a span,
 .HcItem {
   border-bottom: 2px solid #78ABFF;
 }
-.marLeft20 {
-  margin-left: 20px;
+.form-comment table {
+  margin-left: 5px;
 }
-.information p:nth-child(2) {
+.information p:nth-child(2),
+.comment-item .text {
   font-size: 12pt;
 }
-.information p:nth-child(2) a b {
+.information p:nth-child(2) a b,
+.no-item {
   font-size: 16pt;
   margin-left: 5px;
 }
@@ -145,7 +207,6 @@ div.basket {
   margin: 5px 0px;
 }
 .info-link p a {
-  display: inline-block;
   margin: 0px 3px;
   font-size: 15pt;
 }
@@ -153,20 +214,13 @@ div.basket {
   font-size: 16pt;
   margin: 15px 0px 0px 2%;
 }
-div.top-menu ul li a,
-.langs a,
-.hText span {
-  color: #78ABFF;
-}
 div.top-menu ul li a span {
   display: none;
   background-image: url(/skins/default/img/menu-hover.png);
   background-position: 0px 0px;
 }
 div.top-menu ul li:hover a span {
-  display: block;
   height: 7px;
-  position: absolute;
 }
 .menu-btn {
   display: none;
@@ -174,22 +228,18 @@ div.top-menu ul li:hover a span {
 }
 #container {
   margin: 5px 0px 0px 5px;
-  background-color: #78ABFF;
   font-size: 18pt;
   border-radius: 3px;
   cursor: pointer;
 }
 div.langs {
-  position: absolute;
   width: 70px;
   bottom: 0px;
   right: 0px;
   text-align: right;
   margin: 32px 5px 0px 0px;
 }
-.langs a:hover {
-  color: #FFE30E;
-}
+.langs a:hover,
 a.act-lang {
   color: #FFE30E;
 }
@@ -202,13 +252,11 @@ a.act-lang {
   min-width: 100%;
   overflow: hidden;
   z-index: 0;
-  margin: 0 auto;
   max-height: inherit;
-  width: 100%;
 }
 .slide-wrap {
   left: 0px;
-  top: 0;
+  top: 0px;
   width: 10000000px;
 }
 div.next-slide,
@@ -216,7 +264,6 @@ div.prev-slide {
   max-height: 100%;
   width: 40px;
   background: #CECECE;
-  position: absolute;
   opacity: 0.3;
   z-index: 1;
   cursor: pointer;
@@ -228,18 +275,15 @@ div.prev-slide {
 }
 .icon-icon-right,
 .icon-icon-left {
-  position: relative;
   font-size: 30pt;
   left: 0px;
 }
 div.next-slide:hover,
 div.prev-slide:hover {
   opacity: 0.7;
-  color: #000;
 }
 .slide-item img {
   height: auto;
-  width: 100%;
 }
 .descriptinText {
   border-left: 2px solid #78ABFF;
@@ -254,7 +298,6 @@ div.prev-slide:hover {
   border-bottom: 1px solid #78ABFF;
 }
 .descriptinText {
-  color: #8e8c8c;
   font-size: 11pt;
   line-height: 17pt;
   width: 96%;
@@ -264,6 +307,94 @@ div.prev-slide:hover {
 }
 .descriptinText ul + p {
   margin-top: 5px;
+}
+.efect1 {
+  display: none;
+}
+.form-comment form input[type='submit'] {
+  outline: none;
+  cursor: pointer;
+  color: #FFF;
+  border-radius: 2px;
+  padding: 5px 15px;
+  margin-top: 5px;
+  border: 0px;
+}
+.form-comment form input[type='submit']:hover {
+  background-color: #FFE30E;
+  border-color: #FFE30E;
+}
+.form-comment input[name='name'],
+.form-comment input[name='email'] {
+  border: 1px solid #78ABFF;
+  padding: 5px;
+}
+.form-comment textarea[name='text'] {
+  resize: none;
+  border: 1px solid #78ABFF;
+  padding: 3px;
+  width: 600px;
+  height: 130px;
+  margin-top: 5px;
+}
+.line {
+  height: 1px;
+  margin-left: 5px;
+  font-size: 1px;
+}
+.line span {
+  background-color: #e8e8e8;
+  width: 50%;
+  margin-left: 50%;
+  height: 1px;
+  font-size: 1px;
+}
+.line-silver {
+  height: 1px;
+  font-size: 1px;
+  margin-left: 5px;
+  background-color: #e8e8e8;
+}
+.no-item,
+.comment-item {
+  padding: 15px 5px;
+}
+.comment-item .text {
+  padding: 0px 0px 5px 15px;
+}
+.comment-item span:nth-child(2) {
+  padding-left: 15px;
+  font-size: 9pt;
+}
+.comment-item span:first-child {
+  font-weight: bold;
+  padding-left: 5px;
+}
+.commentview {
+  overflow: hidden;
+}
+.thanks,
+.hack-error {
+  font-size: 30pt;
+  font-family: monospace;
+  text-align: center;
+  padding: 40px 0px;
+  display: none;
+}
+.form-comment {
+  margin: 20px 0px 0px 4px;
+}
+.errors,
+.error,
+.hack-error {
+  color: red;
+  border-color: red !important;
+}
+.error {
+  display: none;
+}
+.form-comment {
+  min-height: 241px;
 }
 /* icons */
 @font-face {
@@ -290,10 +421,10 @@ div.prev-slide:hover {
   -moz-font-feature-settings: "liga";
   -ms-font-feature-settings: "liga" 1;
   -o-font-feature-settings: "liga";
-  font-feature-settings: "liga";
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga";
 }
 .information span[class*="icon-"] {
   position: relative;

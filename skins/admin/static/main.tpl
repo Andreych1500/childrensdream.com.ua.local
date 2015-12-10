@@ -1,26 +1,28 @@
 <?php if(!isset($_SESSION['user']) || $_SESSION['user']['access'] !=  5){ ?>
-<div class="contentc">
-  <div class="authc">
-    <div class="logoc" align="right"></div>
-    <div class="authadminc">
-      <p>Авторизація адміна</p>
-    </div>
-    <div class="clear"></div>
-    <div class="formc">
-      <form class="color7c" action="" method="post">
-        Login:    <input class="inleftc" type="text" name="login" value="<?php echo(isset($_POST['login'])? hsc($_POST['login']) : '');?>"><br>
-        Password: <input class="inleft2c" type="password" name="pass" value="<?php echo(isset($_POST['pass'])? hsc($_POST['pass']) : ''); ?>"><br>
-        <input type="checkbox" name="save">Запам'ятати<br>
-        <?php echo @$errors['notuser']; ?>
-        <input class="bottom2c" type="submit" name="submit" value="Вхід"><br>
-      </form>
-    </div>
+<div class="content">
+  <div class="auth">
+    <p>Авторизацiя адмiна</p>
+    <form action="" method="post">
+      <div>
+        <span>Login:</span>
+        <input class="<?=((isset($errors['notuser']))? 'error' : '');?>"  type="text" name="login" value="<?=((isset($_POST['login']))? hsc($_POST['login']) : '');?>">
+      </div>
+      <div>
+        <span>Password:</span>
+        <input class="<?=((isset($errors['notuser']))? 'error' : '');?>"  type="password" name="pass" value="<?=((isset($_POST['pass']))? hsc($_POST['pass']) : '');?>">
+      </div>
+      <div>
+        <input type="checkbox" name="save"><span>Запам'ятати</span>
+        <input type="submit" name="submit" value="Вхід">
+      </div>
+    </form>
   </div>
-</div>	   
+</div>
 <?php } else { ?>
-<div class="content2">
+<div class="content">
   <div class="administration">
-  	Ви адміністратор!
-  </div>
+  	Ви адміністратор!<br>
+    Для редагування товарів або виправлення певних елементів, виберіть пункт який вам необхідно.
+   </div>
 </div>
 <?php } ?>

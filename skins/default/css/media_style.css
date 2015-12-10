@@ -10,6 +10,10 @@
         margin-left: 10px;
         width:90%;
     }
+
+    .comment-item .text{
+        width:96%;
+    }
 }
 
 
@@ -55,7 +59,7 @@
 
     .basketDesc {
         font-size: 13pt;
-        margin-left: 3%;
+        margin-left: 1%;
     }
 
     .information p a b{
@@ -152,6 +156,19 @@
         font-weight: 300;
         width: 86%;
         margin-left: 10px;
+    }
+
+    .comment-item .text {
+        width: 92%;
+    }
+
+    .commentview{
+        width:97%;
+    }
+
+    div.comment-item span:nth-child(2){
+        float:right;
+        margin-left:0px;
     }
 }
 

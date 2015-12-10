@@ -4,7 +4,7 @@ if(isset($_GET['route'])){
 	$temp = explode('/',$_GET['route']);
 
 	if($temp[0] == 'admin'){
-		Core::$CONT = Core::$CONT.'/admin';
+		Core::$CONT['default'] = Core::$CONT['default'].'/admin';
 		Core::$SKIN = 'admin';	
 		unset($temp[0]);
 	} elseif($temp[0] == 'ru') {

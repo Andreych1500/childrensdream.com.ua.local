@@ -1,1 +1,180 @@
 @charset "utf-8";
+
+@font-face {
+    font-family: RockletterSimpleRegular;
+    src: url(/work/Rockletter-Simple-Regular.ttf);
+}
+
+body, footer, .slide-list, .slide-item{
+max-width: 1024px;
+}
+
+html{
+min-height: 100%;
+}
+
+body{
+margin: 0 auto;
+margin-bottom: 200px;
+}
+
+div, p, h1, h2, h3, h4, h5, h6, a, i, table, tr, td, span, ul, li{
+word-wrap: break-word;
+margin: 0px;
+padding:0px;
+}
+
+html, .content, header div, .content div, header, .basketDesc, ul,li{
+position: relative;
+}
+
+header div,
+.content div,
+header,
+.content,
+.top-menu ul,
+.top-menu ul li{
+float:left;
+}
+
+.clear{
+clear:both;
+}
+
+.HcItem{
+margin-top:10px;
+}
+
+.top-menu ul{
+list-style: none;
+}
+
+footer{
+position: absolute;
+bottom: 0;
+background-color: #78ABFF;
+padding: 10px 0px;
+}
+
+footer,
+.info-link p a{
+color: #FFF;
+}
+
+footer,
+header,
+.info-link,
+.top-menu ul,
+div.top-menu ul li:hover a span,
+.content,
+.administration{
+width:100%;
+}
+
+.top-menu{
+width:75%;
+margin-left:20px;
+height: 193px;
+}
+
+.info-link p{
+text-align: center;
+margin: 5px 0px;
+}
+
+.info-link p a{
+display:inline-block;
+margin: 0px 3px;
+font-size:15pt;
+}
+
+.top-menu ul li{
+font-size: 16pt;
+margin: 15px 0px 0px 2%;
+}
+
+div.top-menu ul li a,
+.langs a,
+.hText span{
+color:#78ABFF;
+}
+
+div.top-menu ul li a span{
+display:none;
+background-image: url(/skins/default/img/menu-hover.png);
+background-position: 0px 0px;
+}
+
+div.top-menu ul li:hover a span{
+display:block;
+height: 7px;
+position: absolute;
+}
+
+a{
+text-decoration:none;
+color:#000;
+}
+
+.auth{
+width: 42%;
+top: 100px;
+left: 230px;
+border: 2px solid #E0E0E0;
+border-radius: 5px;
+padding: 30px 0px 30px 140px;
+}
+
+.auth p{
+font-family: RockletterSimpleRegular;
+font-size:18pt;
+}
+
+.auth form input{
+border:1px solid #78ABFF;
+}
+
+.auth form div:first-child input{
+margin-left:23px;
+}
+
+.auth form input[type='submit']{
+outline: none;
+cursor: pointer;
+background-color: #78ABFF;
+color: #FFF;
+border-radius: 2px;
+padding: 5px 15px;
+display: block;
+margin-top: 5px;
+}
+
+.auth form input[type='submit']:hover{
+    background-color: #FFE30E;
+    border-color:#FFE30E;
+}
+
+.auth p, .auth span, .administration{
+color:#78ABFF;
+}
+
+.auth form div, .auth p{
+width:75%;
+margin-top:5px;
+}
+
+.auth form .error{
+border:1px solid red;
+}
+
+.administration {
+font-size: 28pt;
+text-align: center;
+padding: 100px 0px;
+}
+
+
+.top-menu li:last-child{
+    position:absolute;
+    right: 0px;
+}

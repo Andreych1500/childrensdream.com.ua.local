@@ -19,7 +19,7 @@
   <header>
     <div class="HcItem">
       <div class="logo">
-        <a href="/">
+        <a href="<?=(isset($lang)? '/ru/' : '/')?>">
           <img src="/skins/default/img/logo.png" alt="childrensdream" title="childrensdream">
         </a>
       </div>
@@ -43,10 +43,10 @@
 
     <div class="top-menu">
       <ul>
-        <li><a href="#about"><?=$mess['ABOUT_US']?> <span></span></a></li>
+        <li><a href="<?=(isset($lang)? '/ru/' : '/')?>#about"><?=$mess['ABOUT_US']?> <span></span></a></li>
         <li><a href="#"><?=$mess['PRODUCTION']?> <span></span></a></li>
-        <li><a href="#payment"><?=$mess['SERVICES']?> <span></span></a></li>
-        <li><a href="#"><?=$mess['OTZUVU']?> <span></span></a></li>
+        <li><a href="<?=(isset($lang)? '/ru/' : '/')?>#payment"><?=$mess['SERVICES']?> <span></span></a></li>
+        <li><a href="<?=(isset($lang)? '/ru/' : '/')?>comments"><?=$mess['OTZUVU']?> <span></span></a></li>
         <li><a href="#"><?=$mess['CONTACTS']?> <span></span></a></li>
       </ul>
     </div>
@@ -59,10 +59,10 @@
 
     <nav class="pushy pushy-left">
       <ul>
-        <li><a href="#about"><?=$mess['ABOUT_US']?></a></li>
+        <li><a href="<?=(isset($lang)? '/ru/' : '/')?>#about"><?=$mess['ABOUT_US']?></a></li>
         <li><a href="#"><?=$mess['PRODUCTION']?></a></li>
-        <li><a href="#payment"><?=$mess['SERVICES']?></a></li>
-        <li><a href="#"><?=$mess['OTZUVU']?></a></li>
+        <li><a href="<?=(isset($lang)? '/ru/' : '/')?>#payment"><?=$mess['SERVICES']?></a></li>
+        <li><a href="<?=(isset($lang)? '/ru/' : '/')?>comments"><?=$mess['OTZUVU']?></a></li>
         <li><a href="#"><?=$mess['CONTACTS']?></a></li>
       </ul>
     </nav>

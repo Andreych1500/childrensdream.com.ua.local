@@ -1,6 +1,8 @@
 <?php
+Core::$META['title'] = 'Admin';
+
 if(!isset($_SESSION['user']) || $_SESSION['user']['access'] !=  5){
-	
+
 	if(isset($_POST['login'], $_POST['pass'])){
 		$errors = array();
 		
