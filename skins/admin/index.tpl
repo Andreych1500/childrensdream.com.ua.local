@@ -5,6 +5,7 @@
   <link href="/skins/<?php echo Core::$SKIN; ?>/css/style.css" rel="stylesheet" type="text/css">
   <link rel="icon" type="image/icon" href="/skins/default/img/moon.ico">
   <title><?php echo hsc(Core::$META['title']);?></title>
+  <script src="/vendor/public/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="/skins/admin/js/script.js"></script>
   <?php if(count(Core::$CSS)){ echo implode("\n",Core::$CSS); } ?>
 </head>
@@ -13,7 +14,7 @@
   <header>
     <div class="HcItem">
       <div class="logo">
-        <a href="/">
+        <a href="/<?=Core::$CONT['admin']?>/">
           <img src="/skins/default/img/logo.png" alt="childrensdream" title="childrensdream">
         </a>
       </div>
@@ -22,7 +23,8 @@
     <div class="top-menu">
       <ul>
         <li><a href="#"><?=$mess['PRODUCTION']?> <span></span></a></li>
-        <li><a href="#"><?=$mess['OTZUVU']?> <span></span></a></li>
+        <li><a href="/<?=Core::$CONT['admin']?>/comments/"><?=$mess['OTZUVU']?> <span></span></a></li>
+        <li><a href="/" target="_blank">Нa сайт<span></span></a></li>
         <li><a href="/cab/exit">Вихід <span></span></a></li>
       </ul>
     </div>

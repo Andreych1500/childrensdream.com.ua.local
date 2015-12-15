@@ -61,13 +61,19 @@ footer,
 color: #FFF;
 }
 
+.top-menu ul li:nth-child(3){
+position: absolute;
+right: 70px;
+}
+
 footer,
 header,
 .info-link,
 .top-menu ul,
 div.top-menu ul li:hover a span,
 .content,
-.administration{
+.administration
+{
 width:100%;
 }
 
@@ -150,8 +156,8 @@ margin-top: 5px;
 }
 
 .auth form input[type='submit']:hover{
-    background-color: #FFE30E;
-    border-color:#FFE30E;
+background-color: #FFE30E;
+border-color:#FFE30E;
 }
 
 .auth p, .auth span, .administration{
@@ -173,8 +179,173 @@ text-align: center;
 padding: 100px 0px;
 }
 
-
 .top-menu li:last-child{
-    position:absolute;
-    right: 0px;
+position:absolute;
+right: 0px;
 }
+
+div.top-menu ul li a.active span{
+display: block;
+height: 7px;
+position: absolute;
+width: 100%;
+}
+
+.commentview,
+.commentview form table,
+.line-silver,
+.comment-list{
+width:100%;
+}
+
+.commentview, .comment-item{
+position:relative;
+}
+
+.line-silver,
+.line,
+.line span{
+display: block;
+}
+
+.line-silver,
+.commentview{
+float:left;
+}
+
+.commentview{
+margin-top:15px;
+}
+
+.line-silver{
+height: 1px;
+font-size: 1px;
+background-color: #e8e8e8;
+}
+
+.comment-item span{
+display:inline-block;
+}
+
+.comment-item .text{
+width:98%;
+}
+
+.no-item{
+color:#78ABFF;
+}
+
+.line{
+height: 1px;
+font-size: 1px;
+}
+
+.line span{
+background-color: #e8e8e8;
+width: 50%;
+margin-left: 50%;
+height: 1px;
+font-size: 1px;
+}
+
+.line-silver{
+height: 1px;
+font-size: 1px;
+background-color: #e8e8e8;
+}
+
+.line{
+background-color: #78ABFF;
+}
+
+.no-item{
+font-family: RockletterSimpleRegular;
+}
+
+.no-item{
+font-size: 16pt;
+margin-left: 5px;
+}
+
+.no-item,
+.comment-item{
+padding:15px 0px;
+}
+
+.comment-item .text{
+padding: 0px 0px 5px 15px;
+}
+
+.comment-item span:nth-child(2){
+padding-left:15px;
+font-size: 9pt;
+}
+
+.comment-item span:first-child{
+font-weight: bold;
+padding-left: 5px;
+}
+
+.comment-item .text,
+.comment-item span{
+color:#8e8c8c;
+}
+
+.comment-item.grean{
+background-color: rgba(19, 255, 0, 0.2);
+}
+.comment-item.red{
+background-color: rgba(255, 0, 0, 0.09);
+}
+
+.comment-list form input[name='delete'],
+.comment-list form input[name='active'],
+.comment-list form input[name='deactive']{
+position: absolute;
+top: -30px;
+right: 0px;
+outline: none;
+cursor: pointer;
+color: #FFF;
+border-radius: 2px;
+padding: 5px 15px;
+border: 0px;
+background-color: #78ABFF;
+}
+
+.comment-list form input[name='active']{
+right: 225px;
+}
+
+.comment-list form input[name='deactive']{
+right: 100px;
+}
+
+.comment-list form input[type='submit']:hover {
+background-color: #FFE30E;
+border-color: #FFE30E;
+}
+
+.editWindow{
+position: absolute;
+right: 0px;
+top: 0px;
+}
+
+.editWindow a{
+color: #ABABAB;
+border-bottom: 1px dashed;
+}
+
+.editWindow a:hover{
+border-bottom: 0px;
+}
+
+.h1{
+color:rgb(23, 206, 39);
+font-size:26pt;
+position: absolute;
+top: -110px;
+left: 380px;
+}
+

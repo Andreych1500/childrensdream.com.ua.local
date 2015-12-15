@@ -26,6 +26,10 @@ ob_start();
 
 	// LANG
 	include './'.((Core::$CONT['default'] == 'modules/admin')? 'modules' : Core::$CONT['default']).'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php';
+
+	if(isset($_GET['module']) && file_exists('./'.((Core::$CONT['default'] == 'modules/admin')? 'modules' : Core::$CONT['default']).'/'.$_GET['module'].'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php')){
+		echo './'.((Core::$CONT['default'] == 'modules/admin')? 'modules' : Core::$CONT['default']).'/'.$_GET['module'].'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php';
+	}
 	// END LANG
 
 	// PAGE_MODEL
@@ -36,7 +40,7 @@ ob_start();
 	// PAGE_VIEW
 	include './skins/'.Core::$SKIN.'/'.$_GET['module'].'/'.$_GET['page'].'.tpl';
     // PAGE_VIEW END
-	
+
 	$content = ob_get_contents();
 ob_end_clean();
 

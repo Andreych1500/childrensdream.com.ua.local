@@ -1,5 +1,6 @@
 {
   "name": "childrensdream.com.ua.local",
+  "homepage": "https://github.com/Andreych1500/childrensdream.com.ua.local",
   "authors": [
     "Andreych1500 <Savitskuy@ukr.net>"
   ],
@@ -7,7 +8,6 @@
   "main": "",
   "moduleType": [],
   "license": "MIT",
-  "homepage": "",
   "ignore": [
     "**/.*",
     "node_modules",
@@ -16,6 +16,7 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "~2.1.4"
+    "jquery": "~2.1.4",
+    "lesshat": "~3.0.2"
   }
 }
