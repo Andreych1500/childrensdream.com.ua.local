@@ -1,0 +1,218 @@
+@media screen and (max-width: 1024px){
+    header div.item,
+    footer div.item,
+    .staticText,
+    div.staticText .text-item,
+    .descriptinText .item-right img{
+        width:100%;
+    }
+
+    .item-left{
+        margin-left:10px;
+    }
+
+}
+
+@media screen and (max-width: 960px){
+    div.top-menu li{
+        margin-right:15px;
+    }
+
+    .top-menu ul{
+        margin-right: 10px;
+    }
+
+    .staticText:nth-child(2) table td:nth-child(2n){
+        width:38%;
+    }
+}
+
+
+@media screen and (max-width: 854px){
+    div.top-menu li{
+        margin-right:14px;
+    }
+}
+
+
+@media screen and (max-width: 848px){
+    .top-menu, .fixed-menu{
+        display:none;
+    }
+    .mobile-basket, #container, .pushy{
+        display:block;
+    }
+
+    .information{
+        position: absolute;
+        right: 0;
+        bottom: 12px;
+    }
+
+    .mobile-basket, #container{
+        bottom: 75px;
+    }
+}
+
+
+@media screen and (max-width: 800px){
+
+}
+
+
+@media screen and (max-width: 784px){
+    div.staticText table td:nth-child(2n){
+        width:30% !important;
+    }
+    div.staticText:nth-child(2n) table td:nth-child(2n){
+        width:48%;
+    }
+}
+
+@media screen and (max-width: 720px){
+    header .item .information{
+        background: url('/skins/default/img/tycha-mob.png') no-repeat;
+        width: 425px;
+    }
+    header .item .information p {
+        background-image:initial;
+        font-size: 14pt;
+        padding-top: 3px;
+        width: 435px;
+    }
+
+}
+
+
+@media screen and (max-width: 640px){
+    header .item .information{
+        background-image: url('/skins/default/img/tycha-mob2.png');
+        width: 305px;
+    }
+    header .item .information p {
+        width: 305px;
+        padding-top: 5px;
+        font-size: 12.5pt;
+    }
+
+    .soc-link p{
+        text-align: center;
+        float:none;
+        margin:0;
+    }
+
+    .descriptinText .item-left,
+    .descriptinText .item-right{
+        width:97% !important;
+    }
+
+    .descriptinText .item-right{
+        text-align: center;
+        margin-top:20px;
+    }
+
+    #about .item-right img, #payment .item-right img{
+        width:auto;
+    }
+
+}
+
+@media screen and (max-width: 512px){
+    header .item .information {
+        background-image: url('/skins/default/img/tycha.png');
+        position: relative;
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    header .item .information p{
+        font-size: 15pt;
+        width: 100%;
+    }
+
+    #container{
+        width:85px;
+        bottom: 5px;
+        left: 5px;
+    }
+
+    .mobile-basket{
+        bottom: 110px;
+    }
+
+    div.staticText table td:nth-child(2n){
+        width:38% !important;
+    }
+
+}
+
+@media screen and (max-width: 480px) {
+    header .item .information {
+        position: relative;
+        margin: 20px 0;
+        border-radius: 50px 40px 80px 70px;
+    }
+
+    body{
+        margin: 0 0 170px 0;
+    }
+
+    #container {
+        left: 5px;
+        right: initial;
+    }
+
+    .mobile-basket {
+        bottom: 110px;
+    }
+
+    .soc-link, .footer-logo {
+        width: 100%;
+    }
+
+    .soc-link, .development-site, .soc-link a, .logo-img{
+        text-align: center;
+    }
+
+    .logo-img{
+        width:39%;
+    }
+
+    .development-site{
+        width:57%;
+        margin: 0;
+    }
+
+    .soc-link{
+        margin-top: 10px;
+    }
+
+    .soc-link a{
+        display: inline-block;
+        float: none;
+    }
+
+    div.staticText:nth-child(1) .descriptinText .item-right img{
+       width:auto;
+    }
+
+    div.staticText table td:nth-child(2n){
+        width:52% !important;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #payment .item-right img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 360px){
+    header .item .information p {
+        font-size:13pt;
+    }
+}
+
+@media screen and (max-width: 320px){
+
+}

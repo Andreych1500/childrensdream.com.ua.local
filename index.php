@@ -28,7 +28,7 @@ ob_start();
 	include './'.((Core::$CONT['default'] == 'modules/admin')? 'modules' : Core::$CONT['default']).'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php';
 
 	if(isset($_GET['module']) && file_exists('./'.((Core::$CONT['default'] == 'modules/admin')? 'modules' : Core::$CONT['default']).'/'.$_GET['module'].'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php')){
-		echo './'.((Core::$CONT['default'] == 'modules/admin')? 'modules' : Core::$CONT['default']).'/'.$_GET['module'].'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php';
+		include './'.((Core::$CONT['default'] == 'modules/admin')? 'modules' : Core::$CONT['default']).'/'.$_GET['module'].'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php';
 	}
 	// END LANG
 
