@@ -1,11 +1,25 @@
 $(document).ready(function() {
 
-     //$(".top-menu ul li").each(function( index ) {
-     //    var url = window.location.pathname;
-     //
-     //    $(".top-menu li a").removeClass("active");
-     //    $('.top-menu li a[href="'+url+'"]').addClass('active');
-     //});
+     /*$(".top-menu ul li").each(function( index ) {
+         var url = window.location.pathname;
+
+        $(".top-menu li a").removeClass("active");
+         $('.top-menu li a[href="'+url+'"]').addClass('active');
+     });*/
+
+    $('.scrollup').remove();
+
+        $('.toTop').unbind('click').click(function(){
+            $('body,html').animate({scrollTop:0},600);
+        });
+
+         $(window).scroll(function() {
+            if($(window).scrollTop()>=400) {
+                $('.toTop').show();
+         } else {
+            $('.toTop').hide();
+         }
+    });
 
     var scrollHeight = Math.max(
         document.body.scrollWidth, document.documentElement.scrollWidth,

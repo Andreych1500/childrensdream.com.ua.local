@@ -66,18 +66,19 @@
 }
 
 .langs, .logo, .information, .logo a, .top-menu ul li, .footer-logo,
-.development-site, .logo-img, .soc-link a, .soc-link p, .descriptinText .item-left, .slide-item{
+.development-site, .logo-img, .soc-link a, .soc-link p, .descriptinText .item-left, .slide-item,
+.commentview{
   float: left;
 }
 
 .top-menu, header .item .information, header .item .information p, .top-menu ul, .soc-link,
-.descriptinText  .item-right{
+.descriptinText  .item-right, .form-comment{
   float: right;
 }
 
 body, footer, header, .top-menu ul li:hover:after, .mobile-basket a:hover:after, .content,
 .hText table, .hText td .line, .slyder-item, .background-content, .slide-list img,
-div.fixed-menu{
+div.fixed-menu, .name-date{
   width:100%;
 }
 
@@ -85,6 +86,7 @@ div, p, a, span, ul, li, table, tr, td, header, html, .slide-list, .slide-wrap {
   position:relative;
   margin:0;
   padding:0;
+  word-wrap: break-word;
 }
 
 .top-menu ul li:last-child span,
@@ -284,6 +286,7 @@ div.staticText:nth-child(2){
     font-size: 24pt;
     text-align: center;
     font-weight: bold;
+    margin-top:27px;
 
     td:nth-child(2n){
       width: 30%;
@@ -442,8 +445,70 @@ div.prev-slide{
   }
 }
 
+.toTop{
+  position: fixed;
+  z-index: 99;
+  .opacity(0.3);
+  right: 20px;
+  bottom: 180px;
+  display:none;
+  cursor: pointer;
+  height:100px;
+  background: url("/skins/default/img/toTop.png") -3px 0 no-repeat;
+  .transition(opacity 1s ease);
+  color:@team-color;
 
+  span{
+    position: relative;
+    bottom: -90px;
+  }
 
+  &:hover{
+    .opacity(1);
+    .transition(opacity 1s ease);
+  }
+}
+
+//comments
+.commentview{
+  width:54%;
+
+  .comment-item{
+    padding:10px;
+    margin-bottom: 20px;
+
+    .text{
+      font-family: @font-team2;
+      margin-bottom: 10px;
+    }
+
+    .name-date span{
+      font-size:16pt;
+      font-family:@font-team1;
+      color:#1a6ab5;
+    }
+
+    .name-date span + span{
+      color:#1a6ab5;
+      font-size:9pt;
+      position: absolute;
+      right: 0;
+      bottom: 3px;
+    }
+  }
+}
+
+.form-comment{
+  width:42%;
+}
+
+.otzuv{
+  color:@team-color;
+  font-size:22pt;
+  font-family: @font-team1;
+  margin-top:10px;
+}
+// end comments
 
 
 

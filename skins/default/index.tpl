@@ -11,7 +11,7 @@
   <script src="/vendor/public/jquery/dist/jquery.min.js"></script>
   <script src="/vendor/public/pushy/js/pushy.js"></script>
   <link rel="icon" type="image/icon" href="/skins/default/img/moon.ico">
-  <meta name="viewport" content="width=device-width">
+  <meta name="viewport" content="width=device-width, initial-scale=1" >
   <?php if(count(Core::$CSS)){ echo implode("\n",Core::$CSS); } ?>
   <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
 </head>
@@ -62,6 +62,7 @@
       </nav>
       <div class="clear"></div>
     </div>
+    <div class="toTop"><span><?=$mess['TO_TOP']?></span></div>
   </header>
 
   <div class="content"><?=$content?></div>
