@@ -58,7 +58,8 @@ header,
 .background-content,
 .slide-list img,
 div.fixed-menu,
-.name-date {
+.name-date,
+.form-comment form table {
   width: 100%;
 }
 div,
@@ -436,11 +437,11 @@ div.prev-slide {
   -moz-opacity: 0.3;
   opacity: 0.3;
   right: 20px;
-  bottom: 180px;
+  bottom: 120px;
   display: none;
   cursor: pointer;
   height: 100px;
-  background: url("/skins/default/img/toTop.png") -3px 0 no-repeat;
+  background: url("/skins/default/img/toTop.png") 0 -1px no-repeat;
   -webkit-transition: opacity 1s ease;
   -moz-transition: opacity 1s ease;
   -o-transition: opacity 1s ease;
@@ -497,10 +498,81 @@ div.prev-slide {
 }
 .form-comment {
   width: 42%;
+  min-height: 406px;
 }
 .form-comment .hack-error,
 .form-comment .thanks {
   display: none;
+}
+.form-comment form {
+  min-width: 310px;
+  margin-top: 26px;
+}
+.form-comment form table tr td p {
+  color: #482200;
+  font: 11pt MyriadPro;
+}
+.form-comment form table tr td p span {
+  color: #9e0000;
+}
+.form-comment form input[type="text"],
+.form-comment form input[type="email"],
+.form-comment form textarea {
+  padding: 4px;
+  border: 1px solid #9bd6e7;
+  width: 200px;
+  outline: none;
+  margin-bottom: 10px;
+}
+.form-comment form textarea {
+  width: 96%;
+  resize: none;
+  min-height: 120px;
+  max-width: 420px;
+}
+.form-comment form input[type="submit"] {
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 60px;
+  background-color: #a12a97;
+  -webkit-border-radius: 3px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 3px;
+  -moz-background-clip: padding;
+  border-radius: 3px;
+  background-clip: padding-box;
+  font-family: MyriadPro;
+  font-size: 13pt;
+  color: #fff;
+}
+.form-comment form input[type="submit"]:hover {
+  background-color: #c935bd;
+}
+.form-comment form input[type="submit"]:active {
+  padding-top: 11px;
+  height: 40px;
+}
+.form-comment form input.errors,
+.form-comment form textarea.errors {
+  border-color: red;
+}
+.form-comment form input.no-errors,
+.form-comment form textarea.no-errors {
+  border-color: #9bd6e7;
+  -webkit-transition: border-color 2s ease;
+  -moz-transition: border-color 2s ease;
+  -o-transition: border-color 2s ease;
+  transition: border-color 2s ease;
+}
+.form-comment .thanks {
+  color: #482200;
+  font: 16pt ComicSansMS;
+  text-align: center;
+  margin-top: 20px;
+}
+.form-comment .hack-error {
+  color: red;
 }
 .otzuv {
   color: #482200;

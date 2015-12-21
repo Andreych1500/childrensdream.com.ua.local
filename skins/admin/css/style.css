@@ -1,10 +1,5 @@
 @charset "utf-8";
 
-@font-face {
-    font-family: RockletterSimpleRegular;
-    src: url(/work/Rockletter-Simple-Regular.ttf);
-}
-
 body, footer, .slide-list, .slide-item{
 max-width: 1024px;
 }
@@ -300,7 +295,8 @@ background-color: rgba(255, 0, 0, 0.09);
 
 .comment-list form input[name='delete'],
 .comment-list form input[name='active'],
-.comment-list form input[name='deactive']{
+.comment-list form input[name='deactive'],
+.comment-list form input[name='filter']{
 position: absolute;
 top: -30px;
 right: 0px;
@@ -315,6 +311,17 @@ background-color: #78ABFF;
 
 .comment-list form input[name='active']{
 right: 225px;
+}
+
+.comment-list form input[name='filter']{
+    left: 110px;
+}
+
+.comment-list select[name="cat"]{
+    display: block;
+    position: absolute;
+    top: -30px;
+    height: 25px;
 }
 
 .comment-list form input[name='deactive']{

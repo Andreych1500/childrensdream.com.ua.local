@@ -1,1 +1,120 @@
-﻿
+﻿QUERY:
+        SELECT *
+	    WHERE `active` = ".(int)$_POST['cat']."
+	    ORDER BY `id` DESC
+    
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `active` = ".(int)$_POST['cat']."
+	    ORDER BY `id` DESC' at line 2
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\comments\main.php
+line: 64
+date: 2015-12-22 00:36:04
+===================================
+
+QUERY:
+        SELECT *
+	    WHERE `active` = '1'
+	    ORDER BY `id` DESC
+    
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `active` = '1'
+	    ORDER BY `id` DESC' at line 2
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\comments\main.php
+line: 64
+date: 2015-12-22 00:36:47
+===================================
+
+QUERY:
+        SELECT *
+	    WHERE `active` = ".(int)$_POST["cat"]."
+	    ORDER BY `id` DESC
+    
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `active` = ".(int)$_POST["cat"]."
+	    ORDER BY `id` DESC' at line 2
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\comments\main.php
+line: 64
+date: 2015-12-22 00:37:41
+===================================
+
+QUERY:
+        SELECT *
+	    WHERE `active` = 1
+	    ORDER BY `id` DESC
+    
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `active` = 1
+	    ORDER BY `id` DESC' at line 2
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\comments\main.php
+line: 65
+date: 2015-12-22 00:38:52
+===================================
+
+QUERY:
+        SELECT *
+	    WHERE `active` = 1
+	    ORDER BY `id` DESC
+    
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `active` = 1
+	    ORDER BY `id` DESC' at line 2
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\comments\main.php
+line: 65
+date: 2015-12-22 00:39:07
+===================================
+
+QUERY:
+        SELECT *
+	    'WHERE `active` = 1'
+	    ORDER BY `id` DESC
+    
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''WHERE `active` = 1'
+	    ORDER BY `id` DESC' at line 2
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\comments\main.php
+line: 65
+date: 2015-12-22 00:39:20
+===================================
+
+QUERY:
+        SELECT *
+	    WHERE `active` = 1
+	    ORDER BY `id` DESC
+    
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `active` = 1
+	    ORDER BY `id` DESC' at line 2
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\comments\main.php
+line: 65
+date: 2015-12-22 00:39:26
+===================================
+
+QUERY:
+        SELECT *
+	    WHERE `active` = ".(int)$_POST["cat"]."
+	    ORDER BY `id` DESC
+    
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `active` = ".(int)$_POST["cat"]."
+	    ORDER BY `id` DESC' at line 2
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\comments\main.php
+line: 65
+date: 2015-12-22 00:40:05
+===================================
+
+QUERY:
+        SELECT *
+	    WHERE `active` IN '1'
+	    ORDER BY `id` DESC
+    
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `active` IN '1'
+	    ORDER BY `id` DESC' at line 2
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\comments\main.php
+line: 63
+date: 2015-12-22 00:41:59
+===================================
+
+QUERY:
+        SELECT *
+	    WHERE `active` IN '1'
+	    ORDER BY `id` DESC
+    
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `active` IN '1'
+	    ORDER BY `id` DESC' at line 2
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\comments\main.php
+line: 63
+date: 2015-12-22 00:42:36
+===================================
+

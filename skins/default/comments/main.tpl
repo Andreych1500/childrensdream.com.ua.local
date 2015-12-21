@@ -28,23 +28,20 @@
       <table>
         <tr>
           <td>
-            <input type="text" placeholder="<?=$mess['PLEASE_NAME'];?>" name="name" value="<?=(isset($_POST['name'])? hsc($_POST['name']):"")?>">
-            <?=((isset($errors['name']))? '<span class="errors">'.$errors['name'].'</span>' : ''); ?>
-            <p class="error"><?=$mess['ERROR_1']?></p>
+            <p><?=$mess['PLEASE_NAME'];?><span> *</span></p>
+            <input class="<?=((isset($errors['name']))? 'errors' : '')?>" type="text" name="name" value="<?=(isset($_POST['name'])? hsc($_POST['name']):"")?>">
           </td>
         </tr>
         <tr>
           <td>
-            <input type="email" placeholder="<?=$mess['PLEASE_EMAIL'];?>" name="email" value="<?=(isset($_POST['email'])? hsc($_POST['email']):"")?>">
-            <?=((isset($errors['email']))? '<span class="errors">'.$errors['email'].'</span>' : ''); ?>
-            <p class="error"><?=$mess['ERROR_2']?></p>
+            <p><?=$mess['PLEASE_EMAIL'];?><span> *</span></p>
+            <input class="<?=((isset($errors['name']))? 'errors' : '')?>" type="email" name="email" value="<?=(isset($_POST['email'])? hsc($_POST['email']):"")?>">
           </td>
         </tr>
         <tr>
           <td>
-            <textarea placeholder="<?=$mess['PLEASE_TEXT'];?>" name="text"><?=(isset($_POST['text'])? hsc($_POST['text']):"")?></textarea>
-            <?=((isset($errors['text']))? '<span class="errors">'.$errors['text'].'</span>' : ''); ?>
-            <p class="error"><?=$mess['ERROR_3']?></p>
+            <p><?=$mess['PLEASE_TEXT'];?><span> *</span></p>
+            <textarea class="<?=((isset($errors['name']))? 'errors' : '')?>" name="text"><?=(isset($_POST['text'])? hsc($_POST['text']):"")?></textarea>
           </td>
         </tr>
         <tr>

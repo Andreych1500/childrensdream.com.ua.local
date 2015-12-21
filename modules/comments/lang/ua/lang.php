@@ -12,7 +12,4 @@ $mess['PLEASE_TEXT']  = 'Текс для відгуку';
 $mess['SUBMIT']       = 'Надіслати';
 
 // Error
-$mess['ERROR_1'] = 'Заповніть поле ім\'я';
-$mess['ERROR_2'] = 'Заповніть поле email';
-$mess['ERROR_3'] = 'Заповніть поле вашого відгуку';
 $mess['HACK_ERROR'] = 'WARNING';

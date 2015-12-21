@@ -12,7 +12,4 @@ $mess['PLEASE_TEXT']  = 'Текст для отзыва';
 $mess['SUBMIT']       = 'Отправить';
 
 // ERROR
-$mess['ERROR_1'] = 'Заполните поле имя';
-$mess['ERROR_2'] = 'Заполните поле email';
-$mess['ERROR_3'] = 'Заполните поле вашего отзыва';
 $mess['HACK_ERROR'] = 'WARNING';

@@ -11,6 +11,10 @@
         margin-left:10px;
     }
 
+    .commentview{
+        margin-left:5px;
+    }
+
 }
 
 @media screen and (max-width: 960px){
@@ -31,6 +35,16 @@
 @media screen and (max-width: 854px){
     div.top-menu li{
         margin-right:14px;
+    }
+
+    .form-comment{
+        float: left;
+        width: 54%;
+        margin-left: 5px;
+    }
+
+    .commentview, .form-comment{
+        width:96%;
     }
 }
 

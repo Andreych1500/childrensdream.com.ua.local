@@ -23,6 +23,10 @@
   cursor: pointer;
   padding: 10px 60px;
   background-color:@color-sumbit;
+  .border-radius(3px);
+  font-family: @font-team2;
+  font-size: 13pt;
+  color: #fff;
 }
 
 .color-block(@back-color,@url-img){
@@ -98,7 +102,7 @@
 
 body, footer, header, .top-menu ul li:hover:after, .mobile-basket a:hover:after, .content,
 .hText table, .hText td .line, .slyder-item, .background-content, .slide-list img,
-div.fixed-menu, .name-date{
+div.fixed-menu, .name-date, .form-comment form table{
   width:100%;
 }
 
@@ -470,11 +474,11 @@ div.prev-slide{
   z-index: 99;
   .opacity(0.3);
   right: 20px;
-  bottom: 180px;
+  bottom: 120px;
   display:none;
   cursor: pointer;
   height:100px;
-  background: url("/skins/default/img/toTop.png") -3px 0 no-repeat;
+  background: url("/skins/default/img/toTop.png") 0 -1px no-repeat;
   .transition(opacity 1s ease);
   color:@team-color;
 
@@ -524,11 +528,73 @@ div.prev-slide{
 
 .form-comment{
   width:42%;
+  min-height: 406px;
 
   .hack-error,.thanks{
     display:none;
   }
 
+  form{
+    min-width: 310px;
+    margin-top: 26px;
+
+    table tr td p{
+      color:@team-color;
+      font:11pt @font-team2;
+
+      span{
+        color:#9e0000;
+      }
+    }
+
+    input[type="text"], input[type="email"],textarea{
+      padding:4px;
+      border:1px solid #9bd6e7;
+      width: 200px;
+      outline:none;
+      margin-bottom: 10px;
+    }
+
+    textarea{
+      width:96%;
+      resize: none;
+      min-height: 120px;
+      max-width: 420px;
+    }
+
+    input[type="submit"]{
+      .submit();
+
+      &:hover{
+        background-color: lighten(@color-sumbit, 10%);
+      }
+
+      &:active{
+        padding-top: 11px;
+        height: 40px;
+      }
+    }
+
+    input.errors, textarea.errors{
+      border-color:red;
+    }
+
+    input.no-errors, textarea.no-errors{
+      border-color:#9bd6e7;
+      .transition(border-color 2s ease)
+    }
+  }
+
+  .thanks{
+    color: @team-color;
+    font:16pt @font-team1;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .hack-error{
+    color:red;
+  }
 }
 
 .otzuv{
@@ -538,7 +604,6 @@ div.prev-slide{
   margin-top:20px;
 }
 // end comments
-
 
 
 

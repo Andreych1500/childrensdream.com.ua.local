@@ -1,4 +1,13 @@
 // JavaScript Document
+function removeError(el){
+	el.addClass('errors');
+	setTimeout(function(){
+		el.addClass('no-errors');
+		setTimeout(function(){
+			el.removeClass();
+		}, 1400);
+	}, 3000);
+}
 
 function myComments(){
 	var name   = $(".form-comment input[name='name']").val();
@@ -10,23 +19,25 @@ function myComments(){
 	var dotpos = email.lastIndexOf(".");
 	if(!(atpos<1 || dotpos<atpos+2 || dotpos+2>=email.length) == false){
 		error = 1;
-		$(".form-comment input[name='email'] + p.error").show().delay(1500).fadeOut(1200);
+		removeError($(".form-comment input[name='email']"));
 	}
 
 	if(name == ''){
 		error = 1;
-		$(".form-comment input[name='name'] + p.error").show().delay(1500).fadeOut(1200);
+		removeError($(".form-comment input[name='name']"));
 	}
 
 	if(email == ''){
 		error = 1;
-		$(".form-comment input[name='email'] + p.error").show().delay(1500).fadeOut(1200);
+		removeError($(".form-comment input[name='email']").addClass('errors'));
+		$(".form-comment input[name='email']").addClass('errors');
 	}
 
 	if(text == ''){
 		error = 1;
-		$(".form-comment textarea[name='text'] + p.error").show().delay(1500).fadeOut(1200);
+		removeError($(".form-comment textarea[name='text']").addClass('errors'));
 	}
+
 
 	if(error == 0){
 	    $.ajax({
