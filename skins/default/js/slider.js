@@ -16,17 +16,6 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
-
-    window.onscroll = function () {
-        var scrolled = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrolled >= 120) {
-            $('.top-menu').addClass('fixed-menu');
-        } else {
-            $('.top-menu').removeClass('fixed-menu');
-        }
-    }
-
-
 });
 
 window.onload = function(){

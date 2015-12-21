@@ -15,10 +15,30 @@
 @color-phone:#3f627b;
 @font-team1: ComicSansMS;
 @font-team2: MyriadPro;
+@color-sumbit:#a12a97;
+
+.submit(){
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 60px;
+  background-color:@color-sumbit;
+}
 
 .color-block(@back-color,@url-img){
   background-color: @back-color;
   .background-image(url(@url-img));
+}
+
+.line-silver-gradient(){
+  background: rgba(249,249,249,1);
+  background: -moz-linear-gradient(top, rgba(249,249,249,1) 0%, rgba(248,248,248,1) 17%, rgba(247,247,247,1) 34%, rgba(246,246,246,1) 51%, rgba(245,245,245,1) 68%, rgba(244,244,244,1) 84%, rgba(243,243,243,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(249,249,249,1)), color-stop(17%, rgba(248,248,248,1)), color-stop(34%, rgba(247,247,247,1)), color-stop(51%, rgba(246,246,246,1)), color-stop(68%, rgba(245,245,245,1)), color-stop(84%, rgba(244,244,244,1)), color-stop(100%, rgba(243,243,243,1)));
+  background: -webkit-linear-gradient(top, rgba(249,249,249,1) 0%, rgba(248,248,248,1) 17%, rgba(247,247,247,1) 34%, rgba(246,246,246,1) 51%, rgba(245,245,245,1) 68%, rgba(244,244,244,1) 84%, rgba(243,243,243,1) 100%);
+  background: -o-linear-gradient(top, rgba(249,249,249,1) 0%, rgba(248,248,248,1) 17%, rgba(247,247,247,1) 34%, rgba(246,246,246,1) 51%, rgba(245,245,245,1) 68%, rgba(244,244,244,1) 84%, rgba(243,243,243,1) 100%);
+  background: -ms-linear-gradient(top, rgba(249,249,249,1) 0%, rgba(248,248,248,1) 17%, rgba(247,247,247,1) 34%, rgba(246,246,246,1) 51%, rgba(245,245,245,1) 68%, rgba(244,244,244,1) 84%, rgba(243,243,243,1) 100%);
+  background: linear-gradient(to bottom, rgba(249,249,249,1) 0%, rgba(248,248,248,1) 17%, rgba(247,247,247,1) 34%, rgba(246,246,246,1) 51%, rgba(245,245,245,1) 68%, rgba(244,244,244,1) 84%, rgba(243,243,243,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#f3f3f3', GradientType=0 );
 }
 
 .bogrow-block(@link,@coordinate,@repeat,@position,@width,@height){
@@ -475,11 +495,15 @@ div.prev-slide{
 
   .comment-item{
     padding:10px;
-    margin-bottom: 20px;
+    margin-top: 30px;
+    border: 1px solid #dadada;
+
+    .line-silver-gradient();
 
     .text{
       font-family: @font-team2;
       margin-bottom: 10px;
+      font-size: 11pt;
     }
 
     .name-date span{
@@ -500,19 +524,20 @@ div.prev-slide{
 
 .form-comment{
   width:42%;
+
+  .hack-error,.thanks{
+    display:none;
+  }
+
 }
 
 .otzuv{
   color:@team-color;
   font-size:22pt;
   font-family: @font-team1;
-  margin-top:10px;
+  margin-top:20px;
 }
 // end comments
-
-
-
-
 
 
 
