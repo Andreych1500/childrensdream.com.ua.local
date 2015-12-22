@@ -580,6 +580,12 @@ div.prev-slide {
   font-family: ComicSansMS;
   margin-top: 20px;
 }
+.no-item {
+  font-family: MyriadPro;
+  font-size: 16pt;
+  text-align: center;
+  color: #a12a97;
+}
 /* icons */
 #container span[class*="icon-"] {
   position: relative;

@@ -10,13 +10,13 @@ min-height: 100%;
 
 body{
 margin: 0 auto;
-margin-bottom: 200px;
+margin-bottom: 110px;
 }
 
 div, p, h1, h2, h3, h4, h5, h6, a, i, table, tr, td, span, ul, li{
 word-wrap: break-word;
-margin: 0px;
-padding:0px;
+margin: 0;
+padding:0;
 }
 
 html, .content, header div, .content div, header, .basketDesc, ul,li{
@@ -48,7 +48,7 @@ footer{
 position: absolute;
 bottom: 0;
 background-color: #78ABFF;
-padding: 10px 0px;
+padding: 10px 0;
 }
 
 footer,
@@ -80,18 +80,18 @@ height: 193px;
 
 .info-link p{
 text-align: center;
-margin: 5px 0px;
+margin: 5px 0;
 }
 
 .info-link p a{
 display:inline-block;
-margin: 0px 3px;
+margin: 0 3px;
 font-size:15pt;
 }
 
 .top-menu ul li{
 font-size: 16pt;
-margin: 15px 0px 0px 2%;
+margin: 15px 0 0 2%;
 }
 
 div.top-menu ul li a,
@@ -102,8 +102,6 @@ color:#78ABFF;
 
 div.top-menu ul li a span{
 display:none;
-background-image: url(/skins/default/img/menu-hover.png);
-background-position: 0px 0px;
 }
 
 div.top-menu ul li:hover a span{
@@ -123,11 +121,10 @@ top: 100px;
 left: 230px;
 border: 2px solid #E0E0E0;
 border-radius: 5px;
-padding: 30px 0px 30px 140px;
+padding: 30px 0 30px 140px;
 }
 
 .auth p{
-font-family: RockletterSimpleRegular;
 font-size:18pt;
 }
 
@@ -171,12 +168,12 @@ border:1px solid red;
 .administration {
 font-size: 28pt;
 text-align: center;
-padding: 100px 0px;
+padding: 100px 0;
 }
 
 .top-menu li:last-child{
 position:absolute;
-right: 0px;
+right: 0;
 }
 
 div.top-menu ul li a.active span{
@@ -254,21 +251,17 @@ background-color: #78ABFF;
 }
 
 .no-item{
-font-family: RockletterSimpleRegular;
-}
-
-.no-item{
 font-size: 16pt;
 margin-left: 5px;
 }
 
 .no-item,
 .comment-item{
-padding:15px 0px;
+padding:15px 0;
 }
 
 .comment-item .text{
-padding: 0px 0px 5px 15px;
+padding: 0 0 5px 15px;
 }
 
 .comment-item span:nth-child(2){
@@ -299,13 +292,13 @@ background-color: rgba(255, 0, 0, 0.09);
 .comment-list form input[name='filter']{
 position: absolute;
 top: -30px;
-right: 0px;
+right: 0;
 outline: none;
 cursor: pointer;
 color: #FFF;
 border-radius: 2px;
 padding: 5px 15px;
-border: 0px;
+border: 0;
 background-color: #78ABFF;
 }
 
@@ -314,14 +307,14 @@ right: 225px;
 }
 
 .comment-list form input[name='filter']{
-    left: 110px;
+left: 110px;
 }
 
 .comment-list select[name="cat"]{
-    display: block;
-    position: absolute;
-    top: -30px;
-    height: 25px;
+display: block;
+position: absolute;
+top: -30px;
+height: 25px;
 }
 
 .comment-list form input[name='deactive']{
@@ -335,19 +328,17 @@ border-color: #FFE30E;
 
 .editWindow{
 position: absolute;
-right: 0px;
-top: 0px;
+right: 0;
+top: 0;
 }
 
 .editWindow a{
 color: #ABABAB;
 border-bottom: 1px dashed;
 }
-
 .editWindow a:hover{
-border-bottom: 0px;
+border-bottom: 0;
 }
-
 .h1{
 color:rgb(23, 206, 39);
 font-size:26pt;
@@ -355,4 +346,68 @@ position: absolute;
 top: -110px;
 left: 380px;
 }
+.edit-style{
+width: 100%;
+height: 350px;
+border: 1px solid #ccc;
+background: rgba(236, 236, 236, 0.31);
+}
+.input-value{
+margin:20px;
+position:relative;
+}
+.input-value textarea{
+width: 970px;
+height:160px;
+}
+.input-value input,
+.input-value textarea{
+padding:4px;
+resize: none;
+outline: none;
+}
+.input-value input:focus{
+border:1px solid #78ABFF;
+padding: 5px;
+}
+.input-value textarea:focus{
+padding:4px;
+border:1px solid #78ABFF;
+}
+.input-value .error{
+position: absolute;
+left: 190px;
+top: 30px;
+color: red;
+}
+.input-value:nth-child(3n) .error{
+position: absolute;
+left: 400px;
+top: 0px;
+color: red;
+}
+.input-value p:nth-child(1){
+color:#482200;
+}
+.input-value p:nth-child(1) span {
+color: #9e0000;
+}
+.edit-style input[type="submit"] {
+border: 0;
+outline: none;
+cursor: pointer;
+padding: 10px 60px;
+background-color:#a12a97;
+border-radius:3px;
+font-size: 13pt;
+color: #fff;
+}
 
+div.edit-style input[type="submit"]:hover{
+background-color: #c935bd;
+}
+
+.edit-style input[type="submit"]:active{
+padding-top: 11px;
+height: 40px;
+}

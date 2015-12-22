@@ -118,3 +118,51 @@ line: 63
 date: 2015-12-22 00:42:36
 ===================================
 
+QUERY:
+	SELECT *
+	FROM `products`
+	WHERE `id` = 73
+	LIMIT 1	
+
+Table 'childrens.products' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\comments\edit.php
+line: 78
+date: 2015-12-22 21:47:38
+===================================
+
+QUERY:
+	SELECT *
+	FROM `products`
+	WHERE `id` = 73
+	LIMIT 1
+
+Table 'childrens.products' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\comments\edit.php
+line: 78
+date: 2015-12-22 21:50:23
+===================================
+
+QUERY: UPDATE `comments` SET
+			`name`      = 'test',
+			`email`     = 'test@test.ru',
+			`text`      = 'testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest',
+			 WHERE `id` = 54
+		
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `id` = 54' at line 5
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\comments\edit.php
+line: 24
+date: 2015-12-22 23:38:41
+===================================
+
+QUERY: UPDATE `comments` SET
+			`name`      = 'test',
+			`email`     = 'test@test.ru',
+			`text`      = 'testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest',
+			 WHERE `id` = 54
+		
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `id` = 54' at line 5
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\comments\edit.php
+line: 24
+date: 2015-12-22 23:40:04
+===================================
+

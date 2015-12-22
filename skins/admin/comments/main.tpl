@@ -32,6 +32,5 @@
       <input type="submit" value="Деактивувати" name="deactive">
       <input type="submit" value="Активувати" name="active">
     </form>
-
   </div>
 </div>

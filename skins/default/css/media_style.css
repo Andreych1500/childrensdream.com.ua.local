@@ -213,6 +213,10 @@
     div.staticText table td:nth-child(2n){
         width:52% !important;
     }
+
+    .no-item{
+        font-size: 14pt;
+    }
 }
 
 @media screen and (max-width: 400px) {
