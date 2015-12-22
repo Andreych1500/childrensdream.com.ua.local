@@ -21,7 +21,7 @@
   </div>
 </div>
 
-<div class="staticText" id="about">
+<div class="staticText st-1" id="about">
   <div class="text-item">
     <div class="hText">
       <table>
@@ -48,7 +48,7 @@
   </div>
 </div>
 
-<div class="staticText" id="payment">
+<div class="staticText st-2" id="payment">
   <div class="text-item">
     <div class="hText">
       <table>
@@ -83,6 +83,20 @@
         <img src="/skins/default/img/car.png" alt="Childrens-dream" title="Childrens-dream">
       </div>
       <div class="clear"></div>
+    </div>
+  </div>
+</div>
+
+<div class="call-me st-1" id="call">
+  <div class="text-item">
+    <div class="hText">
+      <table>
+        <tr>
+          <td><span class="line"></span></td>
+          <td><span><?=$mess['CONTACTS'];?></span></td>
+          <td><span class="line"></span></td>
+        </tr>
+      </table>
     </div>
   </div>
 </div>

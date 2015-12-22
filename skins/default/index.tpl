@@ -37,7 +37,7 @@
           <li><a href="#"><?=$mess['PRODUCTION']?></a></li>
           <li><a href="<?=(isset($lang)? '/ru/' : '/')?>#payment"><?=$mess['SERVICES']?></a></li>
           <li><a href="<?=(isset($lang)? '/ru/' : '/')?>comments"><?=$mess['OTZUVU']?></a></li>
-          <li><a href="#"><?=$mess['CONTACTS']?></a></li>
+          <li><a href="<?=(isset($lang)? '/ru/' : '/')?>#call""><?=$mess['CONTACTS']?></a></li>
           <li><a href="#"><?=$mess['BASKET']?> <span>1</span></a></li>
         </ul>
       </div>
@@ -57,7 +57,7 @@
           <li><a href="#"><?=$mess['PRODUCTION']?></a></li>
           <li><a href="<?=(isset($lang)? '/ru/' : '/')?>#payment"><?=$mess['SERVICES']?></a></li>
           <li><a href="<?=(isset($lang)? '/ru/' : '/')?>comments"><?=$mess['OTZUVU']?></a></li>
-          <li><a href="#"><?=$mess['CONTACTS']?></a></li>
+          <li><a href="<?=(isset($lang)? '/ru/' : '/')?>#call"><?=$mess['CONTACTS']?></a></li>
         </ul>
       </nav>
       <div class="clear"></div>

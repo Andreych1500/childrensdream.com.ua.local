@@ -23,3 +23,6 @@ $mess['SERVICES_TEXT11'] = 'обраного способу доставки (а
 $mess['SERVICES_TEXT12'] = 'тарифів перевізника.';
 $mess['SERVICES_TEXT13'] = 'Доставка в межах Тернополя здійснюється ';
 $mess['SERVICES_TEXT14'] = 'БЕЗКОШТОВНО.';
+
+//call me
+$MESS['CONTACTS'] = 'Контакти';
