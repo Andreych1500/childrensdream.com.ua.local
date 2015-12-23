@@ -125,7 +125,7 @@ html{
 }
 
 body{
-  margin: 0 0 100px 0;
+  margin: 0 0 135px 0;
 }
 
 footer{
@@ -616,7 +616,7 @@ div.prev-slide{
 
 // call
 
-#call{
+.form-call{
   .hText{
     text-shadow: none;
   }
@@ -625,10 +625,10 @@ div.prev-slide{
     color:@team-color;
     font-family:@font-team2;
     margin: 10px 0 30px 10px;
+    text-align: center;
   }
 
   form {
-    min-width: 310px;
     margin: 0 auto;
     width: 600px;
     position: relative;
@@ -642,26 +642,19 @@ div.prev-slide{
       }
     }
 
-    div:nth-child(1),
-    div:nth-child(2),
-    input[type="text"],
-    input[type="email"],
-    textarea,
-    .capcha + div{
-      width: 100%;
-      max-width: 250px;
+    div:nth-child(1) input,
+    div:nth-child(2) input,
+    .capcha + div input{
+      width:210px;
     }
+
 
     div:nth-child(1), .capcha{
       float:left;
     }
     div:nth-child(2), .capcha + div{
       float:right;
-    }
-
-    div:nth-child(4),
-    div:nth-child(4) input{
-      max-width:600px;
+      right: -10px;
     }
 
     input[type="text"], input[type="email"], textarea {
@@ -671,9 +664,13 @@ div.prev-slide{
       margin-bottom: 10px;
     }
 
-    textarea {
+    textarea,
+    div:nth-child(4) input{
+      width:100%;
+    }
+
+    textarea{
       resize: none;
-      max-width:600px;
       min-height: 120px;
     }
 
@@ -704,8 +701,9 @@ div.prev-slide{
     position: relative;
     text-align: left;
     color: #482200;
-    font-size: 20pt;
+    font-size: 17pt;
     bottom: -15px;
+    text-align: center;
   }
 }
 

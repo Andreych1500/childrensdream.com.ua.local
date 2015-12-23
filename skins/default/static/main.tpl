@@ -1,4 +1,4 @@
-<?/*<div class="background-content">
+<div class="background-content">
   <div class="position-width">
     <div class="sliders-line">
       <div class="slide-list">
@@ -86,7 +86,7 @@
     </div>
   </div>
 </div>
-*/?>
+
 <div class="call-me st-1" id="call">
   <div class="text-item">
     <div class="hText">
@@ -120,19 +120,18 @@
         <textarea class="<?=((isset($errors['text']))? 'errors' : '')?>" name="text"><?=(isset($_POST['text'])? hsc($_POST['text']):"")?></textarea>
       </div>
       <div class="capcha">
-        <img src="modules/static/captcha.php">
+        <img src="/modules/static/captcha.php">
       </div>
       <div>
         <p><?=$mess['CAPCHA']?><span>*</span></p>
         <input class="<?=((isset($errors['capcha']))? 'errors' : '')?>" type="text" name="capcha" value="<?=(isset($_POST['capha'])? hsc($_POST['capha']):"")?>">
       </div>
       <div class="clear"></div>
-      <div>
-        <input type="submit" value="<?=$mess['SUBMIT']?>" name="ok">
-      </div>
+      <input type="submit" value="<?=$mess['SUBMIT']?>" name="ok">
       <?php if(isset($next_error['limit']) && $next_error['limit'] == 'Y'){ ?>
         <p class="limit"><?=$mess['LIMIT']?></p>
       <? } ?>
     </form>
+    <div class="clear"></div>
   </div>
 </div>

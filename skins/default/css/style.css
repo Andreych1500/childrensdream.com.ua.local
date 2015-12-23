@@ -91,7 +91,7 @@ html {
   min-height: 100%;
 }
 body {
-  margin: 0 0 100px 0;
+  margin: 0 0 135px 0;
 }
 footer {
   position: absolute;
@@ -590,62 +590,58 @@ div.prev-slide {
   text-align: center;
   color: #a12a97;
 }
-#call .hText {
+.form-call .hText {
   text-shadow: none;
 }
-#call .info-call {
+.form-call .info-call {
   color: #482200;
   font-family: MyriadPro;
   margin: 10px 0 30px 10px;
+  text-align: center;
 }
-#call form {
-  min-width: 310px;
+.form-call form {
   margin: 0 auto;
   width: 600px;
   position: relative;
 }
-#call form div p {
+.form-call form div p {
   color: #482200;
   font: 11pt MyriadPro;
 }
-#call form div p span {
+.form-call form div p span {
   color: #9e0000;
 }
-#call form div:nth-child(1),
-#call form div:nth-child(2),
-#call form input[type="text"],
-#call form input[type="email"],
-#call form textarea,
-#call form .capcha + div {
-  width: 100%;
-  max-width: 250px;
+.form-call form div:nth-child(1) input,
+.form-call form div:nth-child(2) input,
+.form-call form .capcha + div input {
+  width: 210px;
 }
-#call form div:nth-child(1),
-#call form .capcha {
+.form-call form div:nth-child(1),
+.form-call form .capcha {
   float: left;
 }
-#call form div:nth-child(2),
-#call form .capcha + div {
+.form-call form div:nth-child(2),
+.form-call form .capcha + div {
   float: right;
+  right: -10px;
 }
-#call form div:nth-child(4),
-#call form div:nth-child(4) input {
-  max-width: 600px;
-}
-#call form input[type="text"],
-#call form input[type="email"],
-#call form textarea {
+.form-call form input[type="text"],
+.form-call form input[type="email"],
+.form-call form textarea {
   padding: 4px;
   border: 1px solid #9bd6e7;
   outline: none;
   margin-bottom: 10px;
 }
-#call form textarea {
+.form-call form textarea,
+.form-call form div:nth-child(4) input {
+  width: 100%;
+}
+.form-call form textarea {
   resize: none;
-  max-width: 600px;
   min-height: 120px;
 }
-#call form input[type="submit"] {
+.form-call form input[type="submit"] {
   border: 0;
   outline: none;
   cursor: pointer;
@@ -661,31 +657,32 @@ div.prev-slide {
   font-size: 13pt;
   color: #fff;
 }
-#call form input[type="submit"]:hover {
+.form-call form input[type="submit"]:hover {
   background-color: #c935bd;
 }
-#call form input[type="submit"]:active {
+.form-call form input[type="submit"]:active {
   padding-top: 11px;
   height: 40px;
 }
-#call form input.errors,
-#call form textarea.errors {
+.form-call form input.errors,
+.form-call form textarea.errors {
   border-color: red;
 }
-#call form input.no-errors,
-#call form textarea.no-errors {
+.form-call form input.no-errors,
+.form-call form textarea.no-errors {
   border-color: #9bd6e7;
   -webkit-transition: border-color 2s ease;
   -moz-transition: border-color 2s ease;
   -o-transition: border-color 2s ease;
   transition: border-color 2s ease;
 }
-#call .limit {
+.form-call .limit {
   position: relative;
   text-align: left;
   color: #482200;
-  font-size: 20pt;
+  font-size: 17pt;
   bottom: -15px;
+  text-align: center;
 }
 /* icons */
 #container span[class*="icon-"] {

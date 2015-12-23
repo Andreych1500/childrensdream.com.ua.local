@@ -131,6 +131,10 @@
         width:auto;
     }
 
+    div.form-call form{
+        width: 95%;
+        margin-left:10px;
+    }
 }
 
 @media screen and (max-width: 512px){
@@ -219,6 +223,22 @@
     .no-item{
         font-size: 14pt;
     }
+
+    #call div.form-call form div{
+        width:98%;
+        float:left;
+    }
+    #call form div input{
+        width:100%;
+    }
+    #call div:nth-child(2), #call .capcha + div{
+        right: 0;
+    }
+
+    #call div.form-call form{
+        float:left;
+    }
+
 }
 
 @media screen and (max-width: 400px) {
