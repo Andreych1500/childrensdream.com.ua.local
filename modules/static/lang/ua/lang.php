@@ -25,4 +25,15 @@ $mess['SERVICES_TEXT13'] = 'Доставка в межах Тернополя з
 $mess['SERVICES_TEXT14'] = 'БЕЗКОШТОВНО.';
 
 //call me
-$MESS['CONTACTS'] = 'Контакти';
+$mess['CONTACTS'] = 'Контакти';
+$mess['CALL_TEXT1'] = 'З питань співпраці та оптових закупівель пишіть нам на е-mail:';
+$mess['CALL_TEXT2'] = ' childrens.dream@gmail.com';
+$mess['CALL_TEXT3'] = ' або телефонуйте';
+$mess['CALL_TEXT4'] = ' +38 (096) 263-47-28';
+$mess['SUBMIT']     = 'Надіслати';
+$mess['CALL_NAME']  = 'Ваше ім\'я ';
+$mess['CALL_EMAIL'] = 'Ваш email ';
+$mess['CALL_THEMS'] = 'Тема ';
+$mess['CALL_TEXT']  = 'Ваше повідомлення ';
+$mess['LIMIT']      = 'Вибачте, но на сьогодні звернень достатньо';
+$mess['CAPCHA']     = 'Введіть текст з зображення';

@@ -59,7 +59,8 @@ header,
 .slide-list img,
 div.fixed-menu,
 .name-date,
-.form-comment form table {
+.form-comment form table,
+.form-call {
   width: 100%;
 }
 div,
@@ -591,6 +592,100 @@ div.prev-slide {
 }
 #call .hText {
   text-shadow: none;
+}
+#call .info-call {
+  color: #482200;
+  font-family: MyriadPro;
+  margin: 10px 0 30px 10px;
+}
+#call form {
+  min-width: 310px;
+  margin: 0 auto;
+  width: 600px;
+  position: relative;
+}
+#call form div p {
+  color: #482200;
+  font: 11pt MyriadPro;
+}
+#call form div p span {
+  color: #9e0000;
+}
+#call form div:nth-child(1),
+#call form div:nth-child(2),
+#call form input[type="text"],
+#call form input[type="email"],
+#call form textarea,
+#call form .capcha + div {
+  width: 100%;
+  max-width: 250px;
+}
+#call form div:nth-child(1),
+#call form .capcha {
+  float: left;
+}
+#call form div:nth-child(2),
+#call form .capcha + div {
+  float: right;
+}
+#call form div:nth-child(4),
+#call form div:nth-child(4) input {
+  max-width: 600px;
+}
+#call form input[type="text"],
+#call form input[type="email"],
+#call form textarea {
+  padding: 4px;
+  border: 1px solid #9bd6e7;
+  outline: none;
+  margin-bottom: 10px;
+}
+#call form textarea {
+  resize: none;
+  max-width: 600px;
+  min-height: 120px;
+}
+#call form input[type="submit"] {
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 60px;
+  background-color: #a12a97;
+  -webkit-border-radius: 3px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 3px;
+  -moz-background-clip: padding;
+  border-radius: 3px;
+  background-clip: padding-box;
+  font-family: MyriadPro;
+  font-size: 13pt;
+  color: #fff;
+}
+#call form input[type="submit"]:hover {
+  background-color: #c935bd;
+}
+#call form input[type="submit"]:active {
+  padding-top: 11px;
+  height: 40px;
+}
+#call form input.errors,
+#call form textarea.errors {
+  border-color: red;
+}
+#call form input.no-errors,
+#call form textarea.no-errors {
+  border-color: #9bd6e7;
+  -webkit-transition: border-color 2s ease;
+  -moz-transition: border-color 2s ease;
+  -o-transition: border-color 2s ease;
+  transition: border-color 2s ease;
+}
+#call .limit {
+  position: relative;
+  text-align: left;
+  color: #482200;
+  font-size: 20pt;
+  bottom: -15px;
 }
 /* icons */
 #container span[class*="icon-"] {

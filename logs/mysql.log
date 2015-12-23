@@ -166,3 +166,31 @@ line: 24
 date: 2015-12-22 23:40:04
 ===================================
 
+QUERY: INSERT INTO `call_me` SET
+			`name`  = 'sdasd',
+			`thems` = 'dasdas',
+			`email` = 'dasdas@rewa.ew',
+			`text`  = 'das',
+			`us_ip` = '127.0.0.1',
+			`date`  = NOW()
+		
+Unknown column 'us_ip' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\static\main.php
+line: 37
+date: 2015-12-23 23:18:38
+===================================
+
+QUERY: INSERT INTO `call_me` SET
+			`name`  = 'sdasd',
+			`thems` = 'dasdas',
+			`email` = 'dasdas@rewa.ew',
+			`text`  = 'das',
+			`us_ip` = '127.0.0.1',
+			`date`  = NOW()
+		
+Unknown column 'us_ip' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\static\main.php
+line: 37
+date: 2015-12-23 23:18:52
+===================================
+
