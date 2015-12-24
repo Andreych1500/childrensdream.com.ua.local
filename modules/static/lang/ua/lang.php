@@ -37,3 +37,4 @@ $mess['CALL_THEMS'] = 'Тема ';
 $mess['CALL_TEXT']  = 'Ваше повідомлення ';
 $mess['LIMIT']      = 'Вибачте, но існує ліміт звернень у день';
 $mess['CAPCHA']     = 'Введіть текст з зображення';
+$mess['OK_MESSAGE'] = 'text';

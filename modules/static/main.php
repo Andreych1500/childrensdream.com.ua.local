@@ -6,6 +6,7 @@ Core::$JS[] = '<script type="text/javascript" src="/skins/default/js/call.js"></
 // call me
 if(isset($_POST['ok'], $_POST['name'], $_POST['text'], $_POST['email'], $_POST['thems'])){
     $errors = array();
+    $next_error = array();
 
     if(empty($_POST['name'])){
         $errors['name'] = 'errors';
@@ -49,14 +50,45 @@ if(isset($_POST['ok'], $_POST['name'], $_POST['text'], $_POST['email'], $_POST['
                 `us_ip` = '" . mres($_SERVER['REMOTE_ADDR']) . "',
                 `date`  = NOW()
             ");
-            header("Location: /");
+
+
+            Mail::$to = $_POST['email'];
+            Mail::$subject = $_POST['thems'];
+            Mail::$text = "
+            <html>
+              <head>
+                <title>Замовлення зворотнього звінка</title>
+              </head>
+              <body>
+                <div>
+                  <img src=\"/skins/default/img/footer-logo.png\" alt=\"childrens-dream\" title=\"childrens-dream\">
+                  <a style=\"\" href=\"#\">Перейти на сайт</a>
+                </div>
+                <hr>
+                <div>
+                  Тема: ".mres($_POST['thems'])."  <br>
+                  Відправник: ".mres($_POST['email'])." <br>
+                  П.І.П: ".mres($_POST['name'])." <br>
+                  Текст: ".mres($_POST['text'])."
+                </div>
+                <hr>
+                <div>
+                  Дякуємо за співпрацю! <br>
+                  Лист згенеровано автоматично.
+                </div>
+              </body>
+            </html>";
+            Mail::Send();
+
+            $_SESSION['info'] = "Y";
+            header("Location: /#call");
             exit();
-            //echo json_encode(array('status' => 'ok'));
-            //exit();
         }
-    } /*else {
-        echo json_encode(array('warning' => 'ok'));
-        exit();
-    }*/
+    }
 }
 // end call me
+
+if(isset($_SESSION['info'])){
+    $info = $_SESSION['info'];
+    unset($_SESSION['info']);
+}

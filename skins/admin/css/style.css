@@ -56,7 +56,7 @@ footer,
 color: #FFF;
 }
 
-.top-menu ul li:nth-child(3){
+.top-menu ul li:nth-child(4){
 position: absolute;
 right: 70px;
 }
@@ -75,7 +75,7 @@ width:100%;
 .top-menu{
 width:75%;
 margin-left:20px;
-height: 193px;
+height: 150px;
 }
 
 .info-link p{
@@ -343,7 +343,7 @@ border-bottom: 0;
 color:rgb(23, 206, 39);
 font-size:26pt;
 position: absolute;
-top: -110px;
+top: -80px;
 left: 330px;
 }
 .edit-style{
@@ -407,7 +407,14 @@ div.edit-style input[type="submit"]:hover{
 background-color: #c935bd;
 }
 
-.edit-style input[type="submit"]:active{
-padding-top: 11px;
-height: 40px;
+form[name="call"] input[name='active']{
+right: 120px;
+}
+
+form[name="call"] input[name='deactive']{
+right:0;
+}
+
+.active{
+border-bottom: 1px solid;
 }

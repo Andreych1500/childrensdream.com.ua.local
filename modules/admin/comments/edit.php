@@ -42,15 +42,3 @@ if(!$comment->num_rows){
 	exit();
 }
 $row = $comment->fetch_assoc();
-
-
-
-
-
-
-
-
-
-
-
-

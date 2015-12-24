@@ -100,8 +100,12 @@
     </div>
   </div>
   <div class="form-call">
+    <? if(isset($info)){?>
+    <p class="info-call this-ok"><?=$mess['OK_MESSAGE']?></p>
+    <? } else { ?>
     <p class="info-call"><?=$mess['CALL_TEXT1']?><b><?=$mess['CALL_TEXT2']?></b><?=$mess['CALL_TEXT3']?><b><?=$mess['CALL_TEXT4']?></b></p>
-    <form action="#call" method="post">
+    <? } ?>
+    <form action="#call" method="post" onsubmit="return callMe();">
       <div>
         <p><?=$mess['CALL_NAME']?><span>*</span></p>
         <input class="<?=((isset($errors['name']))? 'errors' : '')?>" type="text" name="name" value="<?=(isset($_POST['name'])? hsc($_POST['name']):"")?>">

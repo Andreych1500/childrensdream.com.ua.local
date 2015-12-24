@@ -20,21 +20,21 @@ class Mail{
 	}	
 	
 	static function testSend(){
-	if(mail(self::$to,'English words','English words')){
-		echo 'Лист відправлений';
-		echo '<br>';
-		echo 'кому '.Mail::$to;
-		echo '<br>';
-		echo 'ким '.Mail::$from;
-		echo '<br>';
-		echo 'тема '.Mail::$subject;
-		echo '<br>'; 
-		echo 'текст'.Mail::$text;
-		echo '<br> '; 
-	} else {
-		echo 'Лист не відправлений';
+		if(mail(self::$to,'English words','English words')){
+			echo 'Лист відправлений';
+			echo '<br>';
+			echo 'кому '.Mail::$to;
+			echo '<br>';
+			echo 'ким '.Mail::$from;
+			echo '<br>';
+			echo 'тема '.Mail::$subject;
+			echo '<br>';
+			echo 'текст'.Mail::$text;
+			echo '<br> ';
+		} else {
+			echo 'Лист не відправлений';
+		}
+		exit();
 	}
-	exit();
-}
 }
 

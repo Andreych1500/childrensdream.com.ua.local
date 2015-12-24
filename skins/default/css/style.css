@@ -660,10 +660,6 @@ div.prev-slide {
 .form-call form input[type="submit"]:hover {
   background-color: #c935bd;
 }
-.form-call form input[type="submit"]:active {
-  padding-top: 11px;
-  height: 40px;
-}
 .form-call form input.errors,
 .form-call form textarea.errors {
   border-color: red;
@@ -683,6 +679,9 @@ div.prev-slide {
   font-size: 17pt;
   bottom: -15px;
   text-align: center;
+}
+.form-call .this-ok {
+  font-size: 20pt;
 }
 /* icons */
 #container span[class*="icon-"] {
