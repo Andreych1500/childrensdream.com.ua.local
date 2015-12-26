@@ -194,3 +194,62 @@ line: 37
 date: 2015-12-23 23:18:52
 ===================================
 
+QUERY:
+		SELECT *
+		FROM `products`	
+		ORDER BY `id` DESC
+	
+Table 'childrens.products' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\catalog\main.php
+line: 31
+date: 2015-12-26 15:39:56
+===================================
+
+QUERY: INSERT INTO `catalog` SET
+		    `name`          = 'Назва товару',
+		    `seo_name`      = 'Nazva-tovaru',
+		    `availability`  = '0'
+			`date`          = NOW()
+		
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`date`          = NOW()' at line 5
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\catalog\add.php
+line: 31
+date: 2015-12-26 19:34:36
+===================================
+
+QUERY: INSERT INTO `catalog` SET
+		    `name`          = 'Назва товару',
+		    `seo_name`      = 'Nazva-tovaru',
+		    `availability`  = '0'
+			`date`          = NOW()
+		
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`date`          = NOW()' at line 5
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\catalog\add.php
+line: 31
+date: 2015-12-26 19:35:06
+===================================
+
+QUERY: INSERT INTO `catalog` SET
+		    `name`          = 'Назва товару',
+		    `seo_name`      = 'Nazva-tovaru',
+		    `availability`  = '0'
+			`date`          = NOW()
+		
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`date`          = NOW()' at line 5
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\catalog\add.php
+line: 31
+date: 2015-12-26 19:35:13
+===================================
+
+QUERY: INSERT INTO `catalog` SET
+		    `name`          = 'Назва товару',
+		    `seo_name`      = 'Nazva-tovaru',
+		    `availability`  = '1'
+			`date`          = NOW()
+		
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`date`          = NOW()' at line 5
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\catalog\add.php
+line: 33
+date: 2015-12-26 19:35:47
+===================================
+

@@ -11,7 +11,7 @@ if(isset($_POST['active']) && isset($_POST['ids'])){
 		WHERE `id` IN (".$ids.")
 	");
 
-    $_SESSION['info'] = 'Відгуки успішно прочитано!';
+    $_SESSION['info'] = 'Зворотній зв\'язок успішно прочитано!';
     header("Location: /admin/static/call");
     exit();
 }

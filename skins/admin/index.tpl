@@ -7,6 +7,7 @@
   <title><?php echo hsc(Core::$META['title']);?></title>
   <script src="/vendor/public/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="/skins/admin/js/script.js"></script>
+  <script type="text/javascript" src="/vendor/public/translit/dist/translit.js"></script>
   <?php if(count(Core::$CSS)){ echo implode("\n",Core::$CSS); } ?>
 </head>
 
@@ -22,7 +23,7 @@
     <?php if(isset($_SESSION['user']) && $_SESSION['user']['access'] == 5){ ?>
     <div class="top-menu">
       <ul>
-        <li><a href="#"><?=$mess['PRODUCTION']?> <span></span></a></li>
+        <li><a href="/<?=Core::$CONT['admin']?>/catalog/"><?=$mess['PRODUCTION']?> <span></span></a></li>
         <li><a class="active" href="/<?=Core::$CONT['admin']?>/static/call">Зворотній зв'язок <span></span></a></li>
         <li><a href="/<?=Core::$CONT['admin']?>/comments/"><?=$mess['OTZUVU']?> <span></span></a></li>
         <li><a href="/" target="_blank">Нa сайт<span></span></a></li>

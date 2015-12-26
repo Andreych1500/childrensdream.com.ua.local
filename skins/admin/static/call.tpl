@@ -17,7 +17,7 @@
                 <?php } ?>
             <?php } else { ?>
                 <div class="comment-item">
-                    <p class="no-item"><?=$mess['NO_COMMENT']?></p>
+                    <p class="no-item"><?=$mess['NO_CALL_ME']?></p>
                 </div>
                 <span class="line"><span></span></span>
             <?php } ?>
