@@ -1,8 +1,9 @@
 <?php
 // Добавлення товару
-wtf($_POST,1);
+wtf($_FILES,1);
+
 //if(isset($_POST['cat'],$_POST['cod'],$_POST['description'],$_POST['text'],$_POST['name'],$_POST['available'],$_FILES['file'],$_POST['size'])){
-if(isset($_POST['ok'],$_POST['name'],$_POST['seo_name'],$_POST['price'])){
+if(isset($_POST['ok'],$_POST['name'],$_POST['seo_name'],$_POST['price'],$_POST['text'])){
 	$_POST = trimAll($_POST);
 	$errors = array();
 	
@@ -18,6 +19,12 @@ if(isset($_POST['ok'],$_POST['name'],$_POST['seo_name'],$_POST['price'])){
 	if(isset($_POST['availability'])){
 		$_POST['availability'] = 1;
 	}
+	if(empty($_POST['text'])){
+		$errors['text'] = 'errors';
+	}
+	if(empty($_POST['description'])){
+		$errors['description'] = 'errors';
+	}
 
 	//необовязкові поля
 	if(empty($_POST['form'])){ $_POST['form'] = ''; }
@@ -30,6 +37,13 @@ if(isset($_POST['ok'],$_POST['name'],$_POST['seo_name'],$_POST['price'])){
 	if(empty($_POST['anatoming']) || !(int)$_POST['anatoming']){ $_POST['anatoming'] = 0; }
 	if(empty($_POST['ortopeding']) || !(int)$_POST['ortopeding']){ $_POST['ortopeding'] = 0; }
 
+
+
+	/*if(isset($_FILES['anons_photo'])){
+		if(isset($errors)){
+			$_FILES['anons_photo']['name'] = 'aa';
+		}
+	}*/
 	/*if(!count($errors)){
 		if($_FILES['file']['error'] == 0) {
 			if(Uploader::upload($_FILES['file'],$_POST['size']) != 1){	
@@ -51,6 +65,8 @@ if(isset($_POST['ok'],$_POST['name'],$_POST['seo_name'],$_POST['price'])){
 			`rigidity`		 = '".mres($_POST['rigidity'])."',
 			`anatoming`      = '".(int)$_POST['anatoming']."',
 			`ortopeding`     = '".(int)$_POST['ortopeding']."',
+			`description`    = '".mres($_POST['description'])."',
+			`text`           = '".mres($_POST['text'])."',
 
 			`garanty`        = '".(int)$_POST['garanty']."',
 		    `availability`   = '".(int)$_POST['availability']."',

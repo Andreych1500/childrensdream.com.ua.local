@@ -103,7 +103,7 @@
     <? if(isset($info)){?>
     <p class="info-call this-ok"><?=$mess['OK_MESSAGE']?></p>
     <? } else { ?>
-    <p class="info-call"><?=$mess['CALL_TEXT1']?><b><?=$mess['CALL_TEXT2']?></b><?=$mess['CALL_TEXT3']?><b><?=$mess['CALL_TEXT4']?></b></p>
+    <p class="info-call"><?=$mess['CALL_TEXT1']?><b><?=$mess['CALL_TEXT2']?></b><?=$mess['CALL_TEXT3']?><b><?=$mess['CALL_TEXT4']?></b>, <b><?=$mess['CALL_TEXT5']?></b></p>
     <? } ?>
     <form action="#call" method="post" onsubmit="return callMe();">
       <div>

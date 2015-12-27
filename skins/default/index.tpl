@@ -25,7 +25,7 @@
         </a>
       </div>
       <div class="information">
-        <p><?=$mess['CONTACT_INFO'];?><a href="tel: +380962634728"> +38 (096) 263-47-28</a></p>
+        <p><?=$mess['CONTACT_INFO'];?><a href="tel: +380962634728"> +38 (098) 570-43-77</a></p>
       </div>
       <div class="langs">
         <a class="<?=(!isset($lang)? 'act-lang' : '')?>" href="/<?=Core::$SITE_DIR?>">UA</a>
@@ -82,9 +82,9 @@
       </div>
       <div class="soc-link">
         <p><?=$mess['SOC_LINK']?></p>
-        <a href="#" class="icon-facebook"></a>
-        <a href="#" class="icon-vkontakte"></a>
-        <a href="#" class="icon-instagram"></a>
+        <a href="https://vk.com/tmchildrensdream" target="_blank" class="icon-facebook"></a>
+        <a href="https://www.facebook.com/tmchildrensdream" target="_blank" class="icon-vkontakte"></a>
+        <a href="https://www.instagram.com/tm_childrens_dream" target="_blank" class="icon-instagram"></a>
         <div class="clear"></div>
       </div>
       <div class="clear"></div>

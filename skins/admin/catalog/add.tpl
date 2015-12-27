@@ -66,15 +66,18 @@
           <p>Гарантійний термін</p>
           <input type="number" step="1" min="0" name="garanty" value="<?=((isset($errors))? hsc($_POST['garanty']) : "")?>">
         </div>
-        <?/*
         <div class="input-value">
           <p>Короткий опис матрацу<span>*</span></p>
-          <textarea required name="text"><?php if(isset($errors)){ echo hsc($_POST['name']);} ?></textarea>
+          <textarea class="<?=((isset($errors['description']))? "errors" : "")?>" name="description"><?=((isset($errors))? hsc($_POST['description']) : "")?></textarea>
         </div>
         <div class="input-value">
           <p>Текст матрацу<span>*</span></p>
-          <textarea required name="text"><?php if(isset($errors)){ echo hsc($_POST['name']);} ?></textarea>
-        </div>*/?>
+          <textarea class="<?=((isset($errors['text']))? "errors" : "")?>" name="text"><?=((isset($errors))? hsc($_POST['text']) : "")?></textarea>
+        </div>
+        <div class="input-value">
+          <p>Фото анонсу</p>
+          <input type="file" name="anons_photo">
+        </div>
 
       </div>
       <input type="submit" value="Додати товар" name="ok">

@@ -254,16 +254,19 @@ div.top-menu ul li a.active span {
 .comment-item span {
   color: #8e8c8c;
 }
-.comment-item.grean {
+.comment-item.grean,
+.list-element.grean {
   background-color: rgba(19, 255, 0, 0.2);
 }
-.comment-item.red {
+.comment-item.red,
+.list-element.red {
   background-color: rgba(255, 0, 0, 0.09);
 }
 .comment-list form input[name='delete'],
 .comment-list form input[name='active'],
 .comment-list form input[name='deactive'],
-.comment-list form input[name='filter'] {
+.comment-list form input[name='filter'],
+.add-catalog {
   position: absolute;
   top: -30px;
   right: 0;
@@ -274,6 +277,11 @@ div.top-menu ul li a.active span {
   padding: 5px 15px;
   border: 0;
   background-color: #78ABFF;
+}
+.add-catalog {
+  left: 0;
+  width: 100px;
+  text-align: center;
 }
 .comment-list form input[name='active'] {
   right: 225px;
@@ -290,7 +298,8 @@ div.top-menu ul li a.active span {
 .comment-list form input[name='deactive'] {
   right: 100px;
 }
-.comment-list form input[type='submit']:hover {
+.comment-list form input[type='submit']:hover,
+.add-catalog:hover {
   background-color: #FFE30E;
   border-color: #FFE30E;
 }
@@ -433,4 +442,36 @@ div.catalog-style .input-value:after {
 }
 .errors {
   border-color: red !important;
+}
+div.catalog-style .input-value textarea {
+  height: 100px;
+}
+.list-element {
+  float: left;
+  width: 250px;
+  height: 300px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  margin-left: 5px;
+  border-radius: 3px;
+}
+div.list-element:nth-child(4n-3) {
+  margin-left: 0px;
+}
+.photo-anons + div,
+.photo-anons {
+  text-align: center;
+}
+.photo-anons + div a,
+.photo-anons + div p {
+  color: #482200;
+}
+.photo-anons + div a:hover {
+  text-decoration: underline;
+}
+.photo-anons + div p {
+  margin-top: 20px;
+}
+div.list-element input {
+  position: absolute;
 }
