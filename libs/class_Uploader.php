@@ -6,8 +6,9 @@ class Uploader {
 	static $filename = '';
 	static $tmp = array ('image/jpeg','image/gif','image/png');
 	static $tup = array ('jpg','gif','jpeg','png');
+	static $info = array();
 
-    static function upload($file,$width){
+    static function upload($file,$width, $directory, $del){
 		if($file['size'] < 500 || $file['size'] > 50000000) {
 			self::$error = 'Розмір файла нам не підходить';
 		} elseif(!in_array($file['type'],self::$tmp)){
@@ -18,16 +19,38 @@ class Uploader {
 				$matches[1] = mb_strtolower($matches[1]);
 				
 				$temp = getimagesize($file['tmp_name']);
-				
-				if($temp['mime'] == 'image/png'){
-			    	$name = '/uploaded/'.date('Ymd-His').'img'.rand(10000,99999).'.png';
-				} elseif($temp['mime'] == 'image/jpeg'){
-					$name = '/uploaded/'.date('Ymd-His').'img'.rand(10000,99999).'.jpeg';
-				} elseif($temp['mime'] == 'image/gif'){
-					$name = '/uploaded/'.date('Ymd-His').'img'.rand(10000,99999).'.gif';
+
+				if(file_exists('../uploaded/'.$directory) && $del == 'Y'){
+					$files_unset = glob('../uploaded/'.$directory."/*");
+					if (count($files_unset) > 0) {
+						foreach($files_unset as $obj) {
+							if(!is_dir($obj)){
+								unlink($obj);
+							}
+						}
+					}
+				} else {
+					mkdir('../uploaded/'.$directory); //створення окремої папки для товара папки
 				}
+
+				$namefile = date('Ymd-His').'img'.rand(10000,99999);
+
+				if($temp['mime'] == 'image/png'){
+					$namefile = date('YmdHis').'img'.rand(10000,99999).'.png';
+				} elseif($temp['mime'] == 'image/jpeg'){
+					$namefile = date('YmdHis').'img'.rand(10000,99999).'.jpeg';
+				} elseif($temp['mime'] == 'image/gif'){
+					$namefile = date('YmdHis').'img'.rand(10000,99999).'.gif';
+				}
+
+				$name = '/uploaded/'.$directory.'/'.$namefile;
+
 				self::$filename = $name;
-				
+
+				self::$info['name_dir']  = $directory;
+				self::$info['name_file'] = $namefile;
+				self::$info['file']      = $name;
+
 				if(!in_array($matches[1],self::$tup)){
 					self::$error = 'Не підходить розширення зображення';
 				} elseif(!in_array($temp['mime'],self::$tmp)){
@@ -38,11 +61,11 @@ class Uploader {
 					self::$error = 'Не підходить розмір зображення';
 				} elseif($temp[1] >= 10000 || $temp[0] >= 10000){
 					self::$error = 'Розширення у пікселях занадто велике';
-				}  elseif(!move_uploaded_file($file['tmp_name'],'.'.$name)){
+				}  elseif(!move_uploaded_file($file['tmp_name'],'..'.$name)){
 					self::$error = 'Зображення не загружено! Ошибка';
 				} else {
 					Uploader::resize($name,$width);
-					return 1;
+					return self::$info;
 				}
 			} else {
 				self::$error = 'Даний файл не є зображенням. Допускається тип файлів: jpeg,jpg,png,gif';
@@ -54,10 +77,10 @@ class Uploader {
 	static function resize($name,$width){
 
 		$temp = getimagesize($_SERVER['DOCUMENT_ROOT'].$name); // дістаєм дійсну ширину і висоту зображення
-	
+
 		$new_width = $width;//$dst_w - нова ширина зображення
 		$new_height = ($temp['1'] * $new_width)/$temp['0'];//$dst_h - нова висота зображення
-		
+
 		// Вісь x,y , переміщення вихідного картинки
 	  	$dst_x = 0;
 	  	$dst_y = 0;
@@ -89,7 +112,7 @@ class Uploader {
 			$src_image = imagecreatefromjpeg($_SERVER['DOCUMENT_ROOT'].$name);
 		  
 			imagecopyresampled($dst_image, $src_image, $dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h);
-			imagejpeg($dst_image,'.'.$name,100);
+			imagejpeg($dst_image,'..'.$name,100);
 			
 		} elseif($temp['mime'] == 'image/gif'){
 			$src_image = imagecreatefromgif($_SERVER['DOCUMENT_ROOT'].$name);

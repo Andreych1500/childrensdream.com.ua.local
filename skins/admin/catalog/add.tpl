@@ -1,4 +1,5 @@
 <div class="commentview add-shop">
+  <?php wtf($_FILES,1);?>
   <div class="comment-list">
     <form method="post" action="" enctype="multipart/form-data">
       <div class="edit-style catalog-style">
@@ -74,13 +75,22 @@
           <p>Текст матрацу<span>*</span></p>
           <textarea class="<?=((isset($errors['text']))? "errors" : "")?>" name="text"><?=((isset($errors))? hsc($_POST['text']) : "")?></textarea>
         </div>
-        <div class="input-value">
-          <p>Фото анонсу</p>
-          <input type="file" name="anons_photo">
+
+        <div class="upload_file" id="annons_photo">
+          <button type="button">Вибрати файл</button>
+          <div class="up_file_text"><?=((isset($errors))? (isset($anons_photo[2])? hsc($anons_photo[2]) : "Файл не вибраний") : "Файл не вибраний")?></div>
+          <input type="hidden" value="<?=((isset($errors))? hsc($_POST['anons_photo']) : "")?>" name="anons_photo">
+          <input type="hidden" value="<?=((isset($errors,$_POST['delete_last_photo']))? hsc($_POST['delete_last_photo']) : "")?>" name="del_anons">
         </div>
+
 
       </div>
       <input type="submit" value="Додати товар" name="ok">
+    </form>
+
+    <form id="to_file">
+      <input onchange="addPhoto(this,this.value)" rel_to_set="" type="file" name="photo">
+      <input type="hidden" name="del" value="Y">
     </form>
   </div>
 </div>

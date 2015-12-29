@@ -475,3 +475,10 @@ div.list-element:nth-child(4n-3) {
 div.list-element input {
   position: absolute;
 }
+.hidden {
+  display: none;
+}
+.submit-file {
+  position: relative;
+  left: 130px;
+}
