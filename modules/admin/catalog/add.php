@@ -42,15 +42,18 @@ if(isset($_POST['ok'],$_POST['name'],$_POST['seo_name'],$_POST['price'],$_POST['
 	$anons_photo = ((isset($_POST['anons_photo']))? explode('|',$_POST['anons_photo']) : '');
 	//end anons photo
 
+	//description_photo
+	$descrip_photo = ((isset($_POST['descrip_photo']))? explode('|',$_POST['descrip_photo']) : '');
+	//end description_photo
 
-
-	/*if(!count($errors)){
-		if($_FILES['file']['error'] == 0) {
-			if(Uploader::upload($_FILES['file'],$_POST['size']) != 1){	
-				$errors['file'] = Uploader::$error;
-			}
-    	}
-	}*/
+	//more_photos
+	if(isset($_POST['more_photos']) && count($_POST['more_photos']) >= 1){
+		foreach($_POST['more_photos'] as $key => $value){
+			$more_src[$key] = explode('|', $value);
+		}
+		$add_more_file = implode('#', $_POST['more_photos']);
+	}
+	//end more_photos
 		
 	if(!count($errors)){
 		q(" INSERT INTO `catalog` SET
@@ -68,6 +71,8 @@ if(isset($_POST['ok'],$_POST['name'],$_POST['seo_name'],$_POST['price'],$_POST['
 			`description`    = '".mres($_POST['description'])."',
 			`text`           = '".mres($_POST['text'])."',
 			`anons_photo`    = '".mres($anons_photo[0])."',
+			`descrip_photo`  = '".mres($descrip_photo[0])."',
+			`more_photos`    = '".mres($add_more_file)."',
 
 			`garanty`        = '".(int)$_POST['garanty']."',
 		    `availability`   = '".(int)$_POST['availability']."',

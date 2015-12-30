@@ -7,6 +7,8 @@ $(document).ready(function() {
         $('.top-menu li a[href="'+url+'"]').addClass('active');
     });
 
+
+    // translition no spec simvol
     $('.add-shop .input-value input[name="name"]').keyup(function() {
         $('.add-shop .input-value input[name="seo_name"]').val((translit($('.add-shop .input-value input[name="name"]').val()))
             .replace(/\s/g, '-')
@@ -18,24 +20,41 @@ $(document).ready(function() {
     });
 
 
-    // input click file
-    $('.upload_file button').unbind('click').click(function(){
-        var new_inp = $('#to_file').find('input[type="file"]');
+    //add more file
+    $('.add_more span').click(function(){
+        var last_index = $('.upload_file[id*="more_photos"]').last().attr('rel_id');
+        ++last_index; // створюєм нові id
 
-        /// інформація для видалення попереднього елемента
-        $(this).siblings('input[type="hidden"]').val($(this).siblings('input[type="hidden"]').val());
-        ///
+        var html_input_fyle = '<div class="input-value upload_file" rel_id="'+last_index+'" id="more_photos_'+last_index+'">' +
+            '<p></p><button type="button" onclick="clickOninput(this)">Вибрати файл</button><div class="up_file_text">Файл не вибраний</div>' +
+            '<input type="hidden" value="" name="more_photos[]"><input type="hidden" value="" name="del_more[]"></div>';
 
-        if($('input[name="seo_name"]').val().length > 5) {
-            $(new_inp).attr('rel_to_set', $(this).parents('.upload_file').attr('id')).trigger("click");
-        } else {
-            alert('Спочатку заповніть назву товару!')
-        }
+        $('.upload_file[id*="more_photos"]').last().after(html_input_fyle);
     });
+
 });
+
+function resetFile(control){
+    control.replaceWith( control = control.clone( true ) );
+}
 
 function okFrom(){
    return confirm('Ви підтверджуєте свою дію?');
+}
+
+function clickOninput(el){
+    // input click file
+    var new_inp = $('#to_file').find('input[type="file"]');
+
+    /// інформація для видалення попереднього елемента
+    $(el).siblings('input[type="hidden"]').val($(el).siblings('input[type="hidden"]').val());
+    ///
+
+    if($('input[name="seo_name"]').val().length > 5) {
+        $(new_inp).attr('rel_to_set', $(el).parents('.upload_file').attr('id')).trigger("click");
+    } else {
+        alert('Спочатку заповніть назву товару!')
+    }
 }
 
 function addPhoto(el,stringValue){
@@ -66,6 +85,8 @@ function addPhoto(el,stringValue){
                         var name_file = res[0].name_file;
                         $(rel_to_set).find('.up_file_text + input[type="hidden"]').attr('value', res[0].file + '|' + res[0].name_dir + '|' + res[0].name_file);
                         $(rel_to_set).find('.up_file_text').text(name_file);
+
+                        resetFile($("#control")); //reset file input
                     }
 
                     // в разі відміни додавання товару при першому заливані фоток, ми очищуємо папку якщо вона існує 1 раз

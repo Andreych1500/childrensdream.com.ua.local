@@ -78,43 +78,53 @@
 
         <div class="input-value upload_file" id="annons_photo">
           <p>Фото для анонсу</p>
-          <button type="button">Вибрати файл</button>
+          <button type="button" onclick="clickOninput(this)">Вибрати файл</button>
           <div class="up_file_text"><?=((isset($errors))? (isset($anons_photo[2])? hsc($anons_photo[2]) : "Файл не вибраний") : "Файл не вибраний")?></div>
           <input type="hidden" value="<?=((isset($errors))? hsc($_POST['anons_photo']) : "")?>" name="anons_photo">
-          <input type="hidden" value="<?=((isset($errors,$_POST['delete_last_photo']))? hsc($_POST['delete_last_photo']) : "")?>" name="del_anons">
+          <input type="hidden" value="<?=((isset($errors,$_POST['del_anons']))? hsc($_POST['del_anons']) : "")?>" name="del_anons">
         </div>
 
+        <div class="input-value upload_file" id="descrip_photo">
+          <p>Фото для опису</p>
+          <button type="button" onclick="clickOninput(this)">Вибрати файл</button>
+          <div class="up_file_text"><?=((isset($errors))? (isset($descrip_photo[2])? hsc($descrip_photo[2]) : "Файл не вибраний") : "Файл не вибраний")?></div>
+          <input type="hidden" value="<?=((isset($errors))? hsc($_POST['descrip_photo']) : "")?>" name="descrip_photo">
+          <input type="hidden" value="<?=((isset($errors,$_POST['delete_last_photo']))? hsc($_POST['delete_last_photo']) : "")?>" name="del_descrip">
+        </div>
 
+        <div class="input-value upload_file" rel_id="0" id="more_photos_0">
+          <p>Додаткові зображення</p>
+          <button type="button" onclick="clickOninput(this)">Вибрати файл</button>
+          <div class="up_file_text"><?=((isset($errors))? (isset($more_src[0][2])? hsc($more_src[0][2]) : "Файл не вибраний") : "Файл не вибраний")?></div>
+          <input type="hidden" value="<?=((isset($errors))? hsc($_POST['more_photos'][0]) : "")?>" name="more_photos[]">
+          <input type="hidden" value="<?=((isset($errors,$_POST['delete_last_photo']))? hsc($_POST['delete_last_photo']) : "")?>" name="del_more[]">
+        </div>
+
+        <?php if(isset($more_src) && count($more_src) > 1) {
+          foreach ($more_src as $key => $file) {
+              if($key == 0){ continue; }  ?>
+            <div class="input-value upload_file" rel_id="<?=$key?>" id="more_photos_<?=$key?>">
+              <p></p>
+              <button type="button" onclick="clickOninput(this)">Вибрати файл</button>
+              <div class="up_file_text"><?=((isset($errors))? (isset($more_src[$key])? hsc($file[2]) : "Файл не вибраний") : "Файл не вибраний")?></div>
+              <input type="hidden" value="<?=((isset($errors))? hsc($_POST['more_photos'][$key]) : "")?>" name="more_photos[]">
+              <input type="hidden" value="<?=((isset($errors,$_POST['delete_last_photo']))? hsc($_POST['delete_last_photo']) : "")?>" name="del_more[]">
+            </div>
+          <? }
+        }
+        ?>
+
+        <div class="add_more">
+          <span>Добавити ще</span>
+        </div>
       </div>
       <input type="submit" value="Додати товар" name="ok">
     </form>
 
     <form id="to_file">
-      <input onchange="addPhoto(this,this.value)" rel_to_set="" type="file" name="photo">
+      <input onchange="addPhoto(this,this.value)" rel_to_set="" type="file" name="photo" id="control">
       <input type="hidden" name="del" value="<?=((isset($errors))? "N" : "Y")?>">
+      <p id="clears">Clear</p>
     </form>
   </div>
 </div>
-
-<?/*
-<span class="style7">Ім'я товару *:</span><br>
-<textarea name="name"><?php if(isset($errors)){ echo hsc($_POST['name']);} ?></textarea>
-<?php echo '<span class="color7">'.@$errors['name'].'<span>'; ?>
-
-<span class="style7">Код товару *:</span><br>
-<input type="text" name="cod" value="<?php if(isset($errors)){ echo hsc($_POST['cod']);} ?>">
-<?php echo '<span class="color7">'.@$errors['cod'].'<span>'; ?>
-
-<span class="style7">Зображення *:</span><br>
-<input type="file" name="file">
-<?php echo '<span class="color7">'.@$errors['file'].'<span>'; ?>
-
-<select name="cat">
-  <?php foreach(Core::$LOGIC as $k=>$v){ ?>
-    <option value="<?php echo $v;?>" <?php if(isset($errors) && $_POST['cat'] == $v){ echo 'selected="selected"';} ?>>
-      <?php echo $v; ?>
-    </option>
-  <?php } ?>
-</select>
-<?php echo '<span class="color7">'.@$errors['cat'].'<span>';?>
-*/?>

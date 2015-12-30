@@ -372,7 +372,8 @@ div.top-menu ul li a.active span {
 }
 .edit-style input[type="submit"],
 div.catalog-style + input[type="submit"],
-.upload_file button {
+.upload_file button,
+.add_more span {
   border: 0;
   outline: none;
   cursor: pointer;
@@ -382,15 +383,21 @@ div.catalog-style + input[type="submit"],
   font-size: 13pt;
   color: #fff;
 }
-div.upload_file button {
-  left: 66px;
-  position: relative;
+div.upload_file button,
+div.add_more span {
+  left: 180px;
+  position: absolute;
   padding: 5px 15px;
   float: left;
 }
+div.add_more span {
+  padding: 0px 15px;
+  left: 201px;
+}
 div.edit-style input[type="submit"]:hover,
 div.catalog-style + input[type="submit"]:hover,
-.upload_file button:hover {
+.upload_file button:hover,
+div.add_more span:hover {
   background-color: #c935bd;
 }
 div.catalog-style + input[type="submit"] {
@@ -435,19 +442,23 @@ div.catalog-style .input-value input:hover,
 div.catalog-style .input-value textarea:hover {
   border-color: #78ABFF;
 }
-div.catalog-style .input-value {
+div.catalog-style .input-value,
+div.add_more {
   height: auto;
   min-height: 27px;
 }
 .clearfix:before,
 .clearfix:after,
 div.catalog-style .input-value:before,
-div.catalog-style .input-value:after {
+div.catalog-style .input-value:after,
+div.add_more:before,
+div.add_more:after {
   content: " ";
   display: table;
 }
 .clearfix:after,
-div.catalog-style .input-value:after {
+div.catalog-style .input-value:after,
+div.add_more:after {
   clear: both;
 }
 .errors {
@@ -490,12 +501,12 @@ div.list-element input {
   display: none;
 }
 .submit-file {
-  position: relative;
-  left: 130px;
+  position: absolute;
+  left: 180px;
 }
 .up_file_text {
   float: left;
-  left: 70px;
+  left: 335px;
   top: 8px;
-  position: relative;
+  position: absolute;
 }
