@@ -76,7 +76,8 @@
           <textarea class="<?=((isset($errors['text']))? "errors" : "")?>" name="text"><?=((isset($errors))? hsc($_POST['text']) : "")?></textarea>
         </div>
 
-        <div class="upload_file" id="annons_photo">
+        <div class="input-value upload_file" id="annons_photo">
+          <p>Фото для анонсу</p>
           <button type="button">Вибрати файл</button>
           <div class="up_file_text"><?=((isset($errors))? (isset($anons_photo[2])? hsc($anons_photo[2]) : "Файл не вибраний") : "Файл не вибраний")?></div>
           <input type="hidden" value="<?=((isset($errors))? hsc($_POST['anons_photo']) : "")?>" name="anons_photo">
@@ -90,7 +91,7 @@
 
     <form id="to_file">
       <input onchange="addPhoto(this,this.value)" rel_to_set="" type="file" name="photo">
-      <input type="hidden" name="del" value="Y">
+      <input type="hidden" name="del" value="<?=((isset($errors))? "N" : "Y")?>">
     </form>
   </div>
 </div>

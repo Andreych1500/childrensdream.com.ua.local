@@ -4,7 +4,19 @@ if(isset($_POST['delete']) && isset($_POST['ids'])){
     foreach($_POST['ids'] as $k=>$v){
         $_POST['ids'][$k] = (int)$v;
     }
+
     $ids = implode(',',$_POST['ids']);
+
+    $delete_dir = q("
+        SELECT `seo_name`
+        FROM `catalog`
+        WHERE `id` IN (".$ids.")
+    ");
+
+
+    while($row =  $delete_dir->fetch_assoc()){
+        removeDirectory('./uploaded/'.$row['seo_name']);
+    }
 
     q(" DELETE FROM `catalog`
 		WHERE `id` IN (".$ids.")

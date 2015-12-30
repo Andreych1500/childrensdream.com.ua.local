@@ -30,7 +30,9 @@ class Uploader {
 						}
 					}
 				} else {
-					mkdir('../uploaded/'.$directory); //створення окремої папки для товара папки
+					if(!file_exists('../uploaded/'.$directory)){
+						mkdir('../uploaded/' . $directory); //створення окремої папки для товара папки
+					}
 				}
 
 				$namefile = date('Ymd-His').'img'.rand(10000,99999);

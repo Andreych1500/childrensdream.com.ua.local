@@ -95,3 +95,13 @@ function myHash($var){
 	return $var;
 }
 
+
+// видалення папки
+function removeDirectory($dir) {
+	if ($objs = glob($dir."/*")) {
+		foreach($objs as $obj) {
+			is_dir($obj) ? removeDirectory($obj) : unlink($obj);
+		}
+	}
+	rmdir($dir);
+}

@@ -39,17 +39,11 @@ if(isset($_POST['ok'],$_POST['name'],$_POST['seo_name'],$_POST['price'],$_POST['
 
 
 	//anons photo
-	if(isset($_POST['anons_photo'])) {
-		$anons_photo = explode('|',$_POST['anons_photo']);
-	}
+	$anons_photo = ((isset($_POST['anons_photo']))? explode('|',$_POST['anons_photo']) : '');
 	//end anons photo
 
 
-	/*if(isset($_FILES['anons_photo'])){
-		if(isset($errors)){
-			$_FILES['anons_photo']['name'] = 'aa';
-		}
-	}*/
+
 	/*if(!count($errors)){
 		if($_FILES['file']['error'] == 0) {
 			if(Uploader::upload($_FILES['file'],$_POST['size']) != 1){	
@@ -73,6 +67,7 @@ if(isset($_POST['ok'],$_POST['name'],$_POST['seo_name'],$_POST['price'],$_POST['
 			`ortopeding`     = '".(int)$_POST['ortopeding']."',
 			`description`    = '".mres($_POST['description'])."',
 			`text`           = '".mres($_POST['text'])."',
+			`anons_photo`    = '".mres($anons_photo[0])."',
 
 			`garanty`        = '".(int)$_POST['garanty']."',
 		    `availability`   = '".(int)$_POST['availability']."',

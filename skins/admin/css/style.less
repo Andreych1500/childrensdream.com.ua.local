@@ -362,7 +362,7 @@ height: 350px;
 border: 1px solid #ccc;
 background: rgba(236, 236, 236, 0.31);
 }
-.input-value{
+.input-value, .upload_file{
 margin:20px;
 position:relative;
 }
@@ -396,14 +396,17 @@ left: 400px;
 top: 0;
 color: red;
 }
-.input-value p:nth-child(1){
+.input-value p:nth-child(1),
+.upload_file p:nth-child(1)
+{
 color:#482200;
 }
 .input-value p:nth-child(1) span {
 color: #9e0000;
 }
 .edit-style input[type="submit"],
-div.catalog-style + input[type="submit"]{
+div.catalog-style + input[type="submit"],
+.upload_file button{
 border: 0;
 outline: none;
 cursor: pointer;
@@ -414,8 +417,16 @@ font-size: 13pt;
 color: #fff;
 }
 
+div.upload_file button {
+left: 66px;
+position: relative;
+padding: 5px 15px;
+float:left;
+}
+
 div.edit-style input[type="submit"]:hover,
-div.catalog-style + input[type="submit"]:hover{
+div.catalog-style + input[type="submit"]:hover,
+.upload_file button:hover{
 background-color: #c935bd;
 }
 
@@ -479,11 +490,11 @@ min-height: 27px;
 .clearfix {
 &:before,
 &:after {
-  content: " ";
-  display: table;
+content: " ";
+display: table;
 }
 &:after {
-  clear: both;
+clear: both;
 }
 }
 
@@ -498,7 +509,7 @@ height:100px;
 .list-element{
 float: left;
 width: 250px;
-height: 300px;
+height: 350px;
 margin-top: 20px;
 border: 1px solid #ccc;
 margin-left:5px;
@@ -512,6 +523,7 @@ margin-left:0px;
 .photo-anons + div,
 .photo-anons{
 text-align:center;
+padding-top: 10px;
 }
 
 .photo-anons + div a,
@@ -538,4 +550,11 @@ display:none;
 .submit-file{
 position: relative;
 left: 130px;
+}
+
+.up_file_text{
+float: left;
+left: 70px;
+top: 8px;
+position: relative;
 }

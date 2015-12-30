@@ -265,3 +265,15 @@ line: 77
 date: 2015-12-27 23:30:11
 ===================================
 
+QUERY:
+	SELECT *
+	FROM `products`
+	WHERE `id` = 10
+	LIMIT 1	
+
+Table 'childrens.products' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\catalog\edit.php
+line: 77
+date: 2015-12-30 02:12:10
+===================================
+

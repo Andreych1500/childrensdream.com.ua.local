@@ -8,7 +8,7 @@
                <div class="list-element <?=(($row['active'] == 0)? "red" : "grean")?>">
                    <input type="checkbox" name="ids[]" value="<?=(int)$row['id']?>">
                    <div class="photo-anons">
-                       <a href="/admin/catalog/edit/<?=(int)$row["id"]?>"><img src="<?=((empty($ros['anons_photo']))? Core::$NON_PHOTO : hsc($ros['anons_photo']))?>" alt="Childrens-dream" title="Childrens-dream"></a>
+                       <a href="/admin/catalog/edit/<?=(int)$row["id"]?>"><img src="<?=((empty($row['anons_photo']))? Core::$NON_PHOTO : hsc($row['anons_photo']))?>" alt="Childrens-dream" title="Childrens-dream"></a>
                    </div>
                    <div>
                        <a href="/admin/catalog/edit/<?=(int)$row["id"]?>"><?=hsc($row["name"])?></a>
