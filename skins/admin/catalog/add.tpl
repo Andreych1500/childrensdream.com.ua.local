@@ -1,5 +1,4 @@
 <div class="commentview add-shop">
-  <?php wtf($_FILES,1);?>
   <div class="comment-list">
     <form method="post" action="" enctype="multipart/form-data">
       <div class="edit-style catalog-style">

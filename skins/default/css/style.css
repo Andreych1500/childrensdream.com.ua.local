@@ -87,6 +87,17 @@ html,
 .soc-link a {
   display: block;
 }
+.top-menu ul li.active:after {
+  zoom: 1;
+  filter: alpha(opacity=100);
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+.pushy .active a {
+  background: #00b4ff;
+  color: #FFF;
+}
 html {
   min-height: 100%;
 }
@@ -224,7 +235,7 @@ header .item .langs a:nth-child(2) {
   right: 0;
 }
 #container {
-  right: 120px;
+  right: 110px;
 }
 #container,
 .mobile-basket,
@@ -674,7 +685,6 @@ div.prev-slide {
 }
 .form-call .limit {
   position: relative;
-  text-align: left;
   color: #482200;
   font-size: 17pt;
   bottom: -15px;

@@ -120,6 +120,15 @@ div, p, a, span, ul, li, table, tr, td, header, html, .slide-list, .slide-wrap {
   display:block;
 }
 
+.top-menu ul li.active:after{
+  .opacity(1);
+}
+
+.pushy .active a{
+background: #00b4ff;
+color: #FFF;
+}
+
 html{
   min-height: 100%;
 }
@@ -246,7 +255,7 @@ header .item {
 }
 
 #container{
-  right:120px;
+  right:110px;
 }
 
 #container, .mobile-basket, .pushy{
@@ -695,7 +704,6 @@ div.prev-slide{
 
   .limit{
     position: relative;
-    text-align: left;
     color: #482200;
     font-size: 17pt;
     bottom: -15px;

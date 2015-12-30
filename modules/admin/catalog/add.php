@@ -1,7 +1,5 @@
 <?php
 // Добавлення товару
-wtf($_POST,1);
-
 if(isset($_POST['ok'],$_POST['name'],$_POST['seo_name'],$_POST['price'],$_POST['text'])){
 	$_POST = trimAll($_POST);
 	$errors = array();
