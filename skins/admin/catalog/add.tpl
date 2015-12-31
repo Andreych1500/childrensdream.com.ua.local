@@ -105,7 +105,7 @@
             <div class="input-value upload_file" rel_id="<?=$key?>" id="more_photos_<?=$key?>">
               <p></p>
               <button type="button" onclick="clickOninput(this)">Вибрати файл</button>
-              <div class="up_file_text"><?=((isset($errors))? (isset($more_src[$key])? hsc($file[2]) : "Файл не вибраний") : "Файл не вибраний")?></div>
+              <div class="up_file_text"><?=((isset($errors))? ((isset($more_src[$key]) && count($file) > 1)? hsc($file[2]) : "Файл не вибраний") : "Файл не вибраний")?></div>
               <input type="hidden" value="<?=((isset($errors))? hsc($_POST['more_photos'][$key]) : "")?>" name="more_photos[]">
               <input type="hidden" value="<?=((isset($errors,$_POST['delete_last_photo']))? hsc($_POST['delete_last_photo']) : "")?>" name="del_more[]">
             </div>

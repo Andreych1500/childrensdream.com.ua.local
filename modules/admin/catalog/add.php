@@ -49,10 +49,16 @@ if(isset($_POST['ok'],$_POST['name'],$_POST['seo_name'],$_POST['price'],$_POST['
 		foreach($_POST['more_photos'] as $key => $value){
 			$more_src[$key] = explode('|', $value);
 		}
-		$add_more_file = implode('#', $_POST['more_photos']);
+		foreach($_POST['more_photos'] as $key => $to_more){
+			if(empty($to_more)){ continue; }
+			$ar_more[$key] = $to_more;
+ 		}
+		if(isset($ar_more)) {
+			$add_more_file = implode('#', $ar_more);
+		}
 	}
 	//end more_photos
-		
+
 	if(!count($errors)){
 		q(" INSERT INTO `catalog` SET
 		    `name`           = '".mres($_POST['name'])."',
