@@ -1,9 +1,9 @@
-<?php
-// Добавлення товару
+<?php 
+// редагування товара
 if(isset($_POST['ok'],$_POST['name'],$_POST['seo_name'],$_POST['price'],$_POST['text'],$_POST['description'])){
 	$_POST = trimAll($_POST);
 	$errors = array();
-	
+
 	if(empty($_POST['name'])){
 		$errors['name'] = 'errors';
 	}
@@ -40,9 +40,11 @@ if(isset($_POST['ok'],$_POST['name'],$_POST['seo_name'],$_POST['price'],$_POST['
 	$anons_photo = ((isset($_POST['anons_photo']))? explode('|',$_POST['anons_photo']) : '');
 	//end anons photo
 
+
 	//description_photo
 	$descrip_photo = ((isset($_POST['descrip_photo']))? explode('|',$_POST['descrip_photo']) : '');
 	//end description_photo
+
 
 	//more_photos
 	if(isset($_POST['more_photos']) && count($_POST['more_photos']) >= 1){
@@ -52,7 +54,7 @@ if(isset($_POST['ok'],$_POST['name'],$_POST['seo_name'],$_POST['price'],$_POST['
 		foreach($_POST['more_photos'] as $key => $to_more){
 			if(empty($to_more)){ continue; }
 			$ar_more[$key] = $to_more;
- 		}
+		}
 		if(isset($ar_more)) {
 			$add_more_file = implode('#', $ar_more);
 		} else {
@@ -61,13 +63,12 @@ if(isset($_POST['ok'],$_POST['name'],$_POST['seo_name'],$_POST['price'],$_POST['
 	}
 	//end more_photos
 
-
 	if(!count($errors)){
-		q(" INSERT INTO `catalog` SET
-		    `name`           = '".mres($_POST['name'])."',
-		    `seo_name`       = '".mres($_POST['seo_name'])."',
-		    `price`          = '".(int)$_POST['price']."',
-		    `form`           = '".mres($_POST['form'])."',
+		q(" UPDATE `catalog` SET
+			`name` = '".mres($_POST['name'])."',
+			`seo_name`       = '".mres($_POST['seo_name'])."',
+			`price`          = '".(int)$_POST['price']."',
+			`form`           = '".mres($_POST['form'])."',
 			`type`           = '".mres($_POST['type'])."',
 			`size`           = '".mres($_POST['size'])."',
 			`weight`         = '".(int)$_POST['weight']."',
@@ -82,12 +83,58 @@ if(isset($_POST['ok'],$_POST['name'],$_POST['seo_name'],$_POST['price'],$_POST['
 			`more_photos`    = '".mres($add_more_file)."',
 
 			`garanty`        = '".(int)$_POST['garanty']."',
-		    `availability`   = '".(int)$_POST['availability']."',
-			`date`           = NOW()
+		    `availability`   = '".(int)$_POST['availability']."'
+			 WHERE `id`    = ".(int)$_GET['key2']."
 		");
-		
-		$_SESSION['info']= 'Товар успішно доданий!';
-		header("Location: /admin/catalog/");
+		$_SESSION['info'] = 'Зміни  провели успішно!';
+		header("Location: /admin/catalog");
 		exit();
 	}
+
 }
+
+// перевірка чи товар існує
+$products = q("
+	SELECT *
+	FROM `catalog`
+	WHERE `id` = ".(int)$_GET['key2']."
+	LIMIT 1	
+");
+
+if(!$products->num_rows){
+	$_SESSION['info'] = 'Товара неіснує!';
+	header("Location: /admin/catalog");
+	exit();
+}
+
+$row = $products->fetch_assoc();
+
+
+// arRow[more_photos]
+if(!empty($row['more_photos'])){
+	if(isset($_POST['more_photos']) > 0 && count($_POST['more_photos']) > 0){
+		foreach ($_POST['more_photos'] as $key => $val) {
+			$more_photos[$key] = explode('|', $val);
+			$more_photos[$key][3] = $val;
+		}
+	} else {
+		$more_photos = explode('#', $row['more_photos']);
+
+		foreach ($more_photos as $key => $val) {
+			$more_photos[$key] = explode('|', $val);
+			$more_photos[$key][3] = $val;
+		}
+	}
+}
+// end arRow[more_photos]
+
+
+
+
+
+
+
+
+
+
+

@@ -81,6 +81,7 @@
           <div class="up_file_text"><?=((isset($errors))? (isset($anons_photo[2])? hsc($anons_photo[2]) : "Файл не вибраний") : "Файл не вибраний")?></div>
           <input type="hidden" value="<?=((isset($errors))? hsc($_POST['anons_photo']) : "")?>" name="anons_photo">
           <input type="hidden" value="<?=((isset($errors,$_POST['del_anons']))? hsc($_POST['del_anons']) : "")?>" name="del_anons">
+          <div class="photos <?=((!empty($_POST['anons_photo']))? '' : "hidden")?>"><img src="<?=((!empty($_POST['anons_photo']))? hsc($anons_photo[0]) : '')?>"></div>
         </div>
 
         <div class="input-value upload_file" id="descrip_photo">
@@ -89,6 +90,7 @@
           <div class="up_file_text"><?=((isset($errors))? (isset($descrip_photo[2])? hsc($descrip_photo[2]) : "Файл не вибраний") : "Файл не вибраний")?></div>
           <input type="hidden" value="<?=((isset($errors))? hsc($_POST['descrip_photo']) : "")?>" name="descrip_photo">
           <input type="hidden" value="<?=((isset($errors,$_POST['delete_last_photo']))? hsc($_POST['delete_last_photo']) : "")?>" name="del_descrip">
+          <div class="photos <?=((!empty($_POST['descrip_photo']))? '' : "hidden")?>"><img src="<?=((!empty($_POST['descrip_photo']))? hsc($descrip_photo[0]) : '')?>"></div>
         </div>
 
         <div class="input-value upload_file" rel_id="0" id="more_photos_0">
@@ -97,6 +99,7 @@
           <div class="up_file_text"><?=((isset($errors))? (isset($more_src[0][2])? hsc($more_src[0][2]) : "Файл не вибраний") : "Файл не вибраний")?></div>
           <input type="hidden" value="<?=((isset($errors))? hsc($_POST['more_photos'][0]) : "")?>" name="more_photos[]">
           <input type="hidden" value="<?=((isset($errors,$_POST['delete_last_photo']))? hsc($_POST['delete_last_photo']) : "")?>" name="del_more[]">
+          <div class="photos <?=((!empty($_POST['more_photos'][0]))? '' : "hidden")?>"><img src="<?=((!empty($_POST['more_photos'][0]))? hsc($more_src[0][0]) : '')?>"></div>
         </div>
 
         <?php if(isset($more_src) && count($more_src) > 1) {
@@ -108,6 +111,7 @@
               <div class="up_file_text"><?=((isset($errors))? ((isset($more_src[$key]) && count($file) > 1)? hsc($file[2]) : "Файл не вибраний") : "Файл не вибраний")?></div>
               <input type="hidden" value="<?=((isset($errors))? hsc($_POST['more_photos'][$key]) : "")?>" name="more_photos[]">
               <input type="hidden" value="<?=((isset($errors,$_POST['delete_last_photo']))? hsc($_POST['delete_last_photo']) : "")?>" name="del_more[]">
+              <div class="photos <?=((!empty($more_src[$key][0]))? '' : "hidden")?>"><img src="<?=((!empty($_POST['more_photos'][$key]))? hsc($more_src[$key][0]) : '')?>"></div>
             </div>
           <? }
         }
@@ -123,6 +127,7 @@
     <form id="to_file">
       <input onchange="addPhoto(this,this.value)" rel_to_set="" type="file" name="photo" id="control">
       <input type="hidden" name="del" value="<?=((isset($errors))? "N" : "Y")?>">
+      <input type="hidden" name="update" value="Y">
       <p id="clears">Clear</p>
     </form>
   </div>

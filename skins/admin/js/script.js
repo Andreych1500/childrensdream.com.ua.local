@@ -27,7 +27,8 @@ $(document).ready(function() {
 
         var html_input_fyle = '<div class="input-value upload_file" rel_id="'+last_index+'" id="more_photos_'+last_index+'">' +
             '<p></p><button type="button" onclick="clickOninput(this)">Вибрати файл</button><div class="up_file_text">Файл не вибраний</div>' +
-            '<input type="hidden" value="" name="more_photos[]"><input type="hidden" value="" name="del_more[]"></div>';
+            '<input type="hidden" value="" name="more_photos[]"><input type="hidden" value="" name="del_more[]">' +
+            '<div class="photos hidden"><img src=""></div></div>';
 
         $('.upload_file[id*="more_photos"]').last().after(html_input_fyle);
     });
@@ -64,6 +65,10 @@ function addPhoto(el,stringValue){
         files.append("directory", dir_name);
         files.append("del", $('#to_file input[name="del"]').val());
 
+       if($('input[name="update"]').length > 0){
+           files.append("update", $('#to_file input[name="update"]').val());
+       }
+
         var rel_to_set="#"+$(el).attr('rel_to_set');
 
         $.ajax({
@@ -81,16 +86,28 @@ function addPhoto(el,stringValue){
                 } else {
                     if (res.error !== undefined) {
                         $(rel_to_set).find('.up_file_text').text('Загружайте лише фото!');
+                        $(rel_to_set).find('.up_file_text + input').val('');
                     } else {
                         var name_file = res[0].name_file;
                         $(rel_to_set).find('.up_file_text + input[type="hidden"]').attr('value', res[0].file + '|' + res[0].name_dir + '|' + res[0].name_file);
                         $(rel_to_set).find('.up_file_text').text(name_file);
-
-                        resetFile($("#control")); //reset file input
                     }
+
+                    resetFile($("#control")); //reset file input
 
                     // в разі відміни додавання товару при першому заливані фоток, ми очищуємо папку якщо вона існує 1 раз
                     $('#to_file input[name="del"]').val('N');
+                    //
+
+                    // заміна зображення у редагувані товару
+                    if($('input[name="update"]').length > 0){
+                        if(res.error === undefined){
+                            $(rel_to_set).find('.photos').removeClass('hidden');
+                            $(rel_to_set).find('.photos img').attr('src', res[0].file)
+                        } else {
+                            $(rel_to_set).find('.photos').addClass('hidden');
+                        }
+                    }
                     //
 
                     // delete_file
