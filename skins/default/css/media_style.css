@@ -153,7 +153,7 @@
 
     .catalog .el-item {
         width: 43%;
-        margin: 0 0 50px 6%;
+        margin: 0 0 35px 6%;
     }
 
     .catalog .el-item:nth-child(3n-2){

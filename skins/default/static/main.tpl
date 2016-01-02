@@ -65,23 +65,17 @@
       while($el = $catalog->fetch_assoc()){ ?>
         <div class="el-item">
           <div class="photos">
-            <a href=""><img src="<?=hsc($el['anons_photo'])?>" alt="Childreans-dream" title="Childreans-dream"></a>
+            <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><img src="<?=hsc($el['anons_photo'])?>" alt="Childreans-dream" title="Childreans-dream"></a>
           </div>
           <div class="desk-info">
-            <a href=""><span><?=hsc($el['name'])?></span></a>
+            <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><span><?=hsc($el['name'])?></span></a>
             <p><?=hsc($el['price'])?> <?=$mess['PRICE'];?></p>
             <p class="aviability">
-              <?php if((int)$el['availability'] == 1){ ?>
-              <span class="icon-check-ok"></span>
-              <span><?=$mess['AVIABILITY']?></span>
-              <?php } else { ?>
-              <span class="icon-cross"></span>
-              <span><?=$mess['NOAVIABILITY']?></span>
-              <?php } ?>
+              <span class="<?=(((int)$el['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
+              <span><?=(((int)$el['availability'] == 1)? $mess['AVIABILITY'] : $mess['NOAVIABILITY'])?></span>
             </p>
           </div>
         </div>
-        <?php //wtf($el,1)?>
     <?php
       }
      } else { ?>

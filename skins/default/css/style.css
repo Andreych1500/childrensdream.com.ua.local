@@ -16,7 +16,9 @@
   text-shadow: none;
   background-color: #2A8CFD;
 }
-.staticText {
+.staticText,
+.catalog .hText,
+.call-me .hText {
   -ms-user-select: none;
 }
 .clear {
@@ -703,6 +705,9 @@ div.prev-slide {
 .form-call .this-ok {
   font-size: 20pt;
 }
+.catalog {
+  margin-top: 20px;
+}
 .catalog .no-element {
   color: #482200;
   font-family: ComicSansMS;
@@ -713,10 +718,22 @@ div.prev-slide {
 }
 .catalog .el-item {
   max-width: 245px;
+  min-height: 305px;
   width: 100%;
   height: auto;
   float: left;
-  margin: 0 10px 40px 0;
+  margin: 0 10px 35px 0;
+}
+.catalog .el-item:hover .photos img {
+  bottom: 5px;
+  position: relative;
+  -webkit-transition: bottom 0.7s ease-out;
+  -moz-transition: bottom 0.7s ease-out;
+  -o-transition: bottom 0.7s ease-out;
+  transition: bottom 0.7s ease-out;
+}
+.catalog .el-item:hover .desk-info a {
+  text-decoration: underline;
 }
 .catalog .el-item .photos,
 .catalog .el-item .desk-info {
@@ -731,7 +748,18 @@ div.prev-slide {
 }
 .catalog .el-item .photos a {
   padding-bottom: 5px;
-  border-bottom: 1px solid;
+  border-bottom: 1px solid #a12a97;
+}
+.catalog .el-item .photos a img {
+  bottom: -15px;
+  position: relative;
+  -webkit-transition: bottom 0.7s ease-out;
+  -moz-transition: bottom 0.7s ease-out;
+  -o-transition: bottom 0.7s ease-out;
+  transition: bottom 0.7s ease-out;
+}
+.catalog .el-item .photos a:active {
+  color: #a12a97;
 }
 .catalog .el-item .desk-info {
   width: 100%;

@@ -81,7 +81,9 @@
   background-color: #2A8CFD;
 }
 
-.staticText{
+.staticText,
+.catalog .hText,
+.call-me .hText{
   -ms-user-select: none;
 }
 
@@ -725,6 +727,8 @@ div.prev-slide{
 
 //catalog
 .catalog {
+  margin-top: 20px;
+
   .no-element {
     text-align: center;
     color: #482200;
@@ -737,10 +741,24 @@ div.prev-slide{
 
   .el-item {
     max-width: 245px;
+    min-height: 305px;
     width: 100%;
     height: auto;
     float: left;
-    margin: 0 10px 40px 0;
+    margin: 0 10px 35px 0;
+
+
+    &:hover{
+      .photos img{
+        bottom: 5px;
+        position: relative;
+        .transition(bottom 0.7s ease-out);
+      }
+
+      .desk-info a{
+        text-decoration: underline;
+      }
+    }
 
     .photos, .desk-info{
       text-align: center;
@@ -753,7 +771,17 @@ div.prev-slide{
       width: 100%;
       a{
         padding-bottom: 5px;
-        border-bottom:1px solid;
+        border-bottom:1px solid @color-sumbit;
+
+        img{
+          bottom:-15px;
+          position:relative;
+          .transition(bottom 0.7s ease-out);
+        }
+
+        &:active{
+          color:@color-sumbit;
+        }
       }
     }
 
