@@ -1,14 +1,1 @@
-﻿QUERY: UPDATE `catalog` SET
-			`name` = 'ss'
-			`seo_name`       = 'ss',
-
-			 WHERE `id`    = 21
-		
-You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`seo_name`       = 'ss',
-
-			 WHERE `id`    = 21' at line 3
-file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\catalog\edit.php
-line: 20
-date: 2016-01-01 14:09:32
-===================================
-
+﻿

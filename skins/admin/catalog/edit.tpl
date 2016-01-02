@@ -78,7 +78,7 @@
         <div class="input-value upload_file" id="annons_photo">
           <p>Фото для анонсу</p>
           <button type="button" onclick="clickOninput(this)">Вибрати файл</button>
-          <div class="up_file_text"><?=((isset($errors))? (!empty($anons_photo[0])? hsc($anons_photo[0]) : "Файл не вибраний") : ((empty($row['anons_photo']))? ((isset($_POST['anons_photo']))? '2' : 'Файл не вибраний') : hsc($row['anons_photo'])))?></div>
+          <div class="up_file_text"><?=((isset($errors))? (!empty($anons_photo[0])? hsc($anons_photo[0]).'123' : "Файл не вибраний") : ((empty($row['anons_photo']))? ((isset($_POST['anons_photo']))? '' : 'Файл не вибраний') : hsc($row['anons_photo']).'22'))?></div>
           <input type="hidden" value="<?=((isset($errors))? hsc($_POST['anons_photo']) : hsc($row['anons_photo']))?>" name="anons_photo">
           <input type="hidden" value="<?=((isset($errors,$_POST['del_anons']))? hsc($_POST['del_anons']) : "")?>" name="del_anons">
           <div class="photos <?=((!empty($_POST['anons_photo']))? '' : ((!empty($row['anons_photo']))? '' : "hidden"))?>"><img src="<?=((isset($_POST['anons_photo']))? hsc($anons_photo[0]) : hsc($row['anons_photo']) )?>"></div>
@@ -87,7 +87,7 @@
         <div class="input-value upload_file" id="descrip_photo">
           <p>Фото для опису</p>
           <button type="button" onclick="clickOninput(this)">Вибрати файл</button>
-          <div class="up_file_text"><?=((isset($errors))? (!empty($descrip_photo[0])? hsc($descrip_photo[0]) : "Файл не вибраний") : ((empty($row['descrip_photo']))? ((isset($_POST['descrip_photo']))?  : 'Файл не вибраний') : hsc($row['descrip_photo'])))?></div>
+          <div class="up_file_text"><?=((isset($errors))? (!empty($descrip_photo[0])? hsc($descrip_photo[0]) : "Файл не вибраний") : ((empty($row['descrip_photo']))? ((isset($_POST['descrip_photo']))? '' : 'Файл не вибраний') : hsc($row['descrip_photo'])))?></div>
           <input type="hidden" value="<?=((isset($errors))? hsc($_POST['descrip_photo']) : hsc($row['descrip_photo']))?>" name="descrip_photo">
           <input type="hidden" value="<?=((isset($errors,$_POST['del_anons']))? hsc($_POST['del_anons']) : "")?>" name="del_anons">
           <div class="photos <?=((!empty($_POST['descrip_photo']))? '' : ((!empty($row['descrip_photo']))? '' : "hidden"))?>"><img src="<?=((isset($_POST['descrip_photo']))? hsc($descrip_photo[0]) : hsc($row['descrip_photo']) )?>"></div>
@@ -98,7 +98,7 @@
             <div class="input-value upload_file" rel_id="<?=$key?>" id="more_photos_<?=$key?>">
               <p><?=(($key == 0)? 'Додаткові зображення' : '')?></p>
               <button type="button" onclick="clickOninput(this)">Вибрати файл</button>
-              <div class="up_file_text"><?=((isset($errors))? (!empty($more_photos[$key][2])? ((!empty($more_src[$key][2]))? hsc($more_src[$key][0]) : 'Файл не вибраний') : "Файл не вибраний") : ((!empty($file[0]))? hsc($file[0]) : 'Файл не вибраний'))?></div>
+              <div class="up_file_text"><?=((isset($errors))? (!empty($more_photos[$key][2])? ((!empty($more_src[$key][2]))? hsc($more_src[$key][2]) : 'Файл не вибраний') : "Файл не вибраний") : ((!empty($file[0]))? hsc($file[2]) : 'Файл не вибраний'))?></div>
               <input type="hidden" value="<?=((isset($errors))? hsc($_POST['more_photos'][$key]) : hsc($file[3]))?>" name="more_photos[]">
               <input type="hidden" value="<?=((isset($errors,$_POST['del_anons']))? hsc($_POST['del_anons']) : "")?>" name="del_more[]">
               <div class="photos <?=((!empty($_POST['more_photos'][$key]))? '' : ((!empty($file[0]) && !isset($errors))? '' : ((!empty($more_src[$key][0]))? '' : "hidden")))?>"><img src="<?=((isset($_POST['more_photos'][$key]))? hsc($more_src[$key][0]) : hsc($more_photos[$key][0]) )?>"></div>
@@ -108,7 +108,7 @@
           <div class="input-value upload_file" rel_id="0" id="more_photos_0">
             <p>Додаткові зображення</p>
             <button type="button" onclick="clickOninput(this)">Вибрати файл</button>
-            <div class="up_file_text"><?=((isset($errors))? (!empty($more_photos[0][2])? ((!empty($more_src[0][2]))? hsc($more_src[0][0]) : 'Файл не вибраний') : "Файл не вибраний") : ((!empty($more_photos[0][2]))? hsc($more_photos[0][0]) : 'Файл не вибраний'))?></div>
+            <div class="up_file_text"><?=((isset($errors))? (!empty($more_photos[0][2])? ((!empty($more_src[0][2]))? hsc($more_src[0][2]) : 'Файл не вибраний') : "Файл не вибраний") : ((!empty($more_photos[0][2]))? hsc($more_photos[0][2]) : 'Файл не вибраний'))?></div>
             <input type="hidden" value="<?=((isset($errors))? hsc($_POST['more_photos'][0]) : hsc($more_photos[0][3]))?>" name="more_photos[]">
             <input type="hidden" value="<?=((isset($errors,$_POST['del_anons']))? hsc($_POST['del_anons']) : "")?>" name="del_more[]">
             <div class="photos <?=((!empty($_POST['more_photos'][0]))? '' : ((!empty($more_photos[0]) && !isset($errors))? '' : ((!empty($more_src[0][0]))? '' : "hidden")))?>"><img src="<?=((isset($_POST['more_photos'][$key]))? hsc($more_src[0][0]) : hsc($more_photos[0][0]) )?>"></div>
