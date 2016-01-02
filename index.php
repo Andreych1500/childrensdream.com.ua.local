@@ -19,7 +19,7 @@ ob_start();
 		$lang = Core::$LANGUAGE['allow']['ru'];
 	}
 
-	if (!file_exists('./' . Core::$CONT['default'] . '/' . $_GET['module'] . '/' . $_GET['page'] . '.php') || !file_exists('./skins/' . Core::$SKIN . '/' . $_GET['module'] . '/' . $_GET['page'] . '.tpl') || !file_exists('./'. ((Core::$CONT['default'] == 'modules/admin')? 'modules' : Core::$CONT['default']).'/'.$_GET['module'].'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php')) {
+	if (!file_exists('./' . Core::$CONT['default'] . '/' . $_GET['module'] . '/' . (($_GET['module'] == 'catalog')? ((Core::$CONT['default'] == 'modules/admin')? $_GET['page'] : 'main' ) : $_GET['page']) . '.php') || !file_exists('./skins/' . Core::$SKIN . '/' . $_GET['module'] . '/' . (($_GET['module'] == 'catalog')? ((Core::$CONT['default'] == 'modules/admin')? $_GET['page'] : 'main' ) : $_GET['page']) . '.tpl') || !file_exists('./'. ((Core::$CONT['default'] == 'modules/admin')? 'modules' : Core::$CONT['default']).'/'.$_GET['module'].'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php')) {
 		header("Location: /404");
 		exit();
 	}
@@ -34,11 +34,11 @@ ob_start();
 
 	// PAGE_MODEL
 	include './'.Core::$CONT['default'].'/allpages.php';
-	include './'.Core::$CONT['default'].'/'.$_GET['module'].'/'.$_GET['page'].'.php';
+	include './'.Core::$CONT['default'].'/'.$_GET['module'].'/'.(($_GET['module'] == 'catalog')? ((Core::$CONT['default'] == 'modules/admin')? $_GET['page'] : 'main' ) : $_GET['page']).'.php';
 	// PAGE_MODEL END
 
 	// PAGE_VIEW
-	include './skins/'.Core::$SKIN.'/'.$_GET['module'].'/'.$_GET['page'].'.tpl';
+	include './skins/'.Core::$SKIN.'/'.$_GET['module'].'/'.(($_GET['module'] == 'catalog')? ((Core::$CONT['default'] == 'modules/admin')? $_GET['page'] : 'main' ) : $_GET['page']).'.tpl';
     // PAGE_VIEW END
 	
 	$content = ob_get_contents();

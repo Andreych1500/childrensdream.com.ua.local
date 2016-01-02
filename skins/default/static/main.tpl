@@ -21,6 +21,7 @@
   </div>
 </div>
 
+
 <div class="staticText st-1" id="about">
   <div class="text-item">
     <div class="hText">
@@ -48,6 +49,7 @@
   </div>
 </div>
 
+
 <div class="catalog st-1" id="catalog">
   <div class="text-item">
     <div class="hText">
@@ -60,7 +62,7 @@
       </table>
     </div>
   </div>
-  <div class="catalog">
+  <div class="catalog-list">
     <?php if($catalog->num_rows > 0){
       while($el = $catalog->fetch_assoc()){ ?>
         <div class="el-item">
@@ -124,6 +126,7 @@
     </div>
   </div>
 </div>
+
 
 <div class="call-me st-1" id="call">
   <div class="text-item">

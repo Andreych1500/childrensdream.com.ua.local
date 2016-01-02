@@ -25,7 +25,7 @@ if(isset($_GET['route'])){
 				Core::$SITE_DIR .= '/'.$v;
 			}
 		} else {
-			if(!empty($v)){		
+			if(!empty($v)){
 				$_GET['key'.($k-1)] = $v;
 				Core::$SITE_DIR .= '/'.$v;
 			}
@@ -63,7 +63,7 @@ if(!isset($_GET['page'])){
 } 
 
 // якщо недопустимі символи в адресній строці то перекидуєм на 404
-if(!preg_match('#^[a-z-_]*$#iu',$_GET['page'])){
+if(!preg_match('#^[a-z-_0-9]*$#iu',$_GET['page'])){
 	header("Location: /404");
 	exit();
 }
