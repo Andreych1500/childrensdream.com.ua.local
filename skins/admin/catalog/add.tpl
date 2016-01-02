@@ -1,4 +1,7 @@
 <div class="commentview add-shop">
+  <?php if(isset($errors['limit'])){ ?>
+    <p class="h1">Товар з таким символьним кодом вже існує!</p>
+  <? } ?>
   <div class="comment-list">
     <form method="post" action="" enctype="multipart/form-data">
       <div class="edit-style catalog-style">

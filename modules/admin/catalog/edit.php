@@ -1,14 +1,14 @@
 <?php 
 // редагування товара
-if(isset($_POST['ok'],$_POST['name'],$_POST['seo_name'],$_POST['price'],$_POST['text'],$_POST['description'])){
+if(isset($_POST['ok'],$_POST['name'],$_POST['seo_el_name'],$_POST['price'],$_POST['text'],$_POST['description'])){
 	$_POST = trimAll($_POST);
 	$errors = array();
 
 	if(empty($_POST['name'])){
 		$errors['name'] = 'errors';
 	}
-	if(empty($_POST['seo_name'])){
-		$errors['seo_name'] = 'errors';
+	if(empty($_POST['seo_el_name'])){
+		$errors['seo_el_name'] = 'errors';
 	}
 	if(isset($_POST['availability'])){
 		$_POST['availability'] = 1;
@@ -66,7 +66,7 @@ if(isset($_POST['ok'],$_POST['name'],$_POST['seo_name'],$_POST['price'],$_POST['
 	if(!count($errors)){
 		q(" UPDATE `catalog` SET
 			`name` = '".mres($_POST['name'])."',
-			`seo_name`       = '".mres($_POST['seo_name'])."',
+			`seo_name`       = '".mres($_POST['seo_el_name'])."',
 			`price`          = '".(int)$_POST['price']."',
 			`form`           = '".mres($_POST['form'])."',
 			`type`           = '".mres($_POST['type'])."',

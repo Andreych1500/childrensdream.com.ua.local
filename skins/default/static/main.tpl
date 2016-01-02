@@ -5,7 +5,7 @@
         <div class="next-slide">
           <span class="icon-left"></span>
         </div>
-        <div class="slide-wrap" style="left: 0px;">
+        <div class="slide-wrap">
           <?php for($i=1; $i<=3; ++$i){  ?>
             <div class="slide-item">
               <img src="/skins/default/img/lang/<?=$langs?>/slide<?=$i?>.png" alt="Childrens-dream">
@@ -47,6 +47,50 @@
     </div>
   </div>
 </div>
+
+<div class="catalog st-1" id="catalog">
+  <div class="text-item">
+    <div class="hText">
+      <table>
+        <tr>
+          <td><span class="line"></span></td>
+          <td><span><?=$mess['CATALOG'];?></span></td>
+          <td><span class="line"></span></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="catalog">
+    <?php if($catalog->num_rows > 0){
+      while($el = $catalog->fetch_assoc()){ ?>
+        <div class="el-item">
+          <div class="photos">
+            <a href=""><img src="<?=hsc($el['anons_photo'])?>" alt="Childreans-dream" title="Childreans-dream"></a>
+          </div>
+          <div class="desk-info">
+            <a href=""><span><?=hsc($el['name'])?></span></a>
+            <p><?=hsc($el['price'])?> <?=$mess['PRICE'];?></p>
+            <p class="aviability">
+              <?php if((int)$el['availability'] == 1){ ?>
+              <span class="icon-check-ok"></span>
+              <span><?=$mess['AVIABILITY']?></span>
+              <?php } else { ?>
+              <span class="icon-cross"></span>
+              <span><?=$mess['NOAVIABILITY']?></span>
+              <?php } ?>
+            </p>
+          </div>
+        </div>
+        <?php //wtf($el,1)?>
+    <?php
+      }
+     } else { ?>
+    <div class="no-element"><?=$mess['NO_ELEMETN']?></div>
+    <?php } ?>
+    <div class="clear"></div>
+  </div>
+</div>
+
 
 <div class="staticText st-2" id="payment">
   <div class="text-item">

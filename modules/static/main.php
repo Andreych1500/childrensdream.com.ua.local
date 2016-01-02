@@ -3,6 +3,13 @@ Core::$META['title'] = 'Childrensdream.com.ua';
 Core::$JS[] = '<script type="text/javascript" src="/skins/default/js/slider.js"></script>';
 Core::$JS[] = '<script type="text/javascript" src="/skins/default/js/call.js"></script>';
 
+// catalog
+$catalog = q("
+    SELECT `id`,`name`,`seo_name`,`price`,`availability`,`anons_photo`
+    FROM `catalog`
+    WHERE `active` = 1
+");
+
 // call me
 if(isset($_POST['ok'], $_POST['name'], $_POST['text'], $_POST['email'], $_POST['thems'])){
     $errors = array();

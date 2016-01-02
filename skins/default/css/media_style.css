@@ -5,8 +5,14 @@
     div.staticText .text-item,
     .descriptinText .item-right img,
     .call-me,
-    .call-me .text-item{
+    .call-me .text-item,
+    .catalog,
+    .catalog .text-item{
         width:100%;
+    }
+
+    .catalog .el-item{
+        width: 24%;
     }
 
     .item-left{
@@ -67,6 +73,15 @@
 
     .mobile-basket, #container{
         bottom: 75px;
+    }
+
+    .catalog .el-item {
+        width: 30%;
+        margin: 0 0 50px 3.9%;
+    }
+
+    .catalog .el-item:nth-child(3n-2){
+        margin-left:0;
     }
 }
 
@@ -134,6 +149,15 @@
     div.form-call form{
         width: 95%;
         margin-left:10px;
+    }
+
+    .catalog .el-item {
+        width: 43%;
+        margin: 0 0 50px 6%;
+    }
+
+    .catalog .el-item:nth-child(3n-2){
+        margin-left:6%;
     }
 }
 
@@ -220,6 +244,10 @@
         width:52% !important;
     }
 
+    div.catalog table td:nth-child(2n){
+        width:62% !important;
+    }
+
     .no-item{
         font-size: 14pt;
     }
@@ -239,6 +267,15 @@
         float:left;
     }
 
+    .catalog .el-item{
+        max-width:initial;
+        margin-left:0%;
+        width: 100%;
+    }
+
+    .catalog .el-item:nth-child(3n-2){
+        margin-left:0%;
+    }
 }
 
 @media screen and (max-width: 400px) {

@@ -65,8 +65,11 @@ function addPhoto(el,stringValue){
         files.append("directory", dir_name);
         files.append("del", $('#to_file input[name="del"]').val());
 
-       if($('input[name="update"]').length > 0){
+       if($('#to_file input[name="update"]').length > 0){
            files.append("update", $('#to_file input[name="update"]').val());
+       }
+       if($('#to_file input[name="isset"]').length > 0){
+            files.append("isset", $('#to_file input[name="isset"]').val());
        }
 
         var rel_to_set="#"+$(el).attr('rel_to_set');
@@ -82,7 +85,7 @@ function addPhoto(el,stringValue){
                 var res = JSON.parse(response);
 
                 if(res.isset == 'element'){
-                    alert('Товар з такою назвою вже існує');
+                    alert('Товар з таким символьним кодом вже існує');
                 } else {
                     if (res.error !== undefined) {
                         $(rel_to_set).find('.up_file_text').text('Загружайте лише фото!');

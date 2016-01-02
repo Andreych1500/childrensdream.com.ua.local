@@ -3,6 +3,17 @@
 if(isset($_POST['ok'],$_POST['name'],$_POST['seo_name'],$_POST['price'],$_POST['text'],$_POST['description'])){
 	$_POST = trimAll($_POST);
 	$errors = array();
+
+	$isset = q("
+		SELECT `id`
+		FROM `catalog`
+		WHERE `seo_name` = '".mres($_POST['seo_name'])."'
+		LIMIT 1
+	");
+
+	if($isset->num_rows > 0){
+		$errors['limit'] = 'isset-rrror';
+	}
 	
 	if(empty($_POST['name'])){
 		$errors['name'] = 'errors';
@@ -22,6 +33,7 @@ if(isset($_POST['ok'],$_POST['name'],$_POST['seo_name'],$_POST['price'],$_POST['
 	if(empty($_POST['description'])) {
 		$errors['description'] = 'errors';
 	}
+
 
 
 	//необовязкові поля

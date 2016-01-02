@@ -10,16 +10,25 @@ $info = array();
 $issetElement = $mysqli->query("
     SELECT `id`
     FROM `catalog`
-    WHERE `seo_name` = '".$_POST['directory']."'
+    WHERE `seo_name` = '".mysqli_real_escape_string($mysqli,$_POST['directory'])."'
     LIMIT 1
 ");
 
-if(!mysqli_num_rows($issetElement) > 0 || isset($_POST['update'])) {
+
+if(!isset($_POST['isset'])){
+    if(!mysqli_num_rows($issetElement) > 0 && isset($_POST['update'])) {
+        if (count($info[] = Uploader::upload($_FILES['photo'], 200, $_POST['directory'], $_POST['del'])) > 0) {
+            echo json_encode($info);
+        } else {
+            echo json_encode(array('error' => 'warning_file'));
+        }
+    } else {
+        echo json_encode(array('isset' => 'element'));
+    }
+} else {
     if (count($info[] = Uploader::upload($_FILES['photo'], 200, $_POST['directory'], $_POST['del'])) > 0) {
         echo json_encode($info);
     } else {
         echo json_encode(array('error' => 'warning_file'));
     }
-} else {
-    echo json_encode(array('isset' => 'element'));
 }

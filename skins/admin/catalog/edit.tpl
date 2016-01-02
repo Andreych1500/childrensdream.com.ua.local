@@ -8,7 +8,8 @@
         </div>
         <div class="input-value">
           <p>Символьний код<span>*</span></p>
-          <input type="text" class="<?=((isset($errors['seo_name']))? "errors" : "")?>"  name="seo_name" value="<?=((isset($errors))? hsc($_POST['seo_name']) : hsc($row['seo_name']))?>">
+          <input disabled type="text" class="<?=((isset($errors['seo_el_name']))? "errors" : "")?>"  name="seo_name" value="<?=((isset($errors))? hsc($row['seo_name']) : hsc($row['seo_name']))?>">
+          <input type="hidden" name="seo_el_name" value="<?=((isset($errors))? hsc($row['seo_name']) : hsc($row['seo_name']))?>">
         </div>
         <div class="input-value">
           <p>Наявність</p>
@@ -78,7 +79,7 @@
         <div class="input-value upload_file" id="annons_photo">
           <p>Фото для анонсу</p>
           <button type="button" onclick="clickOninput(this)">Вибрати файл</button>
-          <div class="up_file_text"><?=((isset($errors))? (!empty($anons_photo[0])? hsc($anons_photo[0]).'123' : "Файл не вибраний") : ((empty($row['anons_photo']))? ((isset($_POST['anons_photo']))? '' : 'Файл не вибраний') : hsc($row['anons_photo']).'22'))?></div>
+          <div class="up_file_text"><?=((isset($errors))? (!empty($anons_photo[0])? hsc($anons_photo[0]) : "Файл не вибраний") : ((empty($row['anons_photo']))? ((isset($_POST['anons_photo']))? '' : 'Файл не вибраний') : hsc($row['anons_photo'])))?></div>
           <input type="hidden" value="<?=((isset($errors))? hsc($_POST['anons_photo']) : hsc($row['anons_photo']))?>" name="anons_photo">
           <input type="hidden" value="<?=((isset($errors,$_POST['del_anons']))? hsc($_POST['del_anons']) : "")?>" name="del_anons">
           <div class="photos <?=((!empty($_POST['anons_photo']))? '' : ((!empty($row['anons_photo']))? '' : "hidden"))?>"><img src="<?=((isset($_POST['anons_photo']))? hsc($anons_photo[0]) : hsc($row['anons_photo']) )?>"></div>
@@ -125,6 +126,7 @@
     <form id="to_file">
       <input onchange="addPhoto(this,this.value)" rel_to_set="" type="file" name="photo" id="control">
       <input type="hidden" name="del" value="<?=((isset($errors))? "N" : "N")?>">
+      <input type="hidden" name="isset" value="N">
       <input type="hidden" name="update" value="Y">
       <p id="clears">Clear</p>
     </form>

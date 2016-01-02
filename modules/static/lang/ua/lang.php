@@ -40,3 +40,10 @@ $mess['LIMIT']      = 'Вибачте, но існує ліміт звернен
 $mess['CAPCHA']     = 'Введіть текст з зображення';
 $mess['OK_MESSAGE'] = 'text';
 $mess['NO_CALL_ME'] = 'На даний момент зворотніх дзвінків не залишено.';
+
+// catalog
+$mess['CATALOG']      = 'Продукція';
+$mess['NO_ELEMETN']   = 'Продукція відсутня';
+$mess['PRICE']        = 'грн.';
+$mess['AVIABILITY']   = 'В наявності';
+$mess['NOAVIABILITY'] = 'Немає на складі';
