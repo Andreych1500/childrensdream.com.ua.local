@@ -2,6 +2,7 @@
     <div class="comment-list">
         <form method="post" action="" enctype="multipart/form-data">
             <div class="edit-style catalog-style">
+                <p class="add-lang">ru</p>
                 <div class="input-value">
                     <p>Назва товару<span>*</span></p>
                     <input type="text" class="<?=((isset($errors['name']))? "errors" : "")?>"  name="name" value="<?=((isset($errors))? hsc($_POST['name']) : hsc($row['name']))?>">

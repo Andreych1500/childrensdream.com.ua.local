@@ -18,7 +18,7 @@ if($_GET['page'] == 'main'){
     $catalog = q("
       SELECT *
       FROM $catalog
-      WHERE `seo_name` = '".mres($_GET['page'])."'
+      WHERE `seo_name` = '".mres($_GET['page'])."' AND `active` = 1
       LIMIT 1
     ");
 

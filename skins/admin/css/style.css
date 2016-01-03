@@ -527,3 +527,8 @@ div.list-element input {
   color: red;
   left: 240px;
 }
+.add-lang {
+  position: absolute;
+  right: 0;
+  padding: 5px;
+}
