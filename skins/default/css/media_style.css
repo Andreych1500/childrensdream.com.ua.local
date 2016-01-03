@@ -8,7 +8,9 @@
     .call-me .text-item,
     .catalog,
     .catalog .text-item,
-    .haracteristic{
+    .haracteristic,
+    .desc-info,
+    .desc-info .item{
         width:100%;
     }
 
@@ -99,6 +101,10 @@
     div.st-1 table td:nth-child(2n){
         width:48%;
     }
+
+    .descript-text{
+        width:60% !important;
+    }
 }
 
 @media screen and (max-width: 720px){
@@ -160,6 +166,10 @@
     .catalog .el-item:nth-child(3n-2){
         margin-left:6%;
     }
+
+    .descript-text{
+        width:50% !important;
+    }
 }
 
 @media screen and (max-width: 512px){
@@ -189,6 +199,18 @@
         width:52% !important;
     }
 
+    .descript-text{
+        width:96% !important;
+    }
+
+    .cirkl-photo {
+        width:100%;
+    }
+
+    .cirkl-photo div{
+        margin:0 auto !important;
+        margin-top:20px !important;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -276,6 +298,10 @@
 
     .catalog .el-item:nth-child(3n-2){
         margin-left:0;
+    }
+
+    .table-haracteristic .tr div:nth-child(1){
+        margin-right: 15px;
     }
 }
 

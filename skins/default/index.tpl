@@ -40,6 +40,7 @@
           <li><a href="<?=(isset($lang)? '/ru/' : '/')?>comments"><?=$mess['OTZUVU']?></a></li>
           <li><a href="#"><?=$mess['BASKET']?> <span>1</span></a></li>
         </ul>
+        <span class="menu-icon"></span>
       </div>
       <div class="mobile-basket">
         <a href="#"><?=$mess['BASKET']?> <span>1</span></a>

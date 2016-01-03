@@ -8,6 +8,20 @@
   src: url('font/myriad/MyriadProRegular.eot');
   src: url('font/myriad/MyriadProRegular.eot') format('embedded-opentype'), url('font/myriad/MyriadProRegular.woff2') format('woff2'), url('font/myriad/MyriadProRegular.woff') format('woff'), url('font/myriad/MyriadProRegular.ttf') format('truetype'), url('font/myriad/MyriadProRegular.svg#MyriadProRegular') format('svg');
 }
+.clearfix:before,
+.clearfix:after,
+.desc-info .view-info:before,
+.desc-info .view-info:after,
+.haracteristic .table-haracteristic .tr:before,
+.haracteristic .table-haracteristic .tr:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after,
+.desc-info .view-info:after,
+.haracteristic .table-haracteristic .tr:after {
+  clear: both;
+}
 *::-moz-selection {
   color: #fff;
   text-shadow: none;
@@ -20,7 +34,9 @@
 }
 .staticText,
 .catalog .hText,
-.call-me .hText {
+.call-me .hText,
+.desc-info,
+.descript-text {
   -ms-user-select: none;
 }
 .clear {
@@ -65,7 +81,8 @@ div.fixed-menu,
 .name-date,
 .form-comment form table,
 .form-call,
-.no-element {
+.no-element,
+.view-info {
   width: 100%;
 }
 div,
@@ -115,7 +132,8 @@ footer {
 }
 footer,
 header,
-.staticText {
+.staticText,
+.desc-info {
   background-color: #d4eff4;
   background-image: url('/skins/default/img/pattern.png');
 }
@@ -171,6 +189,15 @@ div.item,
   -moz-transition: opacity 1s ease;
   -o-transition: opacity 1s ease;
   transition: opacity 1s ease;
+}
+.fixed-menu .menu-icon {
+  display: block;
+  position: absolute;
+  left: 7px;
+  top: 5px;
+  width: 30px;
+  height: 38px;
+  background: url("/skins/default/img/menu-icon.png") no-repeat;
 }
 .top-menu li a,
 .mobile-basket a {
@@ -364,7 +391,8 @@ div.catalog.st-1 td:nth-child(2) {
   margin-top: 65px;
 }
 .hText,
-.descriptinText {
+.descriptinText,
+.descript-text {
   text-shadow: 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 2px 2px #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 3px 3px #fff, -3px -3px 0 #fff, 3px -3px 0 #fff, -3px 3px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 3px 0 0 #fff, -3px 0 0 #fff, 0 3px 0 #fff, 0 -3px 0 #fff;
 }
 .background-content {
@@ -785,6 +813,66 @@ div.prev-slide {
 .catalog .el-item:nth-child(4n) {
   margin-right: 0;
 }
+.desc-info .headers span,
+.desc-info .headers p {
+  display: table-cell;
+}
+.desc-info .headers span:nth-child(1) {
+  width: 5%;
+}
+.desc-info .headers p {
+  width: 10%;
+  padding: 0 15px;
+  color: #482200;
+  font: 16pt ComicSansMS;
+  font-weight: bold;
+}
+.desc-info .headers span:before {
+  content: '';
+  width: 100%;
+  height: 5px;
+  background-color: #9bd6e7;
+  display: block;
+  position: relative;
+  bottom: 2px;
+}
+.desc-info {
+  margin: 15px 0;
+}
+.desc-info .headers span:before {
+  background-color: #72afc1;
+}
+.desc-info .view-info .descript-text {
+  color: #482200;
+  font-family: MyriadPro;
+  font-size: 12pt;
+  margin-top: 27px;
+  float: left;
+  width: 70%;
+  margin-left: 10px;
+}
+.desc-info .view-info .cirkl-photo {
+  float: right;
+}
+.desc-info .view-info .cirkl-photo div {
+  margin: 20px 30px 0 0;
+  border: 5px solid #72afc1;
+  width: 170px;
+  height: 170px;
+  -webkit-border-radius: 100%;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 100%;
+  -moz-background-clip: padding;
+  border-radius: 100%;
+  background-clip: padding-box;
+  background-color: white;
+  overflow: hidden;
+}
+.desc-info .view-info .cirkl-photo div img {
+  position: relative;
+  top: 5px;
+  left: 0;
+}
 .haracteristic .headers span,
 .haracteristic .headers p {
   display: table-cell;
@@ -807,6 +895,24 @@ div.prev-slide {
   display: block;
   position: relative;
   bottom: 2px;
+}
+.haracteristic .table-haracteristic {
+  margin-top: 20px;
+}
+.haracteristic .table-haracteristic .tr {
+  border-top: 1px solid #dedede;
+  padding: 5px;
+}
+.haracteristic .table-haracteristic .tr div {
+  float: left;
+  color: #482200;
+  font: 12pt MyriadPro;
+}
+.haracteristic .table-haracteristic .tr div:nth-child(1) {
+  width: 52%;
+}
+.haracteristic .table-haracteristic .tr:last-child {
+  border-bottom: 1px solid #dedede;
 }
 /* icons */
 #container span[class*="icon-"] {

@@ -41,21 +41,65 @@
     <?php wtf($el,1);?>
 
     <div class="dateil-info"></div>
-    <div class="desc-info st-2"></div>
+
+    <div class="desc-info">
+      <div class="item">
+        <div class="headers">
+          <span></span>
+          <p class="hText"><?=$mess['MIN_OPUS']?></p>
+          <span></span>
+        </div>
+        <div class="view-info">
+            <div class="descript-text"><?=nl2br(hsc($el['description']))?></div>
+            <div class="cirkl-photo">
+              <div><img src="<?=hsc($el['descrip_photo'])?>" alt="Childreans-drea" title="Childreans-dream"></div>
+            </div>
+        </div>
+      </div>
+    </div>
+
     <div class="haracteristic">
         <div class="headers">
             <span></span>
-            <p>Характеристики</p>
+            <p><?=$mess['HARAKTERISTIC']?></p>
             <span></span>
         </div>
         <div class="table-haracteristic">
-            <div>
-              <div>Форма</div>
+            <div class="tr">
+              <div><?=$mess['FORMA']?></div>
               <div><?=((empty($el['form']))? '-' : hsc($el['form']))?></div>
             </div>
-            <div>
-              <div>Тип</div>
+            <div class="tr">
+              <div><?=$mess['TYPE']?></div>
               <div><?=((empty($el['type']))? '-' : hsc($el['type']))?></div>
+            </div>
+            <div class="tr">
+                <div><?=$mess['SIZE']?></div>
+                <div><?=((empty($el['size']))? '-' : hsc($el['size']))?></div>
+            </div>
+            <div class="tr">
+                <div><?=$mess['WEIGHT']?></div>
+                <div><?=((empty($el['weight']))? '-' : (int)$el['weight'].' '.$mess['KG'])?></div>
+            </div>
+            <div class="tr">
+                <div><?=$mess['HEIGHT']?></div>
+                <div><?=((empty($el['height']))? '-' : (int)$el['height'].' '.$mess['SM'])?></div>
+            </div>
+            <div class="tr">
+                <div><?=$mess['RIGIDITY']?></div>
+                <div><?=((empty($el['rigidity']))? '-' : hsc($el['rigidity']))?></div>
+            </div>
+            <div class="tr">
+                <div><?=$mess['ANATOMING']?></div>
+                <div><?=((empty($el['anatoming']))? '-' : (((int)$el['anatoming'] == 1)? $mess['NO'] : $mess['YES'] ))?></div>
+            </div>
+            <div class="tr">
+                <div><?=$mess['ORTOPEDING']?></div>
+                <div><?=((empty($el['ortopeding']))? '-' : (((int)$el['ortopeding'] == 1)? $mess['NO'] : $mess['YES'] ))?></div>
+            </div>
+            <div class="tr">
+                <div><?=$mess['GARANTY']?></div>
+                <div><?=((empty($el['garanty']))? '-' : (int)$el['garanty'].' '.$mess['MONTH'])?></div>
             </div>
         </div>
     </div>
