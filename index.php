@@ -19,7 +19,10 @@ ob_start();
 		$lang = Core::$LANGUAGE['allow']['ru'];
 	}
 
-	if (!file_exists('./' . Core::$CONT['default'] . '/' . $_GET['module'] . '/' . (($_GET['module'] == 'catalog')? ((Core::$CONT['default'] == 'modules/admin')? $_GET['page'] : 'main' ) : $_GET['page']) . '.php') || !file_exists('./skins/' . Core::$SKIN . '/' . $_GET['module'] . '/' . (($_GET['module'] == 'catalog')? ((Core::$CONT['default'] == 'modules/admin')? $_GET['page'] : 'main' ) : $_GET['page']) . '.tpl') || !file_exists('./'. ((Core::$CONT['default'] == 'modules/admin')? 'modules' : Core::$CONT['default']).'/'.$_GET['module'].'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php')) {
+	if (!file_exists('./' . Core::$CONT['default'] . '/' . $_GET['module'] . '/' . (($_GET['module'] == 'catalog')? ((Core::$CONT['default'] == 'modules/admin')? $_GET['page'] : 'main' ) : $_GET['page']) . '.php') ||
+		!file_exists('./skins/' . Core::$SKIN . '/' . $_GET['module'] . '/' . (($_GET['module'] == 'catalog')? ((Core::$CONT['default'] == 'modules/admin')? $_GET['page'] : 'main' ) : $_GET['page']) . '.tpl') ||
+		!file_exists('./'. ((Core::$CONT['default'] == 'modules/admin')? 'modules' : Core::$CONT['default']).'/'.(($_GET['module'] == 'catalog_ru')? 'catalog' : $_GET['module'] ).'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php')) {
+
 		header("Location: /404");
 		exit();
 	}
@@ -28,7 +31,7 @@ ob_start();
 	include './'.((Core::$CONT['default'] == 'modules/admin')? 'modules' : Core::$CONT['default']).'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php';
 
 	if(isset($_GET['module'])){
-		include './'.((Core::$CONT['default'] == 'modules/admin')? 'modules' : Core::$CONT['default']).'/'.$_GET['module'].'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php';
+		include './'.((Core::$CONT['default'] == 'modules/admin')? 'modules' : Core::$CONT['default']).'/'.(($_GET['module'] == 'catalog_ru')? 'catalog' : $_GET['module']).'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php';
 	}
 	// END LANG
 

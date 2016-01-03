@@ -1,4 +1,4 @@
-<?php 
+<?php
 // редагування товара
 if(isset($_POST['ok'],$_POST['name'],$_POST['seo_el_name'],$_POST['price'],$_POST['text'],$_POST['description'])){
 	$_POST = trimAll($_POST);
@@ -64,7 +64,7 @@ if(isset($_POST['ok'],$_POST['name'],$_POST['seo_el_name'],$_POST['price'],$_POS
 	//end more_photos
 
 	if(!count($errors)){
-		q(" UPDATE `catalog` SET
+		q(" UPDATE `catalog_ua` SET
 			`name` = '".mres($_POST['name'])."',
 			`seo_name`       = '".mres($_POST['seo_el_name'])."',
 			`price`          = '".(int)$_POST['price']."',
@@ -96,9 +96,9 @@ if(isset($_POST['ok'],$_POST['name'],$_POST['seo_el_name'],$_POST['price'],$_POS
 // перевірка чи товар існує
 $products = q("
 	SELECT *
-	FROM `catalog`
+	FROM `catalog_ua`
 	WHERE `id` = ".(int)$_GET['key2']."
-	LIMIT 1	
+	LIMIT 1
 ");
 
 if(!$products->num_rows){
@@ -127,14 +127,3 @@ if(!empty($row['more_photos'])){
 	}
 }
 // end arRow[more_photos]
-
-
-
-
-
-
-
-
-
-
-

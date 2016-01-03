@@ -6,7 +6,7 @@ if(isset($_POST['ok'],$_POST['name'],$_POST['seo_name'],$_POST['price'],$_POST['
 
 	$isset = q("
 		SELECT `id`
-		FROM `catalog`
+		FROM `catalog_ua`
 		WHERE `seo_name` = '".mres($_POST['seo_name'])."'
 		LIMIT 1
 	");
@@ -75,7 +75,7 @@ if(isset($_POST['ok'],$_POST['name'],$_POST['seo_name'],$_POST['price'],$_POST['
 
 
 	if(!count($errors)){
-		q(" INSERT INTO `catalog` SET
+		q(" INSERT INTO `catalog_ua` SET
 		    `name`           = '".mres($_POST['name'])."',
 		    `seo_name`       = '".mres($_POST['seo_name'])."',
 		    `price`          = '".(int)$_POST['price']."',

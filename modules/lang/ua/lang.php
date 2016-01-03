@@ -2,6 +2,7 @@
 // tabs
 $mess['ABOUT_US']     = 'Про Нас';
 $mess['PRODUCTION']   = 'Продукція';
+$mess['PRODUCTION_RU'] = 'Продукция_ru';
 $mess['SERVICES']     = 'Оплата і Доставка';
 $mess['OTZUVU']       = 'Відгуки';
 $mess['CONTACTS']     = 'Контакти';

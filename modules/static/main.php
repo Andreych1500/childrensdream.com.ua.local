@@ -3,10 +3,13 @@ Core::$META['title'] = 'Childrensdream.com.ua';
 Core::$JS[] = '<script type="text/javascript" src="/skins/default/js/slider.js"></script>';
 Core::$JS[] = '<script type="text/javascript" src="/skins/default/js/call.js"></script>';
 
+
+$catalog = ((isset($lang))? '`catalog_ru`' : '`catalog_ua`' );
+
 // catalog
 $catalog = q("
     SELECT `id`,`name`,`seo_name`,`price`,`availability`,`anons_photo`
-    FROM `catalog`
+    FROM $catalog
     WHERE `active` = 1
 ");
 

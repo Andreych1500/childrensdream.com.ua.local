@@ -128,6 +128,7 @@
       <input type="hidden" name="del" value="<?=((isset($errors))? "N" : "N")?>">
       <input type="hidden" name="isset" value="N">
       <input type="hidden" name="update" value="Y">
+      <input type="hidden" name="lang" value="ua">
       <p id="clears">Clear</p>
     </form>
   </div>

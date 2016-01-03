@@ -131,6 +131,7 @@
       <input onchange="addPhoto(this,this.value)" rel_to_set="" type="file" name="photo" id="control">
       <input type="hidden" name="del" value="<?=((isset($errors))? "N" : "Y")?>">
       <input type="hidden" name="update" value="Y">
+      <input type="hidden" name="lang" value="ua">
       <p id="clears">Clear</p>
     </form>
   </div>
