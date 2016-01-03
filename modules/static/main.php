@@ -10,7 +10,7 @@ $catalog = ((isset($lang))? '`catalog_ru`' : '`catalog_ua`' );
 $catalog = q("
     SELECT `id`,`name`,`seo_name`,`price`,`availability`,`anons_photo`
     FROM $catalog
-    WHERE `active` = 1
+    WHERE `active` = 1 ORDER BY `id` DESC
 ");
 
 // call me

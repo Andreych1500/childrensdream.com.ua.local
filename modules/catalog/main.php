@@ -9,7 +9,7 @@ if($_GET['page'] == 'main'){
     $catalog = q("
       SELECT `id`,`name`,`seo_name`,`price`,`availability`,`anons_photo`
       FROM $catalog
-      WHERE `active` = 1
+      WHERE `active` = 1 ORDER BY `id` DESC
     ");
 
 } else {
@@ -27,4 +27,5 @@ if($_GET['page'] == 'main'){
         exit();
     }
 
+    $el = $catalog->fetch_assoc();
 }

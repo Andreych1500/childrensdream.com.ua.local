@@ -1,1 +1,24 @@
-﻿
+﻿QUERY:
+    SELECT `id`,`name`,`seo_name`,`price`,`availability`,`anons_photo`
+    FROM `catalog_ua`
+    ORDER BY `id` DESC
+    WHERE `active` = 1
+
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `active` = 1' at line 4
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\static\main.php
+line: 15
+date: 2016-01-03 14:48:02
+===================================
+
+QUERY:
+    SELECT `id`,`name`,`seo_name`,`price`,`availability`,`anons_photo`
+    FROM `catalog_ua`
+    ORDER BY `id` DESC
+    WHERE `active` = 1
+
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `active` = 1' at line 4
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\static\main.php
+line: 15
+date: 2016-01-03 14:48:04
+===================================
+

@@ -7,7 +7,8 @@
     .call-me,
     .call-me .text-item,
     .catalog,
-    .catalog .text-item{
+    .catalog .text-item,
+    .haracteristic{
         width:100%;
     }
 
@@ -268,13 +269,13 @@
     }
 
     .catalog .el-item{
-        max-width:initial;
-        margin-left:0%;
+        max-width:100%;
+        margin-left:0;
         width: 100%;
     }
 
     .catalog .el-item:nth-child(3n-2){
-        margin-left:0%;
+        margin-left:0;
     }
 }
 

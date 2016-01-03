@@ -38,7 +38,25 @@
 </div>
 
 <?php } else { ?>
+    <?php wtf($el,1);?>
+
     <div class="dateil-info"></div>
     <div class="desc-info st-2"></div>
-    <div class="haracteristic"></div>
+    <div class="haracteristic">
+        <div class="headers">
+            <span></span>
+            <p>Характеристики</p>
+            <span></span>
+        </div>
+        <div class="table-haracteristic">
+            <div>
+              <div>Форма</div>
+              <div><?=((empty($el['form']))? '-' : hsc($el['form']))?></div>
+            </div>
+            <div>
+              <div>Тип</div>
+              <div><?=((empty($el['type']))? '-' : hsc($el['type']))?></div>
+            </div>
+        </div>
+    </div>
 <?php } ?>

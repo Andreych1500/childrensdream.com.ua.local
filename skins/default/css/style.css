@@ -1,10 +1,12 @@
 @font-face {
   font-family: ComicSansMS;
-  src: url(font/comic.ttf);
+  src: url('font/comic/comic.eot');
+  src: url('font/comic/comic.eot') format('embedded-opentype'), url('font/comic/comic.woff2') format('woff2'), url('font/comic/comic.woff') format('woff'), url('font/comic/comic.ttf') format('truetype'), url('font/comic/comic.svg#comic') format('svg');
 }
 @font-face {
   font-family: MyriadPro;
-  src: url('font/MyriadPro-Regular.otf');
+  src: url('font/myriad/MyriadProRegular.eot');
+  src: url('font/myriad/MyriadProRegular.eot') format('embedded-opentype'), url('font/myriad/MyriadProRegular.woff2') format('woff2'), url('font/myriad/MyriadProRegular.woff') format('woff'), url('font/myriad/MyriadProRegular.ttf') format('truetype'), url('font/myriad/MyriadProRegular.svg#MyriadProRegular') format('svg');
 }
 *::-moz-selection {
   color: #fff;
@@ -121,7 +123,8 @@ div.item,
 .content .text-item,
 .slyder-item .slider,
 .call-me,
-.catalog {
+.catalog,
+.haracteristic {
   margin: 0 auto;
   width: 1010px;
   padding: 10px 0;
@@ -709,10 +712,9 @@ div.prev-slide {
   margin-top: 20px;
 }
 .catalog .no-element {
-  color: #482200;
-  font-family: ComicSansMS;
-  font-size: 24pt;
   text-align: center;
+  color: #482200;
+  font: 24pt ComicSansMS;
   font-weight: bold;
   margin: 40px 0;
 }
@@ -774,7 +776,7 @@ div.prev-slide {
   font-family: ComicSansMS;
   color: #a12a97;
   font-size: 16pt;
-  margin: 15px 0px;
+  margin: 15px 0;
 }
 .catalog .el-item .desk-info .aviability {
   color: #482200;
@@ -782,6 +784,29 @@ div.prev-slide {
 }
 .catalog .el-item:nth-child(4n) {
   margin-right: 0;
+}
+.haracteristic .headers span,
+.haracteristic .headers p {
+  display: table-cell;
+}
+.haracteristic .headers span:nth-child(1) {
+  width: 5%;
+}
+.haracteristic .headers p {
+  width: 10%;
+  padding: 0 15px;
+  color: #482200;
+  font: 16pt ComicSansMS;
+  font-weight: bold;
+}
+.haracteristic .headers span:before {
+  content: '';
+  width: 100%;
+  height: 5px;
+  background-color: #9bd6e7;
+  display: block;
+  position: relative;
+  bottom: 2px;
 }
 /* icons */
 #container span[class*="icon-"] {
