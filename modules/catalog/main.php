@@ -1,14 +1,12 @@
 <?php
 Core::$META['title'] = 'Childrensdream.com.ua';
 
-$catalog = ((isset($lang))? '`catalog_ru`' : '`catalog_ua`' );
-
 if($_GET['page'] == 'main'){
 
     // catalog
     $catalog = q("
-      SELECT `id`,`name`,`seo_name`,`price`,`availability`,`anons_photo`
-      FROM $catalog
+      SELECT `id`,`name`,`seo_name`,`price`,`availability`,`anons_photo`,`name_ru`
+      FROM `catalog`
       WHERE `active` = 1 ORDER BY `id` DESC
     ");
 
@@ -17,7 +15,7 @@ if($_GET['page'] == 'main'){
     // catalog
     $catalog = q("
       SELECT *
-      FROM $catalog
+      FROM `catalog`
       WHERE `seo_name` = '".mres($_GET['page'])."' AND `active` = 1
       LIMIT 1
     ");

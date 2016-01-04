@@ -22,3 +22,37 @@ line: 15
 date: 2016-01-03 14:48:04
 ===================================
 
+QUERY:
+    SELECT `id`,`name`,`seo_name`,`price`,`availability`,`anons_photo`
+    FROM `catalog_ru`
+    WHERE `active` = 1 ORDER BY `id` DESC
+
+Table 'childrens.catalog_ru' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\static\main.php
+line: 14
+date: 2016-01-04 19:34:02
+===================================
+
+QUERY:
+    SELECT `id`,`name`,`seo_name`,`price`,`availability`,`anons_photo`
+    FROM `catalog_ru`
+    WHERE `active` = 1 ORDER BY `id` DESC
+
+Table 'childrens.catalog_ru' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\static\main.php
+line: 14
+date: 2016-01-04 19:41:05
+===================================
+
+QUERY:
+      SELECT *
+      FROM `catalog_ru`
+      WHERE `seo_name` = 'tovar1ts' AND `active` = 1
+      LIMIT 1
+    
+Table 'childrens.catalog_ru' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\catalog\main.php
+line: 21
+date: 2016-01-04 19:49:30
+===================================
+

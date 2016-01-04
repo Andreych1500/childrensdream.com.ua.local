@@ -24,7 +24,6 @@
     <div class="top-menu">
       <ul>
         <li><a href="/<?=Core::$CONT['admin']?>/catalog/"><?=$mess['PRODUCTION']?> <span></span></a></li>
-        <li><a href="/<?=Core::$CONT['admin']?>/catalog_ru/"><?=$mess['PRODUCTION_RU']?> <span></span></a></li>
         <li><a class="active" href="/<?=Core::$CONT['admin']?>/static/call">Зворотній зв'язок <span></span></a></li>
         <li><a href="/<?=Core::$CONT['admin']?>/comments/"><?=$mess['OTZUVU']?> <span></span></a></li>
         <li><a href="/" target="_blank">Нa сайт<span></span></a></li>

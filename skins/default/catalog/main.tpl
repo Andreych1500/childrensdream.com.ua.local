@@ -20,8 +20,8 @@
                         <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><img src="<?=hsc($el['anons_photo'])?>" alt="Childreans-dream" title="Childreans-dream"></a>
                     </div>
                     <div class="desk-info">
-                        <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><span><?=hsc($el['name'])?></span></a>
-                        <p><?=hsc($el['price'])?> <?=$mess['PRICE'];?></p>
+                        <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><span><?=(isset($lang)? hsc($el['name_ru']) : hsc($el['name']))?></span></a>
+                        <p><?=number_format((isset($lang)? round(Core::$PRICE_RU * hsc($el['price'])) : hsc($el['price'])), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
                         <p class="aviability">
                             <span class="<?=(((int)$el['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
                             <span><?=(((int)$el['availability'] == 1)? $mess['AVIABILITY'] : $mess['NOAVIABILITY'])?></span>
@@ -38,9 +38,11 @@
 </div>
 
 <?php } else { ?>
-    <?php wtf($el,1);?>
+    <?php //wtf($el,1);?>
 
-    <div class="dateil-info"></div>
+    <div class="dateil-info">
+
+    </div>
 
     <div class="desc-info">
       <div class="item">
@@ -50,7 +52,7 @@
           <span></span>
         </div>
         <div class="view-info">
-            <div class="descript-text"><?=nl2br(hsc($el['description']))?></div>
+            <div class="descript-text"><?=nl2br((isset($lang)? hsc($el['description_ru']) : hsc($el['description'])))?></div>
             <div class="cirkl-photo">
               <div><img src="<?=hsc($el['descrip_photo'])?>" alt="Childreans-drea" title="Childreans-dream"></div>
             </div>
@@ -67,11 +69,11 @@
         <div class="table-haracteristic">
             <div class="tr">
               <div><?=$mess['FORMA']?></div>
-              <div><?=((empty($el['form']))? '-' : hsc($el['form']))?></div>
+              <div><?=((empty((isset($lang)? $el['form_ru'] : $el['form'])))? '-' : (isset($lang)? hsc($el['form_ru']) : hsc($el['form'])))?></div>
             </div>
             <div class="tr">
               <div><?=$mess['TYPE']?></div>
-              <div><?=((empty($el['type']))? '-' : hsc($el['type']))?></div>
+              <div><?=((empty((isset($lang)? $el['type_ru'] : $el['type'])))? '-' : (isset($lang)? hsc($el['type_ru']) : hsc($el['type'])))?></div>
             </div>
             <div class="tr">
                 <div><?=$mess['SIZE']?></div>
@@ -87,7 +89,7 @@
             </div>
             <div class="tr">
                 <div><?=$mess['RIGIDITY']?></div>
-                <div><?=((empty($el['rigidity']))? '-' : hsc($el['rigidity']))?></div>
+                <div><?=((empty((isset($lang)? $el['rigidity_ru'] : $el['rigidity'])))? '-' : (isset($lang)? hsc($el['rigidity_ru']) : hsc($el['rigidity'])))?></div>
             </div>
             <div class="tr">
                 <div><?=$mess['ANATOMING']?></div>

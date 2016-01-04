@@ -73,9 +73,6 @@ function addPhoto(el,stringValue){
        if($('#to_file input[name="isset"]').length > 0){
             files.append("isset", $('#to_file input[name="isset"]').val());
        }
-        if($('#to_file input[name="lang"]').length > 0){
-            files.append("lang", $('#to_file input[name="lang"]').val());
-        }
 
         var rel_to_set="#"+$(el).attr('rel_to_set');
 

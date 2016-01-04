@@ -10,7 +10,8 @@
     .catalog .text-item,
     .haracteristic,
     .desc-info,
-    .desc-info .item{
+    .desc-info .item,
+    .dateil-info{
         width:100%;
     }
 

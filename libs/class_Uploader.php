@@ -8,7 +8,7 @@ class Uploader {
 	static $tup = array ('jpg','gif','jpeg','png');
 	static $info = array();
 
-    static function upload($file,$width, $directory, $del, $lang){
+    static function upload($file,$width, $directory, $del){
 		if($file['size'] < 500 || $file['size'] > 50000000) {
 			self::$error = 'Розмір файла нам не підходить';
 		} elseif(!in_array($file['type'],self::$tmp)){
@@ -20,8 +20,8 @@ class Uploader {
 				
 				$temp = getimagesize($file['tmp_name']);
 
-				if(file_exists('../uploaded/'.$lang.'/'.$directory) && $del == 'Y'){
-					$files_unset = glob('../uploaded/'.$lang.'/'.$directory."/*");
+				if(file_exists('../uploaded/'.$directory) && $del == 'Y'){
+					$files_unset = glob('../uploaded/'.$directory."/*");
 					if (count($files_unset) > 0) {
 						foreach($files_unset as $obj) {
 							if(!is_dir($obj)){
@@ -30,8 +30,8 @@ class Uploader {
 						}
 					}
 				} else {
-					if(!file_exists('../uploaded/'.$lang.'/'.$directory)){
-						mkdir('../uploaded/'.$lang.'/'.$directory); //створення окремої папки для товара папки
+					if(!file_exists('../uploaded/'.$directory)){
+						mkdir('../uploaded/'.$directory); //створення окремої папки для товара папки
 					}
 				}
 
@@ -45,7 +45,7 @@ class Uploader {
 					$namefile = date('YmdHis').'img'.rand(10000,99999).'.gif';
 				}
 
-				$name = '/uploaded/'.$lang.'/'.$directory.'/'.$namefile;
+				$name = '/uploaded/'.$directory.'/'.$namefile;
 
 				self::$filename = $name;
 

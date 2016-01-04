@@ -9,7 +9,7 @@ if(isset($_POST['delete']) && isset($_POST['ids'])){
 
     $delete_dir = q("
         SELECT `seo_name`
-        FROM `catalog_ua`
+        FROM `catalog`
         WHERE `id` IN (".$ids.")
     ");
 
@@ -18,7 +18,7 @@ if(isset($_POST['delete']) && isset($_POST['ids'])){
         removeDirectory('./uploaded/ua/'.$row['seo_name']);
     }
 
-    q(" DELETE FROM `catalog_ua`
+    q(" DELETE FROM `catalog`
 		WHERE `id` IN (".$ids.")
 	");
 
@@ -34,7 +34,7 @@ if(isset($_POST['active']) && isset($_POST['ids'])){
     }
     $ids = implode(',',$_POST['ids']);
 
-    q(" UPDATE `catalog_ua`
+    q(" UPDATE `catalog`
         SET `active` = 1
 		WHERE `id` IN (".$ids.")
 	");
@@ -51,7 +51,7 @@ if(isset($_POST['deactive']) && isset($_POST['ids'])){
     }
     $ids = implode(',',$_POST['ids']);
 
-    q(" UPDATE `catalog_ua`
+    q(" UPDATE `catalog`
         SET `active` = 0
 		WHERE `id` IN (".$ids.")
 	");
@@ -63,7 +63,7 @@ if(isset($_POST['deactive']) && isset($_POST['ids'])){
 
 $res = q("
     SELECT *
-    FROM `catalog_ua`
+    FROM `catalog`
     ORDER BY `id` DESC
 ");
 

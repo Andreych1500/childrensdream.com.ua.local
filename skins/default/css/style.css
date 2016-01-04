@@ -142,7 +142,8 @@ div.item,
 .slyder-item .slider,
 .call-me,
 .catalog,
-.haracteristic {
+.haracteristic,
+.dateil-info {
   margin: 0 auto;
   width: 1010px;
   padding: 10px 0;

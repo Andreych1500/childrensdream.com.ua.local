@@ -10,6 +10,10 @@
           <input type="text" class="<?=((isset($errors['name']))? "errors" : "")?>"  name="name" value="<?=((isset($errors))? hsc($_POST['name']) : "")?>">
         </div>
         <div class="input-value">
+          <p>Назва товару (ru)<span>*</span></p>
+          <input type="text" class="<?=((isset($errors['name_ru']))? "errors" : "")?>"  name="name_ru" value="<?=((isset($errors))? hsc($_POST['name_ru']) : "")?>">
+        </div>
+        <div class="input-value">
           <p>Символьний код<span>*</span></p>
           <input type="text" class="<?=((isset($errors['seo_name']))? "errors" : "")?>"  name="seo_name" value="<?=((isset($errors))? hsc($_POST['seo_name']) : "")?>">
         </div>
@@ -26,8 +30,16 @@
           <input type="text"  name="form" value="<?=((isset($errors))? hsc($_POST['form']) : "")?>">
         </div>
         <div class="input-value">
+          <p>Форма матрацу (ru)</p>
+          <input type="text"  name="form_ru" value="<?=((isset($errors))? hsc($_POST['form_ru']) : "")?>">
+        </div>
+        <div class="input-value">
           <p>Тип матрацу</p>
           <input type="text" name="type" value="<?=((isset($errors))? hsc($_POST['type']) : "")?>">
+        </div>
+        <div class="input-value">
+          <p>Тип матрацу (ru)</p>
+          <input type="text" name="type_ru" value="<?=((isset($errors))? hsc($_POST['type_ru']) : "")?>">
         </div>
         <div class="input-value">
           <p>Розмір (тип "N x N")</p>
@@ -44,6 +56,10 @@
         <div class="input-value">
           <p>Жорсткість</p>
           <input type="text" name="rigidity" value="<?=((isset($errors))? hsc($_POST['rigidity']) : "")?>">
+        </div>
+        <div class="input-value">
+          <p>Жорсткість (ru)</p>
+          <input type="text" name="rigidity_ru" value="<?=((isset($errors))? hsc($_POST['rigidity_ru']) : "")?>">
         </div>
         <div class="input-value">
           <p>Анатомічні властивості</p>
@@ -74,8 +90,16 @@
           <textarea class="<?=((isset($errors['description']))? "errors" : "")?>" name="description"><?=((isset($errors))? hsc($_POST['description']) : "")?></textarea>
         </div>
         <div class="input-value">
+          <p>Короткий опис матрацу (ru)<span>*</span></p>
+          <textarea class="<?=((isset($errors['description_ru']))? "errors" : "")?>" name="description_ru"><?=((isset($errors))? hsc($_POST['description_ru']) : "")?></textarea>
+        </div>
+        <div class="input-value">
           <p>Текст матрацу<span>*</span></p>
           <textarea class="<?=((isset($errors['text']))? "errors" : "")?>" name="text"><?=((isset($errors))? hsc($_POST['text']) : "")?></textarea>
+        </div>
+        <div class="input-value">
+          <p>Текст матрацу (ru)<span>*</span></p>
+          <textarea class="<?=((isset($errors['text_ru']))? "errors" : "")?>" name="text_ru"><?=((isset($errors))? hsc($_POST['text_ru']) : "")?></textarea>
         </div>
 
         <div class="input-value upload_file" id="annons_photo">
@@ -131,7 +155,6 @@
       <input onchange="addPhoto(this,this.value)" rel_to_set="" type="file" name="photo" id="control">
       <input type="hidden" name="del" value="<?=((isset($errors))? "N" : "Y")?>">
       <input type="hidden" name="update" value="Y">
-      <input type="hidden" name="lang" value="ua">
       <p id="clears">Clear</p>
     </form>
   </div>

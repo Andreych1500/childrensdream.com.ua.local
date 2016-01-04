@@ -70,8 +70,8 @@
             <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><img src="<?=hsc($el['anons_photo'])?>" alt="Childreans-dream" title="Childreans-dream"></a>
           </div>
           <div class="desk-info">
-            <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><span><?=hsc($el['name'])?></span></a>
-            <p><?=hsc($el['price'])?> <?=$mess['PRICE'];?></p>
+            <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><span><?=(isset($lang)? hsc($el['name_ru']) : hsc($el['name']))?></span></a>
+            <p><?=number_format((isset($lang)? round(Core::$PRICE_RU * hsc($el['price'])) : hsc($el['price'])), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
             <p class="aviability">
               <span class="<?=(((int)$el['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
               <span><?=(((int)$el['availability'] == 1)? $mess['AVIABILITY'] : $mess['NOAVIABILITY'])?></span>
