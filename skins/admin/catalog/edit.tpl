@@ -100,7 +100,7 @@
           <textarea class="<?=((isset($errors['text_ru']))? "errors" : "")?>" name="text_ru"><?=((isset($errors))? hsc($_POST['text_ru']) : hsc($row['text_ru']))?></textarea>
         </div>
 
-        <div class="input-value upload_file" id="annons_photo">
+        <div class="input-value upload_file" id="annons_photo" rel_size="<?=Core::$SIZE_PHOTO['annons']?>">
           <p>Фото для анонсу</p>
           <button type="button" onclick="clickOninput(this)">Вибрати файл</button>
           <div class="up_file_text"><?=((isset($errors))? (!empty($anons_photo[0])? hsc($anons_photo[0]) : "Файл не вибраний") : ((empty($row['anons_photo']))? ((isset($_POST['anons_photo']))? '' : 'Файл не вибраний') : hsc($row['anons_photo'])))?></div>
@@ -109,7 +109,7 @@
           <div class="photos <?=((!empty($_POST['anons_photo']))? '' : ((!empty($row['anons_photo']))? '' : "hidden"))?>"><img src="<?=((isset($_POST['anons_photo']))? hsc($anons_photo[0]) : hsc($row['anons_photo']) )?>"></div>
         </div>
 
-        <div class="input-value upload_file" id="descrip_photo">
+        <div class="input-value upload_file" id="descrip_photo" rel_size="<?=Core::$SIZE_PHOTO['descrip']?>">
           <p>Фото для опису</p>
           <button type="button" onclick="clickOninput(this)">Вибрати файл</button>
           <div class="up_file_text"><?=((isset($errors))? (!empty($descrip_photo[0])? hsc($descrip_photo[0]) : "Файл не вибраний") : ((empty($row['descrip_photo']))? ((isset($_POST['descrip_photo']))? '' : 'Файл не вибраний') : hsc($row['descrip_photo'])))?></div>
@@ -118,9 +118,9 @@
           <div class="photos <?=((!empty($_POST['descrip_photo']))? '' : ((!empty($row['descrip_photo']))? '' : "hidden"))?>"><img src="<?=((isset($_POST['descrip_photo']))? hsc($descrip_photo[0]) : hsc($row['descrip_photo']) )?>"></div>
         </div>
 
-        <?php if(isset($more_photos) && count($more_photos) > 1) {
+        <?php if((isset($more_photos) && count($more_photos) > 1)) {
           foreach ($more_photos as $key => $file) { ?>
-            <div class="input-value upload_file" rel_id="<?=$key?>" id="more_photos_<?=$key?>">
+            <div class="input-value upload_file" rel_id="<?=$key?>" id="more_photos_<?=$key?>" rel_size="<?=Core::$SIZE_PHOTO['more']?>">
               <p><?=(($key == 0)? 'Додаткові зображення' : '')?></p>
               <button type="button" onclick="clickOninput(this)">Вибрати файл</button>
               <div class="up_file_text"><?=((isset($errors))? (!empty($more_photos[$key][2])? ((!empty($more_src[$key][2]))? hsc($more_src[$key][2]) : 'Файл не вибраний') : "Файл не вибраний") : ((!empty($file[0]))? hsc($file[2]) : 'Файл не вибраний'))?></div>
@@ -128,17 +128,17 @@
               <input type="hidden" value="<?=((isset($errors,$_POST['del_anons']))? hsc($_POST['del_anons']) : "")?>" name="del_more[]">
               <div class="photos <?=((!empty($_POST['more_photos'][$key]))? '' : ((!empty($file[0]) && !isset($errors))? '' : ((!empty($more_src[$key][0]))? '' : "hidden")))?>"><img src="<?=((isset($_POST['more_photos'][$key]))? hsc($more_src[$key][0]) : hsc($more_photos[$key][0]) )?>"></div>
             </div>
-          <? }
+          <?php }
         } else { ?>
-          <div class="input-value upload_file" rel_id="0" id="more_photos_0">
+          <div class="input-value upload_file" rel_id="0" id="more_photos_0" rel_size="<?=Core::$SIZE_PHOTO['more']?>">
             <p>Додаткові зображення</p>
             <button type="button" onclick="clickOninput(this)">Вибрати файл</button>
-            <div class="up_file_text"><?=((isset($errors))? (!empty($more_photos[0][2])? ((!empty($more_src[0][2]))? hsc($more_src[0][2]) : 'Файл не вибраний') : "Файл не вибраний") : ((!empty($more_photos[0][2]))? hsc($more_photos[0][2]) : 'Файл не вибраний'))?></div>
-            <input type="hidden" value="<?=((isset($errors))? hsc($_POST['more_photos'][0]) : hsc($more_photos[0][3]))?>" name="more_photos[]">
+            <div class="up_file_text"><?=$file_name?></div>
+            <input type="hidden" value="<?=$file_value?>" name="more_photos[]">
             <input type="hidden" value="<?=((isset($errors,$_POST['del_anons']))? hsc($_POST['del_anons']) : "")?>" name="del_more[]">
-            <div class="photos <?=((!empty($_POST['more_photos'][0]))? '' : ((!empty($more_photos[0]) && !isset($errors))? '' : ((!empty($more_src[0][0]))? '' : "hidden")))?>"><img src="<?=((isset($_POST['more_photos'][$key]))? hsc($more_src[0][0]) : hsc($more_photos[0][0]) )?>"></div>
+            <div class="photos <?=$file_hidden?>"><img src="<?=$file_photo?>"></div>
           </div>
-        <? } ?>
+        <?php } ?>
 
         <div class="add_more">
           <span>Добавити ще</span>
@@ -148,7 +148,7 @@
     </form>
 
     <form id="to_file">
-      <input onchange="addPhoto(this,this.value)" rel_to_set="" type="file" name="photo" id="control">
+      <input onchange="addPhoto(this,this.value)" rel_size="" rel_to_set="" type="file" name="photo" id="control">
       <input type="hidden" name="del" value="<?=((isset($errors))? "N" : "N")?>">
       <input type="hidden" name="isset" value="N">
       <input type="hidden" name="update" value="Y">

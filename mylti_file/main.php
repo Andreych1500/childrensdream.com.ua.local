@@ -15,10 +15,14 @@ $issetElement = $mysqli->query("
     LIMIT 1
 ");
 
+if($_POST['size'] > 400){
+    $_POST['size'] = 400;
+}
+
 
 if(!isset($_POST['isset'])){
     if(!mysqli_num_rows($issetElement) > 0 && isset($_POST['update'])) {
-        if (count($info[] = Uploader::upload($_FILES['photo'], 200, $_POST['directory'], $_POST['del'])) > 0) {
+        if (count($info[] = Uploader::upload($_FILES['photo'], $_POST['size'], $_POST['directory'], $_POST['del'])) > 0) {
             echo json_encode($info);
         } else {
             echo json_encode(array('error' => 'warning_file'));
@@ -27,7 +31,7 @@ if(!isset($_POST['isset'])){
         echo json_encode(array('isset' => 'element'));
     }
 } else {
-    if (count($info[] = Uploader::upload($_FILES['photo'], 200, $_POST['directory'], $_POST['del'])) > 0) {
+    if (count($info[] = Uploader::upload($_FILES['photo'], $_POST['size'], $_POST['directory'], $_POST['del'])) > 0) {
         echo json_encode($info);
     } else {
         echo json_encode(array('error' => 'warning_file'));

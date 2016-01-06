@@ -3,7 +3,7 @@
     <div class="sliders-line">
       <div class="slide-list">
         <div class="next-slide">
-          <span class="icon-left"></span>
+          <span class="icon-right"></span>
         </div>
         <div class="slide-wrap">
           <?php for($i=1; $i<=3; ++$i){  ?>
@@ -13,7 +13,7 @@
           <?php } ?>
         </div>
         <div class="prev-slide">
-          <span class="icon-right"></span>
+          <span class="icon-left"></span>
         </div>
         <div class="clear"></div>
       </div>

@@ -522,6 +522,10 @@ div.list-element input {
   border: 1px solid #ccc;
   padding: 5px;
   border-radius: 5px;
+  max-width: 200px;
+}
+.photos img {
+  width: 100%;
 }
 .add-shop .h1 {
   color: red;

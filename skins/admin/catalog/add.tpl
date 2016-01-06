@@ -102,7 +102,7 @@
           <textarea class="<?=((isset($errors['text_ru']))? "errors" : "")?>" name="text_ru"><?=((isset($errors))? hsc($_POST['text_ru']) : "")?></textarea>
         </div>
 
-        <div class="input-value upload_file" id="annons_photo">
+        <div class="input-value upload_file" id="annons_photo" rel_size="<?=Core::$SIZE_PHOTO['annons']?>">
           <p>Фото для анонсу</p>
           <button type="button" onclick="clickOninput(this)">Вибрати файл</button>
           <div class="up_file_text"><?=((isset($errors))? (isset($anons_photo[2])? hsc($anons_photo[2]) : "Файл не вибраний") : "Файл не вибраний")?></div>
@@ -111,7 +111,7 @@
           <div class="photos <?=((!empty($_POST['anons_photo']))? '' : "hidden")?>"><img src="<?=((!empty($_POST['anons_photo']))? hsc($anons_photo[0]) : '')?>"></div>
         </div>
 
-        <div class="input-value upload_file" id="descrip_photo">
+        <div class="input-value upload_file" id="descrip_photo" rel_size="<?=Core::$SIZE_PHOTO['descrip']?>">
           <p>Фото для опису</p>
           <button type="button" onclick="clickOninput(this)">Вибрати файл</button>
           <div class="up_file_text"><?=((isset($errors))? (isset($descrip_photo[2])? hsc($descrip_photo[2]) : "Файл не вибраний") : "Файл не вибраний")?></div>
@@ -120,7 +120,7 @@
           <div class="photos <?=((!empty($_POST['descrip_photo']))? '' : "hidden")?>"><img src="<?=((!empty($_POST['descrip_photo']))? hsc($descrip_photo[0]) : '')?>"></div>
         </div>
 
-        <div class="input-value upload_file" rel_id="0" id="more_photos_0">
+        <div class="input-value upload_file" rel_id="0" id="more_photos_0" rel_size="<?=Core::$SIZE_PHOTO['more']?>">
           <p>Додаткові зображення</p>
           <button type="button" onclick="clickOninput(this)">Вибрати файл</button>
           <div class="up_file_text"><?=((isset($errors))? (isset($more_src[0][2])? hsc($more_src[0][2]) : "Файл не вибраний") : "Файл не вибраний")?></div>
@@ -132,7 +132,7 @@
         <?php if(isset($more_src) && count($more_src) > 1) {
           foreach ($more_src as $key => $file) {
               if($key == 0){ continue; }  ?>
-            <div class="input-value upload_file" rel_id="<?=$key?>" id="more_photos_<?=$key?>">
+            <div class="input-value upload_file" rel_id="<?=$key?>" id="more_photos_<?=$key?>" rel_size="<?=Core::$SIZE_PHOTO['more']?>">
               <p></p>
               <button type="button" onclick="clickOninput(this)">Вибрати файл</button>
               <div class="up_file_text"><?=((isset($errors))? ((isset($more_src[$key]) && count($file) > 1)? hsc($file[2]) : "Файл не вибраний") : "Файл не вибраний")?></div>
@@ -152,7 +152,7 @@
     </form>
 
     <form id="to_file">
-      <input onchange="addPhoto(this,this.value)" rel_to_set="" type="file" name="photo" id="control">
+      <input onchange="addPhoto(this,this.value)" rel_size="" rel_to_set="" type="file" name="photo" id="control">
       <input type="hidden" name="del" value="<?=((isset($errors))? "N" : "Y")?>">
       <input type="hidden" name="update" value="Y">
       <p id="clears">Clear</p>

@@ -25,9 +25,11 @@ $(document).ready(function() {
     //add more file
     $('.add_more span').click(function(){
         var last_index = $('.upload_file[id*="more_photos"]').last().attr('rel_id');
+        var size_more_el = $('.upload_file[id*="more_photos"]').last().attr('rel_size');
+
         ++last_index; // створюєм нові id
 
-        var html_input_fyle = '<div class="input-value upload_file" rel_id="'+last_index+'" id="more_photos_'+last_index+'">' +
+        var html_input_fyle = '<div class="input-value upload_file" rel_id="'+last_index+'" rel_size="'+size_more_el+'" id="more_photos_'+last_index+'">' +
             '<p></p><button type="button" onclick="clickOninput(this)">Вибрати файл</button><div class="up_file_text">Файл не вибраний</div>' +
             '<input type="hidden" value="" name="more_photos[]"><input type="hidden" value="" name="del_more[]">' +
             '<div class="photos hidden"><img src=""></div></div>';
@@ -54,6 +56,7 @@ function clickOninput(el){
     ///
 
     if($('input[name="seo_name"]').val().length > 5) {
+        $(new_inp).attr('rel_size', $(el).parents('.upload_file').attr('rel_size'));
         $(new_inp).attr('rel_to_set', $(el).parents('.upload_file').attr('id')).trigger("click");
     } else {
         alert('Спочатку заповніть назву товару!')
@@ -61,11 +64,13 @@ function clickOninput(el){
 }
 
 function addPhoto(el,stringValue){
+
     if(stringValue.length > 1){
         var dir_name = $('input[name="seo_name"]').val();
         var files = new FormData($('#to_file')[0]);
         files.append("directory", dir_name);
         files.append("del", $('#to_file input[name="del"]').val());
+        files.append('size', $(el).attr('rel_size'));
 
        if($('#to_file input[name="update"]').length > 0){
            files.append("update", $('#to_file input[name="update"]').val());

@@ -1,37 +1,18 @@
 <?php
 // редагування товара
-if(isset($_POST['ok'],$_POST['name'],$_POST['name_ru'],$_POST['seo_el_name'],$_POST['price'],$_POST['text'],$_POST['description_ru'],$_POST['text_ru'],$_POST['description'])){
+if(isset($_POST['ok'])){
 	$_POST = trimAll($_POST);
 	$errors = array();
 
-	if(empty($_POST['name'])){
-		$errors['name'] = 'errors';
-	}
-	if(empty($_POST['name_ru'])){
-		$errors['name_ru'] = 'errors';
-	}
-	if(empty($_POST['seo_el_name'])){
-		$errors['seo_el_name'] = 'errors';
-	}
-	if(isset($_POST['availability'])){
-		$_POST['availability'] = 1;
-	}
-	if(empty($_POST['price']) || !(int)$_POST['price']){
-		$errors['price'] = 'errors';
-	}
-	if(empty($_POST['text'])){
-		$errors['text'] = 'errors';
-	}
-	if(empty($_POST['text_ru'])){
-		$errors['text_ru'] = 'errors';
-	}
-	if(empty($_POST['description'])) {
-		$errors['description'] = 'errors';
-	}
-	if(empty($_POST['description_ru'])) {
-		$errors['description_ru'] = 'errors';
-	}
-
+	if(empty($_POST['name'])){ $errors['name'] = 'errors'; }
+	if(empty($_POST['name_ru'])){ $errors['name_ru'] = 'errors'; }
+	if(empty($_POST['seo_el_name'])){ $errors['seo_el_name'] = 'errors'; }
+	if(isset($_POST['availability'])){ $_POST['availability'] = 1; }
+	if(empty($_POST['price']) || !(int)$_POST['price']){ $errors['price'] = 'errors'; }
+	if(empty($_POST['text'])){ $errors['text'] = 'errors'; }
+	if(empty($_POST['text_ru'])){ $errors['text_ru'] = 'errors'; }
+	if(empty($_POST['description'])){ $errors['description'] = 'errors'; }
+	if(empty($_POST['description_ru'])) { $errors['description_ru'] = 'errors';	}
 
 	//необовязкові поля
 	if(empty($_POST['form'])){ $_POST['form'] = ''; }
@@ -47,16 +28,13 @@ if(isset($_POST['ok'],$_POST['name'],$_POST['name_ru'],$_POST['seo_el_name'],$_P
 	if(empty($_POST['anatoming']) || !(int)$_POST['anatoming']){ $_POST['anatoming'] = 0; }
 	if(empty($_POST['ortopeding']) || !(int)$_POST['ortopeding']){ $_POST['ortopeding'] = 0; }
 
-
 	//anons photo
 	$anons_photo = ((isset($_POST['anons_photo']))? explode('|',$_POST['anons_photo']) : '');
 	//end anons photo
 
-
 	//description_photo
 	$descrip_photo = ((isset($_POST['descrip_photo']))? explode('|',$_POST['descrip_photo']) : '');
 	//end description_photo
-
 
 	//more_photos
 	if(isset($_POST['more_photos']) && count($_POST['more_photos']) >= 1){
@@ -135,6 +113,7 @@ if(!empty($row['more_photos'])){
 			$more_photos[$key] = explode('|', $val);
 			$more_photos[$key][3] = $val;
 		}
+
 	} else {
 		$more_photos = explode('#', $row['more_photos']);
 
@@ -145,3 +124,18 @@ if(!empty($row['more_photos'])){
 	}
 }
 // end arRow[more_photos]
+
+
+
+// one more file
+$file_name = ((isset($errors))? ((!empty($more_photos[0][2]))? ((!empty($more_src[0][2]))? hsc($more_src[0][2]) : 'Файл не вибраний') : ((!empty($more_src[0][0]))? hsc($more_src[0][2]) : 'Файл не вибраний')) : ((!empty($more_photos[0][2]))? hsc($more_photos[0][2]) : 'Файл не вибраний'));
+$file_value = ((isset($errors))? ((!empty($_POST['more_photos'][0]))? hsc($_POST['more_photos'][0]) : '') : ((!empty($more_photos[0][3]))? hsc($more_photos[0][3]) : ''));
+$file_hidden = ((!empty($_POST['more_photos'][0]))? '' : ((!empty($more_photos[0]) && !isset($errors))? '' : ((!empty($more_src[0][0]))? '' : 'hidden')));
+$file_photo = ((isset($_POST['more_photos'][0]))? ((!empty($more_src[0][0]))? hsc($more_src[0][0]) : '') : ((!empty($more_photos[0][0]))? hsc($more_photos[0][0]) : ''));
+// end one more file
+
+// more file
+if(!isset($more_photos) && isset($more_src)){
+	$more_photos = $more_src;
+}
+// end more file

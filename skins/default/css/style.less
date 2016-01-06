@@ -885,7 +885,7 @@ div.prev-slide{
 }
 
 .desc-info {
-  margin: 15px 0;
+  margin-bottom: 15px;
 
   .headers span{
     &:before{
@@ -989,6 +989,83 @@ div.prev-slide{
     }
   }
 }
+
+.dateil-info{
+  &:extend(.clearfix all);
+
+  .el-slider{
+    float:left;
+    width:52%;
+
+    &:extend(.clearfix all);
+
+    .slider-for{
+      float:right;
+      margin: 20px 0;
+    }
+
+    .slider-nav{
+      float:left;
+    }
+
+    .slider-for{
+      width:70%;
+      outline: none;
+    }
+
+    .slider-nav{
+      width:22%;
+      outline: none;
+      text-align: center;
+    }
+
+    .items-photo{
+      margin: 5px 0;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .slick-initialized .slick-slide{
+      outline: none;
+    }
+
+    .slick-center{
+      border: 1px solid #ccc;
+    }
+
+    .item-photo img,
+    .items-photo img{
+      margin: 0 auto;
+    }
+
+    .items-photo img{
+      max-width:100px;
+    }
+
+    .slick-slider{
+      margin-bottom:0;
+    }
+
+    .icon-top,
+    .icon-bottom{
+      color:#b6b6b6;
+      position: relative;
+      cursor: pointer;
+      font-size: 24pt;
+
+      &:hover{
+        color: #8A8A8A;
+      }
+    }
+
+  }
+
+
+  .el-text{
+    width: 40%;
+    float:right;
+  }
+}
 // end element catalog
 
 
@@ -1023,11 +1100,11 @@ div.prev-slide{
 
 @font-face {
   font-family: 'icomoon';
-  src:	url('font/icomoon.eot?gwqah0');
-  src:	url('font/icomoon.eot?gwqah0#iefix') format('embedded-opentype'),
-  url('font/icomoon.ttf?gwqah0') format('truetype'),
-  url('font/icomoon.woff?gwqah0') format('woff'),
-  url('font/icomoon.svg?gwqah0#icomoon') format('svg');
+  src: url('font/icomoon.eot?s8vo5a');
+  src: url('font/icomoon.eot?s8vo5a#iefix') format('embedded-opentype'),
+  url('font/icomoon.ttf?s8vo5a') format('truetype'),
+  url('font/icomoon.woff?s8vo5a') format('woff'),
+  url('font/icomoon.svg?s8vo5a#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -1052,6 +1129,12 @@ div.prev-slide{
 }
 .icon-right:before {
   content: "\e315";
+}
+.icon-top:before {
+  content: "\e316";
+}
+.icon-bottom:before {
+  content: "\e317";
 }
 .icon-vkontakte:before {
   content: "\e901";

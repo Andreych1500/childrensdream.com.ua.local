@@ -8,7 +8,7 @@ class Uploader {
 	static $tup = array ('jpg','gif','jpeg','png');
 	static $info = array();
 
-    static function upload($file,$width, $directory, $del){
+    static function upload($file, $width, $directory, $del){
 		if($file['size'] < 500 || $file['size'] > 50000000) {
 			self::$error = 'Розмір файла нам не підходить';
 		} elseif(!in_array($file['type'],self::$tmp)){

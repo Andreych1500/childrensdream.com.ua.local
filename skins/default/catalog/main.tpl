@@ -38,10 +38,24 @@
 </div>
 
 <?php } else { ?>
-    <?php //wtf($el,1);?>
 
     <div class="dateil-info">
+      <div class="el-slider">
+        <div class="slider-nav">
+          <?php foreach($photos as $key => $value){ ?>
+              <div class="items-photo"><img src="<?=hsc($value[0])?>" alt="Childrens-dream"></div>
+          <?php } ?>
+        </div>
 
+        <div class="slider-for">
+          <?php foreach($photos as $key => $value){ ?>
+          <div class="item-photo"><img src="<?=hsc($value[0])?>" alt="Childrens-dream"></div>
+          <?php } ?>
+        </div>
+      </div>
+      <div class="el-text">
+
+      </div>
     </div>
 
     <div class="desc-info">
