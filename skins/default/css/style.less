@@ -995,13 +995,12 @@ div.prev-slide{
 
   .el-slider{
     float:left;
-    width:52%;
+    width:54%;
 
     &:extend(.clearfix all);
 
     .slider-for{
-      float:right;
-      margin: 20px 0;
+      float:left;
     }
 
     .slider-nav{
@@ -1011,10 +1010,11 @@ div.prev-slide{
     .slider-for{
       width:70%;
       outline: none;
+      margin-left: 20px;
     }
 
     .slider-nav{
-      width:22%;
+      width:20%;
       outline: none;
       text-align: center;
     }
@@ -1062,8 +1062,39 @@ div.prev-slide{
 
 
   .el-text{
-    width: 40%;
+    width: 45%;
     float:right;
+
+    .el-shop,
+    .aviability,
+    .desc-el{
+      margin-top:10px;
+    }
+
+    .name-el{
+      font: 15pt @font-team1;
+      color: @team-color;
+      font-weight: 600;
+    }
+
+    .aviability{
+      font: 16px @font-team1;
+      color: @team-color;
+    }
+
+    .desc-el{
+      font: 16px @font-team2;
+      color: @team-color;
+    }
+
+    .el-shop{
+      p {
+        font-family: @font-team1;
+        color: @color-sumbit;
+        font-size: 16pt;
+        margin: 0;
+      }
+    }
   }
 }
 // end element catalog

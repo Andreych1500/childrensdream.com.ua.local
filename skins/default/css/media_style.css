@@ -11,7 +11,9 @@
     .haracteristic,
     .desc-info,
     .desc-info .item,
-    .dateil-info{
+    .dateil-info,
+    .slider-for,
+    .slider-for .item-photo img{
         width:100%;
     }
 

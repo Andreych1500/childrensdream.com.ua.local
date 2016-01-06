@@ -5,7 +5,7 @@ $(document).ready(function() {
         arrows: false,
         fade: true,
         asNavFor: '.slider-nav',
-        swipe: false
+        swipe: false,
     });
     $('.slider-nav').slick({
         slidesToShow: 3,

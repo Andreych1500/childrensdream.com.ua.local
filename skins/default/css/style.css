@@ -923,11 +923,10 @@ div.prev-slide {
 }
 .dateil-info .el-slider {
   float: left;
-  width: 52%;
+  width: 54%;
 }
 .dateil-info .el-slider .slider-for {
-  float: right;
-  margin: 20px 0;
+  float: left;
 }
 .dateil-info .el-slider .slider-nav {
   float: left;
@@ -935,9 +934,10 @@ div.prev-slide {
 .dateil-info .el-slider .slider-for {
   width: 70%;
   outline: none;
+  margin-left: 20px;
 }
 .dateil-info .el-slider .slider-nav {
-  width: 22%;
+  width: 20%;
   outline: none;
   text-align: center;
 }
@@ -974,8 +974,32 @@ div.prev-slide {
   color: #8A8A8A;
 }
 .dateil-info .el-text {
-  width: 40%;
+  width: 45%;
   float: right;
+}
+.dateil-info .el-text .el-shop,
+.dateil-info .el-text .aviability,
+.dateil-info .el-text .desc-el {
+  margin-top: 10px;
+}
+.dateil-info .el-text .name-el {
+  font: 15pt ComicSansMS;
+  color: #482200;
+  font-weight: 600;
+}
+.dateil-info .el-text .aviability {
+  font: 16px ComicSansMS;
+  color: #482200;
+}
+.dateil-info .el-text .desc-el {
+  font: 16px MyriadPro;
+  color: #482200;
+}
+.dateil-info .el-text .el-shop p {
+  font-family: ComicSansMS;
+  color: #a12a97;
+  font-size: 16pt;
+  margin: 0;
 }
 /* icons */
 #container span[class*="icon-"] {

@@ -54,7 +54,15 @@
         </div>
       </div>
       <div class="el-text">
-
+        <p class="name-el"><?=hsc((isset($lang)? $el['name_ru'] : $el['name']))?></p>
+        <p class="aviability">
+          <span class="<?=(((int)$el['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
+          <span><?=(((int)$el['availability'] == 1)? $mess['AVIABILITY'] : $mess['NOAVIABILITY'])?></span>
+        </p>
+        <p class="desc-el"><?=hsc((isset($lang)? $el['description_ru'] : $el['description']))?></p>
+        <div class="el-shop">
+          <p><?=number_format((isset($lang)? round(Core::$PRICE_RU * hsc($el['price'])) : hsc($el['price'])), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
+        </div>
       </div>
     </div>
 
@@ -66,7 +74,7 @@
           <span></span>
         </div>
         <div class="view-info">
-            <div class="descript-text"><?=nl2br((isset($lang)? hsc($el['description_ru']) : hsc($el['description'])))?></div>
+            <div class="descript-text"><?=nl2br((isset($lang)? hsc($el['text_ru']) : hsc($el['text'])))?></div>
             <div class="cirkl-photo">
               <div><img src="<?=hsc($el['descrip_photo'])?>" alt="Childreans-drea" title="Childreans-dream"></div>
             </div>
