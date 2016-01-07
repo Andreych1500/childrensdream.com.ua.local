@@ -35,6 +35,8 @@ if($_GET['page'] == 'main'){
 
     $slidePhoto = explode('#', $el['more_photos']);
     foreach($slidePhoto as $value){
-        $photos[] = explode('|', $value);
+        if(!empty($value)) {
+            $photos[] = explode('|', $value);
+        }
     }
 }

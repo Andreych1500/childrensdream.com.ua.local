@@ -17,7 +17,9 @@
 .dateil-info:before,
 .dateil-info:after,
 .dateil-info .el-slider:before,
-.dateil-info .el-slider:after {
+.dateil-info .el-slider:after,
+.dateil-info .el-text .el-shop:before,
+.dateil-info .el-text .el-shop:after {
   content: " ";
   display: table;
 }
@@ -25,7 +27,8 @@
 .desc-info .view-info:after,
 .haracteristic .table-haracteristic .tr:after,
 .dateil-info:after,
-.dateil-info .el-slider:after {
+.dateil-info .el-slider:after,
+.dateil-info .el-text .el-shop:after {
   clear: both;
 }
 *::-moz-selection {
@@ -755,11 +758,11 @@ div.prev-slide {
 }
 .catalog .el-item {
   max-width: 245px;
-  min-height: 305px;
+  min-height: 315px;
   width: 100%;
   height: auto;
   float: left;
-  margin: 0 10px 35px 0;
+  margin: 0 10px 20px 0;
 }
 .catalog .el-item:hover .photos img {
   bottom: 5px;
@@ -916,7 +919,7 @@ div.prev-slide {
   font: 12pt MyriadPro;
 }
 .haracteristic .table-haracteristic .tr div:nth-child(1) {
-  width: 52%;
+  width: 51%;
 }
 .haracteristic .table-haracteristic .tr:last-child {
   border-bottom: 1px solid #dedede;
@@ -934,11 +937,13 @@ div.prev-slide {
 .dateil-info .el-slider .slider-for {
   width: 70%;
   outline: none;
-  margin-left: 20px;
+  left: 20px;
+  top: 35px;
 }
 .dateil-info .el-slider .slider-nav {
   width: 20%;
   outline: none;
+  margin: 0 5px;
   text-align: center;
 }
 .dateil-info .el-slider .items-photo {
@@ -986,6 +991,7 @@ div.prev-slide {
   font: 15pt ComicSansMS;
   color: #482200;
   font-weight: 600;
+  margin: 0;
 }
 .dateil-info .el-text .aviability {
   font: 16px ComicSansMS;
@@ -996,10 +1002,46 @@ div.prev-slide {
   color: #482200;
 }
 .dateil-info .el-text .el-shop p {
+  float: left;
   font-family: ComicSansMS;
   color: #a12a97;
   font-size: 16pt;
   margin: 0;
+}
+.dateil-info .el-text .el-shop .add-shop {
+  float: left;
+  left: 20px;
+  padding: 10px 20px !important;
+  display: inline-block;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 60px;
+  background-color: #a12a97;
+  -webkit-border-radius: 3px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 3px;
+  -moz-background-clip: padding;
+  border-radius: 3px;
+  background-clip: padding-box;
+  font-family: MyriadPro;
+  font-size: 13pt;
+  color: #fff;
+}
+.dateil-info .el-text .el-shop .add-shop:hover {
+  background-color: #c935bd;
+}
+.dateil-info .name-el {
+  font: 15pt ComicSansMS;
+  color: #482200;
+  font-weight: 600;
+  margin: 0 0 20px 10px;
+}
+.dateil-info .good-view {
+  width: 100%;
+}
+.dateil-info .slider-for.good-top {
+  top: 0;
 }
 /* icons */
 #container span[class*="icon-"] {
@@ -1008,8 +1050,8 @@ div.prev-slide {
 }
 @font-face {
   font-family: 'icomoon';
-  src: url('font/icomoon.eot?s8vo5a');
-  src: url('font/icomoon.eot?s8vo5a#iefix') format('embedded-opentype'), url('font/icomoon.ttf?s8vo5a') format('truetype'), url('font/icomoon.woff?s8vo5a') format('woff'), url('font/icomoon.svg?s8vo5a#icomoon') format('svg');
+  src: url('font/icomoon.eot?8ocpld');
+  src: url('font/icomoon.eot?8ocpld#iefix') format('embedded-opentype'), url('font/icomoon.ttf?8ocpld') format('truetype'), url('font/icomoon.woff?8ocpld') format('woff'), url('font/icomoon.svg?8ocpld#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -1026,6 +1068,9 @@ div.prev-slide {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.icon-basket:before {
+  content: "\e906";
 }
 .icon-left:before {
   content: "\e314";

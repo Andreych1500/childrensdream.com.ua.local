@@ -5,6 +5,7 @@ $mess['NO_ELEMETN'] = 'Продукция отсутствует';
 $mess['PRICE'] = 'руб.';
 $mess['AVIABILITY']   = 'В наличии';
 $mess['NOAVIABILITY'] = 'Нет на складе';
+$mess['ADDSHOP'] = 'Купить';
 
 $mess['MIN_OPUS'] = 'Описание&nbsp;матраса';
 

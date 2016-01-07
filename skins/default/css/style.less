@@ -774,11 +774,11 @@ div.prev-slide{
 
   .el-item {
     max-width: 245px;
-    min-height: 305px;
+    min-height: 315px;
     width: 100%;
     height: auto;
     float: left;
-    margin: 0 10px 35px 0;
+    margin: 0 10px 20px 0;
 
 
     &:hover{
@@ -980,7 +980,7 @@ div.prev-slide{
       }
 
       div:nth-child(1){
-        width:52%;
+        width:51%;
       }
     }
 
@@ -1010,12 +1010,14 @@ div.prev-slide{
     .slider-for{
       width:70%;
       outline: none;
-      margin-left: 20px;
+      left: 20px;
+      top: 35px;
     }
 
     .slider-nav{
       width:20%;
       outline: none;
+      margin:0 5px;
       text-align: center;
     }
 
@@ -1075,6 +1077,7 @@ div.prev-slide{
       font: 15pt @font-team1;
       color: @team-color;
       font-weight: 600;
+      margin: 0;
     }
 
     .aviability{
@@ -1088,13 +1091,44 @@ div.prev-slide{
     }
 
     .el-shop{
+      &:extend(.clearfix all);
+
       p {
+        float:left;
         font-family: @font-team1;
         color: @color-sumbit;
         font-size: 16pt;
         margin: 0;
       }
+
+      .add-shop{
+        float:left;
+        left:20px;
+        padding: 10px 20px !important;
+        display: inline-block;
+
+        .submit();
+
+        &:hover{
+          background-color: lighten(@color-sumbit, 10%);
+        }
+      }
     }
+  }
+
+  .name-el{
+    font: 15pt @font-team1;
+    color: @team-color;
+    font-weight: 600;
+    margin: 0 0 20px 10px;
+  }
+
+  .good-view{
+    width:100%
+  }
+
+  .slider-for.good-top{
+    top:0;
   }
 }
 // end element catalog
@@ -1131,11 +1165,11 @@ div.prev-slide{
 
 @font-face {
   font-family: 'icomoon';
-  src: url('font/icomoon.eot?s8vo5a');
-  src: url('font/icomoon.eot?s8vo5a#iefix') format('embedded-opentype'),
-  url('font/icomoon.ttf?s8vo5a') format('truetype'),
-  url('font/icomoon.woff?s8vo5a') format('woff'),
-  url('font/icomoon.svg?s8vo5a#icomoon') format('svg');
+  src: url('font/icomoon.eot?8ocpld');
+  src: url('font/icomoon.eot?8ocpld#iefix') format('embedded-opentype'),
+  url('font/icomoon.ttf?8ocpld') format('truetype'),
+  url('font/icomoon.woff?8ocpld') format('woff'),
+  url('font/icomoon.svg?8ocpld#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -1155,6 +1189,10 @@ div.prev-slide{
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+.icon-basket:before {
+  content: "\e906";
+}
 .icon-left:before {
   content: "\e314";
 }

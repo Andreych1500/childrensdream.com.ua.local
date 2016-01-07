@@ -40,6 +40,7 @@
 <?php } else { ?>
 
     <div class="dateil-info">
+      <?php if(isset($photos)){ ?>
       <div class="el-slider">
         <div class="slider-nav">
           <?php foreach($photos as $key => $value){ ?>
@@ -47,13 +48,14 @@
           <?php } ?>
         </div>
 
-        <div class="slider-for">
+        <div class="slider-for <?=((count($photos) > 3)? '' : 'good-top')?>">
           <?php foreach($photos as $key => $value){ ?>
           <div class="item-photo"><img src="<?=hsc($value[0])?>" alt="Childrens-dream"></div>
           <?php } ?>
         </div>
       </div>
-      <div class="el-text">
+      <?php } ?>
+      <div class="el-text <?=(!isset($photos)? 'good-view' : '')?>">
         <p class="name-el"><?=hsc((isset($lang)? $el['name_ru'] : $el['name']))?></p>
         <p class="aviability">
           <span class="<?=(((int)$el['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
@@ -62,6 +64,10 @@
         <p class="desc-el"><?=hsc((isset($lang)? $el['description_ru'] : $el['description']))?></p>
         <div class="el-shop">
           <p><?=number_format((isset($lang)? round(Core::$PRICE_RU * hsc($el['price'])) : hsc($el['price'])), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
+          <div class="add-shop">
+              <span class="icon-basket"></span>
+              <?=$mess['ADDSHOP']?>
+          </div>
         </div>
       </div>
     </div>
