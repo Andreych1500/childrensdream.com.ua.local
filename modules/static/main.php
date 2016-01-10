@@ -7,7 +7,7 @@ Core::$JS[] = '<script type="text/javascript" src="/skins/default/js/call.js"></
 $catalog = q("
     SELECT `id`,`name`,`seo_name`,`price`,`availability`,`anons_photo`,`name_ru`
     FROM `catalog`
-    WHERE `active` = 1 ORDER BY `id` DESC
+    WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
 ");
 
 // call me

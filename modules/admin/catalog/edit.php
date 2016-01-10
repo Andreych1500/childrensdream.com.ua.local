@@ -15,6 +15,7 @@ if(isset($_POST['ok'])){
 	if(empty($_POST['description_ru'])) { $errors['description_ru'] = 'errors';	}
 
 	//необовязкові поля
+	if(empty($_POST['sort'])){ $_POST['sort'] = '100'; }
 	if(empty($_POST['form'])){ $_POST['form'] = ''; }
 	if(empty($_POST['type'])){ $_POST['type'] = '';	}
 	if(empty($_POST['form_ru'])){ $_POST['form_ru'] = ''; }
@@ -55,6 +56,7 @@ if(isset($_POST['ok'])){
 
 	if(!count($errors)){
 		q(" UPDATE `catalog` SET
+ 			`sort`           = '".(int)$_POST['sort']."',
 			`name`           = '".mres($_POST['name'])."',
 			`name_ru`        = '".mres($_POST['name_ru'])."',
 			`seo_name`       = '".mres($_POST['seo_el_name'])."',

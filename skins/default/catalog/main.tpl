@@ -21,7 +21,7 @@
                     </div>
                     <div class="desk-info">
                         <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><span><?=(isset($lang)? hsc($el['name_ru']) : hsc($el['name']))?></span></a>
-                        <p><?=number_format((isset($lang)? round(Core::$PRICE_RU * hsc($el['price'])) : hsc($el['price'])), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
+                        <p><?=number_format(hsc($el['price']), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
                         <p class="aviability">
                             <span class="<?=(((int)$el['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
                             <span><?=(((int)$el['availability'] == 1)? $mess['AVIABILITY'] : $mess['NOAVIABILITY'])?></span>
@@ -42,7 +42,7 @@
     <div class="dateil-info">
       <?php if(isset($photos)){ ?>
       <div class="el-slider">
-        <div class="slider-nav">
+        <div class="slider-nav <?=((count($photos) > 3)? 'center-photo' : 'currenc')?>">
           <?php foreach($photos as $key => $value){ ?>
               <div class="items-photo"><img src="<?=hsc($value[0])?>" alt="Childrens-dream"></div>
           <?php } ?>
@@ -63,10 +63,10 @@
         </p>
         <p class="desc-el"><?=hsc((isset($lang)? $el['description_ru'] : $el['description']))?></p>
         <div class="el-shop">
-          <p><?=number_format((isset($lang)? round(Core::$PRICE_RU * hsc($el['price'])) : hsc($el['price'])), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
-          <div class="add-shop">
-              <span class="icon-basket"></span>
-              <?=$mess['ADDSHOP']?>
+          <p><?=number_format(hsc($el['price']), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
+          <div class="add-shop <?=(!empty($basket)? $basket : '')?>" <?php if(empty($basket)){ ?> onclick="addToCard(<?=(int)$el['id']?>,'<?=$mess['BASKETOK']?>','1')"<?php }?>>
+              <?=(empty($basket)? '<span class="icon-basket"></span>' : '')?>
+              <?=(!empty($basket)? $mess['BASKETOK'] : $mess['ADDSHOP'])?>
           </div>
         </div>
       </div>

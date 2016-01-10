@@ -2,10 +2,11 @@
 // catalog
 $mess['CATALOG'] = 'Продукция';
 $mess['NO_ELEMETN'] = 'Продукция отсутствует';
-$mess['PRICE'] = 'руб.';
+$mess['PRICE'] = 'грн.';
 $mess['AVIABILITY']   = 'В наличии';
 $mess['NOAVIABILITY'] = 'Нет на складе';
-$mess['ADDSHOP'] = 'Купить';
+$mess['ADDSHOP']  = 'Купить';
+$mess['BASKETOK'] = 'В корзине';
 
 $mess['MIN_OPUS'] = 'Описание&nbsp;матраса';
 

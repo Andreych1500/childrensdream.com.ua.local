@@ -46,6 +46,7 @@ if(isset($_POST['ok'],$_POST['name'],$_POST['name_ru'],$_POST['seo_name'],$_POST
 
 
 	//необовязкові поля
+	if(empty($_POST['sort'])){ $_POST['sort'] = '100'; }
 	if(empty($_POST['form'])){ $_POST['form'] = ''; }
 	if(empty($_POST['type'])){ $_POST['type'] = '';	}
 	if(empty($_POST['form_ru'])){ $_POST['form_ru'] = ''; }
@@ -88,6 +89,7 @@ if(isset($_POST['ok'],$_POST['name'],$_POST['name_ru'],$_POST['seo_name'],$_POST
 
 	if(!count($errors)){
 		q(" INSERT INTO `catalog` SET
+ 			`sort`           = '".(int)$_POST['sort']."',
 		    `name`           = '".mres($_POST['name'])."',
 		    `name_ru`        = '".mres($_POST['name_ru'])."',
 		    `seo_name`       = '".mres($_POST['seo_name'])."',

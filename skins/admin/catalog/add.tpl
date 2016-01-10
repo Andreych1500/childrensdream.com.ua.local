@@ -18,6 +18,10 @@
           <input type="text" class="<?=((isset($errors['seo_name']))? "errors" : "")?>"  name="seo_name" value="<?=((isset($errors))? hsc($_POST['seo_name']) : "")?>">
         </div>
         <div class="input-value">
+          <p>Сортування</p>
+          <input type="number" step="1" min="1" name="sort" value="<?=((isset($errors))? hsc($_POST['sort']) : "100")?>">
+        </div>
+        <div class="input-value">
           <p>Наявність</p>
           <input type="checkbox" <?=((isset($errors,$_POST['availability']))? "checked=\"checked\"" : "")?> name="availability" value="yes">
         </div>

@@ -11,17 +11,14 @@ $(document).ready(function() {
         }
 
         $('html, body').stop().animate({
-            scrollTop: $(anchor).offset().top
+
+            scrollTop: $(anchor).offset().top -30
         }, 1000);
         e.preventDefault();
     });
 
-});
-
-window.onload = function(){
-
+    // resize slider
     var widthWindon = document.documentElement.clientWidth;
-
 
     if(widthWindon < '1024'){
         var slideWidth = $('.sliders-line').width();
@@ -37,9 +34,8 @@ window.onload = function(){
     $(window).resize(function() {
         $('.sliders-line .slide-item').width($('.sliders-line').width());
     });
-
-}
-
+    // end resize slider
+});
 
 function htmSlider(){
     /* обертка слайдера */

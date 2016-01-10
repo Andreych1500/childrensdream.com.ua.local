@@ -15,7 +15,9 @@
   <?php if(count(Core::$CSS)){ echo implode("\n",Core::$CSS); } ?>
   <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
 </head>
-
+<?php
+wtf($_COOKIE,1);
+?>
 <body>
   <header>
     <div class="item">
@@ -38,12 +40,12 @@
           <li><a href="<?=(isset($lang)? '/ru/' : '/')?>#payment"><?=$mess['SERVICES']?></a></li>
           <li><a href="<?=(isset($lang)? '/ru/' : '/')?>#call"><?=$mess['CONTACTS']?></a></li>
           <li><a href="<?=(isset($lang)? '/ru/' : '/')?>comments"><?=$mess['OTZUVU']?></a></li>
-          <li><a href="#"><?=$mess['BASKET']?> <span>1</span></a></li>
+          <li><a href="<?=(isset($lang)? '/ru/' : '/')?>order"><?=$mess['BASKET']?> <span><?=(int)$countG?></span></a></li>
         </ul>
         <span class="menu-icon"></span>
       </div>
       <div class="mobile-basket">
-        <a href="#"><?=$mess['BASKET']?> <span>1</span></a>
+        <a href="<?=(isset($lang)? '/ru/' : '/')?>order"><?=$mess['BASKET']?> <span><?=(int)$countG?></span></a>
       </div>
 
       <!-- Open mobile menu -->

@@ -30,16 +30,13 @@ $(document).ready(function() {
         $('.top-menu li a[href="'+url+'"], .pushy li a[href="'+url+'"]').parent('li').addClass('active');
     });
 
-
-
-
     $( window ).resize(function() {
         var widthWindow = Math.max(
             document.body.scrollWidth, document.documentElement.scrollWidth,
             document.body.offsetWidth, document.documentElement.offsetWidth,
             document.body.clientWidth, document.documentElement.clientWidth
         );
-        console.log(widthWindow)
+        console.log(widthWindow)//////////////////
 
         if(widthWindow <= 625){
             $('.el-text .name-el').prependTo('.dateil-info');
@@ -57,4 +54,104 @@ $(document).ready(function() {
             $('.dateil-info .name-el').prependTo('.dateil-info .el-text');
         }
     }
+
+
+    // видалення товару з корзини
+    $(".del-good").unbind('click').click(function(){
+        var temp = JSON.parse(getCookie('items')); // розпаковка массива
+        var id = 'g'+$(this).find('span').attr('rel_id');
+        delete temp[id];
+
+        $(this).parents('tr').hide('slow');
+        var time_cookie = {expires : 16700000};
+        setCookie('items',JSON.stringify(temp),time_cookie);
+
+        if(count(temp) == 0){
+            window.location.href = window.location.href
+        }
+
+        var card = $('.top-menu ul li').last().find('span');
+        var mobcard = $('.mobile-basket').find('span');
+        var countG    = $(card).text();
+        var mobcountG = $(mobcard).text();
+        --countG;
+        --mobcountG;
+        $(card).text(countG);
+        $(mobcard).text(mobcountG);
+    });
 });
+
+
+function count(obj) {
+    var count = 0;
+    for(var prs in obj){
+        if(obj.hasOwnProperty(prs)) count++;
+    }
+    return count;
+}
+
+// add card to cookie
+function addToCard(id_el,text_submit,count){
+    var items = {};
+    var time_cookie = {expires : 16700000};
+
+    if(getCookie('items') === undefined){
+        items['g' + id_el] = count;
+        setCookie('items',JSON.stringify(items),time_cookie);
+    } else {
+        var temp = JSON.parse(getCookie('items')); // розпаковка массива
+        temp['g' + id_el] = count; // добавити елемент
+        setCookie('items',JSON.stringify(temp),time_cookie); // запакувати назад
+    }
+
+    $('.icon-basket').remove();
+    $('.add-shop').addClass('backet-ok').removeAttr('onclick').text(text_submit);
+    var card = $('.top-menu ul li').last().find('span');
+    var mobcard = $('.mobile-basket').find('span');
+    var countG    = $(card).text();
+    var mobcountG = $(mobcard).text();
+    ++countG;
+    ++mobcountG;
+    $(card).text(countG);
+    $(mobcard).text(mobcountG);
+}
+
+function deleteCookie(name) {
+    setCookie(name, "", {
+        expires: -1
+    })
+}
+
+function getCookie(name) {
+    var matches = document.cookie.match(new RegExp(
+        "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+    ));
+    return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+function setCookie(name, value, options) {
+    options = options || {};
+
+    var expires = options.expires;
+
+    if (typeof expires == "number" && expires) {
+        var d = new Date();
+        d.setTime(d.getTime() + expires * 1000);
+        expires = options.expires = d;
+    }
+
+    if (expires && expires.toUTCString) {
+        options.expires = expires.toUTCString();
+    }
+
+    var updatedCookie = name + "=" + value;
+
+    for (var propName in options) {
+        updatedCookie += "; path=/;" + propName;
+        var propValue = options[propName];
+        if (propValue !== true) {
+            updatedCookie += "=" + propValue;
+        }
+    }
+    document.cookie = updatedCookie;
+}

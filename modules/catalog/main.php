@@ -13,7 +13,7 @@ if($_GET['page'] == 'main'){
     $catalog = q("
       SELECT `id`,`name`,`seo_name`,`price`,`availability`,`anons_photo`,`name_ru`
       FROM `catalog`
-      WHERE `active` = 1 ORDER BY `id` DESC
+      WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
     ");
 
 } else {
@@ -22,11 +22,11 @@ if($_GET['page'] == 'main'){
     $catalog = q("
       SELECT *
       FROM `catalog`
-      WHERE `seo_name` = '".mres($_GET['page'])."' AND `active` = 1
+      WHERE `seo_name` = '" . mres($_GET['page']) . "' AND `active` = 1
       LIMIT 1
     ");
 
-    if($catalog->num_rows == 0 || isset($_GET['key1'])){
+    if ($catalog->num_rows == 0 || isset($_GET['key1'])) {
         header("Location: /404");
         exit();
     }
@@ -34,9 +34,16 @@ if($_GET['page'] == 'main'){
     $el = $catalog->fetch_assoc();
 
     $slidePhoto = explode('#', $el['more_photos']);
-    foreach($slidePhoto as $value){
-        if(!empty($value)) {
+    foreach ($slidePhoto as $value) {
+        if (!empty($value)) {
             $photos[] = explode('|', $value);
+        }
+    }
+
+    if (isset($_COOKIE['items'])) {
+        $cookies = (array)json_decode($_COOKIE['items']);
+        if(array_key_exists('g'.$el['id'],$cookies)){
+            $basket = 'backet-ok';
         }
     }
 }

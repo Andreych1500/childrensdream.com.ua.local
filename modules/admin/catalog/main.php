@@ -64,7 +64,7 @@ if(isset($_POST['deactive']) && isset($_POST['ids'])){
 $res = q("
     SELECT *
     FROM `catalog`
-    ORDER BY `id` DESC
+    ORDER BY `sort` DESC, `id` DESC
 ");
 
 if(isset($_SESSION['info'])){

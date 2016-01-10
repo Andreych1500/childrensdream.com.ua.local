@@ -14,7 +14,8 @@
     .dateil-info,
     .slider-for,
     .slider-for .item-photo img,
-    .slider-nav .items-photo img{
+    .slider-nav .items-photo img,
+    .catalog-order {
         width:100%;
     }
 
@@ -132,6 +133,9 @@
         left:auto;
     }
 
+    div.dateil-info .slider-nav .hidden-icon{
+        display:block !important;
+    }
 }
 
 
@@ -358,6 +362,20 @@
 
     .table-haracteristic .tr div:nth-child(1){
         margin-right: 15px;
+    }
+
+    .catalog-order .hText{
+        font-size:18pt;
+    }
+
+    .headers-tab p:nth-child(1),
+    .line-tab-goods tr td:nth-child(1){
+        display:none;
+    }
+
+    .catalog-order .table-count .line-tab-goods td,
+    .catalog-order .bt{
+        width:33%;
     }
 }
 
