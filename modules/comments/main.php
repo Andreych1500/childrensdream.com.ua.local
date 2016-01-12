@@ -1,5 +1,5 @@
 <?php
-	Core::$META['title'] = 'comments';
+Core::$META['title'] = 'comments';
 Core::$JS[] =  '<script type="text/javascript" src="/skins/default/js/comments.js"></script>';
 
 $res = q("

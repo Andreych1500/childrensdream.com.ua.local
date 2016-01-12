@@ -15,9 +15,7 @@
   <?php if(count(Core::$CSS)){ echo implode("\n",Core::$CSS); } ?>
   <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
 </head>
-<?php
-wtf($_COOKIE,1);
-?>
+
 <body>
   <header>
     <div class="item">

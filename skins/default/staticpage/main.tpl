@@ -1,5 +1,5 @@
-<div class="content2">
-  <span class="color8">
+<div class="error-links">
+  <p class="i404">
     <?php echo hsc($staticpage['text']); ?>
-  </span>
+  </p>
 </div>

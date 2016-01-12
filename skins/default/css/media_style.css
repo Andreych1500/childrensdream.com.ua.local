@@ -15,7 +15,8 @@
     .slider-for,
     .slider-for .item-photo img,
     .slider-nav .items-photo img,
-    .catalog-order {
+    .catalog-order,
+    .error-links{
         width:100%;
     }
 
@@ -376,6 +377,20 @@
     .catalog-order .table-count .line-tab-goods td,
     .catalog-order .bt{
         width:33%;
+    }
+
+    div.order-form input{
+        width:195px !important;
+    }
+    div.order-form select{
+        width:205px !important;
+    }
+    .catalog-order .order .order-form tr td:nth-child(1){
+        width:45%;
+    }
+    .error-links p{
+        font-size: 110pt;
+        padding-top: 25px;
     }
 }
 

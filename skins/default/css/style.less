@@ -130,7 +130,7 @@
 body, footer, header, .top-menu ul li:hover:after, .mobile-basket a:hover:after, .content,
 .hText table, .hText td .line, .slyder-item, .background-content, .slide-list img,
 div.fixed-menu, .name-date, .form-comment form table, .form-call, .no-element, .view-info,
-.line-tab-goods{
+.line-tab-goods, .order-form table{
   width:100%;
 }
 
@@ -176,7 +176,8 @@ footer,header,
   .color-block(@color-element, @team-backgroung-img);
 }
 
-div.item, .content .text-item, .slyder-item .slider, .call-me, .catalog, .haracteristic, .dateil-info, .catalog-order{
+div.item, .content .text-item, .slyder-item .slider, .call-me, .catalog, .haracteristic, .dateil-info, .catalog-order,
+.error-links{
   margin:0 auto;
   width:1010px;
   padding:10px 0;
@@ -644,7 +645,7 @@ div.prev-slide{
 
     input.no-errors, textarea.no-errors{
       border-color:#9bd6e7;
-      .transition(border-color 2s ease)
+      .transition(border-color 2s ease);
     }
   }
 
@@ -749,7 +750,7 @@ div.prev-slide{
 
     input.no-errors, textarea.no-errors {
       border-color: #9bd6e7;
-      .transition(border-color 2s ease)
+      .transition(border-color 2s ease);
     }
   }
 
@@ -1174,7 +1175,7 @@ div.prev-slide{
   }
 
   .order{
-    margin:20px 0 0 10px;
+    margin:20px 0 0 5px;
     font-family: @font-team2;
 
 
@@ -1186,8 +1187,65 @@ div.prev-slide{
       border-top: 1px solid #dedede;
       border-bottom: 1px solid #dedede;
 
-      .all-goods-price{
+      .all-goods-price,
+      .currency{
         color:@color-sumbit;
+      }
+    }
+
+    .order-form{
+      font-family: @font-team2;
+      border-bottom: 1px solid #dedede;
+      margin-bottom: 30px;
+      padding-bottom: 30px;
+
+      tr{
+        height:40px;
+        color:@team-color;
+
+        td:nth-child(1){
+          width: 20%;
+          min-width: 90px;
+
+          span{
+            color:#9e0000;
+          }
+        }
+
+        input,select {
+          width: 230px;
+          outline: none;
+          padding: 4px;
+          .border-radius(2);
+          border: 1px solid @color-element2;
+        }
+
+        img{
+          width:100%;
+        }
+
+        .error{
+          border-color:red;
+        }
+
+        .no-errors{
+          border-color:@color-element2;
+          .transition(border-color 2s ease);
+        }
+
+        select{
+          width: 240px;
+        }
+
+      }
+    }
+
+    input[type="submit"]{
+      .submit();
+      padding: 10px 25px;
+
+      &:hover{
+        background-color: lighten(@color-sumbit, 10%);
       }
     }
   }
@@ -1196,6 +1254,7 @@ div.prev-slide{
     max-width: 630px;
     color:@team-color;
     font-family: @font-team2;
+    margin-right: 5px;
 
     .headers-tab{
       &:extend(.clearfix all);
@@ -1243,7 +1302,6 @@ div.prev-slide{
           width: 4%;
 
           .icon-cross:before{
-            color:#D80000;
             cursor: pointer;
           }
 
@@ -1277,6 +1335,16 @@ div.prev-slide{
     display:table-cell;
     width: 22%;
   }
+
+  .edJsPrice{
+    top:-2px;
+  }
+
+  .care{
+    margin:20px 0 0 10px;
+    font-family: @font-team2;
+    color:@team-color;
+  }
 }
 
 
@@ -1295,10 +1363,18 @@ div.prev-slide{
       }
     }
   }
+
+  margin-top:75px;
 }
 
-
-
+.error-links{
+  p{
+    font:140pt @font-team2;
+    color:@color-element2;
+    text-align: center;
+    padding-top: 50px;
+  }
+}
 
 
 
@@ -1339,7 +1415,7 @@ div.prev-slide{
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
-  speak: none;
+  /*speak: none;*/
   font-style: normal;
   font-weight: normal;
   font-variant: normal;

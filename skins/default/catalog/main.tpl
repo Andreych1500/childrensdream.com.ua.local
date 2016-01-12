@@ -62,6 +62,7 @@
           <span><?=(((int)$el['availability'] == 1)? $mess['AVIABILITY'] : $mess['NOAVIABILITY'])?></span>
         </p>
         <p class="desc-el"><?=hsc((isset($lang)? $el['description_ru'] : $el['description']))?></p>
+        <?php if($el['availability'] == 1){ ?>
         <div class="el-shop">
           <p><?=number_format(hsc($el['price']), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
           <div class="add-shop <?=(!empty($basket)? $basket : '')?>" <?php if(empty($basket)){ ?> onclick="addToCard(<?=(int)$el['id']?>,'<?=$mess['BASKETOK']?>','1')"<?php }?>>
@@ -69,6 +70,7 @@
               <?=(!empty($basket)? $mess['BASKETOK'] : $mess['ADDSHOP'])?>
           </div>
         </div>
+        <?php } ?>
       </div>
     </div>
 

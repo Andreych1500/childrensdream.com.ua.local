@@ -69,7 +69,7 @@ footer,
 .info-link p a {
   color: #FFF;
 }
-.top-menu ul li:nth-child(4) {
+.top-menu ul li:nth-child(5) {
   position: absolute;
   right: 70px;
 }
@@ -392,7 +392,7 @@ div.add_more span {
   float: left;
 }
 div.add_more span {
-  padding: 0px 15px;
+  padding: 0 15px;
   left: 201px;
 }
 div.edit-style input[type="submit"]:hover,
@@ -478,7 +478,7 @@ div.catalog-style .input-value textarea {
   border-radius: 3px;
 }
 div.list-element:nth-child(4n-3) {
-  margin-left: 0px;
+  margin-left: 0;
 }
 .photo-anons + div,
 .photo-anons {
@@ -535,4 +535,29 @@ div.list-element input {
   position: absolute;
   right: 0;
   padding: 5px;
+}
+.order-table {
+  color: #8e8c8c;
+  text-align: center;
+  width: 100%;
+  margin-top: 10px;
+}
+.order-table ul {
+  list-style: none;
+}
+.order-table ul li {
+  margin: 10px;
+}
+.order-table tr:nth-child(1) td {
+  border-top: 1px solid;
+}
+.order-table tr:nth-child(2) td {
+  padding-top: 10px;
+  border-bottom: 1px solid;
+}
+.order-table tr:nth-child(3) td {
+  padding-top: 20px;
+}
+.order-table tr:nth-child(4) td {
+  border-bottom: 1px solid;
 }

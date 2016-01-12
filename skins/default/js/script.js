@@ -36,9 +36,8 @@ $(document).ready(function() {
             document.body.offsetWidth, document.documentElement.offsetWidth,
             document.body.clientWidth, document.documentElement.clientWidth
         );
-        console.log(widthWindow)//////////////////
 
-        if(widthWindow <= 625){
+        if(widthWindow <= 640){
             $('.el-text .name-el').prependTo('.dateil-info');
         } else {
             if($('.dateil-info .name-el').length > 0) {
@@ -47,7 +46,7 @@ $(document).ready(function() {
         }
     });
 
-    if(($(window).width() <= 625)){
+    if(($(window).width() <= 640)){
         $('.el-text .name-el').prependTo('.dateil-info');
     } else {
         if($('.dateil-info .name-el').length > 0) {
@@ -62,7 +61,12 @@ $(document).ready(function() {
         var id = 'g'+$(this).find('span').attr('rel_id');
         delete temp[id];
 
-        $(this).parents('tr').hide('slow');
+        $(this).parents('tr').hide('slow',
+            function(){
+                $(this).remove();
+            }
+        );
+
         var time_cookie = {expires : 16700000};
         setCookie('items',JSON.stringify(temp),time_cookie);
 
@@ -78,10 +82,35 @@ $(document).ready(function() {
         --mobcountG;
         $(card).text(countG);
         $(mobcard).text(mobcountG);
+
+        // edit price
+        setTimeout(function(){
+            var globPrice = 0;
+            $('.line-tab-goods tr').each(function(i,el){
+                globPrice = globPrice + parseInt($(el).find('.el_prive_hidden').attr('rel_aep'))
+                $('.all-goods-price').text(globPrice.toLocaleString());
+            });
+        }, 1000);
     });
 });
 
+function edit_price(el) {
+    var price  = parseInt($(el).parents('tr').find('.el_prive_hidden').val());
+    var count  = $(el).val();
+    var gPrice = count * price;
+    var globPrice = 0;
 
+    $(el).parents('tr').find('.el_prive_hidden').attr('rel_aep',gPrice);
+    $(el).parents('tr').find('.edJsPrice').text(gPrice.toLocaleString());
+
+    $('.line-tab-goods tr').each(function(i,el){
+        globPrice = globPrice + parseInt($(el).find('.el_prive_hidden').attr('rel_aep'))
+    });
+
+    $('.all-goods-price').text(globPrice.toLocaleString());
+}
+
+// count el cookies
 function count(obj) {
     var count = 0;
     for(var prs in obj){
