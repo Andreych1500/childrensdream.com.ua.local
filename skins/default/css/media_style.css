@@ -39,10 +39,6 @@
         margin-right:15px;
     }
 
-    .top-menu ul{
-        margin-right: 10px;
-    }
-
     .st-1 table td:nth-child(2n){
         width:38%;
     }
@@ -391,6 +387,10 @@
     .error-links p{
         font-size: 110pt;
         padding-top: 25px;
+    }
+
+    .no-goods{
+        margin-top: 10px;
     }
 }
 

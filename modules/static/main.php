@@ -88,7 +88,7 @@ if(isset($_POST['ok'], $_POST['name'], $_POST['text'], $_POST['email'], $_POST['
             Mail::Send();
 
             $_SESSION['info'] = "Y";
-            header("Location: /#call");
+            header("Location: ".(isset($lang)? '/ru/' : '/')."#call");
             exit();
         }
     }

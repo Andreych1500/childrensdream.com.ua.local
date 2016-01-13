@@ -142,10 +142,10 @@
   </div>
   <div class="form-call">
     <? if(isset($info)){?>
-    <p class="info-call this-ok"><?=$mess['OK_MESSAGE']?></p>
+    <p class="info-call this-ok"><?=$mess['OK_MESSAGE1']?></p>
+    <p><?=$mess['OK_MESSAGE2']?></p>
     <? } else { ?>
     <p class="info-call"><?=$mess['CALL_TEXT1']?><b><?=$mess['CALL_TEXT2']?></b><?=$mess['CALL_TEXT3']?><b><?=$mess['CALL_TEXT4']?></b>, <b><?=$mess['CALL_TEXT5']?></b></p>
-    <? } ?>
     <form action="#call" method="post" onsubmit="return callMe();">
       <div>
         <p><?=$mess['CALL_NAME']?><span>*</span></p>
@@ -177,6 +177,7 @@
         <p class="limit"><?=$mess['LIMIT']?></p>
       <? } ?>
     </form>
+    <? } ?>
     <div class="clear"></div>
   </div>
 </div>

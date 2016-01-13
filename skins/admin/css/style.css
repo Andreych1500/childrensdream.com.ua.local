@@ -548,16 +548,31 @@ div.list-element input {
 .order-table ul li {
   margin: 10px;
 }
+.order-table td {
+  max-width: 125px;
+  vertical-align: top;
+}
 .order-table tr:nth-child(1) td {
   border-top: 1px solid;
+}
+.order-table tr:nth-child(1) td:last-child {
+  max-width: 130px;
+  width: 150px;
 }
 .order-table tr:nth-child(2) td {
   padding-top: 10px;
   border-bottom: 1px solid;
+}
+.order-table tr:nth-child(2) td:last-child {
+  max-width: 130px;
+  width: 150px;
 }
 .order-table tr:nth-child(3) td {
   padding-top: 20px;
 }
 .order-table tr:nth-child(4) td {
   border-bottom: 1px solid;
+}
+.order-table tr:nth-child(4) td:last-child {
+  vertical-align: middle;
 }

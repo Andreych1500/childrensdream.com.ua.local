@@ -180,7 +180,7 @@ div.item,
 }
 .top-menu ul li,
 .mobile-basket a {
-  margin-right: 30px;
+  margin-right: 29px;
 }
 .top-menu ul li:after,
 .mobile-basket a:after {
@@ -210,6 +210,9 @@ div.item,
   -moz-transition: opacity 1s ease;
   -o-transition: opacity 1s ease;
   transition: opacity 1s ease;
+}
+.top-menu ul li:last-child {
+  margin-right: 25px;
 }
 .fixed-menu .menu-icon {
   display: block;
@@ -673,11 +676,15 @@ div.prev-slide {
 .form-call .hText {
   text-shadow: none;
 }
-.form-call .info-call {
+.form-call .info-call,
+.form-call .this-ok + p {
   color: #482200;
   font-family: MyriadPro;
-  margin: 10px 0 30px 10px;
+  margin: 10px 0 0px 10px;
   text-align: left;
+}
+.form-call .this-ok + p {
+  margin: 10px 0 30px 10px;
 }
 .form-call form {
   margin: 0 auto;
@@ -759,8 +766,10 @@ div.prev-slide {
   bottom: -15px;
   text-align: center;
 }
-.form-call .this-ok {
+.form-call .this-ok,
+.form-call .this-ok + p {
   font-size: 20pt;
+  text-align: center;
 }
 .catalog {
   margin-top: 20px;
@@ -1250,7 +1259,7 @@ div.prev-slide {
 .no-goods p {
   color: #482200;
   font-family: ComicSansMS;
-  font-size: 18pt;
+  font-size: 16pt;
   text-align: center;
 }
 .no-goods p a {
@@ -1258,6 +1267,14 @@ div.prev-slide {
 }
 .no-goods p a:hover {
   text-decoration: none;
+}
+.no-goods p:nth-child(1),
+.no-goods p:nth-child(2) {
+  margin-bottom: 20px;
+}
+.no-goods p:nth-child(2) + p,
+.no-goods p:nth-child(2) + p + p {
+  font-size: 12pt;
 }
 .error-links p {
   font: 140pt MyriadPro;

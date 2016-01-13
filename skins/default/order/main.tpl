@@ -97,7 +97,10 @@
   <?php } else { ?>
   <div class="no-goods">
     <?php if(isset($info)){ ?>
-    <p>sencs</p>
+    <p><?=$mess['SENKS1']?></p>
+    <p><?=$mess['SENKS2']?></p>
+    <p><?=$mess['SENKS3']?></p>
+    <p><?=$mess['SENKS4']?></p>
     <?php } else { ?>
     <p><?=$mess['BASKETNULL']?></p>
     <?php } ?>

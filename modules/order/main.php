@@ -110,16 +110,17 @@ if (isset($_COOKIE['items'])) {
               <body>
                 <div>
                   <img src=\"/skins/default/img/footer-logo.png\" alt=\"childrens-dream\" title=\"childrens-dream\">
-                  <a style=\"\" href=\"#\">Перейти на сайт</a>
                 </div>
                 <hr>
                 <div>
-                  Текст
+                  <p>".$mess['EMAIL1']."</p>
+                  <p>".$mess['EMAIL2']."</p>
+                  <p>".$mess['EMAIL3']."</p>
                 </div>
                 <hr>
                 <div>
-                  Дякуємо за співпрацю! <br>
-                  Лист згенеровано автоматично.
+                  <a style=\"\" href=\"#\">".$mess['EMAIL4']."</a><br>
+                  <p>".$mess['EMAIL5']."</p>
                 </div>
               </body>
             </html>";
