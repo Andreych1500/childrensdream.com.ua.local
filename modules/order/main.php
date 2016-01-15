@@ -109,7 +109,7 @@ if (isset($_COOKIE['items'])) {
               </head>
               <body>
                 <div>
-                  <img src=\"/skins/default/img/footer-logo.png\" alt=\"childrens-dream\" title=\"childrens-dream\">
+                  <img src=\"http://childrensdream.com.ua/skins/default/img/logo.png/skins/default/img/footer-logo.png\" alt=\"childrens-dream\" title=\"childrens-dream\">
                 </div>
                 <hr>
                 <div>
@@ -119,7 +119,7 @@ if (isset($_COOKIE['items'])) {
                 </div>
                 <hr>
                 <div>
-                  <a style=\"\" href=\"#\">".$mess['EMAIL4']."</a><br>
+                  <a style=\"\" href=\"http://childrensdream.com.ua\">".$mess['EMAIL4']."</a><br>
                   <p>".$mess['EMAIL5']."</p>
                 </div>
               </body>

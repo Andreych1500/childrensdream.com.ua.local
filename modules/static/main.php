@@ -68,8 +68,8 @@ if(isset($_POST['ok'], $_POST['name'], $_POST['text'], $_POST['email'], $_POST['
               </head>
               <body>
                 <div>
-                  <img src=\"/skins/default/img/footer-logo.png\" alt=\"childrens-dream\" title=\"childrens-dream\">
-                  <a style=\"\" href=\"#\">Перейти на сайт</a>
+                  <img src=\"http://childrensdream.com.ua/skins/default/img/logo.png/skins/default/img/footer-logo.png\" alt=\"childrens-dream\" title=\"childrens-dream\">
+                  <a style=\"\" href=\"http://childrensdream.com.ua\">Перейти на сайт</a>
                 </div>
                 <hr>
                 <div>

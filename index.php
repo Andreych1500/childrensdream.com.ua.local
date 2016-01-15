@@ -4,7 +4,7 @@ ini_set('display_errors',1);
 header('Content-Type: text/html; charset=utf-8'); 
 session_start();
 
-//if($_SERVER['REMOTE_ADDR'] != '5.58.26.194'){
+//if($_SERVER['REMOTE_ADDR'] != '5.58.53.67'){
 //	header('Location: http://childrens-dream.uaprom.net');
 //}
 
