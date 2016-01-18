@@ -25,7 +25,7 @@
         </a>
       </div>
       <div class="information">
-        <p><?=$mess['CONTACT_INFO'];?><a href="tel: +380962634728"> +38 (098) 570-43-77</a></p>
+        <p><?=$mess['CONTACT_INFO'];?><span> +38 (098) 570-43-77</span></p>
       </div>
       <div class="langs">
         <a class="<?=(!isset($lang)? 'act-lang' : '')?>" href="/<?=Core::$SITE_DIR?>">UA</a>

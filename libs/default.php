@@ -1,9 +1,7 @@
-<?php 
-
+<?php
 //поміщає у переміну назву файла класа
 function __autoload($class){
 	include './libs/class_'.$class.'.php';
-	//include './libs/class_Mail.php';
 }
 
 

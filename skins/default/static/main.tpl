@@ -165,7 +165,7 @@
         <textarea class="<?=((isset($errors['text']))? 'errors' : '')?>" name="text"><?=(isset($_POST['text'])? hsc($_POST['text']):"")?></textarea>
       </div>
       <div class="capcha">
-        <img src="/modules/static/captcha.php">
+        <img alt="capcha" src="/modules/static/captcha.php">
       </div>
       <div>
         <p><?=$mess['CAPCHA']?><span>*</span></p>

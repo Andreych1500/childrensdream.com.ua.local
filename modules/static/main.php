@@ -59,17 +59,16 @@ if(isset($_POST['ok'], $_POST['name'], $_POST['text'], $_POST['email'], $_POST['
             ");
 
 
-            Mail::$to = $_POST['email'];
+            Mail::$to = 'cdmatrasses@gmail.com';
             Mail::$subject = $_POST['thems'];
             Mail::$text = "
-            <html>
+			<html>
               <head>
                 <title>Замовлення зворотнього звінка</title>
               </head>
               <body>
                 <div>
-                  <img src=\"http://childrensdream.com.ua/skins/default/img/logo.png/skins/default/img/footer-logo.png\" alt=\"childrens-dream\" title=\"childrens-dream\">
-                  <a style=\"\" href=\"http://childrensdream.com.ua\">Перейти на сайт</a>
+                  <img src=\"http://childrensdream.com.ua/skins/default/img/cd-static.png\" alt=\"childrens-dream\" title=\"childrens-dream\">
                 </div>
                 <hr>
                 <div>
@@ -80,6 +79,9 @@ if(isset($_POST['ok'], $_POST['name'], $_POST['text'], $_POST['email'], $_POST['
                 </div>
                 <hr>
                 <div>
+                  <a style=\"display: block;width: 130px;background-color:#48D2E0;color:#FFF;padding:5px;text-decoration:none;border-radius:4px;text-align: center;\" href=\"http://childrensdream.com.ua\">Перейти на сайт</a><br>
+                </div>
+				<div>
                   Дякуємо за співпрацю! <br>
                   Лист згенеровано автоматично.
                 </div>

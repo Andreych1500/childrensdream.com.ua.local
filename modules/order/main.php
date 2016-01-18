@@ -108,8 +108,8 @@ if (isset($_COOKIE['items'])) {
                 <title>".$mess['ORDERH1']."</title>
               </head>
               <body>
-                <div>
-                  <img src=\"http://childrensdream.com.ua/skins/default/img/logo.png/skins/default/img/footer-logo.png\" alt=\"childrens-dream\" title=\"childrens-dream\">
+                <div style=\"width: 140px;\">
+                  <img src=\"http://childrensdream.com.ua/skins/default/img/cd-static.png\" alt=\"childrens-dream\" title=\"childrens-dream\">
                 </div>
                 <hr>
                 <div>
@@ -119,7 +119,7 @@ if (isset($_COOKIE['items'])) {
                 </div>
                 <hr>
                 <div>
-                  <a style=\"\" href=\"http://childrensdream.com.ua\">".$mess['EMAIL4']."</a><br>
+                  <a style=\"display: block;width: 130px;background-color:#48D2E0;color:#FFF;padding:5px;text-decoration:none;border-radius:4px;text-align: center;\" href=\"http://childrensdream.com.ua\">".$mess['EMAIL4']."</a><br>
                   <p>".$mess['EMAIL5']."</p>
                 </div>
               </body>

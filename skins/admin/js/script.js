@@ -9,14 +9,16 @@ $(document).ready(function() {
 
 
     // translition no spec simvol
-    $('.add-shop .input-value input[name="name"]').keyup(function() {
+    $('.add-shop .input-value input[name="name_ru"]').keyup(function() {
         if($('input[name="seo_el_name"]').val() === undefined ) {
-            $('.add-shop .input-value input[name="seo_name"]').val((translit($('.add-shop .input-value input[name="name"]').val()))
+            $('.add-shop .input-value input[name="seo_name"]').val((translit($('.add-shop .input-value input[name="name_ru"]').val().toLowerCase()))
                 .replace(/\s/g, '-')
                 .replace(/\*/g, '-')
                 .replace(/\</g, '-')
                 .replace(/\>/g, '-')
                 .replace(/\//g, '-')
+				.replace(/\)/g, '')
+				.replace(/\(/g, '')
             );
         }
     });
