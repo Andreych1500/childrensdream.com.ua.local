@@ -1,5 +1,4 @@
 <?php 
-
 class Uploader {
 
 	static $error = '';

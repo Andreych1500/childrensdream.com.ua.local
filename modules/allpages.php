@@ -9,7 +9,7 @@ if(preg_match('#^ru#ius',Core::$CONT['castom']) && Core::$LANGUAGE['status']){
 
 
 $all_el_id = q("
-    SELECT id
+    SELECT `id`
     FROM `catalog`
 ");
 

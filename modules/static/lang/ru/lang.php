@@ -27,7 +27,7 @@ $mess['SERVICES_TEXT14'] = ' БЕСПЛАТНО.';
 //call me
 $mess['CONTACTS'] = 'Контакты';
 $mess['CALL_TEXT1'] = 'По вопросам сотрудничества и оптовых закупок пишите нам на е-mail:';
-$mess['CALL_TEXT2'] = ' childrens.dream@gmail.com';
+$mess['CALL_TEXT2'] = ' cdmatrasses@gmail.com';
 $mess['CALL_TEXT3'] = ' или звоните';
 $mess['CALL_TEXT4'] = ' +38 (096) 263-47-28';
 $mess['CALL_TEXT5'] = ' +38 (098) 570-43-77';

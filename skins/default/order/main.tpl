@@ -86,7 +86,10 @@
             </tr>
             <tr>
               <td><img src="/modules/static/captcha.php"></td>
-              <td><input class="<?=((isset($errors['capcha']))? 'error' : '')?>" type="text" name="capcha" value="<?=(isset($_POST['capha'])? hsc($_POST['capha']):"")?>"></td>
+              <td>
+                <p><?=$mess['CAPCHA']?><span>*</span></p>
+                <input class="<?=((isset($errors['capcha']))? 'error' : '')?>" type="text" name="capcha" value="<?=(isset($_POST['capha'])? hsc($_POST['capha']):"")?>">
+              </td>
             </tr>
           </table>
         </div>

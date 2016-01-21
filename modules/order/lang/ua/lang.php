@@ -13,6 +13,7 @@ $mess['SUMTEXT1']   = 'Сума Вашого замовлення';
 $mess['SUMTEXT2']   = 'Будь ласка, заповнiть форму оплати та доставки';
 $mess['SUBMIT']     = 'Оформити замовлення';
 $mess['NO_COMMENT'] = 'Вибачте замовлень немає.';
+$mess['CAPCHA']     = 'Введіть текст з зображення';
 
 //form
 $mess['FORM_NAME'] = 'ПІП';
@@ -20,7 +21,7 @@ $mess['PHONE']     = 'Телефон';
 $mess['EMAIL']     = 'E-mail';
 $mess['DELIVERY']  = 'Доставка';
 $mess['CITY']      = 'Місто';
-$mess['ADRES']     = 'Адреса';
+$mess['ADRES']     = 'Адреса або номер складу';
 $mess['PAYMENT']   = 'Оплата';
 $mess['COMMENT']   = 'Коментар';
 
