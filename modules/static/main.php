@@ -3,13 +3,6 @@ Core::$META['title'] = 'Childrensdream.com.ua';
 Core::$JS[] = '<script src="/skins/default/js/slider.js?v=1"></script>';
 Core::$JS[] = '<script src="/skins/default/js/call.js?v=1"></script>';
 
-// catalog
-$catalog = q("
-    SELECT `id`,`name`,`seo_name`,`price`,`availability`,`anons_photo`,`name_ru`
-    FROM `catalog`
-    WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
-");
-
 // call me
 if(isset($_POST['ok'], $_POST['name'], $_POST['text'], $_POST['email'], $_POST['thems'])){
     $errors = array();
@@ -58,35 +51,33 @@ if(isset($_POST['ok'], $_POST['name'], $_POST['text'], $_POST['email'], $_POST['
                 `date`  = NOW()
             ");
 
-
             Mail::$to = 'cdmatrasses@gmail.com';
             Mail::$subject = $_POST['thems'];
-            Mail::$text = "
-			<html>
-              <head>
-                <title>Замовлення зворотнього звінка</title>
-              </head>
-              <body>
-                <div>
-                  <img src=\"http://childrensdream.com.ua/skins/default/img/cd-static.png\" alt=\"childrens-dream\" title=\"childrens-dream\">
-                </div>
-                <hr>
-                <div>
-                  Тема: ".mres($_POST['thems'])."  <br>
-                  Відправник: ".mres($_POST['email'])." <br>
-                  П.І.П: ".mres($_POST['name'])." <br>
-                  Текст: ".mres($_POST['text'])."
-                </div>
-                <hr>
-                <div>
-                  <a style=\"display: block;width: 130px;background-color:#48D2E0;color:#FFF;padding:5px;text-decoration:none;border-radius:4px;text-align: center;\" href=\"http://childrensdream.com.ua\">Перейти на сайт</a><br>
-                </div>
-				<div>
-                  Дякуємо за співпрацю! <br>
-                  Лист згенеровано автоматично.
-                </div>
-              </body>
-            </html>";
+            Mail::$text = '<html>
+<head>
+<title>Замовлення зворотнього звінка</title>
+</head>
+<body>
+<div>
+<img src="http://childrensdream.com.ua/skins/default/img/cd-static.png" alt="childrens-dream" title="childrens-dream">
+</div>
+<hr>
+<div>
+Тема: '.mres($_POST['thems']).'  <br>
+Відправник: '.mres($_POST['email']).' <br>
+П.І.П: '.mres($_POST['name']).' <br>
+Текст: '.mres($_POST['text']).'
+</div>
+<hr>
+<div>
+<a style="display: block;width: 130px;background-color:#48D2E0;color:#FFF;padding:5px;text-decoration:none;border-radius:4px;text-align: center;" href="http://childrensdream.com.ua">Перейти на сайт</a><br>
+</div>
+<div>
+Дякуємо за співпрацю! <br>
+Лист згенеровано автоматично.
+</div>
+</body>
+</html>';
             Mail::Send();
 
             $_SESSION['info'] = "Y";
@@ -96,6 +87,13 @@ if(isset($_POST['ok'], $_POST['name'], $_POST['text'], $_POST['email'], $_POST['
     }
 }
 // end call me
+
+// catalog
+$catalog = q("
+    SELECT `id`,`name`,`seo_name`,`price`,`availability`,`anons_photo`,`name_ru`
+    FROM `catalog`
+    WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
+");
 
 if(isset($_SESSION['info'])){
     $info = $_SESSION['info'];

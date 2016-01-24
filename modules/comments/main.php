@@ -2,13 +2,6 @@
 Core::$META['title'] = 'comments';
 Core::$JS[] =  '<script src="/skins/default/js/comments.js?v=1"></script>';
 
-$res = q("
-	SELECT *
-	FROM `comments`
-	WHERE `active` = 1
-	ORDER BY `id` DESC
-");
-
 // відгуки
 if(isset($_POST['name'], $_POST['text'], $_POST['email'])){
 	$errors = array();
@@ -44,3 +37,10 @@ if(isset($_POST['name'], $_POST['text'], $_POST['email'])){
 		exit();
 	}
 }
+
+$res = q("
+	SELECT *
+	FROM `comments`
+	WHERE `active` = 1
+	ORDER BY `id` DESC
+");

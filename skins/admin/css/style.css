@@ -411,7 +411,7 @@ form[name="call"] input[name='deactive'] {
   right: 0;
 }
 .active {
-  border-bottom: 1px solid;
+  border-bottom: 1px solid #78ABFF;
 }
 .catalog-style {
   height: auto;

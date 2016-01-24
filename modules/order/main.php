@@ -101,29 +101,28 @@ if (isset($_COOKIE['items'])) {
             ");
 
             Mail::$to = $_POST['email'];
-            Mail::$subject = 'Інтернет-магазин Сhildren*s Dream';
-            Mail::$text = "
-            <html>
-              <head>
-                <title>".$mess['ORDERH1']."</title>
-              </head>
-              <body>
-                <div style=\"width: 140px;\">
-                  <img src=\"http://childrensdream.com.ua/skins/default/img/cd-static.png\" alt=\"childrens-dream\" title=\"childrens-dream\">
-                </div>
-                <hr>
-                <div>
-                  <p>".$mess['EMAIL1']."</p>
-                  <p>".$mess['EMAIL2']."</p>
-                  <p>".$mess['EMAIL3']."</p>
-                </div>
-                <hr>
-                <div>
-                  <a style=\"display: block;width: 130px;background-color:#48D2E0;color:#FFF;padding:5px;text-decoration:none;border-radius:4px;text-align: center;\" href=\"http://childrensdream.com.ua\">".$mess['EMAIL4']."</a><br>
-                  <p>".$mess['EMAIL5']."</p>
-                </div>
-              </body>
-            </html>";
+            Mail::$subject = 'Сhildren\'s Dream - Інтернет-магазин';
+            Mail::$text = '<html>
+<head>
+<title>Сhildren\'s Dream Замовлення товару</title>
+</head>
+<body>
+<div style="width: 140px;">
+<img src="http://childrensdream.com.ua/skins/default/img/cd-static.png" alt="childrens-dream" title="childrens-dream">
+</div>
+<hr>
+<div>
+<p>'.mres($mess['EMAIL1']).'</p>
+<p>'.mres($mess['EMAIL2']).'</p>
+<p>'.mres($mess['EMAIL3']).'</p>
+</div>
+<hr>
+<div>
+<a style="display: block;width: 130px;background-color:#48D2E0;color:#FFF;padding:5px;text-decoration:none;border-radius:4px;text-align: center;" href="http://childrensdream.com.ua">'.mres($mess['EMAIL4']).'</a><br>
+<p>'.mres($mess['EMAIL5']).'</p>
+</div>
+</body>
+</html>';
             Mail::Send();
 
             setcookie('items','',time()-16700000, '/');
