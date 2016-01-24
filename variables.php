@@ -46,15 +46,10 @@ if(!isset($_GET['module'])){
 		LIMIT 1
 	");
 	if(!$res->num_rows){
-	    header("Location: /404");
-		exit();
-	} else {
-		$staticpage = $res->fetch_assoc();
 		$res->close();
-		if($staticpage['static'] == 1){
-			$_GET['module'] = 'staticpage';
-			$_GET['page'] = 'main';
-		}
+		header("HTTP/1.0 404 Not Found");
+	} else {
+		$res->close();
 	}
 }
 
@@ -64,6 +59,5 @@ if(!isset($_GET['page'])){
 
 // якщо недопустимі символи в адресній строці то перекидуєм на 404
 if(!preg_match('#^[a-z-_0-9]*$#iu',$_GET['page'])){
-	header("Location: /404");
-	exit();
+	header("HTTP/1.0 404 Not Found");
 }

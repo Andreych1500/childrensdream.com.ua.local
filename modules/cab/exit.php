@@ -1,4 +1,4 @@
-<?php  
+<?php
 
 if(isset($_GET['page']) && $_GET['page'] == 'exit'){
 	q("
@@ -15,4 +15,3 @@ setcookie('id','',time()-9600,'/');
 
 header("Location: /");
 exit();
-

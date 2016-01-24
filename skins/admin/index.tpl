@@ -20,6 +20,9 @@
         <a href="/<?=Core::$CONT['admin']?>/">
           <img src="/skins/default/img/logo.png" alt="childrensdream" title="childrensdream">
         </a>
+        <?php if(isset($error_404)){ ?>
+        <a class="go_back" href="/<?=Core::$CONT['admin']?>/">В адмінку</a>
+        <?php } ?>
       </div>
     </div>
     <?php if(isset($_SESSION['user']) && $_SESSION['user']['access'] == 5){ ?>
@@ -41,7 +44,7 @@
   <div class="clear"></div>
   <footer>
     <div class="info-link">
-      <p><?=$mess['WORKING']?>: school-php student &copy; 2015</p>
+      <p>&copy; <?=data(Core::$CREATED)?></p>
     </div>
   </footer>
 </body>

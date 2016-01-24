@@ -1,6 +1,6 @@
 <?php
-error_reporting (-1);
-ini_set('display_errors',1);
+error_reporting (0);
+ini_set('display_errors',0);
 header('Content-Type: text/html; charset=utf-8'); 
 session_start();
 
@@ -20,8 +20,9 @@ ob_start();
 		!file_exists('./skins/' . Core::$SKIN . '/' . $_GET['module'] . '/' . (($_GET['module'] == 'catalog')? ((Core::$CONT['default'] == 'modules/admin')? $_GET['page'] : 'main' ) : $_GET['page']) . '.tpl') ||
 		!file_exists('./'. ((Core::$CONT['default'] == 'modules/admin')? 'modules' : Core::$CONT['default']).'/'.$_GET['module'].'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php')) {
 
-		header("Location: /404");
-		exit();
+		$_GET['module'] = '404';
+		$_GET['page'] = 'main';
+		header("HTTP/1.0 404 Not Found");
 	}
 
 	// LANG
@@ -30,6 +31,7 @@ ob_start();
 	if(isset($_GET['module'])){
 		include './'.((Core::$CONT['default'] == 'modules/admin')? 'modules' : Core::$CONT['default']).'/'.$_GET['module'].'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php';
 	}
+
 	// END LANG
 
 	// PAGE_MODEL
@@ -39,8 +41,8 @@ ob_start();
 
 	// PAGE_VIEW
 	include './skins/'.Core::$SKIN.'/'.$_GET['module'].'/'.(($_GET['module'] == 'catalog')? ((Core::$CONT['default'] == 'modules/admin')? $_GET['page'] : 'main' ) : $_GET['page']).'.tpl';
-    // PAGE_VIEW END
-	
+	// PAGE_VIEW END
+
 	$content = ob_get_contents();
 ob_end_clean();
 
