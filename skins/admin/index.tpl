@@ -3,12 +3,13 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <link href="/skins/<?php echo Core::$SKIN; ?>/css/style.css" rel="stylesheet" type="text/css">
-  <link rel="icon" type="image/icon" href="/skins/default/img/moon.ico">
   <title><?php echo hsc(Core::$META['title']);?></title>
   <script src="/vendor/public/jquery/dist/jquery.min.js"></script>
   <script src="/skins/admin/js/script.js"></script>
   <script src="/vendor/public/translit/dist/translit.js"></script>
   <script src="/skins/default/js/script.js?v=1"></script>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <?php if(count(Core::$CSS)){ echo implode("\n",Core::$CSS); } ?>
 </head>
 

@@ -11,8 +11,9 @@
   <script src="/vendor/public/jquery/dist/jquery.min.js"></script>
   <script src="/vendor/public/pushy/js/pushy.js"></script>
   <script src="/skins/default/js/script.js?v=1"></script>
-  <link rel="icon" type="image/icon" href="/skins/default/img/moon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <?php if(count(Core::$CSS)){ echo implode("\n",Core::$CSS); } ?>
   <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
 </head>
