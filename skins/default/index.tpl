@@ -10,9 +10,9 @@
   <meta name="keywords" content="<?php echo hsc(Core::$META['ketwords']); ?>">
   <script src="/vendor/public/jquery/dist/jquery.min.js"></script>
   <script src="/vendor/public/pushy/js/pushy.js"></script>
-  <script src="/skins/default/js/script.js"></script>
+  <script src="/skins/default/js/script.js?v=1"></script>
   <link rel="icon" type="image/icon" href="/skins/default/img/moon.ico">
-  <meta name="viewport" content="width=device-width, initial-scale=1" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <?php if(count(Core::$CSS)){ echo implode("\n",Core::$CSS); } ?>
   <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
 </head>
