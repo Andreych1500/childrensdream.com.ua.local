@@ -1,7 +1,7 @@
 <?php 
 Core::$META['title'] = 'Childrensdream.com.ua';
-Core::$JS[] = '<script type="text/javascript" src="/skins/default/js/slider.js"></script>';
-Core::$JS[] = '<script type="text/javascript" src="/skins/default/js/call.js"></script>';
+Core::$JS[] = '<script src="/skins/default/js/slider.js"></script>';
+Core::$JS[] = '<script src="/skins/default/js/call.js"></script>';
 
 // catalog
 $catalog = q("

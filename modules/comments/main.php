@@ -1,6 +1,6 @@
 <?php
 Core::$META['title'] = 'comments';
-Core::$JS[] =  '<script type="text/javascript" src="/skins/default/js/comments.js"></script>';
+Core::$JS[] =  '<script src="/skins/default/js/comments.js"></script>';
 
 $res = q("
 	SELECT *

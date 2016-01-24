@@ -392,7 +392,13 @@ div.catalog.st-1{
   }
 }
 
+.catalog-list, .item, .footer-logo, .soc-link, .position-width{
+  &:extend(.clearfix all);
+}
+
 .descriptinText{
+  &:extend(.clearfix all);
+
   .item-left{
     width:60%;
     margin-left:10px;
@@ -447,6 +453,8 @@ div.catalog.st-1{
   max-width: 1010px;
   overflow: hidden;
   z-index: 0;
+
+  &:extend(.clearfix all);
 }
 
 .slide-wrap {
@@ -683,6 +691,8 @@ div.prev-slide{
 
 // call
 .form-call{
+  &:extend(.clearfix all);
+
   .hText{
     text-shadow: none;
   }
@@ -690,7 +700,7 @@ div.prev-slide{
   .info-call, .this-ok + p{
     color:@team-color;
     font-family:@font-team2;
-    margin: 10px 0 0px 10px;
+    margin: 10px 0 0 10px;
     text-align: left;
   }
 

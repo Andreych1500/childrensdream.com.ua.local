@@ -10,6 +10,7 @@
   <meta name="keywords" content="<?php echo hsc(Core::$META['ketwords']); ?>">
   <script src="/vendor/public/jquery/dist/jquery.min.js"></script>
   <script src="/vendor/public/pushy/js/pushy.js"></script>
+  <script src="/skins/default/js/script.js"></script>
   <link rel="icon" type="image/icon" href="/skins/default/img/moon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1" >
   <?php if(count(Core::$CSS)){ echo implode("\n",Core::$CSS); } ?>
@@ -61,7 +62,6 @@
           <li><a href="<?=(isset($lang)? '/ru/' : '/')?>comments"><?=$mess['OTZUVU']?></a></li>
         </ul>
       </nav>
-      <div class="clear"></div>
     </div>
     <div class="toTop"><span><?=$mess['TO_TOP']?></span></div>
   </header>
@@ -78,16 +78,13 @@
           <p>&copy;<?=data(Core::$CREATED).$mess['FOOTER_TOP']?></p>
           <p><?=$mess['GOOD_ACCES']?></p>
         </div>
-        <div class="clear"></div>
       </div>
       <div class="soc-link">
         <p><?=$mess['SOC_LINK']?></p>
         <a href="//www.facebook.com/tmchildrensdream" target="_blank" class="icon-facebook"></a>
         <a href="//vk.com/tmchildrensdream" target="_blank" class="icon-vkontakte"></a>
         <a href="//www.instagram.com/tm_childrens_dream" target="_blank" class="icon-instagram"></a>
-        <div class="clear"></div>
       </div>
-      <div class="clear"></div>
     </div>
   </footer>
 

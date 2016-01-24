@@ -15,7 +15,6 @@
         <div class="prev-slide">
           <span class="icon-left"></span>
         </div>
-        <div class="clear"></div>
       </div>
     </div>
   </div>
@@ -44,7 +43,6 @@
       <div class="item-right">
         <img src="/skins/default/img/cd-static.png" alt="Childrens-dream" title="Childrens-dream">
       </div>
-      <div class="clear"></div>
     </div>
   </div>
 </div>
@@ -83,7 +81,6 @@
      } else { ?>
     <div class="no-element"><?=$mess['NO_ELEMETN']?></div>
     <?php } ?>
-    <div class="clear"></div>
   </div>
 </div>
 
@@ -122,7 +119,6 @@
       <div class="item-right">
         <img src="/skins/default/img/car.png" alt="Childrens-dream" title="Childrens-dream">
       </div>
-      <div class="clear"></div>
     </div>
   </div>
 </div>
@@ -178,6 +174,5 @@
       <? } ?>
     </form>
     <? } ?>
-    <div class="clear"></div>
   </div>
 </div>

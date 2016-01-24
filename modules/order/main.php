@@ -1,5 +1,5 @@
 <?php
-Core::$JS[] =  '<script type="text/javascript" src="/skins/default/js/order.js"></script>';
+Core::$JS[] =  '<script src="/skins/default/js/order.js"></script>';
 
 if (isset($_COOKIE['items'])) {
     $cookies = (array)json_decode($_COOKIE['items']);

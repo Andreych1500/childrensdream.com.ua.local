@@ -6,8 +6,9 @@
   <link rel="icon" type="image/icon" href="/skins/default/img/moon.ico">
   <title><?php echo hsc(Core::$META['title']);?></title>
   <script src="/vendor/public/jquery/dist/jquery.min.js"></script>
-  <script type="text/javascript" src="/skins/admin/js/script.js"></script>
-  <script type="text/javascript" src="/vendor/public/translit/dist/translit.js"></script>
+  <script src="/skins/admin/js/script.js"></script>
+  <script src="/vendor/public/translit/dist/translit.js"></script>
+  <script src="/skins/default/js/script.js"></script>
   <?php if(count(Core::$CSS)){ echo implode("\n",Core::$CSS); } ?>
 </head>
 

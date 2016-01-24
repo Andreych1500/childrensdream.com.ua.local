@@ -10,6 +10,22 @@
 }
 .clearfix:before,
 .clearfix:after,
+.catalog-list:before,
+.catalog-list:after,
+.item:before,
+.item:after,
+.footer-logo:before,
+.footer-logo:after,
+.soc-link:before,
+.soc-link:after,
+.position-width:before,
+.position-width:after,
+.descriptinText:before,
+.descriptinText:after,
+.slide-list:before,
+.slide-list:after,
+.form-call:before,
+.form-call:after,
 .desc-info .view-info:before,
 .desc-info .view-info:after,
 .haracteristic .table-haracteristic .tr:before,
@@ -26,6 +42,14 @@
   display: table;
 }
 .clearfix:after,
+.catalog-list:after,
+.item:after,
+.footer-logo:after,
+.soc-link:after,
+.position-width:after,
+.descriptinText:after,
+.slide-list:after,
+.form-call:after,
 .desc-info .view-info:after,
 .haracteristic .table-haracteristic .tr:after,
 .dateil-info:after,
@@ -676,7 +700,7 @@ div.prev-slide {
 .form-call .this-ok + p {
   color: #482200;
   font-family: MyriadPro;
-  margin: 10px 0 0px 10px;
+  margin: 10px 0 0 10px;
   text-align: left;
 }
 .form-call .this-ok + p {

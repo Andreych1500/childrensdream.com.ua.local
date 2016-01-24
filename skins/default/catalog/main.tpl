@@ -33,7 +33,6 @@
         } else { ?>
             <div class="no-element"><?=$mess['NO_ELEMETN']?></div>
         <?php } ?>
-        <div class="clear"></div>
     </div>
 </div>
 

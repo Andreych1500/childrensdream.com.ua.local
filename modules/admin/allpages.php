@@ -1,6 +1,4 @@
 <?php
-Core::$JS[] =  '<script type="text/javascript" src="/skins/default/js/script.js"></script>';
-
 // якщо дані не відповідають вимогам адміна не буде доступу до сторінки
 if(!isset($_SESSION['user']) || $_SESSION['user']['access'] !=  5){
 	if($_GET['module'] != 'static' || $_GET['page'] != 'main'){
