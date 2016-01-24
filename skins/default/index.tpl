@@ -81,9 +81,9 @@
       </div>
       <div class="soc-link">
         <p><?=$mess['SOC_LINK']?></p>
-        <a href="//www.facebook.com/tmchildrensdream" target="_blank" class="icon-facebook"></a>
-        <a href="//vk.com/tmchildrensdream" target="_blank" class="icon-vkontakte"></a>
-        <a href="//www.instagram.com/tm_childrens_dream" target="_blank" class="icon-instagram"></a>
+        <a href="//www.facebook.com/tmchildrensdream" target="_blank" class="icon-facebook" rel="nofollow"></a>
+        <a href="//vk.com/tmchildrensdream" target="_blank" class="icon-vkontakte" rel="nofollow"></a>
+        <a href="//www.instagram.com/tm_childrens_dream" target="_blank" class="icon-instagram" rel="nofollow"></a>
       </div>
     </div>
   </footer>
