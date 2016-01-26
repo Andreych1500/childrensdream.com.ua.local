@@ -16,12 +16,28 @@ $(document).ready(function() {
     });
 
     $(window).scroll(function() {
-         if($(window).scrollTop()>=400) {
+         if($(window).scrollTop()>=300) {
             $('.toTop').show();
         } else {
             $('.toTop').hide();
         }
     });
+
+    // scrolling to top mini
+    pathname = window.location.pathname;
+
+    if(getCookie('scroll') == undefined ){
+        setCookie('scroll', pathname, 0);
+    } else {
+        if(getCookie('scroll') == '/'){
+            setCookie('scroll', pathname, 0);
+        } else {
+            if(pathname == '/') {
+                scrolMenuPanel();
+                setCookie('scroll', pathname, 0);
+            }
+        }
+    }
 
     $(".top-menu ul li, .pushy li").each(function( index ) {
         var url = window.location.pathname;
@@ -93,6 +109,12 @@ $(document).ready(function() {
         }, 1000);
     });
 });
+
+function scrolMenuPanel(){
+    setTimeout(function(){
+        $('.top-menu a[href*='+window.location.hash+']').trigger('click');
+    },300);
+}
 
 function edit_price(el) {
     var price  = parseInt($(el).parents('tr').find('.el_prive_hidden').val());

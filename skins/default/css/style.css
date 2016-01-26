@@ -382,7 +382,6 @@ div.catalog.st-1 td:nth-child(2) {
   font-size: 24pt;
   text-align: center;
   font-weight: bold;
-  padding-top: 27px;
 }
 .staticText .hText .line,
 .call-me .hText .line,
@@ -790,9 +789,6 @@ div.prev-slide {
 .form-call .this-ok + p {
   font-size: 20pt;
   text-align: center;
-}
-.catalog {
-  margin-top: 20px;
 }
 .catalog .no-element {
   text-align: center;

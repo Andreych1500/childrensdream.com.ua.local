@@ -27,8 +27,9 @@ if($_GET['page'] == 'main'){
     ");
 
     if ($catalog->num_rows == 0 || isset($_GET['key1'])) {
-        header("Location: /404");
-        exit();
+        $_GET['module'] = '404';
+        $_GET['page'] = 'main';
+        header("HTTP/1.0 404 Not Found");
     }
 
     $el = $catalog->fetch_assoc();

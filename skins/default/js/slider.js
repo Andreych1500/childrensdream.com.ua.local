@@ -12,7 +12,7 @@ $(document).ready(function() {
 
         $('html, body').stop().animate({
 
-            scrollTop: $(anchor).offset().top -30
+            scrollTop: $(anchor).offset().top - 35
         }, 1000);
         e.preventDefault();
     });
