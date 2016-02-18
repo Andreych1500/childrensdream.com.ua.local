@@ -17,9 +17,9 @@ $(document).ready(function() {
 
     $(window).scroll(function() {
          if($(window).scrollTop()>=300) {
-            $('.toTop').show();
+            $('.toTop').css('opacity', '0.3');
         } else {
-            $('.toTop').hide();
+            $('.toTop').css('opacity', '0');
         }
     });
 
@@ -29,10 +29,10 @@ $(document).ready(function() {
     if(getCookie('scroll') == undefined ){
         setCookie('scroll', pathname, 0);
     } else {
-        if(getCookie('scroll') == '/'){
+        if(getCookie('scroll') == '/' || getCookie('scroll') == '/ru/'){
             setCookie('scroll', pathname, 0);
         } else {
-            if(pathname == '/') {
+            if((pathname == '/' || pathname == '/ru/') && $( window).width() >= 834) {
                 scrolMenuPanel();
                 setCookie('scroll', pathname, 0);
             }
@@ -111,9 +111,11 @@ $(document).ready(function() {
 });
 
 function scrolMenuPanel(){
-    setTimeout(function(){
-        $('.top-menu a[href*='+window.location.hash+']').trigger('click');
-    },300);
+    if(window.location.hash != '') {
+        setTimeout(function () {
+            $('.top-menu a[href*=' + window.location.hash + ']').trigger('click');
+        }, 300);
+    }
 }
 
 function edit_price(el) {

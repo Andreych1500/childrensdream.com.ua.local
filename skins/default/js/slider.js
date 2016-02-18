@@ -1,5 +1,7 @@
 $(document).ready(function() {
-    htmSlider();
+    if($('.slide-item').length > 1) {
+        htmSlider();
+    }
 
     $('.top-menu a[href*=#]').bind("click", function(e){
         if($(this).attr('href').search( /ru/i ) == 1){
@@ -37,6 +39,14 @@ $(document).ready(function() {
     // end resize slider
 });
 
+function resizeWidth(){
+    var slideWrap = $('.slide-wrap');
+    var slideWidth = $('.slide-list').width();
+    var widthplus = 0;
+    var widthWindon = document.documentElement.clientWidth;
+    return slideWrap.position().left - (slideWidth + widthplus);
+}
+
 function htmSlider(){
     /* обертка слайдера */
     var slideWrap = $('.slide-wrap');
@@ -54,10 +64,6 @@ function htmSlider(){
     /* сброс міні бага */
     var widthplus = 0;
     var widthWindon = document.documentElement.clientWidth;
-    if(widthWindon < 867){
-        widthplus = 16;
-    }
-
 
     /* смещение слайдера */
     var scrollSlider = slideWrap.position().left - (slideWidth + widthplus);
@@ -65,7 +71,7 @@ function htmSlider(){
     /* Клик следующий слайд */
     prevLink.click(function(){
         if(!slideWrap.is(':animated')) {
-            slideWrap.animate({left: scrollSlider}, 1300, function(){
+            slideWrap.animate({left: resizeWidth()}, 1300, function(){
                 slideWrap
                     .find('.slide-item:first')
                     .appendTo(slideWrap)
@@ -79,7 +85,7 @@ function htmSlider(){
     nextLink.click(function(){
         if(!slideWrap.is(':animated')) {
             slideWrap
-                .css({'left': scrollSlider})
+                .css({'left': resizeWidth()})
                 .find('.slide-item:last')
                 .prependTo(slideWrap)
                 .parent()
@@ -89,7 +95,7 @@ function htmSlider(){
 
     /* Функция автоматической прокрутки слайдера */
     function autoplay(){
-        slideWrap.animate({left: scrollSlider}, 1300, function(){
+        slideWrap.animate({left: resizeWidth()}, 1300, function(){
             slideWrap
                 .find('.slide-item:first')
                 .appendTo(slideWrap)

@@ -183,6 +183,10 @@ div.item, .content .text-item, .slyder-item .slider, .call-me, .catalog, .haract
   padding:10px 0;
 }
 
+a{
+  outline: none;
+}
+
 .act-lang{
   color:#FFE600 !important;
 }
@@ -441,7 +445,7 @@ div.catalog.st-1{
   background: url('/skins/default/img/tychku.png') 0 0 repeat-x;
   max-height: 296px;
   height: auto;
-  margin-bottom: -5px;
+  font-size: 0;
 }
 
 .position-width {
@@ -549,14 +553,13 @@ div.prev-slide{
 .toTop{
   position: fixed;
   z-index: 99;
-  .opacity(0.3);
+  .opacity(0);
   right: 20px;
   bottom: 120px;
-  display:none;
   cursor: pointer;
   height:100px;
   background: url("/skins/default/img/toTop.png") 0 -1px no-repeat;
-  .transition(opacity 1s ease);
+  .transition(all 1s ease);
   color:@team-color;
 
   span{
@@ -565,8 +568,8 @@ div.prev-slide{
   }
 
   &:hover{
-    .opacity(1);
-    .transition(opacity 1s ease);
+    .opacity(1) !important;
+    .transition(all 1s ease);
   }
 }
 
