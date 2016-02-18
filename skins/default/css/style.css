@@ -542,10 +542,10 @@ div.prev-slide {
 .toTop {
   position: fixed;
   z-index: 99;
-  filter: alpha(opacity=0);
-  -webkit-opacity: 0;
-  -moz-opacity: 0;
-  opacity: 0;
+  filter: alpha(opacity=30);
+  -webkit-opacity: 0.3;
+  -moz-opacity: 0.3;
+  opacity: 0.3;
   right: 20px;
   bottom: 120px;
   cursor: pointer;
@@ -556,16 +556,17 @@ div.prev-slide {
   -o-transition: all 1s ease;
   transition: all 1s ease;
   color: #482200;
+  display: none;
 }
 .toTop span {
   position: relative;
   bottom: -90px;
 }
 .toTop:hover {
-  filter: alpha(opacity=100) !important;
-  -webkit-opacity: 1 !important;
-  -moz-opacity: 1 !important;
-  opacity: 1 !important;
+  filter: alpha(opacity=100);
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;

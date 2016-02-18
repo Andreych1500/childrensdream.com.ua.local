@@ -26,11 +26,7 @@ $(document).ready(function() {
         var slideWidth = $('.sliders-line').width();
         var widthplus = 0;
 
-        if(widthWindon < 867){
-            widthplus = 20;
-        }
-
-        $('.sliders-line .slide-item').width(slideWidth + widthplus);
+        $('.sliders-line .slide-item').width(slideWidth);
     }
 
     $(window).resize(function() {

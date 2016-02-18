@@ -17,9 +17,9 @@ $(document).ready(function() {
 
     $(window).scroll(function() {
          if($(window).scrollTop()>=300) {
-            $('.toTop').css('opacity', '0.3');
+            $('.toTop').show();
         } else {
-            $('.toTop').css('opacity', '0');
+            $('.toTop').hide();
         }
     });
 

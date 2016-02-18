@@ -553,7 +553,7 @@ div.prev-slide{
 .toTop{
   position: fixed;
   z-index: 99;
-  .opacity(0);
+  .opacity(0.3);
   right: 20px;
   bottom: 120px;
   cursor: pointer;
@@ -561,6 +561,7 @@ div.prev-slide{
   background: url("/skins/default/img/toTop.png") 0 -1px no-repeat;
   .transition(all 1s ease);
   color:@team-color;
+  display: none;
 
   span{
     position: relative;
@@ -568,7 +569,7 @@ div.prev-slide{
   }
 
   &:hover{
-    .opacity(1) !important;
+    .opacity(1);
     .transition(all 1s ease);
   }
 }
