@@ -107,7 +107,7 @@ class Uploader {
 			$img = $dst_image; //тепер немає чорного кольору
 		  
 			imagecopyresampled($img, $src_image, $dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h);
-   			imagepng($img,'.'.$name,9);
+   			imagepng($img,'..'.$name,9);
 			
 		} elseif($temp['mime'] == 'image/jpeg'){
 			$src_image = imagecreatefromjpeg($_SERVER['DOCUMENT_ROOT'].$name);
@@ -119,7 +119,7 @@ class Uploader {
 			$src_image = imagecreatefromgif($_SERVER['DOCUMENT_ROOT'].$name);
 
 			imagecopyresampled($dst_image, $src_image, $dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h);
-			imagegif($dst_image,'.'.$name);
+			imagegif($dst_image,'..'.$name);
 		}
     }
 }

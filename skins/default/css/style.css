@@ -218,7 +218,7 @@ a {
   -moz-transition: opacity 1s ease;
   -o-transition: opacity 1s ease;
   transition: opacity 1s ease;
-  background: url('/skins/default/img/pocherk.png') 0 0 no-repeat;
+  background: url('/skins/default/img/image.png') -319px -4px no-repeat;
   position: absolute;
   width: 100%;
   height: 10px;
@@ -246,8 +246,8 @@ a {
   left: 7px;
   top: 5px;
   width: 30px;
-  height: 38px;
-  background: url("/skins/default/img/menu-icon.png") no-repeat;
+  height: 32px;
+  background: url("/skins/default/img/image.png") -405px -18px no-repeat;
 }
 .top-menu li a,
 .mobile-basket a {
@@ -263,7 +263,7 @@ a {
   text-align: center;
   right: -22px;
   color: #FFF;
-  background: url('/skins/default/img/colo.png') 0 0 no-repeat;
+  background: url('/skins/default/img/image.png') -322px -18px no-repeat;
   position: absolute;
   width: 20px;
   height: 25px;
@@ -282,7 +282,7 @@ header .item .information p {
   font-size: 17pt;
   font-weight: bold;
   text-align: center;
-  background: url('/skins/default/img/tycha.png') 10px -2px no-repeat;
+  background: url('/skins/default/img/image.png') -55px -105px no-repeat;
   position: relative;
   width: 490px;
   height: 42px;
@@ -294,7 +294,7 @@ header .item .langs {
   left: 210px;
 }
 header .item .langs a {
-  background: url('/skins/default/img/tycchka-lang.png') 0 0 no-repeat;
+  background: url('/skins/default/img/image.png') -353px -18px no-repeat;
   position: absolute;
   width: 45px;
   height: 25px;
@@ -444,7 +444,7 @@ div.catalog.st-1 td:nth-child(2) {
   text-shadow: 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 2px 2px #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 3px 3px #fff, -3px -3px 0 #fff, 3px -3px 0 #fff, -3px 3px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 3px 0 0 #fff, -3px 0 0 #fff, 0 3px 0 #fff, 0 -3px 0 #fff;
 }
 .background-content {
-  background: url('/skins/default/img/tychku.png') 0 0 repeat-x;
+  background: url('/skins/default/img/image.png') 50px -200px repeat-x;
   max-height: 296px;
   height: auto;
   font-size: 0;
@@ -550,7 +550,7 @@ div.prev-slide {
   bottom: 120px;
   cursor: pointer;
   height: 100px;
-  background: url("/skins/default/img/toTop.png") 0 -1px no-repeat;
+  background: url("/skins/default/img/image.png") -1px -53px no-repeat;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;

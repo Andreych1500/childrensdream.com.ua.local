@@ -152,7 +152,7 @@
 
 @media screen and (max-width: 720px){
     header .item .information{
-        background: url('/skins/default/img/tycha-mob.png') no-repeat;
+        background: url('/skins/default/img/image.png') -65px -59px no-repeat;
         width: 425px;
     }
     header .item .information p {
@@ -167,7 +167,7 @@
 
 @media screen and (max-width: 640px){
     header .item .information{
-        background-image: url('/skins/default/img/tycha-mob2.png');
+        background: url('/skins/default/img/image.png') 0 0 no-repeat;
         width: 305px;
     }
     header .item .information p {
@@ -232,7 +232,7 @@
 
 @media screen and (max-width: 512px){
     header .item .information {
-        background-image: url('/skins/default/img/tycha.png');
+        background: url('/skins/default/img/image.png') -66px -104px no-repeat;
         position: relative;
         margin: 20px 0;
         width: 100%;
