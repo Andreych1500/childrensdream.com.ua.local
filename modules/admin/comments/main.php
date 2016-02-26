@@ -49,6 +49,22 @@ if(isset($_POST['deactive']) && isset($_POST['ids'])){
     exit();
 }
 
+//new massage deactive
+$new_massage = q("
+	SELECT `id`
+	FROM `comments`
+	WHERE `new_massage` = 1
+	LIMIT 1
+");
+
+if($new_massage->num_rows > 0){
+    q("
+		UPDATE `comments` SET
+		`new_massage` = 0
+		WHERE `new_massage` = 1
+	");
+}
+
 //filter
 
 if(isset($_POST['cat']) && in_array($_POST['cat'],array(0,1,5)) && isset($_POST['filter'])){

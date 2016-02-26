@@ -21,3 +21,11 @@ if(isset($_SESSION['user']) && ($_SESSION['user']['active'] == 1)){
 		include './modules/cab/exit.php';
 	}
 }
+
+//new massage deactive
+$new_massage = q("
+	SELECT `id`
+	FROM `comments`
+	WHERE `new_massage` = 1
+	LIMIT 1
+");
