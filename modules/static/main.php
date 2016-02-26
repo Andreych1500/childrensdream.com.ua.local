@@ -1,7 +1,7 @@
 <?php 
 Core::$META['title'] = 'Childrensdream.com.ua';
-Core::$JS[] = '<script src="/skins/default/js/slider.js?v=1"></script>';
-Core::$JS[] = '<script src="/skins/default/js/call.js?v=1"></script>';
+Core::$JS[] = '<script src="/skins/default/js/slider.js?v=1" defer></script>';
+Core::$JS[] = '<script src="/skins/default/js/call.js?v=1" defer></script>';
 
 // call me
 if(isset($_POST['ok'], $_POST['name'], $_POST['text'], $_POST['email'], $_POST['thems'])){

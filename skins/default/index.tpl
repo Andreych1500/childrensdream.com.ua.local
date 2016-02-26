@@ -2,20 +2,18 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <link href="/skins/<?php echo Core::$SKIN; ?>/css/style.css" rel="stylesheet">
-  <link href="/skins/<?php echo Core::$SKIN; ?>/css/media_style.css" rel="stylesheet">
-  <link rel="stylesheet" href="/vendor/public/pushy/css/pushy.css">
   <title><?php echo hsc(Core::$META['title']);?></title>
   <meta name="description" content="<?php echo hsc(Core::$META['descrition']); ?>">
   <meta name="keywords" content="<?php echo hsc(Core::$META['ketwords']); ?>">
-  <script src="/vendor/public/jquery/dist/jquery.min.js"></script>
-  <script src="/vendor/public/pushy/js/pushy.js"></script>
-  <script src="/skins/default/js/script.js?v=1"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
   <?php if(count(Core::$CSS)){ echo implode("\n",Core::$CSS); } ?>
-  <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
+  <link href="/skins/<?php echo Core::$SKIN; ?>/css/style.css" rel="stylesheet">
+  <link href="/skins/<?php echo Core::$SKIN; ?>/css/media_style.css" rel="stylesheet">
+  <link rel="stylesheet" href="/vendor/public/pushy/css/pushy.css">
 </head>
 
 <body>
@@ -70,6 +68,10 @@
   <div class="content"><?=$content?></div>
 
   <footer>
+    <script src="/vendor/public/jquery/dist/jquery.min.js" defer></script>
+    <script src="/vendor/public/pushy/js/pushy.js" defer></script>
+    <script src="/skins/default/js/script.js?v=1" defer></script>
+    <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
     <div class="item">
       <div class="footer-logo">
         <div  class="logo-img">

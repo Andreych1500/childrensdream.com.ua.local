@@ -705,6 +705,9 @@ div.prev-slide {
   margin: 10px 0 0 10px;
   text-align: left;
 }
+.form-call .info-call {
+  padding: 0 5px;
+}
 .form-call .this-ok + p {
   margin: 10px 0 30px 10px;
 }
