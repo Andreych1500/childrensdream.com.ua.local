@@ -1257,6 +1257,9 @@ div.prev-slide {
   border: 1px solid #72D6E5;
   padding: 4px;
 }
+.catalog-order .table-count .line-tab-goods td input.errors {
+  border-color: red;
+}
 .catalog-order .table-count .line-tab-goods td img {
   width: 100%;
 }

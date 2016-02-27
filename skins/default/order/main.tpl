@@ -20,7 +20,7 @@
                   <input type="hidden" name="names_el[]" value="<?=(isset($lang)? hsc($val['name_ru']) : hsc($val['name']))?>">
                 </td>
                 <td>
-                  <input onchange="edit_price(this);" type="number" min="1" max="99" step="1" name="count[<?=$val['id']?>]" value="<?=(isset($errors)? $_POST['count'][$val['id']] : '1')?>">
+                  <input class="<?=(isset($errors['count'][$key])? 'errors' : '')?>" onchange="edit_price(this);" type="number" min="1" max="99"  step="1" name="count[<?=$val['id']?>]" value="<?=(isset($errors)? (($_POST['count'][$val['id']] > 99)? '99' : $_POST['count'][$val['id']] ) : '1')?>">
                 </td>
                 <td>
                   <span class="edJsPrice"><?=number_format($val['all_price'], 0, ',', ' ')?></span> <?=$mess['PRICEVAL']?>

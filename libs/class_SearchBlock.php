@@ -1,5 +1,4 @@
 <?php
-
 class SearchBlock{
 
 	static function search($name,$message){

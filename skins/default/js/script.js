@@ -121,6 +121,12 @@ function scrolMenuPanel(){
 function edit_price(el) {
     var price  = parseInt($(el).parents('tr').find('.el_prive_hidden').val());
     var count  = $(el).val();
+
+    if(count > 99){
+        count = 99;
+        $(el).val(99);
+    }
+
     var gPrice = count * price;
     var globPrice = 0;
 

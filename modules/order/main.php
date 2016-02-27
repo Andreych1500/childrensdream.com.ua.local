@@ -83,6 +83,12 @@ if (isset($_COOKIE['items'])) {
             $errors = '';
         }
 
+        foreach($_POST['count'] as $key => $value){
+            if($value > 99){
+                $errors['count'][$key-1] = 'error';
+            }
+        }
+
         if(!count($errors)){
             q(" INSERT INTO `order` SET
                 `name`      = '" . mres($_POST['name']) . "',
