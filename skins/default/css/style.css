@@ -218,7 +218,7 @@ a {
   -moz-transition: opacity 1s ease;
   -o-transition: opacity 1s ease;
   transition: opacity 1s ease;
-  background: url('/skins/default/img/image.png') -319px -4px no-repeat;
+  background: url('/skins/default/img/image.png') -319px -6px no-repeat;
   position: absolute;
   width: 100%;
   height: 10px;
