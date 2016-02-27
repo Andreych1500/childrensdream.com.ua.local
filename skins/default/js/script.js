@@ -1,15 +1,25 @@
 $(document).ready(function() {
     // scrolling to top mini
-    pathname = window.location.pathname;
+    var pathname = window.location.pathname;
 
     if(getCookie('scroll') == undefined ){
-        setCookie('scroll', pathname, 0);
+        if(pathname == '/' || pathname == '/ru/') {
+            scrolMenuPanel();
+            setCookie('scroll', pathname, 0);
+        }
     } else {
-        if(getCookie('scroll') == '/' || getCookie('scroll') == '/ru/'){
-           setCookie('scroll', pathname, 0);
+        var cookieScroll = getCookie('scroll');
+
+        if(cookieScroll == '/' || cookieScroll == '/ru/'){
+            deleteCookie('scroll');
+            setCookie('scroll', pathname, 0);
         } else {
             if((pathname == '/' || pathname == '/ru/') && $( window).width() >= 834) {
                 scrolMenuPanel();
+                deleteCookie('scroll');
+                setCookie('scroll', pathname, 0);
+            } else {
+                deleteCookie('scroll');
                 setCookie('scroll', pathname, 0);
             }
         }
@@ -87,7 +97,7 @@ $(document).ready(function() {
         setCookie('items',JSON.stringify(temp),time_cookie);
 
         if(count(temp) == 0){
-            window.location.href = window.location.href
+            window.location.href = window.location.href;
         }
 
         var card = $('.top-menu ul li').last().find('span');
