@@ -17,5 +17,5 @@
 	imagettftext ($image, 30, 0, 10, 40, $color, $dir."verdana.ttf", $_SESSION['rand_code']);
 
 	header("Content-type: image/png");
-	imagepng($image, null, 9);
+	imagepng($image, NULL, 9, PNG_NO_FILTER);
 ?>

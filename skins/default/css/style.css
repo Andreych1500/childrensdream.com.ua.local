@@ -921,6 +921,7 @@ div.prev-slide {
   background-clip: padding-box;
   background-color: white;
   overflow: hidden;
+  z-index: 5;
 }
 .desc-info .view-info .cirkl-photo div img {
   position: relative;
@@ -1008,6 +1009,7 @@ div.prev-slide {
 .dateil-info .el-slider .item-photo img,
 .dateil-info .el-slider .items-photo img {
   margin: 0 auto;
+  max-height: 270px;
 }
 .dateil-info .el-slider .items-photo img {
   max-width: 100px;
