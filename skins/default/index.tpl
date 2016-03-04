@@ -10,10 +10,9 @@
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
-  <?php if(count(Core::$CSS)){ echo implode("\n",Core::$CSS); } ?>
+
   <link href="/skins/<?php echo Core::$SKIN; ?>/css/style.css" rel="stylesheet">
   <link href="/skins/<?php echo Core::$SKIN; ?>/css/media_style.css" rel="stylesheet">
-  <link rel="stylesheet" href="/vendor/public/pushy/css/pushy.css">
 </head>
 
 <body>
@@ -68,6 +67,8 @@
   <div class="content"><?=$content?></div>
 
   <footer>
+    <link rel="stylesheet" href="/vendor/public/pushy/css/pushy.css">
+    <?php if(count(Core::$CSS)){ echo implode("\n",Core::$CSS); } ?>
     <script src="/vendor/public/jquery/dist/jquery.min.js" defer></script>
     <script src="/skins/default/js/script.js?v=1" defer></script>
     <script src="/vendor/public/pushy/js/pushy.js" defer></script>
