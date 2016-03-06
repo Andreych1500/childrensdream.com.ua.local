@@ -6,7 +6,7 @@
           <span class="icon-right"></span>
         </div>
         <div class="slide-wrap">
-          <?php for($i=1; $i<=3; ++$i){  ?>
+          <?php for($i=1; $i<=4; ++$i){  ?>
             <div class="slide-item">
               <img src="/skins/default/img/lang/<?=$langs?>/slide<?=$i?>.png" alt="Childrens-dream">
             </div>
