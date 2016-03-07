@@ -2,17 +2,17 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title><?php echo hsc(Core::$META['title']);?></title>
-  <meta name="description" content="<?php echo hsc(Core::$META['descrition']); ?>">
-  <meta name="keywords" content="<?php echo hsc(Core::$META['ketwords']); ?>">
+  <title><?=hsc(Core::$META['title']);?></title>
+  <meta name="description" content="<?=hsc(Core::$META['description']); ?>">
+  <meta name="keywords" content="<?=hsc(Core::$META['keywords']); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
 
-  <link href="/skins/<?php echo Core::$SKIN; ?>/css/style.css" rel="stylesheet">
-  <link href="/skins/<?php echo Core::$SKIN; ?>/css/media_style.css" rel="stylesheet">
+  <link href="/skins/<?=Core::$SKIN; ?>/css/style.css" rel="stylesheet">
+  <link href="/skins/<?=Core::$SKIN; ?>/css/media_style.css" rel="stylesheet">
   <link rel="stylesheet" href="/vendor/public/pushy/css/pushy.css">
   <?php if(count(Core::$CSS)){ echo implode("\n",Core::$CSS); } ?>
 </head>
@@ -85,9 +85,9 @@
       </div>
       <div class="soc-link">
         <p><?=$mess['SOC_LINK']?></p>
-        <a href="//www.facebook.com/tmchildrensdream" target="_blank" class="icon-facebook" rel="nofollow"></a>
-        <a href="//vk.com/tmchildrensdream" target="_blank" class="icon-vkontakte" rel="nofollow"></a>
-        <a href="//www.instagram.com/tm_childrens_dream" target="_blank" class="icon-instagram" rel="nofollow"></a>
+        <a href="//www.facebook.com/tmchildrensdream" target="_blank" class="icon-facebook"></a>
+        <a href="//vk.com/tmchildrensdream" target="_blank" class="icon-vkontakte"></a>
+        <a href="//www.instagram.com/tm_childrens_dream" target="_blank" class="icon-instagram"></a>
       </div>
     </div>
   </footer>

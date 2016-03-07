@@ -24,6 +24,7 @@ Options +FollowSymLinks
 RewriteCond %{HTTP_HOST} ^www.childrensdream\.com\.ua$ [NC]
 RewriteRule ^(.*)$ http://childrensdream.com.ua/$1 [R=301,L]
 
+ErrorDocument 403 /error/403.php
 
 # кешування у браузері на стороні користувача
 <IfModule mod_expires.c>
@@ -64,6 +65,6 @@ RewriteRule ^(.*)$ http://childrensdream.com.ua/$1 [R=301,L]
 
 #Запрет отдачи HTTP-заголовков Vary браузерам семейства MSIE
 <IfModule mod_setenvif.c>
-BrowserMatch "MSIE" force-no-vary
-BrowserMatch "Mozilla/4.[0-9]{2}" force-no-vary
+    BrowserMatch "MSIE" force-no-vary
+    BrowserMatch "Mozilla/4.[0-9]{2}" force-no-vary
 </IfModule>

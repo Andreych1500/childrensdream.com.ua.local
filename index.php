@@ -20,7 +20,7 @@ ob_start();
 		!file_exists('./skins/' . Core::$SKIN . '/' . $_GET['module'] . '/' . (($_GET['module'] == 'catalog')? ((Core::$CONT['default'] == 'modules/admin')? $_GET['page'] : 'main' ) : $_GET['page']) . '.tpl') ||
 		!file_exists('./'. ((Core::$CONT['default'] == 'modules/admin')? 'modules' : Core::$CONT['default']).'/'.$_GET['module'].'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php')) {
 
-		$_GET['module'] = '404';
+		$_GET['module'] = 'error';
 		$_GET['page'] = 'main';
 		header("HTTP/1.0 404 Not Found");
 	}

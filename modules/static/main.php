@@ -1,5 +1,4 @@
-<?php 
-Core::$META['title'] = 'Childrensdream.com.ua';
+<?php
 Core::$JS[] = '<script src="/skins/default/js/slider.js?v=1" defer></script>';
 Core::$JS[] = '<script src="/skins/default/js/call.js?v=1" defer></script>';
 

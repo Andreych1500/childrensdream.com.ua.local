@@ -1,5 +1,4 @@
 <?php
-Core::$META['title'] = 'Childrensdream.com.ua';
 Core::$CSS[] = '<link rel="stylesheet" type="text/css" href="/vendor/public/slick-carousel/slick/slick.css">';
 Core::$CSS[] = '<link rel="stylesheet" type="text/css" href="/vendor/public/slick-carousel/slick/slick-theme.css">';
 Core::$JS[] = '<script src="//code.jquery.com/jquery-1.11.0.min.js" defer></script>';
@@ -27,12 +26,16 @@ if($_GET['page'] == 'main'){
     ");
 
     if ($catalog->num_rows == 0 || isset($_GET['key1'])) {
-        $_GET['module'] = '404';
+        $_GET['module'] = 'error';
         $_GET['page'] = 'main';
         header("HTTP/1.0 404 Not Found");
     }
 
     $el = $catalog->fetch_assoc();
+
+    // SEO ELEMENT META TAGS
+    wtf($el,1);
+    // END SEO
 
     $slidePhoto = explode('#', $el['more_photos']);
     foreach ($slidePhoto as $value) {

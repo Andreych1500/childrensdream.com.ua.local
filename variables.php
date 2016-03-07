@@ -45,6 +45,7 @@ if(!isset($_GET['module'])){
 		WHERE `module` = '".mres($_GET['module'])."'
 		LIMIT 1
 	");
+
 	if(!$res->num_rows){
 		$res->close();
 		header("HTTP/1.0 404 Not Found");

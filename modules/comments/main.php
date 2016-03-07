@@ -1,5 +1,4 @@
 <?php
-Core::$META['title'] = 'comments';
 Core::$JS[] =  '<script src="/skins/default/js/comments.js?v=1" defer></script>';
 
 // відгуки
