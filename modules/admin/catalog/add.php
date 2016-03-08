@@ -60,6 +60,12 @@ if(isset($_POST['ok'],$_POST['name'],$_POST['name_ru'],$_POST['seo_name'],$_POST
 	if(empty($_POST['anatoming']) || !(int)$_POST['anatoming']){ $_POST['anatoming'] = 0; }
 	if(empty($_POST['ortopeding']) || !(int)$_POST['ortopeding']){ $_POST['ortopeding'] = 0; }
 
+    // seo tags
+	if(empty($_POST['meta_title'])){ $_POST['meta_title'] = ''; }
+	if(empty($_POST['meta_keywords'])){ $_POST['meta_keywords'] = ''; }
+	if(empty($_POST['meta_description'])){ $_POST['meta_description'] = ''; }
+	// end seo tags
+
 
 	//anons photo
 	$anons_photo = ((isset($_POST['anons_photo']))? explode('|',$_POST['anons_photo']) : '');
@@ -89,33 +95,36 @@ if(isset($_POST['ok'],$_POST['name'],$_POST['name_ru'],$_POST['seo_name'],$_POST
 
 	if(!count($errors)){
 		q(" INSERT INTO `catalog` SET
- 			`sort`           = '".(int)$_POST['sort']."',
-		    `name`           = '".mres($_POST['name'])."',
-		    `name_ru`        = '".mres($_POST['name_ru'])."',
-		    `seo_name`       = '".mres($_POST['seo_name'])."',
-		    `price`          = '".(int)$_POST['price']."',
-		    `form`           = '".mres($_POST['form'])."',
-		    `form_ru`        = '".mres($_POST['form_ru'])."',
-			`type`           = '".mres($_POST['type'])."',
-			`type_ru`        = '".mres($_POST['type_ru'])."',
-			`size`           = '".mres($_POST['size'])."',
-			`weight`         = '".(int)$_POST['weight']."',
-			`height`         = '".(int)$_POST['height']."',
-			`rigidity`		 = '".mres($_POST['rigidity'])."',
-			`rigidity_ru`	 = '".mres($_POST['rigidity_ru'])."',
-			`anatoming`      = '".(int)$_POST['anatoming']."',
-			`ortopeding`     = '".(int)$_POST['ortopeding']."',
-			`description`    = '".mres($_POST['description'])."',
-			`text`           = '".mres($_POST['text'])."',
-			`description_ru` = '".mres($_POST['description_ru'])."',
-			`text_ru`        = '".mres($_POST['text_ru'])."',
-			`anons_photo`    = '".mres($anons_photo[0])."',
-			`descrip_photo`  = '".mres($descrip_photo[0])."',
-			`more_photos`    = '".mres($add_more_file)."',
+ 			`sort`             = '".(int)$_POST['sort']."',
+		    `name`             = '".mres($_POST['name'])."',
+		    `name_ru`          = '".mres($_POST['name_ru'])."',
+		    `seo_name`         = '".mres($_POST['seo_name'])."',
+		    `meta_title`       = '".mres($_POST['meta_title'])."',
+		    `meta_keywords`    = '".mres($_POST['meta_keywords'])."',
+		    `meta_description` = '".mres($_POST['meta_description'])."',
+		    `price`            = '".(int)$_POST['price']."',
+		    `form`             = '".mres($_POST['form'])."',
+		    `form_ru`          = '".mres($_POST['form_ru'])."',
+			`type`             = '".mres($_POST['type'])."',
+			`type_ru`          = '".mres($_POST['type_ru'])."',
+			`size`             = '".mres($_POST['size'])."',
+			`weight`           = '".(int)$_POST['weight']."',
+			`height`           = '".(int)$_POST['height']."',
+			`rigidity`		   = '".mres($_POST['rigidity'])."',
+			`rigidity_ru`	   = '".mres($_POST['rigidity_ru'])."',
+			`anatoming`        = '".(int)$_POST['anatoming']."',
+			`ortopeding`       = '".(int)$_POST['ortopeding']."',
+			`description`      = '".mres($_POST['description'])."',
+			`text`             = '".mres($_POST['text'])."',
+			`description_ru`   = '".mres($_POST['description_ru'])."',
+			`text_ru`          = '".mres($_POST['text_ru'])."',
+			`anons_photo`      = '".mres($anons_photo[0])."',
+			`descrip_photo`    = '".mres($descrip_photo[0])."',
+			`more_photos`      = '".mres($add_more_file)."',
 
-			`garanty`        = '".(int)$_POST['garanty']."',
-		    `availability`   = '".(int)$_POST['availability']."',
-			`date`           = NOW()
+			`garanty`          = '".(int)$_POST['garanty']."',
+		    `availability`     = '".(int)$_POST['availability']."',
+			`date`             = NOW()
 		");
 		
 		$_SESSION['info']= 'Товар успішно доданий!';

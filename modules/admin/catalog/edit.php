@@ -29,6 +29,12 @@ if(isset($_POST['ok'])){
 	if(empty($_POST['anatoming']) || !(int)$_POST['anatoming']){ $_POST['anatoming'] = 0; }
 	if(empty($_POST['ortopeding']) || !(int)$_POST['ortopeding']){ $_POST['ortopeding'] = 0; }
 
+	// seo tags
+	if(empty($_POST['meta_title'])){ $_POST['meta_title'] = ''; }
+	if(empty($_POST['meta_keywords'])){ $_POST['meta_keywords'] = ''; }
+	if(empty($_POST['meta_description'])){ $_POST['meta_description'] = ''; }
+	// end seo tags
+
 	//anons photo
 	$anons_photo = ((isset($_POST['anons_photo']))? explode('|',$_POST['anons_photo']) : '');
 	//end anons photo
@@ -60,6 +66,9 @@ if(isset($_POST['ok'])){
 			`name`           = '".mres($_POST['name'])."',
 			`name_ru`        = '".mres($_POST['name_ru'])."',
 			`seo_name`       = '".mres($_POST['seo_el_name'])."',
+			`meta_title`       = '".mres($_POST['meta_title'])."',
+		    `meta_keywords`    = '".mres($_POST['meta_keywords'])."',
+		    `meta_description` = '".mres($_POST['meta_description'])."',
 			`price`          = '".(int)$_POST['price']."',
 			`form`           = '".mres($_POST['form'])."',
 			`form_ru`        = '".mres($_POST['form_ru'])."',

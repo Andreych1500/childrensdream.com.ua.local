@@ -36,7 +36,7 @@
 
 @media screen and (max-width: 960px){
     div.top-menu li{
-        margin-right:15px;
+        margin-right:13px;
     }
 
     .st-1 table td:nth-child(2n){
@@ -47,7 +47,7 @@
 
 @media screen and (max-width: 854px){
     div.top-menu li{
-        margin-right:14px;
+        margin-right:12px;
     }
 
     .form-comment{

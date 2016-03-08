@@ -17,6 +17,24 @@
           <p>Символьний код<span>*</span></p>
           <input type="text" class="<?=((isset($errors['seo_name']))? "errors" : "")?>"  name="seo_name" value="<?=((isset($errors))? hsc($_POST['seo_name']) : "")?>">
         </div>
+
+        <!-- Seo input -->
+        <br>
+        <div class="input-value">
+          <p>meta_title</p>
+          <textarea name="meta_title"><?=((isset($errors))? hsc($_POST['meta_title']) : "")?></textarea>
+        </div>
+        <div class="input-value">
+          <p>meta_keywords</p>
+          <textarea name="meta_keywords"><?=((isset($errors))? hsc($_POST['meta_keywords']) : "")?></textarea>
+        </div>
+        <div class="input-value">
+          <p>meta_description</p>
+          <textarea name="meta_description"><?=((isset($errors))? hsc($_POST['meta_description']) : "")?></textarea>
+        </div>
+        <br>
+        <!-- End seo input -->
+
         <div class="input-value">
           <p>Сортування</p>
           <input type="number" step="1" min="1" name="sort" value="<?=((isset($errors))? hsc($_POST['sort']) : "100")?>">
