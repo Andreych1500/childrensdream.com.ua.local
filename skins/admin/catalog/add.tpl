@@ -21,16 +21,28 @@
         <!-- Seo input -->
         <br>
         <div class="input-value">
-          <p>meta_title</p>
-          <textarea name="meta_title"><?=((isset($errors))? hsc($_POST['meta_title']) : "")?></textarea>
+          <p>meta_title_ua</p>
+          <input type="text" name="meta_title_ua" value="<?=((isset($errors))? hsc($_POST['meta_title_ua']) : "")?>">
         </div>
         <div class="input-value">
-          <p>meta_keywords</p>
-          <textarea name="meta_keywords"><?=((isset($errors))? hsc($_POST['meta_keywords']) : "")?></textarea>
+          <p>meta_title_ru</p>
+          <input type="text" name="meta_title_ru" value="<?=((isset($errors))? hsc($_POST['meta_title_ru']) : "")?>">
+        </div>
+        <div class="input-value input-seo">
+          <p>meta_keywords_ua</p>
+          <textarea name="meta_keywords_ua"><?=((isset($errors))? hsc($_POST['meta_keywords_ua']) : "")?></textarea>
+        </div>
+        <div class="input-value input-seo">
+          <p>meta_keywords_ru</p>
+          <textarea name="meta_keywords_ru"><?=((isset($errors))? hsc($_POST['meta_keywords_ru']) : "")?></textarea>
+        </div>
+        <div class="input-value input-seo">
+          <p>meta_description_ua</p>
+          <textarea name="meta_description_ua"><?=((isset($errors))? hsc($_POST['meta_description_ua']) : "")?></textarea>
         </div>
         <div class="input-value">
-          <p>meta_description</p>
-          <textarea name="meta_description"><?=((isset($errors))? hsc($_POST['meta_description']) : "")?></textarea>
+          <p>meta_description_ru</p>
+          <textarea name="meta_description_ru"><?=((isset($errors))? hsc($_POST['meta_description_ru']) : "")?></textarea>
         </div>
         <br>
         <!-- End seo input -->

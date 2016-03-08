@@ -442,9 +442,12 @@ div.catalog-style .input-value select {
   border-radius: 3px;
   border: 1px solid #ccc;
   padding: 5px;
-  width: 370px;
+  width: 480px;
   height: auto;
   top: 0;
+}
+div.input-seo textarea {
+  height: 40px !important;
 }
 div.catalog-style .input-value select {
   width: 150px;

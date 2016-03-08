@@ -30,9 +30,12 @@ if(isset($_POST['ok'])){
 	if(empty($_POST['ortopeding']) || !(int)$_POST['ortopeding']){ $_POST['ortopeding'] = 0; }
 
 	// seo tags
-	if(empty($_POST['meta_title'])){ $_POST['meta_title'] = ''; }
-	if(empty($_POST['meta_keywords'])){ $_POST['meta_keywords'] = ''; }
-	if(empty($_POST['meta_description'])){ $_POST['meta_description'] = ''; }
+	if(empty($_POST['meta_title_ua'])){ $_POST['meta_title_ua'] = ''; }
+	if(empty($_POST['meta_keywords_ua'])){ $_POST['meta_keywords_ua'] = ''; }
+	if(empty($_POST['meta_description_ua'])){ $_POST['meta_description_ua'] = ''; }
+	if(empty($_POST['meta_title_ru'])){ $_POST['meta_title_ru'] = ''; }
+	if(empty($_POST['meta_keywords_ru'])){ $_POST['meta_keywords_ru'] = ''; }
+	if(empty($_POST['meta_description_ru'])){ $_POST['meta_description_ru'] = ''; }
 	// end seo tags
 
 	//anons photo
@@ -62,32 +65,35 @@ if(isset($_POST['ok'])){
 
 	if(!count($errors)){
 		q(" UPDATE `catalog` SET
- 			`sort`           = '".(int)$_POST['sort']."',
-			`name`           = '".mres($_POST['name'])."',
-			`name_ru`        = '".mres($_POST['name_ru'])."',
-			`seo_name`       = '".mres($_POST['seo_el_name'])."',
-			`meta_title`       = '".mres($_POST['meta_title'])."',
-		    `meta_keywords`    = '".mres($_POST['meta_keywords'])."',
-		    `meta_description` = '".mres($_POST['meta_description'])."',
-			`price`          = '".(int)$_POST['price']."',
-			`form`           = '".mres($_POST['form'])."',
-			`form_ru`        = '".mres($_POST['form_ru'])."',
-			`type`           = '".mres($_POST['type'])."',
-			`type_ru`        = '".mres($_POST['type_ru'])."',
-			`size`           = '".mres($_POST['size'])."',
-			`weight`         = '".(int)$_POST['weight']."',
-			`height`         = '".(int)$_POST['height']."',
-			`rigidity`	     = '".mres($_POST['rigidity'])."',
-			`rigidity_ru`	 = '".mres($_POST['rigidity_ru'])."',
-			`anatoming`      = '".(int)$_POST['anatoming']."',
-			`ortopeding`     = '".(int)$_POST['ortopeding']."',
-			`description`    = '".mres($_POST['description'])."',
-			`description_ru` = '".mres($_POST['description_ru'])."',
-			`text`           = '".mres($_POST['text'])."',
-			`text_ru`        = '".mres($_POST['text_ru'])."',
-			`anons_photo`    = '".mres($anons_photo[0])."',
-			`descrip_photo`  = '".mres($descrip_photo[0])."',
-			`more_photos`    = '".mres($add_more_file)."',
+ 			`sort`                = '".(int)$_POST['sort']."',
+			`name`                = '".mres($_POST['name'])."',
+			`name_ru`             = '".mres($_POST['name_ru'])."',
+			`seo_name`            = '".mres($_POST['seo_el_name'])."',
+			`meta_title_ua`       = '".mres($_POST['meta_title_ua'])."',
+		    `meta_keywords_ua`    = '".mres($_POST['meta_keywords_ua'])."',
+		    `meta_description_ua` = '".mres($_POST['meta_description_ua'])."',
+		    `meta_title_ru`       = '".mres($_POST['meta_title_ru'])."',
+		    `meta_keywords_ru`    = '".mres($_POST['meta_keywords_ru'])."',
+		    `meta_description_ru` = '".mres($_POST['meta_description_ru'])."',
+			`price`               = '".(int)$_POST['price']."',
+			`form`                = '".mres($_POST['form'])."',
+			`form_ru`             = '".mres($_POST['form_ru'])."',
+			`type`                = '".mres($_POST['type'])."',
+			`type_ru`             = '".mres($_POST['type_ru'])."',
+			`size`                = '".mres($_POST['size'])."',
+			`weight`              = '".(int)$_POST['weight']."',
+			`height`              = '".(int)$_POST['height']."',
+			`rigidity`	          = '".mres($_POST['rigidity'])."',
+			`rigidity_ru`	      = '".mres($_POST['rigidity_ru'])."',
+			`anatoming`           = '".(int)$_POST['anatoming']."',
+			`ortopeding`          = '".(int)$_POST['ortopeding']."',
+			`description`         = '".mres($_POST['description'])."',
+			`description_ru`      = '".mres($_POST['description_ru'])."',
+			`text`                = '".mres($_POST['text'])."',
+			`text_ru`             = '".mres($_POST['text_ru'])."',
+			`anons_photo`         = '".mres($anons_photo[0])."',
+			`descrip_photo`       = '".mres($descrip_photo[0])."',
+			`more_photos`         = '".mres($add_more_file)."',
 
 			`garanty`        = '".(int)$_POST['garanty']."',
 		    `availability`   = '".(int)$_POST['availability']."'
