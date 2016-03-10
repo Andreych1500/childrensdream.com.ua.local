@@ -22,7 +22,7 @@
     <div class="item">
       <div class="logo">
         <a href="<?=(isset($lang)? '/ru/' : '/')?>">
-          <img src="/skins/default/img/logo.png" alt="childrensdream" title="childrensdream">
+          <img src="/skins/default/img/logo.png" alt="Children's Dream">
         </a>
       </div>
       <div class="information">
@@ -76,7 +76,7 @@
     <div class="item">
       <div class="footer-logo">
         <div  class="logo-img">
-          <img src="/skins/default/img/footer-logo.png" alt="childrensdream" title="childrensdream">
+          <img src="/skins/default/img/footer-logo.png" alt="Children's Dream">
         </div>
         <div class="development-site">
           <p>&copy;<?=data(Core::$CREATED).$mess['FOOTER_TOP']?></p>

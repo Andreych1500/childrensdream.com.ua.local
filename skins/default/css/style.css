@@ -1054,6 +1054,7 @@ div.prev-slide {
 .dateil-info .el-text .desc-el {
   font: 16px MyriadPro;
   color: #482200;
+  text-align: justify;
 }
 .dateil-info .el-text .el-shop p {
   float: left;

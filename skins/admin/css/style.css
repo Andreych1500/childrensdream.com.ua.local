@@ -350,12 +350,12 @@ div.top-menu ul li a.active span {
 }
 .input-value textarea {
   width: 970px;
+  max-width: 970px;
   height: 160px;
 }
 .input-value input,
 .input-value textarea {
   padding: 4px;
-  resize: none;
   outline: none;
 }
 .input-value input:focus {
@@ -448,6 +448,7 @@ div.catalog-style .input-value select {
 }
 div.input-seo textarea {
   height: 40px !important;
+  resize: none;
 }
 div.catalog-style .input-value select {
   width: 150px;

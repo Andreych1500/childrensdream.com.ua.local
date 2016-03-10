@@ -17,7 +17,7 @@
             while($el = $catalog->fetch_assoc()){ ?>
                 <div class="el-item">
                     <div class="photos">
-                        <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><img src="<?=hsc($el['anons_photo'])?>" alt="Childreans-dream" title="Childreans-dream"></a>
+                        <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><img src="<?=hsc($el['anons_photo'])?>" alt="<?=(isset($lang)? hsc($el['name_ru']) : hsc($el['name']))?>"></a>
                     </div>
                     <div class="desk-info">
                         <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><span><?=(isset($lang)? hsc($el['name_ru']) : hsc($el['name']))?></span></a>
@@ -43,13 +43,13 @@
       <div class="el-slider">
         <div class="slider-nav <?=((count($photos) > 3)? 'center-photo' : 'currenc')?>">
           <?php foreach($photos as $key => $value){ ?>
-              <div class="items-photo"><img src="<?=hsc($value[0])?>" alt="Childrens-dream"></div>
+              <div class="items-photo"><img src="<?=hsc($value[0])?>" alt="<?=hsc((isset($lang)? $el['name_ru'] : $el['name']))?>"></div>
           <?php } ?>
         </div>
 
         <div class="slider-for <?=((count($photos) > 3)? '' : 'good-top')?>">
           <?php foreach($photos as $key => $value){ ?>
-          <div class="item-photo"><img src="<?=hsc($value[0])?>" alt="Childrens-dream"></div>
+          <div class="item-photo"><img src="<?=hsc($value[0])?>" alt="<?=hsc((isset($lang)? $el['name_ru'] : $el['name']))?>"></div>
           <?php } ?>
         </div>
       </div>
@@ -83,7 +83,7 @@
         <div class="view-info">
             <div class="descript-text"><?=nl2br((isset($lang)? hsc($el['text_ru']) : hsc($el['text'])))?></div>
             <div class="cirkl-photo">
-              <div><img src="<?=hsc($el['descrip_photo'])?>" alt="Childreans-drea" title="Childreans-dream"></div>
+              <div><img src="<?=hsc($el['descrip_photo'])?>" alt="<?=hsc((isset($lang)? $el['name_ru'] : $el['name']))?>"></div>
             </div>
         </div>
       </div>

@@ -28,8 +28,12 @@ if(!isset($_SESSION['user']) || $_SESSION['user']['access'] !=  5){
 					AND `pass`   = '".myHash($_POST['pass'])."'
 				");
 				setcookie('authhash',myHash($_SESSION['user']['id'].$_SESSION['user']['login'].$_SESSION['user']['email']),time()+9600,'/');
-				setcookie('id',$_SESSION['user']['id'],time()+9600,'/');			
+				setcookie('id',$_SESSION['user']['id'],time()+9600,'/');
 			}
+
+			header("Location: /admin/");
+			exit();
+
 		} else {
 			$errors['notuser'] = 'Користувача з таким логіном або паролем не існує! Або у вас недостатньо прав...';
 		}

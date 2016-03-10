@@ -34,7 +34,9 @@ if($_GET['page'] == 'main'){
     $el = $catalog->fetch_assoc();
 
     // SEO ELEMENT META TAGS
-    wtf($el,1);
+    Core::$META['title'] = $el['meta_title_'.$langs];
+    Core::$META['keywords'] = $el['meta_keywords_'.$langs];
+    Core::$META['description'] = $el['meta_description_'.$langs];
     // END SEO
 
     $slidePhoto = explode('#', $el['more_photos']);

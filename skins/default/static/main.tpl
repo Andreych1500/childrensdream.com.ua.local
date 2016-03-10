@@ -8,7 +8,7 @@
         <div class="slide-wrap">
           <?php for($i=1; $i<=4; ++$i){  ?>
             <div class="slide-item">
-              <img src="/skins/default/img/lang/<?=$langs?>/slide<?=$i?>.png" alt="Childrens-dream">
+              <img src="/skins/default/img/lang/<?=$langs?>/slide<?=$i?>.png" alt="Children's Dream">
             </div>
           <?php } ?>
         </div>
@@ -41,7 +41,7 @@
         <p><?=$mess['ABOUT_TEXT5'];?></p>
       </div>
       <div class="item-right">
-        <img src="/skins/default/img/cd-static.png" alt="Childrens-dream" title="Childrens-dream">
+        <img src="/skins/default/img/cd-static.png" alt="Children's Dream">
       </div>
     </div>
   </div>
@@ -65,7 +65,7 @@
       while($el = $catalog->fetch_assoc()){ ?>
         <div class="el-item">
           <div class="photos">
-            <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><img src="<?=hsc($el['anons_photo'])?>" alt="Childreans-dream" title="Childreans-dream"></a>
+            <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><img src="<?=hsc($el['anons_photo'])?>" alt="<?=(isset($lang)? hsc($el['name_ru']) : hsc($el['name']))?>"></a>
           </div>
           <div class="desk-info">
             <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><span><?=(isset($lang)? hsc($el['name_ru']) : hsc($el['name']))?></span></a>
@@ -117,7 +117,7 @@
         </ul>
       </div>
       <div class="item-right">
-        <img src="/skins/default/img/car.png" alt="Childrens-dream" title="Childrens-dream">
+        <img src="/skins/default/img/car.png" alt="<?=$mess['SERVICES_TEXT0'];?>">
       </div>
     </div>
   </div>
