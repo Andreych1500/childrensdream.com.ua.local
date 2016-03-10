@@ -65,7 +65,7 @@
       while($el = $catalog->fetch_assoc()){ ?>
         <div class="el-item">
           <div class="photos">
-            <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><img src="<?=hsc($el['anons_photo'])?>" alt="<?=(isset($lang)? hsc($el['name_ru']) : hsc($el['name']))?>" title="<?=(isset($lang)? hsc($el['name_ru']) : hsc($el['name']))?>"></a>
+            <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><img src="<?=hsc($el['anons_photo'])?>" alt="<?=(isset($lang)? hsc($el['name_ru']) : hsc($el['name']))?>"></a>
           </div>
           <div class="desk-info">
             <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><span><?=(isset($lang)? hsc($el['name_ru']) : hsc($el['name']))?></span></a>

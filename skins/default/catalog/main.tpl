@@ -83,7 +83,7 @@
         <div class="view-info">
             <div class="descript-text"><?=nl2br((isset($lang)? hsc($el['text_ru']) : hsc($el['text'])))?></div>
             <div class="cirkl-photo">
-              <div><img src="<?=hsc($el['descrip_photo'])?>" alt="<?=hsc((isset($lang)? $el['name_ru'] : $el['name']))?>"></div>
+              <div><img src="<?=hsc($el['descrip_photo'])?>" alt="<?=hsc((isset($lang)? $el['name_ru'] : $el['name']))?>" title="<?=hsc((isset($lang)? $el['name_ru'] : $el['name']))?>"></div>
             </div>
         </div>
       </div>
