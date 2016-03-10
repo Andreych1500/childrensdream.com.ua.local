@@ -67,7 +67,7 @@ function htmSlider(){
     /* Клик следующий слайд */
     prevLink.click(function(){
         if(!slideWrap.is(':animated')) {
-            slideWrap.animate({left: resizeWidth()}, 1300, function(){
+            slideWrap.animate({left: resizeWidth()}, 1000, function(){
                 slideWrap
                     .find('.slide-item:first')
                     .appendTo(slideWrap)
@@ -85,13 +85,13 @@ function htmSlider(){
                 .find('.slide-item:last')
                 .prependTo(slideWrap)
                 .parent()
-                .animate({left: 0}, 1300);
+                .animate({left: 0}, 1000);
         }
     });
 
     /* Функция автоматической прокрутки слайдера */
     function autoplay(){
-        slideWrap.animate({left: resizeWidth()}, 1300, function(){
+        slideWrap.animate({left: resizeWidth()}, 1000, function(){
             slideWrap
                 .find('.slide-item:first')
                 .appendTo(slideWrap)
@@ -101,7 +101,7 @@ function htmSlider(){
     }
 
     if(is_animate){
-        timer = setInterval(autoplay, 20000);
+        timer = setInterval(autoplay, 25000);
     } else {
         clearInterval(timer);
     }
