@@ -41,7 +41,7 @@
         <p><?=$mess['ABOUT_TEXT5'];?></p>
       </div>
       <div class="item-right">
-        <img src="/skins/default/img/cd-static.png" alt="Children's Dream">
+        <img src="/skins/default/img/cd-static.png" alt="Children's Dream" title="Children's Dream">
       </div>
     </div>
   </div>
@@ -65,7 +65,7 @@
       while($el = $catalog->fetch_assoc()){ ?>
         <div class="el-item">
           <div class="photos">
-            <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><img src="<?=hsc($el['anons_photo'])?>" alt="<?=(isset($lang)? hsc($el['name_ru']) : hsc($el['name']))?>"></a>
+            <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><img src="<?=hsc($el['anons_photo'])?>" alt="<?=(isset($lang)? hsc($el['name_ru']) : hsc($el['name']))?>" title="<?=(isset($lang)? hsc($el['name_ru']) : hsc($el['name']))?>"></a>
           </div>
           <div class="desk-info">
             <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><span><?=(isset($lang)? hsc($el['name_ru']) : hsc($el['name']))?></span></a>
@@ -117,7 +117,7 @@
         </ul>
       </div>
       <div class="item-right">
-        <img src="/skins/default/img/car.png" alt="<?=$mess['SERVICES_TEXT0'];?>">
+        <img src="/skins/default/img/car.png" alt="<?=$mess['SERVICES_TEXT0'];?>" title="<?=$mess['SERVICES_TEXT0'];?>">
       </div>
     </div>
   </div>
