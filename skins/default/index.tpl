@@ -40,6 +40,7 @@
         </ul>
         <span class="menu-icon"></span>
       </div>
+
       <div class="mobile-basket">
         <a href="<?=(isset($lang)? '/ru/' : '/')?>order"><?=$mess['BASKET']?> <span><?=(int)$countG?></span></a>
       </div>

@@ -111,5 +111,4 @@ function htmSlider(){
     } else {
         clearInterval(timer);
     }
-
 }
