@@ -25,6 +25,7 @@ $(document).ready(function() {
         }
     }
 
+    // fixed menu
     window.onscroll = function () {
         var scrolledY = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -34,12 +35,15 @@ $(document).ready(function() {
             $('.top-menu').removeClass('fixed-menu');
         }
     }
+    // end fixed menu
 
     $('.scrollup').remove();
+
 
     $('.toTop').unbind('click').click(function(){
         $('body,html').animate({scrollTop:0},600);
     });
+
 
     $(window).scroll(function() {
         if($(window).scrollTop()>=300) {
@@ -49,36 +53,67 @@ $(document).ready(function() {
         }
     });
 
-    $(".top-menu ul li, .pushy li").each(function( index ) {
+    $(".top-menu ul li, .pushy-mob-menu li").each(function( index ) {
         var url = window.location.pathname;
 
         $(".top-menu li a, .pushy li a").removeClass("active");
-        $('.top-menu li a[href="'+url+'"], .pushy li a[href="'+url+'"]').parent('li').addClass('active');
+        $('.top-menu li a[href="'+url+'"], .pushy-mob-menu li a[href="'+url+'"]').parent('li').addClass('active');
     });
 
     $( window ).resize(function() {
-        var widthWindow = Math.max(
-            document.body.scrollWidth, document.documentElement.scrollWidth,
-            document.body.offsetWidth, document.documentElement.offsetWidth,
-            document.body.clientWidth, document.documentElement.clientWidth
-        );
 
-        if(widthWindow <= 640){
+        if($(window).width() <= 625){
             $('.el-text .name-el').prependTo('.dateil-info');
         } else {
             if($('.dateil-info .name-el').length > 0) {
                 $('.dateil-info .name-el').prependTo('.dateil-info .el-text');
             }
         }
+
+        // mobile style menu
+        if($(window).width() <= 833){
+            if($('header .item').siblings('.pushy-mob-menu').length == 0){
+                $('.top-menu').removeClass().addClass('pushy-mob-menu');
+                $('.pushy-mob-menu').appendTo('header');
+            }
+        } else {
+            if($('header .item .top-menu').length == 0){
+                if($('.pushy-mob-menu').css('display') == 'none'){
+                    $('.pushy-mob-menu').removeAttr('style');
+                }
+
+                $('.pushy-mob-menu').removeClass().addClass('top-menu');
+                $('.top-menu').insertBefore('header .item .mobile-basket', '');
+            }
+        }
+        // end mobile style menu
     });
 
-    if(($(window).width() <= 640)){
+    if(($(window).width() <= 625)){
         $('.el-text .name-el').prependTo('.dateil-info');
     } else {
         if($('.dateil-info .name-el').length > 0) {
             $('.dateil-info .name-el').prependTo('.dateil-info .el-text');
         }
     }
+
+    // mobile style menu
+    if($(window).width() <= 833){
+        if($('header .item').siblings('.pushy-mob-menu').length == 0){
+            if($('.pushy-mob-menu').css('display') == 'none'){
+                $('.pushy-mob-menu').removeAttr('style');
+            }
+
+            $('.top-menu').removeClass().addClass('pushy-mob-menu');
+            $('.pushy-mob-menu').appendTo('header');
+        }
+    } else {
+        if($('header .item .top-menu').length == 0){
+            $('.pushy-mob-menu').removeClass().addClass('top-menu');
+            $('.top-menu').insertBefore('header .item .mobile-basket', '');
+        }
+    }
+    // end mobile style menu
 
 
     // видалення товару з корзини
@@ -118,7 +153,18 @@ $(document).ready(function() {
             });
         }, 1000);
     });
+
 });
+
+function showHide(el){
+    if($('#mob-menu').is('.aciveMenu')){
+        $('#mob-menu').removeClass('aciveMenu');
+    } else {
+        $('#mob-menu').addClass('aciveMenu');
+    }
+
+    $('.pushy-mob-menu').slideToggle( "slow");
+}
 
 function scrolMenuPanel(){
     if(window.location.hash != '') {

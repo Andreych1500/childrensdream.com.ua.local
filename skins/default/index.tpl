@@ -10,10 +10,7 @@
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
-
   <link href="/skins/<?=Core::$SKIN; ?>/css/style.css" rel="stylesheet">
-  <link href="/skins/<?=Core::$SKIN; ?>/css/media_style.css" rel="stylesheet">
-  <link rel="stylesheet" href="/vendor/public/pushy/css/pushy.css">
   <?php if(count(Core::$CSS)){ echo implode("\n",Core::$CSS); } ?>
 </head>
 
@@ -48,30 +45,19 @@
       </div>
 
       <!-- Open mobile menu -->
-      <div class="site-overlay"></div>
-      <div id="container">
+      <div id="mob-menu" onclick="showHide(this);">
         <div class="menu-btn"><span class="icon-mob-menu"></span><?=$mess['MOBILE_MENU']?></div>
       </div>
 
-      <nav class="pushy pushy-left">
-        <ul>
-          <li><a href="<?=(isset($lang)? '/ru/' : '/')?>#about"><?=$mess['ABOUT_US']?></a></li>
-          <li><a href="<?=(isset($lang)? '/ru/' : '/')?>#catalog"><?=$mess['PRODUCTION']?></a></li>
-          <li><a href="<?=(isset($lang)? '/ru/' : '/')?>#payment"><?=$mess['SERVICES']?></a></li>
-          <li><a href="<?=(isset($lang)? '/ru/' : '/')?>#call"><?=$mess['CONTACTS']?></a></li>
-          <li><a href="<?=(isset($lang)? '/ru/' : '/')?>comments"><?=$mess['OTZUVU']?></a></li>
-        </ul>
-      </nav>
     </div>
     <div class="toTop"><span><?=$mess['TO_TOP']?></span></div>
   </header>
 
-  <div class="content"><?=$content?></div>
+  <main><?=$content?></main>
 
   <footer>
     <script src="/vendor/public/jquery/dist/jquery.min.js" defer></script>
     <script src="/skins/default/js/script.js?v=1" defer></script>
-    <script src="/vendor/public/pushy/js/pushy.js" defer></script>
     <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
     <div class="item">
       <div class="footer-logo">

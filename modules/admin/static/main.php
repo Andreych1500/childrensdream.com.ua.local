@@ -27,8 +27,8 @@ if(!isset($_SESSION['user']) || $_SESSION['user']['access'] !=  5){
 					WHERE `login`  = '".mres($_POST['login'])."'
 					AND `pass`   = '".myHash($_POST['pass'])."'
 				");
-				setcookie('authhash',myHash($_SESSION['user']['id'].$_SESSION['user']['login'].$_SESSION['user']['email']),time()+9600,'/');
-				setcookie('id',$_SESSION['user']['id'],time()+9600,'/');
+				setcookie('authhash',myHash($_SESSION['user']['id'].$_SESSION['user']['login'].$_SESSION['user']['email']),time()+636000,'/');
+				setcookie('id',$_SESSION['user']['id'],time()+636000,'/');
 			}
 
 			header("Location: /admin/");
