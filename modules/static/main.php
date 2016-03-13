@@ -1,8 +1,9 @@
 <?php
 Core::$JS[] = '<script src="/skins/default/js/slider.js?v=1" defer></script>';
-Core::$JS[] = '<script src="/skins/default/js/call.js?v=1" defer></script>';
+Core::$JS[] = '<script src="/skins/default/js/chekForm.js?v=1" defer></script>';
 
-// call me
+// --- SEND CALL FORM ---
+
 if(isset($_POST['ok'], $_POST['name'], $_POST['text'], $_POST['email'], $_POST['thems'])){
     $errors = array();
     $next_error = array();
@@ -80,19 +81,25 @@ if(isset($_POST['ok'], $_POST['name'], $_POST['text'], $_POST['email'], $_POST['
             Mail::Send();
 
             $_SESSION['info'] = "Y";
-            header("Location: ".(isset($lang)? '/ru/' : '/')."#call");
+            header("Location: ".$link_langs."#call");
             exit();
         }
     }
 }
-// end call me
 
-// catalog
+// --- END SEND CALL FORM ---
+
+
+// --- ALL ELEMENT ---
+
 $catalog = q("
-    SELECT `id`,`name`,`seo_name`,`price`,`availability`,`anons_photo`,`name_ru`
+    SELECT `id`,`name_ua`,`seo_name`,`price`,`availability`,`anons_photo`,`name_ru`
     FROM `catalog`
     WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
 ");
+
+// --- END ALL ELEMENT ---
+
 
 if(isset($_SESSION['info'])){
     $info = $_SESSION['info'];

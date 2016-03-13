@@ -2,15 +2,7 @@
 //DB::_()->query('Запрос');
 //DB::close();
 
-//для index.php
 /*
-$res = q("SELECT NOW()");
-while($row = $res->fetch_assoc()){
-	wtf($row,1);
-}
-$res->close();
-exit();
-
 ALIAS:
 
 q(); Запрос;

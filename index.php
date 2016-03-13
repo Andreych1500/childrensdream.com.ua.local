@@ -5,43 +5,72 @@ header('Content-Type: text/html; charset=utf-8');
 session_start();
 
 
-// Конфіг сайта
+// --- CONFIG SITE ---
+
 include_once './config.php';
 include_once './libs/default.php';
 include_once './variables.php';
 
-// FRONT-CONTROLLER
+// --- END CONFIG SITE ---
+
+
+// --- FRONT-CONTROLLER ---
 ob_start();
-	if(preg_match('#^ru#ius',Core::$CONT['castom']) && Core::$LANGUAGE['status']){
-		$lang = Core::$LANGUAGE['allow']['ru'];
+    // --- VARIABLE LANG ---
+
+	if(preg_match('#^ru#ius',Core::$CONT['castom'])){
+		$lang = Core::$LANGUAGE['langs']['ru'];
+		$link_langs = '/ru/';
+	} else {
+		$lang = Core::$LANGUAGE['default'];
+		$link_langs = '/';
 	}
 
-	if (!file_exists('./' . Core::$CONT['default'] . '/' . $_GET['module'] . '/' . (($_GET['module'] == 'catalog')? ((Core::$CONT['default'] == 'modules/admin')? $_GET['page'] : 'main' ) : $_GET['page']) . '.php') ||
-		!file_exists('./skins/' . Core::$SKIN . '/' . $_GET['module'] . '/' . (($_GET['module'] == 'catalog')? ((Core::$CONT['default'] == 'modules/admin')? $_GET['page'] : 'main' ) : $_GET['page']) . '.tpl') ||
-		!file_exists('./'. ((Core::$CONT['default'] == 'modules/admin')? 'modules' : Core::$CONT['default']).'/'.$_GET['module'].'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php')) {
+	// --- END VARIABLE LANG ---
+
+
+	// --- EXIST FILES ---
+
+	if (!file_exists('./' . Core::$CONT['default'] . '/' . $_GET['module'] . '/' . (((Core::$CONT['default'] != 'modules/admin' && in_array($_GET['module'],Core::$DATAIL_PAGE))? 'main' : $_GET['page']).'.php')) ||
+		!file_exists('./skins/' . Core::$SKIN . '/' . $_GET['module'] . '/' . (((Core::$CONT['default'] != 'modules/admin' && in_array($_GET['module'],Core::$DATAIL_PAGE))? 'main' : $_GET['page']).'.tpl')) ||
+		((Core::$CONT['default'] != 'modules/admin')? !file_exists('./'. Core::$CONT['default'] .'/'.$_GET['module'].'/lang/'.$lang.'/lang.php') : false)) {
 
 		$_GET['module'] = 'error';
 		$_GET['page'] = 'main';
 		header("HTTP/1.0 404 Not Found");
 	}
 
-	// LANG
-	include './'.((Core::$CONT['default'] == 'modules/admin')? 'modules' : Core::$CONT['default']).'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php';
+	// --- END EXIST FILES ---
 
-	if(isset($_GET['module'])){
-		include './'.((Core::$CONT['default'] == 'modules/admin')? 'modules' : Core::$CONT['default']).'/'.$_GET['module'].'/lang/'.((isset($lang))? $lang : Core::$LANGUAGE['default']).'/lang.php';
+
+	// --- LANGS FILES ---
+
+	if(Core::$CONT['default'] != 'modules/admin'){
+		include './'.Core::$CONT['default'].'/lang/'.$lang.'/lang.php';
 	}
 
-	// END LANG
+	if(isset($_GET['module'])){
+		if(Core::$CONT['default'] != 'modules/admin'){
+			include './'.Core::$CONT['default'].'/'.$_GET['module'].'/lang/'.$lang.'/lang.php';
+		}
+	}
 
-	// PAGE_MODEL
+	// --- END LANGS FILES ---
+
+
+	// --- PAGE_MODEL ---
+
 	include './'.Core::$CONT['default'].'/allpages.php';
-	include './'.Core::$CONT['default'].'/'.$_GET['module'].'/'.(($_GET['module'] == 'catalog')? ((Core::$CONT['default'] == 'modules/admin')? $_GET['page'] : 'main' ) : $_GET['page']).'.php';
-	// PAGE_MODEL END
+	include './'.Core::$CONT['default'].'/'.$_GET['module'].'/'.(in_array($_GET['module'],Core::$DATAIL_PAGE)? ((Core::$CONT['default'] == 'modules/admin')? $_GET['page'] : 'main' ) : $_GET['page']).'.php';
 
-	// PAGE_VIEW
-	include './skins/'.Core::$SKIN.'/'.$_GET['module'].'/'.(($_GET['module'] == 'catalog')? ((Core::$CONT['default'] == 'modules/admin')? $_GET['page'] : 'main' ) : $_GET['page']).'.tpl';
-	// PAGE_VIEW END
+	// --- END PAGE_MODEL ---
+
+
+	// --- PAGE_VIEW ---
+
+	include './skins/'.Core::$SKIN.'/'.$_GET['module'].'/'.(in_array($_GET['module'],Core::$DATAIL_PAGE)? ((Core::$CONT['default'] == 'modules/admin')? $_GET['page'] : 'main' ) : $_GET['page']).'.tpl';
+
+	// --- END PAGE_VIEW ---
 
 	$content = ob_get_contents();
 ob_end_clean();
@@ -52,5 +81,7 @@ if(isset($_GET['ajax'])) {
 }
 
 include './skins/'.Core::$SKIN.'/'.'index.tpl';
-// END FRONT-CONTROLLER
+
+// --- END FRONT-CONTROLLER ---
+
 exit();

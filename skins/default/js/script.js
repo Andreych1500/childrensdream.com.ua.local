@@ -1,5 +1,6 @@
 $(document).ready(function() {
-    // scrolling to top mini
+
+    // --- mini scroll fixed-menu ---
     var pathname = window.location.pathname;
 
     if(getCookie('scroll') == undefined ){
@@ -14,7 +15,7 @@ $(document).ready(function() {
             deleteCookie('scroll');
             setCookie('scroll', pathname, 0);
         } else {
-            if((pathname == '/' || pathname == '/ru/') && $( window).width() >= 834) {
+            if((pathname == '/' || pathname == '/ru/') && $(window).width() >= 834) {
                 scrolMenuPanel();
                 deleteCookie('scroll');
                 setCookie('scroll', pathname, 0);
@@ -24,8 +25,10 @@ $(document).ready(function() {
             }
         }
     }
+    // --- end mini scroll fixed-menu ---
 
-    // fixed menu
+
+    // --- fixed menu ---
     window.onscroll = function () {
         var scrolledY = window.pageYOffset || document.documentElement.scrollTop;
 
@@ -35,16 +38,17 @@ $(document).ready(function() {
             $('.top-menu').removeClass('fixed-menu');
         }
     }
-    // end fixed menu
-
-    $('.scrollup').remove();
+    // --- end fixed menu ---
 
 
+    // --- scroll toTop ---
     $('.toTop').unbind('click').click(function(){
         $('body,html').animate({scrollTop:0},600);
     });
+    // --- end scroll toTop ---
 
 
+    // --- show hide toTop ---
     $(window).scroll(function() {
         if($(window).scrollTop()>=300) {
             $('.toTop').show();
@@ -52,15 +56,21 @@ $(document).ready(function() {
             $('.toTop').hide();
         }
     });
+    // --- end show hide toTop ---
 
+
+    // --- active menu ---
     $(".top-menu ul li, .pushy-mob-menu li").each(function( index ) {
         var url = window.location.pathname;
 
         $(".top-menu li a, .pushy li a").removeClass("active");
         $('.top-menu li a[href="'+url+'"], .pushy-mob-menu li a[href="'+url+'"]').parent('li').addClass('active');
     });
+    // --- end active menu ---
 
-    $( window ).resize(function() {
+
+    // --- resize window ---
+    $(window).resize(function() {
 
         if($(window).width() <= 625){
             $('.el-text .name-el').prependTo('.dateil-info');
@@ -70,11 +80,10 @@ $(document).ready(function() {
             }
         }
 
-        // mobile style menu
+        // --- mobile menu ---
         if($(window).width() <= 833){
             if($('header .item').siblings('.pushy-mob-menu').length == 0){
-                $('.top-menu').removeClass().addClass('pushy-mob-menu');
-                $('.pushy-mob-menu').appendTo('header');
+                $('.top-menu').removeClass().addClass('pushy-mob-menu').appendTo('header');;
             }
         } else {
             if($('header .item .top-menu').length == 0){
@@ -82,43 +91,19 @@ $(document).ready(function() {
                     $('.pushy-mob-menu').removeAttr('style');
                 }
 
-                $('.pushy-mob-menu').removeClass().addClass('top-menu');
-                $('.top-menu').insertBefore('header .item .mobile-basket', '');
+                $('.pushy-mob-menu').removeClass().addClass('top-menu').insertBefore('header .item .mobile-basket', '');
             }
         }
-        // end mobile style menu
+        // --- end mobile menu ---
     });
 
-    if(($(window).width() <= 625)){
-        $('.el-text .name-el').prependTo('.dateil-info');
-    } else {
-        if($('.dateil-info .name-el').length > 0) {
-            $('.dateil-info .name-el').prependTo('.dateil-info .el-text');
-        }
-    }
-
-    // mobile style menu
-    if($(window).width() <= 833){
-        if($('header .item').siblings('.pushy-mob-menu').length == 0){
-            if($('.pushy-mob-menu').css('display') == 'none'){
-                $('.pushy-mob-menu').removeAttr('style');
-            }
-
-            $('.top-menu').removeClass().addClass('pushy-mob-menu');
-            $('.pushy-mob-menu').appendTo('header');
-        }
-    } else {
-        if($('header .item .top-menu').length == 0){
-            $('.pushy-mob-menu').removeClass().addClass('top-menu');
-            $('.top-menu').insertBefore('header .item .mobile-basket', '');
-        }
-    }
-    // end mobile style menu
+    $(window).resize();
+    // --- end resize window ---
 
 
-    // видалення товару з корзини
+    // --- delete goods ---
     $(".del-good").unbind('click').click(function(){
-        var temp = JSON.parse(getCookie('items')); // розпаковка массива
+        var temp = JSON.parse(getCookie('items')); // розпаковуємо массив
         var id = 'g'+$(this).find('span').attr('rel_id');
         delete temp[id];
 
@@ -144,7 +129,7 @@ $(document).ready(function() {
         $(card).text(countG);
         $(mobcard).text(mobcountG);
 
-        // edit price
+        // --- edit order price ---
         setTimeout(function(){
             var globPrice = 0;
             $('.line-tab-goods tr').each(function(i,el){
@@ -152,9 +137,20 @@ $(document).ready(function() {
                 $('.all-goods-price').text(globPrice.toLocaleString());
             });
         }, 1000);
+        // --- emd order price ---
+
     });
+    // --- end delete goods ---
 
 });
+
+function scrolMenuPanel(){
+    if(window.location.hash != '') {
+        setTimeout(function () {
+            $('.top-menu a[href*=' + window.location.hash + ']').trigger('click');
+        }, 300);
+    }
+}
 
 function showHide(el){
     if($('#mob-menu').is('.aciveMenu')){
@@ -164,14 +160,6 @@ function showHide(el){
     }
 
     $('.pushy-mob-menu').slideToggle( "slow");
-}
-
-function scrolMenuPanel(){
-    if(window.location.hash != '') {
-        setTimeout(function () {
-            $('.top-menu a[href*=' + window.location.hash + ']').trigger('click');
-        }, 300);
-    }
 }
 
 function edit_price(el) {
@@ -196,7 +184,7 @@ function edit_price(el) {
     $('.all-goods-price').text(globPrice.toLocaleString());
 }
 
-// count el cookies
+// --- count el cookies ---
 function count(obj) {
     var count = 0;
     for(var prs in obj){
@@ -205,7 +193,7 @@ function count(obj) {
     return count;
 }
 
-// add card to cookie
+// --- add card to cookie ---
 function addToCard(id_el,text_submit,count){
     var items = {};
     var time_cookie = {expires : 16700000};
@@ -268,5 +256,6 @@ function setCookie(name, value, options) {
             updatedCookie += "=" + propValue;
         }
     }
+
     document.cookie = updatedCookie;
 }

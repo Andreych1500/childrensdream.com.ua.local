@@ -24,7 +24,7 @@
     <p class="otzuv"><?=$mess['WORK_COMMENTS']?></p>
     <div class="thanks"><?=$mess['THANKS'];?></div>
     <div class="hack-error"><?=$mess['HACK_ERROR']?></div>
-    <form action="#" method="post" onsubmit="return myComments();">
+    <form action="#" method="post" onsubmit="return checkForm('.form-comment', 'form-comment');">
       <table>
         <tr>
           <td>

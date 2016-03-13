@@ -1,4 +1,5 @@
 $(document).ready(function() {
+
     $('.slider-nav').slick({
         slidesToShow: 3,
         slidesToScroll: 1,

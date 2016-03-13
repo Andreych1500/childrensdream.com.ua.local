@@ -18,7 +18,7 @@
   <header>
     <div class="item">
       <div class="logo">
-        <a href="<?=(isset($lang)? '/ru/' : '/')?>">
+        <a href="<?=$link_langs?>">
           <img src="/skins/default/img/logo.png" alt="Children's Dream" title="Children's Dream">
         </a>
       </div>
@@ -26,23 +26,23 @@
         <p><?=$mess['CONTACT_INFO'];?><span> +38 (098) 570-43-77</span></p>
       </div>
       <div class="langs">
-        <a class="<?=(!isset($lang)? 'act-lang' : '')?>" href="/<?=Core::$SITE_DIR?>">UA</a>
-        <a class="<?=((isset($lang)? 'act-lang' : ''))?>" href="/ru/<?=Core::$SITE_DIR?>">RU</a>
+        <a class="<?=(($link_langs == '/')? 'act-lang' : '')?>" href="/<?=Core::$SITE_DIR?>">UA</a>
+        <a class="<?=(($link_langs == '/ru/')? 'act-lang' : '')?>" href="/ru/<?=Core::$SITE_DIR?>">RU</a>
       </div>
       <div class="top-menu">
         <ul>
-          <li><a href="<?=(isset($lang)? '/ru/' : '/')?>#about"><?=$mess['ABOUT_US']?></a></li>
-          <li><a href="<?=(isset($lang)? '/ru/' : '/')?>#catalog"><?=$mess['PRODUCTION']?></a></li>
-          <li><a href="<?=(isset($lang)? '/ru/' : '/')?>#payment"><?=$mess['SERVICES']?></a></li>
-          <li><a href="<?=(isset($lang)? '/ru/' : '/')?>#call"><?=$mess['CONTACTS']?></a></li>
-          <li><a href="<?=(isset($lang)? '/ru/' : '/')?>comments"><?=$mess['OTZUVU']?></a></li>
-          <li><a href="<?=(isset($lang)? '/ru/' : '/')?>order"><?=$mess['BASKET']?> <span><?=(int)$countG?></span></a></li>
+          <li><a href="<?=$link_langs?>#about"><?=$mess['ABOUT_US']?></a></li>
+          <li><a href="<?=$link_langs?>#catalog"><?=$mess['PRODUCTION']?></a></li>
+          <li><a href="<?=$link_langs?>#payment"><?=$mess['SERVICES']?></a></li>
+          <li><a href="<?=$link_langs?>#call"><?=$mess['CONTACTS']?></a></li>
+          <li><a href="<?=$link_langs?>comments"><?=$mess['OTZUVU']?></a></li>
+          <li><a href="<?=$link_langs?>order"><?=$mess['BASKET']?> <span><?=(int)$countG?></span></a></li>
         </ul>
         <span class="menu-icon"></span>
       </div>
 
       <div class="mobile-basket">
-        <a href="<?=(isset($lang)? '/ru/' : '/')?>order"><?=$mess['BASKET']?> <span><?=(int)$countG?></span></a>
+        <a href="<?=$link_langs?>order"><?=$mess['BASKET']?> <span><?=(int)$countG?></span></a>
       </div>
 
       <!-- Open mobile menu -->
@@ -60,6 +60,7 @@
     <script src="/vendor/public/jquery/dist/jquery.min.js" defer></script>
     <script src="/skins/default/js/script.js?v=1" defer></script>
     <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
+
     <div class="item">
       <div class="footer-logo">
         <div  class="logo-img">

@@ -1,6 +1,6 @@
 <?php if($_GET['page'] == 'main'){ ?>
 
-<div class="catalog st-1" id="catalog">
+  <div class="catalog st-1" id="catalog">
     <div class="text-item">
         <div class="hText">
             <table>
@@ -12,15 +12,16 @@
             </table>
         </div>
     </div>
+
     <div class="catalog-list">
         <?php if($catalog->num_rows > 0){
             while($el = $catalog->fetch_assoc()){ ?>
                 <div class="el-item">
                     <div class="photos">
-                        <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><img src="<?=hsc($el['anons_photo'])?>" alt="<?=(isset($lang)? hsc($el['name_ru']) : hsc($el['name']))?>"></a>
+                        <a href="<?=$link_langs?>catalog/<?=$el['seo_name']?>"><img src="<?=hsc($el['anons_photo'])?>" alt="<?=hsc($el['name_'.$lang])?>"></a>
                     </div>
                     <div class="desk-info">
-                        <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><span><?=(isset($lang)? hsc($el['name_ru']) : hsc($el['name']))?></span></a>
+                        <a href="<?=$link_langs?>catalog/<?=$el['seo_name']?>"><span><?=hsc($el['name_'.$lang])?></span></a>
                         <p><?=number_format(hsc($el['price']), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
                         <p class="aviability">
                             <span class="<?=(((int)$el['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
@@ -34,34 +35,37 @@
             <div class="no-element"><?=$mess['NO_ELEMETN']?></div>
         <?php } ?>
     </div>
-</div>
+  </div>
 
 <?php } else { ?>
 
     <div class="dateil-info">
+
       <?php if(isset($photos)){ ?>
       <div class="el-slider">
         <div class="slider-nav <?=((count($photos) > 3)? 'center-photo' : 'currenc')?>">
           <?php foreach($photos as $key => $value){ ?>
-              <div class="items-photo"><img src="<?=hsc($value[0])?>" alt="<?=hsc((isset($lang)? $el['name_ru'] : $el['name']))?>"></div>
+              <div class="items-photo"><img src="<?=hsc($value[0])?>" alt="<?=hsc($el['name_'.$lang])?>"></div>
           <?php } ?>
         </div>
 
         <div class="slider-for <?=((count($photos) > 3)? '' : 'good-top')?>">
           <?php foreach($photos as $key => $value){ ?>
-          <div class="item-photo"><img src="<?=hsc($value[0])?>" alt="<?=hsc((isset($lang)? $el['name_ru'] : $el['name']))?>" title="<?=hsc((isset($lang)? $el['name_ru'] : $el['name']))?>"></div>
+          <div class="item-photo"><img src="<?=hsc($value[0])?>" alt="<?=hsc($el['name_'.$lang])?>" title="<?=hsc($el['name_'.$lang])?>"></div>
           <?php } ?>
         </div>
       </div>
       <?php } ?>
+
       <div class="el-text <?=(!isset($photos)? 'good-view' : '')?>">
-        <p class="name-el"><?=hsc((isset($lang)? $el['name_ru'] : $el['name']))?></p>
+        <p class="name-el"><?=hsc($el['name_'.$lang])?></p>
         <p class="aviability">
           <span class="<?=(((int)$el['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
           <span><?=(((int)$el['availability'] == 1)? $mess['AVIABILITY'] : $mess['NOAVIABILITY'])?></span>
         </p>
-        <p class="desc-el"><?=hsc((isset($lang)? $el['description_ru'] : $el['description']))?></p>
-        <?php if($el['availability'] == 1){ ?>
+        <p class="desc-el"><?=hsc($el['description_'.$lang])?></p>
+
+          <?php if($el['availability'] == 1){ ?>
         <div class="el-shop">
           <p><?=number_format(hsc($el['price']), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
           <div class="add-shop <?=(!empty($basket)? $basket : '')?>" <?php if(empty($basket)){ ?> onclick="addToCard(<?=(int)$el['id']?>,'<?=$mess['BASKETOK']?>','1')"<?php }?>>
@@ -71,6 +75,7 @@
         </div>
         <?php } ?>
       </div>
+
     </div>
 
     <div class="desc-info">
@@ -81,9 +86,9 @@
           <span></span>
         </div>
         <div class="view-info">
-            <div class="descript-text"><?=nl2br((isset($lang)? hsc($el['text_ru']) : hsc($el['text'])))?></div>
+            <div class="descript-text"><?=nl2br(hsc($el['text_'.$lang]))?></div>
             <div class="cirkl-photo">
-              <div><img src="<?=hsc($el['descrip_photo'])?>" alt="<?=hsc((isset($lang)? $el['name_ru'] : $el['name']))?>" title="<?=hsc((isset($lang)? $el['name_ru'] : $el['name']))?>"></div>
+              <div><img src="<?=hsc($el['descrip_photo'])?>" alt="<?=hsc($el['name_'.$lang])?>" title="<?=hsc($el['name_'.$lang])?>"></div>
             </div>
         </div>
       </div>
@@ -98,11 +103,11 @@
         <div class="table-haracteristic">
             <div class="tr">
               <div><?=$mess['FORMA']?></div>
-              <div><?=((empty((isset($lang)? $el['form_ru'] : $el['form'])))? '-' : (isset($lang)? hsc($el['form_ru']) : hsc($el['form'])))?></div>
+              <div><?=((empty(hsc($el['form_'.$lang])))? '-' : hsc($el['form_'.$lang]))?></div>
             </div>
             <div class="tr">
               <div><?=$mess['TYPE']?></div>
-              <div><?=((empty((isset($lang)? $el['type_ru'] : $el['type'])))? '-' : (isset($lang)? hsc($el['type_ru']) : hsc($el['type'])))?></div>
+              <div><?=((empty(hsc($el['type_'.$lang])))? '-' : hsc($el['type_'.$lang]))?></div>
             </div>
             <div class="tr">
                 <div><?=$mess['SIZE']?></div>
@@ -118,7 +123,7 @@
             </div>
             <div class="tr">
                 <div><?=$mess['RIGIDITY']?></div>
-                <div><?=((empty((isset($lang)? $el['rigidity_ru'] : $el['rigidity'])))? '-' : (isset($lang)? hsc($el['rigidity_ru']) : hsc($el['rigidity'])))?></div>
+                <div><?=((empty(hsc($el['rigidity_'.$lang])))? '-' : hsc($el['rigidity_'.$lang]))?></div>
             </div>
             <div class="tr">
                 <div><?=$mess['ANATOMING']?></div>

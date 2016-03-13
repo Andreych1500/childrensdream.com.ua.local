@@ -1,7 +1,8 @@
 <?php
-Core::$JS[] =  '<script src="/skins/default/js/comments.js?v=1" defer></script>';
+Core::$JS[] =  '<script src="/skins/default/js/chekForm.js?v=1" defer></script>';
 
-// відгуки
+// --- ADD COMMENTS ---
+
 if(isset($_POST['name'], $_POST['text'], $_POST['email'])){
 	$errors = array();
 	
@@ -31,11 +32,17 @@ if(isset($_POST['name'], $_POST['text'], $_POST['email'])){
 
 		echo json_encode(array('status' => 'ok'));
 		exit();
+
 	} else {
 		echo json_encode(array('warning' => 'ok'));
 		exit();
 	}
 }
+
+// --- END ADD COMMENTS ---
+
+
+// --- ALL COMMENTS ---
 
 $res = q("
 	SELECT *
@@ -43,3 +50,5 @@ $res = q("
 	WHERE `active` = 1
 	ORDER BY `id` DESC
 ");
+
+// --- END ALL COMMENTS ---

@@ -1,16 +1,19 @@
 <?php
-Core::$JS[] =  '<script src="/skins/default/js/order.js?v=1" defer></script>';
+Core::$JS[] =  '<script src="/skins/default/js/chekForm.js?v=1" defer></script>';
+
+// --- ORDER | BASKET ---
 
 if (isset($_COOKIE['items'])) {
+
     $cookies = (array)json_decode($_COOKIE['items']);
 
     if(count($cookies) == 0){
         setcookie('items','',time()-16700000, '/');
-        header("Location: /order/");
+        header("Location: ".$link_langs."order/");
         exit();
     }
 
-    // Goods
+    // --- GET GOODS ---
     foreach($cookies as $key => $value){
         $ids[] = trim($key, 'g');
     }
@@ -18,22 +21,27 @@ if (isset($_COOKIE['items'])) {
     $ids = implode(',',$ids);
 
     $res = q("
-        SELECT id, name, name_ru, price, anons_photo
+        SELECT id, name_ua, name_ru, price, anons_photo
         FROM `catalog`
         WHERE `id` IN (".$ids.")
     ");
-    // end Goods
 
-    // arGoods
-    $k = 0;
+    // --- END GET GOODS ---
+
+
+    // --- ARRAY INFO GOODS ---
+
     $all_goods_price = 0;
     while($row = $res->fetch_assoc()){
         $row['all_price'] =  (isset($_POST['count'][$row['id']])? $_POST['count'][$row['id']] : '1') * $row['price'];
         $goods[] = $row;
         $all_goods_price = $all_goods_price + $row['all_price'];
-        ++$k;
     }
-    // end arGoods
+
+    // --- END ARRAY INFO GOODS ---
+
+
+    // --- ORDER FORM ---
 
     if(isset($_POST['ok'], $_POST['name'], $_POST['phone'], $_POST['email'], $_POST['delivery'], $_POST['city'], $_POST['adres'], $_POST['capcha'])){
         $errors = array();
@@ -49,7 +57,9 @@ if (isset($_COOKIE['items'])) {
         if($_POST['payment'] > 2 || $_POST['payment'] < 0){ $errors['payment'] = 'error'; }
         if($_SESSION['rand_code'] != $_POST['capcha']){ $errors['capcha'] = 'error'; }
 
-        //info select
+
+        // --- INFO SELECT ---
+
         if($_POST['delivery'] == 0){
             $_POST['delivery'] = $mess['DEVELORY0'];
         } elseif($_POST['delivery'] == 1){
@@ -74,7 +84,11 @@ if (isset($_COOKIE['items'])) {
             $_POST['payment'] = $mess['PAYMANT2'];
         }
 
-        //elements
+        // --- END INFO SELECT ---
+
+
+        // --- ELEMENTS ---
+
         if(count($_POST['names_el']) > 0 && count($_POST['count']) > 0 && count($_POST['prices_el']) > 0){
             $names_el = implode(',',$_POST['names_el']);
             $prices_el = implode(',',$_POST['prices_el']);
@@ -82,6 +96,9 @@ if (isset($_COOKIE['items'])) {
         } else {
             $errors = '';
         }
+
+        // --- END ELEMENTS ---
+
 
         foreach($_POST['count'] as $key => $value){
             if($value > 99){
@@ -133,13 +150,18 @@ if (isset($_COOKIE['items'])) {
 
             setcookie('items','',time()-16700000, '/');
             $_SESSION['info'] = "Y";
-            header("Location: ".(isset($lang)? '/ru/' : '/')."order");
+            header("Location: ".$link_langs."order");
             exit();
         }
     }
+
+    // --- END ORDER FORM ---
+
 } else {
     $cookies = array();
 }
+
+// --- END ORDER | BASKET ---
 
 if(isset($_SESSION['info'])){
     $info = $_SESSION['info'];

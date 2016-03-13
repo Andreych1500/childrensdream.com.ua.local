@@ -372,10 +372,10 @@ header .item .fixed-menu {
   -moz-background-clip: padding;
   border-radius: 3px;
   background-clip: padding-box;
-  -webkit-transition: all 300ms ease;
-  -moz-transition: all 300ms ease;
-  -o-transition: all 300ms ease;
-  transition: all 300ms ease;
+  -webkit-transition: all 200ms ease;
+  -moz-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
 }
 @media screen and (max-width: 848px) {
   header .item .fixed-menu {
@@ -599,7 +599,7 @@ header .pushy-mob-menu ul li a {
   font-size: 16pt;
   padding: 6px 8%;
   width: 84%;
-  display: block;
+  display: inline-block;
   font-weight: bold;
   text-shadow: 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 2px 2px #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 3px 3px #fff, -3px -3px 0 #fff, 3px -3px 0 #fff, -3px 3px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 3px 0 0 #fff, -3px 0 0 #fff, 0 3px 0 #fff, 0 -3px 0 #fff;
 }
@@ -609,7 +609,7 @@ header .pushy-mob-menu ul li:before {
   height: 3px;
   background-color: #7BD7E8;
   width: 6%;
-  top: 23px;
+  top: 50%;
   left: -6%;
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
@@ -621,7 +621,7 @@ header .pushy-mob-menu ul li:after {
   position: absolute;
   height: 3px;
   background-color: #7BD7E8;
-  top: 23px;
+  top: 50%;
   right: -57%;
   width: 57%;
   -webkit-transition: all 0.5s ease-out;
@@ -1327,10 +1327,10 @@ main .call-me .form-call form textarea.errors {
 main .call-me .form-call form input.no-errors,
 main .call-me .form-call form textarea.no-errors {
   border-color: #9bd6e7;
-  -webkit-transition: border-color 2s ease;
-  -moz-transition: border-color 2s ease;
-  -o-transition: border-color 2s ease;
-  transition: border-color 2s ease;
+  -webkit-transition: all 2s ease;
+  -moz-transition: all 2s ease;
+  -o-transition: all 2s ease;
+  transition: all 2s ease;
 }
 main .call-me .form-call .limit {
   position: relative;
@@ -1966,7 +1966,7 @@ main .catalog-order .order .order-form table tr select {
 main .catalog-order .order .order-form table tr img {
   width: 100%;
 }
-main .catalog-order .order .order-form table tr .error {
+main .catalog-order .order .order-form table tr .errors {
   border-color: red;
 }
 main .catalog-order .order .order-form table tr .no-errors {
@@ -2043,6 +2043,7 @@ main .catalog-order .table-count .line-tab-goods {
   width: 100%;
   border: 1px solid #dedede;
   border-top: 0;
+  border-collapse: collapse;
 }
 main .catalog-order .table-count .line-tab-goods .del-good {
   cursor: pointer;
@@ -2050,50 +2051,54 @@ main .catalog-order .table-count .line-tab-goods .del-good {
 main .catalog-order .table-count .line-tab-goods .del-good:hover .icon-cross:before {
   color: #F70000;
 }
-main .catalog-order .table-count .line-tab-goods td {
+main .catalog-order .table-count .line-tab-goods tr:not(:first-child) {
+  border-top: 1px dashed #613f21;
+}
+main .catalog-order .table-count .line-tab-goods tr td {
+  padding: 5px;
   width: 22%;
   text-align: center;
 }
 @media screen and (max-width: 480px) {
-  main .catalog-order .table-count .line-tab-goods td {
+  main .catalog-order .table-count .line-tab-goods tr td {
     width: 33%;
   }
 }
 @media screen and (max-width: 480px) {
-  main .catalog-order .table-count .line-tab-goods td:first-child {
+  main .catalog-order .table-count .line-tab-goods tr td:first-child {
     display: none;
   }
 }
-main .catalog-order .table-count .line-tab-goods td:nth-child(2) {
+main .catalog-order .table-count .line-tab-goods tr td:nth-child(2) {
   width: 30%;
 }
-main .catalog-order .table-count .line-tab-goods td:last-child {
+main .catalog-order .table-count .line-tab-goods tr td:last-child {
   width: 4%;
 }
-main .catalog-order .table-count .line-tab-goods td:last-child .icon-cross:before {
+main .catalog-order .table-count .line-tab-goods tr td:last-child .icon-cross:before {
   cursor: pointer;
 }
-main .catalog-order .table-count .line-tab-goods td:nth-child(4) {
+main .catalog-order .table-count .line-tab-goods tr td:nth-child(4) {
   color: #a12a97;
 }
-main .catalog-order .table-count .line-tab-goods td img,
-main .catalog-order .table-count .line-tab-goods td span,
-main .catalog-order .table-count .line-tab-goods td a,
-main .catalog-order .table-count .line-tab-goods td input {
+main .catalog-order .table-count .line-tab-goods tr td img,
+main .catalog-order .table-count .line-tab-goods tr td span,
+main .catalog-order .table-count .line-tab-goods tr td a,
+main .catalog-order .table-count .line-tab-goods tr td input {
   vertical-align: middle;
   text-align: center;
 }
-main .catalog-order .table-count .line-tab-goods td input {
-  width: 30px;
+main .catalog-order .table-count .line-tab-goods tr td input {
+  width: 40px;
   outline: none;
   border-radius: 3px;
   border: 1px solid #72D6E5;
   padding: 4px;
 }
-main .catalog-order .table-count .line-tab-goods td input.errors {
+main .catalog-order .table-count .line-tab-goods tr td input.errors {
   border-color: red;
 }
-main .catalog-order .table-count .line-tab-goods td img {
+main .catalog-order .table-count .line-tab-goods tr td img {
   width: 100%;
 }
 main .catalog-order .bt {

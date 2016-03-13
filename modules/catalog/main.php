@@ -6,16 +6,20 @@ Core::$JS[] = '<script src="/skins/default/js/slide-el.js?v=1" defer></script>';
 
 if($_GET['page'] == 'main'){
 
-    // catalog
+    // --- ALL ELEMENT ---
+
     $catalog = q("
-      SELECT `id`,`name`,`seo_name`,`price`,`availability`,`anons_photo`,`name_ru`
+      SELECT `id`,`name_ua`,`seo_name`,`price`,`availability`,`anons_photo`,`name_ru`
       FROM `catalog`
       WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
     ");
 
+    // --- END ALL ELEMENT ---
+
 } else {
 
-    // catalog
+// --- DETAIL ELEMENT ---
+
     $catalog = q("
       SELECT *
       FROM `catalog`
@@ -31,11 +35,16 @@ if($_GET['page'] == 'main'){
 
     $el = $catalog->fetch_assoc();
 
-    // SEO ELEMENT META TAGS
-    Core::$META['title'] = $el['meta_title_'.$langs];
-    Core::$META['keywords'] = $el['meta_keywords_'.$langs];
-    Core::$META['description'] = $el['meta_description_'.$langs];
-    // END SEO
+    // --- SEO ELEMENT META TAGS ---
+
+    Core::$META['title'] = $el['meta_title_'.$lang];
+    Core::$META['keywords'] = $el['meta_keywords_'.$lang];
+    Core::$META['description'] = $el['meta_description_'.$lang];
+
+    // --- END SEO ELEMENT META TAGS ---
+
+
+    // --- SLIDER PHOTO ---
 
     $slidePhoto = explode('#', $el['more_photos']);
     foreach ($slidePhoto as $value) {
@@ -44,10 +53,18 @@ if($_GET['page'] == 'main'){
         }
     }
 
+    // --- END SLIDER PHOTO ---
+
+    // --- GOODS IN BASKET ---
+
     if (isset($_COOKIE['items'])) {
         $cookies = (array)json_decode($_COOKIE['items']);
         if(array_key_exists('g'.$el['id'],$cookies)){
             $basket = 'backet-ok';
         }
     }
+
+    // --- END GOODS IN BASKET ---
+
+// --- END DETAIL ELEMENT ---
 }

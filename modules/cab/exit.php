@@ -1,4 +1,5 @@
 <?php
+// --- EXIT ADMIN ---
 
 if(isset($_GET['page']) && $_GET['page'] == 'exit'){
 	q("
@@ -10,8 +11,10 @@ if(isset($_GET['page']) && $_GET['page'] == 'exit'){
 
 session_unset();
 session_destroy();
-setcookie('authhash','',time()-9600,'/');
-setcookie('id','',time()-9600,'/');	
+setcookie('authhash','',time()-636000,'/');
+setcookie('id','',time()-636000,'/');
 
 header("Location: /");
 exit();
+
+// --- END EXIT ADMIN ---

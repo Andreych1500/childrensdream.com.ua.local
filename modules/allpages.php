@@ -1,11 +1,6 @@
 <?php
-if(preg_match('#^ru#ius',Core::$CONT['castom']) && Core::$LANGUAGE['status']){
-    $langs = Core::$LANGUAGE['allow']['ru'];
-} else {
-    $langs = Core::$LANGUAGE['default'];
-}
+// --- SEO META TAGS ---
 
-// SEO META TAGS
 $res = q("
     SELECT *
     FROM `pages`
@@ -15,11 +10,14 @@ $res = q("
 
 $arMetaTags = $res->fetch_assoc();
 
-Core::$META['title'] = $arMetaTags['meta_title_'.$langs];
-Core::$META['description'] = $arMetaTags['meta_description_'.$langs];
-Core::$META['keywords'] = $arMetaTags['meta_keywords_'.$langs];
+Core::$META['title'] = $arMetaTags['meta_title_'.$lang];
+Core::$META['description'] = $arMetaTags['meta_description_'.$lang];
+Core::$META['keywords'] = $arMetaTags['meta_keywords_'.$lang];
 
-// END SEO META TAGS
+// --- END SEO META TAGS ---
+
+
+// --- COUNT COOKIE ---
 
 if (isset($_COOKIE['items'])) {
     $cookies = (array)json_decode($_COOKIE['items']);
@@ -27,3 +25,5 @@ if (isset($_COOKIE['items'])) {
 } else {
     $countG = 0;
 }
+
+// --- END COUNT GOODS COOKIE ---

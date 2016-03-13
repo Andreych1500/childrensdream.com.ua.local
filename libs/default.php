@@ -4,7 +4,6 @@ function __autoload($class){
 	include './libs/class_'.$class.'.php';
 }
 
-
 // роз ширена функція для print_r
 function wtf($array, $stop = false){
 	echo '<pre>'.print_r($array,1).'</pre>';
@@ -92,7 +91,6 @@ function myHash($var){
 	$var = crypt(md5($var.$salt),$salt2);
 	return $var;
 }
-
 
 // видалення папки
 function removeDirectory($dir) {

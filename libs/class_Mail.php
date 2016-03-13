@@ -1,9 +1,9 @@
 <?php 
 
 class Mail{
-	static $subject = 'Реєстрація на сайті';
+	static $subject = 'Тестова відправка листа';
 	static $from = 'andreych1500@school-php.com';
-	static $to = 'andreychsavit2@gmail.com';
+	static $to = 'savitskuy@ukr.net';
 	static $text = 'You have registered on the site, in order to confirm this by email please:';
 	static $headers = '';
 	

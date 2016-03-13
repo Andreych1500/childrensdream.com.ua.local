@@ -8,7 +8,7 @@
         <div class="slide-wrap">
           <?php for($i=1; $i<=4; ++$i){  ?>
             <div class="slide-item">
-              <img src="/skins/default/img/lang/<?=$langs?>/slide<?=$i?>.png" alt="Children's Dream">
+              <img src="/skins/default/img/lang/<?=$lang?>/slide<?=$i?>.png" alt="Children's Dream">
             </div>
           <?php } ?>
         </div>
@@ -64,10 +64,10 @@
       while($el = $catalog->fetch_assoc()){ ?>
         <div class="el-item">
           <div class="photos">
-            <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><img src="<?=hsc($el['anons_photo'])?>" alt="<?=(isset($lang)? hsc($el['name_ru']) : hsc($el['name']))?>"></a>
+            <a href="<?=$link_langs?>catalog/<?=$el['seo_name']?>"><img src="<?=hsc($el['anons_photo'])?>" alt="<?=hsc($el['name_'.$lang])?>"></a>
           </div>
           <div class="desk-info">
-            <a href="<?=(isset($lang)? '/ru/' : '/')?>catalog/<?=$el['seo_name']?>"><span><?=(isset($lang)? hsc($el['name_ru']) : hsc($el['name']))?></span></a>
+            <a href="<?=$link_langs?>catalog/<?=$el['seo_name']?>"><span><?=hsc($el['name_'.$lang])?></span></a>
             <p><?=number_format(hsc($el['price']), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
             <p class="aviability">
               <span class="<?=(((int)$el['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
@@ -141,7 +141,7 @@
     <p><?=$mess['OK_MESSAGE2']?></p>
     <? } else { ?>
     <p class="info-call"><?=$mess['CALL_TEXT1']?><b><?=$mess['CALL_TEXT2']?></b><?=$mess['CALL_TEXT3']?><b><?=$mess['CALL_TEXT4']?></b>, <b><?=$mess['CALL_TEXT5']?></b></p>
-    <form action="#call" method="post" onsubmit="return callMe();">
+    <form action="#call" method="post" onsubmit="return checkForm('.form-call', 'form-call');">
       <div>
         <p><?=$mess['CALL_NAME']?><span>*</span></p>
         <input class="<?=((isset($errors['name']))? 'errors' : '')?>" type="text" name="name" value="<?=(isset($_POST['name'])? hsc($_POST['name']):"")?>">

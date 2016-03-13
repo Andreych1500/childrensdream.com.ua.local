@@ -2,7 +2,7 @@
   <?php if(count($cookies) > 0){ ?>
   <p class="hText"><?=$mess['ORDERH1']?></p>
   <div class="order">
-      <form method="post" action="" onsubmit="return myOrder();">
+      <form method="post" action="" onsubmit="return checkForm('.order', 'form-order');">
         <div class="table-count">
           <div class="headers-tab">
             <p class="bt"><?=$mess['PHOTO']?></p>
@@ -14,10 +14,10 @@
           <table class="line-tab-goods">
           <?php foreach($goods as $key => $val){ ?>
               <tr>
-                <td><img src="<?=hsc($val['anons_photo'])?>" alt="<?=(isset($lang)? hsc($val['name_ru']) : hsc($val['name']))?>" title="<?=(isset($lang)? hsc($el['name_ru']) : hsc($el['name']))?>"></td>
+                <td><img src="<?=hsc($val['anons_photo'])?>" alt="<?=hsc($val['name_'.$lang])?>" title="<?=hsc($val['name_'.$lang])?>"></td>
                 <td>
-                  <?=(isset($lang)? hsc($val['name_ru']) : hsc($val['name']))?>
-                  <input type="hidden" name="names_el[]" value="<?=(isset($lang)? hsc($val['name_ru']) : hsc($val['name']))?>">
+                  <?=hsc($val['name_'.$lang])?>
+                  <input type="hidden" name="names_el[]" value="<?=hsc($val['name_'.$lang])?>">
                 </td>
                 <td>
                   <input class="<?=(isset($errors['count'][$key])? 'errors' : '')?>" onchange="edit_price(this);" type="number" min="1" max="99"  step="1" name="count[<?=$val['id']?>]" value="<?=(isset($errors)? (($_POST['count'][$val['id']] > 99)? '99' : $_POST['count'][$val['id']] ) : '1')?>">
@@ -107,7 +107,7 @@
     <?php } else { ?>
     <p><?=$mess['BASKETNULL']?></p>
     <?php } ?>
-    <p><a href="<?=(isset($lang)? '/ru/' : '/')?>catalog"><?=$mess['GOSHOP']?></a></p>
+    <p><a href="<?=$link_langs?>catalog"><?=$mess['GOSHOP']?></a></p>
   </div>
   <?php } ?>
 </div>
