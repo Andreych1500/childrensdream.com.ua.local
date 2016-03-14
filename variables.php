@@ -4,11 +4,11 @@ if(isset($_GET['route'])){
 	$temp = explode('/',$_GET['route']);
 
 	if($temp[0] == 'admin'){
-		Core::$CONT['default'] = Core::$CONT['default'].'/admin';
+		Core::$CONT = Core::$CONT.'/admin';
 		Core::$SKIN = 'admin';	
 		unset($temp[0]);
 	} elseif($temp[0] == 'ru') {
-		Core::$CONT['castom'] = 'ru/'.Core::$CONT['default'];
+		Core::$LANG = 'ru/'.Core::$CONT;
 		unset($temp[0]);
 	}
 

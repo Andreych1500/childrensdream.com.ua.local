@@ -18,7 +18,7 @@ include_once './variables.php';
 ob_start();
     // --- VARIABLE LANG ---
 
-	if(preg_match('#^ru#ius',Core::$CONT['castom'])){
+	if(preg_match('#^ru#ius',Core::$LANG)){
 		$lang = Core::$LANGUAGE['langs']['ru'];
 		$link_langs = '/ru/';
 	} else {
@@ -31,9 +31,9 @@ ob_start();
 
 	// --- EXIST FILES ---
 
-	if (!file_exists('./' . Core::$CONT['default'] . '/' . $_GET['module'] . '/' . (((Core::$CONT['default'] != 'modules/admin' && in_array($_GET['module'],Core::$DATAIL_PAGE))? 'main' : $_GET['page']).'.php')) ||
-		!file_exists('./skins/' . Core::$SKIN . '/' . $_GET['module'] . '/' . (((Core::$CONT['default'] != 'modules/admin' && in_array($_GET['module'],Core::$DATAIL_PAGE))? 'main' : $_GET['page']).'.tpl')) ||
-		((Core::$CONT['default'] != 'modules/admin')? !file_exists('./'. Core::$CONT['default'] .'/'.$_GET['module'].'/lang/'.$lang.'/lang.php') : false)) {
+	if (!file_exists('./' . Core::$CONT . '/' . $_GET['module'] . '/' . (((Core::$CONT != 'modules/admin' && in_array($_GET['module'],Core::$DATAIL_PAGE))? 'main' : $_GET['page']).'.php')) ||
+		!file_exists('./skins/' . Core::$SKIN . '/' . $_GET['module'] . '/' . (((Core::$CONT != 'modules/admin' && in_array($_GET['module'],Core::$DATAIL_PAGE))? 'main' : $_GET['page']).'.tpl')) ||
+		((Core::$CONT != 'modules/admin')? !file_exists('./'. Core::$CONT .'/'.$_GET['module'].'/lang/'.$lang.'/lang.php') : false)) {
 
 		$_GET['module'] = 'error';
 		$_GET['page'] = 'main';
@@ -45,13 +45,13 @@ ob_start();
 
 	// --- LANGS FILES ---
 
-	if(Core::$CONT['default'] != 'modules/admin'){
-		include './'.Core::$CONT['default'].'/lang/'.$lang.'/lang.php';
+	if(Core::$CONT != 'modules/admin'){
+		include './'.Core::$CONT.'/lang/'.$lang.'/lang.php';
 	}
 
 	if(isset($_GET['module'])){
-		if(Core::$CONT['default'] != 'modules/admin'){
-			include './'.Core::$CONT['default'].'/'.$_GET['module'].'/lang/'.$lang.'/lang.php';
+		if(Core::$CONT != 'modules/admin'){
+			include './'.Core::$CONT.'/'.$_GET['module'].'/lang/'.$lang.'/lang.php';
 		}
 	}
 
@@ -60,15 +60,15 @@ ob_start();
 
 	// --- PAGE_MODEL ---
 
-	include './'.Core::$CONT['default'].'/allpages.php';
-	include './'.Core::$CONT['default'].'/'.$_GET['module'].'/'.(in_array($_GET['module'],Core::$DATAIL_PAGE)? ((Core::$CONT['default'] == 'modules/admin')? $_GET['page'] : 'main' ) : $_GET['page']).'.php';
+	include './'.Core::$CONT.'/allpages.php';
+	include './'.Core::$CONT.'/'.$_GET['module'].'/'.(in_array($_GET['module'],Core::$DATAIL_PAGE)? ((Core::$CONT == 'modules/admin')? $_GET['page'] : 'main' ) : $_GET['page']).'.php';
 
 	// --- END PAGE_MODEL ---
 
 
 	// --- PAGE_VIEW ---
 
-	include './skins/'.Core::$SKIN.'/'.$_GET['module'].'/'.(in_array($_GET['module'],Core::$DATAIL_PAGE)? ((Core::$CONT['default'] == 'modules/admin')? $_GET['page'] : 'main' ) : $_GET['page']).'.tpl';
+	include './skins/'.Core::$SKIN.'/'.$_GET['module'].'/'.(in_array($_GET['module'],Core::$DATAIL_PAGE)? ((Core::$CONT == 'modules/admin')? $_GET['page'] : 'main' ) : $_GET['page']).'.tpl';
 
 	// --- END PAGE_VIEW ---
 

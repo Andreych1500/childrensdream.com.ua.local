@@ -1,7 +1,7 @@
 <?php
-Core::$META['title'] = 'Admin';
-
 if(!isset($_SESSION['user']) || $_SESSION['user']['access'] !=  5){
+
+	// --- AUTH FORM ---
 
 	if(isset($_POST['login'], $_POST['pass'])){
 		$errors = array();
@@ -35,21 +35,9 @@ if(!isset($_SESSION['user']) || $_SESSION['user']['access'] !=  5){
 			exit();
 
 		} else {
-			$errors['notuser'] = 'Користувача з таким логіном або паролем не існує! Або у вас недостатньо прав...';
+			$errors['notuser'] = 'errors';
 		}
-	} 	
-	
-	// перевірка чи користувач у бані
-	$userban = array();
-	
-	$res2 = q("
-		SELECT *
-		FROM `users`
-	");
-	
-	while($ban = $res2->fetch_assoc()){
-		if($ban['access'] == 2){
-			$userban[] = $ban['login'];
-		}
-	}	
+	}
+
+	// --- END AUTH FORM ---
 }

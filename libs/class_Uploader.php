@@ -60,7 +60,7 @@ class Uploader {
 					self::$error = 'Не підходить розмір зображення';
 				} elseif($temp[1] > $temp[0] * 5){
 					self::$error = 'Не підходить розмір зображення';
-				} elseif($temp[1] >= 10000 || $temp[0] >= 10000){
+				} elseif($temp[1] >= 10000 || $temp[0] >= 67352){
 					self::$error = 'Розширення у пікселях занадто велике';
 				}  elseif(!move_uploaded_file($file['tmp_name'],'..'.$name)){
 					self::$error = 'Зображення не загружено! Ошибка';

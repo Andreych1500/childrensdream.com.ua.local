@@ -1,2 +1,2 @@
 <?php
-// function 404
+// function error
