@@ -139,9 +139,9 @@ if(isset($_POST['ok'])){
 		    `meta_description_ru` = '".mres($_POST['meta_description_ru'])."',
 
 			`img_seo_title_ua`    = '".mres($_POST['img_seo_title_ua'])."',
- 			`imag_seo_title_ru`   = '".mres($_POST['img_seo_title_ru'])."',
- 			`imag_seo_alt_ua`     = '".mres($_POST['img_seo_alt_ua'])."',
- 			`imag_seo_alt_ru`     = '".mres($_POST['img_seo_alt_ru'])."',
+ 			`img_seo_title_ru`    = '".mres($_POST['img_seo_title_ru'])."',
+ 			`img_seo_alt_ua`      = '".mres($_POST['img_seo_alt_ua'])."',
+ 			`img_seo_alt_ru`      = '".mres($_POST['img_seo_alt_ru'])."',
  			`user_custom`         = '".mres($_SESSION['user']['FIO'])."',
 			`date`                = NOW()
 		");

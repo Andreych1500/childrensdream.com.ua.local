@@ -106,53 +106,57 @@ if(isset($_POST['ok'])){
 
 }
 
-// перевірка чи товар існує
-$products = q("
+
+// --- GET ELEMENT ---
+
+$catalog = q("
 	SELECT *
 	FROM `catalog`
-	WHERE `id` = ".(int)$_GET['key2']."
+	WHERE `id` = ".(int)$_GET['id']."
 	LIMIT 1
 ");
 
-if(!$products->num_rows){
-	$_SESSION['info'] = 'Товара неіснує!';
-	header("Location: /admin/catalog");
+if($catalog->num_rows){
+	$row = $catalog->fetch_assoc();
+} else {
+	header("Location: /admin/catalog/");
 	exit();
 }
 
-$row = $products->fetch_assoc();
+// --- END GET ELEMENT ---
+
 
 
 // arRow[more_photos]
-if(!empty($row['more_photos'])){
-	if(isset($_POST['more_photos']) > 0 && count($_POST['more_photos']) > 0){
-		foreach ($_POST['more_photos'] as $key => $val) {
-			$more_photos[$key] = explode('|', $val);
-			$more_photos[$key][3] = $val;
-		}
-
-	} else {
-		$more_photos = explode('#', $row['more_photos']);
-
-		foreach ($more_photos as $key => $val) {
-			$more_photos[$key] = explode('|', $val);
-			$more_photos[$key][3] = $val;
-		}
-	}
-}
+//if(!empty($row['more_photos'])){
+//	if(isset($_POST['more_photos']) > 0 && count($_POST['more_photos']) > 0){
+//		foreach ($_POST['more_photos'] as $key => $val) {
+//			$more_photos[$key] = explode('|', $val);
+//			$more_photos[$key][3] = $val;
+//		}
+//
+//	} else {
+//		$more_photos = explode('#', $row['more_photos']);
+//
+//		foreach ($more_photos as $key => $val) {
+//			$more_photos[$key] = explode('|', $val);
+//			$more_photos[$key][3] = $val;
+//		}
+//	}
+//}
 // end arRow[more_photos]
 
 
 
-// one more file
-$file_name = ((isset($errors))? ((!empty($more_photos[0][2]))? ((!empty($more_src[0][2]))? hsc($more_src[0][2]) : 'Файл не вибраний') : ((!empty($more_src[0][0]))? hsc($more_src[0][2]) : 'Файл не вибраний')) : ((!empty($more_photos[0][2]))? hsc($more_photos[0][2]) : 'Файл не вибраний'));
-$file_value = ((isset($errors))? ((!empty($_POST['more_photos'][0]))? hsc($_POST['more_photos'][0]) : '') : ((!empty($more_photos[0][3]))? hsc($more_photos[0][3]) : ''));
-$file_hidden = ((!empty($_POST['more_photos'][0]))? '' : ((!empty($more_photos[0]) && !isset($errors))? '' : ((!empty($more_src[0][0]))? '' : 'hidden')));
-$file_photo = ((isset($_POST['more_photos'][0]))? ((!empty($more_src[0][0]))? hsc($more_src[0][0]) : '') : ((!empty($more_photos[0][0]))? hsc($more_photos[0][0]) : ''));
-// end one more file
-
-// more file
-if(!isset($more_photos) && isset($more_src)){
-	$more_photos = $more_src;
-}
-// end more file
+//// one more file
+//$file_name = ((isset($errors))? ((!empty($more_photos[0][2]))? ((!empty($more_src[0][2]))? hsc($more_src[0][2]) : 'Файл не вибраний') : ((!empty($more_src[0][0]))? hsc($more_src[0][2]) : 'Файл не вибраний')) : ((!empty($more_photos[0][2]))? hsc($more_photos[0][2]) : 'Файл не вибраний'));
+//$file_value = ((isset($errors))? ((!empty($_POST['more_photos'][0]))? hsc($_POST['more_photos'][0]) : '') : ((!empty($more_photos[0][3]))? hsc($more_photos[0][3]) : ''));
+//$file_hidden = ((!empty($_POST['more_photos'][0]))? '' : ((!empty($more_photos[0]) && !isset($errors))? '' : ((!empty($more_src[0][0]))? '' : 'hidden')));
+//$file_photo = ((isset($_POST['more_photos'][0]))? ((!empty($more_src[0][0]))? hsc($more_src[0][0]) : '') : ((!empty($more_photos[0][0]))? hsc($more_photos[0][0]) : ''));
+//// end one more file
+//
+//// more file
+//if(!isset($more_photos) && isset($more_src)){
+//	$more_photos = $more_src;
+//}
+//// end more file

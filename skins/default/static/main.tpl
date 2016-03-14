@@ -6,9 +6,9 @@
           <span class="icon-right"></span>
         </div>
         <div class="slide-wrap">
-          <?php for($i=1; $i<=4; ++$i){  ?>
+          <?php while($arResult = $main_banner->fetch_assoc()){ ?>
             <div class="slide-item">
-              <img src="/skins/default/img/lang/<?=$lang?>/slide<?=$i?>.png" alt="Children's Dream">
+              <img src="<?=hsc($arResult['img_'.$lang])?>" alt="<?=hsc($arResult['img_seo_alt_'.$lang])?>">
             </div>
           <?php } ?>
         </div>

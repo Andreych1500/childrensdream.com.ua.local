@@ -41,9 +41,9 @@ if(isset($_POST['ok'],$_POST['name'], $_POST['sort'])){
 			`date_create`    = NOW(),
 
 			`img_seo_title_ua`    = '".mres($_POST['img_seo_title_ua'])."',
- 			`imag_seo_title_ru`    = '".mres($_POST['img_seo_title_ru'])."',
- 			`imag_seo_alt_ua`      = '".mres($_POST['img_seo_alt_ua'])."',
- 			`imag_seo_alt_ru`      = '".mres($_POST['img_seo_alt_ru'])."'
+ 			`img_seo_title_ru`    = '".mres($_POST['img_seo_title_ru'])."',
+ 			`img_seo_alt_ua`      = '".mres($_POST['img_seo_alt_ua'])."',
+ 			`img_seo_alt_ru`      = '".mres($_POST['img_seo_alt_ru'])."'
 		");
 
         header("Location: /admin/main-banner/");

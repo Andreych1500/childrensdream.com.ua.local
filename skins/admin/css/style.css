@@ -98,7 +98,7 @@ html {
   min-width: 800px;
 }
 body {
-  min-width: 800px;
+  min-width: 830px;
   width: 100%;
   margin: 0 0 50px 0;
 }
@@ -875,7 +875,6 @@ main .main-view-content .line-custom .add-el:active {
 }
 main .main-view-content form {
   border: none;
-  overflow: hidden;
 }
 main .main-view-content form table {
   border: none;

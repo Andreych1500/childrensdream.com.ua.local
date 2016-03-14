@@ -20,36 +20,47 @@
             <td>Коли зміненна</td>
             <td>Ким зміненна</td>
         </tr>
-        <?php /*while($arResult = $main_banner->fetch_assoc()){ ?>
+        <?php while($arResult = $catalog->fetch_assoc()){
+            // --- MORE FILE ---
+            if(!empty($arResult['cMorePhoto'])){
+                $arResult['cMorePhoto'] = explode('#',$arResult['cMorePhoto']);
+                foreach($arResult['cMorePhoto'] as $key => $value){
+                    $res = explode('|',$value,2);
+                    $cMorePhoto .= $res[0].'|';
+                }
+                $cMorePhoto = trim($cMorePhoto,"|");
+            }
+            // --- END MORE FILE ---
+        ?>
         <tr>
           <td>
             <input type="checkbox" name="ids[]" value="<?=$arResult['id']?>">
-            <input type="hidden" name="del[<?=(int)$arResult['id']?>]" value="<?=hsc($arResult['img_ua'])?>|<?=hsc($arResult['img_ru'])?>">
+            <input type="hidden" name="del[<?=(int)$arResult['id']?>]" value="<?=hsc($arResult['cAnonsPhoto'])?>|<?=hsc($arResult['cCirklePhoto'])?>|<?=hsc($cMorePhoto)?>">
           </td>
           <td>
             <span class="icon-mob-menu" onclick="openEdit(this);"></span>
             <div class="menu-edit">
-              <a href="/admin/main-banner/edit?id=<?=(int)$arResult['id']?>">
+              <a href="/admin/catalog/edit?id=<?=(int)$arResult['id']?>">
                 <span class="icon-content"></span>
                 Змінити
               </a>
-              <span class="delete icon-cross" onclick="deleteElement(<?=(int)$arResult['id']?>, this, '<?=Core::$DIR_PHOTOS_NAME['main_banner']?>')">Видалити</span>
+              <span class="delete icon-cross" onclick="deleteElement(<?=(int)$arResult['id']?>, this, '<?=Core::$DIR_PHOTOS_NAME['catalog']?>')">Видалити</span>
             </div>
           </td>
             <td><?=(($arResult['active'] == 0)? 'Ні' : 'Так')?></td>
-            <td><?=hsc($arResult['name'])?></td>
+            <td><?=hsc($arResult['name_ua'])?></td>
             <td><?=(int)$arResult['sort']?></td>
             <td><?=(int)$arResult['id']?></td>
             <td>
-            <?php if(!empty($arResult['img_ua'])){ ?>
-                <div class="panel-photo"><img src="<?=hsc($arResult['img_ua'])?>" alt="<?=hsc($arResult['name'])?>"></div>
+            <?php if(!empty($arResult['cAnonsPhoto'])){ ?>
+                <div class="panel-photo"><img src="<?=hsc($arResult['cAnonsPhoto'])?>" alt="<?=hsc($arResult['name_ua'])?>"></div>
             <?php } ?>
             </td>
             <td><?=hsc($arResult['date_create'])?></td>
             <td><?=hsc($arResult['date_custom'])?></td>
             <td><?=hsc($arResult['user_custom'])?></td>
         </tr>
-        <?php } */?>
+        <?php } ?>
       </table>
     </form>
   </div>

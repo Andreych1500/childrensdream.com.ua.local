@@ -101,7 +101,12 @@ $catalog = q("
 // --- END ALL ELEMENT ---
 
 
-if(isset($_SESSION['info'])){
-    $info = $_SESSION['info'];
-    unset($_SESSION['info']);
-}
+// --- ALL ELEMENT BANNER ---
+
+$main_banner = q("
+    SELECT *
+    FROM `main_banner`
+    WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
+");
+
+// --- END ALL ELEMENT BANNER ---

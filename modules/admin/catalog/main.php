@@ -1,37 +1,40 @@
 <?php
-// видалення товарів
+// --- DELETE ELEMENT AND FILE ---
+
 if(isset($_POST['delete']) && isset($_POST['ids'])){
-    foreach($_POST['ids'] as $k=>$v){
-        $_POST['ids'][$k] = (int)$v;
+
+    foreach($_POST['ids'] as $key=>$value){
+        if(!empty($_POST['del'][$value])){
+            $files = explode('|',$_POST['del'][$value]);
+
+            foreach($files as $key2 => $value2){
+                if(file_exists('.'.$value2)){
+                    unlink('.'.$value2);
+                }
+            }
+        }
     }
 
     $ids = implode(',',$_POST['ids']);
-
-    $delete_dir = q("
-        SELECT `seo_name`
-        FROM `catalog`
-        WHERE `id` IN (".$ids.")
-    ");
-
-
-    while($row =  $delete_dir->fetch_assoc()){
-        removeDirectory('./uploaded/ua/'.$row['seo_name']);
-    }
 
     q(" DELETE FROM `catalog`
 		WHERE `id` IN (".$ids.")
 	");
 
-    $_SESSION['info'] = 'Товар успішно видалений!';
     header("Location: /admin/catalog/");
     exit();
 }
 
-// active
+// --- END DELETE ELEMENT AND FILE ---
+
+
+// --- ACTIVE ELEMENT ---
+
 if(isset($_POST['active']) && isset($_POST['ids'])){
     foreach($_POST['ids'] as $k=>$v){
         $_POST['ids'][$k] = (int)$v;
     }
+
     $ids = implode(',',$_POST['ids']);
 
     q(" UPDATE `catalog`
@@ -39,12 +42,15 @@ if(isset($_POST['active']) && isset($_POST['ids'])){
 		WHERE `id` IN (".$ids.")
 	");
 
-    $_SESSION['info'] = 'Товар успішно активований!';
     header("Location: /admin/catalog/");
     exit();
 }
 
-// deactivate
+// --- END ACTIVE ELEMENT ---
+
+
+// --- DEACTIVE ELEMENT ---
+
 if(isset($_POST['deactive']) && isset($_POST['ids'])){
     foreach($_POST['ids'] as $k=>$v){
         $_POST['ids'][$k] = (int)$v;
@@ -56,18 +62,19 @@ if(isset($_POST['deactive']) && isset($_POST['ids'])){
 		WHERE `id` IN (".$ids.")
 	");
 
-    $_SESSION['info'] = 'Товар успішно деактивований!';
     header("Location: /admin/catalog/");
     exit();
 }
 
-$res = q("
+// --- END DEACTIVE ELEMENT ---
+
+
+// --- ALL ELEMENT ---
+
+$catalog = q("
     SELECT *
     FROM `catalog`
     ORDER BY `sort` DESC, `id` DESC
 ");
 
-if(isset($_SESSION['info'])){
-    $info = $_SESSION['info'];
-    unset($_SESSION['info']);
-}
+// --- END ALL ELEMENT
