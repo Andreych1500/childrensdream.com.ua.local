@@ -18,7 +18,7 @@
             while($el = $catalog->fetch_assoc()){ ?>
                 <div class="el-item">
                     <div class="photos">
-                        <a href="<?=$link_langs?>catalog/<?=$el['seo_name']?>"><img src="<?=hsc($el['anons_photo'])?>" alt="<?=hsc($el['name_'.$lang])?>"></a>
+                        <a href="<?=$link_langs?>catalog/<?=$el['seo_name']?>"><img src="<?=hsc($el['cAnonsPhoto'])?>" alt="<?=hsc($el['name_'.$lang])?>"></a>
                     </div>
                     <div class="desk-info">
                         <a href="<?=$link_langs?>catalog/<?=$el['seo_name']?>"><span><?=hsc($el['name_'.$lang])?></span></a>
@@ -88,7 +88,7 @@
         <div class="view-info">
             <div class="descript-text"><?=nl2br(hsc($el['text_'.$lang]))?></div>
             <div class="cirkl-photo">
-              <div><img src="<?=hsc($el['descrip_photo'])?>" alt="<?=hsc($el['name_'.$lang])?>" title="<?=hsc($el['name_'.$lang])?>"></div>
+              <div><img src="<?=hsc($el['cCirklePhoto'])?>" alt="<?=hsc($el['name_'.$lang])?>" title="<?=hsc($el['name_'.$lang])?>"></div>
             </div>
         </div>
       </div>

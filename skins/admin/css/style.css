@@ -55,7 +55,8 @@ h3,
 h4,
 textarea,
 input,
-button {
+button,
+select {
   outline: none;
 }
 .hidden {
@@ -1177,7 +1178,9 @@ main .add-content .add-block-form form input[name^="tabs"] {
   display: none;
 }
 main .add-content .add-block-form form input[name^="tabs"]:nth-of-type(1):checked ~ .bTabs:nth-of-type(1),
-main .add-content .add-block-form form input[name^="tabs"]:nth-of-type(2):checked ~ .bTabs:nth-of-type(2) {
+main .add-content .add-block-form form input[name^="tabs"]:nth-of-type(2):checked ~ .bTabs:nth-of-type(2),
+main .add-content .add-block-form form input[name^="tabs"]:nth-of-type(3):checked ~ .bTabs:nth-of-type(3),
+main .add-content .add-block-form form input[name^="tabs"]:nth-of-type(4):checked ~ .bTabs:nth-of-type(4) {
   height: auto;
   opacity: 1;
   -webkit-transition: opacity 0.7s ease;
@@ -1186,7 +1189,9 @@ main .add-content .add-block-form form input[name^="tabs"]:nth-of-type(2):checke
   transition: opacity 0.7s ease;
 }
 main .add-content .add-block-form form input[name^="tabs"]:nth-of-type(1):checked ~ .bTabs:nth-of-type(1) .table-style,
-main .add-content .add-block-form form input[name^="tabs"]:nth-of-type(2):checked ~ .bTabs:nth-of-type(2) .table-style {
+main .add-content .add-block-form form input[name^="tabs"]:nth-of-type(2):checked ~ .bTabs:nth-of-type(2) .table-style,
+main .add-content .add-block-form form input[name^="tabs"]:nth-of-type(3):checked ~ .bTabs:nth-of-type(3) .table-style,
+main .add-content .add-block-form form input[name^="tabs"]:nth-of-type(4):checked ~ .bTabs:nth-of-type(4) .table-style {
   display: block;
 }
 main .add-content .add-block-form form input[name^="tabs"]:checked + label {
@@ -1242,6 +1247,11 @@ main .add-content .add-block-form form .table-style .input-value {
   height: auto;
   min-height: 27px;
 }
+main .add-content .add-block-form form .table-style .input-value.input-seo textarea {
+  height: 50px;
+  width: 63%;
+  max-width: 63%;
+}
 main .add-content .add-block-form form .table-style .input-value .more_radio {
   float: left;
   left: 60px;
@@ -1286,10 +1296,14 @@ main .add-content .add-block-form form .table-style .input-value select {
   border-radius: 3px;
   border: 1px solid #ccc;
   padding: 5px;
-  width: 370px;
+  width: 100%;
+  max-width: 349px;
   height: auto;
   top: 0;
   float: left;
+}
+main .add-content .add-block-form form .table-style .input-value select {
+  width: auto;
 }
 main .add-content .add-block-form form .table-style .input-value textarea {
   height: 150px;
@@ -1298,8 +1312,8 @@ main .add-content .add-block-form form .table-style .input-value textarea {
   padding: 5px;
   left: 60px;
   position: relative;
-  width: 100%;
-  max-width: 600px;
+  width: 63%;
+  max-width: 63%;
 }
 main .add-content .add-block-form form .table-style .input-value input[type="checkbox"] {
   width: auto;
@@ -1381,9 +1395,11 @@ main .add-content .add-block-form form .table-style .up_file_text {
 }
 main .add-content .add-block-form form .table-style .upload_file p {
   min-width: 146px;
+  min-height: 1px;
 }
 main .add-content .add-block-form form .cancel,
-main .add-content .add-block-form form input[type="submit"] {
+main .add-content .add-block-form form input[type="submit"],
+main .add-content .add-block-form form .add_more {
   border: none;
   background-color: #e0e9ec;
   color: #3f4b54;
@@ -1419,7 +1435,8 @@ main .add-content .add-block-form form input[type="submit"] {
   background-clip: padding-box;
 }
 main .add-content .add-block-form form .cancel:hover,
-main .add-content .add-block-form form input[type="submit"]:hover {
+main .add-content .add-block-form form input[type="submit"]:hover,
+main .add-content .add-block-form form .add_more:hover {
   text-decoration: none;
   background: #f3f6f7!important;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMSAxIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9Imxlc3NoYXQtZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmOGY4ZjkiIHN0b3Atb3BhY2l0eT0iMSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2YyZjZmOCIgc3RvcC1vcGFjaXR5PSIxIi8+PC9saW5lYXJHcmFkaWVudD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2xlc3NoYXQtZ2VuZXJhdGVkKSIgLz48L3N2Zz4=);
@@ -1429,7 +1446,8 @@ main .add-content .add-block-form form input[type="submit"]:hover {
   background-image: linear-gradient(to bottom, #f8f8f9, #f2f6f8);
 }
 main .add-content .add-block-form form .cancel:active,
-main .add-content .add-block-form form input[type="submit"]:active {
+main .add-content .add-block-form form input[type="submit"]:active,
+main .add-content .add-block-form form .add_more:active {
   background-color: #b7c4c9!important;
   border-top: transparent;
   -webkit-border-radius: 4px;
@@ -1448,6 +1466,9 @@ main .add-content .add-block-form form input[type="submit"]:active {
   background-image: -moz-linear-gradient(top, rgba(179, 194, 200, 0.96), rgba(202, 215, 219, 0.96));
   background-image: -o-linear-gradient(top, rgba(179, 194, 200, 0.96), rgba(202, 215, 219, 0.96));
   background-image: linear-gradient(to bottom, rgba(179, 194, 200, 0.96), rgba(202, 215, 219, 0.96));
+}
+main .add-content .add-block-form form .add_more {
+  left: 165px;
 }
 main .add-content .add-block-form form .errors {
   border-color: red !important;

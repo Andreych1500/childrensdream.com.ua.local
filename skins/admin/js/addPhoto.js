@@ -5,11 +5,29 @@ $(document).ready(function(){
     });
 
 
+    // --- more add buttom ---
+    $('.add_more span').click(function(){
+        var last_index   = $('.upload_file[id*="cMorePhoto"]').last().attr('rel_id');
+        var size_more_el = $('.upload_file[id*="cMorePhoto"]').last().attr('rel_size');
+
+        ++last_index; // створюєм нові id
+
+
+        var html_input_fyle = '<div class="input-value upload_file" rel_id="'+last_index+'" id="cMorePhoto_'+last_index+'" rel_size="'+size_more_el+'">' +
+            '<p></p><button class="icon-link" type="button" onclick="getInfoFile(this)">Вибрати файл</button>' +
+            '<input type="hidden" value="" name="cMorePhoto[]"><input type="hidden" value="" name="del[cMorePhoto][]">' +
+            '<div class="photos hidden"><img src=""></div></div>';
+
+        $('.upload_file[id*="cMorePhoto"]').last().after(html_input_fyle);
+    });
+    // --- end more add buttom ---
+
+
     // --- translition no spec simvol ---
-    if($('input[name="code"]').length > 0) {
-        $('.add-content .input-value input[name="name"]').keyup(function () {
-            if ($('input[name="seo_name"]').val() === undefined) {
-                $('.add-content .input-value input[name="code"]').val((translit($('.add-content .input-value input[name="name"]').val().toLowerCase()))
+    if($('input[name="seo_name"]').length > 0) {
+        $('.add-content .input-value input[name="name_ru"]').keyup(function () {
+            if ($('input[name="seo_el_name"]').val() === undefined) {
+                $('.add-content .input-value input[name="seo_name"]').val((translit($('.add-content .input-value input[name="name_ru"]').val().toLowerCase()))
                     .replace(/\s/g, '-')
                     .replace(/\*/g, '-')
                     .replace(/\</g, '-')
@@ -22,7 +40,6 @@ $(document).ready(function(){
         });
     }
     // --- end translition no spec simvol ---
-
 });
 
 

@@ -38,7 +38,7 @@ if(isset($_POST['ok'])){
 		    `img_ua`              = '".mres($main_banner_ua[0])."',
 		    `img_ru`              = '".mres($main_banner_ru[0])."',
 		    `user_custom`         = '".mres($_SESSION['user']['FIO'])."',
-		    
+
 		    `img_seo_title_ua`    = '".mres($_POST['img_seo_title_ua'])."',
             `img_seo_title_ru`   = '".mres($_POST['img_seo_title_ru'])."',
  			`img_seo_alt_ua`     = '".mres($_POST['img_seo_alt_ua'])."',

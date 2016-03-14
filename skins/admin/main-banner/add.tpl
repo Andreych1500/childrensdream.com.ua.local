@@ -11,6 +11,7 @@
       <input type="radio" name="tabs" id="tabs2">
       <label for="tabs2">SEO</label>
 
+      <!-- element tabs -->
       <div class="bTabs">
 
         <div class="table-style">
@@ -48,7 +49,9 @@
         </div>
 
       </div>
+      <!-- end element tabs -->
 
+      <!-- seo tabs -->
       <div class="bTabs">
 
           <div class="table-style">
@@ -74,7 +77,7 @@
           </div>
 
       </div>
-      <!-- end tabs -->
+      <!-- end seo tabs -->
 
       <input type="submit" value="Зберегти" name="ok">
       <span class="cancel" onclick="cancel();">Відмінити</span>

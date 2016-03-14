@@ -9,7 +9,7 @@ if($_GET['page'] == 'main'){
     // --- ALL ELEMENT ---
 
     $catalog = q("
-      SELECT `id`,`name_ua`,`seo_name`,`price`,`availability`,`anons_photo`,`name_ru`
+      SELECT `id`,`name_ua`,`seo_name`,`price`,`availability`,`cAnonsPhoto`,`name_ru`
       FROM `catalog`
       WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
     ");
@@ -46,7 +46,7 @@ if($_GET['page'] == 'main'){
 
     // --- SLIDER PHOTO ---
 
-    $slidePhoto = explode('#', $el['more_photos']);
+    $slidePhoto = explode('#', $el['cMorePhoto']);
     foreach ($slidePhoto as $value) {
         if (!empty($value)) {
             $photos[] = explode('|', $value);

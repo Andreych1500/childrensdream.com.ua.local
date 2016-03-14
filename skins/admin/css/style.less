@@ -138,7 +138,7 @@ div, p, a, span, ul, li, table, tr, td, html{
   word-wrap: break-word;
 }
 
-div, p, a, span, ul, li, table, tr, td, html, h1, h2, h3, h4,textarea, input, button {
+div, p, a, span, ul, li, table, tr, td, html, h1, h2, h3, h4,textarea, input, button, select {
   outline: none;
 }
 
@@ -1097,7 +1097,9 @@ main{
           display: none;
 
           &:nth-of-type(1):checked ~ .bTabs:nth-of-type(1),
-          &:nth-of-type(2):checked ~ .bTabs:nth-of-type(2){
+          &:nth-of-type(2):checked ~ .bTabs:nth-of-type(2),
+          &:nth-of-type(3):checked ~ .bTabs:nth-of-type(3),
+          &:nth-of-type(4):checked ~ .bTabs:nth-of-type(4){
             height: auto;
             opacity: 1;
 
@@ -1139,6 +1141,14 @@ main{
           }
 
           .input-value{
+            &.input-seo{
+              textarea{
+                height: 50px;
+                width: 63%;
+                max-width: 63%;
+              }
+            }
+
             &:extend(.clearfix all);
             height: auto;
             min-height: 27px;
@@ -1191,10 +1201,15 @@ main{
               border-radius: 3px;
               border: 1px solid #ccc;
               padding: 5px;
-              width: 370px;
+              width:100%;
+              max-width: 349px;
               height: auto;
               top: 0;
               float: left;
+            }
+
+            select{
+              width: auto;
             }
 
             textarea{
@@ -1204,8 +1219,8 @@ main{
               padding: 5px;
               left: 60px;
               position: relative;
-              width:100%;
-              max-width: 600px;
+              width: 63%;
+              max-width: 63%;
             }
 
             input[type="checkbox"]{
@@ -1231,12 +1246,17 @@ main{
 
           .upload_file p{
             min-width: 146px;
+            min-height: 1px;
           }
 
         }
 
-        .cancel, input[type="submit"]{
+        .cancel, input[type="submit"], .add_more{
           .silver-submit();
+        }
+
+        .add_more{
+          left:165px;
         }
 
         .errors {
