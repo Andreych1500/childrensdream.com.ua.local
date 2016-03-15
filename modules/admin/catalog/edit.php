@@ -162,20 +162,3 @@ if(!empty($row['cMorePhoto']) && !isset($cMorePhoto)){
 	}
 }
 // --- END FUNCTION cMorePhoto ---
-
-/*
- /uploaded/catalog/20160315143719img64201.jpeg|catalog|20160315143719img64201.jpeg#/uploaded/catalog/20160315143727img35757.jpeg|catalog|20160315143727img35757.jpeg#/uploaded/catalog/20160315143731img21909.jpeg|catalog|20160315143731img21909.jpeg#/uploaded/catalog/20160315143735img83778.jpeg|catalog|20160315143735img83778.jpeg#/uploaded/catalog/20160315143738img63514.jpeg|catalog|20160315143738img63514.jpeg
- */
-
-//// one more file
-//$file_name = ((isset($errors))? ((!empty($more_photos[0][2]))? ((!empty($more_src[0][2]))? hsc($more_src[0][2]) : 'Файл не вибраний') : ((!empty($more_src[0][0]))? hsc($more_src[0][2]) : 'Файл не вибраний')) : ((!empty($more_photos[0][2]))? hsc($more_photos[0][2]) : 'Файл не вибраний'));
-//$file_value = ((isset($errors))? ((!empty($_POST['more_photos'][0]))? hsc($_POST['more_photos'][0]) : '') : ((!empty($more_photos[0][3]))? hsc($more_photos[0][3]) : ''));
-//$file_hidden = ((!empty($_POST['more_photos'][0]))? '' : ((!empty($more_photos[0]) && !isset($errors))? '' : ((!empty($more_src[0][0]))? '' : 'hidden')));
-//$file_photo = ((isset($_POST['more_photos'][0]))? ((!empty($more_src[0][0]))? hsc($more_src[0][0]) : '') : ((!empty($more_photos[0][0]))? hsc($more_photos[0][0]) : ''));
-//// end one more file
-//
-//// more file
-//if(!isset($more_photos) && isset($more_src)){
-//	$more_photos = $more_src;
-//}
-//// end more file
