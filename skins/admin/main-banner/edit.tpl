@@ -1,5 +1,6 @@
 <div class="add-content">
   <span class="add-element">Редагування елемента</span>
+  <a href="/admin/catalog/" class="back-menu">Елементи</a>
   <div class="bottom-line-edit"></div>
   <div class="add-block-form">
     <form action="" method="post" enctype="multipart/form-data">
@@ -87,7 +88,6 @@
       <input type="hidden" name="dir_name" value="<?=Core::$DIR_PHOTOS_NAME['main_banner']?>">
       <input type="hidden" name="isset" value="N">
       <input type="hidden" name="update" value="Y">
-      <p id="clears">Clear</p>
     </form>
   </div>
 </div>

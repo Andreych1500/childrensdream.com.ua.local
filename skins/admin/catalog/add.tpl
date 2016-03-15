@@ -1,6 +1,6 @@
 <div class="add-content">
   <span class="add-element">Додати Елемент</span>
-  <a href="/admin/catalog/" class="back-menu">Елементи</a>
+  <a href="/admin/catalog/" onclick="cancel();" class="back-menu">Елементи</a>
   <div class="bottom-line"></div>
   <div class="add-block-form">
     <form action="" method="post" enctype="multipart/form-data">
@@ -262,7 +262,6 @@
       <input onchange="addPhoto(this,this.value)" rel_size="" rel_to_set="" type="file" name="photo" id="control">
       <input type="hidden" name="dir_name" value="<?=Core::$DIR_PHOTOS_NAME['catalog']?>">
       <input type="hidden" name="update" value="Y">
-      <p id="clears">Clear</p>
     </form>
   </div>
 </div>

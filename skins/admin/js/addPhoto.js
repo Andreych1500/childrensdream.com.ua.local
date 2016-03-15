@@ -1,10 +1,5 @@
 $(document).ready(function(){
 
-    $('.back-menu').click(function(){
-       $('.cancel').trigger('click');
-    });
-
-
     // --- more add buttom ---
     $('.add_more span').click(function(){
         var last_index   = $('.upload_file[id*="cMorePhoto"]').last().attr('rel_id');
