@@ -9,6 +9,8 @@
                 <td></td>
                 <td>Назва</td>
                 <td>Id</td>
+                <td>Коли зміненна</td>
+                <td>Ким зміненна</td>
               </tr>
 
               <?php while($arResult = $main_module->fetch_assoc()){ ?>
@@ -24,6 +26,8 @@
                 </td>
                 <td><?=hsc($arResult['module'])?></td>
                 <td><?=(int)$arResult['id']?></td>
+                <td><?=hsc($arResult['date_custom'])?></td>
+                <td><?=hsc($arResult['user_custom'])?></td>
               </tr>
               <?php } ?>
 

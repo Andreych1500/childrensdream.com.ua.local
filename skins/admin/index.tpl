@@ -1,25 +1,3 @@
-<!--<!DOCTYPE html>
-<html>
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title><?php// echo hsc(Core::$META['title']);?></title>
-
-  <link href="/skins/<?php// echo Core::$SKIN; ?>/css/style.css" rel="stylesheet" type="text/css">
-  <script src="/vendor/public/jquery/dist/jquery.min.js"></script>
-  <script src="/skins/admin/js/script.js"></script>
-  <script src="/vendor/public/translit/dist/translit.js"></script>
-  <script src="/skins/default/js/script.js?v=1"></script>
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-
-  <?php //if(count(Core::$CSS)){ echo implode("\n",Core::$CSS); } ?>
-</head>
-
-<body>
-
-</body>
-</html>-->
-
 <!DOCTYPE html>
 <html class="<?=((!isset($_SESSION['user']) || $_SESSION['user']['access'] !=  5)? "connect" : "admin")?>">
 <head>
@@ -63,9 +41,9 @@
       <ul>
         <li><a href="/admin/main-banner"><span class="icon-window"></span>Баннер на головній</a><span class="hov-animation"></span></li>
         <li><a href="/admin/catalog"><span class="icon-content"></span>Продукція</a><span class="hov-animation"></span></li>
+        <li><a href="/admin/call-me/"><span class="icon-academic"></span>Зворотній зв'язок</a><span class="hov-animation"></span></li>
         <li><a href="/admin/main-module"><span class="icon-settings"></span>Настройки</a><span class="hov-animation"></span></li>
-        <?/*<li><a href="/admin/academic"><span class="icon-academic"></span>Викладачі</a><span class="hov-animation"></span></li>
-        <li><a href="/admin/call_me"><span class="icon-form"></span>Зв'язатись з нами</a><span class="hov-animation"></span></li>
+        <?/*<li><a href="/admin/call_me"><span class="icon-form"></span>Зв'язатись з нами</a><span class="hov-animation"></span></li>
         <li><a href="/admin/news"><span class="icon-news"></span>Новини</a><span class="hov-animation"></span></li>*/?>
       </ul>
     </div>

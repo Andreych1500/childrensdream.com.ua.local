@@ -20,7 +20,8 @@ if(isset($_POST['ok'])){
 		    `meta_description_ua` = '".mres($_POST['meta_description_ua'])."',
 		    `meta_title_ru`       = '".mres($_POST['meta_title_ru'])."',
 		    `meta_keywords_ru`    = '".mres($_POST['meta_keywords_ru'])."',
-		    `meta_description_ru` = '".mres($_POST['meta_description_ru'])."'
+		    `meta_description_ru` = '".mres($_POST['meta_description_ru'])."',
+		    `user_custom`         = '".mres($_SESSION['user']['FIO'])."'
 			 WHERE `id`    = ".(int)$_GET['id']."
 		");
 
