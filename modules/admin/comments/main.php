@@ -77,8 +77,7 @@ if(isset($_POST['cat']) && in_array($_POST['cat'],array(0,1,5)) && isset($_POST[
     }
 } else {
     $comments = q("
-        SELECT *,
-        DATE_FORMAT(`date_create`,'%d-%m-%Y  %H:%i:%s') AS `date_create`
+        SELECT *
         FROM `comments`
         ORDER BY `id` DESC
     ");

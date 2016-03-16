@@ -72,9 +72,7 @@ if(isset($_POST['deactive']) && isset($_POST['ids'])){
 // --- GET ALL ELEMENT ---
 
 $main_banner = q("
-    SELECT *,
-    DATE_FORMAT(`date_create`,'%d-%m-%Y  %H:%i:%s') AS `date_create`,
-    DATE_FORMAT(`date_custom`,'%d-%m-%Y  %H:%i:%s') AS `date_custom`
+    SELECT *
     FROM `main_banner`
     ORDER BY `sort` DESC, `id` DESC
 ");

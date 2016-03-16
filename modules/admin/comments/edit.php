@@ -34,8 +34,7 @@ if(isset($_POST['ok'])){
 // --- GET ELEMENT ---
 
 $comments = q("
-    SELECT *,
-    DATE_FORMAT(`date_create`,'%d-%m-%Y  %H:%i:%s') AS `date_create`
+    SELECT *
     FROM `comments`
     WHERE `id` = '".(int)$_GET['id']."'
     LIMIT 1

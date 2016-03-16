@@ -60,8 +60,7 @@ if(isset($_POST['deactive']) && isset($_POST['ids'])){
 // --- GET ALL ELEMENT ---
 
 $call_me = q("
-    SELECT *,
-    DATE_FORMAT(`date_create`,'%d-%m-%Y  %H:%i:%s') AS `date_create`
+    SELECT *
     FROM `call_me`
     ORDER BY `id` DESC
 ");

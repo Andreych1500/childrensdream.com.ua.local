@@ -20,8 +20,8 @@ if (isset($_COOKIE['items'])) {
 
     $ids = implode(',',$ids);
 
-    $res = q("
-        SELECT id, name_ua, name_ru, price, anons_photo
+    $order = q("
+        SELECT id, name_ua, name_ru, price, cAnonsPhoto
         FROM `catalog`
         WHERE `id` IN (".$ids.")
     ");
@@ -32,7 +32,7 @@ if (isset($_COOKIE['items'])) {
     // --- ARRAY INFO GOODS ---
 
     $all_goods_price = 0;
-    while($row = $res->fetch_assoc()){
+    while($row = $order->fetch_assoc()){
         $row['all_price'] =  (isset($_POST['count'][$row['id']])? $_POST['count'][$row['id']] : '1') * $row['price'];
         $goods[] = $row;
         $all_goods_price = $all_goods_price + $row['all_price'];
@@ -149,7 +149,6 @@ if (isset($_COOKIE['items'])) {
             Mail::Send();
 
             setcookie('items','',time()-16700000, '/');
-            $_SESSION['info'] = "Y";
             header("Location: ".$link_langs."order");
             exit();
         }
@@ -162,8 +161,3 @@ if (isset($_COOKIE['items'])) {
 }
 
 // --- END ORDER | BASKET ---
-
-if(isset($_SESSION['info'])){
-    $info = $_SESSION['info'];
-    unset($_SESSION['info']);
-}

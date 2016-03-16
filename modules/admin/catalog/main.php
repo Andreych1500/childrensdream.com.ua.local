@@ -72,9 +72,7 @@ if(isset($_POST['deactive']) && isset($_POST['ids'])){
 // --- ALL ELEMENT ---
 
 $catalog = q("
-    SELECT *,
-    DATE_FORMAT(`date_create`,'%d-%m-%Y  %H:%i:%s') AS `date_create`,
-    DATE_FORMAT(`date_custom`,'%d-%m-%Y  %H:%i:%s') AS `date_custom`
+    SELECT *
     FROM `catalog`
     ORDER BY `sort` DESC, `id` DESC
 ");
