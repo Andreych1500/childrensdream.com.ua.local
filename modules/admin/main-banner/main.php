@@ -69,7 +69,7 @@ if(isset($_POST['deactive']) && isset($_POST['ids'])){
 // --- END DEACTIVE ELEMENT ---
 
 
-// --- ALL ELEMENT ---
+// --- GET ALL ELEMENT ---
 
 $main_banner = q("
     SELECT *
@@ -77,4 +77,4 @@ $main_banner = q("
     ORDER BY `sort` DESC, `id` DESC
 ");
 
-// --- END ALL ELEMENT
+// --- END GET ALL ELEMENT
