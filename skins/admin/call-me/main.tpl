@@ -25,7 +25,7 @@
             <td>
               <span class="icon-mob-menu" onclick="openEdit(this);"></span>
               <div class="menu-edit">
-                <a href="/admin/call_me/view?id=<?=(int)$arResult['id']?>">
+                <a href="/admin/call-me/view?id=<?=(int)$arResult['id']?>">
                     <span class="icon-content"></span>
                     Відкрити
                 </a>
