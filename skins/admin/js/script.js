@@ -34,7 +34,7 @@ $(document).ready(function() {
 
     // --- edit el on double click ---
     $('.custom-content-form table tr:not(:first-child)').dblclick(function(){
-        document.location.href = $(this).find('.menu-edit a').attr('href');
+        document.location.href = $(this).find('.menu-edit a:first-child').attr('href');
     });
     // --- end edit el on double click ---
 

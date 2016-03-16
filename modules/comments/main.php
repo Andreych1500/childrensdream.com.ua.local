@@ -25,9 +25,9 @@ if(isset($_POST['name'], $_POST['text'], $_POST['email'])){
 			`name`  = '".mres($_POST['name'])."',
 			`text`  = '".mres($_POST['text'])."',
 			`email` = '".mres($_POST['email'])."',
-			`ip_user` = '".mres($_SERVER['REMOTE_ADDR'])."',
+			`user_ip` = '".mres($_SERVER['REMOTE_ADDR'])."',
 			`active` = 0,
-			`date`  = NOW()
+			`date_create`  = NOW()
 		");
 
 		echo json_encode(array('status' => 'ok'));

@@ -1,36 +1,50 @@
-<div class="commentview">
-    <?=((isset($info))? '<p class="h1">'.$info.'</p>' :  "");?>
-    <span class="line-silver"></span>
-    <div class="comment-list">
-      <form method="post" action="" onsubmit="return okFrom();">
-      <?php if($res->num_rows){ ?>
-          <?php while($row = $res->fetch_assoc()){ ?>
-            <div class="comment-item <?=(($row['active'] == 1)? 'grean' : 'red')?>">
-                <span>-<?=hsc($row['name']);?></span>
-                <span><?=hsc($row['date']);?></span>
-                <div class="text"><?=nl2br(hsc($row['text']));?></div>
-                <div class="editWindow">
-                    <a href="/admin/comments/edit/<?=(int)$row['id']?>">Редагувати</a>
-                    <input type="checkbox" name="ids[]" value="<?=(int)$row['id']?>">
+<div class="main-view-content">
+  <div class="custom-content-form">
+    <form action="" method="post" onsubmit="return okFrom();">
+        <div class="line-custom">
+            <input type="submit" value="Прочитаний" name="active">
+            <input type="submit" value="Непрочитаний" name="deactive">
+            <input type="submit" value="Видалити" name="delete">
+        </div>
+        <table>
+          <tr>
+            <td><input type="checkbox" name="all_cheked"></td>
+            <td></td>
+            <td>Показано</td>
+            <td>ФІО користувача</td>
+            <td>Id</td>
+            <td>e-mail</td>
+            <td>Дата відправки</td>
+            <td>Ip користувача</td>
+          </tr>
+          <?php while($arResult = $comments->fetch_assoc()){ ?>
+          <tr>
+            <td>
+                <input type="checkbox" name="ids[]" value="<?=$arResult['id']?>">
+            </td>
+            <td>
+                <span class="icon-mob-menu" onclick="openEdit(this);"></span>
+                <div class="menu-edit">
+                    <a href="/admin/comments/view?id=<?=(int)$arResult['id']?>">
+                        <span class="icon-content"></span>
+                        Відкрити
+                    </a>
+                    <a href="/admin/comments/edit?id=<?=(int)$arResult['id']?>">
+                        <span class="icon-content"></span>
+                        Змінити
+                    </a>
+                    <span class="delete icon-cross" onclick="deleteElement(<?=(int)$arResult['id']?>, this, '<?=Core::$DIR_PHOTOS_NAME['comments']?>')">Видалити</span>
                 </div>
-            </div>
-            <span class="line"><span></span></span>
+            </td>
+            <td><span class="<?=(($arResult['active'] == 0)? 'icon-cross' : 'icon-good')?>"></span></td>
+            <td><?=hsc($arResult['name'])?></td>
+            <td><?=(int)$arResult['id']?></td>
+            <td><?=hsc($arResult['email'])?></td>
+            <td><?=hsc($arResult['date_create'])?></td>
+            <td><?=hsc($arResult['user_ip'])?></td>
+          </tr>
           <?php } ?>
-      <?php } else { ?>
-            <div class="comment-item">
-                <p class="no-item"><?=$mess['NO_COMMENT']?></p>
-            </div>
-            <span class="line"><span></span></span>
-      <?php } ?>
-      <select name="cat">
-      <?php foreach(Core::$CAT_OTZUV as $key => $value){ ?>
-          <option <?=((!isset($_POST['cat']))? (($key == 5)? 'selected="selected"' : '') : (($_POST['cat'] == $key)? 'selected="selected"' : ''))?> value="<?=$key?>"><?=$value?></option>
-      <?php } ?>
-      </select>
-      <input type="submit" value="Фільтрувати" name="filter">
-      <input type="submit" value="Видалити" name="delete">
-      <input type="submit" value="Деактивувати" name="deactive">
-      <input type="submit" value="Активувати" name="active">
+        </table>
     </form>
   </div>
 </div>

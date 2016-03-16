@@ -1,5 +1,5 @@
 <?php
-// --- DELETE ELEMENT AND FILE ---
+// --- DELETE ELEMENT ---
 
 if(isset($_POST['delete']) && isset($_POST['ids'])){
 
@@ -13,7 +13,7 @@ if(isset($_POST['delete']) && isset($_POST['ids'])){
     exit();
 }
 
-// --- END DELETE ELEMENT AND FILE ---
+// --- END DELETE ELEMENT ---
 
 
 // --- ACTIVE ELEMENT ---
@@ -60,7 +60,8 @@ if(isset($_POST['deactive']) && isset($_POST['ids'])){
 // --- GET ALL ELEMENT ---
 
 $call_me = q("
-    SELECT *
+    SELECT *,
+    DATE_FORMAT(`date_create`,'%d-%m-%Y  %H:%i:%s') AS `date_create`
     FROM `call_me`
     ORDER BY `id` DESC
 ");

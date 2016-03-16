@@ -3,7 +3,8 @@
 // --- ALL MODULE ---
 
 $main_module = q("
-    SELECT *
+    SELECT *,
+    DATE_FORMAT(`date_custom`,'%d-%m-%Y  %H:%i:%s') AS `date_custom`
     FROM `pages`
     WHERE `dinamic-page` = 1
 ");

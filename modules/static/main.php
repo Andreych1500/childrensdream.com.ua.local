@@ -47,8 +47,8 @@ if(isset($_POST['ok'], $_POST['name'], $_POST['text'], $_POST['email'], $_POST['
                 `thems` = '" . mres($_POST['thems']) . "',
                 `email` = '" . mres($_POST['email']) . "',
                 `text`  = '" . mres($_POST['text']) . "',
-                `us_ip` = '" . mres($_SERVER['REMOTE_ADDR']) . "',
-                `date`  = NOW()
+                `user_ip` = '" . mres($_SERVER['REMOTE_ADDR']) . "',
+                `date_create`  = NOW()
             ");
 
             Mail::$to = 'cdmatrasses@gmail.com';

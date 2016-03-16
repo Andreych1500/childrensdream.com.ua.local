@@ -1,5 +1,6 @@
 <?php
-// видалення відгуків по флажках
+// --- DELETE ELEMENT ---
+
 if(isset($_POST['delete']) && isset($_POST['ids'])){
     foreach($_POST['ids'] as $k=>$v){
         $_POST['ids'][$k] = (int)$v;
@@ -10,12 +11,15 @@ if(isset($_POST['delete']) && isset($_POST['ids'])){
 		WHERE `id` IN (".$ids.")
 	");
 
-    $_SESSION['info'] = 'Відгуки успішно видалені!';
     header("Location: /admin/comments/");
     exit();
 }
 
-// active
+// --- END DELETE ELEMENT ---
+
+
+// --- ACTIVE ELEMENT ---
+
 if(isset($_POST['active']) && isset($_POST['ids'])){
     foreach($_POST['ids'] as $k=>$v){
         $_POST['ids'][$k] = (int)$v;
@@ -27,12 +31,15 @@ if(isset($_POST['active']) && isset($_POST['ids'])){
 		WHERE `id` IN (".$ids.")
 	");
 
-    $_SESSION['info'] = 'Відгуки успішно активовані!';
     header("Location: /admin/comments/");
     exit();
 }
 
-// deactivate
+// --- END ACTIVE ELEMENT ---
+
+
+// --- DEACTIVE ELEMENT ---
+
 if(isset($_POST['deactive']) && isset($_POST['ids'])){
     foreach($_POST['ids'] as $k=>$v){
         $_POST['ids'][$k] = (int)$v;
@@ -44,35 +51,38 @@ if(isset($_POST['deactive']) && isset($_POST['ids'])){
 		WHERE `id` IN (".$ids.")
 	");
 
-    $_SESSION['info'] = 'Відгуки успішно деактивовані!';
     header("Location: /admin/comments/");
     exit();
 }
 
+// --- END DEACTIVE ELEMENT ---
+
+
+
 //new massage deactive
-$new_massage = q("
-	SELECT `id`
-	FROM `comments`
-	WHERE `new_massage` = 1
-	LIMIT 1
-");
+//$comments = q("
+//	SELECT `id`
+//	FROM `comments`
+//	WHERE `new_massage` = 1
+//	LIMIT 1
+//");
 
-if($new_massage->num_rows > 0){
-    q("
-		UPDATE `comments` SET
-		`new_massage` = 0
-		WHERE `new_massage` = 1
-	");
-}
+//if($new_massage->num_rows > 0){
+//    q("
+//		UPDATE `comments` SET
+//		`new_massage` = 0
+//		WHERE `new_massage` = 1
+//	");
+//}
 
-//filter
+// --- GET ALL ELEMENT OR FILTER---
 
 if(isset($_POST['cat']) && in_array($_POST['cat'],array(0,1,5)) && isset($_POST['filter'])){
     if($_POST['cat'] == 5){
         $_POST['cat'] = '0,1';
     }
 
-    $res = q("
+    $comments = q("
         SELECT *
         FROM `comments`
 	    WHERE `active` IN (".$_POST['cat'].")
@@ -82,16 +92,13 @@ if(isset($_POST['cat']) && in_array($_POST['cat'],array(0,1,5)) && isset($_POST[
     if($_POST['cat'] == '0,1'){
         $_POST['cat'] = 5;
     }
-} else{
-    $res = q("
-        SELECT *
+} else {
+    $comments = q("
+        SELECT *,
+        DATE_FORMAT(`date_create`,'%d-%m-%Y  %H:%i:%s') AS `date_create`
         FROM `comments`
         ORDER BY `id` DESC
     ");
 }
 
-
-if(isset($_SESSION['info'])){
-    $info = $_SESSION['info'];
-    unset($_SESSION['info']);
-}
+// --- END GET ALL ELEMENT OR FILTER ---
