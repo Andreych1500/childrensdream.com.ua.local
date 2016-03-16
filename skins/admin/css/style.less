@@ -801,6 +801,22 @@ main{
           line-height: 34px;
         }
       }
+
+      .header-name{
+        border: none;
+        background-color: #e0e9ec;
+        color: #3f4b54;
+        display: inline-block;
+        font-family: @font-team3;
+        font-weight: bold;
+        font-size: 14px;
+        text-shadow: 0 1px rgba(255, 255, 255, 0.7);
+        position: relative;
+        vertical-align: middle;
+        text-align: center;
+        width: 100%;
+        .border-radius(4px);
+      }
     }
 
     form{
@@ -893,7 +909,8 @@ main{
           background-color: #fff;
           height: auto;
           width: auto;
-          left: -10px;
+          left: 50%;
+          margin-left: -27px;
           top: 45px;
 
           border: solid 1px #d5e1e4;
@@ -1142,7 +1159,7 @@ main{
           .input-value{
             &.input-seo{
               textarea{
-                height: 50px;
+                height: 65px;
                 width: 63%;
                 max-width: 63%;
               }
@@ -1201,7 +1218,7 @@ main{
               border: 1px solid #ccc;
               padding: 5px;
               width:100%;
-              max-width: 349px;
+              max-width: 368px;
               height: auto;
               top: 0;
               float: left;
@@ -1306,17 +1323,17 @@ main{
 
 @font-face {
   font-family: 'icomoon';
-  src: url('fonts/icomoon.eot?4jo34q');
-  src: url('fonts/icomoon.eot?4jo34q#iefix') format('embedded-opentype'),
-  url('fonts/icomoon.ttf?4jo34q') format('truetype'),
-  url('fonts/icomoon.woff?4jo34q') format('woff'),
-  url('fonts/icomoon.svg?4jo34q#icomoon') format('svg');
+  src: url('fonts/icomoon.eot?y71qlf');
+  src: url('fonts/icomoon.eot?y71qlf#iefix') format('embedded-opentype'),
+  url('fonts/icomoon.ttf?y71qlf') format('truetype'),
+  url('fonts/icomoon.woff?y71qlf') format('woff'),
+  url('fonts/icomoon.svg?y71qlf#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 
 [class^="icon-"], [class*=" icon-"] {
-  font-family: icomoon !important;
+  font-family: 'icomoon' !important;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -1326,56 +1343,58 @@ main{
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-good:before {
+.icon-settings:before {
   content: "\e900";
+}
+.icon-good:before {
+  content: "\e901";
   color:#00D808;
 }
 .icon-circle-left:before {
-  content: "\e901";
+  content: "\e902";
 }
 .icon-user-tie:before {
-  content: "\e902";
-  font-size: 12pt;
+  content: "\e903";
   left: 10px;
   top: 7px;
   height: 16px;
   position: absolute;
-  width: 16px;
+  width: 16px
 }
 .icon-window:before {
-  content: "\e903";
-}
-.icon-pictures:before {
   content: "\e904";
 }
-.icon-academic:before {
+.icon-pictures:before {
   content: "\e905";
 }
-.icon-content:before {
+.icon-academic:before {
   content: "\e906";
 }
-.icon-form:before {
+.icon-content:before {
   content: "\e907";
 }
-.icon-news:before {
+.icon-form:before {
   content: "\e908";
 }
-.icon-plus:before {
+.icon-news:before {
   content: "\e909";
 }
-.icon-link:before {
+.icon-plus:before {
   content: "\e90a";
+}
+.icon-link:before {
+  content: "\e90b";
   left: -5px;
   top: 1px;
   position: relative;
 }
 .icon-mob-menu:before {
-  content: "\e90b";
+  content: "\e90c";
   font-size: 16px;
   color: #95A0A6;
   cursor: pointer;
 }
 .icon-cross:before {
-  content: "\e90c";
+  content: "\e90d";
   color:red;
 }
