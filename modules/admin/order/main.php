@@ -1,5 +1,6 @@
 <?php
-// видалення замовлення по флажках
+// --- DELETE ELEMENT ---
+
 if(isset($_POST['delete']) && isset($_POST['ids'])){
     foreach($_POST['ids'] as $k=>$v){
         $_POST['ids'][$k] = (int)$v;
@@ -10,12 +11,15 @@ if(isset($_POST['delete']) && isset($_POST['ids'])){
 		WHERE `id` IN (".$ids.")
 	");
 
-    $_SESSION['info'] = 'Замовлення успішно видалені!';
     header("Location: /admin/order/");
     exit();
 }
 
-// active
+// --- END DELETE ELEMENT ---
+
+
+// --- ACTIVE ELEMENT ---
+
 if(isset($_POST['active']) && isset($_POST['ids'])){
     foreach($_POST['ids'] as $k=>$v){
         $_POST['ids'][$k] = (int)$v;
@@ -27,12 +31,15 @@ if(isset($_POST['active']) && isset($_POST['ids'])){
 		WHERE `id` IN (".$ids.")
 	");
 
-    $_SESSION['info'] = 'Замовлення успішно куплене!';
     header("Location: /admin/order/");
     exit();
 }
 
-// deactivate
+// --- END ACTIVE ELEMENT ---
+
+
+// --- DEACTIVE ELEMENT ---
+
 if(isset($_POST['deactive']) && isset($_POST['ids'])){
     foreach($_POST['ids'] as $k=>$v){
         $_POST['ids'][$k] = (int)$v;
@@ -44,18 +51,19 @@ if(isset($_POST['deactive']) && isset($_POST['ids'])){
 		WHERE `id` IN (".$ids.")
 	");
 
-    $_SESSION['info'] = 'Замовлення успішно відкладене!';
     header("Location: /admin/order/");
     exit();
 }
 
-$res = q("
+// --- END DEACTIVE ELEMENT ---
+
+
+// --- GET ALL ELEMENT ---
+
+$order = q("
     SELECT *
     FROM `order`
     ORDER BY `id` DESC
 ");
 
-if(isset($_SESSION['info'])){
-    $info = $_SESSION['info'];
-    unset($_SESSION['info']);
-}
+// --- END GET ALL ELEMENT ---

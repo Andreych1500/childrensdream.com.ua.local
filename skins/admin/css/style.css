@@ -1529,8 +1529,8 @@ main .add-content .add-block-form form .spec-list .st-text {
 }
 @font-face {
   font-family: 'icomoon';
-  src: url('fonts/icomoon.eot?y71qlf');
-  src: url('fonts/icomoon.eot?y71qlf#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?y71qlf') format('truetype'), url('fonts/icomoon.woff?y71qlf') format('woff'), url('fonts/icomoon.svg?y71qlf#icomoon') format('svg');
+  src: url('fonts/icomoon.eot?zfyaua');
+  src: url('fonts/icomoon.eot?zfyaua#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?zfyaua') format('truetype'), url('fonts/icomoon.woff?zfyaua') format('woff'), url('fonts/icomoon.svg?zfyaua#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -1547,6 +1547,9 @@ main .add-content .add-block-form form .spec-list .st-text {
 }
 .icon-settings:before {
   content: "\e900";
+}
+.icon-truck:before {
+  content: "\e90e";
 }
 .icon-good:before {
   content: "\e901";
