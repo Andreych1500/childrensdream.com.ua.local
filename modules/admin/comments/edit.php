@@ -1,18 +1,18 @@
-<?php 
-// редагування відгука
+<?php
+// --- EDIT COMMENTS ---
 
-if(isset($_POST['ok'],$_POST['text'],$_POST['name'],$_POST['email'])){
+if(isset($_POST['ok'])){
 	$_POST = trimAll($_POST);
 	$errors = array();
 	
 	if(empty($_POST['name'])){
-		$errors['name'] = 'Ви незаповнили ім\'я!';
+		$errors['name'] = 'errors';
 	}
 	if(empty($_POST['text'])){
-		$errors['text'] = 'Ви незаповнили текс!';
+		$errors['text'] = 'errors';
 	}
 	if(empty($_POST['email']) || !filter_var($_POST['email'],FILTER_VALIDATE_EMAIL)){
-		$errors['email'] = 'Заповніть коректно email!';
+		$errors['email'] = 'errors';
 	}
 	
 	if(!count($errors)){
@@ -20,25 +20,32 @@ if(isset($_POST['ok'],$_POST['text'],$_POST['name'],$_POST['email'])){
 			`name`      = '".mres($_POST['name'])."',
 			`email`     = '".mres($_POST['email'])."',
 			`text`      = '".mres($_POST['text'])."'
-			 WHERE `id` = ".(int)$_GET['key2']."
+			 WHERE `id` = ".(int)$_GET['id']."
 		");
-		$_SESSION['info'] = 'Зміни  провели успішно!';
+
 		header("Location: /admin/comments/");
 		exit();
 	}
 }
 
-// перевірка чи існує коментар
-$comment = q("
-	SELECT *
-	FROM `comments`
-	WHERE `id` = ".(int)$_GET['key2']."
-	LIMIT 1
+// --- END EDIT COMMENTS ---
+
+
+// --- GET ELEMENT ---
+
+$comments = q("
+    SELECT *,
+    DATE_FORMAT(`date_create`,'%d-%m-%Y  %H:%i:%s') AS `date_create`
+    FROM `comments`
+    WHERE `id` = '".(int)$_GET['id']."'
+    LIMIT 1
 ");
 
-if(!$comment->num_rows){
-	$_SESSION['info'] = 'Відгуку не знайдено!';
-	header("Location: /admin/comments");
+if($comments->num_rows){
+	$row = $comments->fetch_assoc();
+} else {
+	header("Location: /admin/comments/");
 	exit();
 }
-$row = $comment->fetch_assoc();
+
+// --- END GET ELEMENT ---

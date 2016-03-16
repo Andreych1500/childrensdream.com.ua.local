@@ -1,6 +1,6 @@
 <?php
-
 // --- EDIT MODULE ---
+
 if(isset($_POST['ok'])){
     $_POST = trimAll($_POST);
     $errors = array();
@@ -30,6 +30,8 @@ if(isset($_POST['ok'])){
     }
 
 }
+
+// --- END EDIT MODULE ---
 
 
 // --- GET MODULE ---
