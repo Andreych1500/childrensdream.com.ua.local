@@ -1085,6 +1085,10 @@ main .add-content .add-element {
   position: relative;
   min-height: 25px;
 }
+main .add-content .date {
+  color: #B1B9BD;
+  font-size: 16px;
+}
 main .add-content .back-menu {
   float: right;
   background-color: #629ED2;
@@ -1526,6 +1530,35 @@ main .add-content .add-block-form form .spec-list .st-form span:first-child {
 main .add-content .add-block-form form .spec-list .st-text {
   font-family: 'Georgia, "Times New Roman", Times, serif';
   padding: 10px 20px;
+}
+main .add-content .add-block-form form .spec-list .line-goods {
+  background-color: #e0e8ea;
+  border-top: 11px solid #F5F9F9;
+  border-bottom: 11px solid #F5F9F9;
+  color: #4b6267;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 0 1px #fff;
+  padding: 8px 4px 10px;
+}
+main .add-content .add-block-form form .spec-list .order-table {
+  width: 100%;
+}
+main .add-content .add-block-form form .spec-list .order-table tr:first-child {
+  font-weight: bold;
+}
+main .add-content .add-block-form form .spec-list .order-table tr td {
+  text-align: center;
+}
+main .add-content .add-block-form form .spec-list .order-table tr td:nth-child(1) {
+  width: 40%;
+}
+main .add-content .add-block-form form .spec-list .order-table tr td ul {
+  list-style: none;
+}
+main .add-content .add-block-form form .spec-list .order-table tr td ul li {
+  min-height: 50px;
 }
 @font-face {
   font-family: 'icomoon';

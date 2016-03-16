@@ -1030,6 +1030,11 @@ main{
       min-height: 25px;
     }
 
+    .date{
+      color: #B1B9BD;
+      font-size: 16px;
+    }
+
     .back-menu{
       float:right;
       background-color: #629ED2;
@@ -1313,6 +1318,37 @@ main{
           .st-text{
             font-family: @font-team1;
             padding: 10px 20px;
+          }
+
+          .line-goods{
+            .header-line();
+          }
+
+          .order-table{
+            width:100%;
+
+            tr{
+
+              &:first-child{
+                font-weight: bold;
+              }
+
+              td{
+                text-align: center;
+
+                &:nth-child(1){
+                  width: 40%;
+                }
+
+                ul{
+                  list-style:none;
+
+                  li{
+                    min-height: 50px;
+                  }
+                }
+              }
+            }
           }
         }
       }

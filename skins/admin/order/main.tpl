@@ -15,7 +15,7 @@
             <td>Контактна особа</td>
             <td>Місто</td>
             <td>Ціна</td>
-            <td>Тип оплати</td>
+            <td>Дата замовлення</td>
             <td>Email</td>
         </tr>
         <?php while($arResult = $order->fetch_assoc()){ ?>
@@ -39,7 +39,7 @@
             <td><?=hsc($arResult['name'])?></td>
             <td><?=hsc($arResult['city'])?></td>
             <td><?=hsc($arResult['all_price'])?> грн.</td>
-            <td><?=hsc($arResult['delivery'])?></td>
+            <td><?=hsc($arResult['date_create'])?></td>
             <td><?=hsc($arResult['email'])?></td>
         </tr>
         <?php } ?>
