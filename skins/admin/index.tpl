@@ -41,10 +41,10 @@
       <ul>
         <li><a href="/admin/main-banner"><span class="icon-window"></span>Баннер на головній</a><span class="hov-animation"></span></li>
         <li><a href="/admin/catalog"><span class="icon-content"></span>Продукція</a><span class="hov-animation"></span></li>
-        <li><a href="/admin/call-me/"><span class="icon-academic"></span>Зворотній зв'язок</a><span class="hov-animation"></span></li>
+        <li><a href="/admin/call-me"><span class="icon-academic"></span>Зворотній зв'язок</a><span class="hov-animation"></span></li>
         <li><a href="/admin/main-module"><span class="icon-settings"></span>Настройки</a><span class="hov-animation"></span></li>
-        <?/*<li><a href="/admin/call_me"><span class="icon-form"></span>Зв'язатись з нами</a><span class="hov-animation"></span></li>
-        <li><a href="/admin/news"><span class="icon-news"></span>Новини</a><span class="hov-animation"></span></li>*/?>
+        <?/*<li><a href="/admin/comment"><span class="icon-form"></span>Зв'язатись з нами</a><span class="hov-animation"></span></li>
+        <li><a href="/admin/order"><span class="icon-news"></span>Новини</a><span class="hov-animation"></span></li>*/?>
       </ul>
     </div>
   <?php } ?>
