@@ -1,15 +1,15 @@
 $(document).ready(function() {
+
     if($('.slide-item').length > 1) {
         htmSlider();
     }
 
+    // --- animate to menu scrol ---
     $('.top-menu a[href*=#], .pushy-mob-menu a[href*=#]').bind("click", function(e){
         if($(this).attr('href').search( /ru/i ) == 1){
-            var temp = $(this).attr('href');
-            var anchor = temp.replace(/\/ru\//g, "");
+            var anchor = $(this).attr('href').replace(/\/ru\//g, "");
         } else {
-            var temp = $(this).attr('href');
-            var anchor = temp.replace(/\//g, "");
+            var anchor = $(this).attr('href').replace(/\//g, "");
         }
 
         var j = 35;
@@ -24,13 +24,14 @@ $(document).ready(function() {
         }, 1000);
         e.preventDefault();
     });
+    // --- end animate to menu scrol ---
+
 
     // resize slider
     var widthWindon = document.documentElement.clientWidth;
 
     if(widthWindon < '1024'){
         var slideWidth = $('.sliders-line').width();
-        var widthplus = 0;
 
         $('.sliders-line .slide-item').width(slideWidth);
     }
@@ -44,33 +45,22 @@ $(document).ready(function() {
 function resizeWidth(){
     var slideWrap = $('.slide-wrap');
     var slideWidth = $('.slide-list').width();
-    var widthplus = 0;
-    var widthWindon = document.documentElement.clientWidth;
-    return slideWrap.position().left - (slideWidth + widthplus);
+    return slideWrap.position().left - (slideWidth);
 }
 
 function htmSlider(){
-    /* обертка слайдера */
     var slideWrap = $('.slide-wrap');
-
-    /* кнопки вперед/назад */
     var nextLink = $('.next-slide');
     var prevLink = $('.prev-slide');
 
-    /* Проверка на анимацию */
     var is_animate = true;
 
-    /* ширина слайда с отступами */
     var slideWidth = $('.slide-list').width();
 
-    /* сброс міні бага */
-    var widthplus = 0;
-    var widthWindon = document.documentElement.clientWidth;
+    // --- animate slide ---
+    var scrollSlider = slideWrap.position().left - (slideWidth);
 
-    /* смещение слайдера */
-    var scrollSlider = slideWrap.position().left - (slideWidth + widthplus);
 
-    /* Клик следующий слайд */
     prevLink.click(function(){
         if(!slideWrap.is(':animated')) {
             slideWrap.animate({left: resizeWidth()}, 1500, function(){
@@ -83,7 +73,7 @@ function htmSlider(){
         }
     });
 
-    /* Клик на предыдующий слайд */
+
     nextLink.click(function(){
         if(!slideWrap.is(':animated')) {
             slideWrap
@@ -95,7 +85,7 @@ function htmSlider(){
         }
     });
 
-    /* Функция автоматической прокрутки слайдера */
+
     function autoplay(){
         slideWrap.animate({left: resizeWidth()}, 1500, function(){
             slideWrap
@@ -111,4 +101,5 @@ function htmSlider(){
     } else {
         clearInterval(timer);
     }
+    // --- end animate ---
 }

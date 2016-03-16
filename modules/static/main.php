@@ -33,7 +33,7 @@ if(isset($_POST['ok'], $_POST['name'], $_POST['text'], $_POST['email'], $_POST['
         $limit_access = q("
           SELECT *
           FROM `call_me`
-          WHERE `us_ip` = '".mres($_SERVER['REMOTE_ADDR'])."' AND `date` >= NOW() - INTERVAL 1 DAY
+          WHERE `user_ip` = '".mres($_SERVER['REMOTE_ADDR'])."' AND `date` >= NOW() - INTERVAL 1 DAY
           LIMIT 4
         ");
 
