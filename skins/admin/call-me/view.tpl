@@ -16,7 +16,7 @@
                 <span>Дата:</span>
                 <span><?=hsc($arResult['date_create'])?></span>
             </p>
-            <p class="st-text">Доброго Дня,<br><br><?=nl2br(hsc($arResult['thems']))?></p>
+            <p class="st-text">Доброго Дня,<br><br><?=nl2br(hsc($arResult['text']))?></p>
           </div>
         </form>
     </div>
