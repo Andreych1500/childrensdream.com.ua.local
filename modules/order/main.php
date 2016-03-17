@@ -21,7 +21,7 @@ if (isset($_COOKIE['items'])) {
     $ids = implode(',',$ids);
 
     $order = q("
-        SELECT id, name_ua, name_ru, price, cAnonsPhoto
+        SELECT `id`,`name_ua`,`name_ru`,`price`,`cAnonsPhoto`,`img_seo_alt_ua`,`img_seo_alt_ru`
         FROM `catalog`
         WHERE `id` IN (".$ids.")
     ");

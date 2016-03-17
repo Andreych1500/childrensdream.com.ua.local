@@ -18,7 +18,7 @@
             while($el = $catalog->fetch_assoc()){ ?>
                 <div class="el-item">
                     <div class="photos">
-                        <a href="<?=$link_langs?>catalog/<?=$el['seo_name']?>"><img src="<?=hsc($el['cAnonsPhoto'])?>" alt="<?=hsc($el['name_'.$lang])?>"></a>
+                        <a href="<?=$link_langs?>catalog/<?=$el['seo_name']?>"><img src="<?=hsc($el['cAnonsPhoto'])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>"></a>
                     </div>
                     <div class="desk-info">
                         <a href="<?=$link_langs?>catalog/<?=$el['seo_name']?>"><span><?=hsc($el['name_'.$lang])?></span></a>
@@ -45,13 +45,13 @@
       <div class="el-slider">
         <div class="slider-nav <?=((count($photos) > 3)? 'center-photo' : 'currenc')?>">
           <?php foreach($photos as $key => $value){ ?>
-              <div class="items-photo"><img src="<?=hsc($value[0])?>" alt="<?=hsc($el['name_'.$lang])?>"></div>
+              <div class="items-photo"><img src="<?=hsc($value[0])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>"></div>
           <?php } ?>
         </div>
 
         <div class="slider-for <?=((count($photos) > 3)? '' : 'good-top')?>">
           <?php foreach($photos as $key => $value){ ?>
-          <div class="item-photo"><img src="<?=hsc($value[0])?>" alt="<?=hsc($el['name_'.$lang])?>" title="<?=hsc($el['name_'.$lang])?>"></div>
+          <div class="item-photo"><img src="<?=hsc($value[0])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>" title="<?=hsc($el['name_'.$lang])?>"></div>
           <?php } ?>
         </div>
       </div>
@@ -88,7 +88,7 @@
         <div class="view-info">
             <div class="descript-text"><?=nl2br(hsc($el['text_'.$lang]))?></div>
             <div class="cirkl-photo">
-              <div><img src="<?=hsc($el['cCirklePhoto'])?>" alt="<?=hsc($el['name_'.$lang])?>" title="<?=hsc($el['name_'.$lang])?>"></div>
+              <div><img src="<?=hsc($el['cCirklePhoto'])?>" alt="<?=hsc($el['name_'.$lang])?>" title="<?=hsc($el['img_seo_alt_'.$lang])?>"></div>
             </div>
         </div>
       </div>

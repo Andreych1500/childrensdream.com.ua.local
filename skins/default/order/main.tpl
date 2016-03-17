@@ -14,7 +14,7 @@
           <table class="line-tab-goods">
           <?php foreach($goods as $key => $val){ ?>
               <tr>
-                <td><img src="<?=hsc($val['cAnonsPhoto'])?>" alt="<?=hsc($val['name_'.$lang])?>" title="<?=hsc($val['name_'.$lang])?>"></td>
+                <td><img src="<?=hsc($val['cAnonsPhoto'])?>" alt="<?=hsc($val['img_seo_alt_'.$lang])?>" title="<?=hsc($val['img_seo_alt_'.$lang])?>"></td>
                 <td>
                   <?=hsc($val['name_'.$lang])?>
                   <input type="hidden" name="names_el[]" value="<?=hsc($val['name_'.$lang])?>">
