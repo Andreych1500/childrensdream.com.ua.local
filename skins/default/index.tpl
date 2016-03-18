@@ -57,11 +57,6 @@
   <main><?=$content?></main>
 
   <footer>
-    <script src="/vendor/public/jquery/dist/jquery.min.js" defer></script>
-    <script src="/skins/default/js/index.js?v=1" defer></script>
-    <script src="/skins/default/js/script.js?v=1" defer></script>
-    <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
-
     <div class="item">
       <div class="footer-logo">
         <div  class="logo-img">
@@ -81,5 +76,9 @@
     </div>
   </footer>
 
+  <script src="/vendor/public/jquery/dist/jquery.min.js" defer></script>
+  <script src="/skins/default/js/index.js?v=1" defer></script>
+  <script src="/skins/default/js/script.js?v=1" defer></script>
+  <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
 </body>
 </html>
