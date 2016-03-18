@@ -148,6 +148,7 @@ if (isset($_COOKIE['items'])) {
 </html>';
             Mail::Send();
 
+            $_SESSION['info'] = 'Y';
             setcookie('items','',time()-16700000, '/');
             header("Location: ".$link_langs."order");
             exit();
@@ -161,3 +162,13 @@ if (isset($_COOKIE['items'])) {
 }
 
 // --- END ORDER | BASKET ---
+
+
+// --- INFORMATION SESSION ---
+
+if(isset($_SESSION['info'])){
+    $info = $_SESSION['info'];
+    unset($_SESSION['info']);
+}
+
+// --- END INFORMATION SESSION ---
