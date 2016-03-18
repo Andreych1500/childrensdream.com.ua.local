@@ -38,6 +38,12 @@ $(document).ready(function() {
     });
     // --- end edit el on double click ---
 
+
+    // --- open block new information ---
+    $('.new-info').unbind('click').click(function(){
+        $('.info-open-click').slideToggle( "normal");
+    });
+    // --- end open block new information ---
 });
 
 function okFrom(){

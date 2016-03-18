@@ -30,6 +30,25 @@
       <div class="left-panel">
         <a target="_blank" href="//<?=$_SERVER['HTTP_HOST']?>">Сайт</a>
         <a href="//<?=$_SERVER['HTTP_HOST']?>/admin">Адміністрування</a>
+
+        <!-- new info -->
+        <?php if(count($new_el) > 0){ ?>
+        <div class="new-info">
+          <span class="icon-info"></span>
+          <?=count($new_el)?>
+        </div>
+        <div class="info-open-click">
+          <div class="adm-informer-header">Нові сповіщення</div>
+          <?php foreach($new_el as $key => $value){ ?>
+          <div class="informer-item">
+            <span class="icon-<?=(($key == 'order')? "truck" : "form")?>"></span>
+            <a href="/admin/<?=$key?>/?editIfno=<?=$key?>"><?=$value?></a>
+          </div>
+          <?php } ?>
+        </div>
+        <?php } ?>
+        <!-- end new info -->
+
       </div>
       <div class="right-panel">
         <span class="icon-user-tie"><?=$_SESSION['user']['FIO']?></span>

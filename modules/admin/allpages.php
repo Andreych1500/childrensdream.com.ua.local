@@ -9,3 +9,44 @@ if(!isset($_SESSION['user']) || $_SESSION['user']['access'] !=  5){
 }
 
 // ---  END REDIRECT NO  ACCESS ---
+
+
+// --- NEW INFORMATION ---
+
+$new_order = q("
+	SELECT `id`
+	FROM `order`
+	WHERE `new_massage` = 1
+	LIMIT 1
+");
+
+$new_comments = q("
+	SELECT `id`
+	FROM `comments`
+	WHERE `new_massage` = 1
+	LIMIT 1
+");
+
+if($new_order->num_rows > 0){
+	$new_el['order'] = 'Новий заказ';
+}
+
+if($new_comments->num_rows > 0){
+	$new_el['comments'] = 'Новий відгук';
+}
+
+if(isset($_GET['editIfno'])){
+
+	if(in_array($_GET['editIfno'], array('order','comments'))){
+		q(" UPDATE `".$_GET['editIfno']."` SET
+			`new_massage` = 0
+		    WHERE `new_massage` = 1
+		");
+
+		header("Location: /admin/".$_GET['editIfno']);
+		exit();
+	}
+
+}
+
+// --- END NEW INFORMATION ---
