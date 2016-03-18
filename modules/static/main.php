@@ -110,3 +110,13 @@ $main_banner = q("
 ");
 
 // --- END ALL ELEMENT BANNER ---
+
+
+// --- INFORMATION SESSION ---
+
+if(isset($_SESSION['info'])){
+    $info = $_SESSION['info'];
+    unset($_SESSION['info']);
+}
+
+// --- END INFORMATION SESSION ---
