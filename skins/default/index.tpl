@@ -12,16 +12,22 @@
 
   <link href="/skins/<?=Core::$SKIN; ?>/css/style.css" rel="stylesheet">
   <?php if(count(Core::$CSS)){ echo implode("\n",Core::$CSS); } ?>
+
+  <!--[if lt IE 9]>
+  <noscript>
+    <strong>Warning !</strong>
+    Because your browser does not support HTML5, some elements are created using JavaScript.
+    Unfortunately your browser has disabled scripting. Please enable it in order to display this page.
+  </noscript>
+  <![endif]-->
 </head>
 
 <body>
   <header>
     <div class="item">
-      <div class="logo">
-        <a href="<?=$link_langs?>">
-          <img src="/skins/default/img/logo.png" alt="Children's Dream" title="Children's Dream">
-        </a>
-      </div>
+      <a class="logo" href="<?=$link_langs?>">
+        <img src="/skins/default/img/logo.png" alt="Children's Dream" title="Children's Dream">
+      </a>
       <div class="information">
         <p><?=$mess['CONTACT_INFO'];?><span> +38 (098) 570-43-77</span></p>
       </div>
@@ -29,7 +35,7 @@
         <a class="<?=(($link_langs == '/')? 'act-lang' : '')?>" href="/<?=Core::$SITE_DIR?>">UA</a>
         <a class="<?=(($link_langs == '/ru/')? 'act-lang' : '')?>" href="/ru/<?=Core::$SITE_DIR?>">RU</a>
       </div>
-      <div class="top-menu">
+      <nav class="top-menu">
         <ul>
           <li><a href="<?=$link_langs?>#about"><?=$mess['ABOUT_US']?></a></li>
           <li><a href="<?=$link_langs?>#catalog"><?=$mess['PRODUCTION']?></a></li>
@@ -39,7 +45,7 @@
           <li><a href="<?=$link_langs?>order"><?=$mess['BASKET']?> <span><?=(int)$countG?></span></a></li>
         </ul>
         <span class="menu-icon"></span>
-      </div>
+      </nav>
 
       <div class="mobile-basket">
         <a href="<?=$link_langs?>order"><?=$mess['BASKET']?> <span><?=(int)$countG?></span></a>
@@ -80,5 +86,17 @@
   <script src="/skins/default/js/index.js?v=1" defer></script>
   <script src="/skins/default/js/script.js?v=1" defer></script>
   <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
+  <!--[if lt IE 9]>
+  <script>
+    document.createElement("header");
+    document.createElement("footer");
+    document.createElement("section");
+    document.createElement("aside");
+    document.createElement("nav");
+    document.createElement("article");
+    document.createElement("hgroup");
+    document.createElement("time");
+  </script>
+  <![endif]-->
 </body>
 </html>

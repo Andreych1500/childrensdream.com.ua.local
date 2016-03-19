@@ -8,6 +8,15 @@
   src: url('font/myriad/MyriadProRegular.eot');
   src: url('font/myriad/MyriadProRegular.eot') format('embedded-opentype'), url('font/myriad/MyriadProRegular.woff2') format('woff2'), url('font/myriad/MyriadProRegular.woff') format('woff'), url('font/myriad/MyriadProRegular.ttf') format('truetype'), url('font/myriad/MyriadProRegular.svg#MyriadProRegular') format('svg');
 }
+section,
+article,
+aside,
+footer,
+header,
+nav,
+hgroup {
+  display: block;
+}
 .clearfix:before,
 .clearfix:after,
 header .item:before,
