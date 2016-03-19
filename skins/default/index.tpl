@@ -14,6 +14,7 @@
   <?php if(count(Core::$CSS)){ echo implode("\n",Core::$CSS); } ?>
 
   <!--[if lt IE 9]>
+  <script src="/skins/default/js/ielt9.js?v=1" defer></script>
   <noscript>
     <strong>Warning !</strong>
     Because your browser does not support HTML5, some elements are created using JavaScript.
@@ -86,8 +87,5 @@
   <script src="/skins/default/js/index.js?v=1" defer></script>
   <script src="/skins/default/js/script.js?v=1" defer></script>
   <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
-  <!--[if lt IE 9]>
-  <script src="/skins/default/js/ielt9.js?v=1" defer></script>
-  <![endif]-->
 </body>
 </html>
