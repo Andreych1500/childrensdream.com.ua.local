@@ -87,16 +87,7 @@
   <script src="/skins/default/js/script.js?v=1" defer></script>
   <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
   <!--[if lt IE 9]>
-  <script>
-    document.createElement("header");
-    document.createElement("footer");
-    document.createElement("section");
-    document.createElement("aside");
-    document.createElement("nav");
-    document.createElement("article");
-    document.createElement("hgroup");
-    document.createElement("time");
-  </script>
+  <script src="/skins/default/js/ielt9.js?v=1" defer></script>
   <![endif]-->
 </body>
 </html>
