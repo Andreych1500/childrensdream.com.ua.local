@@ -8,7 +8,7 @@
               <div class="text"><?=nl2br(hsc($row['text']));?></div>
               <div class="name-date">
                  <span><?=hsc($row['name']);?></span>
-                 <span><?=hsc($row['date']);?></span>
+                 <span><?=hsc($row['date_create']);?></span>
               </div>
             </div>
     <?php }
