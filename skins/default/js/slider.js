@@ -28,17 +28,11 @@ $(document).ready(function() {
 
 
     // resize slider
-    var widthWindon = document.documentElement.clientWidth;
-
-    if(widthWindon < '1024'){
-        var slideWidth = $('.sliders-line').width();
-
-        $('.sliders-line .slide-item').width(slideWidth);
-    }
-
     $(window).resize(function() {
         $('.sliders-line .slide-item').width($('.sliders-line').width());
     });
+
+    $(window).resize();
     // end resize slider
 });
 
