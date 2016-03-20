@@ -140,7 +140,7 @@ body {
   width: 100%;
   margin: 0 0 135px 0;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 540px) {
   body {
     margin: 0 0 170px 0;
   }
@@ -2175,7 +2175,7 @@ footer .item {
 footer .item .footer-logo {
   float: left;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 540px) {
   footer .item .footer-logo {
     width: 100%;
   }
@@ -2183,7 +2183,7 @@ footer .item .footer-logo {
 footer .item .footer-logo .logo-img {
   float: left;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 540px) {
   footer .item .footer-logo .logo-img {
     text-align: center;
     width: 39%;
@@ -2195,7 +2195,7 @@ footer .item .footer-logo .development-site {
   color: #482200;
   margin: 5px 0 0 15px;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 540px) {
   footer .item .footer-logo .development-site {
     text-align: center;
     width: 57%;
@@ -2205,7 +2205,7 @@ footer .item .footer-logo .development-site {
 footer .item .soc-link {
   float: right;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 540px) {
   footer .item .soc-link {
     width: 100%;
     text-align: center;
@@ -2218,7 +2218,7 @@ footer .item .soc-link p {
   margin-top: 20px;
   float: left;
 }
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 800px) {
   footer .item .soc-link p {
     text-align: center;
     float: none;
@@ -2231,7 +2231,7 @@ footer .item .soc-link a {
   float: left;
   display: block;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 540px) {
   footer .item .soc-link a {
     text-align: center;
     display: inline-block;
@@ -2251,16 +2251,15 @@ footer .item .soc-link a:hover {
 }
 @font-face {
   font-family: 'icomoon';
-  src: url('font/icomoon.eot?8ocpld');
-  src: url('font/icomoon.eot?8ocpld#iefix') format('embedded-opentype'), url('font/icomoon.ttf?8ocpld') format('truetype'), url('font/icomoon.woff?8ocpld') format('woff'), url('font/icomoon.svg?8ocpld#icomoon') format('svg');
+  src: url('font/icomoon.eot?dalanp');
+  src: url('font/icomoon.eot?dalanp#iefix') format('embedded-opentype'), url('font/icomoon.ttf?dalanp') format('truetype'), url('font/icomoon.woff?dalanp') format('woff'), url('font/icomoon.svg?dalanp#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
 [class^="icon-"],
 [class*=" icon-"] {
-  /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
-  /*speak: none;*/
+  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -2269,9 +2268,6 @@ footer .item .soc-link a:hover {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-.icon-basket:before {
-  content: "\e906";
 }
 .icon-left:before {
   content: "\e314";
@@ -2285,6 +2281,10 @@ footer .item .soc-link a:hover {
 .icon-bottom:before {
   content: "\e317";
 }
+.icon-facebook:before {
+  content: "\e900";
+  color: #3a589b;
+}
 .icon-vkontakte:before {
   content: "\e901";
   color: #4c75a3;
@@ -2292,10 +2292,6 @@ footer .item .soc-link a:hover {
 .icon-instagram:before {
   content: "\e902";
   color: #000000;
-}
-.icon-facebook:before {
-  content: "\e900";
-  color: #3a589b;
 }
 .icon-mob-menu:before {
   content: "\e903";
@@ -2307,6 +2303,17 @@ footer .item .soc-link a:hover {
 .icon-check-ok:before {
   content: "\e905";
   color: #00D808;
+}
+.icon-basket:before {
+  content: "\e906";
+}
+.icon-google-plus3:before {
+  content: "\e907";
+  font-size: 32pt;
+  color: #D0422A;
+  padding: 0 4px;
+  position: relative;
+  top: -4px;
 }
 /* Slick - Slider */
 .slick-slider {
