@@ -8,6 +8,24 @@ if(!isset($_SESSION['user']) || $_SESSION['user']['access'] !=  5){
 	}
 }
 
+if(isset($_COOKIE['authhash'],$_COOKIE['id'])){
+	$res = q("
+			SELECT *
+			FROM `users`
+			WHERE `hash` = '".mres($_COOKIE['authhash'])."'
+			  AND `id`   = ".(int)$_COOKIE['id']."
+			LIMIT 1
+	");
+
+	$auth = $res->fetch_assoc();
+
+	if($auth['user_ip'] == $_SERVER['REMOTE_ADDR'] && $auth['access'] == 5 && $res->num_rows){
+		$_SESSION['user'] = $auth;
+	} else {
+		include './modules/cab/exit.php';
+	}
+}
+
 // ---  END REDIRECT NO  ACCESS ---
 
 
