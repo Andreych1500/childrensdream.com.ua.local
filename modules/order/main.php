@@ -148,6 +148,13 @@ if (isset($_COOKIE['items'])) {
 </html>';
             Mail::Send();
 
+            // --- MAIL TO GEKA ---
+            Mail::$to = 'cdmatrasses@gmail.com';
+            Mail::$subject = 'Dvizhenya Renya у нас нове Замолення, УРАА!';
+            Mail::$text = '';
+            Mail::Send();
+            // --- END MAIL TO GEKA ---
+
             $_SESSION['info'] = 'Y';
             setcookie('items','',time()-16700000, '/');
             header("Location: ".$link_langs."order");
