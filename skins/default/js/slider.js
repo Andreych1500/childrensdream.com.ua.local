@@ -30,6 +30,8 @@ $(document).ready(function() {
     // resize slider
     $(window).resize(function() {
         $('.sliders-line .slide-item').width($('.sliders-line').width());
+
+        $('.slide-wrap').stop(true, false);
     });
 
     $(window).resize();
@@ -81,13 +83,15 @@ function htmSlider(){
 
 
     function autoplay(){
-        slideWrap.animate({left: resizeWidth()}, 1500, function(){
-            slideWrap
-                .find('.slide-item:first')
-                .appendTo(slideWrap)
-                .parent()
-                .css({'left': 0});
-        });
+        if(!slideWrap.is(':animated')) {
+            slideWrap.animate({left: resizeWidth()}, 1500, function () {
+                slideWrap
+                    .find('.slide-item:first')
+                    .appendTo(slideWrap)
+                    .parent()
+                    .css({'left': 0});
+            });
+        }
     }
 
     if(is_animate){
