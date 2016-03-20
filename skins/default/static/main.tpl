@@ -20,7 +20,6 @@
   </div>
 </div>
 
-
 <div class="staticText st-1" id="about">
   <div class="text-item">
     <div class="hText">
