@@ -1498,6 +1498,14 @@ main .position-width .otzuv {
   font-size: 22pt;
   font-family: ComicSansMS;
   margin-top: 20px;
+  font-weight: normal;
+  margin-bottom: 0;
+}
+main .position-width .otzuv + p {
+  color: #482200;
+  font-size: 14pt;
+  font-family: ComicSansMS;
+  margin-top: 10px;
 }
 main .position-width .no-item {
   font-family: MyriadPro;

@@ -1,6 +1,7 @@
 <div class="position-width">
   <div class="commentview">
-    <p class="otzuv"><?=$mess['COMMENTS']?></p>
+    <h3 class="otzuv"><?=$mess['COMMENTS']?></h3>
+    <p><?=$mess['YOUR_REVIEW']?></p>
     <div class="comment-list">
     <?php if($res->num_rows){
         while($row = $res->fetch_assoc()){ ?>
@@ -21,7 +22,7 @@
   </div>
 
   <div class="form-comment">
-    <p class="otzuv"><?=$mess['WORK_COMMENTS']?></p>
+    <h3 class="otzuv"><?=$mess['WORK_COMMENTS']?></h3>
     <div class="thanks"><?=$mess['THANKS'];?></div>
     <div class="hack-error"><?=$mess['HACK_ERROR']?></div>
     <form action="#" method="post" onsubmit="return checkForm('.form-comment', 'form-comment');">
