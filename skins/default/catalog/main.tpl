@@ -58,7 +58,7 @@
       <?php } ?>
 
       <div class="el-text <?=(!isset($photos)? 'good-view' : '')?>">
-        <p class="name-el"><?=hsc($el['name_'.$lang])?></p>
+        <h1 class="name-el"><?=hsc($el['name_'.$lang])?></h1>
         <p class="aviability">
           <span class="<?=(((int)$el['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
           <span><?=(((int)$el['availability'] == 1)? $mess['AVIABILITY'] : $mess['NOAVIABILITY'])?></span>
