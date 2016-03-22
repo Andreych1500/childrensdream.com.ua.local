@@ -46,7 +46,7 @@
   </div>
 </div>
 
-<div class="catalog st-1" id="catalog">
+<div class="catalog st-1">
   <div class="text-item">
     <div class="hText">
       <table>
