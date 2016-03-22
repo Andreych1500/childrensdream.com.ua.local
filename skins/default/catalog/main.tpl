@@ -1,12 +1,12 @@
 <?php if($_GET['page'] == 'main'){ ?>
 
-  <div class="catalog st-1" id="catalog">
+  <div class="catalog st-1">
     <div class="text-item">
         <div class="hText">
             <table>
                 <tr>
                     <td><span class="line"></span></td>
-                    <td><span><?=$mess['CATALOG'];?></span></td>
+                    <td><h1><?=$mess['DETSKIE_MATRACI'];?></h1></td>
                     <td><span class="line"></span></td>
                 </tr>
             </table>

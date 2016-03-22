@@ -1,6 +1,7 @@
 <?php
 // catalog
 $mess['CATALOG'] = 'Продукция';
+$mess['DETSKIE_MATRACI'] = 'Детские матрасы';
 $mess['NO_ELEMETN'] = 'Продукция отсутствует';
 $mess['PRICE'] = 'грн.';
 $mess['AVIABILITY']   = 'В наличии';

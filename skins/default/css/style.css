@@ -105,7 +105,10 @@ td,
 header,
 html,
 .slide-list,
-.slide-wrap {
+.slide-wrap,
+h1,
+h2,
+h3 {
   position: relative;
   margin: 0;
   padding: 0;
@@ -1160,6 +1163,9 @@ main .catalog .catalog-list .el-item .desk-info .aviability {
   main .catalog.st-1 table tr td:nth-child(2) {
     width: 50%;
   }
+}
+main .catalog.st-1 table tr td h1 {
+  font-size: 24pt;
 }
 main .call-me {
   margin: 0 auto;
