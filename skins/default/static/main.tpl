@@ -52,7 +52,7 @@
       <table>
         <tr>
           <td><span class="line"></span></td>
-          <td><span><?=$mess['CATALOG'];?></span></td>
+          <td><span><?=$mess['DETSKIE_MATRACI'];?></span></td>
           <td><span class="line"></span></td>
         </tr>
       </table>
