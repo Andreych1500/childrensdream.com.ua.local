@@ -16,7 +16,7 @@
   <!--[if lt IE 9]>
   <script src="/skins/default/js/ielt9.js?v=1" defer></script>
   <![endif]-->
-  
+
   <script src="/vendor/public/jquery/dist/jquery.min.js" defer></script>
   <script src="/skins/default/js/index.js?v=1" defer></script>
   <script src="/skins/default/js/script.js?v=1" defer></script>

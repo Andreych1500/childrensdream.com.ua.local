@@ -1,15 +1,15 @@
 <?php
 	session_start();
 	$string = "";
-	for ($i = 0; $i < 5; $i++)
+	for ($i = 0; $i < 5; $i++) {
 		$string .= chr(rand(97, 122));
-	
+	}
+
 	$_SESSION['rand_code'] = $string;
 
 	$dir = "fonts/";
 
-	$image = imagecreatetruecolor(170, 60);
-	$black = imagecolorallocate($image, 0, 0, 0);
+	$image = imagecreate(170, 60);
 	$color = imagecolorallocate($image, 200, 100, 90);
 	$white = imagecolorallocate($image, 255, 255, 255);
 
@@ -18,4 +18,3 @@
 
 	header("Content-type: image/png");
 	imagepng($image, NULL, 9, PNG_NO_FILTER);
-?>
