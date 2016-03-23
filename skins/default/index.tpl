@@ -15,12 +15,12 @@
 
   <!--[if lt IE 9]>
   <script src="/skins/default/js/ielt9.js?v=1" defer></script>
-  <noscript>
-    <strong>Warning !</strong>
-    Because your browser does not support HTML5, some elements are created using JavaScript.
-    Unfortunately your browser has disabled scripting. Please enable it in order to display this page.
-  </noscript>
   <![endif]-->
+  
+  <script src="/vendor/public/jquery/dist/jquery.min.js" defer></script>
+  <script src="/skins/default/js/index.js?v=1" defer></script>
+  <script src="/skins/default/js/script.js?v=1" defer></script>
+  <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
 </head>
 
 <body>
@@ -83,10 +83,5 @@
       </div>
     </div>
   </footer>
-
-  <script src="/vendor/public/jquery/dist/jquery.min.js" defer></script>
-  <script src="/skins/default/js/index.js?v=1" defer></script>
-  <script src="/skins/default/js/script.js?v=1" defer></script>
-  <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
 </body>
 </html>
