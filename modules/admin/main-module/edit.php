@@ -14,13 +14,15 @@ if(isset($_POST['ok'])){
     if(empty($_POST['meta_description_ru'])){ $_POST['meta_description_ru'] = ''; }
 
     if(!count($errors)){
+        $_POST = mres($_POST);
+
         q(" UPDATE `pages` SET
-		    `meta_title_ua`       = '".mres($_POST['meta_title_ua'])."',
-		    `meta_keywords_ua`    = '".mres($_POST['meta_keywords_ua'])."',
-		    `meta_description_ua` = '".mres($_POST['meta_description_ua'])."',
-		    `meta_title_ru`       = '".mres($_POST['meta_title_ru'])."',
-		    `meta_keywords_ru`    = '".mres($_POST['meta_keywords_ru'])."',
-		    `meta_description_ru` = '".mres($_POST['meta_description_ru'])."',
+		    `meta_title_ua`       = '".$_POST['meta_title_ua']."',
+		    `meta_keywords_ua`    = '".$_POST['meta_keywords_ua']."',
+		    `meta_description_ua` = '".$_POST['meta_description_ua']."',
+		    `meta_title_ru`       = '".$_POST['meta_title_ru']."',
+		    `meta_keywords_ru`    = '".$_POST['meta_keywords_ru']."',
+		    `meta_description_ru` = '".$_POST['meta_description_ru']."',
 		    `user_custom`         = '".mres($_SESSION['user']['FIO'])."'
 			 WHERE `id`    = ".(int)$_GET['id']."
 		");

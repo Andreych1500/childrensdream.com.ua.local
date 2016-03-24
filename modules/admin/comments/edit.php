@@ -16,10 +16,12 @@ if(isset($_POST['ok'])){
 	}
 	
 	if(!count($errors)){
+		$_POST = mres($_POST);
+
 		q(" UPDATE `comments` SET
-			`name`      = '".mres($_POST['name'])."',
-			`email`     = '".mres($_POST['email'])."',
-			`text`      = '".mres($_POST['text'])."'
+			`name`      = '".$_POST['name']."',
+			`email`     = '".$_POST['email']."',
+			`text`      = '".$_POST['text']."'
 			 WHERE `id` = ".(int)$_GET['id']."
 		");
 

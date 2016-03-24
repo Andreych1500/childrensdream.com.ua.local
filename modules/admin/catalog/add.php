@@ -3,6 +3,7 @@ Core::$JS[] = '<script src="/skins/admin/js/addPhoto.js?v=1"></script>';
 
 // --- ADD ELEMENT ---
 
+
 if(isset($_POST['ok'])){
 	$_POST = trimAll($_POST);
 	$errors = array();
@@ -102,46 +103,48 @@ if(isset($_POST['ok'])){
 	// --- END FUNCTION IMAGE ---
 
 	if(!count($errors)){
+		$_POST = mres($_POST);
+
 		q(" INSERT INTO `catalog` SET
  			`sort`                = '".(int)$_POST['sort']."',
-		    `name_ua`             = '".mres($_POST['name_ua'])."',
-		    `name_ru`             = '".mres($_POST['name_ru'])."',
+		    `name_ua`             = '".$_POST['name_ua']."',
+		    `name_ru`             = '".$_POST['name_ru']."',
 		    `price`               = '".(int)$_POST['price']."',
-		    `form_ua`             = '".mres($_POST['form_ua'])."',
-		    `form_ru`             = '".mres($_POST['form_ru'])."',
-			`type_ua`             = '".mres($_POST['type_ua'])."',
-			`type_ru`             = '".mres($_POST['type_ru'])."',
-			`size`                = '".mres($_POST['size'])."',
+		    `form_ua`             = '".$_POST['form_ua']."',
+		    `form_ru`             = '".$_POST['form_ru']."',
+			`type_ua`             = '".$_POST['type_ua']."',
+			`type_ru`             = '".$_POST['type_ru']."',
+			`size`                = '".$_POST['size']."',
 			`weight`              = '".(int)$_POST['weight']."',
 			`height`              = '".(int)$_POST['height']."',
-			`rigidity_ua`		  = '".mres($_POST['rigidity_ua'])."',
-			`rigidity_ru`	      = '".mres($_POST['rigidity_ru'])."',
+			`rigidity_ua`		  = '".$_POST['rigidity_ua']."',
+			`rigidity_ru`	      = '".$_POST['rigidity_ru']."',
 			`anatoming`           = '".(int)$_POST['anatoming']."',
 			`ortopeding`          = '".(int)$_POST['ortopeding']."',
-			`description_ua`      = '".mres($_POST['description_ua'])."',
-			`description_ru`      = '".mres($_POST['description_ru'])."',
-			`text_ua`             = '".mres($_POST['text_ua'])."',
-			`text_ru`             = '".mres($_POST['text_ru'])."',
+			`description_ua`      = '".$_POST['description_ua']."',
+			`description_ru`      = '".$_POST['description_ru']."',
+			`text_ua`             = '".$_POST['text_ua']."',
+			`text_ru`             = '".$_POST['text_ru']."',
 			`active`              = '".(int)$_POST['active']."',
 			`garanty`             = '".(int)$_POST['garanty']."',
 		    `availability`        = '".(int)$_POST['availability']."',
 
-		    `cAnonsPhoto`         = '".mres($cAnonsPhoto[0])."',
-			`cCirklePhoto`        = '".mres($cCirklePhoto[0])."',
-			`cMorePhoto`          = '".mres($addcMorePhoto)."',
+		    `cAnonsPhoto`         = '".$cAnonsPhoto[0]."',
+			`cCirklePhoto`        = '".$cCirklePhoto[0]."',
+			`cMorePhoto`          = '".$addcMorePhoto."',
 
-		    `seo_name`            = '".mres($_POST['seo_name'])."',
-		    `meta_title_ua`       = '".mres($_POST['meta_title_ua'])."',
-		    `meta_keywords_ua`    = '".mres($_POST['meta_keywords_ua'])."',
-		    `meta_description_ua` = '".mres($_POST['meta_description_ua'])."',
-		    `meta_title_ru`       = '".mres($_POST['meta_title_ru'])."',
-		    `meta_keywords_ru`    = '".mres($_POST['meta_keywords_ru'])."',
-		    `meta_description_ru` = '".mres($_POST['meta_description_ru'])."',
+		    `seo_name`            = '".$_POST['seo_name']."',
+		    `meta_title_ua`       = '".$_POST['meta_title_ua']."',
+		    `meta_keywords_ua`    = '".$_POST['meta_keywords_ua']."',
+		    `meta_description_ua` = '".$_POST['meta_description_ua']."',
+		    `meta_title_ru`       = '".$_POST['meta_title_ru']."',
+		    `meta_keywords_ru`    = '".$_POST['meta_keywords_ru']."',
+		    `meta_description_ru` = '".$_POST['meta_description_ru']."',
 
-			`img_seo_title_ua`    = '".mres($_POST['img_seo_title_ua'])."',
- 			`img_seo_title_ru`    = '".mres($_POST['img_seo_title_ru'])."',
- 			`img_seo_alt_ua`      = '".mres($_POST['img_seo_alt_ua'])."',
- 			`img_seo_alt_ru`      = '".mres($_POST['img_seo_alt_ru'])."',
+			`img_seo_title_ua`    = '".$_POST['img_seo_title_ua']."',
+ 			`img_seo_title_ru`    = '".$_POST['img_seo_title_ru']."',
+ 			`img_seo_alt_ua`      = '".$_POST['img_seo_alt_ua']."',
+ 			`img_seo_alt_ru`      = '".$_POST['img_seo_alt_ru']."',
  			`user_custom`         = '".mres($_SESSION['user']['FIO'])."',
 			`date_create`         = NOW()
 		");

@@ -20,11 +20,12 @@ if(isset($_POST['name'], $_POST['text'], $_POST['email'])){
 	}
 
 	if(!count($errors)){
+		$_POST = mres($_POST);
 
 		q(" INSERT INTO `comments` SET
-			`name`  = '".mres($_POST['name'])."',
-			`text`  = '".mres($_POST['text'])."',
-			`email` = '".mres($_POST['email'])."',
+			`name`  = '".$_POST['name']."',
+			`text`  = '".$_POST['text']."',
+			`email` = '".$_POST['email']."',
 			`user_ip` = '".mres($_SERVER['REMOTE_ADDR'])."',
 			`active` = 0,
 			`date_create`  = NOW()

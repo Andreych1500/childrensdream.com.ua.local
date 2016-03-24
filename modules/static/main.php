@@ -42,12 +42,14 @@ if(isset($_POST['ok'], $_POST['name'], $_POST['text'], $_POST['email'], $_POST['
         }
 
         if(!count($next_error)) {
+            $_POST = mres($_POST);
+
             q(" INSERT INTO `call_me` SET
-                `name`  = '" . mres($_POST['name']) . "',
-                `thems` = '" . mres($_POST['thems']) . "',
-                `email` = '" . mres($_POST['email']) . "',
-                `text`  = '" . mres($_POST['text']) . "',
-                `user_ip` = '" . mres($_SERVER['REMOTE_ADDR']) . "',
+                `name`  = '".$_POST['name']."',
+                `thems` = '".$_POST['thems']."',
+                `email` = '".$_POST['email']."',
+                `text`  = '".$_POST['text']."',
+                `user_ip` = '".mres($_SERVER['REMOTE_ADDR'])."',
                 `date_create`  = NOW()
             ");
 
@@ -63,10 +65,10 @@ if(isset($_POST['ok'], $_POST['name'], $_POST['text'], $_POST['email'], $_POST['
 </div>
 <hr>
 <div>
-Тема: '.mres($_POST['thems']).'  <br>
-Відправник: '.mres($_POST['email']).' <br>
-П.І.П: '.mres($_POST['name']).' <br>
-Текст: '.mres($_POST['text']).'
+Тема: '.$_POST['thems'].'  <br>
+Відправник: '.$_POST['email'].' <br>
+П.І.П: '.$_POST['name'].' <br>
+Текст: '.$_POST['text'].'
 </div>
 <hr>
 <div>

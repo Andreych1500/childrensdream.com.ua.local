@@ -61,7 +61,13 @@ function hsc($el){
 
 // розширена функція mysqli_real_escape_string для обробки тексту на відправку у БД
 function mres($el,$key = 0){
-	return DB::_($key)->real_escape_string($el);
+	if(!is_array($el)){
+		$el = DB::_($key)->real_escape_string($el);
+	} else {
+		$el = array_map('mres',$el);
+	}
+
+	return $el;
 }
 
 // функція (int) для многомірних масивів 

@@ -107,19 +107,21 @@ if (isset($_COOKIE['items'])) {
         }
 
         if(!count($errors)){
+            $_POST = mres($_POST);
+
             q(" INSERT INTO `order` SET
-                `name`        = '" . mres($_POST['name']) . "',
-                `phone`       = '" . mres($_POST['phone']) . "',
-                `email`       = '" . mres($_POST['email']) . "',
-                `city`        = '" . mres($_POST['city']) . "',
-                `adres`       = '" . mres($_POST['adres']) . "',
-                `comment`     = '" . mres($_POST['comment']) . "',
-                `delivery`    = '" . mres($_POST['delivery']) . "',
-                `payment`     = '" . mres($_POST['payment']) . "',
+                `name`        = '".$_POST['name']."',
+                `phone`       = '".$_POST['phone']."',
+                `email`       = '".$_POST['email']."',
+                `city`        = '".$_POST['city']."',
+                `adres`       = '".$_POST['adres']."',
+                `comment`     = '".$_POST['comment']."',
+                `delivery`    = '".$_POST['delivery']."',
+                `payment`     = '".$_POST['payment']."',
                 `all_price`   = '".(int)$all_goods_price."',
-                `name_el`     = '" . mres($names_el) . "',
-                `count_el`    = '" . mres($counts_el) . "',
-                `price_el`    = '" . mres($prices_el) . "',
+                `name_el`     = '". mres($names_el)."',
+                `count_el`    = '".mres($counts_el)."',
+                `price_el`    = '".mres($prices_el)."',
                 `date_create` = NOW()
             ");
 
