@@ -13,8 +13,7 @@ article,
 aside,
 footer,
 header,
-nav,
-hgroup {
+nav {
   display: block;
 }
 .clearfix:before,
@@ -500,10 +499,10 @@ header .item .mobile-basket a span {
 header .toTop {
   position: fixed;
   z-index: 99;
-  filter: alpha(opacity=30);
-  -webkit-opacity: 0.3;
-  -moz-opacity: 0.3;
-  opacity: 0.3;
+  filter: alpha(opacity=50);
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
   right: 20px;
   bottom: 120px;
   cursor: pointer;
@@ -2273,7 +2272,6 @@ footer .item .soc-link a:hover {
 [class^="icon-"],
 [class*=" icon-"] {
   font-family: 'icomoon' !important;
-  speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
