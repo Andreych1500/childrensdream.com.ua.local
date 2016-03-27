@@ -1586,6 +1586,8 @@ main .dateil-info .el-slider .slider-for {
 main .dateil-info .el-slider .slider-for .item-photo img {
   margin: 0 auto;
   max-height: 270px;
+  cursor: pointer;
+  max-width: 380px;
 }
 @media screen and (max-width: 1024px) {
   main .dateil-info .el-slider .slider-for .item-photo img {
@@ -2312,6 +2314,9 @@ footer .item .soc-link a:hover {
   content: "\e904";
   color: #ccc;
 }
+.icon-close:before {
+  content: "\e904";
+}
 .icon-check-ok:before {
   content: "\e905";
   color: #00D808;
@@ -2414,3 +2419,114 @@ footer .item .soc-link a:hover {
   display: none;
 }
 /* Slick - Slider */
+.fixed-overlay {
+  text-align: center;
+  position: fixed;
+  display: none;
+  overflow: auto;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+.fixed-overlay .modal {
+  align-items: center;
+  height: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+.fixed-overlay .modal img {
+  width: 100%;
+  max-width: 800px;
+  display: block;
+}
+.fixed-overlay .modal .modal_container {
+  margin: auto;
+  padding: 10px;
+  min-width: 200px;
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #0066A2;
+  -webkit-border-radius: 5px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 5px;
+  -moz-background-clip: padding;
+  border-radius: 5px;
+  background-clip: padding-box;
+}
+.fixed-overlay .icon-close {
+  background: #000;
+  padding: 7px;
+  border-radius: 100%;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  z-index: 99;
+  cursor: pointer;
+  color: #fff;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.fixed-overlay .icon-close:hover {
+  color: #0066A2;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.fixed-overlay .btnModal-right,
+.fixed-overlay .btnModal-left {
+  position: absolute;
+  color: black;
+  z-index: 99;
+  top: 50%;
+  margin-top: -15px;
+  background: #000;
+  padding: 5px;
+  border-radius: 100%;
+  cursor: pointer;
+  color: #fff;
+  border: 2px solid white;
+  font-size: 20pt;
+  font-weight: bold;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.fixed-overlay .btnModal-right:hover,
+.fixed-overlay .btnModal-left:hover {
+  color: #0066A2;
+  border-color: #0066A2;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.fixed-overlay .btnModal-right {
+  left: -70px;
+}
+.fixed-overlay .btnModal-right.icon-top {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}
+.fixed-overlay .btnModal-left {
+  right: -70px;
+}
+.fixed-overlay .btnModal-left.icon-bottom {
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
+}

@@ -51,7 +51,7 @@
 
         <div class="slider-for <?=((count($photos) > 3)? '' : 'good-top')?>">
           <?php foreach($photos as $key => $value){ ?>
-          <div class="item-photo"><img src="<?=hsc($value[0])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>" title="<?=hsc($el['name_'.$lang])?>"></div>
+          <div class="item-photo" onclick="modalPhoto();"><img src="<?=hsc($value[0])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>" title="<?=hsc($el['name_'.$lang])?>"></div>
           <?php } ?>
         </div>
       </div>
@@ -139,4 +139,16 @@
             </div>
         </div>
     </div>
+
+    <div class="fixed-overlay">
+      <div class="modal">
+        <div class="modal_container">
+            <span class="icon-close"></span>
+            <span class="btnModal-right icon-top"></span>
+            <div class="modalMain"></div>
+            <span class="btnModal-left icon-bottom"></span>
+        </div>
+      </div>
+    </div>
+
 <?php } ?>
