@@ -858,6 +858,54 @@ main{
     .text-item{
       .central();
 
+      .hTextMain{
+        padding-left: 10px;
+        width: 97%;
+        margin-bottom: 30px;
+
+        h1{
+          color: #482200;
+          font-family: @font-team1;
+          font-size: 24pt;
+          margin-bottom: 15px;
+          .shadow-text();
+
+          @media screen and (max-width: 640px){
+            text-align: center;
+          }
+        }
+
+        p{
+          text-align: justify;
+          color: #482200;
+          font-family: @font-team2;
+          margin: 10px 0;
+          .shadow-text();
+
+          &:nth-child(4){
+            font-size: 19px;
+          }
+        }
+
+        ul{
+          font-size:11pt;
+          margin-left: 15px;
+          color:#116279;
+
+          li{
+            color:#116279;
+            margin: 10px 0;
+
+            span{
+              color: #482200;
+              font-family: @font-team2;
+              font-size: 16px;
+              .shadow-text();
+            }
+          }
+        }
+      }
+
       .descriptinText{
         &:extend(.clearfix all);
         .shadow-text();
@@ -893,10 +941,10 @@ main{
           ul{
             font-size:11pt;
             margin-left: 15px;
-          }
 
-          ul li{
-            color:#116279;
+            li{
+              color:#116279;
+            }
           }
 
           @media screen and (max-width: 1024px){
@@ -915,6 +963,9 @@ main{
             }
             @media screen and (max-width: 640px){
               width:auto;
+            }
+            @media screen and (max-width: 380px){
+              width:98%;
             }
           }
 

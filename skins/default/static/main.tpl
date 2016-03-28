@@ -82,10 +82,21 @@
   </div>
 </div>
 
-
-<div class="staticText st-2" id="payment">
+<div class="staticText st-2">
   <div class="text-item">
-    <div class="hText">
+    <div class="hTextMain">
+      <h1><?=$mess['MAIN_TEXT_H1'];?></h1>
+      <p><?=$mess['MAIN_TEXT1'];?><strong><?=$mess['MAIN_TEXT2'];?></strong> <?=$mess['MAIN_TEXT3'];?></p>
+      <p><?=$mess['MAIN_TEXT4'];?></p>
+      <p><?=$mess['MAIN_TEXT5'];?></p>
+      <ul>
+        <li><span><strong><?=$mess['MAIN_TEXT_LIST1'];?></strong><?=$mess['MAIN_TEXT_LIST2'];?></span></li>
+        <li><span><strong><?=$mess['MAIN_TEXT_LIST3'];?></strong><?=$mess['MAIN_TEXT_LIST4'];?></span></li>
+        <li><span><strong><?=$mess['MAIN_TEXT_LIST5'];?></strong><?=$mess['MAIN_TEXT_LIST6'];?></span></li>
+      </ul>
+    </div>
+
+    <div class="hText" id="payment">
       <table>
         <tr>
           <td><span class="line"></span></td>

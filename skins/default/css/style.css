@@ -874,6 +874,48 @@ main .staticText .text-item {
     width: 100%;
   }
 }
+main .staticText .text-item .hTextMain {
+  padding-left: 10px;
+  width: 97%;
+  margin-bottom: 30px;
+}
+main .staticText .text-item .hTextMain h1 {
+  color: #482200;
+  font-family: ComicSansMS;
+  font-size: 24pt;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 2px 2px #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 3px 3px #fff, -3px -3px 0 #fff, 3px -3px 0 #fff, -3px 3px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 3px 0 0 #fff, -3px 0 0 #fff, 0 3px 0 #fff, 0 -3px 0 #fff;
+}
+@media screen and (max-width: 640px) {
+  main .staticText .text-item .hTextMain h1 {
+    text-align: center;
+  }
+}
+main .staticText .text-item .hTextMain p {
+  text-align: justify;
+  color: #482200;
+  font-family: MyriadPro;
+  margin: 10px 0;
+  text-shadow: 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 2px 2px #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 3px 3px #fff, -3px -3px 0 #fff, 3px -3px 0 #fff, -3px 3px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 3px 0 0 #fff, -3px 0 0 #fff, 0 3px 0 #fff, 0 -3px 0 #fff;
+}
+main .staticText .text-item .hTextMain p:nth-child(4) {
+  font-size: 19px;
+}
+main .staticText .text-item .hTextMain ul {
+  font-size: 11pt;
+  margin-left: 15px;
+  color: #116279;
+}
+main .staticText .text-item .hTextMain ul li {
+  color: #116279;
+  margin: 10px 0;
+}
+main .staticText .text-item .hTextMain ul li span {
+  color: #482200;
+  font-family: MyriadPro;
+  font-size: 16px;
+  text-shadow: 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 2px 2px #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 3px 3px #fff, -3px -3px 0 #fff, 3px -3px 0 #fff, -3px 3px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 3px 0 0 #fff, -3px 0 0 #fff, 0 3px 0 #fff, 0 -3px 0 #fff;
+}
 main .staticText .text-item .descriptinText {
   text-shadow: 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 2px 2px #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 3px 3px #fff, -3px -3px 0 #fff, 3px -3px 0 #fff, -3px 3px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 3px 0 0 #fff, -3px 0 0 #fff, 0 3px 0 #fff, 0 -3px 0 #fff;
   margin: 15px 0;
@@ -929,6 +971,11 @@ main .staticText .text-item .descriptinText .item-right {
 @media screen and (max-width: 640px) {
   main .staticText .text-item .descriptinText .item-right img {
     width: auto;
+  }
+}
+@media screen and (max-width: 380px) {
+  main .staticText .text-item .descriptinText .item-right img {
+    width: 98%;
   }
 }
 @media screen and (max-width: 640px) {
