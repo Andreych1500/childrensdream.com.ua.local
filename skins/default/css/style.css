@@ -2444,6 +2444,12 @@ footer .item .soc-link a:hover {
   width: 100%;
   max-width: 800px;
   display: block;
+  max-height: 600px;
+}
+@media screen and (max-width: 970px) {
+  .fixed-overlay .modal img {
+    max-width: 600px;
+  }
 }
 .fixed-overlay .modal .modal_container {
   margin: auto;

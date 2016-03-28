@@ -19,7 +19,7 @@ if(isset($_COOKIE['authhash'],$_COOKIE['id'])){
 
 	$auth = $res->fetch_assoc();
 
-	if($auth['user_ip'] == $_SERVER['REMOTE_ADDR'] && $auth['access'] == 5 && $res->num_rows){
+	if($auth['access'] == 5 && $res->num_rows){
 		$_SESSION['user'] = $auth;
 	} else {
 		include './modules/cab/exit.php';
