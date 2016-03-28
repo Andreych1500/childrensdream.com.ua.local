@@ -54,7 +54,7 @@ $(document).ready(function() {
     });
     // --- end prev | next ---
 
-    //modal close window
+    // --- modal close window ---
     $('.icon-close').click( function(){
         $('.modal').animate({opacity: 0}, 200, function(){ // після виконання минулої анімації
             $(this).css('display', 'none');
@@ -63,6 +63,20 @@ $(document).ready(function() {
             $('.fixed-overlay').fadeOut(400);
         });
     });
+
+
+    $(document).mouseup(function (e){
+        if($('.fixed-overlay').css('display') == 'block'){
+            var elNotBlock = $('.btnModal-left, .btnModal-right, .modal_container');
+            if (!$(elNotBlock).is(e.target) && $(elNotBlock).has(e.target).length === 0) {
+                $('.modal').css('display', 'none');
+                $('.fixed-overlay img').remove();
+                $('.n-ActIndex').removeClass('n-ActIndex');
+                $('.fixed-overlay').fadeOut(400);
+            }
+        }
+    });
+    // --- end modal close window ---
 
 });
 
