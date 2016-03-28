@@ -1,6 +1,17 @@
 $(document).ready(function() {
 
     // --- prev | next ---
+    $(window).keydown(function(eventObject){
+        if($('.fixed-overlay').css('display') == 'block'){
+            if(eventObject.which == 37){
+                $('.btnModal-right').trigger('click');
+            }
+            if(eventObject.which == 39){
+                $('.btnModal-left').trigger('click');
+            }
+        }
+    });
+
     $('.btnModal-right').click(function () {
         var blockPhoto = $('.n-ActIndex');
 

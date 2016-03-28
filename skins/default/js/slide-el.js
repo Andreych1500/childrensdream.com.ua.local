@@ -9,10 +9,11 @@ $(document).ready(function() {
         centerPadding: '0px',
         focusOnSelect: true,
         vertical: true,
-        arrows: true,
+        arrows: false,
         verticalSwiping: true,
         nextArrow: '<span class="icon-bottom"></span>',
-        prevArrow: '<span class="icon-top"></span>'
+        prevArrow: '<span class="icon-top"></span>',
+        accessibility : false
     });
 
     if($('.slider-nav .slick-arrow').length == 0) {
@@ -25,7 +26,8 @@ $(document).ready(function() {
             swipe: false,
             appendArrows: $('.slider-nav'),
             nextArrow: '<span class="icon-bottom hidden-icon"></span>',
-            prevArrow: '<span class="icon-top hidden-icon"></span>'
+            prevArrow: '<span class="icon-top hidden-icon"></span>',
+            accessibility : false
         });
     } else {
         $('.slider-for').slick({
