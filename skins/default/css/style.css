@@ -2488,10 +2488,10 @@ footer .item .soc-link a:hover {
   display: flex;
 }
 .fixed-overlay .modal img {
-  width: 100%;
-  max-width: 800px;
+  width: 700px;
+  max-width: 700px;
   display: block;
-  max-height: 600px;
+  max-height: 550px;
 }
 @media screen and (max-width: 970px) {
   .fixed-overlay .modal img {
