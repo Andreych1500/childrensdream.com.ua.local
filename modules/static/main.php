@@ -98,6 +98,7 @@ $catalog = q("
     SELECT `id`,`name_ua`,`seo_name`,`price`,`availability`,`cAnonsPhoto`,`name_ru`,`img_seo_alt_ua`,`img_seo_alt_ru`
     FROM `catalog`
     WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
+    LIMIT 12
 ");
 
 // --- END ALL ELEMENT ---

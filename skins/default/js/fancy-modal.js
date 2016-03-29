@@ -94,7 +94,7 @@ $(document).ready(function() {
 function modalPhoto() {
 
     if ($(window).width() > 800) {
-        $('.slider-nav .slick-active.slick-center').addClass('n-ActIndex');
+        $('.slider-nav .slick-current.slick-center').addClass('n-ActIndex');
 
         var clone = $('.n-ActIndex img').clone();
 
