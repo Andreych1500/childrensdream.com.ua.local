@@ -383,7 +383,6 @@ header{
           .box-shadow(0 0 1px rgba(22, 50, 93, 0.3) inset, 0 1px 0 #fff);
 
           a{
-            padding: 0;
             background: none;
             margin: 0;
             width: 100%;
@@ -825,6 +824,40 @@ main{
       margin:20px 5px 0 13px;
       .border-radius(5px);
       .box-shadow(0 -1px 0 0 rgba(185,185,185, 0.2));
+      border-bottom: 0;
+    }
+
+    .dinamicEdit{
+      padding: 10px;
+      min-height: 36px;
+      border-bottom: 1px solid #bec7c8;
+      border-top: 1px solid #bec7c8;
+      .border-radius(0 0 5px 5px);
+      .background-image(linear-gradient(bottom, #d7e3e7, rgba(255, 255, 255, 0.61)))!important;
+
+      .icon-pencil{
+        height: 22px;
+        width: 22px;
+        display: inline-block;
+        font-size: 22px;
+        text-align: center;
+        padding: 6px;
+        color: #BEC5C8;
+        border: 1px solid #C2C3C3;
+        .border-radius(3px);
+        .background-image(linear-gradient(bottom, #d7e3e7, #fff))!important;
+
+        &.edit-active{
+          color: #79858B;
+          cursor: pointer;
+          border-color:#9DAAAE;
+
+          &:active{
+            background-clip: padding-box;
+            .background-image(linear-gradient(to bottom, rgba(179, 194, 200, 0.96), rgba(202, 215, 219, 0.96))) !important;
+          }
+        }
+      }
     }
 
     .line-custom{
@@ -887,7 +920,7 @@ main{
         top: 1px;
       }
 
-      .add-el{
+      .add-el, .save-el{
         background-color: #86ad00!important;
         border: solid 1px;
         border-color: #97c004 #7ea502 #648900 !important;
@@ -999,10 +1032,44 @@ main{
               background-color: #e0e9ec;
             }
           }
-        }
 
-        .activeContent td{
-          background-color: #E2E7CB !important;
+          &.c-checked{
+            td{
+              background-color: #E2E7CB;
+
+              &[rel_edit^="ex|"]{
+
+                input{
+                  border-radius: 3px;
+                  border: 1px solid #ccc;
+                  padding: 5px;
+                  height: auto;
+
+                  &:hover{
+                    border-color: #78ABFF;
+                  }
+
+                  &[type="number"]{
+                    max-width: 40px;
+                  }
+
+                  &[type="text"]{
+                    width: 95%;
+                  }
+                }
+
+
+              }
+            }
+
+            &:hover td{
+              background: #d7dcc2;
+            }
+          }
+
+          &.activeContent td{
+            background-color: #E2E7CB;
+          }
         }
 
         .panel-photo{
@@ -1474,11 +1541,11 @@ main{
 
 @font-face {
   font-family: 'icomoon';
-  src: url('fonts/icomoon.eot?a2u6k0');
-  src: url('fonts/icomoon.eot?a2u6k0#iefix') format('embedded-opentype'),
-  url('fonts/icomoon.ttf?a2u6k0') format('truetype'),
-  url('fonts/icomoon.woff?a2u6k0') format('woff'),
-  url('fonts/icomoon.svg?a2u6k0#icomoon') format('svg');
+  src: url('fonts/icomoon.eot?vztbtf');
+  src: url('fonts/icomoon.eot?vztbtf#iefix') format('embedded-opentype'),
+  url('fonts/icomoon.ttf?vztbtf') format('truetype'),
+  url('fonts/icomoon.woff?vztbtf') format('woff'),
+  url('fonts/icomoon.svg?vztbtf#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -1496,9 +1563,6 @@ main{
 
 .icon-settings:before {
   content: "\e900";
-}
-.icon-truck:before {
-  content: "\e90e";
 }
 .icon-good:before {
   content: "\e901";
@@ -1525,33 +1589,42 @@ main{
   content: "\e906";
 }
 .icon-content:before {
-  content: "\e907";
-}
-.icon-form:before {
   content: "\e908";
 }
-.icon-news:before {
+.icon-form:before {
   content: "\e909";
 }
-.icon-plus:before {
+.icon-news:before {
   content: "\e90a";
 }
-.icon-link:before {
+.icon-plus:before {
   content: "\e90b";
+}
+.icon-link:before {
+  content: "\e90c";
   left: -5px;
   top: 1px;
   position: relative;
 }
 .icon-mob-menu:before {
-  content: "\e90c";
+  content: "\e90d";
   font-size: 16px;
   color: #95A0A6;
   cursor: pointer;
 }
 .icon-cross:before {
-  content: "\e90d";
+  content: "\e90e";
   color:red;
 }
-.icon-info:before {
+.icon-truck:before {
   content: "\e90f";
+}
+.icon-info:before {
+  content: "\e910";
+}
+.icon-pencil:before {
+  content: "\e911";
+}
+.icon-google-plus3:before {
+  content: "\e907";
 }

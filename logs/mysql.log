@@ -1,1 +1,12 @@
-﻿
+﻿QUERY:
+    SELECT *
+    FROM `catalog`
+    ORDER BY `sort` DESC, `id` DESC
+    WHERE `id` = 9
+
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `id` = 9' at line 4
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\catalog\main.php
+line: 81
+date: 2016-04-02 10:39:31
+===================================
+

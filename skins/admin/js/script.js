@@ -20,21 +20,36 @@ $(document).ready(function() {
     // --- checked all element ---
     $('input[name="all_cheked"]').click(function(){
         if($(this).is( ":checked" ) == true){
-            $('.custom-content-form  form table tr:not(:first-child) td:first-child input').each(function(){
+            $('.edFormEdit tr:not(:first-child) td:first-child input').each(function(){
+                $(this).parents('tr').addClass('c-checked');
                 $(this).prop("checked", true);
             });
         } else {
-            $('.custom-content-form  form table tr:not(:first-child) td:first-child input').each(function(){
+            $('.edFormEdit tr:not(:first-child) td:first-child input').each(function(){
                 $(this).prop("checked", false);
+                $(this).parents('tr').removeClass('c-checked');
             });
         }
     });
     // --- end checked all element ---
 
 
+    // --- checked style element ---
+    $('.edFormEdit tr:not(:first-child) td:first-child input[type="checkbox"]').click(function(){
+        if($(this).is( ":checked" ) == true){
+            $(this).parents('tr').addClass('c-checked');
+        } else {
+            $(this).parents('tr').removeClass('c-checked');
+        }
+    });
+    // --- end checked style ---
+
+
     // --- edit el on double click ---
-    $('.custom-content-form table tr:not(:first-child)').dblclick(function(){
-        document.location.href = $(this).find('.menu-edit a:first-child').attr('href');
+    $('.edFormEdit tr:not(:first-child) td:not(:first-child)').dblclick(function(){
+        if($(this).parents('.c-checked').length == 0){
+            document.location.href = $(this).siblings('td').find('.menu-edit a:first-child').attr('href');
+        }
     });
     // --- end edit el on double click ---
 
@@ -59,7 +74,7 @@ function openEdit(el){
         $(document).mouseup(function (e){
             if (!$(el_block).is(e.target) && $(el_block).has(e.target).length === 0) {
                 $(el_block).hide();
-                $('.activeContent').removeClass();
+                $('.activeContent').removeClass('activeContent');
             }
         });
     }

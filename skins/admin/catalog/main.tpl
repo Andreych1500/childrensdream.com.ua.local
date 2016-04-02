@@ -7,7 +7,7 @@
         <input type="submit" value="Деактивувати" name="deactive">
         <input type="submit" value="Видалити" name="delete">
       </div>
-      <table>
+      <table class="edFormEdit">
         <tr>
             <td><input type="checkbox" name="all_cheked"></td>
             <td></td>
@@ -23,11 +23,15 @@
         <?php while($arResult = $catalog->fetch_assoc()){
             // --- MORE FILE ---
             if(!empty($arResult['cMorePhoto'])){
+                $cMorePhoto = '';
                 $arResult['cMorePhoto'] = explode('#',$arResult['cMorePhoto']);
+
                 foreach($arResult['cMorePhoto'] as $key => $value){
                     $res = explode('|',$value,2);
+
                     $cMorePhoto .= $res[0].'|';
                 }
+
                 $cMorePhoto = trim($cMorePhoto,"|");
             }
             // --- END MORE FILE ---
@@ -47,9 +51,9 @@
               <span class="delete icon-cross" onclick="deleteElement(<?=(int)$arResult['id']?>, this, '<?=Core::$DIR_PHOTOS_NAME['catalog']?>')">Видалити</span>
             </div>
           </td>
-            <td><?=(($arResult['active'] == 0)? 'Ні' : 'Так')?></td>
-            <td><?=hsc($arResult['name_ua'])?></td>
-            <td><?=(int)$arResult['sort']?></td>
+            <td rel_edit="ex|select|active"><?=(($arResult['active'] == 0)? 'Ні' : 'Так')?></td>
+            <td rel_edit="ex|text|name_ua"><?=hsc($arResult['name_ua'])?></td>
+            <td rel_edit="ex|number|sort"><?=(int)$arResult['sort']?></td>
             <td><?=(int)$arResult['id']?></td>
             <td>
             <?php if(!empty($arResult['cAnonsPhoto'])){ ?>
@@ -63,5 +67,8 @@
         <?php } ?>
       </table>
     </form>
+    <div class="dinamicEdit">
+        <span class="icon-pencil"></span>
+    </div>
   </div>
 </div>

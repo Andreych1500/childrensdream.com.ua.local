@@ -952,6 +952,7 @@ main .staticText .text-item .descriptinText .item-left ul {
 }
 main .staticText .text-item .descriptinText .item-left ul li {
   color: #116279;
+  margin: 5px 0;
 }
 @media screen and (max-width: 1024px) {
   main .staticText .text-item .descriptinText .item-left {

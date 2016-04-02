@@ -1,4 +1,6 @@
 <?php
+Core::$JS[] = '<script src="/skins/admin/js/mainEditMenu.js?v=1"></script>';
+
 // --- DELETE ELEMENT AND FILE ---
 
 if(isset($_POST['delete']) && isset($_POST['ids'])){
