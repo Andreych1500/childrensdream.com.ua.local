@@ -20,6 +20,7 @@ function editElements(){
 
     // --- save submit ---
     $('.edit-active').remove();
+    $('.dinamicEdit').html('<input type="submit" value="Зберегти" name="save"><span>Відмінити</span>');
     // --- end save submit ---
 
     // --- create format inputs ---
@@ -57,7 +58,7 @@ function editElements(){
 
     for(var prop in resultObj) {
         for(var elProp in resultObj[prop]) {
-            $(editTag+'[value="'+prop+'"]').parents('tr').find('td[rel_edit$="'+$(resultObj[prop][elProp]).attr("name")+'"]').html(resultObj[prop][elProp]);
+            $(editTag+'[value="'+prop+'"]').attr('disabled',true).parents('tr').find('td[rel_edit$="'+$(resultObj[prop][elProp]).attr("name")+'"]').html(resultObj[prop][elProp]);
         }
     }
     // --- end edit html code ---
