@@ -17,6 +17,7 @@ function editElements(){
     var obj = {};
     var resultObj = [];
     var resultArr = [];
+    var inputArr  = [];
 
     // --- save submit ---
     $('.edit-active').remove();
@@ -25,8 +26,14 @@ function editElements(){
 
     // --- create format inputs ---
     $(checked).each(function(i, el){
-       var ex_el = $(el).parents('tr').find('td[rel_edit^="ex|"]');
-       obj[$(el).val()] = [$(ex_el).eq(0), $(ex_el).eq(1), $(ex_el).eq(2)]; // add input[ex]
+        var ex_el = $(el).parents('tr').find('td[rel_edit^="ex|"]');
+
+        for( i=0; i<ex_el.length; ++i){
+            inputArr.push($(ex_el).eq(i));
+        }
+
+        obj[$(el).val()] = inputArr; // add input[ex]
+        inputArr = []; // reset array
     });
     // --- end create format inputs ---
 
@@ -43,9 +50,9 @@ function editElements(){
                 resultArr.push(onNumber('number', explodeData[1], obj[prop][elProp].text()));
             }
 
-            //if(explodeData[1] == 'sel'){
-            //    console.log(1)
-            //}
+            if(explodeData[0] == 'checkbox'){
+                resultArr.push(onSelect('checkbox', explodeData[1], obj[prop][elProp].text()));
+            }
         }
 
         resultObj[prop] = resultArr;
@@ -68,14 +75,20 @@ function editElements(){
 
 // --- type inputs ---
 function onText(type, name, value){
-    return '<input type="'+type+'" name="'+name+'" value="'+value+'">';
+    return '<input type="'+type+'" name="'+name+'[]" value="'+value+'">';
 }
 
 function onNumber(type, name, value){
     return '<input min="1" type="'+type+'" name="'+name+'" value="'+value+'">';
 }
 
-//function onSelect(){
-//
-//}
+function onSelect(type, name, value){
+    checked = '';
+
+    if(value != 'Ні'){
+        var checked = 'checked';
+    }
+
+    return '<input '+checked+'  type="'+type+'" name="'+name+'" value="Y">';
+}
 // --- end type inputs ---

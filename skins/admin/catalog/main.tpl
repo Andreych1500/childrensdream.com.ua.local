@@ -11,10 +11,11 @@
         <tr>
             <td><input type="checkbox" name="all_cheked"></td>
             <td></td>
+            <td>Id</td>
             <td>Активність</td>
             <td>Назва</td>
             <td>Сортування</td>
-            <td>Id</td>
+            <td>Ціна</td>
             <td>Зображення</td>
             <td>Дата створення</td>
             <td>Коли зміненна</td>
@@ -51,10 +52,11 @@
               <span class="delete icon-cross" onclick="deleteElement(<?=(int)$arResult['id']?>, this, '<?=Core::$DIR_PHOTOS_NAME['catalog']?>')">Видалити</span>
             </div>
           </td>
-            <td rel_edit="ex|select|active"><?=(($arResult['active'] == 0)? 'Ні' : 'Так')?></td>
+            <td><?=(int)$arResult['id']?></td>
+            <td rel_edit="ex|checkbox|active"><?=(($arResult['active'] == 0)? 'Ні' : 'Так')?></td>
             <td rel_edit="ex|text|name_ua"><?=hsc($arResult['name_ua'])?></td>
             <td rel_edit="ex|number|sort"><?=(int)$arResult['sort']?></td>
-            <td><?=(int)$arResult['id']?></td>
+            <td rel_edit="ex|number|price"><?=hsc($arResult['price'])?></td>
             <td>
             <?php if(!empty($arResult['cAnonsPhoto'])){ ?>
                 <div class="panel-photo"><img src="<?=hsc($arResult['cAnonsPhoto'])?>" alt="<?=hsc($arResult['name_ua'])?>"></div>
