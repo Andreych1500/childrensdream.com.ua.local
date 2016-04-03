@@ -3,7 +3,7 @@
     <form action="" method="post" onsubmit="return okFrom();">
       <div class="line-custom">
         <a href="/admin/catalog/add/" class="add-el icon-plus">Добавити елемент</a>
-        <input type="submit" value="Активувати" name="active">
+        <input type="submit" value="Активувати" name="activates">
         <input type="submit" value="Деактивувати" name="deactive">
         <input type="submit" value="Видалити" name="delete">
       </div>
@@ -53,10 +53,10 @@
             </div>
           </td>
             <td><?=(int)$arResult['id']?></td>
-            <td rel_edit="ex|checkbox|active"><?=(($arResult['active'] == 0)? 'Ні' : 'Так')?></td>
-            <td rel_edit="ex|text|name_ua"><?=hsc($arResult['name_ua'])?></td>
-            <td rel_edit="ex|number|sort"><?=(int)$arResult['sort']?></td>
-            <td rel_edit="ex|number|price"><?=hsc($arResult['price'])?></td>
+            <td rel_edit="ex|checkbox|resArr[<?=(int)$arResult['id']?>][active]"><?=(($arResult['active'] == 0)? 'Ні' : 'Так')?></td>
+            <td rel_edit="ex|text|resArr[<?=(int)$arResult['id']?>][name_ua]"><?=hsc($arResult['name_ua'])?></td>
+            <td rel_edit="ex|number|resArr[<?=(int)$arResult['id']?>][sort]"><?=(int)$arResult['sort']?></td>
+            <td rel_edit="ex|number|resArr[<?=(int)$arResult['id']?>][price]"><?=hsc($arResult['price'])?></td>
             <td>
             <?php if(!empty($arResult['cAnonsPhoto'])){ ?>
                 <div class="panel-photo"><img src="<?=hsc($arResult['cAnonsPhoto'])?>" alt="<?=hsc($arResult['name_ua'])?>"></div>

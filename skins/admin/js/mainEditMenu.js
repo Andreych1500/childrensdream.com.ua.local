@@ -24,7 +24,7 @@ function editElements(){
     $('.dinamicEdit').html('<input type="submit" value="Зберегти" name="el-save"><a href="'+document.location.pathname+'" class="no-save">Відмінити</a>');
     // --- end save submit ---
 
-    // --- create format inputs ---
+    // --- create array inputs ---
     $(checked).each(function(i, el){
         var ex_el = $(el).parents('tr').find('td[rel_edit^="ex|"]');
 
@@ -35,7 +35,7 @@ function editElements(){
         obj[$(el).val()] = inputArr; // add input[ex]
         inputArr = []; // reset array
     });
-    // --- end create format inputs ---
+    // --- end create array inputs ---
 
     // --- formation input ---
     for(var prop in obj) {
@@ -62,8 +62,7 @@ function editElements(){
 
     // --- edit html code ---
     var editTag = '.edFormEdit tr:not(:first-child) td:first-child input:checked';
-
-    $('.edFormEdit tr:not(:first-child) td:first-child input').attr('disabled',true); // disable checkbox
+    $('.edFormEdit tr:not(:first-child) td:first-child input, input[name="all_cheked"]').attr('disabled',true); // disable checkbox
 
     for(var prop in resultObj) {
         for(var elProp in resultObj[prop]) {
@@ -74,21 +73,21 @@ function editElements(){
 }
 
 // --- type inputs ---
-function onText(type, name, value){
-    return '<input type="'+type+'" name="'+name+'[]" value="'+value+'">';
+function onText(type, name, value, id){
+    return '<input type="'+type+'" name="'+name+'" value="'+value+'">';
 }
 
-function onNumber(type, name, value){
+function onNumber(type, name, value, id){
     return '<input min="1" type="'+type+'" name="'+name+'" value="'+value+'">';
 }
 
-function onSelect(type, name, value){
+function onSelect(type, name, value, id){
     checked = '';
 
     if(value != 'Ні'){
         var checked = 'checked';
     }
 
-    return '<input '+checked+'  type="'+type+'" name="'+name+'" value="Y">';
+    return '<input '+checked+'  type="'+type+'" name="'+name+'" value="1">';
 }
 // --- end type inputs ---

@@ -10,3 +10,93 @@ line: 81
 date: 2016-04-02 10:39:31
 ===================================
 
+QUERY:
+      UPDATE `catalog` SET `price` = CASE
+          WHEN `id` = 9 THEN 999
+          WHEN `id` = 6 THEN 888
+      END
+      WHERE `id` IN IN (6,9)
+    
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IN (6,9)' at line 5
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\catalog\main.php
+line: 17
+date: 2016-04-03 15:31:38
+===================================
+
+QUERY:
+      UPDATE `catalog` SET `price` = CASE
+          WHEN `id` = 9 THEN 999
+          WHEN `id` = 6 THEN 888
+      END
+      WHERE `id` IN IN 6,9
+    
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IN 6,9' at line 5
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\catalog\main.php
+line: 17
+date: 2016-04-03 15:31:56
+===================================
+
+QUERY:
+      UPDATE `catalog` SET `price` = CASE
+          WHEN `id` = 9 THEN 999
+          WHEN `id` = 6 THEN 888
+      END
+      WHERE `id` IN IN 6,9
+    
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'IN 6,9' at line 5
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\catalog\main.php
+line: 17
+date: 2016-04-03 15:32:08
+===================================
+
+QUERY:
+      
+    
+Query was empty
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\catalog\main.php
+line: 14
+date: 2016-04-03 15:47:42
+===================================
+
+QUERY:
+      
+    
+Query was empty
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\catalog\main.php
+line: 14
+date: 2016-04-03 15:47:42
+===================================
+
+QUERY:UPDATE `catalog` SET
+        `name_ua` = CASE  WHEN `id` = 4 THEN 2Дитячий матрац КП (кокос-поролон) WHEN `id` = 5 THEN 2Дитячий матрац КПГ (кокос-поролон-гречка) WHEN `id` = 9 THEN 2Дитячий матрац Юніор (5-ти сл. кокос) END,`sort` = CASE  WHEN `id` = 4 THEN 1 WHEN `id` = 5 THEN 1 WHEN `id` = 9 THEN 1 END,`price` = CASE  WHEN `id` = 4 THEN 380 WHEN `id` = 5 THEN 400 WHEN `id` = 9 THEN 150 END
+        WHERE `id` IN (4,5,9,)
+    
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'матрац КП (кокос-поролон) WHEN `id` = 5 THEN 2Дитячий' at line 2
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\catalog\main.php
+line: 27
+date: 2016-04-03 17:18:46
+===================================
+
+QUERY:UPDATE `catalog` SET
+        `name_ua` = CASE  WHEN `id` = 4 THEN '2Дитячий матрац КП (кокос-поролон)' WHEN `id` = 5 THEN '2Дитячий матрац КПГ (кокос-поролон-гречка)' WHEN `id` = 9 THEN '2Дитячий матрац Юніор (5-ти сл. кокос)' END,`sort` = CASE  WHEN `id` = 4 THEN '1' WHEN `id` = 5 THEN '1' WHEN `id` = 9 THEN '1' END,`price` = CASE  WHEN `id` = 4 THEN '380' WHEN `id` = 5 THEN '400' WHEN `id` = 9 THEN '150' END
+        WHERE `id` IN (4,5,9,)
+    
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 3
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\catalog\main.php
+line: 27
+date: 2016-04-03 17:19:39
+===================================
+
+QUERY:UPDATE `catalog` SET
+        `active` = CASE  WHEN `id` = 10 THEN '1' WHEN `id` = 13 THEN '1' WHEN `id` = 15 THEN '1' WHEN `id` = 22 THEN '1' WHEN `id` = 11 THEN '1' WHEN `id` = 14 THEN '1' WHEN `id` = 16 THEN '1' WHEN `id` = 19 THEN '1' WHEN `id` = 12 THEN '1' WHEN `id` = 26 THEN '1' WHEN `id` = 25 THEN '1' WHEN `id` = 24 THEN '1' WHEN `id` = 20 THEN '1' WHEN `id` = 18 THEN '1' WHEN `id` = 21 THEN '1' WHEN `id` = 27 THEN '1' WHEN `id` = 4 THEN '1' WHEN `id` = 9 THEN '1' WHEN `id` = 6 THEN '1' WHEN `id` = 5 THEN '1' END,`name_ua` = CASE  WHEN `id` = 10 THEN 'Дитячий матрац Lite Gold (кокос-поролон)' WHEN `id` = 13 THEN 'Дитячий матрац Lite Organic Cotton (кокос-поролон)' WHEN `id` = 15 THEN 'Дитячий матрац Lite Aloe Vera (кокос-поролон)' WHEN `id` = 22 THEN 'Дитячий матрац Lite Bamboo (кокос-поролон)' WHEN `id` = 11 THEN 'Дитячий матрац Lux Gold (кокос-поролон-кокос)' WHEN `id` = 14 THEN 'Дитячий матрац Lux Organic Cotton (кокос-поролон-кокос)' WHEN `id` = 16 THEN 'Дитячий матрац Lux Aloe Vera (кокос-поролон-кокос)' WHEN `id` = 19 THEN 'Дитячий матрац Lux Bamboo (кокос-поролон-кокос)' WHEN `id` = 12 THEN 'Дитячий матрац Greco Gold (кокос-поролон-гречка)' WHEN `id` = 26 THEN 'Дитячий матрац Lux+ Bamboo (кокос-поролон-кокос)' WHEN `id` = 25 THEN 'Дитячий матрац Lux+ Aloe Vera (кокос-поролон-кокос)' WHEN `id` = 24 THEN 'Дитячий матрац Lux+ Organic Cotton (кокос-поролон-кокос)' WHEN `id` = 20 THEN 'Дитячий матрац Lux Premium Organic Cotton (кокос-поролон-кокос)' WHEN `id` = 18 THEN 'Дитячий матрац Lux Premium Aloe Vera (кокос-поролон-кокос)' WHEN `id` = 21 THEN 'Дитячий матрац Lux Premium Bamboo (кокос-поролон-кокос)' WHEN `id` = 27 THEN 'Дитячий матрац КПК 11см. (кокос-поролон-кокос)' WHEN `id` = 4 THEN 'Дитячий матрац КП (кокос-поролон)' WHEN `id` = 9 THEN 'Дитячий матрац Юніор (5-ти сл. кокос)' WHEN `id` = 6 THEN 'Дитячий матрац КПК (кокос-поролон-кокос)' WHEN `id` = 5 THEN 'Дитячий матрац КПГ (кокос-поролон-гречка)' END,`sort` = CASE  WHEN `id` = 10 THEN '17' WHEN `id` = 13 THEN '16' WHEN `id` = 15 THEN '15' WHEN `id` = 22 THEN '14' WHEN `id` = 11 THEN '13' WHEN `id` = 14 THEN '12' WHEN `id` = 16 THEN '11' WHEN `id` = 19 THEN '10' WHEN `id` = 12 THEN '10' WHEN `id` = 26 THEN '9' WHEN `id` = 25 THEN '9' WHEN `id` = 24 THEN '9' WHEN `id` = 20 THEN '8' WHEN `id` = 18 THEN '7' WHEN `id` = 21 THEN '6' WHEN `id` = 27 THEN '5' WHEN `id` = 4 THEN '5' WHEN `id` = 9 THEN '2' WHEN `id` = 6 THEN '2' WHEN `id` = 5 THEN '2' END,`price` = CASE  WHEN `id` = 10 THEN '515' WHEN `id` = 13 THEN '565' WHEN `id` = 15 THEN '570' WHEN `id` = 22 THEN '570' WHEN `id` = 11 THEN '555' WHEN `id` = 14 THEN '605' WHEN `id` = 16 THEN '610' WHEN `id` = 19 THEN '610' WHEN `id` = 12 THEN '520' WHEN `id` = 26 THEN '660' WHEN `id` = 25 THEN '660' WHEN `id` = 24 THEN '655' WHEN `id` = 20 THEN '700' WHEN `id` = 18 THEN '705' WHEN `id` = 21 THEN '705' WHEN `id` = 27 THEN '495' WHEN `id` = 4 THEN '349' WHEN `id` = 9 THEN '145' WHEN `id` = 6 THEN '222' WHEN `id` = 5 THEN '390' END,,
+        `user_custom` = 'Савіцький Андрій'
+        WHERE `id` IN (10,13,15,22,11,14,16,19,12,26,25,24,20,18,21,27,4,9,6,5)
+    
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '
+        `user_custom` = 'Савіцький Андрій'
+        WHERE `id` IN' at line 2
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\catalog\main.php
+line: 28
+date: 2016-04-03 17:33:52
+===================================
+

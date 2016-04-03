@@ -1255,7 +1255,7 @@ main .main-view-content form table tr.c-checked td[rel_edit^="ex|"] input[type="
   max-width: 40px;
 }
 main .main-view-content form table tr.c-checked td[rel_edit^="ex|"] input[type="text"] {
-  width: 95%;
+  width: 300px;
 }
 main .main-view-content form table tr.c-checked:hover td {
   background: #d7dcc2;

@@ -1,12 +1,48 @@
 <?php
 Core::$JS[] = '<script src="/skins/admin/js/mainEditMenu.js?v=1"></script>';
 
-wtf($_POST,1);
+// --- EDIT ELEMENT ---
+if(isset($_POST['resArr']) && count($_POST['resArr']) > 0){
+
+    foreach($_POST['resArr'] as $key => $array){
+
+        // --- add no checkbox ---
+        if(!isset($array['active'])){
+            $array['active'] = 0;
+        }
+        // --- end add no checkbox ---
+
+        foreach($array as $name => $value){
+            $when[$name][$key] = $value;
+        }
+        $ids .= $key.',';
+    }
+
+    foreach($when as $colum => $arrayId){
+        $qText .= "`".$colum."` = CASE ";
+        foreach($arrayId as $id => $value){
+            $qText .= " WHEN `id` = ".$id." THEN '".$value."'";
+        }
+        $qText .= " END,";
+    }
+
+    $ids = trim($ids, ',');
+
+    q("UPDATE `catalog` SET
+        ".$qText."
+        `user_custom` = '".mres($_SESSION['user']['FIO'])."'
+        WHERE `id` IN (".$ids.")
+    ");
+
+    header("Location: /admin/catalog/");
+    exit();
+}
+// --- END EDIT ELEMENT ---
+
 
 // --- DELETE ELEMENT AND FILE ---
 
 if(isset($_POST['delete']) && isset($_POST['ids'])){
-
     foreach($_POST['ids'] as $key=>$value){
         if(!empty($_POST['del'][$value])){
             $files = explode('|',$_POST['del'][$value]);
@@ -34,7 +70,7 @@ if(isset($_POST['delete']) && isset($_POST['ids'])){
 
 // --- ACTIVE ELEMENT ---
 
-if(isset($_POST['active']) && isset($_POST['ids'])){
+if(isset($_POST['activates']) && isset($_POST['ids'])){
     foreach($_POST['ids'] as $k=>$v){
         $_POST['ids'][$k] = (int)$v;
     }

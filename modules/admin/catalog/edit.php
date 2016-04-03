@@ -115,7 +115,7 @@ if(isset($_POST['ok'])){
  			`img_seo_alt_ru`      = '".$_POST['img_seo_alt_ru']."',
  			`user_custom`         = '".mres($_SESSION['user']['FIO'])."'
 
-			 WHERE `id`    = ".(int)$_GET['id']."
+			 WHERE `id` = ".(int)$_GET['id']."
 		");
 
 
