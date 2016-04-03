@@ -66,9 +66,9 @@
         </tr>
         <?php } ?>
       </table>
-    </form>
-    <div class="dinamicEdit">
+      <div class="dinamicEdit">
         <span class="icon-pencil"></span>
-    </div>
+      </div>
+    </form>
   </div>
 </div>

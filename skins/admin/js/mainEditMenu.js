@@ -20,7 +20,7 @@ function editElements(){
 
     // --- save submit ---
     $('.edit-active').remove();
-    $('.dinamicEdit').html('<input type="submit" value="Зберегти" name="save"><span>Відмінити</span>');
+    $('.dinamicEdit').html('<input type="submit" value="Зберегти" name="el-save"><a href="'+document.location.pathname+'" class="no-save">Відмінити</a>');
     // --- end save submit ---
 
     // --- create format inputs ---
@@ -56,9 +56,11 @@ function editElements(){
     // --- edit html code ---
     var editTag = '.edFormEdit tr:not(:first-child) td:first-child input:checked';
 
+    $('.edFormEdit tr:not(:first-child) td:first-child input').attr('disabled',true); // disable checkbox
+
     for(var prop in resultObj) {
         for(var elProp in resultObj[prop]) {
-            $(editTag+'[value="'+prop+'"]').attr('disabled',true).parents('tr').find('td[rel_edit$="'+$(resultObj[prop][elProp]).attr("name")+'"]').html(resultObj[prop][elProp]);
+            $(editTag+'[value="'+prop+'"]').parents('tr').find('td[rel_edit$="'+$(resultObj[prop][elProp]).attr("name")+'"]').html(resultObj[prop][elProp]);
         }
     }
     // --- end edit html code ---

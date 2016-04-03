@@ -87,6 +87,36 @@
   .box-shadow(0 1px 1px 0 rgba(0,0,0,0.4));
 }
 
+.greenSubmit(@padding){
+  background-color: #86ad00!important;
+  border: solid 1px;
+  border-color: #97c004 #7ea502 #648900 !important;
+  .box-shadow(0 1px 1px rgba(0,0,0,.25), inset 0 1px 0 #cbdc00) !important;
+  .background-image(linear-gradient(bottom, #729e00, #97ba00)) !important;
+  color: #fff;
+  text-shadow: 0 1px rgba(0,0,0,0.1);
+  -webkit-font-smoothing: antialiased;
+  padding: @padding;
+
+
+  &:hover{
+    background-color: #9ec710!important;
+    .background-image(linear-gradient(top, #acce11, #8abb0d))!important;
+    .box-shadow(0 1px 1px rgba(0, 0, 0, 0.25), 0 1px 0 #d5e71a inset);
+    border-color: #97c004 #7ea502 #648900;
+  }
+
+  &:active{
+    background: #698f00!important;
+    .box-shadow(inset 0 2px 1px rgba(66,84,17,.71))!important;
+    border-color: transparent #698f00 #698f00 !important;
+    border-top: none;
+    border-top: none;
+    height: 32px!important;
+    line-height: 34px;
+  }
+}
+
 .submit-tabs(){
   display: inline-block;
   border-radius: 4px 4px 0 0;
@@ -858,6 +888,24 @@ main{
           }
         }
       }
+
+      input[name="el-save"]{
+        .greenSubmit(~'5px 15px');
+        font-size: 18px;
+        .border-radius(4px);
+        cursor: pointer;
+
+        &:active{
+          line-height: 22px;
+          height: 33px !important;
+        }
+      }
+
+      .no-save{
+        .silver-submit();
+        margin: 0 0 0 15px;
+        vertical-align:top;
+      }
     }
 
     .line-custom{
@@ -920,34 +968,8 @@ main{
         top: 1px;
       }
 
-      .add-el, .save-el{
-        background-color: #86ad00!important;
-        border: solid 1px;
-        border-color: #97c004 #7ea502 #648900 !important;
-        .box-shadow(0 1px 1px rgba(0,0,0,.25), inset 0 1px 0 #cbdc00) !important;
-        .background-image(linear-gradient(bottom, #729e00, #97ba00)) !important;
-        color: #fff;
-        text-shadow: 0 1px rgba(0,0,0,0.1);
-        -webkit-font-smoothing: antialiased;
-        padding: 0 13px 2px;
-
-
-        &:hover{
-          background-color: #9ec710!important;
-          .background-image(linear-gradient(top, #acce11, #8abb0d))!important;
-          .box-shadow(0 1px 1px rgba(0, 0, 0, 0.25), 0 1px 0 #d5e71a inset);
-          border-color: #97c004 #7ea502 #648900;
-        }
-
-        &:active{
-          background: #698f00!important;
-          .box-shadow(inset 0 2px 1px rgba(66,84,17,.71))!important;
-          border-color: transparent #698f00 #698f00 !important;
-          border-top: none;
-          border-top: none;
-          height: 32px!important;
-          line-height: 34px;
-        }
+      .add-el{
+        .greenSubmit('0 13px 2px');
       }
 
       .header-name{
