@@ -20,7 +20,7 @@
                   <input type="hidden" name="names_el[]" value="<?=hsc($val['name_'.$lang])?>">
                 </td>
                 <td>
-                  <input class="<?=(isset($errors['count'][$key])? 'errors' : '')?>" onchange="edit_price(this);" type="number" min="1" max="99"  step="1" name="count[<?=$val['id']?>]" value="<?=(isset($errors)? (($_POST['count'][$val['id']] > 99)? '99' : $_POST['count'][$val['id']] ) : '1')?>">
+                  <input class="<?=(isset($errors['count'][$val['id']])? 'errors' : '')?>" onchange="edit_price(this);" type="number" min="1" max="99"  step="1" name="count[<?=$val['id']?>]" value="<?=(isset($errors)? (($_POST['count'][$val['id']] > 99)? '99' : $_POST['count'][$val['id']] ) : '1')?>">
                 </td>
                 <td>
                   <span class="edJsPrice"><?=number_format($val['all_price'], 0, ',', ' ')?></span> <?=$mess['PRICEVAL']?>
@@ -88,7 +88,7 @@
               <td><img src="/modules/static/captcha.php"></td>
               <td>
                 <p><?=$mess['CAPCHA']?><span>*</span></p>
-                <input class="<?=((isset($errors['capcha']))? 'error' : '')?>" type="text" name="capcha" value="<?=(isset($_POST['capha'])? hsc($_POST['capha']):"")?>">
+                <input class="<?=((isset($errors['capcha']))? $errors['capcha'] : '')?>" type="text" name="capcha" value="<?=(isset($_POST['capha'])? hsc($_POST['capha']):"")?>">
               </td>
             </tr>
           </table>

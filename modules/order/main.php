@@ -47,15 +47,15 @@ if (isset($_COOKIE['items'])) {
         $errors = array();
         $_POST = trimAll($_POST);
 
-        if(empty($_POST['name'])){ $errors['name'] = 'error'; }
-        if(empty($_POST['phone'])){ $errors['phone'] = 'error'; }
-        if(empty($_POST['city'])){ $errors['city'] = 'error'; }
-        if(empty($_POST['adres'])){ $errors['adres'] = 'error'; }
-        if(empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){ $errors['email'] = 'error'; }
+        if(empty($_POST['name'])){ $errors['name'] = 'errors'; }
+        if(empty($_POST['phone'])){ $errors['phone'] = 'errors'; }
+        if(empty($_POST['city'])){ $errors['city'] = 'errors'; }
+        if(empty($_POST['adres'])){ $errors['adres'] = 'errors'; }
+        if(empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){ $errors['email'] = 'errors'; }
         if(empty($_POST['comment'])){ $_POST['comment'] = ''; }
-        if($_POST['delivery'] > 6 || $_POST['delivery'] < 0){ $errors['delivery'] = 'error'; }
-        if($_POST['payment'] > 2 || $_POST['payment'] < 0){ $errors['payment'] = 'error'; }
-        if($_SESSION['rand_code'] != $_POST['capcha']){ $errors['capcha'] = 'error'; }
+        if($_POST['delivery'] > 6 || $_POST['delivery'] < 0){ $errors['delivery'] = 'errors'; }
+        if($_POST['payment'] > 2 || $_POST['payment'] < 0){ $errors['payment'] = 'errors'; }
+        if($_SESSION['rand_code'] != $_POST['capcha']){ $errors['capcha'] = 'errors'; }
 
 
         // --- INFO SELECT ---
@@ -101,8 +101,8 @@ if (isset($_COOKIE['items'])) {
 
 
         foreach($_POST['count'] as $key => $value){
-            if($value > 99){
-                $errors['count'][$key-1] = 'error';
+            if($value > 99 || $value < 1){
+                $errors['count'][$key] = 'errors';
             }
         }
 
