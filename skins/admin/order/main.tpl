@@ -6,7 +6,7 @@
         <input type="submit" value="Невиконаний" name="deactive">
         <input type="submit" value="Видалити" name="delete">
     </div>
-      <table>
+      <table class="edFormEdit">
         <tr>
             <td><input type="checkbox" name="all_cheked"></td>
             <td></td>

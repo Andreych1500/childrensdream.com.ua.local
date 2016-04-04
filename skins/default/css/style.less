@@ -773,7 +773,7 @@ main{
     }
   }
 
-  .background-content{
+  .main-banner{
     width:100%;
     background: url('/skins/default/img/image.png') 50px -200px repeat-x;
     max-height: 296px;
@@ -803,7 +803,7 @@ main{
             max-height: 100%;
             width: 40px;
             background: #CECECE;
-            .opacity(0.1);
+            .opacity(0.2);
             z-index: 1;
             cursor: pointer;
             display: table-cell;
@@ -843,7 +843,7 @@ main{
     }
   }
 
-  .staticText{
+  .aboutUs, .infoShop{
     .color-block(@color-element, @team-backgroung-img);
     .static_text();
 
@@ -980,20 +980,20 @@ main{
     }
   }
 
-  #payment.staticText{
-    .item-right {
-      img{
-        @media screen and (max-width: 640px){
-          width:auto;
-        }
-        @media screen and (max-width: 400px) {
-          width: 100%;
-        }
-      }
-    }
-  }
+  //#payment.hText{
+  //  .item-right {
+  //    img{
+  //      @media screen and (max-width: 640px){
+  //        width:auto;
+  //      }
+  //      @media screen and (max-width: 400px) {
+  //        width: 100%;
+  //      }
+  //    }
+  //  }
+  //}
 
-  .staticText.st-1{
+  .aboutUs.st-1{
     td{
       &:nth-child(2n){
         @media screen and (max-width: 784px){
@@ -1195,7 +1195,7 @@ main{
   // END CATALOG
 
   // CALL
-  .call-me{
+  .contact{
     .central();
     .static_text();
 
@@ -1203,7 +1203,7 @@ main{
       .central();
     }
 
-    .form-call{
+    .form-contact{
       width:100%;
       &:extend(.clearfix all);
 

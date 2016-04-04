@@ -4,7 +4,7 @@
             <div class="line-custom">
               <p class="header-name">Настройки головного модуля</p>
             </div>
-            <table>
+            <table class="edFormEdit">
               <tr>
                 <td></td>
                 <td>Назва</td>

@@ -1,4 +1,4 @@
-<div class="background-content">
+<div class="main-banner">
   <div class="position-width">
     <div class="sliders-line">
       <div class="slide-list">
@@ -20,7 +20,7 @@
   </div>
 </div>
 
-<div class="staticText st-1" id="about">
+<div class="aboutUs st-1" id="about">
   <div class="text-item">
     <div class="hText">
       <table>
@@ -82,7 +82,7 @@
   </div>
 </div>
 
-<div class="staticText st-2">
+<div class="infoShop st-2">
   <div class="text-item">
     <div class="hTextMain">
       <h1><?=$mess['MAIN_TEXT_H1'];?></h1>
@@ -133,7 +133,7 @@
 </div>
 
 
-<div class="call-me st-1" id="call">
+<div class="contact st-1" id="call">
   <div class="text-item">
     <div class="hText">
       <table>
@@ -145,7 +145,7 @@
       </table>
     </div>
   </div>
-  <div class="form-call">
+  <div class="form-contact">
     <? if(isset($info)){?>
     <p class="info-call this-ok"><?=$mess['OK_MESSAGE1']?></p>
     <p><?=$mess['OK_MESSAGE2']?></p>
