@@ -1,4 +1,47 @@
 <?php
+Core::$JS[] = '<script src="/skins/admin/js/mainEditMenu.js?v=1"></script>';
+
+// --- EDIT ELEMENT ---
+
+if(isset($_POST['resArr']) && count($_POST['resArr']) > 0){
+
+    foreach($_POST['resArr'] as $key => $array){
+
+        // --- add no checkbox ---
+        if(!isset($array['active'])){
+            $array['active'] = 0;
+        }
+        // --- end add no checkbox ---
+
+        foreach($array as $name => $value){
+            $when[$name][$key] = $value;
+        }
+        $ids .= $key.',';
+    }
+
+    foreach($when as $colum => $arrayId){
+        $qText .= "`".$colum."` = CASE ";
+        foreach($arrayId as $id => $value){
+            $qText .= " WHEN `id` = ".$id." THEN '".$value."'";
+        }
+        $qText .= " END,";
+    }
+
+    $ids = trim($ids, ',');
+
+    q("UPDATE `main_banner` SET
+        ".$qText."
+        `user_custom` = '".mres($_SESSION['user']['FIO'])."'
+        WHERE `id` IN (".$ids.")
+    ");
+
+    header("Location: /admin/main-banner/");
+    exit();
+}
+
+// --- END EDIT ELEMENT ---
+
+
 // --- DELETE ELEMENT AND FILE ---
 
 if(isset($_POST['delete']) && isset($_POST['ids'])){

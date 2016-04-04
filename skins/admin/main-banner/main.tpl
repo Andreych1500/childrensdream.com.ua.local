@@ -36,9 +36,9 @@
               <span class="delete icon-cross" onclick="deleteElement(<?=(int)$arResult['id']?>, this, '<?=Core::$DIR_PHOTOS_NAME['main_banner']?>')">Видалити</span>
             </div>
           </td>
-          <td><?=(($arResult['active'] == 0)? 'Ні' : 'Так')?></td>
-          <td><?=hsc($arResult['name'])?></td>
-          <td><?=(int)$arResult['sort']?></td>
+          <td rel_edit="ex|checkbox|resArr[<?=(int)$arResult['id']?>][active]"><?=(($arResult['active'] == 0)? 'Ні' : 'Так')?></td>
+          <td rel_edit="ex|text|resArr[<?=(int)$arResult['id']?>][name]"><?=hsc($arResult['name'])?></td>
+          <td rel_edit="ex|number|resArr[<?=(int)$arResult['id']?>][sort]"><?=(int)$arResult['sort']?></td>
           <td><?=(int)$arResult['id']?></td>
           <td>
             <?php if(!empty($arResult['img_ua'])){ ?>
@@ -51,6 +51,9 @@
         </tr>
         <?php } ?>
       </table>
+      <div class="dinamicEdit">
+        <span class="icon-pencil"></span>
+      </div>
     </form>
   </div>
 </div>
