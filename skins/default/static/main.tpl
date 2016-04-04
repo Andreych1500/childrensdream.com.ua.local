@@ -151,7 +151,7 @@
     <p><?=$mess['OK_MESSAGE2']?></p>
     <? } else { ?>
     <p class="info-call"><?=$mess['CALL_TEXT1']?><b><?=$mess['CALL_TEXT2']?></b><?=$mess['CALL_TEXT3']?><b><?=$mess['CALL_TEXT4']?></b>, <b><?=$mess['CALL_TEXT5']?></b></p>
-    <form action="#call" method="post" onsubmit="return checkForm('.form-call', 'form-call');">
+    <form action="#call" method="post" onsubmit="return checkForm('.form-contact', 'form-contact');">
       <div>
         <p><?=$mess['CALL_NAME']?><span>*</span></p>
         <input class="<?=((isset($errors['name']))? 'errors' : '')?>" type="text" name="name" value="<?=(isset($_POST['name'])? hsc($_POST['name']):"")?>">

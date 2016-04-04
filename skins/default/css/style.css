@@ -111,7 +111,6 @@ html,
 h1,
 h2,
 h3 {
-  position: relative;
   margin: 0;
   padding: 0;
   word-wrap: break-word;
@@ -140,6 +139,7 @@ h3 {
 }
 html {
   min-height: 100%;
+  position: relative;
 }
 body {
   width: 100%;
@@ -159,6 +159,7 @@ header .item {
   margin: 0 auto;
   width: 1010px;
   padding: 10px 0;
+  position: relative;
 }
 @media screen and (max-width: 1024px) {
   header .item {
@@ -301,6 +302,7 @@ header .item .top-menu ul {
 header .item .top-menu ul li {
   float: left;
   margin-right: 29px;
+  position: relative;
 }
 @media screen and (max-width: 960px) {
   header .item .top-menu ul li {
@@ -458,6 +460,7 @@ header .item .mobile-basket a {
   text-decoration: none;
   font-family: ComicSansMS;
   font-size: 14pt;
+  position: relative;
 }
 header .item .mobile-basket a:after {
   opacity: 0;
@@ -601,6 +604,7 @@ header .pushy-mob-menu ul {
 }
 header .pushy-mob-menu ul li {
   margin: 4px 0;
+  position: relative;
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
   -o-transition: all 0.5s ease-out;
@@ -779,6 +783,7 @@ main .main-banner .position-width .sliders-line .slide-list {
   max-width: 1010px;
   overflow: hidden;
   z-index: 0;
+  position: relative;
 }
 main .main-banner .position-width .sliders-line .slide-list img {
   width: 100%;
@@ -818,6 +823,7 @@ main .main-banner .position-width .sliders-line .slide-list .prev-slide {
 }
 main .main-banner .position-width .sliders-line .slide-list .slide-wrap {
   left: 0;
+  position: relative;
   top: 0;
   width: 10000000px;
 }
@@ -1345,6 +1351,7 @@ main .contact .form-contact form div:nth-child(1) input {
 main .contact .form-contact form div:nth-child(2) {
   float: right;
   right: -10px;
+  position: relative;
 }
 @media screen and (max-width: 480px) {
   main .contact .form-contact form div:nth-child(2) {
@@ -1620,6 +1627,7 @@ main .dateil-info .name-el {
 }
 main .dateil-info .el-slider {
   float: left;
+  position: relative;
   width: 54%;
 }
 @media screen and (max-width: 640px) {
@@ -1789,6 +1797,7 @@ main .dateil-info .el-text .el-shop .add-shop {
   left: 20px;
   padding: 10px 20px !important;
   display: inline-block;
+  position: relative;
   border: 0;
   outline: none;
   cursor: pointer;
@@ -2531,6 +2540,7 @@ footer .item .soc-link a:hover {
   min-width: 200px;
   background-color: #fff;
   color: #000;
+  position: relative;
   border: 2px solid #0066A2;
   -webkit-border-radius: 5px;
   -webkit-background-clip: padding-box;

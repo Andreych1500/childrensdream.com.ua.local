@@ -40,7 +40,7 @@ function removeError(object, parent){
 function checkForm(parents, nameForm){
     var error  = 0;
 
-    if(nameForm == 'form-call') {
+    if(nameForm == 'form-contact') {
         var object = [
             $(parents + " input[name='name']"),
             $(parents + " textarea[name='text']"),
