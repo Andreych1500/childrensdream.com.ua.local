@@ -1,66 +1,3 @@
-@font-face {
-  font-family: ComicSansMS;
-  src: url('font/comic/comic.eot');
-  src: url('font/comic/comic.eot') format('embedded-opentype'), url('font/comic/comic.woff2') format('woff2'), url('font/comic/comic.woff') format('woff'), url('font/comic/comic.ttf') format('truetype'), url('font/comic/comic.svg#comic') format('svg');
-}
-@font-face {
-  font-family: MyriadPro;
-  src: url('font/myriad/MyriadProRegular.eot');
-  src: url('font/myriad/MyriadProRegular.eot') format('embedded-opentype'), url('font/myriad/MyriadProRegular.woff2') format('woff2'), url('font/myriad/MyriadProRegular.woff') format('woff'), url('font/myriad/MyriadProRegular.ttf') format('truetype'), url('font/myriad/MyriadProRegular.svg#MyriadProRegular') format('svg');
-}
-section,
-article,
-aside,
-footer,
-header,
-nav,
-main {
-  display: block;
-}
-div,
-p,
-a,
-span,
-ul,
-li,
-table,
-tr,
-td,
-h1,
-h2,
-h3 {
-  margin: 0;
-  padding: 0;
-  word-wrap: break-word;
-  outline: none;
-}
-*::-moz-selection {
-  color: #fff;
-  text-shadow: none;
-  background-color: #2A8CFD;
-}
-*::selection {
-  color: #fff;
-  text-shadow: none;
-  background-color: #2A8CFD;
-}
-.clearfix:before,
-.clearfix:after,
-header:before,
-header:after,
-footer:before,
-footer:after,
-.soc-link:before,
-.soc-link:after {
-  content: " ";
-  display: table;
-}
-.clearfix:after,
-header:after,
-footer:after,
-.soc-link:after {
-  clear: both;
-}
 /*
 .submit(){
   border: 0;
@@ -156,6 +93,69 @@ footer:after,
   }
 }
 */
+@font-face {
+  font-family: ComicSansMS;
+  src: url('font/comic/comic.eot');
+  src: url('font/comic/comic.eot') format('embedded-opentype'), url('font/comic/comic.woff2') format('woff2'), url('font/comic/comic.woff') format('woff'), url('font/comic/comic.ttf') format('truetype'), url('font/comic/comic.svg#comic') format('svg');
+}
+@font-face {
+  font-family: MyriadPro;
+  src: url('font/myriad/MyriadProRegular.eot');
+  src: url('font/myriad/MyriadProRegular.eot') format('embedded-opentype'), url('font/myriad/MyriadProRegular.woff2') format('woff2'), url('font/myriad/MyriadProRegular.woff') format('woff'), url('font/myriad/MyriadProRegular.ttf') format('truetype'), url('font/myriad/MyriadProRegular.svg#MyriadProRegular') format('svg');
+}
+section,
+article,
+aside,
+footer,
+header,
+nav,
+main {
+  display: block;
+}
+div,
+p,
+a,
+span,
+ul,
+li,
+table,
+tr,
+td,
+h1,
+h2,
+h3 {
+  margin: 0;
+  padding: 0;
+  word-wrap: break-word;
+  outline: none;
+}
+*::-moz-selection {
+  color: #fff;
+  text-shadow: none;
+  background-color: #2A8CFD;
+}
+*::selection {
+  color: #fff;
+  text-shadow: none;
+  background-color: #2A8CFD;
+}
+.clearfix:before,
+.clearfix:after,
+header:before,
+header:after,
+footer:before,
+footer:after,
+.soc-link:before,
+.soc-link:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after,
+header:after,
+footer:after,
+.soc-link:after {
+  clear: both;
+}
 html {
   background: url('/skins/default/img/pattern.png') #d4eff4;
   height: 100%;
