@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
     // --- mini scroll fixed-menu ---
     var pathname = window.location.pathname;
 
@@ -68,6 +67,9 @@ $(document).ready(function() {
     });
     // --- end delete goods ---
 
+    // --- start resize function ---
+    $(window).resize();
+    // --- end start resize function ---
 });
 
 function edit_price(el) {

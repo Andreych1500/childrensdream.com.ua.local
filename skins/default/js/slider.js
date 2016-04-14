@@ -33,8 +33,6 @@ $(document).ready(function() {
 
         $('.slide-wrap').stop(true, false);
     });
-
-    $(window).resize();
     // end resize slider
 });
 

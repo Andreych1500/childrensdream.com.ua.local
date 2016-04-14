@@ -23,43 +23,29 @@
 
 <body>
   <header>
-    <div class="item">
-      <a class="logo" href="<?=$link_langs?>">
-        <img src="/skins/default/img/logo.png" alt="Children's Dream" title="Children's Dream">
-      </a>
-      <div class="information">
-        <p><?=$mess['CONTACT_INFO'];?><span> +38 (098) 570-43-77</span></p>
-      </div>
-      <div class="langs">
-        <a class="<?=(($link_langs == '/')? 'act-lang' : '')?>" href="/<?=Core::$SITE_DIR?>">UA</a>
-        <a class="<?=(($link_langs == '/ru/')? 'act-lang' : '')?>" href="/ru/<?=Core::$SITE_DIR?>">RU</a>
-      </div>
-      <nav class="top-menu">
-        <ul>
-          <li><a href="<?=$link_langs?>#about"><?=$mess['ABOUT_US']?></a></li>
-          <li><a href="<?=$link_langs?>catalog"><?=$mess['PRODUCTION']?></a></li>
-          <li><a href="<?=$link_langs?>#payment"><?=$mess['SERVICES']?></a></li>
-          <li><a href="<?=$link_langs?>#call"><?=$mess['CONTACTS']?></a></li>
-          <li><a href="<?=$link_langs?>comments"><?=$mess['OTZUVU']?></a></li>
-          <li><a href="<?=$link_langs?>order"><?=$mess['BASKET']?> <span><?=(int)$countG?></span></a></li>
-        </ul>
-        <span class="menu-icon"></span>
-      </nav>
+    <a class="logo" href="<?=$link_langs?>"><img src="/skins/default/img/logo.png" alt="Children's Dream" title="Children's Dream"></a>
+    <a class="lang_ua <?=(($link_langs == '/')? 'act-lang' : '')?>" href="/<?=Core::$SITE_DIR?>">UA</a>
+    <a class="lang_ru <?=(($link_langs == '/ru/')? 'act-lang' : '')?>" href="/ru/<?=Core::$SITE_DIR?>">RU</a>
+    <a class="mobile-basket" href="<?=$link_langs?>order"><?=$mess['BASKET']?> <span><?=(int)$countG?></span></a>
+    <div class="mob-menu" onclick="showHide(this);"><span class="icon-mob-menu"></span><?=$mess['MOBILE_MENU']?></div>
+    <a class="call-us" href="<?=(isMobile() ? 'tel' : 'callto')?>:38-098-570-43-77"><?=$mess['CONTACT_INFO']?> +38 (098) 570-43-77</a>
 
-      <div class="mobile-basket">
-        <a href="<?=$link_langs?>order"><?=$mess['BASKET']?> <span><?=(int)$countG?></span></a>
-      </div>
+    <nav class="top-menu">
+      <ul>
+        <li><a href="<?=$link_langs?>#about"><?=$mess['ABOUT_US']?></a></li>
+        <li><a href="<?=$link_langs?>catalog"><?=$mess['PRODUCTION']?></a></li>
+        <li><a href="<?=$link_langs?>#payment"><?=$mess['SERVICES']?></a></li>
+        <li><a href="<?=$link_langs?>#call"><?=$mess['CONTACTS']?></a></li>
+        <li><a href="<?=$link_langs?>comments"><?=$mess['OTZUVU']?></a></li>
+        <li><a href="<?=$link_langs?>order"><?=$mess['BASKET']?> <span><?=(int)$countG?></span></a></li>
+      </ul>
+      <span class="menu-icon"></span>
+    </nav>
 
-      <!-- Open mobile menu -->
-      <div id="mob-menu" onclick="showHide(this);">
-        <div class="menu-btn"><span class="icon-mob-menu"></span><?=$mess['MOBILE_MENU']?></div>
-      </div>
-
-    </div>
-    <div class="toTop"><span><?=$mess['TO_TOP']?></span></div>
+    <div class="toTop"><?=$mess['TO_TOP']?></div>
   </header>
 
-  <main><?=$content?></main>
+  <main><? //=$content?></main>
 
   <footer>
     <div class="item">
