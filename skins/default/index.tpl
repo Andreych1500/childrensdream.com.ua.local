@@ -48,23 +48,17 @@
   <main><? //=$content?></main>
 
   <footer>
-    <div class="item">
-      <div class="footer-logo">
-        <div  class="logo-img">
-          <img src="/skins/default/img/footer-logo.png" alt="Children's Dream" title="Children's Dream">
-        </div>
-        <div class="development-site">
-          <p>&copy;<?=data(Core::$CREATED).$mess['FOOTER_TOP']?></p>
-          <p><?=$mess['GOOD_ACCES']?></p>
-        </div>
-      </div>
-      <div class="soc-link">
-        <p><?=$mess['SOC_LINK']?></p>
-        <a href="//www.facebook.com/tmchildrensdream" target="_blank" class="icon-facebook"></a>
-        <a href="//vk.com/tmchildrensdream" target="_blank" class="icon-vkontakte"></a>
-        <a href="//plus.google.com/u/0/101299485141835241705" target="_blank" class="icon-google-plus3" rel="publisher"></a>
-        <a href="//www.instagram.com/tm_childrens_dream" target="_blank" class="icon-instagram"></a>
-      </div>
+    <img class="logo-img" src="/skins/default/img/footer-logo.png" alt="Children's Dream" title="Children's Dream">
+    <div class="development-site">
+      <p>&copy;<?=data(Core::$CREATED).$mess['FOOTER_TOP']?></p>
+      <p><?=$mess['GOOD_ACCES']?></p>
+    </div>
+    <div class="soc-link">
+      <p><?=$mess['SOC_LINK']?></p>
+      <a href="//www.facebook.com/tmchildrensdream" target="_blank" class="icon-facebook"></a>
+      <a href="//vk.com/tmchildrensdream" target="_blank" class="icon-vkontakte"></a>
+      <a href="//plus.google.com/u/0/101299485141835241705" target="_blank" class="icon-google-plus3" rel="publisher"></a>
+      <a href="//www.instagram.com/tm_childrens_dream" target="_blank" class="icon-instagram"></a>
     </div>
   </footer>
 </body>
