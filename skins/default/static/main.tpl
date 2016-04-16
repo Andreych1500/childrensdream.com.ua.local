@@ -52,72 +52,52 @@
   </div>
 </div>
 
-
 <div class="information-shop">
-  <?/*<div class="text-item">
-    <div class="hTextMain">
-      <h1><?=$mess['MAIN_TEXT_H1'];?></h1>
-      <p><?=$mess['MAIN_TEXT1'];?><strong><?=$mess['MAIN_TEXT2'];?></strong> <?=$mess['MAIN_TEXT3'];?></p>
-      <p><?=$mess['MAIN_TEXT4'];?></p>
-      <p><?=$mess['MAIN_TEXT5'];?></p>
-      <ul>
-        <li><span><strong><?=$mess['MAIN_TEXT_LIST1'];?></strong><?=$mess['MAIN_TEXT_LIST2'];?></span></li>
-        <li><span><strong><?=$mess['MAIN_TEXT_LIST3'];?></strong><?=$mess['MAIN_TEXT_LIST4'];?></span></li>
-        <li><span><strong><?=$mess['MAIN_TEXT_LIST5'];?></strong><?=$mess['MAIN_TEXT_LIST6'];?></span></li>
-      </ul>
-    </div>
-
-    <div class="hText" id="payment">
-      <table>
-        <tr>
-          <td><span class="line"></span></td>
-          <td><span><?=$mess['SERVICES_TEXT0'];?></span></td>
-          <td><span class="line"></span></td>
-        </tr>
-      </table>
-    </div>
-    <div class="descriptinText">
-      <div class="item-left">
-        <p><strong><?=$mess['SERVICES_TEXT1'];?></strong></p>
-        <p><?=$mess['SERVICES_TEXT2'];?></p>
-        <ul>
-          <li><span><?=$mess['SERVICES_TEXT3'];?></span></li>
-          <li><span><?=$mess['SERVICES_TEXT4'];?></span></li>
-          <li><span><?=$mess['SERVICES_TEXT5'];?></span></li>
-          <li><span><?=$mess['SERVICES_TEXT6'];?></span></li>
-        </ul>
-        <p><strong><?=$mess['SERVICES_TEXT7'];?></strong></p>
-        <p><?=$mess['SERVICES_TEXT8'];?></p>
-        <p><?=$mess['SERVICES_TEXT9'];?></p>
-        <ul>
-          <li><span><?=$mess['SERVICES_TEXT10'];?></span></li>
-          <li><span><?=$mess['SERVICES_TEXT11'];?></span></li>
-          <li><span><?=$mess['SERVICES_TEXT12'];?></span></li>
-          <li><span><?=$mess['SERVICES_TEXT13'];?><strong><?=$mess['SERVICES_TEXT14'];?></strong></span></li>
-        </ul>
-      </div>
-      <div class="item-right">
-        <img src="/skins/default/img/car.png" alt="<?=$mess['SERVICES_TEXT0'];?>" title="<?=$mess['SERVICES_TEXT0'];?>">
-      </div>
-    </div>
-  </div>
-*/?>
+  <h1><?=$mess['MAIN_TEXT_H1'];?></h1>
+  <p><?=$mess['MAIN_TEXT1'];?><strong><?=$mess['MAIN_TEXT2'];?></strong> <?=$mess['MAIN_TEXT3'];?></p>
+  <p><?=$mess['MAIN_TEXT4'];?></p>
+  <p><?=$mess['MAIN_TEXT5'];?></p>
+  <ul>
+    <li><strong><?=$mess['MAIN_TEXT_LIST1'];?></strong><?=$mess['MAIN_TEXT_LIST2'];?></li>
+    <li><strong><?=$mess['MAIN_TEXT_LIST3'];?></strong><?=$mess['MAIN_TEXT_LIST4'];?></li>
+    <li><strong><?=$mess['MAIN_TEXT_LIST5'];?></strong><?=$mess['MAIN_TEXT_LIST6'];?></li>
+  </ul>
 </div>
 
-<?/*
-<div class="contact st-1" id="call">
-  <div class="text-item">
-    <div class="hText">
-      <table>
-        <tr>
-          <td><span class="line"></span></td>
-          <td><span><?=$mess['CONTACTS'];?></span></td>
-          <td><span class="line"></span></td>
-        </tr>
-      </table>
-    </div>
+<div class="delivery-payment" id="payment">
+  <div class="block-title">
+    <span class="line"></span>
+    <p><?=$mess['SERVICES_TEXT0'];?></p>
+    <span class="line"></span>
   </div>
-  <div class="form-contact">
+  <p><strong><?=$mess['SERVICES_TEXT1'];?></strong></p>
+  <p><?=$mess['SERVICES_TEXT2'];?></p>
+  <ul>
+    <li><?=$mess['SERVICES_TEXT3'];?></li>
+    <li><?=$mess['SERVICES_TEXT4'];?></></li>
+    <li><?=$mess['SERVICES_TEXT5'];?></li>
+    <li><?=$mess['SERVICES_TEXT6'];?></li>
+  </ul>
+  <p><strong><?=$mess['SERVICES_TEXT7'];?></strong></p>
+  <p><?=$mess['SERVICES_TEXT8'];?></p>
+  <p><?=$mess['SERVICES_TEXT9'];?></p>
+  <ul>
+    <li><?=$mess['SERVICES_TEXT10'];?></li>
+    <li><?=$mess['SERVICES_TEXT11'];?></li>
+    <li><?=$mess['SERVICES_TEXT12'];?></li>
+    <li><?=$mess['SERVICES_TEXT13'];?><strong><?=$mess['SERVICES_TEXT14'];?></strong></></li>
+  </ul>
+  <img src="/skins/default/img/car.png" alt="<?=$mess['SERVICES_TEXT0'];?>" title="<?=$mess['SERVICES_TEXT0'];?>">
+</div>
+
+<div class="contact" id="call">
+  <div class="block-title">
+    <span class="line"></span>
+    <p><?=$mess['CONTACTS'];?></p>
+    <span class="line"></span>
+  </div>
+
+  <?/*<div class="form-contact">
     <? if(isset($info)){?>
     <p class="info-call this-ok"><?=$mess['OK_MESSAGE1']?></p>
     <p><?=$mess['OK_MESSAGE2']?></p>
@@ -155,6 +135,5 @@
       <? } ?>
     </form>
     <? } ?>
-  </div>
+  </div>*/?>
 </div>
-*/?>
