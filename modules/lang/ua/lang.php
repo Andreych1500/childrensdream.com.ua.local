@@ -1,6 +1,6 @@
 <?php
 // tabs
-$mess['ABOUT_US']     = 'Про Нас';
+$mess['ABOUT_US']     = 'Про&nbsp;Нас';
 $mess['PRODUCTION']   = 'Продукція';
 $mess['PRODUCTION_RU'] = 'Продукция_ru';
 $mess['SERVICES']     = 'Оплата і Доставка';

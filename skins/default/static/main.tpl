@@ -11,33 +11,19 @@
     <div class="prev-slide icon-left"></div>
   </div>
 </div>
-<?/*
-<div class="aboutUs st-1" id="about">
-  <div class="text-item">
-    <div class="hText">
-      <table>
-        <tr>
-          <td><span class="line"></span></td>
-          <td><span><?=$mess['ABOUT_US'];?></span></td>
-          <td><span class="line"></span></td>
-        </tr>
-      </table>
-    </div>
-    <div class="descriptinText">
-      <div class="item-left">
-        <p><?=$mess['ABOUT_TEXT1'];?></p>
-        <p><?=$mess['ABOUT_TEXT2'];?></p>
-        <p><?=$mess['ABOUT_TEXT3'];?></p>
-        <p><?=$mess['ABOUT_TEXT4'];?></p>
-        <p><?=$mess['ABOUT_TEXT5'];?></p>
-      </div>
-      <div class="item-right">
-        <img src="/skins/default/img/cd-static.png" alt="Children's Dream" title="Children's Dream">
-      </div>
-    </div>
-  </div>
-</div>
 
+<div class="about-text" id="about">
+  <span class="line"></span>
+  <p class="block-title"><?=$mess['ABOUT_US'];?></p>
+  <span class="line"></span>
+  <p><?=$mess['ABOUT_TEXT1'];?></p>
+  <p><?=$mess['ABOUT_TEXT2'];?></p>
+  <p><?=$mess['ABOUT_TEXT3'];?></p>
+  <p><?=$mess['ABOUT_TEXT4'];?></p>
+  <p><?=$mess['ABOUT_TEXT5'];?></p>
+  <img src="/skins/default/img/cd-static.png" alt="Children's Dream" title="Children's Dream">
+</div>
+<?/*
 <div class="catalog st-1">
   <div class="text-item">
     <div class="hText">
