@@ -4,7 +4,7 @@ $(document).ready(function() {
         htmSlider();
     }
 
-    // --- animate to menu scrol ---
+    // --- animate to menu scroll ---
     $('.top-menu a[href*=#], .pushy-mob-menu a[href*=#]').bind("click", function(e){
         if($(this).attr('href').search( /ru/i ) == 1){
             var anchor = $(this).attr('href').replace(/\/ru\//g, "");
@@ -24,12 +24,12 @@ $(document).ready(function() {
         }, 1000);
         e.preventDefault();
     });
-    // --- end animate to menu scrol ---
+    // --- end animate to menu scroll ---
 
 
     // resize slider
     $(window).resize(function() {
-        $('.sliders-line .slide-item').width($('.sliders-line').width());
+        $('.main-banner .slide-item').width($('.slide-list').width());
 
         $('.slide-wrap').stop(true, false);
     });

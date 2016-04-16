@@ -1,25 +1,17 @@
 <div class="main-banner">
-  <div class="position-width">
-    <div class="sliders-line">
-      <div class="slide-list">
-        <div class="next-slide">
-          <span class="icon-right"></span>
+  <div class="slide-list">
+    <div class="next-slide icon-right"></div>
+    <div class="slide-wrap">
+      <?php while($arResult = $main_banner->fetch_assoc()){ ?>
+        <div class="slide-item">
+          <img src="<?=hsc($arResult['img_'.$lang])?>" alt="<?=hsc($arResult['img_seo_alt_'.$lang])?>">
         </div>
-        <div class="slide-wrap">
-          <?php while($arResult = $main_banner->fetch_assoc()){ ?>
-            <div class="slide-item">
-              <img src="<?=hsc($arResult['img_'.$lang])?>" alt="<?=hsc($arResult['img_seo_alt_'.$lang])?>">
-            </div>
-          <?php } ?>
-        </div>
-        <div class="prev-slide">
-          <span class="icon-left"></span>
-        </div>
-      </div>
+      <?php } ?>
     </div>
+    <div class="prev-slide icon-left"></div>
   </div>
 </div>
-
+<?/*
 <div class="aboutUs st-1" id="about">
   <div class="text-item">
     <div class="hText">
@@ -185,3 +177,4 @@
     <? } ?>
   </div>
 </div>
+*/?>

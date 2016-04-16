@@ -146,14 +146,17 @@ header:after,
 footer:before,
 footer:after,
 .soc-link:before,
-.soc-link:after {
+.soc-link:after,
+.slide-wrap:before,
+.slide-wrap:after {
   content: " ";
   display: table;
 }
 .clearfix:after,
 header:after,
 footer:after,
-.soc-link:after {
+.soc-link:after,
+.slide-wrap:after {
   clear: both;
 }
 html {
@@ -168,6 +171,7 @@ header {
   padding-top: 10px;
   margin: 0 auto;
   width: 1010px;
+  margin-bottom: 15px;
 }
 @media screen and (max-width: 1024px) {
   header {
@@ -486,13 +490,13 @@ a[class^="lang_"].lang_ru {
 }
 .fixed-menu {
   position: fixed;
-  width: 98%;
+  width: 100%;
   z-index: 99;
   max-width: 1010px;
   top: 3px;
   padding: 3px 0 10px 0;
   background-color: #D4EFF4;
-  margin: 0 1%;
+  margin: 0;
   -webkit-box-shadow: 0px 0px 10px 0px rgba(15, 15, 15, 0.3);
   -moz-box-shadow: 0px 0px 10px 0px rgba(15, 15, 15, 0.3);
   box-shadow: 0px 0px 10px 0px rgba(15, 15, 15, 0.3);
@@ -827,11 +831,104 @@ a[class^="lang_"].lang_ru {
   -moz-opacity: 0.9;
   opacity: 0.9;
 }
+.main-banner {
+  width: 100%;
+  background: url('/skins/default/img/image.png') 50px -200px repeat-x #ffffff;
+  font-size: 0;
+  height: auto;
+  max-height: 296px;
+}
+.slide-list {
+  margin: 0 auto;
+  width: 1010px;
+  position: relative;
+  overflow: hidden;
+}
+@media screen and (max-width: 1024px) {
+  .slide-list {
+    width: 100%;
+  }
+}
+.slide-list .next-slide {
+  color: black;
+  position: absolute;
+  text-align: center;
+  font-size: 40px;
+  top: 50%;
+  margin-top: -20px;
+  background: #CECECE;
+  cursor: pointer;
+  z-index: 10;
+  filter: alpha(opacity=20);
+  -webkit-opacity: 0.2;
+  -moz-opacity: 0.2;
+  opacity: 0.2;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  left: 0;
+}
+.slide-list .next-slide:hover {
+  color: #000;
+  filter: alpha(opacity=70);
+  -webkit-opacity: 0.7;
+  -moz-opacity: 0.7;
+  opacity: 0.7;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.slide-list .prev-slide {
+  color: black;
+  position: absolute;
+  text-align: center;
+  font-size: 40px;
+  top: 50%;
+  margin-top: -20px;
+  background: #CECECE;
+  cursor: pointer;
+  z-index: 10;
+  filter: alpha(opacity=20);
+  -webkit-opacity: 0.2;
+  -moz-opacity: 0.2;
+  opacity: 0.2;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  right: 0;
+}
+.slide-list .prev-slide:hover {
+  color: #000;
+  filter: alpha(opacity=70);
+  -webkit-opacity: 0.7;
+  -moz-opacity: 0.7;
+  opacity: 0.7;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+@media screen and (max-width: 1024px) {
+  .slide-list img {
+    width: 100%;
+  }
+}
+.slide-wrap {
+  position: relative;
+  width: 10000000px;
+  left: 0;
+  top: 0;
+}
+.slide-wrap .slide-item {
+  float: left;
+}
+.slide-wrap .slide-item img {
+  height: auto;
+}
 /*
-// CONTENT
-main{
-  width:100%;
-
   .st-1{
     table {
       td {
@@ -892,78 +989,6 @@ main{
       &:nth-child(2n){
         @media screen and (max-width: 512px){
           width:52%;
-        }
-      }
-    }
-  }
-
-  .main-banner{
-    width:100%;
-    background: url('/skins/default/img/image.png') 50px -200px repeat-x;
-    max-height: 296px;
-    height: auto;
-    font-size: 0;
-
-    .position-width{
-      &:extend(.clearfix all);
-      margin: 0 auto;
-      max-width: 1010px;
-
-      .sliders-line{
-
-        .slide-list{
-          &:extend(.clearfix all);
-          max-width: 1010px;
-          overflow: hidden;
-          z-index: 0;
-          position: relative;
-
-          img{
-            width:100%;
-          }
-
-          .next-slide,
-          .prev-slide{
-            position: absolute;
-            max-height: 100%;
-            width: 40px;
-            background: #CECECE;
-            .opacity(0.2);
-            z-index: 1;
-            cursor: pointer;
-            display: table-cell;
-            top: 43%;
-
-            &:hover{
-              .opacity(0.7);
-              color:#000;
-            }
-
-            .icon-right,
-            .icon-left{
-              font-size: 30pt;
-              left: 0;
-            }
-          }
-
-          .prev-slide{
-            right: 0;
-          }
-
-          .slide-wrap{
-            left: 0;
-            position: relative;
-            top: 0;
-            width: 10000000px;
-
-            .slide-item{
-              float: left;
-
-              img{
-                height:auto;
-              }
-            }
-          }
         }
       }
     }
@@ -2322,9 +2347,6 @@ main{
 
   }
   // END ORDER
-
-}
-// END CONTENT
 */
 /* icons */
 #container span[class*="icon-"] {
