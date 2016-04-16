@@ -111,9 +111,9 @@ if(isset($_POST['deactive']) && isset($_POST['ids'])){
 
 // --- ALL ELEMENT ---
 
-$catalog = q("
+$product = q("
     SELECT *
-    FROM `catalog`
+    FROM `product`
     ORDER BY `sort` DESC, `id` DESC
 ");
 

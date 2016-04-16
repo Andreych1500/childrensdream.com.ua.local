@@ -43,7 +43,7 @@ $mess['OK_MESSAGE2'] = 'Наш менеджер свяжется с Вами в 
 $mess['NO_CALL_ME'] = 'На данный момент обратных звонков не оставлено.';
 
 // catalog
-$mess['DETSKIE_MATRACI'] = 'Детские матрасы';
+$mess['DETSKIE_MATRACI'] = 'Детские&nbsp;матрасы';
 $mess['NO_ELEMETN']      = 'Продукция отсутствует';
 $mess['PRICE']           = 'грн.';
 $mess['AVIABILITY']      = 'В наличии';

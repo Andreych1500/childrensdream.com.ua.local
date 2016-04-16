@@ -9,9 +9,9 @@ if($_GET['page'] == 'main'){
 
     // --- ALL ELEMENT ---
 
-    $catalog = q("
+    $product = q("
       SELECT `id`,`name_ua`,`seo_name`,`price`,`availability`,`cAnonsPhoto`,`name_ru`,`img_seo_alt_ua`,`img_seo_alt_ru`
-      FROM `catalog`
+      FROM `product`
       WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
     ");
 
@@ -21,20 +21,20 @@ if($_GET['page'] == 'main'){
 
 // --- DETAIL ELEMENT ---
 
-    $catalog = q("
+    $product = q("
       SELECT *
-      FROM `catalog`
+      FROM `product`
       WHERE `seo_name` = '" . mres($_GET['page']) . "' AND `active` = 1
       LIMIT 1
     ");
 
-    if ($catalog->num_rows == 0 || isset($_GET['key1'])) {
+    if ($product->num_rows == 0 || isset($_GET['key1'])) {
         $_GET['module'] = 'error';
         $_GET['page'] = 'main';
         header("HTTP/1.0 404 Not Found");
     }
 
-    $el = $catalog->fetch_assoc();
+    $el = $product->fetch_assoc();
 
     // --- SEO ELEMENT META TAGS ---
 

@@ -13,9 +13,11 @@
 </div>
 
 <div class="about-text" id="about">
-  <span class="line"></span>
-  <p class="block-title"><?=$mess['ABOUT_US'];?></p>
-  <span class="line"></span>
+  <div class="block-title">
+    <span class="line"></span>
+    <p class="title-text"><?=$mess['ABOUT_US'];?></p>
+    <span class="line"></span>
+  </div>
   <p><?=$mess['ABOUT_TEXT1'];?></p>
   <p><?=$mess['ABOUT_TEXT2'];?></p>
   <p><?=$mess['ABOUT_TEXT3'];?></p>
@@ -23,43 +25,35 @@
   <p><?=$mess['ABOUT_TEXT5'];?></p>
   <img src="/skins/default/img/cd-static.png" alt="Children's Dream" title="Children's Dream">
 </div>
-<?/*
-<div class="catalog st-1">
-  <div class="text-item">
-    <div class="hText">
-      <table>
-        <tr>
-          <td><span class="line"></span></td>
-          <td><span><?=$mess['DETSKIE_MATRACI'];?></span></td>
-          <td><span class="line"></span></td>
-        </tr>
-      </table>
+
+<div class="product">
+  <div class="product-list">
+    <div class="block-title">
+      <span class="line"></span>
+      <p><?=$mess['DETSKIE_MATRACI'];?></p>
+      <span class="line"></span>
     </div>
-  </div>
-  <div class="catalog-list">
-    <?php if($catalog->num_rows > 0){
-      while($el = $catalog->fetch_assoc()){ ?>
-        <div class="el-item">
-          <div class="photos">
-            <a href="<?=$link_langs?>catalog/<?=$el['seo_name']?>"><img src="<?=hsc($el['cAnonsPhoto'])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>"></a>
-          </div>
-          <div class="desk-info">
-            <a href="<?=$link_langs?>catalog/<?=$el['seo_name']?>"><span><?=hsc($el['name_'.$lang])?></span></a>
-            <p><?=number_format(hsc($el['price']), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
-            <p class="aviability">
-              <span class="<?=(((int)$el['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
-              <span><?=(((int)$el['availability'] == 1)? $mess['AVIABILITY'] : $mess['NOAVIABILITY'])?></span>
-            </p>
-          </div>
+
+    <?php if($product->num_rows > 0){ ?>
+      <?php while($el = $product->fetch_assoc()){ ?>
+        <div class="mattress">
+          <a class="photos" href="<?=$link_langs?>product/<?=$el['seo_name']?>"><img src="<?=hsc($el['cAnonsPhoto'])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>"></a>
+          <a class="links" href="<?=$link_langs?>product/<?=$el['seo_name']?>"><span><?=hsc($el['name_'.$lang])?></span></a>
+          <p class="price"><?=number_format(hsc($el['price']), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
+          <p class="aviability">
+            <span class="<?=(((int)$el['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
+            <span><?=(((int)$el['availability'] == 1)? $mess['AVIABILITY'] : $mess['NOAVIABILITY'])?></span>
+          </p>
         </div>
-    <?php
-      }
-     } else { ?>
+      <?php } ?>
+    <?php } else { ?>
     <div class="no-element"><?=$mess['NO_ELEMETN']?></div>
     <?php } ?>
   </div>
 </div>
 
+
+<?/*
 <div class="infoShop st-2">
   <div class="text-item">
     <div class="hTextMain">

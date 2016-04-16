@@ -128,15 +128,15 @@ if(isset($_POST['ok'])){
 
 // --- GET ELEMENT ---
 
-$catalog = q("
+$product = q("
 	SELECT *
-	FROM `catalog`
+	FROM `product`
 	WHERE `id` = ".(int)$_GET['id']."
 	LIMIT 1
 ");
 
-if($catalog->num_rows){
-	$row = $catalog->fetch_assoc();
+if($product->num_rows){
+	$row = $product->fetch_assoc();
 } else {
 	header("Location: /admin/catalog/");
 	exit();

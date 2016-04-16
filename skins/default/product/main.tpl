@@ -14,8 +14,8 @@
     </div>
 
     <div class="catalog-list">
-        <?php if($catalog->num_rows > 0){
-            while($el = $catalog->fetch_assoc()){ ?>
+        <?php if($product->num_rows > 0){
+            while($el = $product->fetch_assoc()){ ?>
                 <div class="el-item">
                     <div class="photos">
                         <a href="<?=$link_langs?>catalog/<?=$el['seo_name']?>"><img src="<?=hsc($el['cAnonsPhoto'])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>"></a>

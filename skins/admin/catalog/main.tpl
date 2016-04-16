@@ -21,7 +21,7 @@
             <td>Коли зміненна</td>
             <td>Ким зміненна</td>
         </tr>
-        <?php while($arResult = $catalog->fetch_assoc()){
+        <?php while($arResult = $product->fetch_assoc()){
             // --- MORE FILE ---
             if(!empty($arResult['cMorePhoto'])){
                 $cMorePhoto = '';

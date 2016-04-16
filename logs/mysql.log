@@ -100,3 +100,27 @@ line: 28
 date: 2016-04-03 17:33:52
 ===================================
 
+QUERY:
+      SELECT *
+      FROM `catalog`
+      WHERE `seo_name` = 'detskii-matras-lite-gold-kokos-porolon' AND `active` = 1
+      LIMIT 1
+    
+Table 'childrens.catalog' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\catalog\main.php
+line: 29
+date: 2016-04-16 14:24:44
+===================================
+
+QUERY:
+      SELECT *
+      FROM `catalog`
+      WHERE `seo_name` = 'detskii-matras-lite-gold-kokos-porolon' AND `active` = 1
+      LIMIT 1
+    
+Table 'childrens.catalog' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\catalog\main.php
+line: 29
+date: 2016-04-16 14:24:46
+===================================
+
