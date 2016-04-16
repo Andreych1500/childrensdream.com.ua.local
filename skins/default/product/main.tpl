@@ -18,10 +18,10 @@
             while($el = $product->fetch_assoc()){ ?>
                 <div class="el-item">
                     <div class="photos">
-                        <a href="<?=$link_langs?>catalog/<?=$el['seo_name']?>"><img src="<?=hsc($el['cAnonsPhoto'])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>"></a>
+                        <a href="<?=$link_langs?>product/<?=$el['seo_name']?>"><img src="<?=hsc($el['cAnonsPhoto'])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>"></a>
                     </div>
                     <div class="desk-info">
-                        <a href="<?=$link_langs?>catalog/<?=$el['seo_name']?>"><span><?=hsc($el['name_'.$lang])?></span></a>
+                        <a href="<?=$link_langs?>product/<?=$el['seo_name']?>"><span><?=hsc($el['name_'.$lang])?></span></a>
                         <p><?=number_format(hsc($el['price']), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
                         <p class="aviability">
                             <span class="<?=(((int)$el['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>

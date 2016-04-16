@@ -1,6 +1,6 @@
 <div class="add-content">
   <span class="add-element">Редагування елемента</span>
-  <a href="/admin/catalog/" class="back-menu">Елементи</a>
+  <a href="/admin/product/" class="back-menu">Елементи</a>
   <div class="bottom-line-edit"></div>
   <div class="add-block-form">
     <form action="" method="post" enctype="multipart/form-data">

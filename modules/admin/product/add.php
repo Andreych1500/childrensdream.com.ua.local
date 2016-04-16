@@ -10,7 +10,7 @@ if(isset($_POST['ok'])){
 
 	$isset = q("
 		SELECT `id`
-		FROM `catalog`
+		FROM `product`
 		WHERE `seo_name` = '".mres($_POST['seo_name'])."'
 		LIMIT 1
 	");
@@ -105,7 +105,7 @@ if(isset($_POST['ok'])){
 	if(!count($errors)){
 		$_POST = mres($_POST);
 
-		q(" INSERT INTO `catalog` SET
+		q(" INSERT INTO `product` SET
  			`sort`                = '".(int)$_POST['sort']."',
 		    `name_ua`             = '".$_POST['name_ua']."',
 		    `name_ru`             = '".$_POST['name_ru']."',
@@ -149,7 +149,7 @@ if(isset($_POST['ok'])){
 			`date_create`         = NOW()
 		");
 
-		header("Location: /admin/catalog/");
+		header("Location: /admin/product/");
 		exit();
 	}
 }

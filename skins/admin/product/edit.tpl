@@ -1,6 +1,6 @@
 <div class="add-content">
   <span class="add-element">Редагування елемента</span>
-  <a href="/admin/catalog/" class="back-menu">Елементи</a>
+  <a href="/admin/product/" class="back-menu">Елементи</a>
   <div class="bottom-line-edit"></div>
   <div class="add-block-form">
     <form action="" method="post" enctype="multipart/form-data">
@@ -250,7 +250,7 @@
 
     <form id="to_file">
       <input onchange="addPhoto(this,this.value)" rel_size="" rel_to_set="" type="file" name="photo" id="control">
-      <input type="hidden" name="dir_name" value="<?=Core::$DIR_PHOTOS_NAME['catalog']?>">
+      <input type="hidden" name="dir_name" value="<?=Core::$DIR_PHOTOS_NAME['product']?>">
       <input type="hidden" name="isset" value="N">
       <input type="hidden" name="update" value="Y">
     </form>

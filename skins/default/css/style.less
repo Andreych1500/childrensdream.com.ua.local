@@ -33,45 +33,6 @@
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#f3f3f3', GradientType=0 );
 }
 
-.static_text(){
-  .hText {
-    .shadow-text();
-    color: @team-color;
-    font-family: @font-team1;
-    font-size: 24pt;
-    text-align: center;
-    font-weight: bold;
-
-    table{
-      width:100%;
-
-      tr{
-
-        td{
-
-          &:nth-child(2){
-            @media screen and (max-width: 960px){
-              width:38%;
-            }
-
-            @media screen and (max-width: 480px){
-              width:52%;
-            }
-          }
-
-          .line {
-            height: 5px;
-            display:inline-block;
-            border-bottom: 5px solid #7BD7E8;
-            bottom: 5px;
-            width:100%;
-          }
-        }
-      }
-    }
-  }
-}
-
 .staticText,
 .catalog .hText,
 .call-me .hText,
@@ -981,6 +942,7 @@ a[class^="lang_"]{
   span{
     min-height: 50px;
     display: inline-block;
+    max-width: 250px;
   }
 }
 
@@ -995,122 +957,16 @@ a[class^="lang_"]{
   color:@color-text;
   font-family: @font-Comic;
 }
+
+.no-element {
+  text-align: center;
+  color: @color-text;
+  font: 32px @font-Comic;
+  margin: 40px 0;
+  width:100%;
+}
 // --- END PRODUCT ---
 
-/*
-
-// CATALOG
-
-.catalog{
-  .central();
-  .static_text();
-
-  .text-item{
-    .central();
-  }
-
-  .no-element {
-    text-align: center;
-    color: #482200;
-    font: 24pt @font-team1;
-    font-weight: bold;
-    margin: 40px 0;
-    width:100%;
-  }
-
-
-  .catalog-list{
-    &:extend(.clearfix all);
-
-    .el-item {
-
-
-
-      &:nth-child(4n){
-        margin-right:0;
-      }
-
-      &:nth-child(3n-2){
-        @media screen and (max-width: 848px){
-          margin-left:0;
-        }
-
-        @media screen and (max-width: 640px){
-          margin-left:6%;
-        }
-      }
-
-      @media screen and (max-width: 1024px){
-        width: 24%;
-      }
-
-      @media screen and (max-width: 848px){
-        width: 30%;
-        margin: 0 0 50px 3.9%;
-      }
-
-      @media screen and (max-width: 640px){
-        width: 43%;
-        margin: 0 0 25px 6%;
-      }
-
-      @media screen and (max-width: 480px) {
-        max-width:100%;
-        margin-left:0;
-        width: 100%;
-
-        &:nth-child(3n-2){
-          margin-left:0;
-        }
-      }
-
-      &:hover{
-        .photos img{
-          bottom: 5px;
-          position: relative;
-          .transition(bottom 300ms ease-out);
-        }
-
-        .desk-info a{
-          text-decoration: underline;
-        }
-      }
-
-      .photos, .desk-info{
-        text-align: center;
-
-        a{
-          display: inline-block;
-        }
-      }
-
-
-    }
-  }
-}
-
-.catalog.st-1{
-  table{
-    tr{
-      td{
-        &:nth-child(2){
-          @media screen and (min-width: 961px) {
-            width:32%;
-          }
-          @media screen and (max-width: 480px) {
-            width:50%;
-          }
-        }
-
-        h1{
-          font-size: 24pt;
-        }
-      }
-    }
-  }
-}
-// END CATALOG
-*/
 
 /*
 

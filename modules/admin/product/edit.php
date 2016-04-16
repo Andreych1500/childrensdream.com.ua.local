@@ -73,7 +73,7 @@ if(isset($_POST['ok'])){
 	if(!count($errors)){
 		$_POST = mres($_POST);
 
-		q(" UPDATE `catalog` SET
+		q(" UPDATE `product` SET
  			`sort`                = '".(int)$_POST['sort']."',
 		    `name_ua`             = '".$_POST['name_ua']."',
 		    `name_ru`             = '".$_POST['name_ru']."',
@@ -119,7 +119,7 @@ if(isset($_POST['ok'])){
 		");
 
 
-		header("Location: /admin/catalog");
+		header("Location: /admin/product");
 		exit();
 	}
 
@@ -138,7 +138,7 @@ $product = q("
 if($product->num_rows){
 	$row = $product->fetch_assoc();
 } else {
-	header("Location: /admin/catalog/");
+	header("Location: /admin/product/");
 	exit();
 }
 

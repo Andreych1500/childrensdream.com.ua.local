@@ -2,7 +2,7 @@
   <div class="custom-content-form">
     <form action="" method="post" onsubmit="return okFrom();">
       <div class="line-custom">
-        <a href="/admin/catalog/add/" class="add-el icon-plus">Добавити елемент</a>
+        <a href="/admin/product/add/" class="add-el icon-plus">Добавити елемент</a>
         <input type="submit" value="Активувати" name="activates">
         <input type="submit" value="Деактивувати" name="deactive">
         <input type="submit" value="Видалити" name="delete">
@@ -45,11 +45,11 @@
           <td>
             <span class="icon-mob-menu" onclick="openEdit(this);"></span>
             <div class="menu-edit">
-              <a href="/admin/catalog/edit?id=<?=(int)$arResult['id']?>">
+              <a href="/admin/product/edit?id=<?=(int)$arResult['id']?>">
                 <span class="icon-content"></span>
                 Змінити
               </a>
-              <span class="delete icon-cross" onclick="deleteElement(<?=(int)$arResult['id']?>, this, '<?=Core::$DIR_PHOTOS_NAME['catalog']?>')">Видалити</span>
+              <span class="delete icon-cross" onclick="deleteElement(<?=(int)$arResult['id']?>, this, '<?=Core::$DIR_PHOTOS_NAME['product']?>')">Видалити</span>
             </div>
           </td>
             <td><?=(int)$arResult['id']?></td>

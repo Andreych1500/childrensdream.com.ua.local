@@ -28,13 +28,13 @@ if(isset($_POST['resArr']) && count($_POST['resArr']) > 0){
 
     $ids = trim($ids, ',');
 
-    q("UPDATE `catalog` SET
+    q("UPDATE `product` SET
         ".$qText."
         `user_custom` = '".mres($_SESSION['user']['FIO'])."'
         WHERE `id` IN (".$ids.")
     ");
 
-    header("Location: /admin/catalog/");
+    header("Location: /admin/product/");
     exit();
 }
 // --- END EDIT ELEMENT ---
@@ -57,11 +57,11 @@ if(isset($_POST['delete']) && isset($_POST['ids'])){
 
     $ids = implode(',',$_POST['ids']);
 
-    q(" DELETE FROM `catalog`
+    q(" DELETE FROM `product`
 		WHERE `id` IN (".$ids.")
 	");
 
-    header("Location: /admin/catalog/");
+    header("Location: /admin/product/");
     exit();
 }
 
@@ -77,12 +77,12 @@ if(isset($_POST['activates']) && isset($_POST['ids'])){
 
     $ids = implode(',',$_POST['ids']);
 
-    q(" UPDATE `catalog`
+    q(" UPDATE `product`
         SET `active` = 1
 		WHERE `id` IN (".$ids.")
 	");
 
-    header("Location: /admin/catalog/");
+    header("Location: /admin/product/");
     exit();
 }
 
@@ -97,12 +97,12 @@ if(isset($_POST['deactive']) && isset($_POST['ids'])){
     }
     $ids = implode(',',$_POST['ids']);
 
-    q(" UPDATE `catalog`
+    q(" UPDATE `product`
         SET `active` = 0
 		WHERE `id` IN (".$ids.")
 	");
 
-    header("Location: /admin/catalog/");
+    header("Location: /admin/product/");
     exit();
 }
 

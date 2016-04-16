@@ -1,6 +1,6 @@
 <?php
-// catalog
-$mess['CATALOG']      = 'Продукція';
+// product
+$mess['PRODUCT']      = 'Продукція';
 $mess['DETSKIE_MATRACI'] = 'Дитячі матраци';
 $mess['NO_ELEMETN']   = 'Продукція відсутня';
 $mess['PRICE']        = 'грн.';
