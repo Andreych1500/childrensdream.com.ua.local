@@ -53,9 +53,8 @@
 </div>
 
 
-<?/*
-<div class="infoShop st-2">
-  <div class="text-item">
+<div class="information-shop">
+  <?/*<div class="text-item">
     <div class="hTextMain">
       <h1><?=$mess['MAIN_TEXT_H1'];?></h1>
       <p><?=$mess['MAIN_TEXT1'];?><strong><?=$mess['MAIN_TEXT2'];?></strong> <?=$mess['MAIN_TEXT3'];?></p>
@@ -102,9 +101,10 @@
       </div>
     </div>
   </div>
+*/?>
 </div>
 
-
+<?/*
 <div class="contact st-1" id="call">
   <div class="text-item">
     <div class="hText">
