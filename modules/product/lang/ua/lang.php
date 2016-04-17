@@ -1,7 +1,7 @@
 <?php
 // product
 $mess['PRODUCT']      = 'Продукція';
-$mess['DETSKIE_MATRACI'] = 'Дитячі матраци';
+$mess['DETSKIE_MATRACI'] = 'Дитячі&nbsp;матраци';
 $mess['NO_ELEMETN']   = 'Продукція відсутня';
 $mess['PRICE']        = 'грн.';
 $mess['AVIABILITY']   = 'В наявності';

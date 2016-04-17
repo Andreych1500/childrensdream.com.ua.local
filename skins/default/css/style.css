@@ -946,7 +946,8 @@ a[class^="lang_"].lang_ru {
     margin: 0 auto;
   }
 }
-.block-title p {
+.block-title p,
+.block-title h1 {
   width: 5% !important;
   padding: 0 15px;
   color: #482200;
