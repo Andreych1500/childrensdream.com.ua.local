@@ -4,18 +4,6 @@
 @color-element2:#72D6E5;
 
 /*
-.submit(){
-  border: 0;
-  outline: none;
-  cursor: pointer;
-  padding: 10px 60px;
-  background-color:@color-sumbit;
-  .border-radius(3px);
-  font-family: @font-team2;
-  font-size: 13pt;
-  color: #fff;
-}
-
 .color-block(@back-color,@url-img){
   background-color: @back-color;
   .background-image(url(@url-img));
@@ -38,10 +26,6 @@
 .desc-info,
 .descript-text{
   -ms-user-select: none;
-}
-
-.clear{
-  clear:both;
 }
 
 .error-links{
@@ -120,6 +104,17 @@ div, p, a, span, ul, li, table, tr, td, h1, h2, h3 {
   }
 }
 
+// --- ERRORS ---
+.errors{
+  border-color: red !important;
+}
+
+.no-errors {
+  border-color: #9bd6e7 !important;
+  .transition(all 2s ease);
+}
+// --- END ERRORS ---
+
 .central(@margin, @adaptive-width:~'100%'){
   margin:@margin;
   width:1010px;
@@ -157,6 +152,18 @@ div, p, a, span, ul, li, table, tr, td, h1, h2, h3 {
   }
 }
 
+.submit(){
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  padding: 10px 60px;
+  background-color:@color-sumbit;
+  .border-radius(3px);
+  font-family: @font-Myriad;
+  font-size: 17px;
+  color: #fff;
+}
+
 html{
   background: url('/skins/default/img/pattern.png') #d4eff4;
   height: 100%;
@@ -176,21 +183,22 @@ header{
 main{
   .box-sizing(border-box);
   min-height: 100%;
-  padding-bottom: 70px;
+  padding-bottom: 75px;
 
   @media screen and (max-width: 540px){
-    padding-bottom: 150px;
+    padding-bottom: 155px;
   }
 }
 
 footer{
   &:extend(.clearfix all);
-  .central(~'-70px auto');
+  .central(~'-75px auto');
   height: 70px;
+  padding-top: 5px;
 
   @media screen and (max-width: 540px){
     height: 150px;
-    margin-top: -150px;
+    margin-top: -155px;
   }
 }
 
@@ -845,6 +853,11 @@ a[class^="lang_"]{
 .block-title{
   margin-bottom: 10px;
 
+  @media screen and (max-width: 1024px){
+    width: 97%;
+    margin:0 auto;
+  }
+
   p{
     width: 5% !important;
     padding: 0 15px;
@@ -936,6 +949,7 @@ a[class^="lang_"]{
   font-family: @font-Comic;
   color:@color-text;
   max-width: 380px;
+  width: 100%;
   display: inline-block;
 
   span{
@@ -1021,6 +1035,10 @@ a[class^="lang_"]{
   color:@color-text;
   font-family:@font-Myriad;
 
+  .block-title{
+    width:100%;
+  }
+
   strong{
     font-size: 14pt;
     font-family: @font-Comic;
@@ -1077,178 +1095,109 @@ a[class^="lang_"]{
 // --- CONTACT ---
 .contact{
   width: 100%;
-  background: url('/skins/default/img/image.png') 50px -200px repeat-x #ffffff;
+  background: #ffffff;
+}
+
+.contact-form{
+  padding: 10px 0 50px;
+  .central(~'10px auto 0', ~'97%');
+  font-family: @font-Myriad;
+  color:@color-text;
+
+  .block-title{
+    width: 100%;
+  }
+
+  .info-call{
+    margin: 10px 0;
+  }
+
+  span{
+    color: #9e0000;
+  }
+
+  form{
+    margin: 0 auto;
+    width: 600px;
+    &:extend(.clearfix all);
+
+    @media screen and (max-width: 640px){
+      width: 96%;
+      margin: 0 2%;
+    }
+  }
+
+  input[type="email"],
+  input[type="text"],
+  textarea{
+    padding: 4px 0;
+    width: 100%;
+    border: 1px solid #9bd6e7;
+    outline: none;
+  }
+
+  input[type="submit"]{
+    .submit();
+    display: block;
+
+    &:hover {
+      background-color: lighten(@color-sumbit, 10%);
+    }
+  }
+}
+
+.name-email{
+  width: 220px;
+
+  @media screen and (max-width: 512px){
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  &:first-child{
+    float:left;
+  }
+
+  &:nth-child(2){
+    float: right;
+  }
+}
+
+.thems, .form-text{
+  float: left;
+  width: 100%;
+  margin-top: 15px;
+
+  &+textarea{
+    resize: none;
+    min-height: 120px;
+  }
+}
+
+.acces-capcha{
+  width: 220px;
+  float: right;
+  margin-top: 5px;
+
+  @media screen and (max-width: 450px){
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
+.this-ok, .this-ok+p{
+  font-size:22px;
+  text-align: center;
+}
+
+.limit{
+  font-size: 22px;
+  margin-top: 15px;
+  text-align: center;
 }
 // --- END CONTACT ---
 
 /*
-
-  // CALL
-  .contact{
-    .central();
-    .static_text();
-
-    .text-item {
-      .central();
-    }
-
-    .form-contact{
-      width:100%;
-      &:extend(.clearfix all);
-
-      .hText{
-        text-shadow: none;
-      }
-
-      .info-call, .this-ok + p{
-        color:@team-color;
-        font-family:@font-team2;
-        margin: 10px 0 10px 5px;
-        text-align: left;
-      }
-
-      .this-ok + p{
-        margin: 10px 0 30px 10px;
-      }
-
-      form {
-        margin: 0 auto;
-        width: 600px;
-        position: relative;
-
-        @media screen and (max-width: 640px){
-          width: 95%;
-          margin-left:10px;
-        }
-
-        @media screen and (max-width: 480px) {
-          float:left;
-        }
-
-        div p{
-          color:@team-color;
-          font:11pt @font-team2;
-
-          span{
-            color:#9e0000;
-          }
-        }
-
-
-        div{
-          @media screen and (max-width: 480px) {
-            width:98%;
-            float:left;
-
-            input{
-              width:100%;
-            }
-          }
-
-          &:nth-child(1){
-            float:left;
-
-            input{
-              width:210px;
-            }
-          }
-
-          &:nth-child(2){
-            float:right;
-            right: -10px;
-            position: relative;
-
-            @media screen and (max-width: 480px) {
-              right: 0;
-              float:left;
-            }
-
-            input{
-              width:210px;
-            }
-          }
-
-          &:nth-child(4){
-
-            input{
-              width:100%;
-            }
-          }
-        }
-
-        .capcha{
-          float:left;
-        }
-
-        .capcha + div{
-          float:right;
-          right: -10px;
-
-          @media screen and (max-width: 480px) {
-            right: 0;
-            float:left;
-          }
-
-          input{
-            width:210px;
-          }
-        }
-
-        input[type="text"], input[type="email"], textarea {
-          padding: 4px;
-          border: 1px solid #9bd6e7;
-          outline: none;
-          margin-bottom: 10px;
-        }
-
-        textarea{
-          width:100%;
-        }
-
-        textarea{
-          resize: none;
-          min-height: 120px;
-        }
-
-        input[type="submit"] {
-          .submit();
-
-          &:hover {
-            background-color: lighten(@color-sumbit, 10%);
-          }
-
-        }
-
-        input.errors, textarea.errors {
-          border-color: red;
-        }
-
-        input.no-errors, textarea.no-errors {
-          border-color: #9bd6e7;
-          .transition(all 2s ease);
-        }
-      }
-
-      .limit{
-        position: relative;
-        color: #482200;
-        font-size: 17pt;
-        bottom: -15px;
-        text-align: center;
-      }
-
-      .this-ok, .this-ok+p{
-        font-size:20pt;
-        text-align: center;
-      }
-    }
-  }
-  // END CALL
-
-
-
-
-
   // COMMENTS
   .position-width{
     &:extend(.clearfix all);

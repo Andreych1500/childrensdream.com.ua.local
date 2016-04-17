@@ -91,49 +91,39 @@
 </div>
 
 <div class="contact" id="call">
-  <div class="block-title">
-    <span class="line"></span>
-    <p><?=$mess['CONTACTS'];?></p>
-    <span class="line"></span>
-  </div>
+  <div class="contact-form">
+    <div class="block-title">
+      <span class="line"></span>
+      <p><?=$mess['CONTACTS'];?></p>
+      <span class="line"></span>
+    </div>
 
-  <?/*<div class="form-contact">
-    <? if(isset($info)){?>
-    <p class="info-call this-ok"><?=$mess['OK_MESSAGE1']?></p>
-    <p><?=$mess['OK_MESSAGE2']?></p>
-    <? } else { ?>
-    <p class="info-call"><?=$mess['CALL_TEXT1']?><b><?=$mess['CALL_TEXT2']?></b><?=$mess['CALL_TEXT3']?><b><?=$mess['CALL_TEXT4']?></b>, <b><?=$mess['CALL_TEXT5']?></b></p>
-    <form action="#call" method="post" onsubmit="return checkForm('.form-contact', 'form-contact');">
-      <div>
-        <p><?=$mess['CALL_NAME']?><span>*</span></p>
-        <input class="<?=((isset($errors['name']))? 'errors' : '')?>" type="text" name="name" value="<?=(isset($_POST['name'])? hsc($_POST['name']):"")?>">
-      </div>
-      <div>
-        <p><?=$mess['CALL_EMAIL']?><span>*</span></p>
-        <input class="<?=((isset($errors['email']))? 'errors' : '')?>" type="email" name="email" value="<?=(isset($_POST['email'])? hsc($_POST['email']):"")?>">
-      </div>
-      <div class="clear"></div>
-      <div>
-        <p><?=$mess['CALL_THEMS']?><span>*</span></p>
+    <?php if(isset($info)){?>
+      <p class="info-call this-ok"><?=$mess['OK_MESSAGE1']?></p>
+      <p><?=$mess['OK_MESSAGE2']?></p>
+    <?php } else { ?>
+      <p class="info-call"><?=$mess['CALL_TEXT1']?><b><?=$mess['CALL_TEXT2']?></b><?=$mess['CALL_TEXT3']?><b><?=$mess['CALL_TEXT4']?></b>, <b><?=$mess['CALL_TEXT5']?></b></p>
+      <form action="#call" method="post" onsubmit="return checkForm('.contact-form', 'form-contact');">
+        <div class="name-email">
+          <p><?=$mess['CALL_NAME']?><span>*</span></p>
+          <input class="<?=((isset($errors['name']))? 'errors' : '')?>" type="text" name="name" value="<?=(isset($_POST['name'])? hsc($_POST['name']):"")?>">
+        </div>
+        <div class="name-email">
+          <p><?=$mess['CALL_EMAIL']?><span>*</span></p>
+          <input class="<?=((isset($errors['email']))? 'errors' : '')?>" type="email" name="email" value="<?=(isset($_POST['email'])? hsc($_POST['email']):"")?>">
+        </div>
+        <p class="thems"><?=$mess['CALL_THEMS']?><span>*</span></p>
         <input class="<?=((isset($errors['thems']))? 'errors' : '')?>" type="text" name="thems" value="<?=(isset($_POST['thems'])? hsc($_POST['thems']):"")?>">
-      </div>
-      <div>
-        <p><?=$mess['CALL_TEXT']?><span>*</span></p>
+        <p class="form-text"><?=$mess['CALL_TEXT']?><span>*</span></p>
         <textarea class="<?=((isset($errors['text']))? 'errors' : '')?>" name="text"><?=(isset($_POST['text'])? hsc($_POST['text']):"")?></textarea>
-      </div>
-      <div class="capcha">
-        <img alt="capcha" src="/modules/static/captcha.php">
-      </div>
-      <div>
-        <p><?=$mess['CAPCHA']?><span>*</span></p>
-        <input class="<?=((isset($errors['capcha']))? 'errors' : '')?>" type="text" name="capcha" value="<?=(isset($_POST['capha'])? hsc($_POST['capha']):"")?>">
-      </div>
-      <div class="clear"></div>
-      <input type="submit" value="<?=$mess['SUBMIT']?>" name="ok">
-      <?php if(isset($next_error['limit']) && $next_error['limit'] == 'Y'){ ?>
-        <p class="limit"><?=$mess['LIMIT']?></p>
-      <? } ?>
-    </form>
-    <? } ?>
-  </div>*/?>
+        <img class="capcha" alt="capcha" src="/modules/static/captcha.php">
+        <div class="acces-capcha">
+          <p><?=$mess['CAPCHA']?><span>*</span></p>
+          <input class="<?=((isset($errors['capcha']))? 'errors' : '')?>" type="text" name="capcha" value="<?=(isset($_POST['capha'])? hsc($_POST['capha']):"")?>">
+        </div>
+        <input type="submit" value="<?=$mess['SUBMIT']?>" name="ok">
+        <?php if(isset($next_error['limit']) && $next_error['limit'] == 'Y'){ ?><p class="limit"><?=$mess['LIMIT']?></p><?php } ?>
+      </form>
+    <?php } ?>
+  </div>
 </div>

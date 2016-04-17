@@ -9,7 +9,7 @@
 
 	$dir = "fonts/";
 
-	$image = imagecreate(170, 60);
+	$image = imagecreate(170, 55);
 	$color = imagecolorallocate($image, 200, 100, 90);
 	$white = imagecolorallocate($image, 255, 255, 255);
 
