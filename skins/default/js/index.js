@@ -71,10 +71,10 @@ $(document).ready(function() {
 
         // --- name element to top ---
         if($(window).width() <= 625){
-            $('.el-text .name-el').prependTo('.dateil-info');
+            $('.goods h1').prependTo('.decoration-block');
         } else {
-            if($('.dateil-info .name-el').length > 0) {
-                $('.dateil-info .name-el').prependTo('.dateil-info .el-text');
+            if($('.decoration-block h1').length > 0) {
+                $('.decoration-block h1').prependTo('.goods');
             }
         }
         // --- end name element to top ---

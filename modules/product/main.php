@@ -34,20 +34,20 @@ if($_GET['page'] == 'main'){
         header("HTTP/1.0 404 Not Found");
     }
 
-    $el = $product->fetch_assoc();
+    $arResult = $product->fetch_assoc();
 
     // --- SEO ELEMENT META TAGS ---
 
-    Core::$META['title'] = $el['meta_title_'.$lang];
-    Core::$META['keywords'] = $el['meta_keywords_'.$lang];
-    Core::$META['description'] = $el['meta_description_'.$lang];
+    Core::$META['title'] = $arResult['meta_title_'.$lang];
+    Core::$META['keywords'] = $arResult['meta_keywords_'.$lang];
+    Core::$META['description'] = $arResult['meta_description_'.$lang];
 
     // --- END SEO ELEMENT META TAGS ---
 
 
     // --- SLIDER PHOTO ---
 
-    $slidePhoto = explode('#', $el['cMorePhoto']);
+    $slidePhoto = explode('#', $arResult['cMorePhoto']);
     foreach ($slidePhoto as $value) {
         if (!empty($value)) {
             $photos[] = explode('|', $value);
@@ -60,7 +60,7 @@ if($_GET['page'] == 'main'){
 
     if (isset($_COOKIE['items'])) {
         $cookies = (array)json_decode($_COOKIE['items']);
-        if(array_key_exists('g'.$el['id'],$cookies)){
+        if(array_key_exists('g'.$arResult['id'],$cookies)){
             $basket = 'backet-ok';
         }
     }
