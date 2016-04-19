@@ -74,7 +74,7 @@
   <p><?=$mess['SERVICES_TEXT2'];?></p>
   <ul>
     <li><?=$mess['SERVICES_TEXT3'];?></li>
-    <li><?=$mess['SERVICES_TEXT4'];?></></li>
+    <li><?=$mess['SERVICES_TEXT4'];?></li>
     <li><?=$mess['SERVICES_TEXT5'];?></li>
     <li><?=$mess['SERVICES_TEXT6'];?></li>
   </ul>
@@ -85,7 +85,7 @@
     <li><?=$mess['SERVICES_TEXT10'];?></li>
     <li><?=$mess['SERVICES_TEXT11'];?></li>
     <li><?=$mess['SERVICES_TEXT12'];?></li>
-    <li><?=$mess['SERVICES_TEXT13'];?><strong><?=$mess['SERVICES_TEXT14'];?></strong></></li>
+    <li><?=$mess['SERVICES_TEXT13'];?><strong><?=$mess['SERVICES_TEXT14'];?></strong></li>
   </ul>
   <img src="/skins/default/img/car.png" alt="<?=$mess['SERVICES_TEXT0'];?>" title="<?=$mess['SERVICES_TEXT0'];?>">
 </div>
