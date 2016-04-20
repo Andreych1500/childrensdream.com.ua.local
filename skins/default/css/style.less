@@ -1646,12 +1646,9 @@ a[class^="lang_"]{
 
 // --- ORDER ---
 .order{
-  background: #ffffff;
   color: @color-text;
   font-family: @font-Myriad;
-}
 
-.order-block{
   .central(~'0 auto', ~'97%');
   &:extend(.clearfix all);
 
@@ -1816,6 +1813,10 @@ a[class^="lang_"]{
     max-width: 250px;
     margin: 15px 0 0;
     line-height: 25px;
+
+    span{
+      color: #9e0000;
+    }
   }
 
   input, select{
@@ -1840,9 +1841,10 @@ a[class^="lang_"]{
 }
 
 .no-goods{
-  font-size: 22px;
+  font-family: @font-Comic;
+  font-size: 24px;
   text-align: center;
-  padding: 30px 0;
+  padding: 80px 0;
 
   a{
     color: #3f627b;

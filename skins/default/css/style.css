@@ -77,8 +77,8 @@ footer .footer-block:after,
 .comments:after,
 .comment-item:before,
 .comment-item:after,
-.order-block:before,
-.order-block:after,
+.order:before,
+.order:after,
 .headers-tab:before,
 .headers-tab:after,
 .order-form:before,
@@ -102,7 +102,7 @@ footer .footer-block:after,
 .slider-detail:after,
 .comments:after,
 .comment-item:after,
-.order-block:after,
+.order:after,
 .headers-tab:after,
 .order-form:after {
   clear: both;
@@ -1754,31 +1754,28 @@ a[class^="lang_"].lang_ru {
   display: none;
 }
 .order {
-  background: #ffffff;
   color: #482200;
   font-family: MyriadPro;
-}
-.order-block {
   margin: 0 auto;
   width: 1010px;
 }
 @media screen and (max-width: 1024px) {
-  .order-block {
+  .order {
     width: 97%;
   }
 }
-.order-block .h-title {
+.order .h-title {
   font-size: 29px;
   text-align: left;
   font-family: ComicSansMS;
   margin-bottom: 15px;
 }
 @media screen and (max-width: 480px) {
-  .order-block .h-title {
+  .order .h-title {
     font-size: 24px;
   }
 }
-.order-block input[type="submit"] {
+.order input[type="submit"] {
   border: 0;
   outline: none;
   cursor: pointer;
@@ -1795,10 +1792,10 @@ a[class^="lang_"].lang_ru {
   color: #fff;
   padding: 10px 25px;
 }
-.order-block input[type="submit"]:hover {
+.order input[type="submit"]:hover {
   background-color: #c935bd;
 }
-.order-block input[type="submit"]:active {
+.order input[type="submit"]:active {
   padding-top: 11px;
   height: 40px;
 }
@@ -1913,6 +1910,9 @@ a[class^="lang_"].lang_ru {
   margin: 15px 0 0;
   line-height: 25px;
 }
+.order-form p span {
+  color: #9e0000;
+}
 .order-form input,
 .order-form select {
   float: left;
@@ -1940,9 +1940,10 @@ a[class^="lang_"].lang_ru {
   display: block;
 }
 .no-goods {
-  font-size: 22px;
+  font-family: ComicSansMS;
+  font-size: 24px;
   text-align: center;
-  padding: 30px 0;
+  padding: 80px 0;
 }
 .no-goods a {
   color: #3f627b;
