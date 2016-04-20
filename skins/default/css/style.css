@@ -1005,7 +1005,6 @@ a[class^="lang_"].lang_ru {
 .product {
   width: 100%;
   background: #ffffff;
-  margin-top: 30px;
   padding-top: 15px;
 }
 .product .product-list {
