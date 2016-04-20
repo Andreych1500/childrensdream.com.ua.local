@@ -63,18 +63,18 @@ footer .footer-block:after,
 .delivery-payment .delivery-block:after,
 .contact form:before,
 .contact form:after,
-.description:before,
-.description:after,
+.description .description-block:before,
+.description .description-block:after,
 .haracteristic:before,
 .haracteristic:after,
-.decoration-block:before,
-.decoration-block:after,
+.mattress-detail:before,
+.mattress-detail:after,
 .goods:before,
 .goods:after,
 .slider-detail:before,
 .slider-detail:after,
-.comments .block-comennts:before,
-.comments .block-comennts:after,
+.comments:before,
+.comments:after,
 .comment-item:before,
 .comment-item:after,
 .order-block:before,
@@ -95,12 +95,12 @@ footer .footer-block:after,
 .product:after,
 .delivery-payment .delivery-block:after,
 .contact form:after,
-.description:after,
+.description .description-block:after,
 .haracteristic:after,
-.decoration-block:after,
+.mattress-detail:after,
 .goods:after,
 .slider-detail:after,
-.comments .block-comennts:after,
+.comments:after,
 .comment-item:after,
 .order-block:after,
 .headers-tab:after,
@@ -171,9 +171,8 @@ footer .footer-block {
 }
 .iEror {
   font: 140pt MyriadPro;
-  color: #482200;
+  color: #42D2E1;
   text-align: center;
-  text-shadow: 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 2px 2px #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff, 3px 3px #fff, -3px -3px 0 #fff, 3px -3px 0 #fff, -3px 3px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 1px 0 #fff, 0 -1px 0 #fff, 2px 0 0 #fff, -2px 0 0 #fff, 0 2px 0 #fff, 0 -2px 0 #fff, 3px 0 0 #fff, -3px 0 0 #fff, 0 3px 0 #fff, 0 -3px 0 #fff;
 }
 @media screen and (max-width: 512px) {
   .iEror {
@@ -1298,11 +1297,15 @@ a[class^="lang_"].lang_ru {
   text-align: center;
 }
 .description {
+  background: url('/skins/default/img/pattern.png') #d4eff4;
+}
+.description .description-block {
   margin: 10px auto;
   width: 1010px;
+  padding-bottom: 10px;
 }
 @media screen and (max-width: 1024px) {
-  .description {
+  .description .description-block {
     width: 97%;
   }
 }
@@ -1364,17 +1367,16 @@ a[class^="lang_"].lang_ru {
   }
 }
 .haracteristic {
-  width: 100%;
-  background: #ffffff;
-}
-.haracteristic .block-title {
   margin: 15px auto;
   width: 1010px;
 }
 @media screen and (max-width: 1024px) {
-  .haracteristic .block-title {
+  .haracteristic {
     width: 97%;
   }
+}
+.haracteristic .block-title {
+  width: 100%;
 }
 .haracteristic .block-title p {
   font-size: 22px;
@@ -1383,16 +1385,11 @@ a[class^="lang_"].lang_ru {
   width: 5%;
 }
 .haracteristic table {
-  margin: 15px auto;
-  width: 1010px;
+  width: 100%;
+  margin-top: 10px;
   color: #482200;
   font: 16px MyriadPro;
   border-collapse: collapse;
-}
-@media screen and (max-width: 1024px) {
-  .haracteristic table {
-    width: 97%;
-  }
 }
 .haracteristic tr {
   border-top: 1px solid #dedede;
@@ -1407,97 +1404,94 @@ a[class^="lang_"].lang_ru {
   padding-left: 15px;
 }
 .mattress-detail {
-  width: 100%;
-  background: #ffffff;
+  margin: 0 auto;
+  width: 1010px;
+  padding: 15px 0;
+}
+@media screen and (max-width: 1024px) {
+  .mattress-detail {
+    width: 97%;
+  }
 }
 .mattress-detail h1 {
   font-size: 20px;
   font-family: ComicSansMS;
   color: #482200;
   margin-bottom: 10px;
+  text-align: center;
 }
-.decoration-block {
-  margin: 10px auto;
-  width: 1010px;
-  padding: 15px 0;
-}
-@media screen and (max-width: 1024px) {
-  .decoration-block {
-    width: 97%;
-  }
-}
-.decoration-block .slider-for {
+.mattress-detail .slider-for {
   float: left;
   width: 70%;
   left: 20px;
   top: 35px;
 }
 @media screen and (max-width: 800px) {
-  .decoration-block .slider-for {
+  .mattress-detail .slider-for {
     top: 0;
     width: 90%;
   }
 }
 @media screen and (max-width: 512px) {
-  .decoration-block .slider-for {
+  .mattress-detail .slider-for {
     left: 0;
     width: 100%;
   }
 }
-.decoration-block .item-photo img {
+.mattress-detail .item-photo img {
   margin: 0 auto;
   max-height: 270px;
   cursor: pointer;
   max-width: 380px;
 }
 @media screen and (max-width: 1024px) {
-  .decoration-block .item-photo img {
+  .mattress-detail .item-photo img {
     width: 100%;
   }
 }
 @media screen and (max-width: 640px) {
-  .decoration-block .item-photo img {
+  .mattress-detail .item-photo img {
     width: auto;
   }
 }
 @media screen and (max-width: 512px) {
-  .decoration-block .item-photo img {
+  .mattress-detail .item-photo img {
     width: 90%;
   }
 }
-.decoration-block .slider-nav {
+.mattress-detail .slider-nav {
   float: left;
   width: 20%;
   margin: 0 5px;
   text-align: center;
 }
 @media screen and (max-width: 800px) {
-  .decoration-block .slider-nav {
+  .mattress-detail .slider-nav {
     position: absolute;
     width: 97%;
     height: 100%;
   }
-  .decoration-block .slider-nav .slick-list {
+  .mattress-detail .slider-nav .slick-list {
     display: none;
   }
 }
-.decoration-block .slider-nav .slick-center {
+.mattress-detail .slider-nav .slick-center {
   border: 1px solid #ccc;
 }
-.decoration-block .slider-nav .icon-top,
-.decoration-block .slider-nav .icon-bottom {
+.mattress-detail .slider-nav .icon-top,
+.mattress-detail .slider-nav .icon-bottom {
   color: #72AFC1;
   position: relative;
   cursor: pointer;
   font-size: 24pt;
 }
-.decoration-block .slider-nav .icon-top:hover,
-.decoration-block .slider-nav .icon-bottom:hover {
+.mattress-detail .slider-nav .icon-top:hover,
+.mattress-detail .slider-nav .icon-bottom:hover {
   color: #00D7E6;
 }
 @media screen and (max-width: 800px) {
-  .decoration-block .slider-nav .icon-top,
-  .decoration-block .slider-nav .icon-bottom {
+  .mattress-detail .slider-nav .icon-top,
+  .mattress-detail .slider-nav .icon-bottom {
     z-index: 99;
     display: block;
     -webkit-transform: rotate(-90deg);
@@ -1513,7 +1507,7 @@ a[class^="lang_"].lang_ru {
   }
 }
 @media screen and (max-width: 800px) {
-  .decoration-block .slider-nav .icon-bottom {
+  .mattress-detail .slider-nav .icon-bottom {
     right: 0;
     left: auto;
   }
@@ -1610,14 +1604,11 @@ a[class^="lang_"].lang_ru {
   cursor: default;
 }
 .comments {
-  background: #ffffff;
-}
-.comments .block-comennts {
   margin: 0 auto;
   width: 1010px;
 }
 @media screen and (max-width: 1024px) {
-  .comments .block-comennts {
+  .comments {
     width: 97%;
   }
 }

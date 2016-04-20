@@ -1,5 +1,5 @@
 <div class="comments">
-  <div class="block-comennts">
+
     <div class="view-comments">
       <h3><?=$mess['COMMENTS']?></h3>
       <p><?=$mess['YOUR_REVIEW']?></p>
@@ -30,5 +30,5 @@
         <input type="submit" value="<?=$mess['SUBMIT'];?>" name="submit">
       </form>
     </div>
-  </div>
+
 </div>

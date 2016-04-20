@@ -71,10 +71,10 @@ $(document).ready(function() {
 
         // --- name element to top ---
         if($(window).width() <= 625){
-            $('.goods h1').prependTo('.decoration-block');
+            $('.goods h1').prependTo('.mattress-detail');
         } else {
-            if($('.decoration-block h1').length > 0) {
-                $('.decoration-block h1').prependTo('.goods');
+            if($('.mattress-detail h1').length > 0) {
+                $('.mattress-detail h1').prependTo('.goods');
             }
         }
         // --- end name element to top ---

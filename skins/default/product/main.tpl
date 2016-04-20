@@ -1,77 +1,75 @@
 <?php if($_GET['page'] == 'main'){ ?>
 <div class="product">
-  <div class="product-list">
-    <div class="block-title">
-      <span class="line"></span>
-      <h1><?=$mess['DETSKIE_MATRACI'];?></h1>
-      <span class="line"></span>
-    </div>
-
-    <?php if($product->num_rows > 0){ ?>
-      <?php while($arResult = $product->fetch_assoc()){ ?>
-      <div class="mattress">
-        <a class="photos" href="<?=$link_langs?>product/<?=$arResult['seo_name']?>"><img src="<?=hsc($arResult['cAnonsPhoto'])?>" alt="<?=hsc($arResult['img_seo_alt_'.$lang])?>"></a>
-        <a class="links" href="<?=$link_langs?>product/<?=$arResult['seo_name']?>"><span><?=hsc($arResult['name_'.$lang])?></span></a>
-        <p class="price"><?=number_format(hsc($arResult['price']), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
-        <p class="aviability">
-          <span class="<?=(((int)$arResult['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
-          <span><?=(((int)$arResult['availability'] == 1)? $mess['AVIABILITY'] : $mess['NOAVIABILITY'])?></span>
-        </p>
-      </div>
-      <?php } ?>
-    <?php } else { ?>
-    <div class="no-element"><?=$mess['NO_ELEMETN']?></div>
-    <?php } ?>
+  <div class="block-title">
+    <span class="line"></span>
+    <h1><?=$mess['DETSKIE_MATRACI'];?></h1>
+    <span class="line"></span>
   </div>
+
+  <?php if($product->num_rows > 0){ ?>
+    <?php while($arResult = $product->fetch_assoc()){ ?>
+    <div class="mattress">
+      <a class="photos" href="<?=$link_langs?>product/<?=$arResult['seo_name']?>"><img src="<?=hsc($arResult['cAnonsPhoto'])?>" alt="<?=hsc($arResult['img_seo_alt_'.$lang])?>"></a>
+      <a class="links" href="<?=$link_langs?>product/<?=$arResult['seo_name']?>"><span><?=hsc($arResult['name_'.$lang])?></span></a>
+      <p class="price"><?=number_format(hsc($arResult['price']), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
+      <p class="aviability">
+        <span class="<?=(((int)$arResult['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
+        <span><?=(((int)$arResult['availability'] == 1)? $mess['AVIABILITY'] : $mess['NOAVIABILITY'])?></span>
+      </p>
+    </div>
+    <?php } ?>
+  <?php } else { ?>
+  <div class="no-element"><?=$mess['NO_ELEMETN']?></div>
+  <?php } ?>
 </div>
 
 <?php } else { ?>
 
 <div class="mattress-detail">
-  <div class="decoration-block">
-    <?php if(isset($photos)){ ?>
-    <div class="slider-detail">
-      <div class="slider-nav <?=((count($photos) > 3)? 'center-photo' : 'currenc')?>">
-        <?php foreach($photos as $key => $value){ ?>
-          <div class="items-photo"><img src="<?=hsc($value[0])?>" alt="<?=hsc($arResult['img_seo_alt_'.$lang])?>"></div>
-        <?php } ?>
-      </div>
-
-      <div class="slider-for <?=((count($photos) > 3)? '' : 'good-top')?>">
-        <?php foreach($photos as $key => $value){ ?>
-          <div class="item-photo" onclick="modalPhoto();"><img src="<?=hsc($value[0])?>" alt="<?=hsc($arResult['img_seo_alt_'.$lang])?>" title="<?=hsc($arResult['name_'.$lang])?>"></div>
-        <?php } ?>
-      </div>
-    </div>
-    <?php } ?>
-
-    <div class="goods <?=(!isset($photos)? 'good-view' : '')?>">
-      <h1><?=hsc($arResult['name_'.$lang])?></h1>
-      <p>
-        <span class="<?=(((int)$arResult['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
-        <?=(((int)$arResult['availability'] == 1)? $mess['AVIABILITY'] : $mess['NOAVIABILITY'])?>
-      </p>
-      <p><?=hsc($arResult['description_'.$lang])?></p>
-
-      <?php if($arResult['availability'] == 1){ ?>
-      <p class="price"><?=number_format(hsc($arResult['price']), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
-      <div class="add-shop <?=(!empty($basket)? $basket : '')?>" <?php if(empty($basket)){ ?> onclick="addToCard(<?=(int)$arResult['id']?>,'<?=$mess['BASKETOK']?>','1')"<?php }?>>
-          <?=(empty($basket)? '<span class="icon-basket"></span>' : '')?>
-          <?=(!empty($basket)? $mess['BASKETOK'] : $mess['ADDSHOP'])?>
-      </div>
+  <?php if(isset($photos)){ ?>
+  <div class="slider-detail">
+    <div class="slider-nav <?=((count($photos) > 3)? 'center-photo' : 'currenc')?>">
+      <?php foreach($photos as $key => $value){ ?>
+        <div class="items-photo"><img src="<?=hsc($value[0])?>" alt="<?=hsc($arResult['img_seo_alt_'.$lang])?>"></div>
       <?php } ?>
     </div>
+
+    <div class="slider-for <?=((count($photos) > 3)? '' : 'good-top')?>">
+      <?php foreach($photos as $key => $value){ ?>
+        <div class="item-photo" onclick="modalPhoto();"><img src="<?=hsc($value[0])?>" alt="<?=hsc($arResult['img_seo_alt_'.$lang])?>" title="<?=hsc($arResult['name_'.$lang])?>"></div>
+      <?php } ?>
+    </div>
+  </div>
+  <?php } ?>
+
+  <div class="goods <?=(!isset($photos)? 'good-view' : '')?>">
+    <h1><?=hsc($arResult['name_'.$lang])?></h1>
+    <p>
+      <span class="<?=(((int)$arResult['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
+      <?=(((int)$arResult['availability'] == 1)? $mess['AVIABILITY'] : $mess['NOAVIABILITY'])?>
+    </p>
+    <p><?=hsc($arResult['description_'.$lang])?></p>
+
+    <?php if($arResult['availability'] == 1){ ?>
+    <p class="price"><?=number_format(hsc($arResult['price']), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
+    <div class="add-shop <?=(!empty($basket)? $basket : '')?>" <?php if(empty($basket)){ ?> onclick="addToCard(<?=(int)$arResult['id']?>,'<?=$mess['BASKETOK']?>','1')"<?php }?>>
+        <?=(empty($basket)? '<span class="icon-basket"></span>' : '')?>
+        <?=(!empty($basket)? $mess['BASKETOK'] : $mess['ADDSHOP'])?>
+    </div>
+    <?php } ?>
   </div>
 </div>
 
 <div class="description">
-  <div class="block-title">
-    <span class="line"></span>
-    <p><?=$mess['MIN_OPUS']?></p>
-    <span class="line"></span>
+  <div class="description-block">
+    <div class="block-title">
+      <span class="line"></span>
+      <p><?=$mess['MIN_OPUS']?></p>
+      <span class="line"></span>
+    </div>
+    <div class="description-text"><?=nl2br(hsc($arResult['text_'.$lang]))?></div>
+    <div class="circle-photo"><img src="<?=hsc($arResult['cCirklePhoto'])?>" alt="<?=hsc($arResult['name_'.$lang])?>" title="<?=hsc($arResult['img_seo_alt_'.$lang])?>"></div>
   </div>
-  <div class="description-text"><?=nl2br(hsc($arResult['text_'.$lang]))?></div>
-  <div class="circle-photo"><img src="<?=hsc($arResult['cCirklePhoto'])?>" alt="<?=hsc($arResult['name_'.$lang])?>" title="<?=hsc($arResult['img_seo_alt_'.$lang])?>"></div>
 </div>
 
 <div class="haracteristic">
