@@ -12,19 +12,16 @@ php_value max_input_time 5000
 
 RewriteEngine on
 
-RewriteCond %{HTTP_HOST} ^www\.childrensdream\.com\.ua$ [NC]
-RewriteRule ^(.*)$ http://childrensdream.com.ua/$1 [R=301,L]
+ErrorDocument 403 /error
+
+RewriteCond %{HTTP_HOST} ^www\.childrensdream\.com\.ua\.local$ [NC]
+RewriteRule ^(.*)$ http://childrensdream.com.ua.local/$1 [R=301,L]
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_URI} !^/favicon.ico
 
 RewriteRule ^(.*)$ index.php?route=$1 [L,QSA]
-
-Options +FollowSymLinks
-RewriteCond %{HTTP_HOST} ^www.childrensdream\.com\.ua$ [NC]
-RewriteRule ^(.*)$ http://childrensdream.com.ua/$1 [R=301,L]
-
-ErrorDocument 403 /error/403.php
 
 # кешування у браузері на стороні користувача
 <IfModule mod_expires.c>
