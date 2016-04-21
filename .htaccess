@@ -12,8 +12,6 @@ php_value max_input_time 5000
 
 RewriteEngine on
 
-ErrorDocument 403 /error
-
 RewriteCond %{HTTP_HOST} ^www\.childrensdream\.com\.ua\.local$ [NC]
 RewriteRule ^(.*)$ http://childrensdream.com.ua.local/$1 [R=301,L]
 

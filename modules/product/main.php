@@ -29,8 +29,6 @@ if($_GET['page'] == 'main'){
     ");
 
     if ($product->num_rows == 0 || isset($_GET['key1'])) {
-        $_GET['module'] = 'error';
-        $_GET['page'] = 'main';
         header("HTTP/1.0 404 Not Found");
     }
 

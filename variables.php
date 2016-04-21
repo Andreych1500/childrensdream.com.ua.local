@@ -17,17 +17,17 @@ if(isset($_GET['route'])){
 		if($i == 0){
 			if(!empty($v)){
 				$_GET['module'] = $v;
-				Core::$SITE_DIR = $v;
+				Core::$SITE_DIR = $v.'/';
 			}
 		} elseif($i == 1){
 			if(!empty($v)){
 				$_GET['page'] = $v;
-				Core::$SITE_DIR .= '/'.$v;
+				Core::$SITE_DIR .= $v.'/';
 			}
 		} else {
 			if(!empty($v)){
 				$_GET['key'.($k-1)] = $v;
-				Core::$SITE_DIR .= '/'.$v;
+				Core::$SITE_DIR .= $v.'/';
 			}
 		}
 		++$i;

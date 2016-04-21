@@ -79,7 +79,7 @@
       <?php } else { ?>
         <p><?=$mess['BASKETNULL']?></p>
       <?php } ?>
-      <a href="<?=$link_langs?>product"><?=$mess['GOSHOP']?></a>
+      <a href="<?=$link_langs?>product/"><?=$mess['GOSHOP']?></a>
     </div>
   <?php } ?>
 </div>

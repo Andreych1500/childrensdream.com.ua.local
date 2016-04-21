@@ -38,8 +38,8 @@
   <?php if($product->num_rows > 0){ ?>
     <?php while($el = $product->fetch_assoc()){ ?>
       <div class="mattress">
-        <a class="photos" href="<?=$link_langs?>product/<?=$el['seo_name']?>"><img src="<?=hsc($el['cAnonsPhoto'])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>"></a>
-        <a class="links" href="<?=$link_langs?>product/<?=$el['seo_name']?>"><span><?=hsc($el['name_'.$lang])?></span></a>
+        <a class="photos" href="<?=$link_langs?>product/<?=$el['seo_name']?>/"><img src="<?=hsc($el['cAnonsPhoto'])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>"></a>
+        <a class="links" href="<?=$link_langs?>product/<?=$el['seo_name']?>/"><span><?=hsc($el['name_'.$lang])?></span></a>
         <p class="price"><?=number_format(hsc($el['price']), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
         <p class="aviability">
           <span class="<?=(((int)$el['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
