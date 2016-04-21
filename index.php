@@ -39,8 +39,7 @@ ob_start();
 		$_GET['page'] = 'main';
 		header("HTTP/1.0 404 Not Found");
 	}
-wtf($_SERVER,1);
-var_dump(http_response_code());
+
 	// --- END EXIST FILES ---
 
 
