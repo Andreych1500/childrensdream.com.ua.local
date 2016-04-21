@@ -1,4 +1,11 @@
 <?php
+if(preg_match('#catalog#ui',$_SERVER['REQUEST_URI'])){
+    $redirectCatalog = preg_replace('#catalog#ui', 'product', $_SERVER['REQUEST_URI']);
+    header("HTTP/1.1 301 Moved Permanently");
+    header("Location: http://" . $_SERVER['HTTP_HOST'] . $redirectCatalog);
+    exit();
+}
+
 // --- SEO META TAGS ---
 
 $res = q("
