@@ -1,8 +1,8 @@
 <?php
 if(preg_match('#\/catalog\/|\/product\/#ui',$_SERVER['REQUEST_URI'], $matches)){
-    $redirectCatalog = preg_replace('#\/catalog\/|\/product\/#ui', 'products', $_SERVER['REQUEST_URI']);
+    $redirectCatalog = preg_replace('#catalog|product#ui', 'products', $_SERVER['REQUEST_URI']);
     header("HTTP/1.1 301 Moved Permanently");
-    header("Location: http://" . $_SERVER['HTTP_HOST'].'/'.$redirectCatalog.'/');
+    header("Location: http://" . $_SERVER['HTTP_HOST'] . $redirectCatalog);
     exit();
 }
 

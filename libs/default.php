@@ -108,7 +108,6 @@ function removeDirectory($dir) {
 	rmdir($dir);
 }
 
-
 // перевірка на мобільний пристрій
 function isMobile(){
 	$useragent = $_SERVER['HTTP_USER_AGENT'];
@@ -120,4 +119,18 @@ function isMobile(){
 	} else {
 		return false;
 	}
+}
+
+function bufferStartError404($lang,$link_langs){
+ob_start();
+		include './'.Core::$CONT.'/lang/'.$lang.'/lang.php';
+		include './'.Core::$CONT.'/error/main.php';
+		include './skins/'.Core::$SKIN.'/error/main.tpl';
+
+		header("HTTP/1.0 404 Not Found");
+
+		$content = ob_get_contents();
+	ob_end_clean();
+
+	return $content;
 }
