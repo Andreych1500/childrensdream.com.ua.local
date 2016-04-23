@@ -1,5 +1,5 @@
 <?php
-// product
+// products
 $mess['PRODUCT'] = 'Продукция';
 $mess['DETSKIE_MATRACI'] = 'Детские&nbsp;матрасы';
 $mess['NO_ELEMETN'] = 'Продукция отсутствует';

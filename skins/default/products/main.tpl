@@ -1,16 +1,16 @@
 <?php if($_GET['page'] == 'main'){ ?>
-<div class="product">
+<div class="products">
   <div class="block-title">
     <span class="line"></span>
     <h1><?=$mess['DETSKIE_MATRACI'];?></h1>
     <span class="line"></span>
   </div>
 
-  <?php if($product->num_rows > 0){ ?>
-    <?php while($arResult = $product->fetch_assoc()){ ?>
+  <?php if($products->num_rows > 0){ ?>
+    <?php while($arResult = $products->fetch_assoc()){ ?>
     <div class="mattress">
-      <a class="photos" href="<?=$link_langs?>product/<?=$arResult['seo_name']?>/"><img src="<?=hsc($arResult['cAnonsPhoto'])?>" alt="<?=hsc($arResult['img_seo_alt_'.$lang])?>"></a>
-      <a class="links" href="<?=$link_langs?>product/<?=$arResult['seo_name']?>/"><span><?=hsc($arResult['name_'.$lang])?></span></a>
+      <a class="photos" href="<?=$link_langs?>products/<?=$arResult['seo_name']?>/"><img src="<?=hsc($arResult['cAnonsPhoto'])?>" alt="<?=hsc($arResult['img_seo_alt_'.$lang])?>"></a>
+      <a class="links" href="<?=$link_langs?>products/<?=$arResult['seo_name']?>/"><span><?=hsc($arResult['name_'.$lang])?></span></a>
       <p class="price"><?=number_format(hsc($arResult['price']), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
       <p class="aviability">
         <span class="<?=(((int)$arResult['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>

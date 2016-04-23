@@ -57,8 +57,8 @@ footer .footer-block:after,
 .slide-wrap:after,
 .about-text .about-block:before,
 .about-text .about-block:after,
-.product:before,
-.product:after,
+.products:before,
+.products:after,
 .delivery-payment .delivery-block:before,
 .delivery-payment .delivery-block:after,
 .contact form:before,
@@ -92,7 +92,7 @@ footer .footer-block:after,
 .soc-link:after,
 .slide-wrap:after,
 .about-text .about-block:after,
-.product:after,
+.products:after,
 .delivery-payment .delivery-block:after,
 .contact form:after,
 .description .description-block:after,
@@ -984,7 +984,7 @@ a[class^="lang_"].lang_ru {
   bottom: 5px;
   background-color: #7BD7E8;
 }
-.product {
+.products {
   width: 100%;
   background: #ffffff;
   padding-top: 15px;
@@ -992,7 +992,7 @@ a[class^="lang_"].lang_ru {
   width: 1010px;
 }
 @media screen and (max-width: 1024px) {
-  .product {
+  .products {
     width: 100%;
   }
 }

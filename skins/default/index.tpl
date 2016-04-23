@@ -34,7 +34,7 @@
       <nav class="top-menu">
         <ul>
           <li><a href="<?=$link_langs?>#about"><?=$mess['ABOUT_US']?></a></li>
-          <li><a href="<?=$link_langs?>product/"><?=$mess['PRODUCTION']?></a></li>
+          <li><a href="<?=$link_langs?>products/"><?=$mess['PRODUCTION']?></a></li>
           <li><a href="<?=$link_langs?>#payment"><?=$mess['SERVICES']?></a></li>
           <li><a href="<?=$link_langs?>#call"><?=$mess['CONTACTS']?></a></li>
           <li><a href="<?=$link_langs?>comments/"><?=$mess['OTZUVU']?></a></li>

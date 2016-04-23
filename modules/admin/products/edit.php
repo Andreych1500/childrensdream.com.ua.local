@@ -1,54 +1,21 @@
 <?php
 Core::$JS[] = '<script src="/skins/admin/js/addPhoto.js?v=1"></script>';
 
-// --- ADD ELEMENT ---
-
-
+// --- EDIT ELEMENT ---
 if(isset($_POST['ok'])){
 	$_POST = trimAll($_POST);
 	$errors = array();
 
-	$isset = q("
-		SELECT `id`
-		FROM `product`
-		WHERE `seo_name` = '".mres($_POST['seo_name'])."'
-		LIMIT 1
-	");
-
-	if($isset->num_rows > 0){
-		$errors['seo_name'] = 'errors';
-	}
-	
-	if(empty($_POST['name_ua'])){
-		$errors['name_ua'] = 'errors';
-	}
-	if(empty($_POST['name_ru'])){
-		$errors['name_ru'] = 'errors';
-	}
-	if(isset($_POST['active'])){
-		$_POST['active'] = 1;
-	}
-	if(empty($_POST['seo_name'])){
-		$errors['seo_name'] = 'errors';
-	}
-	if(isset($_POST['availability'])){
-		$_POST['availability'] = 1;
-	}
-	if(empty($_POST['price']) || !(int)$_POST['price']){
-		$errors['price'] = 'errors';
-	}
-	if(empty($_POST['text_ua'])){
-		$errors['text_ua'] = 'errors';
-	}
-	if(empty($_POST['text_ru'])){
-		$errors['text_ru'] = 'errors';
-	}
-	if(empty($_POST['description_ua'])) {
-		$errors['description_ua'] = 'errors';
-	}
-	if(empty($_POST['description_ru'])) {
-		$errors['description_ru'] = 'errors';
-	}
+	if(empty($_POST['name_ua'])){ $errors['name_ua'] = 'errors'; }
+	if(empty($_POST['name_ru'])){ $errors['name_ru'] = 'errors'; }
+	if(empty($_POST['seo_el_name'])){ $errors['seo_el_name'] = 'errors'; }
+	if(isset($_POST['availability'])){ $_POST['availability'] = 1; }
+	if(isset($_POST['active'])){ $_POST['active'] = 1; }
+	if(empty($_POST['price']) || !(int)$_POST['price']){ $errors['price'] = 'errors'; }
+	if(empty($_POST['text_ua'])){ $errors['text_ua'] = 'errors'; }
+	if(empty($_POST['text_ru'])){ $errors['text_ru'] = 'errors'; }
+	if(empty($_POST['description_ua'])){ $errors['description_ua'] = 'errors'; }
+	if(empty($_POST['description_ru'])) { $errors['description_ru'] = 'errors';	}
 
 
 	// --- NO MANDATORY FIELDS ---
@@ -66,7 +33,7 @@ if(isset($_POST['ok'])){
 	if(empty($_POST['anatoming']) || !(int)$_POST['anatoming']){ $_POST['anatoming'] = 0; }
 	if(empty($_POST['ortopeding']) || !(int)$_POST['ortopeding']){ $_POST['ortopeding'] = 0; }
 
-    // SEO
+	// SEO
 	if(empty($_POST['meta_title_ua'])){ $_POST['meta_title_ua'] = ''; }
 	if(empty($_POST['meta_keywords_ua'])){ $_POST['meta_keywords_ua'] = ''; }
 	if(empty($_POST['meta_description_ua'])){ $_POST['meta_description_ua'] = ''; }
@@ -78,15 +45,16 @@ if(isset($_POST['ok'])){
 	if(empty($_POST['img_seo_alt_ua'])){ $_POST['img_seo_alt_ua'] = '';	}
 	if(empty($_POST['img_seo_alt_ru'])){ $_POST['img_seo_alt_ru'] = '';	}
 
-	// --- FUNCTION IMAGE ---
 
+	// --- FUNCTION IMAGE ---
 	$cAnonsPhoto = ((isset($_POST['cAnonsPhoto']))? explode('|',$_POST['cAnonsPhoto']) : '');
 	$cCirklePhoto = ((isset($_POST['cCirklePhoto']))? explode('|',$_POST['cCirklePhoto']) : '');
 
-	  // --- MORE PHOTO ---
+		// --- MORE PHOTO ---
 		if(isset($_POST['cMorePhoto']) && count($_POST['cMorePhoto']) >= 1){
 			foreach($_POST['cMorePhoto'] as $key => $value){
 				$cMorePhoto[$key] = explode('|', $value);
+				$cMorePhoto[$key][3] = $value;
 			}
 			foreach($_POST['cMorePhoto'] as $key => $to_more){
 				if(empty($to_more)){ continue; }
@@ -98,14 +66,14 @@ if(isset($_POST['ok'])){
 				$addcMorePhoto = '';
 			}
 		}
-	  // --- END MORE PHOTO ---
-
+		// --- END MORE PHOTO ---
 	// --- END FUNCTION IMAGE ---
+
 
 	if(!count($errors)){
 		$_POST = mres($_POST);
 
-		q(" INSERT INTO `product` SET
+		q(" UPDATE `products` SET
  			`sort`                = '".(int)$_POST['sort']."',
 		    `name_ua`             = '".$_POST['name_ua']."',
 		    `name_ru`             = '".$_POST['name_ru']."',
@@ -129,11 +97,11 @@ if(isset($_POST['ok'])){
 			`garanty`             = '".(int)$_POST['garanty']."',
 		    `availability`        = '".(int)$_POST['availability']."',
 
-		    `cAnonsPhoto`         = '".$cAnonsPhoto[0]."',
-			`cCirklePhoto`        = '".$cCirklePhoto[0]."',
-			`cMorePhoto`          = '".$addcMorePhoto."',
+		    `cAnonsPhoto`         = '".mres($cAnonsPhoto[0])."',
+			`cCirklePhoto`        = '".mres($cCirklePhoto[0])."',
+			`cMorePhoto`          = '".mres($addcMorePhoto)."',
 
-		    `seo_name`            = '".$_POST['seo_name']."',
+		    `seo_name`            = '".$_POST['seo_el_name']."',
 		    `meta_title_ua`       = '".$_POST['meta_title_ua']."',
 		    `meta_keywords_ua`    = '".$_POST['meta_keywords_ua']."',
 		    `meta_description_ua` = '".$_POST['meta_description_ua']."',
@@ -145,13 +113,54 @@ if(isset($_POST['ok'])){
  			`img_seo_title_ru`    = '".$_POST['img_seo_title_ru']."',
  			`img_seo_alt_ua`      = '".$_POST['img_seo_alt_ua']."',
  			`img_seo_alt_ru`      = '".$_POST['img_seo_alt_ru']."',
- 			`user_custom`         = '".mres($_SESSION['user']['FIO'])."',
-			`date_create`         = NOW()
+ 			`user_custom`         = '".mres($_SESSION['user']['FIO'])."'
+
+			 WHERE `id` = ".(int)$_GET['id']."
 		");
 
-		header("Location: /admin/product/");
+
+		header("Location: /admin/products");
 		exit();
 	}
+
 }
 
-// --- END ADD ELEMENT ---
+
+// --- GET ELEMENT ---
+
+$products = q("
+	SELECT *
+	FROM `products`
+	WHERE `id` = ".(int)$_GET['id']."
+	LIMIT 1
+");
+
+if($products->num_rows){
+	$row = $products->fetch_assoc();
+} else {
+	header("Location: /admin/products/");
+	exit();
+}
+
+// --- END GET ELEMENT ---
+
+
+// --- FUNCTION cMorePhoto ---
+if(!empty($row['cMorePhoto']) && !isset($cMorePhoto)){
+	$cMorePhoto = explode('#', $row['cMorePhoto']);
+
+	foreach ($cMorePhoto as $key => $val) {
+		$cMorePhoto[$key] = explode('|', $val);
+		$cMorePhoto[$key][3] = $val;
+	}
+} else {
+	if(!isset($cMorePhoto)){
+		$cMorePhoto[0] = array(
+			0 => '',
+			1 => '',
+			2 => '',
+			3 => '',
+		);
+	}
+}
+// --- END FUNCTION cMorePhoto ---
