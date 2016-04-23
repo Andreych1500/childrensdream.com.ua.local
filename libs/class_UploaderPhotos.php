@@ -105,13 +105,8 @@ class UploaderPhotos {
         } elseif($temp['mime'] == 'image/jpeg'){
             $src_image = imagecreatefromjpeg($_SERVER['DOCUMENT_ROOT'].$name);
 
-            $whiteBackground = imagecolorallocate($dst_image, 255, 255, 255);
-            imagefill($dst_image,0,0,$whiteBackground);
-
-            imagecolortransparent($dst_image, $whiteBackground);
-
             imagecopyresampled($dst_image, $src_image, $dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h);
-            imagejpeg($dst_image,'..'.$name, 75);
+            imagejpeg($dst_image,'..'.$name,75);
 
         } elseif($temp['mime'] == 'image/gif'){
             $src_image = imagecreatefromgif($_SERVER['DOCUMENT_ROOT'].$name);
