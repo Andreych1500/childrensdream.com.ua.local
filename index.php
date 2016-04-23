@@ -4,6 +4,13 @@ ini_set('display_errors',0);
 header('Content-Type: text/html; charset=utf-8'); 
 session_start();
 
+if(preg_match('#\/catalog\/|\/product\/#ui',$_SERVER['REQUEST_URI'], $matches)){
+	$redirectCatalog = preg_replace('#catalog|product#ui', 'products', $_SERVER['REQUEST_URI']);
+	header("HTTP/1.1 301 Moved Permanently");
+	header("Location: http://" . $_SERVER['HTTP_HOST'] . $redirectCatalog);
+	exit();
+}
+
 // --- CONFIG SITE ---
 
 include_once './config.php';

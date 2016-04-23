@@ -11,6 +11,10 @@ php_value post_max_size 50M
 php_value max_input_time 5000
 
 RewriteEngine on
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*[^/])$ $1/ [L,R=301]
 
 RewriteCond %{HTTP_HOST} ^www\.childrensdream\.com\.ua\.local$ [NC]
 RewriteRule ^(.*)$ http://childrensdream.com.ua.local/$1 [R=301,L]

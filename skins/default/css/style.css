@@ -1288,7 +1288,7 @@ a[class^="lang_"].lang_ru {
 }
 .this-ok,
 .this-ok + p {
-  font-size: 22px;
+  font: 22px ComicSansMS;
   text-align: center;
 }
 .limit {
