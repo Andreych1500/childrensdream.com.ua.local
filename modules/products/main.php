@@ -29,6 +29,7 @@ if($_GET['page'] == 'main'){
     ");
 
     if ($products->num_rows == 0 || isset($_GET['key1'])) {
+        header("HTTP/1.0 404 Not Found");
         echo bufferStartError404($lang,$link_langs);
         exit();
     }

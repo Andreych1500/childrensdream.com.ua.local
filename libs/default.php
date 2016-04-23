@@ -127,8 +127,6 @@ ob_start();
 		include './'.Core::$CONT.'/error/main.php';
 		include './skins/'.Core::$SKIN.'/error/main.tpl';
 
-		header("HTTP/1.0 404 Not Found");
-
 		$content = ob_get_contents();
 	ob_end_clean();
 

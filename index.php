@@ -1,5 +1,5 @@
 <?php
-error_reporting (-1);
+error_reporting (0);
 ini_set('display_errors',0);
 header('Content-Type: text/html; charset=utf-8'); 
 session_start();
@@ -27,6 +27,7 @@ ob_start();
 	if (!file_exists('./' . Core::$CONT . '/' . $_GET['module'] . '/' . (((Core::$CONT != 'modules/admin' && in_array($_GET['module'], Core::$DATAIL_PAGE)) ? 'main' : $_GET['page']) . '.php')) ||
 	!file_exists('./skins/' . Core::$SKIN . '/' . $_GET['module'] . '/' . (((Core::$CONT != 'modules/admin' && in_array($_GET['module'], Core::$DATAIL_PAGE)) ? 'main' : $_GET['page']) . '.tpl')) ||
 	((Core::$CONT != 'modules/admin') ? !file_exists('./' . Core::$CONT . '/' . $_GET['module'] . '/lang/' . $lang . '/lang.php') : false)) {
+		header("HTTP/1.0 404 Not Found");
 		echo bufferStartError404($lang,$link_langs);
 		exit();
 	}

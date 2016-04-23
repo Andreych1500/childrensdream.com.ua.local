@@ -57,6 +57,7 @@ if(!isset($_GET['module'])){
 
 	if(!$res->num_rows){
 		$res->close();
+		header("HTTP/1.0 404 Not Found");
 		echo bufferStartError404($lang,$link_langs);
 		exit();
 	} else {
@@ -70,6 +71,7 @@ if(!isset($_GET['page'])){
 
 // якщо недопустимі символи в адресній строці то перекидуєм на 404
 if(!preg_match('#^[a-z-_0-9]*$#iu',$_GET['page'])){
+	header("HTTP/1.0 404 Not Found");
 	echo bufferStartError404($lang,$link_langs);
 	exit();
 }
