@@ -1028,7 +1028,6 @@ a[class^="lang_"].lang_ru {
   margin: 10px 0 5px 0;
   font-family: ComicSansMS;
   color: #482200;
-  max-width: 380px;
   width: 100%;
   display: inline-block;
   min-height: 50px;
@@ -1049,17 +1048,6 @@ a[class^="lang_"].lang_ru {
     width: 98%;
     margin-top: 20px;
   }
-}
-.mattress .links {
-  text-decoration: none;
-  margin: 10px 0 5px 0;
-  font-family: ComicSansMS;
-  color: #482200;
-  max-width: 380px;
-  width: 100%;
-  display: inline-block;
-  min-height: 50px;
-  max-width: 250px;
 }
 .photos {
   display: inline-block;
