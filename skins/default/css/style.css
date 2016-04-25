@@ -1023,8 +1023,16 @@ a[class^="lang_"].lang_ru {
   -o-transition: bottom 300ms ease-out;
   transition: bottom 300ms ease-out;
 }
-.mattress:hover .links {
-  text-decoration: underline;
+.mattress .links {
+  text-decoration: none;
+  margin: 10px 0 5px 0;
+  font-family: ComicSansMS;
+  color: #482200;
+  max-width: 380px;
+  width: 100%;
+  display: inline-block;
+  min-height: 50px;
+  max-width: 250px;
 }
 @media screen and (max-width: 848px) {
   .mattress {
@@ -1042,6 +1050,17 @@ a[class^="lang_"].lang_ru {
     margin-top: 20px;
   }
 }
+.mattress .links {
+  text-decoration: none;
+  margin: 10px 0 5px 0;
+  font-family: ComicSansMS;
+  color: #482200;
+  max-width: 380px;
+  width: 100%;
+  display: inline-block;
+  min-height: 50px;
+  max-width: 250px;
+}
 .photos {
   display: inline-block;
   padding-bottom: 5px;
@@ -1054,20 +1073,6 @@ a[class^="lang_"].lang_ru {
   -moz-transition: bottom 300ms ease-out;
   -o-transition: bottom 300ms ease-out;
   transition: bottom 300ms ease-out;
-}
-.links {
-  text-decoration: none;
-  margin: 10px 0 5px 0;
-  font-family: ComicSansMS;
-  color: #482200;
-  max-width: 380px;
-  width: 100%;
-  display: inline-block;
-}
-.links span {
-  min-height: 50px;
-  display: inline-block;
-  max-width: 250px;
 }
 .price {
   font-family: ComicSansMS;
