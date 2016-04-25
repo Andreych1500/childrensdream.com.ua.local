@@ -62,7 +62,7 @@ function  cancel(){
 
     if (del_files.length > 0){
         $.ajax({
-            url: '/mylti_file/delete_file.php',
+            url: '/ajax/delete_file.php',
             type: "POST",
             data: {'del_file': del_files},
             success: function (response) {
@@ -91,7 +91,7 @@ function addPhoto(el, stringValue){
         var rel_to_set="#"+$(el).attr('rel_to_set');
 
         $.ajax({
-            url: "/mylti_file/addPhoto.php",
+            url: "/ajax/addPhoto.php",
             type: "POST",
             data: files,
             enctype: 'multipart/form-data',
@@ -109,7 +109,7 @@ function addPhoto(el, stringValue){
 
                 if (del_files.length > 0) {
                     $.ajax({
-                        url: '/mylti_file/delete_file.php',
+                        url: '/ajax/delete_file.php',
                         type: "POST",
                         data: {'del_file': del_files},
                     });

@@ -90,7 +90,7 @@ function deleteElement(id_el, this_el, i_block_table){
 
     if(id_el != '' && i_block_table != '') {
         $.ajax({
-            url: '/mylti_file/delete_el.php',
+            url: '/ajax/delete_el.php',
             type: "POST",
             data: {'del_el': id_el, 'del_file' : el_file, 'table' : i_block_table},
             success: function (response) {
