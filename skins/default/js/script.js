@@ -1,28 +1,18 @@
 $(document).ready(function() {
     // --- mini scroll fixed-menu ---
     var pathname = window.location.pathname;
+    var arrPathname = ['/','/ru/'];
 
-    if(getCookie('scroll') == undefined ){
-        if(pathname == '/' || pathname == '/ru/') {
-            scrolMenuPanel();
+    if(jQuery.inArray(pathname, arrPathname) < 0 && $(window).width() >= 834) {
+        if(getCookie('scroll') == undefined ) {
+            setCookie('scroll', pathname, 0);
+        } else {
+            deleteCookie('scroll');
             setCookie('scroll', pathname, 0);
         }
     } else {
-        var cookieScroll = getCookie('scroll');
-
-        if(cookieScroll == '/' || cookieScroll == '/ru/'){
-            deleteCookie('scroll');
-            setCookie('scroll', pathname, 0);
-        } else {
-            if((pathname == '/' || pathname == '/ru/') && $(window).width() >= 834) {
-                scrolMenuPanel();
-                deleteCookie('scroll');
-                setCookie('scroll', pathname, 0);
-            } else {
-                deleteCookie('scroll');
-                setCookie('scroll', pathname, 0);
-            }
-        }
+        scrolMenuPanel();
+        deleteCookie('scroll');
     }
     // --- end mini scroll fixed-menu ---
 
@@ -129,11 +119,12 @@ function addToCard(id_el,text_submit,count){
     $(mobcard).text(mobcountG);
 }
 
-function deleteCookie(name) {
-    setCookie(name, "", {
-        expires: -1
-    })
+function deleteCookie ( cookie_name ){
+    var cookie_date = new Date ( );
+    cookie_date.setTime ( cookie_date.getTime() - 1 );
+    document.cookie = cookie_name += "=; expires=" + cookie_date.toGMTString();
 }
+
 
 function getCookie(name) {
     var matches = document.cookie.match(new RegExp(
