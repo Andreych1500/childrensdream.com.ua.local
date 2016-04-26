@@ -14,9 +14,10 @@ if($mails->num_rows){
     // --- SEND LIST ---
 
     if(isset($_POST['send'],$_POST['lang_send'])){
-        Mail::$text = TemplateMail::orderHtml($_POST['lang_send']);
-        Mail::$to      = $arResult['to_mail'];
-        Mail::$subject = $arResult['name'];
+        Mail::$text      = TemplateMail::orderHtml($_POST['lang_send']);
+        Mail::$from      = $arResult['from_mail'];
+        Mail::$to        = $arResult['to_mail'];
+        Mail::$subject   = $arResult['name'];
         Mail::$type_list = $arResult['type'];
         Mail::Send();
         header("Location: /admin/mails/");

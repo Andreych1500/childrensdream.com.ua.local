@@ -26,6 +26,10 @@
                         <input disabled type="text" class="<?=((isset($errors['code']))? "errors" : "")?>"  name="code" value="<?=((isset($errors))? hsc($_POST['code']) : hsc($row['code']))?>">
                     </div>
                     <div class="input-value">
+                        <p>Ким відправлено<span>*</span></p>
+                        <input disabled type="text" class="<?=((isset($errors['from_mail']))? "errors" : "")?>"  name="from_mail" value="<?=((isset($errors))? Core::$MAIL_FROM : Core::$MAIL_FROM)?>">
+                    </div>
+                    <div class="input-value">
                         <p>Кому<span>*</span></p>
                         <input type="text" class="<?=((isset($errors['to_mail']))? "errors" : "")?>"  name="to_mail" value="<?=((isset($errors))? hsc($_POST['to_mail']) : hsc($row['to_mail']))?>">
                     </div>

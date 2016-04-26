@@ -13,6 +13,10 @@ if(isset($_POST['ok'], $_POST['name'])){
         $errors['ids_goods'] = 'errors';
     }
 
+    if(empty($_POST['from_mail']) || !filter_var($_POST['from_mail'],FILTER_VALIDATE_EMAIL)){
+        $errors['from_mail'] = 'errors';
+    }
+
     if(empty($_POST['to_mail']) || !filter_var($_POST['to_mail'],FILTER_VALIDATE_EMAIL)){
         $errors['to_mail'] = 'errors';
     }
@@ -21,7 +25,8 @@ if(isset($_POST['ok'], $_POST['name'])){
         $_POST = mres($_POST);
 
         q(" UPDATE `mails` SET
-            `to_mail`    = '".$_POST['to_mail']."',
+            `from_mail`  = '".$_POST['from_mail']."',
+            `to_mail`  = '".$_POST['to_mail']."',
             `type`       = '".$_POST['type']."',
  			`name`       = '".$_POST['name']."',
  			`ids_goods`  = '".$_POST['ids_goods']."',

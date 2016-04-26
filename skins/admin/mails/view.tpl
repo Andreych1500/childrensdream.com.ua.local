@@ -31,8 +31,12 @@
 
         <div class="spec-list">
           <p class="st-form">
-              <span>Кому:</span>
-              <span><?=hsc($arResult['to_mail'])?></span>
+              <span>Ким відправляється:</span>
+              <span><?=hsc($arResult['from_mail'])?></span>
+          </p>
+          <p class="st-form">
+            <span>Кому:</span>
+            <span><?=hsc($arResult['to_mail'])?></span>
           </p>
           <p class="st-form">
               <span>Тип листа:</span>

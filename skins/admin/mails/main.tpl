@@ -11,6 +11,7 @@
                     <td></td>
                     <td>Id</td>
                     <td>Кому</td>
+                    <td>Ким відправлено</td>
                     <td>Код листа</td>
                     <td>Назва листа</td>
                     <td>Тип листа</td>
@@ -36,6 +37,7 @@
                         </td>
                         <td><?=(int)$arResult['id']?></td>
                         <td><?=hsc($arResult['to_mail'])?></td>
+                        <td><?=hsc($arResult['from_mail'])?></td>
                         <td><?=hsc($arResult['code'])?></td>
                         <td><?=hsc($arResult['name'])?></td>
                         <td><?=hsc($arResult['type'])?></td>
