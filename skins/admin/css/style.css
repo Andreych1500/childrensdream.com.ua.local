@@ -776,6 +776,9 @@ main .main-content .bx-system {
   -moz-box-shadow: 0 0 1px 0 rgba(142, 142, 142, 0.07);
   box-shadow: 0 0 1px 0 rgba(142, 142, 142, 0.07);
 }
+main .main-content .bx-system p {
+  margin: 0;
+}
 main .main-content .bx-system:first-child div:last-child p {
   max-width: 580px;
 }

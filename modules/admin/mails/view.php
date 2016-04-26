@@ -14,7 +14,7 @@ if($mails->num_rows){
     // --- SEND LIST ---
 
     if(isset($_POST['send'],$_POST['lang_send'])){
-        Mail::$text      = TemplateMail::orderHtml($_POST['lang_send']);
+        Mail::$text      = TemplateMail::orderHtml($_POST['lang_send'], Core::$DOCUMENT_ROOT);
         Mail::$from      = $arResult['from_mail'];
         Mail::$to        = $arResult['to_mail'];
         Mail::$subject   = $arResult['name'];
