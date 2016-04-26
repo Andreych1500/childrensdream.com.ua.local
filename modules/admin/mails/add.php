@@ -37,7 +37,6 @@ if(isset($_POST['ok'],$_POST['name'])){
         $errors['to_mail'] = 'errors';
     }
 
-
     if(!count($errors)){
         $_POST = mres($_POST);
 

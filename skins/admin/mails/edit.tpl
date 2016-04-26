@@ -27,7 +27,7 @@
                     </div>
                     <div class="input-value">
                         <p>Ким відправлено<span>*</span></p>
-                        <input disabled type="text" class="<?=((isset($errors['from_mail']))? "errors" : "")?>"  name="from_mail" value="<?=((isset($errors))? Core::$MAIL_FROM : Core::$MAIL_FROM)?>">
+                        <input type="text" class="<?=((isset($errors['from_mail']))? "errors" : "")?>"  name="from_mail" value="<?=((isset($errors))? Core::$MAIL_FROM : Core::$MAIL_FROM)?>">
                     </div>
                     <div class="input-value">
                         <p>Кому<span>*</span></p>
