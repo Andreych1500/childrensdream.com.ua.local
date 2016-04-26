@@ -1,5 +1,5 @@
 <?php
-class TemplateMailOrder {
+class TemplateMail {
 
     static $name_user    = '#NAME#';
     static $number_order = '#NUMBER_ORDER#';
@@ -17,7 +17,6 @@ class TemplateMailOrder {
         )
     );
 
-    static $langText = array();
     static $siteDirToFiles = '';
     static $html = '';
 
@@ -32,7 +31,7 @@ return self::$html = '
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Тема листа</title>
+<title>Замовлення товару</title>
 </head>
 <body style="background:url('.hsc(self::$siteDirToFiles).' /skins/default/img/mails/pattern.png) #ffffff; max-width:560px; line-height:1.5; color:#482200; padding:30px 20px; font-size:18px; margin:auto;">
 <style>

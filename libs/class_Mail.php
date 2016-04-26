@@ -5,11 +5,12 @@ class Mail{
 	static $from = 'andreych1500@school-php.com';
 	static $to = 'savitskuy@ukr.net';
 	static $text = 'You have registered on the site, in order to confirm this by email please:';
+	static $type_list = 'text/html';
 	static $headers = '';
 	
-	static function send(){
+	static function Send(){
 		self::$headers = '=?utf-8?b?'.base64_encode(self::$subject).'?='; //кодіровка
-		self::$headers = "Content-type: text/html; charset=\"utf-8\"\r\n";
+		self::$headers = "Content-type: ".self::$type_list."; charset=\"utf-8\"\r\n";
 		
 		self::$headers .= "From: ".self::$from."\r\n";//з якого email було відправлено
 		self::$headers .= "MIME-Version: 1.0\r\n";//тип листа
