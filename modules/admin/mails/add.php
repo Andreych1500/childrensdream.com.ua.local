@@ -42,7 +42,6 @@ if(isset($_POST['ok'],$_POST['name'])){
             `code`       = '".$_POST['code']."',
             `type`       = '".$_POST['type']."',
  			`name`       = '".$_POST['name']."',
- 			`answer`     = '".$_POST['answer']."',
  			`ids_goods`  = '".$_POST['ids_goods']."',
 		    `user_custom`    = '".mres($_SESSION['user']['FIO'])."',
 			`date_create`    = NOW()

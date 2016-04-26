@@ -70,3 +70,19 @@ line: 49
 date: 2016-04-26 12:45:06
 ===================================
 
+QUERY: INSERT INTO `mails` SET
+            `to_mail`   = 'test@test.ru',
+            `code`       = 'order',
+            `type`       = 'html',
+ 			`name`       = 'Замовлення',
+ 			`answer`     = '',
+ 			`ids_goods`  = '11',
+		    `user_custom`    = 'Савіцький Андрій',
+			`date_create`    = NOW()
+		
+Unknown column 'answer' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\mails\add.php
+line: 49
+date: 2016-04-26 21:42:49
+===================================
+

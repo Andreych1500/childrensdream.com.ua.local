@@ -18,7 +18,7 @@
                         <input type="text" class="<?=((isset($errors['name']))? "errors" : "")?>"  name="name" value="<?=((isset($errors))? hsc($_POST['name']) : hsc($row['name']))?>">
                     </div>
                     <div class="input-value">
-                        <p>ID товарів новинок<span>*</span></p>
+                        <p>ID популярних товарів<span>*</span></p>
                         <input type="text" class="<?=((isset($errors['ids_goods']))? "errors" : "")?>"  name="ids_goods" value="<?=((isset($errors))? hsc($_POST['ids_goods']) : hsc($row['ids_goods']))?>">
                     </div>
                     <div class="input-value">

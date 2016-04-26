@@ -24,7 +24,6 @@ if(isset($_POST['ok'], $_POST['name'])){
             `to_mail`    = '".$_POST['to_mail']."',
             `type`       = '".$_POST['type']."',
  			`name`       = '".$_POST['name']."',
- 			`answer`     = '".$_POST['answer']."',
  			`ids_goods`  = '".$_POST['ids_goods']."',
 		    `user_custom`    = '".mres($_SESSION['user']['FIO'])."'
 		");

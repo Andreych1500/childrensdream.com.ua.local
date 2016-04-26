@@ -47,8 +47,13 @@ $(document).ready(function() {
 
     // --- edit el on double click ---
     $('.edFormEdit tr:not(:first-child) td:not(:first-child)').dblclick(function(){
-        if($(this).parents('.c-checked').length == 0 && $(this).parents('.activeContent').length == 0){
-            document.location.href = $(this).siblings('td').find('.menu-edit a:first-child').attr('href');
+        if($(this).parents('.c-checked').length == 0){
+            var link = $(this).siblings('td').find('.menu-edit a:first-child').attr('href');
+            if(link === undefined){
+                document.location.href = $(this).find('.menu-edit a:first-child').attr('href');
+            } else {
+                document.location.href = link;
+            }
         }
     });
     // --- end edit el on double click ---
