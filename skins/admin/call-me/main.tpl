@@ -29,7 +29,7 @@
                     <span class="icon-content"></span>
                     Відкрити
                 </a>
-                <span class="delete icon-cross" onclick="deleteElement(<?=(int)$arResult['id']?>, this, '<?=Core::$DIR_PHOTOS_NAME['call_me']?>')">Видалити</span>
+                <span class="delete icon-cross" onclick="deleteElement(<?=(int)$arResult['id']?>, this, '<?=Core::$DIR_PHOTOS_AND_DB_TABLE_NAME['call_me']?>')">Видалити</span>
               </div>
             </td>
             <td><span class="<?=(($arResult['active'] == 0)? 'icon-cross' : 'icon-good')?>"></span></td>

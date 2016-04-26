@@ -49,7 +49,7 @@
                 <span class="icon-content"></span>
                 Змінити
               </a>
-              <span class="delete icon-cross" onclick="deleteElement(<?=(int)$arResult['id']?>, this, '<?=Core::$DIR_PHOTOS_NAME['products']?>')">Видалити</span>
+              <span class="delete icon-cross" onclick="deleteElement(<?=(int)$arResult['id']?>, this, '<?=Core::$DIR_PHOTOS_AND_DB_TABLE_NAME['products']?>')">Видалити</span>
             </div>
           </td>
             <td><?=(int)$arResult['id']?></td>

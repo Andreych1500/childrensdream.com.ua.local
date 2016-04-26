@@ -72,6 +72,9 @@ function  cancel(){
                 document.location.href = '/admin/'+url;
             }
         });
+    } else {
+        var url = window.location.pathname.split('/')[2];
+        document.location.href = '/admin/'+url;
     }
 }
 

@@ -8,15 +8,19 @@ if(isset($_POST['ok'])){
 	$_POST = trimAll($_POST);
 	$errors = array();
 
-	$isset = q("
-		SELECT `id`
-		FROM `product`
-		WHERE `seo_name` = '".mres($_POST['seo_name'])."'
-		LIMIT 1
-	");
-
-	if($isset->num_rows > 0){
+	if(empty($_POST['seo_name'])){
 		$errors['seo_name'] = 'errors';
+	} else {
+		$isset = q("
+			SELECT `id`
+			FROM `product`
+			WHERE `seo_name` = '".mres($_POST['seo_name'])."'
+			LIMIT 1
+		");
+
+		if($isset->num_rows > 0){
+			$errors['seo_name'] = 'errors';
+		}
 	}
 	
 	if(empty($_POST['name_ua'])){
@@ -27,9 +31,6 @@ if(isset($_POST['ok'])){
 	}
 	if(isset($_POST['active'])){
 		$_POST['active'] = 1;
-	}
-	if(empty($_POST['seo_name'])){
-		$errors['seo_name'] = 'errors';
 	}
 	if(isset($_POST['availability'])){
 		$_POST['availability'] = 1;

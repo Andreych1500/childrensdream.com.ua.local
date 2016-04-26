@@ -33,7 +33,7 @@
                 <span class="icon-content"></span>
                 Змінити
               </a>
-              <span class="delete icon-cross" onclick="deleteElement(<?=(int)$arResult['id']?>, this, '<?=Core::$DIR_PHOTOS_NAME['main_banner']?>')">Видалити</span>
+              <span class="delete icon-cross" onclick="deleteElement(<?=(int)$arResult['id']?>, this, '<?=Core::$DIR_PHOTOS_AND_DB_TABLE_NAME['main_banner']?>')">Видалити</span>
             </div>
           </td>
           <td rel_edit="ex|checkbox|resArr[<?=(int)$arResult['id']?>][active]"><?=(($arResult['active'] == 0)? 'Ні' : 'Так')?></td>

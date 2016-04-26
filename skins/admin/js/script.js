@@ -12,7 +12,7 @@ $(document).ready(function() {
         var url = window.location.pathname.split('/')[2];
 
         $(".admin-left-panel li a").removeClass("active");
-        $('.admin-left-panel li a[href="/admin/'+url+'"]').addClass('active');
+        $('.admin-left-panel li a[href="/admin/'+url+'/"]').addClass('active');
     });
     // --- end active section ---
 

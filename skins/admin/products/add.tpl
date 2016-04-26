@@ -92,7 +92,7 @@
           <div class="input-value">
             <p>Анатомічні властивості</p>
             <select name="anatoming">
-              <?php foreach(Core::$LOGIC as $k=>$v){ ?>
+              <?php foreach(Core::$LOGIC['logic'] as $k=>$v){ ?>
                 <option value="<?=$k;?>" <?=((isset($errors) && $_POST['anatoming'] == $k)? 'selected="selected"' : "")?>>
                   <?=$v;?>
                 </option>
@@ -102,7 +102,7 @@
           <div class="input-value">
             <p>Ортопедичні властивості</p>
             <select name="ortopeding">
-              <?php foreach(Core::$LOGIC as $k=>$v){ ?>
+              <?php foreach(Core::$LOGIC['logic'] as $k=>$v){ ?>
                 <option value="<?=$k;?>" <?=((isset($errors) && $_POST['ortopeding'] == $k)? 'selected="selected"' : "")?>>
                   <?=$v; ?>
                 </option>
@@ -260,7 +260,7 @@
 
     <form id="to_file">
       <input onchange="addPhoto(this,this.value)" rel_size="" rel_to_set="" type="file" name="photo" id="control">
-      <input type="hidden" name="dir_name" value="<?=Core::$DIR_PHOTOS_NAME['products']?>">
+      <input type="hidden" name="dir_name" value="<?=Core::$DIR_PHOTOS_AND_DB_TABLE_NAME['products']?>">
       <input type="hidden" name="update" value="Y">
     </form>
   </div>

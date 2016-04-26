@@ -63,6 +63,7 @@
         <li><a href="/admin/call-me/"><span class="icon-academic"></span>Зворотній зв'язок</a><span class="hov-animation"></span></li>
         <li><a href="/admin/comments/"><span class="icon-form"></span>Відгуки на сайті</a><span class="hov-animation"></span></li>
         <li><a href="/admin/order/"><span class="icon-truck"></span>Замовлення</a><span class="hov-animation"></span></li>
+        <li><a href="/admin/mails/"><span class="icon-mail4"></span>Листи</a><span class="hov-animation"></span></li>
         <li><a href="/admin/main-module/"><span class="icon-settings"></span>Настройки</a><span class="hov-animation"></span></li>
       </ul>
     </div>

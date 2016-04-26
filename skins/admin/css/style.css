@@ -81,8 +81,12 @@ main .add-content:before,
 main .add-content:after,
 main .add-content .add-block-form form .table-style .input-value:before,
 main .add-content .add-block-form form .table-style .input-value:after,
+main .add-content .add-block-form .white-block .table-style .input-value:before,
+main .add-content .add-block-form .white-block .table-style .input-value:after,
 main .add-content .add-block-form form .table-style .input-value .more_radio:before,
-main .add-content .add-block-form form .table-style .input-value .more_radio:after {
+main .add-content .add-block-form form .table-style .input-value .more_radio:after,
+main .add-content .add-block-form .white-block .table-style .input-value .more_radio:before,
+main .add-content .add-block-form .white-block .table-style .input-value .more_radio:after {
   content: " ";
   display: table;
 }
@@ -90,7 +94,9 @@ main .add-content .add-block-form form .table-style .input-value .more_radio:aft
 header .admin-panel:after,
 main .add-content:after,
 main .add-content .add-block-form form .table-style .input-value:after,
-main .add-content .add-block-form form .table-style .input-value .more_radio:after {
+main .add-content .add-block-form .white-block .table-style .input-value:after,
+main .add-content .add-block-form form .table-style .input-value .more_radio:after,
+main .add-content .add-block-form .white-block .table-style .input-value .more_radio:after {
   clear: both;
 }
 html {
@@ -1496,12 +1502,14 @@ main .add-content .add-block-form {
   padding: 19px;
   margin-top: 50px;
 }
-main .add-content .add-block-form form .bTabs {
+main .add-content .add-block-form form .bTabs,
+main .add-content .add-block-form .white-block .bTabs {
   top: -50px;
   opacity: 0;
   height: 0;
 }
-main .add-content .add-block-form form .bTabs .headers-line {
+main .add-content .add-block-form form .headers-line,
+main .add-content .add-block-form .white-block .headers-line {
   background-color: #e0e8ea;
   border-top: 11px solid #F5F9F9;
   border-bottom: 11px solid #F5F9F9;
@@ -1512,13 +1520,26 @@ main .add-content .add-block-form form .bTabs .headers-line {
   text-shadow: 0 1px #fff;
   padding: 8px 4px 10px;
 }
-main .add-content .add-block-form form input[name^="tabs"] {
+main .add-content .add-block-form form .mail-veiw,
+main .add-content .add-block-form .white-block .mail-veiw {
+  background: #fff;
+}
+main .add-content .add-block-form form .mail-veiw p,
+main .add-content .add-block-form .white-block .mail-veiw p {
+  margin-bottom: 10px;
+}
+main .add-content .add-block-form form input[name^="tabs"],
+main .add-content .add-block-form .white-block input[name^="tabs"] {
   display: none;
 }
 main .add-content .add-block-form form input[name^="tabs"]:nth-of-type(1):checked ~ .bTabs:nth-of-type(1),
+main .add-content .add-block-form .white-block input[name^="tabs"]:nth-of-type(1):checked ~ .bTabs:nth-of-type(1),
 main .add-content .add-block-form form input[name^="tabs"]:nth-of-type(2):checked ~ .bTabs:nth-of-type(2),
+main .add-content .add-block-form .white-block input[name^="tabs"]:nth-of-type(2):checked ~ .bTabs:nth-of-type(2),
 main .add-content .add-block-form form input[name^="tabs"]:nth-of-type(3):checked ~ .bTabs:nth-of-type(3),
-main .add-content .add-block-form form input[name^="tabs"]:nth-of-type(4):checked ~ .bTabs:nth-of-type(4) {
+main .add-content .add-block-form .white-block input[name^="tabs"]:nth-of-type(3):checked ~ .bTabs:nth-of-type(3),
+main .add-content .add-block-form form input[name^="tabs"]:nth-of-type(4):checked ~ .bTabs:nth-of-type(4),
+main .add-content .add-block-form .white-block input[name^="tabs"]:nth-of-type(4):checked ~ .bTabs:nth-of-type(4) {
   height: auto;
   opacity: 1;
   -webkit-transition: opacity 0.7s ease;
@@ -1527,12 +1548,17 @@ main .add-content .add-block-form form input[name^="tabs"]:nth-of-type(4):checke
   transition: opacity 0.7s ease;
 }
 main .add-content .add-block-form form input[name^="tabs"]:nth-of-type(1):checked ~ .bTabs:nth-of-type(1) .table-style,
+main .add-content .add-block-form .white-block input[name^="tabs"]:nth-of-type(1):checked ~ .bTabs:nth-of-type(1) .table-style,
 main .add-content .add-block-form form input[name^="tabs"]:nth-of-type(2):checked ~ .bTabs:nth-of-type(2) .table-style,
+main .add-content .add-block-form .white-block input[name^="tabs"]:nth-of-type(2):checked ~ .bTabs:nth-of-type(2) .table-style,
 main .add-content .add-block-form form input[name^="tabs"]:nth-of-type(3):checked ~ .bTabs:nth-of-type(3) .table-style,
-main .add-content .add-block-form form input[name^="tabs"]:nth-of-type(4):checked ~ .bTabs:nth-of-type(4) .table-style {
+main .add-content .add-block-form .white-block input[name^="tabs"]:nth-of-type(3):checked ~ .bTabs:nth-of-type(3) .table-style,
+main .add-content .add-block-form form input[name^="tabs"]:nth-of-type(4):checked ~ .bTabs:nth-of-type(4) .table-style,
+main .add-content .add-block-form .white-block input[name^="tabs"]:nth-of-type(4):checked ~ .bTabs:nth-of-type(4) .table-style {
   display: block;
 }
-main .add-content .add-block-form form input[name^="tabs"]:checked + label {
+main .add-content .add-block-form form input[name^="tabs"]:checked + label,
+main .add-content .add-block-form .white-block input[name^="tabs"]:checked + label {
   color: #3f4b54 !important;
   background: #e7eef0;
   background: -moz-linear-gradient(top, #e7eef0 0%, #e4ebed 12%, #e4ebed 25%, #e0e9eb 40%, #e0e8ea 55%, #d9e3e5 70%, #d9e3e5 85%, #d8e1e4 100%);
@@ -1540,7 +1566,8 @@ main .add-content .add-block-form form input[name^="tabs"]:checked + label {
   background: linear-gradient(to bottom, #e7eef0 0%, #e4ebed 12%, #e4ebed 25%, #e0e9eb 40%, #e0e8ea 55%, #d9e3e5 70%, #d9e3e5 85%, #d8e1e4 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e7eef0', endColorstr='#d8e1e4', GradientType=0);
 }
-main .add-content .add-block-form form label[for^="tabs"] {
+main .add-content .add-block-form form label[for^="tabs"],
+main .add-content .add-block-form .white-block label[for^="tabs"] {
   display: inline-block;
   border-radius: 4px 4px 0 0;
   border: 1px solid;
@@ -1567,30 +1594,37 @@ main .add-content .add-block-form form label[for^="tabs"] {
   background: linear-gradient(to bottom, #f2f6f7 0%, #f3f6f7 20%, #f4f6f7 40%, #f7f8f8 60%, #f7f8f8 60%, #f7f7f8 80%, #f8f9f9 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f6f7', endColorstr='#f8f9f9', GradientType=0);
 }
-main .add-content .add-block-form form label[for^="tabs"]:hover {
+main .add-content .add-block-form form label[for^="tabs"]:hover,
+main .add-content .add-block-form .white-block label[for^="tabs"]:hover {
   color: black;
 }
-main .add-content .add-block-form form .table-style {
+main .add-content .add-block-form form .table-style,
+main .add-content .add-block-form .white-block .table-style {
   width: 100%;
   height: auto;
   display: none;
   margin-bottom: 60px;
 }
 main .add-content .add-block-form form .table-style .input-value,
-main .add-content .add-block-form form .table-style .upload_file {
+main .add-content .add-block-form .white-block .table-style .input-value,
+main .add-content .add-block-form form .table-style .upload_file,
+main .add-content .add-block-form .white-block .table-style .upload_file {
   margin: 20px;
   position: relative;
 }
-main .add-content .add-block-form form .table-style .input-value {
+main .add-content .add-block-form form .table-style .input-value,
+main .add-content .add-block-form .white-block .table-style .input-value {
   height: auto;
   min-height: 27px;
 }
-main .add-content .add-block-form form .table-style .input-value.input-seo textarea {
+main .add-content .add-block-form form .table-style .input-value.input-seo textarea,
+main .add-content .add-block-form .white-block .table-style .input-value.input-seo textarea {
   height: 65px;
   width: 63%;
   max-width: 63%;
 }
-main .add-content .add-block-form form .table-style .input-value .more_radio {
+main .add-content .add-block-form form .table-style .input-value .more_radio,
+main .add-content .add-block-form .white-block .table-style .input-value .more_radio {
   float: left;
   left: 60px;
   font-size: 16px;
@@ -1598,14 +1632,16 @@ main .add-content .add-block-form form .table-style .input-value .more_radio {
   text-shadow: 0 1px 0 white;
   color: #6A7C8A;
 }
-main .add-content .add-block-form form .table-style .input-value .more_radio input[type="radio"] {
+main .add-content .add-block-form form .table-style .input-value .more_radio input[type="radio"],
+main .add-content .add-block-form .white-block .table-style .input-value .more_radio input[type="radio"] {
   width: auto;
   display: inline-block;
   position: relative;
   float: none;
   left: 0;
 }
-main .add-content .add-block-form form .table-style .input-value p {
+main .add-content .add-block-form form .table-style .input-value p,
+main .add-content .add-block-form .white-block .table-style .input-value p {
   float: left;
   min-width: 145px;
   font-size: 16px;
@@ -1614,21 +1650,28 @@ main .add-content .add-block-form form .table-style .input-value p {
   color: #6A7C8A;
   max-width: 120px;
 }
-main .add-content .add-block-form form .table-style .input-value p:nth-child(1) span {
+main .add-content .add-block-form form .table-style .input-value p:nth-child(1) span,
+main .add-content .add-block-form .white-block .table-style .input-value p:nth-child(1) span {
   color: #FD1717;
   padding-left: 1px;
 }
 main .add-content .add-block-form form .table-style .input-value input,
-main .add-content .add-block-form form .table-style .input-value textarea {
+main .add-content .add-block-form .white-block .table-style .input-value input,
+main .add-content .add-block-form form .table-style .input-value textarea,
+main .add-content .add-block-form .white-block .table-style .input-value textarea {
   padding: 4px;
   outline: none;
 }
 main .add-content .add-block-form form .table-style .input-value input:hover,
-main .add-content .add-block-form form .table-style .input-value textarea:hover {
+main .add-content .add-block-form .white-block .table-style .input-value input:hover,
+main .add-content .add-block-form form .table-style .input-value textarea:hover,
+main .add-content .add-block-form .white-block .table-style .input-value textarea:hover {
   border-color: #78ABFF;
 }
 main .add-content .add-block-form form .table-style .input-value input,
-main .add-content .add-block-form form .table-style .input-value select {
+main .add-content .add-block-form .white-block .table-style .input-value input,
+main .add-content .add-block-form form .table-style .input-value select,
+main .add-content .add-block-form .white-block .table-style .input-value select {
   left: 205px;
   position: absolute;
   border-radius: 3px;
@@ -1640,10 +1683,12 @@ main .add-content .add-block-form form .table-style .input-value select {
   top: 0;
   float: left;
 }
-main .add-content .add-block-form form .table-style .input-value select {
+main .add-content .add-block-form form .table-style .input-value select,
+main .add-content .add-block-form .white-block .table-style .input-value select {
   width: auto;
 }
-main .add-content .add-block-form form .table-style .input-value textarea {
+main .add-content .add-block-form form .table-style .input-value textarea,
+main .add-content .add-block-form .white-block .table-style .input-value textarea {
   height: 150px;
   border-radius: 3px;
   border: 1px solid #ccc;
@@ -1653,10 +1698,12 @@ main .add-content .add-block-form form .table-style .input-value textarea {
   width: 63%;
   max-width: 63%;
 }
-main .add-content .add-block-form form .table-style .input-value input[type="checkbox"] {
+main .add-content .add-block-form form .table-style .input-value input[type="checkbox"],
+main .add-content .add-block-form .white-block .table-style .input-value input[type="checkbox"] {
   width: auto;
 }
-main .add-content .add-block-form form .table-style .upload_file button {
+main .add-content .add-block-form form .table-style .upload_file button,
+main .add-content .add-block-form .white-block .table-style .upload_file button {
   border: none;
   background-color: #e0e9ec;
   color: #3f4b54;
@@ -1695,7 +1742,8 @@ main .add-content .add-block-form form .table-style .upload_file button {
   padding: 5px 15px;
   float: left;
 }
-main .add-content .add-block-form form .table-style .upload_file button:hover {
+main .add-content .add-block-form form .table-style .upload_file button:hover,
+main .add-content .add-block-form .white-block .table-style .upload_file button:hover {
   text-decoration: none;
   background: #f3f6f7!important;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMSAxIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9Imxlc3NoYXQtZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmOGY4ZjkiIHN0b3Atb3BhY2l0eT0iMSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2YyZjZmOCIgc3RvcC1vcGFjaXR5PSIxIi8+PC9saW5lYXJHcmFkaWVudD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2xlc3NoYXQtZ2VuZXJhdGVkKSIgLz48L3N2Zz4=);
@@ -1704,7 +1752,8 @@ main .add-content .add-block-form form .table-style .upload_file button:hover {
   background-image: -o-linear-gradient(top, #f8f8f9, #f2f6f8);
   background-image: linear-gradient(to bottom, #f8f8f9, #f2f6f8);
 }
-main .add-content .add-block-form form .table-style .upload_file button:active {
+main .add-content .add-block-form form .table-style .upload_file button:active,
+main .add-content .add-block-form .white-block .table-style .upload_file button:active {
   background-color: #b7c4c9!important;
   border-top: transparent;
   -webkit-border-radius: 4px;
@@ -1724,20 +1773,25 @@ main .add-content .add-block-form form .table-style .upload_file button:active {
   background-image: -o-linear-gradient(top, rgba(179, 194, 200, 0.96), rgba(202, 215, 219, 0.96));
   background-image: linear-gradient(to bottom, rgba(179, 194, 200, 0.96), rgba(202, 215, 219, 0.96));
 }
-main .add-content .add-block-form form .table-style .up_file_text {
+main .add-content .add-block-form form .table-style .up_file_text,
+main .add-content .add-block-form .white-block .table-style .up_file_text {
   float: left;
   left: 335px;
   width: 425px;
   top: 8px;
   position: absolute;
 }
-main .add-content .add-block-form form .table-style .upload_file p {
+main .add-content .add-block-form form .table-style .upload_file p,
+main .add-content .add-block-form .white-block .table-style .upload_file p {
   min-width: 146px;
   min-height: 1px;
 }
 main .add-content .add-block-form form .cancel,
+main .add-content .add-block-form .white-block .cancel,
 main .add-content .add-block-form form input[type="submit"],
-main .add-content .add-block-form form .add_more {
+main .add-content .add-block-form .white-block input[type="submit"],
+main .add-content .add-block-form form .add_more,
+main .add-content .add-block-form .white-block .add_more {
   border: none;
   background-color: #e0e9ec;
   color: #3f4b54;
@@ -1773,8 +1827,11 @@ main .add-content .add-block-form form .add_more {
   background-clip: padding-box;
 }
 main .add-content .add-block-form form .cancel:hover,
+main .add-content .add-block-form .white-block .cancel:hover,
 main .add-content .add-block-form form input[type="submit"]:hover,
-main .add-content .add-block-form form .add_more:hover {
+main .add-content .add-block-form .white-block input[type="submit"]:hover,
+main .add-content .add-block-form form .add_more:hover,
+main .add-content .add-block-form .white-block .add_more:hover {
   text-decoration: none;
   background: #f3f6f7!important;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMSAxIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIj48bGluZWFyR3JhZGllbnQgaWQ9Imxlc3NoYXQtZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPjxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNmOGY4ZjkiIHN0b3Atb3BhY2l0eT0iMSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2YyZjZmOCIgc3RvcC1vcGFjaXR5PSIxIi8+PC9saW5lYXJHcmFkaWVudD48cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2xlc3NoYXQtZ2VuZXJhdGVkKSIgLz48L3N2Zz4=);
@@ -1784,8 +1841,11 @@ main .add-content .add-block-form form .add_more:hover {
   background-image: linear-gradient(to bottom, #f8f8f9, #f2f6f8);
 }
 main .add-content .add-block-form form .cancel:active,
+main .add-content .add-block-form .white-block .cancel:active,
 main .add-content .add-block-form form input[type="submit"]:active,
-main .add-content .add-block-form form .add_more:active {
+main .add-content .add-block-form .white-block input[type="submit"]:active,
+main .add-content .add-block-form form .add_more:active,
+main .add-content .add-block-form .white-block .add_more:active {
   background-color: #b7c4c9!important;
   border-top: transparent;
   -webkit-border-radius: 4px;
@@ -1805,13 +1865,16 @@ main .add-content .add-block-form form .add_more:active {
   background-image: -o-linear-gradient(top, rgba(179, 194, 200, 0.96), rgba(202, 215, 219, 0.96));
   background-image: linear-gradient(to bottom, rgba(179, 194, 200, 0.96), rgba(202, 215, 219, 0.96));
 }
-main .add-content .add-block-form form .add_more {
+main .add-content .add-block-form form .add_more,
+main .add-content .add-block-form .white-block .add_more {
   left: 165px;
 }
-main .add-content .add-block-form form .errors {
+main .add-content .add-block-form form .errors,
+main .add-content .add-block-form .white-block .errors {
   border-color: red !important;
 }
-main .add-content .add-block-form form .photos {
+main .add-content .add-block-form form .photos,
+main .add-content .add-block-form .white-block .photos {
   float: left;
   border: 1px solid #ccc;
   padding: 5px;
@@ -1824,10 +1887,12 @@ main .add-content .add-block-form form .photos {
   -o-transition: all 0.7s ease;
   transition: all 0.7s ease;
 }
-main .add-content .add-block-form form .photos img {
+main .add-content .add-block-form form .photos img,
+main .add-content .add-block-form .white-block .photos img {
   width: 100%;
 }
-main .add-content .add-block-form form .spec-list {
+main .add-content .add-block-form form .spec-list,
+main .add-content .add-block-form .white-block .spec-list {
   background-color: white;
   max-width: 900px;
   width: 100%;
@@ -1835,17 +1900,21 @@ main .add-content .add-block-form form .spec-list {
   -moz-box-shadow: inset 0 1px 0 #cbd3d7, inset 0 1px 2px -1px rgba(159, 174, 182, 0.6), inset 0 3px 4px -1px rgba(159, 174, 182, 0.5), 0 1px 0 #fff;
   box-shadow: inset 0 1px 0 #cbd3d7, inset 0 1px 2px -1px rgba(159, 174, 182, 0.6), inset 0 3px 4px -1px rgba(159, 174, 182, 0.5), 0 1px 0 #fff;
 }
-main .add-content .add-block-form form .spec-list .st-form {
+main .add-content .add-block-form form .spec-list .st-form,
+main .add-content .add-block-form .white-block .spec-list .st-form {
   padding: 10px 20px;
 }
-main .add-content .add-block-form form .spec-list .st-form span:first-child {
+main .add-content .add-block-form form .spec-list .st-form span:first-child,
+main .add-content .add-block-form .white-block .spec-list .st-form span:first-child {
   font-weight: bold;
 }
-main .add-content .add-block-form form .spec-list .st-text {
+main .add-content .add-block-form form .spec-list .st-text,
+main .add-content .add-block-form .white-block .spec-list .st-text {
   font-family: 'Georgia, "Times New Roman", Times, serif';
   padding: 10px 20px;
 }
-main .add-content .add-block-form form .spec-list .line-goods {
+main .add-content .add-block-form form .spec-list .line-goods,
+main .add-content .add-block-form .white-block .spec-list .line-goods {
   background-color: #e0e8ea;
   border-top: 11px solid #F5F9F9;
   border-bottom: 11px solid #F5F9F9;
@@ -1856,28 +1925,34 @@ main .add-content .add-block-form form .spec-list .line-goods {
   text-shadow: 0 1px #fff;
   padding: 8px 4px 10px;
 }
-main .add-content .add-block-form form .spec-list .order-table {
+main .add-content .add-block-form form .spec-list .order-table,
+main .add-content .add-block-form .white-block .spec-list .order-table {
   width: 100%;
 }
-main .add-content .add-block-form form .spec-list .order-table tr:first-child {
+main .add-content .add-block-form form .spec-list .order-table tr:first-child,
+main .add-content .add-block-form .white-block .spec-list .order-table tr:first-child {
   font-weight: bold;
 }
-main .add-content .add-block-form form .spec-list .order-table tr td {
+main .add-content .add-block-form form .spec-list .order-table tr td,
+main .add-content .add-block-form .white-block .spec-list .order-table tr td {
   text-align: center;
 }
-main .add-content .add-block-form form .spec-list .order-table tr td:nth-child(1) {
+main .add-content .add-block-form form .spec-list .order-table tr td:nth-child(1),
+main .add-content .add-block-form .white-block .spec-list .order-table tr td:nth-child(1) {
   width: 40%;
 }
-main .add-content .add-block-form form .spec-list .order-table tr td ul {
+main .add-content .add-block-form form .spec-list .order-table tr td ul,
+main .add-content .add-block-form .white-block .spec-list .order-table tr td ul {
   list-style: none;
 }
-main .add-content .add-block-form form .spec-list .order-table tr td ul li {
+main .add-content .add-block-form form .spec-list .order-table tr td ul li,
+main .add-content .add-block-form .white-block .spec-list .order-table tr td ul li {
   min-height: 50px;
 }
 @font-face {
   font-family: 'icomoon';
-  src: url('fonts/icomoon.eot?vztbtf');
-  src: url('fonts/icomoon.eot?vztbtf#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?vztbtf') format('truetype'), url('fonts/icomoon.woff?vztbtf') format('woff'), url('fonts/icomoon.svg?vztbtf#icomoon') format('svg');
+  src: url('fonts/icomoon.eot?q03no4');
+  src: url('fonts/icomoon.eot?q03no4#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?q03no4') format('truetype'), url('fonts/icomoon.woff?q03no4') format('woff'), url('fonts/icomoon.svg?q03no4#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -1958,4 +2033,7 @@ main .add-content .add-block-form form .spec-list .order-table tr td ul li {
 }
 .icon-google-plus3:before {
   content: "\e907";
+}
+.icon-mail4:before {
+  content: "\e912";
 }

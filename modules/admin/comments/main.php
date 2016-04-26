@@ -60,27 +60,10 @@ if(isset($_POST['deactive']) && isset($_POST['ids'])){
 
 // --- GET ALL ELEMENT OR FILTER---
 
-if(isset($_POST['cat']) && in_array($_POST['cat'],array(0,1,5)) && isset($_POST['filter'])){
-    if($_POST['cat'] == 5){
-        $_POST['cat'] = '0,1';
-    }
-
-    $comments = q("
-        SELECT *
-        FROM `comments`
-	    WHERE `active` IN (".$_POST['cat'].")
-	    ORDER BY `id` DESC
-    ");
-
-    if($_POST['cat'] == '0,1'){
-        $_POST['cat'] = 5;
-    }
-} else {
-    $comments = q("
-        SELECT *
-        FROM `comments`
-        ORDER BY `id` DESC
-    ");
-}
+$comments = q("
+    SELECT *
+    FROM `comments`
+    ORDER BY `id` DESC
+");
 
 // --- END GET ALL ELEMENT OR FILTER ---
