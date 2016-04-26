@@ -11,9 +11,9 @@
                     <td></td>
                     <td>Id</td>
                     <td>Кому</td>
+                    <td>Код листа</td>
                     <td>Назва листа</td>
                     <td>Тип листа</td>
-                    <td>Відповідь</td>
                 </tr>
                 <?php while($arResult = $mails->fetch_assoc()){ ?>
                     <tr>
@@ -36,9 +36,9 @@
                         </td>
                         <td><?=(int)$arResult['id']?></td>
                         <td><?=hsc($arResult['to_mail'])?></td>
+                        <td><?=hsc($arResult['code'])?></td>
                         <td><?=hsc($arResult['name'])?></td>
                         <td><?=hsc($arResult['type'])?></td>
-                        <td><?=hsc($arResult['answer'])?></td>
                     </tr>
                 <?php } ?>
             </table>

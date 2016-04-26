@@ -1652,6 +1652,7 @@ main .add-content .add-block-form .white-block .table-style .input-value p {
   min-width: 145px;
   font-size: 16px;
   line-height: 26px;
+  margin: 0;
   text-shadow: 0 1px 0 white;
   color: #6A7C8A;
   max-width: 120px;

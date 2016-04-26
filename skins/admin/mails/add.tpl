@@ -39,17 +39,6 @@
                             <?php } ?>
                         </select>
                     </div>
-                    <div class="input-value">
-                        <p>Потребує відповіді</p>
-                        <select name="answer">
-                            <?php foreach(Core::$LOGIC['logic'] as $k=>$v){ ?>
-                                <?php if($k == 0){ continue; }?>
-                                <option value="<?=$v;?>" <?=(((isset($errors) && $_POST['answer'] == $v))? 'selected="selected"' : "")?>>
-                                    <?=$v;?>
-                                </option>
-                            <?php } ?>
-                        </select>
-                    </div>
                 </div>
 
             </div>

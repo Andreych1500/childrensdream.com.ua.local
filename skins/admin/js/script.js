@@ -47,7 +47,7 @@ $(document).ready(function() {
 
     // --- edit el on double click ---
     $('.edFormEdit tr:not(:first-child) td:not(:first-child)').dblclick(function(){
-        if($(this).parents('.c-checked').length == 0){
+        if($(this).parents('.c-checked').length == 0 && $(this).parents('.activeContent').length == 0){
             document.location.href = $(this).siblings('td').find('.menu-edit a:first-child').attr('href');
         }
     });
