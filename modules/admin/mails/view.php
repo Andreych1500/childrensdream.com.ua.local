@@ -29,9 +29,9 @@ if($mails->num_rows){
 
     // --- CONTENT VIEW ---
 
-    preg_match('#<body(.+)</body>#uis', TemplateMail::orderHtml('ua'), $body_ua);
+    preg_match('#<body(.+)</body>#uis', TemplateMail::orderHtml('ua', Core::$DOCUMENT_ROOT), $body_ua);
     $body_ua = preg_replace('#(body)#uis', 'div', $body_ua[0]);
-    preg_match('#<body(.+)</body>#uis', TemplateMail::orderHtml('ru'), $body_ru);
+    preg_match('#<body(.+)</body>#uis', TemplateMail::orderHtml('ru', Core::$DOCUMENT_ROOT), $body_ru);
     $body_ru = preg_replace('#(body)#uis', 'div', $body_ru[0]);
 
     // --- END CONTENT VIEW ---

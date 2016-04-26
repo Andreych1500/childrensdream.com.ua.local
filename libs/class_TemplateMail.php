@@ -32,7 +32,7 @@ return self::$html = '
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Замовлення товару</title>
 </head>
-<body style="background:url('.$siteDirToFiles.' /skins/default/img/mails/pattern.png) #ffffff; max-width:560px; line-height:1.5; color:#482200; padding:30px 20px; font-size:18px; margin:auto;">
+<body style="background:url('.$siteDirToFiles.'/skins/default/img/mails/pattern.png) #ffffff; max-width:560px; line-height:1.5; color:#482200; padding:30px 20px; font-size:18px; margin:auto;">
 <style>
 @media screen and (max-width: 480px){ .goods{ width:98% !important; margin-bottom:20px !important; } }
 </style>
