@@ -39,7 +39,7 @@
                         <td><?=hsc($arResult['to_mail'])?></td>
                         <td><?=hsc($arResult['from_mail'])?></td>
                         <td><?=hsc($arResult['code'])?></td>
-                        <td><?=hsc($arResult['name'])?></td>
+                        <td><?=hsc($arResult['name_ua'])?></td>
                         <td><?=hsc($arResult['type'])?></td>
                     </tr>
                 <?php } ?>

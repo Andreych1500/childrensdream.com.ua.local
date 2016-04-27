@@ -1,12 +1,16 @@
 <?php
 // --- EDIT COMMENTS ---
 
-if(isset($_POST['ok'], $_POST['name'])){
+if(isset($_POST['ok'])){
     $_POST = trimAll($_POST);
     $errors = array();
 
-    if(empty($_POST['name'])){
-        $errors['name'] = 'errors';
+    if(empty($_POST['name_ua'])){
+        $errors['name_ua'] = 'errors';
+    }
+
+    if(empty($_POST['name_ru'])){
+        $errors['name_ru'] = 'errors';
     }
 
     if(empty($_POST['ids_goods'])){
@@ -28,7 +32,8 @@ if(isset($_POST['ok'], $_POST['name'])){
             `from_mail`  = '".$_POST['from_mail']."',
             `to_mail`  = '".$_POST['to_mail']."',
             `type`       = '".$_POST['type']."',
- 			`name`       = '".$_POST['name']."',
+ 			`name_ua`    = '".$_POST['name_ua']."',
+ 			`name_ru`    = '".$_POST['name_ru']."',
  			`ids_goods`  = '".$_POST['ids_goods']."',
 		    `user_custom`    = '".mres($_SESSION['user']['FIO'])."'
 		");

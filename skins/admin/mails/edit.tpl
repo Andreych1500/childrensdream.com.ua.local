@@ -14,8 +14,12 @@
                 <div class="table-style">
                     <div class="headers-line">Настройки листа</div>
                     <div class="input-value">
-                        <p>Назва<span>*</span></p>
-                        <input type="text" class="<?=((isset($errors['name']))? "errors" : "")?>"  name="name" value="<?=((isset($errors))? hsc($_POST['name']) : hsc($row['name']))?>">
+                        <p>Назва ua<span>*</span></p>
+                        <input type="text" class="<?=((isset($errors['name_ua']))? "errors" : "")?>"  name="name_ua" value="<?=((isset($errors))? hsc($_POST['name_ua']) : hsc($row['name_ua']))?>">
+                    </div>
+                    <div class="input-value">
+                        <p>Назва ru<span>*</span></p>
+                        <input type="text" class="<?=((isset($errors['name_ru']))? "errors" : "")?>"  name="name_ru" value="<?=((isset($errors))? hsc($_POST['name_ru']) : hsc($row['name_ru']))?>">
                     </div>
                     <div class="input-value">
                         <p>ID популярних товарів<span>*</span></p>
