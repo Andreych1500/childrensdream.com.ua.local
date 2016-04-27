@@ -61,7 +61,7 @@ return self::$html = '
 <div style="clear:both;"></div>
 </div>
 <div role="footer" style="background:#ffffff; padding: 10px 20px; color: #BFBFBF; text-align: center; border: 1px dashed #43D1E0; border-top: 0; margin: auto; max-width: 558px;">
-<p style="margin:0 0 10px;">E-mail: <a href="mailto:cdmatrasses@gmail.com" style="color:#8B8B8B !important; font-weight:bold; text-decoration:none;">cdmatrasses@gmail.com</a> | phone: <b style="color:#8B8B8B !important;">+38 (098) 570-43-77</b></p>
+<p style="margin:0 0 10px; font-size: 18px;">E-mail: <a href="mailto:cdmatrasses@gmail.com" style="color:#8B8B8B !important; font-weight:bold; text-decoration:none;">cdmatrasses@gmail.com</a> | phone: <b style="color:#8B8B8B !important;">+38 (098) 570-43-77</b></p>
 <div style="font-size:0; margin:0 0 10px;">
 <a href="https://www.facebook.com/tmchildrensdream" target="_blank" style="display:inline-block; margin: 0 5px;"><img src="'.$siteDirToFiles.'/skins/default/img/mails/facebook.png"></a>
 <a href="https://vk.com/tmchildrensdream" target="_blank" style="display:inline-block; margin: 0 5px;"><img src="'.$siteDirToFiles.'/skins/default/img/mails/vk.png"></a>
