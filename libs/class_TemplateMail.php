@@ -62,9 +62,6 @@ class TemplateMail {
 <title>Замовлення товару</title>
 </head>
 <body style="background-image:url('.$siteDirToFiles.'/skins/default/img/mails/pattern.png); background-color:#ffffff; line-height:1.5; color:#482200; padding:30px 20px; font-size:17px;">
-<style>
-@media screen and (max-width: 480px){ .goods{ width:98% !important; margin-bottom:20px !important; } }
-</style>
 <div role="header" style="text-align: center; border: 1px dashed #43D1E0; background:#ffffff; padding:10px; border-bottom: 4px solid #43D1E0; margin: auto; max-width: 538px;">
 <a href="'.$siteDirToFiles.$lang.'" target="_blank" title="www.childrensdream.com.ua" style="outline:none; display:inline-block;"><img src="'.$siteDirToFiles.'/skins/default/img/mails/cd-static.png" style="width:auto"></a>
 <p style="font-size: 26px; margin:0; font-weight:bold;">'.$mess['ISM'].'</p>
@@ -80,11 +77,11 @@ class TemplateMail {
 <a href="'.$siteDirToFiles.$lang.'products/" target="_blank" title="" style="color:#ffffff; padding:5px 0; text-decoration:none; display: inline-block; width: 100%;">'.$mess['TEXT_7'].'</a>
 </div>
 <p style="font-weight:bold; text-align:center; margin:0 0 10px;">'.$mess['TEXT_8'].':</p>
-<div class="goods" style="float:left; width:48%; margin:1%; text-align:center;">
+<div style="float:left; width:48%; margin:1%; text-align:center;">
 <a href="'.hsc($siteDirToFiles.$lang.'products/'.self::$goods[0]['link']).'" target="_blank" style="display:inline-block; width:100%;"><img src="'.$siteDirToFiles.hsc(self::$goods[0]['photo']).'" style="max-width:200px; width:100%;" alt="'.hsc(self::$goods[0]['name_'.$idLang]).'"></a>
 <a href="'.hsc($siteDirToFiles.$lang.'products/'.self::$goods[0]['link']).'" target="_blank" style="width:100%; color:#482200;">'.hsc(self::$goods[0]['name_'.$idLang]).'</a>
 </div>
-<div class="goods" style="float:left; width:48%; margin:1%; text-align:center;">
+<div style="float:left; width:48%; margin:1%; text-align:center;">
 <a href="'.hsc($siteDirToFiles.$lang.'products/'.self::$goods[1]['link']).'" target="_blank" style="display:inline-block; width:100%;"><img src="'.$siteDirToFiles.hsc(self::$goods[1]['photo']).'" style="max-width:200px; width:100%;" alt="'.hsc(self::$goods[1]['name_'.$idLang]).'"></a>
 <a href="'.hsc($siteDirToFiles.$lang.'products/'.self::$goods[1]['link']).'" target="_blank" style="width:100%; color:#482200;">'.hsc(self::$goods[1]['name_'.$idLang]).'</a>
 </div>
