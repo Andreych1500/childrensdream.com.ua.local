@@ -139,7 +139,7 @@ if (isset($_COOKIE['items'])) {
                 TemplateMail::$name_user    = $_POST['name'];
                 TemplateMail::$number_order = $number;
                 TemplateMail::$order_price  = mres($prices_el);
-
+                TemplateMail::$delivery = $_POST['delivery'];
                 Mail::$to = $_POST['email'];
                 Mail::$text=  TemplateMail::orderHtml($lang, Core::$DOCUMENT_ROOT);
                 Mail::$from      = $arResult['from_mail'];

@@ -4,6 +4,7 @@ class TemplateMail {
     static $name_user    = '#NAME#';
     static $number_order = '#NUMBER_ORDER#';
     static $order_price  = '#PRICE#';
+    static $delivery     = '#DELIVERY#';
     static $goods = array(
         0 => array(
             "name_ua"  => "#NAME_GOODS_UA0#",
@@ -73,7 +74,7 @@ class TemplateMail {
 <p style="margin:0 0 10px;">'.$mess['TEXT_1'].', '.hsc(self::$name_user).'.</p>
 <p style="margin:0 0 10px;">'.$mess['TEXT_2'].'</p>
 <p style="margin:0 0 10px;">'.$mess['TEXT_3'].' №'.(int)self::$number_order.' '.$mess['TEXT_4'].' '.hsc(self::$order_price).' грн.</p>
-<p style="margin:0 0 10px;">'.$mess['TEXT_5'].': #DEVELORY#.</p>
+<p style="margin:0 0 10px;">'.$mess['TEXT_5'].': '.self::$delivery.'</p>
 <p style="margin:0 0 10px;">'.$mess['TEXT_6'].'</p>
 <div style="margin: auto; width: 250px; text-align: center; background: #43D1E0; font-size:20px; margin-bottom: 20px;">
 <a href="'.$siteDirToFiles.$lang.'products/" target="_blank" title="" style="color:#ffffff; padding:5px 0; text-decoration:none; display: inline-block; width: 100%;">'.$mess['TEXT_7'].'</a>
