@@ -125,6 +125,7 @@ if (isset($_COOKIE['items'])) {
                 `date_create` = NOW()
             ");
 
+            $number = DB::_()->insert_id;
 
             $mails = q("
                 SELECT *
@@ -135,6 +136,9 @@ if (isset($_COOKIE['items'])) {
 
             if($mails->num_rows){
                 $arResult = $mails->fetch_assoc();
+                TemplateMail::$name_user    = $_POST['name'];
+                TemplateMail::$number_order = $number;
+                TemplateMail::$order_price  = mres($prices_el);
 
                 Mail::$to = $_POST['email'];
                 Mail::$text=  TemplateMail::orderHtml($lang, Core::$DOCUMENT_ROOT);

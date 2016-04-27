@@ -72,7 +72,7 @@ class TemplateMail {
 <div role="main" style="border: 1px dashed #43D1E0; border-top: 0; background:#ffffff; font-family: sans-serif; padding: 10px; border-bottom: 4px solid #43D1E0; margin: auto; max-width: 538px;">
 <p style="margin:0 0 10px;">'.$mess['TEXT_1'].', '.hsc(self::$name_user).'.</p>
 <p style="margin:0 0 10px;">'.$mess['TEXT_2'].'</p>
-<p style="margin:0 0 10px;">'.$mess['TEXT_3'].' №'.hsc(self::$number_order).' '.$mess['TEXT_4'].' '.hsc(self::$order_price).' грн.</p>
+<p style="margin:0 0 10px;">'.$mess['TEXT_3'].' №'.(int)self::$number_order.' '.$mess['TEXT_4'].' '.hsc(self::$order_price).' грн.</p>
 <p style="margin:0 0 10px;">'.$mess['TEXT_5'].': #DEVELORY#.</p>
 <p style="margin:0 0 10px;">'.$mess['TEXT_6'].'</p>
 <div style="margin: auto; width: 250px; text-align: center; background: #43D1E0; font-size:20px; margin-bottom: 20px;">
