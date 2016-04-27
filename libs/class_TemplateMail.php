@@ -25,7 +25,34 @@ class TemplateMail {
         include './libs/lang/'.$idLang.'/lang.php';
         $lang = (($idLang == 'ua')? '/' : '/ru/');
 
-return self::$html = '
+        $mails = q("
+            SELECT *
+            FROM `mails`
+            WHERE `code` = 'order'
+            LIMIT 1
+        ");
+
+        if($mails->num_rows){
+            $arResult = $mails->fetch_assoc();
+
+            $goods = q("
+                SELECT `id`, `name_ua`, `name_ru`, `cAnonsPhoto`, `seo_name`
+                FROM `products`
+                WHERE `id` IN (".$arResult['ids_goods'].")
+                LIMIT 2
+            ");
+
+            $k = 0;
+            while($arGoods = $goods->fetch_assoc()){
+                self::$goods[$k]['photo']   = $arGoods['cAnonsPhoto'];
+                self::$goods[$k]['name_ua'] = $arGoods['name_ua'];
+                self::$goods[$k]['name_ru'] = $arGoods['name_ru'];
+                self::$goods[$k]['link']    = $arGoods['seo_name'];
+                ++$k;
+            }
+        }
+
+        self::$html = '
 <!DOCTYPE html>
 <html>
 <head>
@@ -76,6 +103,8 @@ return self::$html = '
 </div>
 </body>
 </html>';
+
+        return  (($arResult['type'] == 'text')? nslbr(hsc(self::$html)) : self::$html);
     }
 
 }

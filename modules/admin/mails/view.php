@@ -11,22 +11,6 @@ $mails = q("
 if($mails->num_rows){
     $arResult = $mails->fetch_assoc();
 
-    $goods = q("
-        SELECT `id`, `name_ua`, `name_ru`, `cAnonsPhoto`, `seo_name`
-        FROM `products`
-        WHERE `id` IN (".$arResult['ids_goods'].")
-        LIMIT 2
-    ");
-
-    $k = 0;
-    while($arGoods = $goods->fetch_assoc()){
-        TemplateMail::$goods[$k]['photo']   = $arGoods['cAnonsPhoto'];
-        TemplateMail::$goods[$k]['name_ua'] = $arGoods['name_ua'];
-        TemplateMail::$goods[$k]['name_ru'] = $arGoods['name_ru'];
-        TemplateMail::$goods[$k]['link']    = $arGoods['seo_name'];
-        ++$k;
-    }
-
     // --- SEND LIST ---
 
     if(isset($_POST['send'],$_POST['lang_send'])){
