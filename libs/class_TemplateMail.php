@@ -53,11 +53,11 @@ return self::$html = '
 </div>
 <p style="font-weight:bold; text-align:center; margin:0 0 10px;">'.$mess['TEXT_8'].':</p>
 <div class="goods" style="float:left; width:48%; margin:1%; text-align:center;">
-<a href="'.hsc($siteDirToFiles.$lang.'products/'.self::$goods[0]['link']).'" target="_blank" style="display:inline-block; width:100%;"><img src="'.$siteDirToFiles.hsc(self::$goods[0]['photo']).'" alt="'.hsc(self::$goods[0]['name_'.$idLang]).'"></a>
+<a href="'.hsc($siteDirToFiles.$lang.'products/'.self::$goods[0]['link']).'" target="_blank" style="display:inline-block; width:100%;"><img src="'.$siteDirToFiles.hsc(self::$goods[0]['photo']).'" style="max-width:200px; width:100%;" alt="'.hsc(self::$goods[0]['name_'.$idLang]).'"></a>
 <a href="'.hsc($siteDirToFiles.$lang.'products/'.self::$goods[0]['link']).'" target="_blank" style="width:100%; color:#482200;">'.hsc(self::$goods[0]['name_'.$idLang]).'</a>
 </div>
 <div class="goods" style="float:left; width:48%; margin:1%; text-align:center;">
-<a href="'.hsc($siteDirToFiles.$lang.'products/'.self::$goods[1]['link']).'" target="_blank" style="display:inline-block; width:100%;"><img src="'.$siteDirToFiles.hsc(self::$goods[1]['photo']).'" alt="'.hsc(self::$goods[1]['name_'.$idLang]).'"></a>
+<a href="'.hsc($siteDirToFiles.$lang.'products/'.self::$goods[1]['link']).'" target="_blank" style="display:inline-block; width:100%;"><img src="'.$siteDirToFiles.hsc(self::$goods[1]['photo']).'" style="max-width:200px; width:100%;" alt="'.hsc(self::$goods[1]['name_'.$idLang]).'"></a>
 <a href="'.hsc($siteDirToFiles.$lang.'products/'.self::$goods[1]['link']).'" target="_blank" style="width:100%; color:#482200;">'.hsc(self::$goods[1]['name_'.$idLang]).'</a>
 </div>
 <div style="clear:both;"></div>
