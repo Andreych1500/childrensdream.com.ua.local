@@ -27,7 +27,7 @@
                     </div>
                     <div class="input-value">
                         <p>Код листа<span>*</span></p>
-                        <input disabled type="text" class="<?=((isset($errors['code']))? "errors" : "")?>"  name="code" value="<?=((isset($errors))? hsc($_POST['code']) : hsc($row['code']))?>">
+                        <input disabled type="text" class="<?=((isset($errors['code']))? "errors" : "")?>"  name="code" value="<?=((isset($errors))? hsc($row['code']) : hsc($row['code']))?>">
                     </div>
                     <div class="input-value">
                         <p>Ким відправлено<span>*</span></p>

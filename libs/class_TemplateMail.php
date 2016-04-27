@@ -6,12 +6,14 @@ class TemplateMail {
     static $order_price  = '#PRICE#';
     static $goods = array(
         0 => array(
-            "name"  => "#NAME_GOODS0#",
+            "name_ua"  => "#NAME_GOODS_UA0#",
+            "name_ru"  => "#NAME_GOODS_RU0#",
             "link"  => "#LINK_GOODS0",
             "photo" => "/skins/default/img/default/nofoto.png"
         ),
         1 => array(
-            "name"  => "#NAME_GOODS1#",
+            "name_ua"  => "#NAME_GOODS_UA1#",
+            "name_ru"  => "#NAME_GOODS_UA1#",
             "link"  => "#LINK_GOODS1",
             "photo" => "/skins/default/img/default/nofoto.png"
         )
@@ -19,9 +21,9 @@ class TemplateMail {
 
     static $html = '';
 
-    static function orderHtml($lang, $siteDirToFiles){
-        include './libs/lang/'.$lang.'/lang.php';
-        $lang = (($lang == 'ua')? '/' : '/ru/');
+    static function orderHtml($idLang, $siteDirToFiles){
+        include './libs/lang/'.$idLang.'/lang.php';
+        $lang = (($idLang == 'ua')? '/' : '/ru/');
 
 return self::$html = '
 <!DOCTYPE html>
@@ -51,12 +53,12 @@ return self::$html = '
 </div>
 <p style="font-weight:bold; text-align:center; margin:0 0 10px;">'.$mess['TEXT_8'].':</p>
 <div class="goods" style="float:left; width:48%; margin:1%; text-align:center;">
-<a href="'.hsc($siteDirToFiles.self::$goods[0]['link']).'" target="_blank" style="display:inline-block; width:100%;"><img src="'.$siteDirToFiles.hsc(self::$goods[0]['photo']).'" alt="'.hsc(self::$goods[0]['name']).'"></a>
-<a href="'.hsc($siteDirToFiles.self::$goods[0]['link']).'" target="_blank" style="width:100%; color:#482200;">'.hsc(self::$goods[0]['name']).'</a>
+<a href="'.hsc($siteDirToFiles.$lang.'products/'.self::$goods[0]['link']).'" target="_blank" style="display:inline-block; width:100%;"><img src="'.$siteDirToFiles.hsc(self::$goods[0]['photo']).'" alt="'.hsc(self::$goods[0]['name_'.$idLang]).'"></a>
+<a href="'.hsc($siteDirToFiles.$lang.'products/'.self::$goods[0]['link']).'" target="_blank" style="width:100%; color:#482200;">'.hsc(self::$goods[0]['name_'.$idLang]).'</a>
 </div>
 <div class="goods" style="float:left; width:48%; margin:1%; text-align:center;">
-<a href="'.hsc($siteDirToFiles.self::$goods[1]['link']).'" target="_blank" style="display:inline-block; width:100%;"><img src="'.$siteDirToFiles.hsc(self::$goods[1]['photo']).'" alt="'.hsc(self::$goods[1]['name']).'"></a>
-<a href="'.hsc($siteDirToFiles.self::$goods[1]['link']).'" target="_blank" style="width:100%; color:#482200;">'.hsc(self::$goods[1]['name']).'</a>
+<a href="'.hsc($siteDirToFiles.$lang.'products/'.self::$goods[1]['link']).'" target="_blank" style="display:inline-block; width:100%;"><img src="'.$siteDirToFiles.hsc(self::$goods[1]['photo']).'" alt="'.hsc(self::$goods[1]['name_'.$idLang]).'"></a>
+<a href="'.hsc($siteDirToFiles.$lang.'products/'.self::$goods[1]['link']).'" target="_blank" style="width:100%; color:#482200;">'.hsc(self::$goods[1]['name_'.$idLang]).'</a>
 </div>
 <div style="clear:both;"></div>
 </div>
