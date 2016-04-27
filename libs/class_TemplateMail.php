@@ -31,16 +31,16 @@ return self::$html = '
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Замовлення товару</title>
 </head>
-<body style="background-image:url('.$siteDirToFiles.'/skins/default/img/mails/pattern.png); background-color:#ffffff; line-height:1.5; color:#482200; padding:30px 0; font-size:17px;">
+<body style="background-image:url('.$siteDirToFiles.'/skins/default/img/mails/pattern.png); background-color:#ffffff; line-height:1.5; color:#482200; padding:30px 20px; font-size:17px;">
 <style>
 @media screen and (max-width: 480px){ .goods{ width:98% !important; margin-bottom:20px !important; } }
 </style>
-<div role="header" style="text-align: center; border: 1px dashed #43D1E0; background:#ffffff; padding:10px 20px; border-bottom: 4px solid #43D1E0; margin: auto; max-width: 558px;">
+<div role="header" style="text-align: center; border: 1px dashed #43D1E0; background:#ffffff; padding:10px; border-bottom: 4px solid #43D1E0; margin: auto; max-width: 538px;">
 <a href="'.$siteDirToFiles.$lang.'" target="_blank" title="www.childrensdream.com.ua" style="outline:none; display:inline-block;"><img src="'.$siteDirToFiles.'/skins/default/img/mails/cd-static.png" style="width:auto"></a>
 <p style="font-size: 26px; margin:0; font-weight:bold;">'.$mess['ISM'].'</p>
 <div style="clear:both;"></div>
 </div>
-<div role="main" style="border: 1px dashed #43D1E0; border-top: 0; background:#ffffff; font-family: sans-serif; padding: 10px 20px 0; border-bottom: 4px solid #43D1E0; margin: auto; max-width: 558px;">
+<div role="main" style="border: 1px dashed #43D1E0; border-top: 0; background:#ffffff; font-family: sans-serif; padding: 10px; border-bottom: 4px solid #43D1E0; margin: auto; max-width: 538px;">
 <p style="margin:0 0 10px;">'.$mess['TEXT_1'].', '.hsc(self::$name_user).'.</p>
 <p style="margin:0 0 10px;">'.$mess['TEXT_2'].'</p>
 <p style="margin:0 0 10px;">'.$mess['TEXT_3'].' №'.hsc(self::$number_order).' '.$mess['TEXT_4'].' '.hsc(self::$order_price).' грн.</p>
@@ -60,8 +60,8 @@ return self::$html = '
 </div>
 <div style="clear:both;"></div>
 </div>
-<div role="footer" style="background:#ffffff; padding: 10px 20px; color: #BFBFBF; text-align: center; border: 1px dashed #43D1E0; border-top: 0; margin: auto; max-width: 558px;">
-<p style="margin:0 0 10px; font-size: 18px;">E-mail: <a href="mailto:cdmatrasses@gmail.com" style="color:#8B8B8B !important; font-weight:bold; text-decoration:none;">cdmatrasses@gmail.com</a> | phone: <b style="color:#8B8B8B !important;">+38 (098) 570-43-77</b></p>
+<div role="footer" style="background:#ffffff; padding: 10px; color: #BFBFBF; text-align: center; border: 1px dashed #43D1E0; border-top: 0; margin: auto; max-width: 538px;">
+<p style="margin:0 0 10px; font-size: 18px;">E-mail: <a href="mailto:cdmatrasses@gmail.com" style="color:#8B8B8B !important; font-weight:bold; text-decoration:none;">cdmatrasses@gmail.com</a> | phone: <a href="callto:38-098-570-43-77" style="color:#8B8B8B !important; font-weight:bold; text-decoration:none;">+38 (098) 570-43-77</a></p>
 <div style="font-size:0; margin:0 0 10px;">
 <a href="https://www.facebook.com/tmchildrensdream" target="_blank" style="display:inline-block; margin: 0 5px;"><img src="'.$siteDirToFiles.'/skins/default/img/mails/facebook.png"></a>
 <a href="https://vk.com/tmchildrensdream" target="_blank" style="display:inline-block; margin: 0 5px;"><img src="'.$siteDirToFiles.'/skins/default/img/mails/vk.png"></a>
@@ -70,6 +70,7 @@ return self::$html = '
 <div style="clear:both;"></div>
 </div>
 <p style="font-size:14px;">'.$mess['TEXT_9'].': <a href="'.$siteDirToFiles.$lang.'" target="_blank" style="color: #43D1E0; display: inherit;">www.childrensdream.com.ua</a></p>
+<p style="margin-top:15px;">&copy; '.data(Core::$CREATED).'</p>
 </div>
 </body>
 </html>';
