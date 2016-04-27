@@ -37,7 +37,7 @@ return self::$html = '
 @media screen and (max-width: 480px){ .goods{ width:98% !important; margin-bottom:20px !important; } }
 </style>
 <div role="header" style="text-align: center; border: 1px dashed #43D1E0; background:#ffffff; padding:10px 0; border-bottom: 4px solid #43D1E0;">
-<a href="//childrensdream.com.ua'.$lang.'" target="_blank" title="www.childrensdream.com.ua" style="outline:none; display:inline-block;"><img src="'.$siteDirToFiles.'/skins/default/img/mails/cd-static.png" style="width:auto"></a>
+<a href="'.$siteDirToFiles.$lang.'" target="_blank" title="www.childrensdream.com.ua" style="outline:none; display:inline-block;"><img src="'.$siteDirToFiles.'/skins/default/img/mails/cd-static.png" style="width:auto"></a>
 <p style="font-size: 26px; margin:0; font-weight:bold;">'.$mess['ISM'].'</p>
 <div style="clear:both;"></div>
 </div>
@@ -48,7 +48,7 @@ return self::$html = '
 <p>'.$mess['TEXT_5'].': #DEVELORY#.</p>
 <p>'.$mess['TEXT_6'].'</p>
 <div style="margin: auto; width: 250px; text-align: center; background: #43D1E0; font-size:20px; margin-bottom: 20px;">
-<a href="//childrensdream.com.ua'.$lang.'products/" target="_blank" title="" style="color:#ffffff; padding:5px 0; text-decoration:none; display: inline-block; width: 100%;">'.$mess['TEXT_7'].'</a>
+<a href="'.$siteDirToFiles.$lang.'products/" target="_blank" title="" style="color:#ffffff; padding:5px 0; text-decoration:none; display: inline-block; width: 100%;">'.$mess['TEXT_7'].'</a>
 </div>
 <p style="font-weight:bold; text-align:center;">'.$mess['TEXT_8'].':</p>
 <div class="goods" style="float:left; width:48%; margin:1%; text-align:center;">
@@ -70,7 +70,7 @@ return self::$html = '
 <a href="//www.instagram.com/tm_childrens_dream" target="_blank" style="display:inline-block; margin: 0 5px;"><img src="'.$siteDirToFiles.'/skins/default/img/mails/instagram.png"></a>
 <div style="clear:both;"></div>
 </div>
-<p style="font-size:14px;">'.$mess['TEXT_9'].': <a href="//childrensdream.com.ua'.$lang.'" target="_blank" style="color: #43D1E0;">www.childrensdream.com.ua</a></p>
+<p style="font-size:14px;">'.$mess['TEXT_9'].': <a href="'.$siteDirToFiles.$lang.'" target="_blank" style="color: #43D1E0;">www.childrensdream.com.ua</a></p>
 </div>
 </body>
 </html>';

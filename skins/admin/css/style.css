@@ -673,6 +673,9 @@ main .auth-block table td form .style-open-form .content-auth {
   position: relative;
   width: 300px;
 }
+main .auth-block table td form .style-open-form .content-auth p {
+  margin: 0;
+}
 main .auth-block table td form .style-open-form .content-auth p:first-child {
   color: #24272b;
   font-size: 30px;
