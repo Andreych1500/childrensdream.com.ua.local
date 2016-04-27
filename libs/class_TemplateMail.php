@@ -31,7 +31,7 @@ return self::$html = '
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Замовлення товару</title>
 </head>
-<body style="background-image:url('.$siteDirToFiles.'/skins/default/img/mails/pattern.png); background-color:#ffffff; line-height:1.5; color:#482200; padding:30px 0; font-size:18px;">
+<body style="background-image:url('.$siteDirToFiles.'/skins/default/img/mails/pattern.png); background-color:#ffffff; line-height:1.5; color:#482200; padding:30px 0; font-size:17px;">
 <style>
 @media screen and (max-width: 480px){ .goods{ width:98% !important; margin-bottom:20px !important; } }
 </style>
