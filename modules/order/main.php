@@ -144,7 +144,6 @@ if (isset($_COOKIE['items'])) {
                 Mail::$text=  TemplateMail::orderHtml($lang, Core::$DOCUMENT_ROOT);
                 Mail::$from      = $arResult['from_mail'];
                 Mail::$subject   = $arResult['name_'.$lang];
-                Mail::$type_list = $arResult['type'];
                 Mail::Send();
 
             }

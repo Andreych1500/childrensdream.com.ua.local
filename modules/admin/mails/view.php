@@ -19,7 +19,6 @@ if($mails->num_rows){
         Mail::$from      = $arResult['from_mail'];
         Mail::$to        = $arResult['to_mail'];
         Mail::$subject   = $arResult['name_'.$_POST['lang_send']];
-        Mail::$type_list = $arResult['type'];
         Mail::Send();
         header("Location: /admin/mails/");
         exit();
