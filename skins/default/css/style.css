@@ -1,10 +1,14 @@
 @font-face {
-  font-family: ComicSansMS;
+  font-family: 'ComicSansMS';
+  font-weight: normal;
+  font-style: normal;
   src: url('font/comic/comic.eot');
   src: url('font/comic/comic.eot') format('embedded-opentype'), url('font/comic/comic.woff2') format('woff2'), url('font/comic/comic.woff') format('woff'), url('font/comic/comic.ttf') format('truetype'), url('font/comic/comic.svg#comic') format('svg');
 }
 @font-face {
-  font-family: MyriadPro;
+  font-family: 'MyriadPro';
+  font-weight: normal;
+  font-style: normal;
   src: url('font/myriad/MyriadProRegular.eot');
   src: url('font/myriad/MyriadProRegular.eot') format('embedded-opentype'), url('font/myriad/MyriadProRegular.woff2') format('woff2'), url('font/myriad/MyriadProRegular.woff') format('woff'), url('font/myriad/MyriadProRegular.ttf') format('truetype'), url('font/myriad/MyriadProRegular.svg#MyriadProRegular') format('svg');
 }
