@@ -43,8 +43,8 @@ $(document).ready(function() {
     // --- resize window ---
     $(window).resize(function() {
 
-        // --- mobile menu ---
-        if($(window).outerWidth(true) <= 848 && $('.mob-menu').css('display') == 'block'){
+        // --- mobile menu ---//&& $('.mob-menu').css('display') == 'block'
+        if($(window).width() <= 833){
             if($('header .pushy-mob-menu').length == 0){
                 $('.top-menu').removeClass().addClass('pushy-mob-menu');
             }
