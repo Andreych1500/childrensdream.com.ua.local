@@ -44,7 +44,7 @@ $(document).ready(function() {
     $(window).resize(function() {
 
         // --- mobile menu ---
-        if($(window).width() <= 833){
+        if($(window).outerWidth(true) <= 848 && $('.mob-menu').css('display') == 'block'){
             if($('header .pushy-mob-menu').length == 0){
                 $('.top-menu').removeClass().addClass('pushy-mob-menu');
             }
