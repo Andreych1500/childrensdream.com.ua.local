@@ -70,7 +70,7 @@ $(document).ready(function() {
         // --- end mobile menu ---
 
         // --- name element to top ---
-        if($(window).width() <= 625){
+        if($(window).outerWidth(true) <= 625){
             $('.goods h1').prependTo('.mattress-detail');
         } else {
             if($('.mattress-detail h1').length > 0) {

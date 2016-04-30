@@ -3,7 +3,7 @@ $(document).ready(function() {
     var pathname = window.location.pathname;
     var arrPathname = ['/','/ru/'];
 
-    if(jQuery.inArray(pathname, arrPathname) < 0 && $(window).width() >= 834) {
+    if(jQuery.inArray(pathname, arrPathname) < 0 && $(window).outerWidth(true) >= 834) {
         if(getCookie('scroll') == undefined ) {
             setCookie('scroll', pathname, 0);
         } else {

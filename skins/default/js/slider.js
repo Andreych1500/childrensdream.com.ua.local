@@ -14,7 +14,7 @@ $(document).ready(function() {
 
         var j = 35;
 
-        if($(window).width() <= 833){
+        if($(window).outerWidth(true) <= 833){
             j = 0;
         }
 
