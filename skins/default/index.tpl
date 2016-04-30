@@ -60,7 +60,7 @@
         <p><?=$mess['SOC_LINK']?></p>
         <a href="//www.facebook.com/tmchildrensdream" target="_blank" class="icon-facebook"></a>
         <a href="//vk.com/tmchildrensdream" target="_blank" class="icon-vkontakte"></a>
-        <a href="//plus.google.com/u/0/101299485141835241705" target="_blank" class="icon-google-plus3" rel="publisher"></a>
+        <a href="//plus.google.com/101299485141835241705" target="_blank" class="icon-google-plus3" rel="publisher"></a>
         <a href="//www.instagram.com/tm_childrens_dream" target="_blank" class="icon-instagram"></a>
       </div>
     </div>
