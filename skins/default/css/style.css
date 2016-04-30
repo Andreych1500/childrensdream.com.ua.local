@@ -546,7 +546,7 @@ a[class^="lang_"].lang_ru {
   }
 }
 .mob-menu {
-  display: none;
+  display: block;
   font-size: 21px;
   float: right;
   font-family: ComicSansMS;
@@ -565,78 +565,74 @@ a[class^="lang_"].lang_ru {
   -o-transition: color 0.7s ease;
   transition: color 0.7s ease;
 }
-@media screen and (max-width: 848px) {
-  .mob-menu {
-    display: block;
-  }
-}
-@media screen and (max-width: 540px) {
+@media screen and (min-width: 849px) {
   .mob-menu {
     display: none;
   }
 }
-.mobile-menu {
-  display: block;
-  float: left;
-  margin: 10px 0 0 0;
-  width: 100%;
-  text-align: center;
-  position: relative;
-  border-top: 2px dashed #FFF;
-  border-bottom: 2px dashed #fff;
-  -webkit-transition: background 0.7s ease;
-  -moz-transition: background 0.7s ease;
-  -o-transition: background 0.7s ease;
-  transition: background 0.7s ease;
-}
-.mobile-menu:before {
-  content: '';
-  position: absolute;
-  height: 3px;
-  background-color: #7BD7E8;
-  width: 0;
-  top: 50%;
-  left: 0;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-}
-.mobile-menu:after {
-  content: '';
-  position: absolute;
-  height: 3px;
-  background-color: #7BD7E8;
-  top: 50%;
-  right: 0;
-  width: 0;
-  -webkit-transition: all 0.5s ease-out;
-  -moz-transition: all 0.5s ease-out;
-  -o-transition: all 0.5s ease-out;
-  transition: all 0.5s ease-out;
-}
-.mobile-menu.aciveMenu {
-  padding: 2px 0;
-  background-color: rgba(175, 225, 233, 0.5);
-  border: 0;
-  -webkit-transition: border 0.1s ease;
-  -moz-transition: border 0.1s ease;
-  -o-transition: border 0.1s ease;
-  transition: border 0.1s ease;
-}
-.mobile-menu.aciveMenu:after {
-  width: 30%;
-  -webkit-transition: all 0.7s ease-out;
-  -moz-transition: all 0.7s ease-out;
-  -o-transition: all 0.7s ease-out;
-  transition: all 0.7s ease-out;
-}
-.mobile-menu.aciveMenu:before {
-  width: 30%;
-  -webkit-transition: all 0.7s ease-out;
-  -moz-transition: all 0.7s ease-out;
-  -o-transition: all 0.7s ease-out;
-  transition: all 0.7s ease-out;
+@media screen and (max-width: 540px) {
+  .mob-menu {
+    float: left;
+    margin: 10px 0 0 0;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    border-top: 2px dashed #FFF;
+    border-bottom: 2px dashed #fff;
+    -webkit-transition: background 0.7s ease;
+    -moz-transition: background 0.7s ease;
+    -o-transition: background 0.7s ease;
+    transition: background 0.7s ease;
+  }
+  .mob-menu:before {
+    content: '';
+    position: absolute;
+    height: 3px;
+    background-color: #7BD7E8;
+    width: 0;
+    top: 50%;
+    left: 0;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+  .mob-menu:after {
+    content: '';
+    position: absolute;
+    height: 3px;
+    background-color: #7BD7E8;
+    top: 50%;
+    right: 0;
+    width: 0;
+    -webkit-transition: all 0.5s ease-out;
+    -moz-transition: all 0.5s ease-out;
+    -o-transition: all 0.5s ease-out;
+    transition: all 0.5s ease-out;
+  }
+  .mob-menu.aciveMenu {
+    padding: 2px 0;
+    background-color: rgba(175, 225, 233, 0.5);
+    border: 0;
+    -webkit-transition: border 0.1s ease;
+    -moz-transition: border 0.1s ease;
+    -o-transition: border 0.1s ease;
+    transition: border 0.1s ease;
+  }
+  .mob-menu.aciveMenu:after {
+    width: 30%;
+    -webkit-transition: all 0.7s ease-out;
+    -moz-transition: all 0.7s ease-out;
+    -o-transition: all 0.7s ease-out;
+    transition: all 0.7s ease-out;
+  }
+  .mob-menu.aciveMenu:before {
+    width: 30%;
+    -webkit-transition: all 0.7s ease-out;
+    -moz-transition: all 0.7s ease-out;
+    -o-transition: all 0.7s ease-out;
+    transition: all 0.7s ease-out;
+  }
 }
 .mobile-basket {
   float: right;

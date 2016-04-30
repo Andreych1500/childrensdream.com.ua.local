@@ -523,7 +523,7 @@ a[class^="lang_"]{
 }
 
 .mob-menu{
-  display:none;
+  display:block;
   font-size:21px;
   float:right;
   font-family: @font-Comic;
@@ -537,61 +537,57 @@ a[class^="lang_"]{
     .transition(color 0.7s ease);
   }
 
-  @media screen and (max-width: 848px){
-    display:block;
-  }
-  @media screen and (max-width: 540px){
+  @media screen and (min-width: 849px){
     display:none;
   }
-}
 
-.mobile-menu{
-  display: block;
-  float: left;
-  margin: 10px 0 0 0;
-  width: 100%;
-  text-align: center;
-  position: relative;
-  border-top: 2px dashed #FFF;
-  border-bottom: 2px dashed #fff;
-  .transition(background 0.7s ease);
-
-  &:before{
-    content: '';
-    position: absolute;
-    height: 3px;
-    background-color: #7BD7E8;
-    width:0;
-    top: 50%;
-    left: 0;
-    .transition(all 0.5s ease-out);
-  }
-
-  &:after {
-    content: '';
-    position: absolute;
-    height: 3px;
-    background-color: #7BD7E8;
-    top: 50%;
-    right: 0;
-    width: 0;
-    .transition(all 0.5s ease-out);
-  }
-
-  &.aciveMenu{
-    padding: 2px 0;
-    background-color: rgba(175, 225, 233, 0.5);
-    border:0;
-    .transition(border 0.1s ease);
-
-    &:after {
-      width: 30%;
-      .transition(all 0.7s ease-out);
-    }
+  @media screen and (max-width: 540px){
+    float: left;
+    margin: 10px 0 0 0;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    border-top: 2px dashed #FFF;
+    border-bottom: 2px dashed #fff;
+    .transition(background 0.7s ease);
 
     &:before{
-      width: 30%;
-      .transition(all 0.7s ease-out);
+      content: '';
+      position: absolute;
+      height: 3px;
+      background-color: #7BD7E8;
+      width:0;
+      top: 50%;
+      left: 0;
+      .transition(all 0.5s ease-out);
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      height: 3px;
+      background-color: #7BD7E8;
+      top: 50%;
+      right: 0;
+      width: 0;
+      .transition(all 0.5s ease-out);
+    }
+
+    &.aciveMenu{
+      padding: 2px 0;
+      background-color: rgba(175, 225, 233, 0.5);
+      border:0;
+      .transition(border 0.1s ease);
+
+      &:after {
+        width: 30%;
+        .transition(all 0.7s ease-out);
+      }
+
+      &:before{
+        width: 30%;
+        .transition(all 0.7s ease-out);
+      }
     }
   }
 }
