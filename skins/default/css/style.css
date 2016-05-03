@@ -997,7 +997,6 @@ a[class^="lang_"].lang_ru {
   background-color: #7BD7E8;
 }
 .products {
-  width: 100%;
   background: #ffffff;
   padding-top: 15px;
   margin: 0 auto;
@@ -1007,6 +1006,31 @@ a[class^="lang_"].lang_ru {
   .products {
     width: 100%;
   }
+}
+.products .block-title:last-child {
+  clear: both;
+  margin-bottom: 20px;
+}
+.products .more-el {
+  cursor: pointer;
+  position: relative;
+  -webkit-transition: color 0.7s ease;
+  -moz-transition: color 0.7s ease;
+  -o-transition: color 0.7s ease;
+  transition: color 0.7s ease;
+}
+.products .more-el:hover {
+  color: #3f627b;
+  -webkit-transition: color 0.3s ease;
+  -moz-transition: color 0.3s ease;
+  -o-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+.products .icon-bottom {
+  font-size: 20px;
+  position: absolute;
+  right: 0;
+  top: 13px;
 }
 .mattress {
   min-height: 315px;

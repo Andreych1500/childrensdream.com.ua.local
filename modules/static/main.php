@@ -98,6 +98,7 @@ $products = q("
     SELECT `id`,`name_ua`,`seo_name`,`price`,`availability`,`cAnonsPhoto`,`name_ru`,`img_seo_alt_ua`,`img_seo_alt_ru`
     FROM `products`
     WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
+    LIMIT 0,8
 ");
 
 // --- END ALL ELEMENT ---

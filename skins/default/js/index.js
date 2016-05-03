@@ -80,6 +80,28 @@ $(document).ready(function() {
         // --- end name element to top ---
     });
     // --- end resize window ---
+
+    //--- add more element ---
+    $('.more-el').unbind('click').click(function(){
+        $.ajax({
+            url: '/ajax/moreElementSubmit.php',
+            type: "POST",
+            data: {nextLine: $(this).attr('rel-next-line'), siteLang: $(this).attr('rel-lang')},
+            success: function (response) {
+                var res = JSON.parse(response);
+
+                if($(res.html).length > 0){
+                    $(res.html).insertBefore($(".products .block-title:last"), '').fadeIn(1100);
+                    $('.more-el').attr('rel-next-line', (+$('.more-el').attr('rel-next-line') + 1));
+                }
+
+                if(res.end == 0){
+                    $('.products .block-title:last').remove();
+                }
+            }
+        });
+    });
+    //--- end add more element ---
 });
 
 function scrolMenuPanel(){

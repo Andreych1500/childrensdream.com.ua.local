@@ -1,1 +1,12 @@
-﻿
+﻿QUERY:
+    SELECT `id`,`name_ua`,`seo_name`,`price`,`availability`,`cAnonsPhoto`,`name_ru`,`img_seo_alt_ua`,`img_seo_alt_ru`
+    FROM `products`
+    WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
+    LIMIT -1,8
+
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1,8' at line 4
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\static\main.php
+line: 102
+date: 2016-05-03 18:58:38
+===================================
+

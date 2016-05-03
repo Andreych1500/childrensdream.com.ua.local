@@ -48,6 +48,7 @@ $mess['NO_ELEMETN']      = 'Продукція відсутня';
 $mess['PRICE']           = 'грн.';
 $mess['AVIABILITY']      = 'В наявності';
 $mess['NOAVIABILITY']    = 'Немає на складі';
+$mess['MORE']            = 'ЩЕ';
 
 // main text
 $mess['MAIN_TEXT_H1'] = 'Інтернет магазин дитячих матраців Children\'s Dream';

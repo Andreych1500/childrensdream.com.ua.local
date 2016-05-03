@@ -38,8 +38,8 @@
   <?php if($products->num_rows > 0){ ?>
     <?php while($el = $products->fetch_assoc()){ ?>
       <div class="mattress">
-        <a class="photos" href="<?=$link_langs?>products/<?=$el['seo_name']?>/"><img src="<?=hsc($el['cAnonsPhoto'])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>"></a>
-        <a class="links" href="<?=$link_langs?>products/<?=$el['seo_name']?>/"><?=hsc($el['name_'.$lang])?></a>
+        <a class="photos" href="<?=$link_langs?>products/<?=hsc($el['seo_name'])?>/"><img src="<?=hsc($el['cAnonsPhoto'])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>"></a>
+        <a class="links" href="<?=$link_langs?>products/<?=hsc($el['seo_name'])?>/"><?=hsc($el['name_'.$lang])?></a>
         <p class="price"><?=number_format(hsc($el['price']), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
         <p class="aviability">
           <span class="<?=(((int)$el['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
@@ -47,6 +47,11 @@
         </p>
       </div>
     <?php } ?>
+      <div class="block-title">
+        <span class="line"></span>
+        <p class="more-el" rel-next-line="3" rel-lang="<?=$lang?>"><?=$mess['MORE']?><span class="icon-bottom"></span></p>
+        <span class="line"></span>
+      </div>
   <?php } else { ?>
   <div class="no-element"><?=$mess['NO_ELEMETN']?></div>
   <?php } ?>

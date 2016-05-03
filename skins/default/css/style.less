@@ -887,11 +887,34 @@ a[class^="lang_"]{
 
 // --- PRODUCTS ---
 .products{
-  width:100%;
   background: #ffffff;
   padding-top: 15px;
   .central(~'0 auto');
   &:extend(.clearfix all);
+
+  .block-title:last-child{
+    clear: both;
+    margin-bottom: 20px;
+  }
+
+  .more-el{
+    cursor: pointer;
+    position: relative;
+    .transition(color 0.7s ease);
+
+    &:hover{
+      color:#3f627b;
+      .transition(color 0.3s ease);
+    }
+  }
+
+  .icon-bottom{
+    font-size: 20px;
+    position: absolute;
+    right: 0;
+    top: 13px;
+  }
+
 }
 
 .mattress{
