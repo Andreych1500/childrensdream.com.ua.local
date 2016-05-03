@@ -1014,6 +1014,7 @@ a[class^="lang_"].lang_ru {
 .products .more-el {
   cursor: pointer;
   position: relative;
+  font-size: 26px;
   -webkit-transition: color 0.7s ease;
   -moz-transition: color 0.7s ease;
   -o-transition: color 0.7s ease;
