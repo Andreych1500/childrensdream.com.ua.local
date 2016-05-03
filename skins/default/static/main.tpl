@@ -49,7 +49,7 @@
     <?php } ?>
       <div class="block-title">
         <span class="line"></span>
-        <p class="more-el" rel-next-line="3" rel-lang="<?=$lang?>"><?=$mess['MORE']?><span class="icon-bottom"></span></p>
+        <p class="more-el"><?=$mess['MORE']?><span class="icon-bottom"></span><input type="hidden" name="more-el" value="3|<?=$lang?>"></p>
         <span class="line"></span>
       </div>
   <?php } else { ?>

@@ -44,8 +44,9 @@ if(isset($_POST['nextLine'], $_POST['siteLang']) && in_array($_POST['siteLang'],
         }
 
         echo json_encode(array('html' => $html, 'end' => $end));
+    } else {
+        echo json_encode(array('error' => 'warning'));
     }
-
 } else {
     echo json_encode(array('error' => 'warning'));
 }

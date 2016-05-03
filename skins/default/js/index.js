@@ -83,16 +83,19 @@ $(document).ready(function() {
 
     //--- add more element ---
     $('.more-el').unbind('click').click(function(){
+        var rel = $(this).find('input[name="more-el"]').val().split("|");
+
         $.ajax({
             url: '/ajax/moreElementSubmit.php',
             type: "POST",
-            data: {nextLine: $(this).attr('rel-next-line'), siteLang: $(this).attr('rel-lang')},
+            data: {nextLine: rel[0], siteLang: rel[1]},
             success: function (response) {
                 var res = JSON.parse(response);
 
                 if($(res.html).length > 0){
                     $(res.html).insertBefore($(".products .block-title:last"), '').fadeIn(1100);
-                    $('.more-el').attr('rel-next-line', (+$('.more-el').attr('rel-next-line') + 1));
+                    var valRel = (+rel[0]+1)+'|'+rel[1];
+                    $('input[name="more-el"]').val(valRel);
                 }
 
                 if(res.end == 0){
