@@ -1,7 +1,7 @@
 <?php
 include '../config.php';
 $mysqli = new mysqli(Core::$DB_LOCAL, Core::$DB_LOGIN, Core::$DB_PASS, Core::$DB_NAME);
-
+mysqli_set_charset($mysqli, "utf8");
 
 if(isset($_POST['nextLine'], $_POST['siteLang']) && in_array($_POST['siteLang'], array('ua','ru'))){
     $countLine = 4;
