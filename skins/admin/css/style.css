@@ -461,6 +461,7 @@ header .admin-left-panel {
   height: 100%;
   top: 0;
   width: 120px;
+  overflow: auto;
 }
 header .admin-left-panel ul {
   list-style: none;
