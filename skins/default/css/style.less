@@ -127,6 +127,14 @@ div, p, a, span, ul, li, table, tr, td, h1, h2, h3 {
 html{
   height: 100%;
   -ms-user-select: none;
+
+  &::-webkit-scrollbar{
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb{
+    background-color: #C6C6C6;
+  }
 }
 
 body{

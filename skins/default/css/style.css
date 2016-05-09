@@ -115,6 +115,12 @@ html {
   height: 100%;
   -ms-user-select: none;
 }
+html::-webkit-scrollbar {
+  width: 5px;
+}
+html::-webkit-scrollbar-thumb {
+  background-color: #C6C6C6;
+}
 body {
   position: relative;
   min-height: 100%;
