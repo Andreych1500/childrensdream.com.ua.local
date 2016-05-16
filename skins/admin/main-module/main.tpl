@@ -9,6 +9,7 @@
                 <td></td>
                 <td>Назва</td>
                 <td>Id</td>
+                <td>Open Graph RDFa</td>
                 <td>Коли зміненна</td>
                 <td>Ким зміненна</td>
               </tr>
@@ -26,6 +27,7 @@
                 </td>
                 <td><?=hsc($arResult['module'])?></td>
                 <td><?=(int)$arResult['id']?></td>
+                <td><?=(($arResult['open_graph_page'] == 0)? 'Ні' : 'Так')?></td>
                 <td><?=hsc($arResult['date_custom'])?></td>
                 <td><?=hsc($arResult['user_custom'])?></td>
               </tr>
