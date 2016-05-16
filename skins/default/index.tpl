@@ -1,16 +1,24 @@
 <!DOCTYPE html>
-<html <?=(isset($contentOG)? 'prefix="og: http://ogp.me/ns#"' : "");?>>
+<html lang="<?=(($lang == 'ua')? 'uk' : $lang)?>" <?=(isset($contentOG)? 'prefix="og: http://ogp.me/ns#"' : "");?>>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="author" content="Савіцький Андрій">
   <title><?=hsc(Core::$META['title']);?></title>
   <meta name="description" content="<?=hsc(Core::$META['description']); ?>">
   <meta name="keywords" content="<?=hsc(Core::$META['keywords']); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="address=no">
 
   <?=(isset($contentOG)? $contentOG : "");?>
 
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/touch-icon-iphone.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/touch-icon-ipad.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/touch-icon-iphone-retina.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/touch-icon-ipad-retina.png">
+
 
   <link href="/skins/<?=Core::$SKIN; ?>/css/style.css" rel="stylesheet">
   <?php if(count(Core::$CSS)){ echo implode("\n",Core::$CSS); } ?>
