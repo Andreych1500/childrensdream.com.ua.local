@@ -241,6 +241,31 @@
             <p>Шаблон TITLE</p>
             <input type="text" name="img_seo_title_ru" value="<?=((isset($errors))? hsc($_POST['img_seo_title_ru']) : hsc($row['img_seo_title_ru']))?>">
           </div>
+
+          <!-- open graph -->
+          <div class="headers-line">Мікророзмітка Open Graph</div>
+          <div class="input-value">
+            <p>og:type</p>
+            <input type="text" name="og_type" value="<?=((isset($errors))? hsc($_POST['og_type']) : hsc($row['og_type']))?>">
+          </div>
+          <div class="input-value input-seo">
+            <p>og:url</p>
+            <span class="pop-info">i</span>
+            <div class="pop-window">Посилання на вашу сторінку, <b>без першого слеша!</b>.<i>Приклад:</i> blog/open-graph/</div>
+            <textarea name="og_url"><?=((isset($errors))? hsc($_POST['og_url']) : hsc($row['og_url']))?></textarea>
+          </div>
+          <div class="input-value input-seo">
+            <div class="table-style">
+              <div class="input-value upload_file" id="og_image" rel_size="<?=Core::$SIZE_PHOTO['og_image']?>">
+                <p>og:image</p>
+                <button class="icon-link" type="button" onclick="getInfoFile(this)"><?=((isset($errors))? (!empty($og_image[0])? hsc($og_image[0]) : "Вибрати файл") : ((empty($row['og_image']))? ((isset($_POST['og_image']))? '' : 'Вибрати файл') : hsc($row['og_image'])))?> </button>
+                <input type="hidden" value="<?=((isset($errors))? hsc($_POST['og_image']) : hsc($row['og_image']))?>" name="og_image">
+                <input type="hidden" value="<?=((isset($errors,$_POST['del']['og_image']))? hsc($_POST['del']['og_image']) : hsc($row['og_image']))?>" name="del[og_image]">
+                <div class="photos <?=((!empty($_POST['og_image']))? '' : ((!empty($row['og_image']))? '' : "hidden"))?>"><img src="<?=((isset($_POST['og_image']))? hsc($og_image[0]) : hsc($row['og_image']) )?>"></div>
+              </div>
+            </div>
+          </div>
+          <!-- end open graph -->
         </div>
       </div>
       <!-- end seo tabs -->

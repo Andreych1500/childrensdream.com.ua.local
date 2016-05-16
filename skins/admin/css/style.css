@@ -1716,6 +1716,52 @@ main .add-content .add-block-form form .table-style .input-value input[type="che
 main .add-content .add-block-form .white-block .table-style .input-value input[type="checkbox"] {
   width: auto;
 }
+main .add-content .add-block-form form .table-style .pop-window,
+main .add-content .add-block-form .white-block .table-style .pop-window {
+  display: none;
+  background: #fff;
+  border: 1px solid #A5888A;
+  -webkit-border-radius: 3px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 3px;
+  -moz-background-clip: padding;
+  border-radius: 3px;
+  background-clip: padding-box;
+  color: #4B6267;
+  padding: 4px;
+  position: absolute;
+  left: 206px;
+  width: 63%;
+  max-width: 63%;
+  font: 14px MyriadPro;
+  z-index: 10;
+}
+main .add-content .add-block-form form .table-style .pop-window i,
+main .add-content .add-block-form .white-block .table-style .pop-window i {
+  display: block;
+}
+main .add-content .add-block-form form .table-style .pop-info,
+main .add-content .add-block-form .white-block .table-style .pop-info {
+  display: inline-block;
+  position: absolute;
+  left: 185px;
+  background: #BADFEA;
+  width: 15px;
+  text-align: center;
+  -webkit-border-radius: 3px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 3px;
+  -moz-background-clip: padding;
+  border-radius: 3px;
+  background-clip: padding-box;
+  font-weight: bold;
+  cursor: help;
+  font-size: 14px;
+}
+main .add-content .add-block-form form .table-style .pop-info:hover ~ .pop-window,
+main .add-content .add-block-form .white-block .table-style .pop-info:hover ~ .pop-window {
+  display: block;
+}
 main .add-content .add-block-form form .table-style .upload_file button,
 main .add-content .add-block-form .white-block .table-style .upload_file button {
   border: none;

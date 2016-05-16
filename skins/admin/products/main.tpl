@@ -40,7 +40,7 @@
         <tr>
           <td>
             <input type="checkbox" name="ids[]" value="<?=$arResult['id']?>">
-            <input type="hidden" name="del[<?=(int)$arResult['id']?>]" value="<?=hsc($arResult['cAnonsPhoto'])?>|<?=hsc($arResult['cCirklePhoto'])?>|<?=hsc($cMorePhoto)?>">
+            <input type="hidden" name="del[<?=(int)$arResult['id']?>]" value="<?=hsc($arResult['cAnonsPhoto'])?>|<?=hsc($arResult['cCirklePhoto'])?>|<?=hsc($arResult['og_image'])?>|<?=hsc($cMorePhoto)?>">
           </td>
           <td>
             <span class="icon-mob-menu" onclick="openEdit(this);"></span>

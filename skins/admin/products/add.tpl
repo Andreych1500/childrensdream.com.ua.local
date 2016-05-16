@@ -249,8 +249,32 @@
             <p>Шаблон TITLE</p>
             <input type="text" name="img_seo_title_ru" value="<?=((isset($errors))? hsc($_POST['img_seo_title_ru']) : "")?>">
           </div>
-        </div>
 
+          <!-- open graph -->
+          <div class="headers-line">Мікророзмітка Open Graph</div>
+          <div class="input-value">
+            <p>og:type</p>
+            <input type="text" name="og_type" value="<?=((isset($errors))? hsc($_POST['og_type']) : "")?>">
+          </div>
+          <div class="input-value input-seo">
+            <p>og:url</p>
+            <span class="pop-info">i</span>
+            <div class="pop-window">Посилання на вашу сторінку, <b>без першого слеша!</b>.<i>Приклад:</i> blog/open-graph/</div>
+            <textarea name="og_url"><?=((isset($errors))? hsc($_POST['og_url']) : "")?></textarea>
+          </div>
+          <div class="input-value input-seo">
+            <div class="table-style">
+              <div class="input-value upload_file" id="og_image" rel_size="<?=Core::$SIZE_PHOTO['og_image']?>">
+                <p>og:image</p>
+                <button class="icon-link" type="button" onclick="getInfoFile(this)"><?=((isset($errors))? (isset($og_image[2])? hsc($og_image[2]) : "Вибрати файл") : "Вибрати файл")?></button>
+                <input type="hidden" value="<?=((isset($errors))? hsc($_POST['og_image']) : "")?>" name="og_image">
+                <input type="hidden" value="<?=((isset($errors,$_POST['del']['og_image']))? hsc($_POST['del']['og_image']) : "")?>" name="del[og_image]">
+                <div class="photos <?=((!empty($_POST['og_image']))? '' : "hidden")?>"><img src="<?=((!empty($_POST['og_image']))? hsc($og_image[0]) : '')?>"></div>
+              </div>
+            </div>
+          </div>
+          <!-- end open graph -->
+        </div>
       </div>
       <!-- end seo tabs -->
 

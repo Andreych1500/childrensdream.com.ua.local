@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html <?=(isset($contentOG)? 'prefix="og: http://ogp.me/ns#"' : "");?>>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title><?=hsc(Core::$META['title']);?></title>
   <meta name="description" content="<?=hsc(Core::$META['description']); ?>">
   <meta name="keywords" content="<?=hsc(Core::$META['keywords']); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <?=(isset($contentOG)? $contentOG : "");?>
 
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">

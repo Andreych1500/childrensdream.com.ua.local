@@ -10,3 +10,149 @@ line: 102
 date: 2016-05-03 18:58:38
 ===================================
 
+QUERY: UPDATE `pages` SET
+		    `meta_title_ua`       = 'Продукція дитячих матраців | Children\'s Dream',
+		    `meta_keywords_ua`    = 'Дитячі матраци, ортопедичні, екологічно чисті матраци',
+		    `meta_description_ua` = 'Продукція дитячих матраців Children’s Dream. До складу матраців входять якісні матеріали.  Не деформується під впливом довгострокового тиску',
+		    `meta_title_ru`       = 'Продукция детских матрасов | Children\'s Dream',
+		    `meta_keywords_ru`    = 'Детские матрасы, ортопедические, экологически чистые матрасы',
+		    `meta_description_ru` = 'Продукция детских матрасов Children’s Dream. В состав матрасов входят качественные материалы. Не деформируется под воздействием долгосрочного давления',
+		    `user_custom`         = 'Савіцький Андрій',
+		    `open_graph_page`     = '1',
+		    `og_title_ua_ru`      = 'zz',
+			 WHERE `id`    = 16
+		
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `id`    = 16' at line 11
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\main-module\edit.php
+line: 42
+date: 2016-05-16 16:23:19
+===================================
+
+QUERY: UPDATE `pages` SET
+		    `meta_title_ua`        = 'Продукція дитячих матраців | Children\'s Dream',
+		    `meta_keywords_ua`     = 'Дитячі матраци, ортопедичні, екологічно чисті матраци',
+		    `meta_description_ua`  = 'Продукція дитячих матраців Children’s Dream. До складу матраців входять якісні матеріали.  Не деформується під впливом довгострокового тиску',
+		    `meta_title_ru`        = 'Продукция детских матрасов | Children\'s Dream',
+		    `meta_keywords_ru`     = 'Детские матрасы, ортопедические, экологически чистые матрасы',
+		    `meta_description_ru`  = 'Продукция детских матрасов Children’s Dream. В состав матрасов входят качественные материалы. Не деформируется под воздействием долгосрочного давления',
+		    `user_custom`          = 'Савіцький Андрій',
+		    `open_graph_page`      = '1',
+		    `og_title_ua_ru`       = 'Продукція дитячих матраців | Children\\\\\\\\\\\\\\\'s Dream#Продукция детских матрасов | Children\\\\\\\\\\\\\\\'s Dream',
+		    `og_description_ua_ru` = ''
+			 WHERE `id`    = 16
+		
+Unknown column 'og_description_ua_ru' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\main-module\edit.php
+line: 42
+date: 2016-05-16 16:55:41
+===================================
+
+QUERY: UPDATE `pages` SET
+		    `meta_title_ua`        = 'Продукція дитячих матраців | Children\'s Dream',
+		    `meta_keywords_ua`     = 'Дитячі матраци, ортопедичні, екологічно чисті матраци',
+		    `meta_description_ua`  = 'Продукція дитячих матраців Children’s Dream. До складу матраців входять якісні матеріали.  Не деформується під впливом довгострокового тиску',
+		    `meta_title_ru`        = 'Продукция детских матрасов | Children\'s Dream',
+		    `meta_keywords_ru`     = 'Детские матрасы, ортопедические, экологически чистые матрасы',
+		    `meta_description_ru`  = 'Продукция детских матрасов Children’s Dream. В состав матрасов входят качественные материалы. Не деформируется под воздействием долгосрочного давления',
+		    `user_custom`          = 'Савіцький Андрій',
+		    `open_graph_page`      = '1',
+		    `og_title_ua_ru`       = 'Продукція дитячих матраців | Children\\\\\\\'s Dream#Продукция детских матрасов | Children\\\\\\\'s Dream',
+		    `og_description_ua_ru` = ''
+			 WHERE `id`    = 16
+		
+Unknown column 'og_description_ua_ru' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\main-module\edit.php
+line: 43
+date: 2016-05-16 16:56:59
+===================================
+
+QUERY: UPDATE `pages` SET
+		    `meta_title_ua`        = 'Продукція дитячих матраців | Children\'s Dream',
+		    `meta_keywords_ua`     = 'Дитячі матраци, ортопедичні, екологічно чисті матраци',
+		    `meta_description_ua`  = 'Продукція дитячих матраців Children’s Dream. До складу матраців входять якісні матеріали.  Не деформується під впливом довгострокового тиску',
+		    `meta_title_ru`        = 'Продукция детских матрасов | Children\'s Dream',
+		    `meta_keywords_ru`     = 'Детские матрасы, ортопедические, экологически чистые матрасы',
+		    `meta_description_ru`  = 'Продукция детских матрасов Children’s Dream. В состав матрасов входят качественные материалы. Не деформируется под воздействием долгосрочного давления',
+		    `user_custom`          = 'Савіцький Андрій',
+		    `open_graph_page`      = '1',
+		    `og_title_ua_ru`       = 'Продукція дитячих матраців | Children\'s Dream#Продукция детских матрасов | Children\'s Dream',
+		    `og_description_ua_ru` = 'Продукція дитячих матраців Children’s Dream. До складу матраців входять якісні матеріали.  Не деформується під впливом довгострокового тиску#Продукция детских матрасов Children’s Dream. В состав матрасов входят качественные материалы. Не деформируется под воздействием долгосрочного давления',
+		    `og_type`              = 'product.group',
+		    `og_image`             = '',
+		    `og_url_ua_ru`         = ''
+			 WHERE `id`    = 16
+		
+Unknown column 'og_image' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\main-module\edit.php
+line: 45
+date: 2016-05-16 17:23:54
+===================================
+
+QUERY: UPDATE `pages` SET
+		    `meta_title_ua`        = 'Продукція дитячих матраців | Children\'s Dream',
+		    `meta_keywords_ua`     = 'Дитячі матраци, ортопедичні, екологічно чисті матраци',
+		    `meta_description_ua`  = 'Продукція дитячих матраців Children’s Dream. До складу матраців входять якісні матеріали.  Не деформується під впливом довгострокового тиску',
+		    `meta_title_ru`        = 'Продукция детских матрасов | Children\'s Dream',
+		    `meta_keywords_ru`     = 'Детские матрасы, ортопедические, экологически чистые матрасы',
+		    `meta_description_ru`  = 'Продукция детских матрасов Children’s Dream. В состав матрасов входят качественные материалы. Не деформируется под воздействием долгосрочного давления',
+		    `user_custom`          = 'Савіцький Андрій',
+		    `open_graph_page`      = '1',
+		    `og_title_ua_ru`       = 'Продукція дитячих матраців | Children\'s Dream#Продукция детских матрасов | Children\'s Dream',
+		    `og_description_ua_ru` = 'Продукція дитячих матраців Children’s Dream. До складу матраців входять якісні матеріали.  Не деформується під впливом довгострокового тиску#Продукция детских матрасов Children’s Dream. В состав матрасов входят качественные материалы. Не деформируется под воздействием долгосрочного давления',
+		    `og_type`              = 'product.group',
+		    `og_image`             = '',
+		    `og_url_ua_ru`         = ''
+			 WHERE `id`    = 16
+		
+Unknown column 'og_image' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\main-module\edit.php
+line: 45
+date: 2016-05-16 17:24:35
+===================================
+
+QUERY: UPDATE `pages` SET
+		    `meta_title_ua`        = 'Продукція дитячих матраців | Children\'s Dream',
+		    `meta_keywords_ua`     = 'Дитячі матраци, ортопедичні, екологічно чисті матраци',
+		    `meta_description_ua`  = 'Продукція дитячих матраців Children’s Dream. До складу матраців входять якісні матеріали.  Не деформується під впливом довгострокового тиску',
+		    `meta_title_ru`        = 'Продукция детских матрасов | Children\'s Dream',
+		    `meta_keywords_ru`     = 'Детские матрасы, ортопедические, экологически чистые матрасы',
+		    `meta_description_ru`  = 'Продукция детских матрасов Children’s Dream. В состав матрасов входят качественные материалы. Не деформируется под воздействием долгосрочного давления',
+		    `user_custom`          = 'Савіцький Андрій',
+		    `open_graph_page`      = '1',
+		    `og_title_ua_ru`       = 'Продукція дитячих матраців | Children\'s Dream#Продукция детских матрасов | Children\'s Dream',
+		    `og_description_ua_ru` = 'Продукція дитячих матраців Children’s Dream. До складу матраців входять якісні матеріали.  Не деформується під впливом довгострокового тиску#Продукция детских матрасов Children’s Dream. В состав матрасов входят качественные материалы. Не деформируется под воздействием долгосрочного давления',
+		    `og_type`              = 'product.group',
+		    `og_image`             = '',
+		    `og_url_ua_ru`         = ''
+			 WHERE `id`    = 16
+		
+Unknown column 'og_image' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\main-module\edit.php
+line: 45
+date: 2016-05-16 17:24:39
+===================================
+
+QUERY:
+			SELECT `id`
+			FROM `product`
+			WHERE `seo_name` = 'dsadasdsadas'
+			LIMIT 1
+		
+Table 'base_childrens_dream.product' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\products\add.php
+line: 19
+date: 2016-05-16 19:32:44
+===================================
+
+QUERY:
+			SELECT `id`
+			FROM `product`
+			WHERE `seo_name` = 'dsfdsfdsfdssd'
+			LIMIT 1
+		
+Table 'base_childrens_dream.product' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\products\add.php
+line: 19
+date: 2016-05-16 19:34:25
+===================================
+

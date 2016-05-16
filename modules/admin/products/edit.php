@@ -45,10 +45,14 @@ if(isset($_POST['ok'])){
 	if(empty($_POST['img_seo_alt_ua'])){ $_POST['img_seo_alt_ua'] = '';	}
 	if(empty($_POST['img_seo_alt_ru'])){ $_POST['img_seo_alt_ru'] = '';	}
 
+	// OPEN GRAPG
+	if(empty($_POST['og_url'])){ $_POST['og_url'] = ''; }
+	if(empty($_POST['og_type'])){ $_POST['og_type'] = ''; }
 
 	// --- FUNCTION IMAGE ---
 	$cAnonsPhoto = ((isset($_POST['cAnonsPhoto']))? explode('|',$_POST['cAnonsPhoto']) : '');
 	$cCirklePhoto = ((isset($_POST['cCirklePhoto']))? explode('|',$_POST['cCirklePhoto']) : '');
+	$og_image = ((isset($_POST['og_image']))? explode('|',$_POST['og_image']) : '');
 
 		// --- MORE PHOTO ---
 		if(isset($_POST['cMorePhoto']) && count($_POST['cMorePhoto']) >= 1){
@@ -113,6 +117,11 @@ if(isset($_POST['ok'])){
  			`img_seo_title_ru`    = '".$_POST['img_seo_title_ru']."',
  			`img_seo_alt_ua`      = '".$_POST['img_seo_alt_ua']."',
  			`img_seo_alt_ru`      = '".$_POST['img_seo_alt_ru']."',
+
+ 			`og_image`             = '".mres($og_image[0])."',
+		    `og_type`              = '".$_POST['og_type']."',
+		    `og_url`               = '".$_POST['og_url']."',
+
  			`user_custom`         = '".mres($_SESSION['user']['FIO'])."'
 
 			 WHERE `id` = ".(int)$_GET['id']."

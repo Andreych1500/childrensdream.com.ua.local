@@ -45,6 +45,26 @@ if($_GET['page'] == 'main'){
     // --- END SEO ELEMENT META TAGS ---
 
 
+    // --- RDFa OPEN GRAPH ---
+
+    $contentOG = '';
+
+    $contentOG .= '<meta property="og:title" content="'.hsc($arResult['meta_title_'.$lang]).'">
+    <meta property="og:description"  content="'.hsc($arResult['meta_description_'.$lang]).'">';
+
+    if(!empty($arResult['og_type'])){
+        $contentOG .= '<meta property="og:type" content="'.hsc($arResult['og_type']).'">';
+    }
+    if(!empty($arResult['og_url'])){
+        $contentOG .= '<meta property="og:url" content="'.$_SERVER['DOCUMENT_ROOT'].$link_langs.hsc($arResult['og_url']).'">';
+    }
+    if(!empty($arResult['og_image'])){
+        $contentOG .= '<meta property="og:image" content="'.$_SERVER['DOCUMENT_ROOT'].hsc($arResult['og_image']).'">';
+    }
+
+    // --- END RDFa OPEN GRAPH ---
+
+
     // --- SLIDER PHOTO ---
 
     $slidePhoto = explode('#', $arResult['cMorePhoto']);

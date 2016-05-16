@@ -1480,6 +1480,44 @@ main{
             }
           }
 
+          .pop-window{
+            display:none;
+            background: #fff;
+            border: 1px solid #A5888A;
+            .border-radius(3px);
+            color: #4B6267;
+            padding: 4px;
+            position: absolute;
+            left: 206px;
+            width: 63%;
+            max-width: 63%;
+            font: 14px @font-team2;
+            z-index: 10;
+
+            i{
+              display: block;
+            }
+          }
+
+          .pop-info{
+            display: inline-block;
+            position: absolute;
+            left: 185px;
+            background: #BADFEA;
+            width: 15px;
+            text-align: center;
+            .border-radius(3px);
+            font-weight: bold;
+            cursor: help;
+            font-size: 14px;
+
+            &:hover{
+              &~.pop-window{
+                display:block;
+              }
+            }
+          }
+
           .upload_file button{
             .silver-submit();
             left: 146px;
