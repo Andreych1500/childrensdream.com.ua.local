@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="<?=(($lang == 'ua')? 'uk' : $lang)?>" <?=(isset($contentOG)? 'prefix="og: http://ogp.me/ns#"' : "");?>>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta name="author" content="Савіцький Андрій">
+  <meta charset="UTF-8">
   <title><?=hsc(Core::$META['title']);?></title>
   <meta name="description" content="<?=hsc(Core::$META['description']); ?>">
   <meta name="keywords" content="<?=hsc(Core::$META['keywords']); ?>">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="author" content="Савіцький Андрій">
+  <meta name="robots" content="index, follow">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="format-detection" content="telephone=no">
   <meta name="format-detection" content="address=no">
