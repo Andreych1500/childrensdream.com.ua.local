@@ -1448,7 +1448,11 @@ a[class^="lang_"].lang_ru {
   font-family: ComicSansMS;
   color: #482200;
   margin-bottom: 10px;
-  text-align: center;
+}
+@media screen and (max-width: 640px) {
+  .mattress-detail h1 {
+    text-align: center;
+  }
 }
 .mattress-detail .slider-for {
   float: left;
@@ -1663,6 +1667,9 @@ a[class^="lang_"].lang_ru {
   color: #482200;
   font: 19px ComicSansMS;
   margin-top: 10px;
+}
+.view-comments h3 span {
+  font-size: 24px;
 }
 .comment-item {
   padding: 10px;

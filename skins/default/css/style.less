@@ -1333,7 +1333,10 @@ a[class^="lang_"]{
     font-family: @font-Comic;
     color: @color-text;
     margin-bottom: 10px;
-    text-align: center;
+
+    @media screen and (max-width: 640px){
+      text-align: center;
+    }
   }
 
   padding: 15px 0;
@@ -1547,6 +1550,10 @@ a[class^="lang_"]{
       color:@color-text;
       font: 19px @font-Comic;
       margin-top:10px;
+    }
+
+    span{
+      font-size: 24px;
     }
   }
 }

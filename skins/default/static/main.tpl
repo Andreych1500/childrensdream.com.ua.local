@@ -28,7 +28,7 @@
   </div>
 </div>
 
-<div class="products">
+<div class="products" itemscope itemtype="http://schema.org/ItemList">
   <div class="block-title">
     <span class="line"></span>
     <p><?=$mess['DETSKIE_MATRACI'];?></p>
@@ -37,14 +37,21 @@
 
   <?php if($products->num_rows > 0){ ?>
     <?php while($el = $products->fetch_assoc()){ ?>
-      <div class="mattress">
-        <a class="photos" href="<?=$link_langs?>products/<?=hsc($el['seo_name'])?>/"><img src="<?=hsc($el['cAnonsPhoto'])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>"></a>
-        <a class="links" href="<?=$link_langs?>products/<?=hsc($el['seo_name'])?>/"><?=hsc($el['name_'.$lang])?></a>
-        <p class="price"><?=number_format(hsc($el['price']), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
-        <p class="aviability">
+      <div class="mattress" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+        <a class="photos" href="<?=$link_langs?>products/<?=hsc($el['seo_name'])?>/" itemprop="url">
+          <img src="<?=hsc($el['cAnonsPhoto'])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>" itemprop="image">
+        </a>
+        <a class="links" href="<?=$link_langs?>products/<?=hsc($el['seo_name'])?>/"  itemprop="url"><?=hsc($el['name_'.$lang])?></a>
+        <p class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+          <span itemprop="price" content="<?=hsc($el['price'])?>.00"><?=number_format(hsc($el['price']), 0, ',', ' ')?></span>
+          <span itemprop="priceCurrency" content="UAH"><?=$mess['PRICE'];?></span>
+        </p>
+        <p class="aviability" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
           <span class="<?=(((int)$el['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
+          <?=(((int)$el['availability'] == 1)? '<link itemprop="availability" href="http://schema.org/InStock">' : '<link itemprop="availability" href="http://schema.org/OutOfStock">')?>
           <span><?=(((int)$el['availability'] == 1)? $mess['AVIABILITY'] : $mess['NOAVIABILITY'])?></span>
         </p>
+        <meta itemprop="brand" content="Children's Dream">
       </div>
     <?php } ?>
       <div class="block-title">
@@ -59,7 +66,7 @@
 
 <div class="information-shop">
   <div class="information-block">
-    <h1><?=$mess['MAIN_TEXT_H1'];?></h1>
+    <h1 itemprop="name"><?=$mess['MAIN_TEXT_H1'];?></h1>
     <p><?=$mess['MAIN_TEXT1'];?><strong><?=$mess['MAIN_TEXT2'];?></strong> <?=$mess['MAIN_TEXT3'];?></p>
     <p><?=$mess['MAIN_TEXT4'];?></p>
     <p><?=$mess['MAIN_TEXT5'];?></p>

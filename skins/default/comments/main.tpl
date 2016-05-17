@@ -1,14 +1,13 @@
 <div class="comments">
-
     <div class="view-comments">
-      <h3><?=$mess['COMMENTS']?></h3>
+      <h3 itemprop="name" itemscope itemtype="http://schema.org/CreativeWork"><?=$mess['COMMENTS']?> (<span itemprop="commentCount"><?=(int)$res->num_rows;?></span>)</h3>
       <p><?=$mess['YOUR_REVIEW']?></p>
       <?php if($res->num_rows){
        while($row = $res->fetch_assoc()){ ?>
-       <div class="comment-item">
-         <p class="text-coment"><?=nl2br(hsc($row['text']));?></p>
-         <p><?=hsc($row['name']);?></p>
-         <time><?=hsc($row['date_create']);?></time>
+       <div class="comment-item" itemscope itemtype="http://schema.org/UserComments">
+         <p class="text-coment" itemprop="commentText"><?=nl2br(hsc($row['text']));?></p>
+         <p itemprop="creator"><?=hsc($row['name']);?></p>
+         <time itemprop="commentTime" datetime="<?=substr(hsc($row['date_create']), 0, 10);?>T<?=substr(hsc($row['date_create']), 11);?>"><?=hsc($row['date_create']);?></time>
        </div>
       <?php }
       } else { ?>
