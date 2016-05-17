@@ -21,7 +21,6 @@
   <link rel="apple-touch-icon" sizes="120x120" href="/touch-icon-iphone-retina.png">
   <link rel="apple-touch-icon" sizes="152x152" href="/touch-icon-ipad-retina.png">
 
-
   <link href="/skins/<?=Core::$SKIN; ?>/css/style.css" rel="stylesheet">
   <?php if(count(Core::$CSS)){ echo implode("\n",Core::$CSS); } ?>
 
