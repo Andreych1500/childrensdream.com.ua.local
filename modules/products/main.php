@@ -38,7 +38,7 @@ if($_GET['page'] == 'main'){
     Core::$META['description'] = $arResult['meta_description_'.$lang];
 
     // --- RDFa OPEN GRAPH ---
-    if($arResult['open_graph_page']){
+    if($arrOptionModule['open_graph_page']){
         $contentOG = '';
 
         $contentOG .= '<meta property="og:title" content="'.hsc($arResult['meta_title_'.$lang]).'">
