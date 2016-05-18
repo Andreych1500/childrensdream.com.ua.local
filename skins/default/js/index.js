@@ -9,15 +9,11 @@ $(document).ready(function() {
             $('.top-menu').removeClass('fixed-menu');
         }
     }
-    // --- end fixed menu ---
-
 
     // --- scroll toTop ---
     $('.toTop').unbind('click').click(function(){
         $('body,html').animate({scrollTop:0},600);
     });
-    // --- end scroll toTop ---
-
 
     // --- show hide toTop ---
     $(window).scroll(function() {
@@ -27,8 +23,6 @@ $(document).ready(function() {
             $('.toTop').hide();
         }
     });
-    // --- end show hide toTop ---
-
 
     // --- active menu ---
     $(".top-menu ul li, .pushy-mob-menu li").each(function( index ) {
@@ -37,8 +31,6 @@ $(document).ready(function() {
         $(".top-menu li a, .pushy li a").removeClass("active");
         $('.top-menu li a[href="'+url+'"], .pushy-mob-menu li a[href="'+url+'"]').parent('li').addClass('active');
     });
-    // --- end active menu ---
-
 
     // --- resize window ---
     $(window).resize(function() {
@@ -67,7 +59,6 @@ $(document).ready(function() {
                 $('.mob-menu').insertBefore('header .call-us', '');
             }
         }
-        // --- end mobile menu ---
 
         // --- name element to top ---
         if($(window).outerWidth(true) <= 625){
@@ -77,9 +68,7 @@ $(document).ready(function() {
                 $('.mattress-detail h1').prependTo('.goods');
             }
         }
-        // --- end name element to top ---
     });
-    // --- end resize window ---
 
     //--- add more element ---
     $('.more-el').unbind('click').click(function(){
@@ -104,7 +93,6 @@ $(document).ready(function() {
             }
         });
     });
-    //--- end add more element ---
 });
 
 function scrolMenuPanel(){

@@ -1,7 +1,5 @@
 <?php
-
 // --- GET ELEMENT ---
-
 $comments = q("
     SELECT *
     FROM `comments`
@@ -15,5 +13,3 @@ if($comments->num_rows){
     header("Location: /admin/comments/");
     exit();
 }
-
-// --- END GET ELEMENT ---

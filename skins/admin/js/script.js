@@ -4,8 +4,6 @@ $(document).ready(function() {
     setTimeout(function(){
         $('.no-active').removeClass('no-active');
     }, 100);
-    // --- end remove class ---
-
 
     // --- active section menu ---
     $(".admin-left-panel li").each(function( index ) {
@@ -14,8 +12,6 @@ $(document).ready(function() {
         $(".admin-left-panel li a").removeClass("active");
         $('.admin-left-panel li a[href="/admin/'+url+'/"]').addClass('active');
     });
-    // --- end active section ---
-
 
     // --- checked all element ---
     $('input[name="all_cheked"]').click(function(){
@@ -31,8 +27,6 @@ $(document).ready(function() {
             });
         }
     });
-    // --- end checked all element ---
-
 
     // --- checked style element ---
     $('.edFormEdit tr:not(:first-child) td:first-child input[type="checkbox"]').click(function(){
@@ -42,8 +36,6 @@ $(document).ready(function() {
             $(this).parents('tr').removeClass('c-checked');
         }
     });
-    // --- end checked style ---
-
 
     // --- edit el on double click ---
     $('.edFormEdit tr:not(:first-child) td:not(:first-child)').dblclick(function(){
@@ -56,14 +48,11 @@ $(document).ready(function() {
             }
         }
     });
-    // --- end edit el on double click ---
-
 
     // --- open block new information ---
     $('.new-info').unbind('click').click(function(){
         $('.info-open-click').slideToggle( "normal");
     });
-    // --- end open block new information ---
 });
 
 function okFrom(){

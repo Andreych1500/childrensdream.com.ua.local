@@ -1,6 +1,5 @@
 <?php
 // --- DELETE ELEMENT ---
-
 if(isset($_POST['delete']) && isset($_POST['ids'])){
     foreach($_POST['ids'] as $k=>$v){
         $_POST['ids'][$k] = (int)$v;
@@ -15,15 +14,9 @@ if(isset($_POST['delete']) && isset($_POST['ids'])){
     exit();
 }
 
-// --- END DELETE ELEMENT ---
-
-
 // --- GET ALL ELEMENT OR FILTER---
-
 $mails = q("
     SELECT *
     FROM `mails`
     ORDER BY `id` DESC
 ");
-
-// --- END GET ALL ELEMENT OR FILTER ---*/

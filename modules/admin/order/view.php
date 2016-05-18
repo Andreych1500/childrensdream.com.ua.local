@@ -1,7 +1,5 @@
 <?php
-
 // --- GET ELEMENT ---
-
 $order = q("
     SELECT *
     FROM `order`
@@ -15,5 +13,3 @@ if($order->num_rows){
     header("Location: /admin/order/");
     exit();
 }
-
-// --- END GET ELEMENT ---

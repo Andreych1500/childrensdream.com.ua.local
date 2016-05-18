@@ -1,6 +1,5 @@
 <?php
 // --- EDIT COMMENTS ---
-
 if(isset($_POST['ok'])){
     $_POST = trimAll($_POST);
     $errors = array();
@@ -43,11 +42,7 @@ if(isset($_POST['ok'])){
     }
 }
 
-// --- END EDIT COMMENTS ---
-
-
 // --- GET ELEMENT ---
-
 $mails = q("
     SELECT *
     FROM `mails`
@@ -61,5 +56,3 @@ if($mails->num_rows){
     header("Location: /admin/mails/");
     exit();
 }
-
-// --- END GET ELEMENT ---

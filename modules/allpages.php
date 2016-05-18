@@ -1,6 +1,5 @@
 <?php
 // --- SEO META TAGS ---
-
 $res = q("
     SELECT *
     FROM `pages`
@@ -14,11 +13,7 @@ Core::$META['title'] = hsc($arrOptionModule['meta_title_'.$lang]);
 Core::$META['description'] = hsc($arrOptionModule['meta_description_'.$lang]);
 Core::$META['keywords'] = hsc($arrOptionModule['meta_keywords_'.$lang]);
 
-// --- END SEO META TAGS ---
-
-
 // --- RDFa OPEN GRAPH ---
-
 if($arrOptionModule['open_graph_page']){
     $contentOG = '';
 
@@ -36,16 +31,10 @@ if($arrOptionModule['open_graph_page']){
     }
 }
 
-// --- END RDFa OPEN GRAPH ---
-
-
 // --- COUNT COOKIE ---
-
 if (isset($_COOKIE['items'])) {
     $cookies = (array)json_decode($_COOKIE['items']);
     $countG = count($cookies);
 } else {
     $countG = 0;
 }
-
-// --- END COUNT GOODS COOKIE ---

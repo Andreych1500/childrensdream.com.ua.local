@@ -2,7 +2,6 @@
 Core::$JS[] = '<script src="/skins/admin/js/addPhoto.js?v=1"></script>';
 
 // --- EDIT ELEMENT ---
-
 if(isset($_POST['ok'])){
     $_POST = trimAll($_POST);
     $errors = array();
@@ -17,18 +16,15 @@ if(isset($_POST['ok'])){
     // --- NO MANDATORY FIELDS ---
     if(empty($_POST['sort'])){ $_POST['sort'] = '100'; }
 
-    // SEO
+    // --- SEO ---
     if(empty($_POST['img_seo_title_ua'])){ $_POST['img_seo_title_ua'] = '';	}
     if(empty($_POST['img_seo_title_ru'])){ $_POST['img_seo_title_ru'] = '';	}
     if(empty($_POST['img_seo_alt_ua'])){ $_POST['img_seo_alt_ua'] = '';	}
     if(empty($_POST['img_seo_alt_ru'])){ $_POST['img_seo_alt_ru'] = '';	}
 
     // --- FUNCTION IMAGE ---
-
     $main_banner_ua = ((isset($_POST['main_banner_ua']))? explode('|',$_POST['main_banner_ua']) : '');
     $main_banner_ru = ((isset($_POST['main_banner_ru']))? explode('|',$_POST['main_banner_ru']) : '');
-
-    // --- END FUNCTION IMAGE ---
 
     if(!count($errors)){
         q(" UPDATE `main_banner` SET
@@ -51,11 +47,7 @@ if(isset($_POST['ok'])){
     }
 }
 
-// --- END EDIT ELEMENT ---
-
-
 // --- GET ELEMENT ---
-
 $main_banner = q("
 	SELECT *
 	FROM `main_banner`
@@ -69,5 +61,3 @@ if($main_banner->num_rows){
     header("Location: /admin/main-banner/");
     exit();
 }
-
-// --- END GET ELEMENT ---

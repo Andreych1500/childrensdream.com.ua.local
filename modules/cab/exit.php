@@ -1,6 +1,5 @@
 <?php
 // --- EXIT ADMIN ---
-
 if(isset($_GET['page']) && $_GET['page'] == 'exit'){
 	q("
 		UPDATE `users` SET
@@ -16,5 +15,3 @@ setcookie('id','',time()-636000,'/');
 
 header("Location: /");
 exit();
-
-// --- END EXIT ADMIN ---

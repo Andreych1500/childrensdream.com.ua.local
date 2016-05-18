@@ -2,7 +2,6 @@
 Core::$JS[] = '<script src="/skins/admin/js/addPhoto.js?v=1"></script>';
 
 // --- ADD NEW ELEMENT ---
-
 if(isset($_POST['ok'])){
     $errors = array();
 
@@ -60,5 +59,3 @@ if(isset($_POST['ok'])){
         exit();
     }
 }
-
-// --- END ADD ELEMENT ---

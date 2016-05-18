@@ -1,6 +1,5 @@
 <?php
 // --- DELETE ELEMENT ---
-
 if(isset($_POST['delete']) && isset($_POST['ids'])){
     foreach($_POST['ids'] as $k=>$v){
         $_POST['ids'][$k] = (int)$v;
@@ -15,11 +14,7 @@ if(isset($_POST['delete']) && isset($_POST['ids'])){
     exit();
 }
 
-// --- END DELETE ELEMENT ---
-
-
 // --- ACTIVE ELEMENT ---
-
 if(isset($_POST['active']) && isset($_POST['ids'])){
     foreach($_POST['ids'] as $k=>$v){
         $_POST['ids'][$k] = (int)$v;
@@ -35,11 +30,7 @@ if(isset($_POST['active']) && isset($_POST['ids'])){
     exit();
 }
 
-// --- END ACTIVE ELEMENT ---
-
-
 // --- DEACTIVE ELEMENT ---
-
 if(isset($_POST['deactive']) && isset($_POST['ids'])){
     foreach($_POST['ids'] as $k=>$v){
         $_POST['ids'][$k] = (int)$v;
@@ -55,15 +46,9 @@ if(isset($_POST['deactive']) && isset($_POST['ids'])){
     exit();
 }
 
-// --- END DEACTIVE ELEMENT ---
-
-
 // --- GET ALL ELEMENT OR FILTER---
-
 $comments = q("
     SELECT *
     FROM `comments`
     ORDER BY `id` DESC
 ");
-
-// --- END GET ALL ELEMENT OR FILTER ---

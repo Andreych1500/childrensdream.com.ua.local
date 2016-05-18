@@ -15,8 +15,6 @@ $(document).ready(function(){
 
         $('.upload_file[id*="cMorePhoto"]').last().after(html_input_fyle);
     });
-    // --- end more add buttom ---
-
 
     // --- translition no spec simvol ---
     if($('input[name="seo_name"]').length > 0) {
@@ -34,9 +32,7 @@ $(document).ready(function(){
             }
         });
     }
-    // --- end translition no spec simvol ---
 });
-
 
 function getInfoFile(el){
     var new_inp = $('#to_file').find('input[type="file"]');
@@ -45,11 +41,9 @@ function getInfoFile(el){
     $(new_inp).attr('rel_to_set', $(el).parents('.upload_file').attr('id')).trigger("click");
 }
 
-
 function resetFile(control){
     control.replaceWith( control = control.clone( true ) );
 }
-
 
 function  cancel(){
     var del_files = [];
@@ -77,7 +71,6 @@ function  cancel(){
         document.location.href = '/admin/'+url;
     }
 }
-
 
 function addPhoto(el, stringValue){
     if(stringValue.length > 1){
@@ -141,7 +134,6 @@ function addPhoto(el, stringValue){
                         $(rel_to_set).find('.photos').addClass('hidden');
                     }
                 }
-                // --- end update image ---
             }
         });
     }

@@ -63,7 +63,6 @@ $(document).ready(function() {
             }
         }
     });
-    // --- end prev | next ---
 
     // --- modal close window ---
     $('.icon-close').click( function(){
@@ -74,7 +73,6 @@ $(document).ready(function() {
             $('.fixed-overlay').fadeOut(400);
         });
     });
-
 
     $(document).mouseup(function (e){
         if($('.fixed-overlay').css('display') == 'block'){
@@ -87,8 +85,6 @@ $(document).ready(function() {
             }
         }
     });
-    // --- end modal close window ---
-
 });
 
 function modalPhoto() {

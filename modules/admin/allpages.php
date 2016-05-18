@@ -1,6 +1,5 @@
 <?php
 // --- REDIRECT NO  ACCESS ---
-
 if(!isset($_SESSION['user']) || $_SESSION['user']['access'] !=  5){
 	if($_GET['module'] != 'static' || $_GET['page'] != 'main'){
 		header("Location: /admin/");
@@ -26,11 +25,7 @@ if(isset($_COOKIE['authhash'],$_COOKIE['id'])){
 	}
 }
 
-// ---  END REDIRECT NO  ACCESS ---
-
-
 // --- NEW INFORMATION ---
-
 $new_order = q("
 	SELECT `id`
 	FROM `order`
@@ -66,5 +61,3 @@ if(isset($_GET['editIfno'])){
 	}
 
 }
-
-// --- END NEW INFORMATION ---

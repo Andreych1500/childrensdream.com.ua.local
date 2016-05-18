@@ -2,7 +2,6 @@
 Core::$JS[] =  '<script src="/skins/default/js/chekForm.js?v=1" defer></script>';
 
 // --- ADD COMMENTS ---
-
 if(isset($_POST['name'], $_POST['text'], $_POST['email'])){
 	$errors = array();
 	
@@ -40,16 +39,10 @@ if(isset($_POST['name'], $_POST['text'], $_POST['email'])){
 	}
 }
 
-// --- END ADD COMMENTS ---
-
-
 // --- ALL COMMENTS ---
-
 $res = q("
 	SELECT *
 	FROM `comments`
 	WHERE `active` = 1
 	ORDER BY `id` DESC
 ");
-
-// --- END ALL COMMENTS ---

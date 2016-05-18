@@ -3,7 +3,6 @@ Core::$JS[] = '<script src="/skins/default/js/slider.js?v=1" defer></script>';
 Core::$JS[] = '<script src="/skins/default/js/chekForm.js?v=1" defer></script>';
 
 // --- SEND CALL FORM ---
-
 if(isset($_POST['ok'], $_POST['name'], $_POST['text'], $_POST['email'], $_POST['thems'])){
     $errors = array();
     $next_error = array();
@@ -27,7 +26,6 @@ if(isset($_POST['ok'], $_POST['name'], $_POST['text'], $_POST['email'], $_POST['
     if($_POST['capcha'] != $_SESSION['rand_code']){
         $errors['capcha'] = 'errors';
     }
-
 
     if(!count($errors)){
         $limit_access = q("
@@ -89,11 +87,7 @@ if(isset($_POST['ok'], $_POST['name'], $_POST['text'], $_POST['email'], $_POST['
     }
 }
 
-// --- END SEND CALL FORM ---
-
-
 // --- ALL ELEMENT ---
-
 $products = q("
     SELECT `id`,`name_ua`,`seo_name`,`price`,`availability`,`cAnonsPhoto`,`name_ru`,`img_seo_alt_ua`,`img_seo_alt_ru`
     FROM `products`
@@ -101,25 +95,15 @@ $products = q("
     LIMIT 8
 ");
 
-// --- END ALL ELEMENT ---
-
-
 // --- ALL ELEMENT BANNER ---
-
 $main_banner = q("
     SELECT *
     FROM `main_banner`
     WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
 ");
 
-// --- END ALL ELEMENT BANNER ---
-
-
 // --- INFORMATION SESSION ---
-
 if(isset($_SESSION['info'])){
     $info = $_SESSION['info'];
     unset($_SESSION['info']);
 }
-
-// --- END INFORMATION SESSION ---

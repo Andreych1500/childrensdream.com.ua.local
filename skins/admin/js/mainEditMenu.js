@@ -8,8 +8,6 @@ $(document).ready(function(){
             $('.icon-pencil').removeClass('edit-active').removeAttr('onclick');
         }
     });
-    // --- end add function edit element on window ---
-
 });
 
 function editElements(){
@@ -22,7 +20,6 @@ function editElements(){
     // --- save submit ---
     $('.edit-active').remove();
     $('.dinamicEdit').html('<input type="submit" value="Зберегти" name="el-save"><a href="'+document.location.pathname+'" class="no-save">Відмінити</a>');
-    // --- end save submit ---
 
     // --- create array inputs ---
     $(checked).each(function(i, el){
@@ -35,7 +32,6 @@ function editElements(){
         obj[$(el).val()] = inputArr; // add input[ex]
         inputArr = []; // reset array
     });
-    // --- end create array inputs ---
 
     // --- formation input ---
     for(var prop in obj) {
@@ -58,7 +54,6 @@ function editElements(){
         resultObj[prop] = resultArr;
         resultArr = []; // reset array
     }
-    // --- end formation input ---
 
     // --- edit html code ---
     var editTag = '.edFormEdit tr:not(:first-child) td:first-child input:checked';
@@ -69,7 +64,6 @@ function editElements(){
             $(editTag+'[value="'+prop+'"]').parents('tr').find('td[rel_edit$="'+$(resultObj[prop][elProp]).attr("name")+'"]').html(resultObj[prop][elProp]);
         }
     }
-    // --- end edit html code ---
 }
 
 // --- type inputs ---
@@ -90,4 +84,3 @@ function onSelect(type, name, value, id){
 
     return '<input '+checked+'  type="'+type+'" name="'+name+'" value="1">';
 }
-// --- end type inputs ---

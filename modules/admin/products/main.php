@@ -10,7 +10,6 @@ if(isset($_POST['resArr']) && count($_POST['resArr']) > 0){
         if(!isset($array['active'])){
             $array['active'] = 0;
         }
-        // --- end add no checkbox ---
 
         foreach($array as $name => $value){
             $when[$name][$key] = $value;
@@ -37,11 +36,8 @@ if(isset($_POST['resArr']) && count($_POST['resArr']) > 0){
     header("Location: /admin/products/");
     exit();
 }
-// --- END EDIT ELEMENT ---
-
 
 // --- DELETE ELEMENT AND FILE ---
-
 if(isset($_POST['delete']) && isset($_POST['ids'])){
     foreach($_POST['ids'] as $key=>$value){
         if(!empty($_POST['del'][$value])){
@@ -65,11 +61,7 @@ if(isset($_POST['delete']) && isset($_POST['ids'])){
     exit();
 }
 
-// --- END DELETE ELEMENT AND FILE ---
-
-
 // --- ACTIVE ELEMENT ---
-
 if(isset($_POST['activates']) && isset($_POST['ids'])){
     foreach($_POST['ids'] as $k=>$v){
         $_POST['ids'][$k] = (int)$v;
@@ -86,11 +78,7 @@ if(isset($_POST['activates']) && isset($_POST['ids'])){
     exit();
 }
 
-// --- END ACTIVE ELEMENT ---
-
-
 // --- DEACTIVE ELEMENT ---
-
 if(isset($_POST['deactive']) && isset($_POST['ids'])){
     foreach($_POST['ids'] as $k=>$v){
         $_POST['ids'][$k] = (int)$v;
@@ -106,15 +94,9 @@ if(isset($_POST['deactive']) && isset($_POST['ids'])){
     exit();
 }
 
-// --- END DEACTIVE ELEMENT ---
-
-
 // --- ALL ELEMENT ---
-
 $products = q("
     SELECT *
     FROM `products`
     ORDER BY `sort` DESC, `id` DESC
 ");
-
-// --- END ALL ELEMENT

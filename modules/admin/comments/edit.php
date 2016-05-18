@@ -1,6 +1,5 @@
 <?php
 // --- EDIT COMMENTS ---
-
 if(isset($_POST['ok'])){
 	$_POST = trimAll($_POST);
 	$errors = array();
@@ -30,11 +29,7 @@ if(isset($_POST['ok'])){
 	}
 }
 
-// --- END EDIT COMMENTS ---
-
-
 // --- GET ELEMENT ---
-
 $comments = q("
     SELECT *
     FROM `comments`
@@ -48,5 +43,3 @@ if($comments->num_rows){
 	header("Location: /admin/comments/");
 	exit();
 }
-
-// --- END GET ELEMENT ---

@@ -12,7 +12,6 @@ function removeError(object, parent){
                $(index).addClass('errors');
            }
        }
-       // --- end chek email ---
 
        if($(index).val().length == 0){
            $(index).addClass('errors');

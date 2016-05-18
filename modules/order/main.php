@@ -2,7 +2,6 @@
 Core::$JS[] =  '<script src="/skins/default/js/chekForm.js?v=1" defer></script>';
 
 // --- ORDER | BASKET ---
-
 if (isset($_COOKIE['items'])) {
 
     $cookies = (array)json_decode($_COOKIE['items']);
@@ -26,11 +25,7 @@ if (isset($_COOKIE['items'])) {
         WHERE `id` IN (".$ids.")
     ");
 
-    // --- END GET GOODS ---
-
-
     // --- ARRAY INFO GOODS ---
-
     $all_goods_price = 0;
     while($row = $order->fetch_assoc()){
         $row['all_price'] =  (isset($_POST['count'][$row['id']])? $_POST['count'][$row['id']] : '1') * $row['price'];
@@ -38,11 +33,7 @@ if (isset($_COOKIE['items'])) {
         $all_goods_price = $all_goods_price + $row['all_price'];
     }
 
-    // --- END ARRAY INFO GOODS ---
-
-
     // --- ORDER FORM ---
-
     if(isset($_POST['ok'], $_POST['name'], $_POST['phone'], $_POST['email'], $_POST['delivery'], $_POST['city'], $_POST['adres'], $_POST['capcha'])){
         $errors = array();
         $_POST = trimAll($_POST);
@@ -57,9 +48,7 @@ if (isset($_COOKIE['items'])) {
         if($_POST['payment'] > 2 || $_POST['payment'] < 0){ $errors['payment'] = 'errors'; }
         if($_SESSION['rand_code'] != $_POST['capcha']){ $errors['capcha'] = 'errors'; }
 
-
         // --- INFO SELECT ---
-
         if($_POST['delivery'] == 0){
             $_POST['delivery'] = $mess['DEVELORY0'];
         } elseif($_POST['delivery'] == 1){
@@ -84,11 +73,7 @@ if (isset($_COOKIE['items'])) {
             $_POST['payment'] = $mess['PAYMANT2'];
         }
 
-        // --- END INFO SELECT ---
-
-
         // --- ELEMENTS ---
-
         if(count($_POST['names_el']) > 0 && count($_POST['count']) > 0 && count($_POST['prices_el']) > 0){
             $names_el = implode(',',$_POST['names_el']);
             $prices_el = implode(',',$_POST['prices_el']);
@@ -96,9 +81,6 @@ if (isset($_COOKIE['items'])) {
         } else {
             $errors = '';
         }
-
-        // --- END ELEMENTS ---
-
 
         foreach($_POST['count'] as $key => $value){
             if($value > 99 || $value < 1){
@@ -153,7 +135,6 @@ if (isset($_COOKIE['items'])) {
             Mail::$subject = 'Dvizhenya Renya у нас нове Замолення, УРАА!';
             Mail::$text = '';
             Mail::Send();
-            // --- END MAIL TO GEKA ---
 
             $_SESSION['info'] = 'Y';
             setcookie('items','',time()-16700000, '/');
@@ -162,20 +143,12 @@ if (isset($_COOKIE['items'])) {
         }
     }
 
-    // --- END ORDER FORM ---
-
 } else {
     $cookies = array();
 }
 
-// --- END ORDER | BASKET ---
-
-
 // --- INFORMATION SESSION ---
-
 if(isset($_SESSION['info'])){
     $info = $_SESSION['info'];
     unset($_SESSION['info']);
 }
-
-// --- END INFORMATION SESSION ---

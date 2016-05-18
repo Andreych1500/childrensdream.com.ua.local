@@ -33,7 +33,7 @@ if(isset($_POST['ok'])){
 	if(empty($_POST['anatoming']) || !(int)$_POST['anatoming']){ $_POST['anatoming'] = 0; }
 	if(empty($_POST['ortopeding']) || !(int)$_POST['ortopeding']){ $_POST['ortopeding'] = 0; }
 
-	// SEO
+	// --- SEO ---
 	if(empty($_POST['meta_title_ua'])){ $_POST['meta_title_ua'] = ''; }
 	if(empty($_POST['meta_keywords_ua'])){ $_POST['meta_keywords_ua'] = ''; }
 	if(empty($_POST['meta_description_ua'])){ $_POST['meta_description_ua'] = ''; }
@@ -45,7 +45,7 @@ if(isset($_POST['ok'])){
 	if(empty($_POST['img_seo_alt_ua'])){ $_POST['img_seo_alt_ua'] = '';	}
 	if(empty($_POST['img_seo_alt_ru'])){ $_POST['img_seo_alt_ru'] = '';	}
 
-	// OPEN GRAPG
+	// --- OPEN GRAPG ---
 	if(empty($_POST['og_url'])){ $_POST['og_url'] = ''; }
 	if(empty($_POST['og_type'])){ $_POST['og_type'] = ''; }
 
@@ -70,9 +70,6 @@ if(isset($_POST['ok'])){
 				$addcMorePhoto = '';
 			}
 		}
-		// --- END MORE PHOTO ---
-	// --- END FUNCTION IMAGE ---
-
 
 	if(!count($errors)){
 		$_POST = mres($_POST);
@@ -131,12 +128,9 @@ if(isset($_POST['ok'])){
 		header("Location: /admin/products");
 		exit();
 	}
-
 }
 
-
 // --- GET ELEMENT ---
-
 $products = q("
 	SELECT *
 	FROM `products`
@@ -150,9 +144,6 @@ if($products->num_rows){
 	header("Location: /admin/products/");
 	exit();
 }
-
-// --- END GET ELEMENT ---
-
 
 // --- FUNCTION cMorePhoto ---
 if(!empty($row['cMorePhoto']) && !isset($cMorePhoto)){
@@ -172,4 +163,3 @@ if(!empty($row['cMorePhoto']) && !isset($cMorePhoto)){
 		);
 	}
 }
-// --- END FUNCTION cMorePhoto ---

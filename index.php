@@ -12,13 +12,9 @@ if(preg_match('#\/catalog\/|\/product\/#ui',$_SERVER['REQUEST_URI'], $matches)){
 }
 
 // --- CONFIG SITE ---
-
 include_once './config.php';
 include_once './libs/default.php';
 include_once './variables.php';
-
-// --- END CONFIG SITE ---
-
 
 // --- FRONT-CONTROLLER ---
 ob_start();
@@ -33,8 +29,6 @@ ob_start();
 		echo bufferStartError404($lang,$link_langs);
 		exit();
 	}
-	// --- END EXIST FILES ---
-
 
 	// --- LANGS FILES ---
 	if(Core::$CONT != 'modules/admin'){
@@ -46,33 +40,23 @@ ob_start();
 			include './'.Core::$CONT.'/'.$_GET['module'].'/lang/'.$lang.'/lang.php';
 		}
 	}
-	// --- END LANGS FILES ---
-
 
 	// --- PAGE_MODEL ---
 	include './'.Core::$CONT.'/allpages.php';
 	include './'.Core::$CONT.'/'.$_GET['module'].'/'.(in_array($_GET['module'],Core::$DATAIL_PAGE)? ((Core::$CONT == 'modules/admin')? $_GET['page'] : 'main' ) : $_GET['page']).'.php';
-	// --- END PAGE_MODEL ---
-
 
 	// --- PAGE_VIEW ---
 	include './skins/'.Core::$SKIN.'/'.$_GET['module'].'/'.(in_array($_GET['module'],Core::$DATAIL_PAGE)? ((Core::$CONT == 'modules/admin')? $_GET['page'] : 'main' ) : $_GET['page']).'.tpl';
-	// --- END PAGE_VIEW ---
 
 	$content = ob_get_contents();
 
 ob_end_clean();
-// --- END FRONT-CONTROLLER ---
-
 
 // --- VIEW CONTENT ---
-
 if(isset($_GET['ajax'])) {
 	echo $content;
 	exit();
 }
 
 include './skins/'.Core::$SKIN.'/'.'index.tpl';
-
-// --- END VIEW CONTENT ---
 exit();

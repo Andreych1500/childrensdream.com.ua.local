@@ -14,7 +14,6 @@ $(document).ready(function() {
         scrolMenuPanel();
         deleteCookie('scroll');
     }
-    // --- end mini scroll fixed-menu ---
 
     // --- delete goods ---
     $(".del-good").unbind('click').click(function(){
@@ -55,11 +54,9 @@ $(document).ready(function() {
         // --- emd order price ---
 
     });
-    // --- end delete goods ---
 
     // --- start resize function ---
     $(window).resize();
-    // --- end start resize function ---
 });
 
 function edit_price(el) {

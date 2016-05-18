@@ -1,7 +1,5 @@
 <?php
-
 // --- GET ELEMENT ---
-
 $call_me = q("
     SELECT *
     FROM `call_me`
@@ -15,5 +13,3 @@ if($call_me->num_rows){
     header("Location: /admin/call-me/");
     exit();
 }
-
-// --- END GET ELEMENT ---

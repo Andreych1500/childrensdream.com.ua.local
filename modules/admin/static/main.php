@@ -2,7 +2,6 @@
 if(!isset($_SESSION['user']) || $_SESSION['user']['access'] !=  5){
 
 	// --- AUTH FORM ---
-
 	if(isset($_POST['login'], $_POST['pass'])){
 		$errors = array();
 		
@@ -39,5 +38,4 @@ if(!isset($_SESSION['user']) || $_SESSION['user']['access'] !=  5){
 		}
 	}
 
-	// --- END AUTH FORM ---
 }

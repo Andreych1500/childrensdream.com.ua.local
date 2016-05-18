@@ -8,19 +8,15 @@ Core::$JS[] = '<script src="/skins/default/js/fancy-modal.js?v=1" defer></script
 if($_GET['page'] == 'main'){
 
     // --- ALL ELEMENT ---
-
     $products = q("
       SELECT `id`,`name_ua`,`seo_name`,`price`,`availability`,`cAnonsPhoto`,`name_ru`,`img_seo_alt_ua`,`img_seo_alt_ru`
       FROM `products`
       WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
     ");
 
-    // --- END ALL ELEMENT ---
-
 } else {
 
 // --- DETAIL ELEMENT ---
-
     $products = q("
       SELECT *
       FROM `products`
@@ -37,13 +33,9 @@ if($_GET['page'] == 'main'){
     $arResult = $products->fetch_assoc();
 
     // --- SEO ELEMENT META TAGS ---
-
     Core::$META['title'] = $arResult['meta_title_'.$lang];
     Core::$META['keywords'] = $arResult['meta_keywords_'.$lang];
     Core::$META['description'] = $arResult['meta_description_'.$lang];
-
-    // --- END SEO ELEMENT META TAGS ---
-
 
     // --- RDFa OPEN GRAPH ---
     if($arrOptionModule['open_graph_page']){
@@ -62,11 +54,8 @@ if($_GET['page'] == 'main'){
             $contentOG .= '<meta property="og:image" content="'.$_SERVER['DOCUMENT_ROOT'].hsc($arResult['og_image']).'">';
         }
     }
-    // --- END RDFa OPEN GRAPH ---
-
 
     // --- SLIDER PHOTO ---
-
     $slidePhoto = explode('#', $arResult['cMorePhoto']);
     foreach ($slidePhoto as $value) {
         if (!empty($value)) {
@@ -74,10 +63,7 @@ if($_GET['page'] == 'main'){
         }
     }
 
-    // --- END SLIDER PHOTO ---
-
     // --- GOODS IN BASKET ---
-
     if (isset($_COOKIE['items'])) {
         $cookies = (array)json_decode($_COOKIE['items']);
         if(array_key_exists('g'.$arResult['id'],$cookies)){
@@ -85,7 +71,4 @@ if($_GET['page'] == 'main'){
         }
     }
 
-    // --- END GOODS IN BASKET ---
-
-// --- END DETAIL ELEMENT ---
 }
