@@ -24,6 +24,10 @@ if($arrOptionModule['open_graph_page']){
         $contentOG .= '<meta property="og:type" content="'.hsc($arrOptionModule['og_type']).'">';
     }
     if(!empty($arrOptionModule['og_url'])){
+        if($arrOptionModule['og_url'] = '/'){
+            $arrOptionModule['og_url'] = '';
+        }
+
         $contentOG .= '<meta property="og:url" content="'.Core::$DOCUMENT_ROOT.$link_langs.hsc($arrOptionModule['og_url']).'">';
     }
     if(!empty($arrOptionModule['og_image'])){
