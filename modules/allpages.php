@@ -24,10 +24,10 @@ if($arrOptionModule['open_graph_page']){
         $contentOG .= '<meta property="og:type" content="'.hsc($arrOptionModule['og_type']).'">';
     }
     if(!empty($arrOptionModule['og_url'])){
-        $contentOG .= '<meta property="og:url" content="'.$_SERVER['DOCUMENT_ROOT'].$link_langs.hsc($arResult['og_url']).'">';
+        $contentOG .= '<meta property="og:url" content="'.Core::$DOCUMENT_ROOT.$link_langs.hsc($arrOptionModule['og_url']).'">';
     }
     if(!empty($arrOptionModule['og_image'])){
-        $contentOG .= '<meta property="og:image" content="'.$_SERVER['DOCUMENT_ROOT'].hsc($arrOptionModule['og_image']).'">';
+        $contentOG .= '<meta property="og:image" content="'.Core::$DOCUMENT_ROOT.hsc($arrOptionModule['og_image']).'">';
     }
 }
 
