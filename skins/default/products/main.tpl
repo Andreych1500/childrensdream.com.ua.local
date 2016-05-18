@@ -17,7 +17,7 @@
           <span itemprop="name"><?=hsc($el['name_'.$lang])?></span>
         </a>
         <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-          <p class="price"><?=number_format(hsc($arResult['price']), 0, ',', ' ')?> <?=$mess['PRICE'];?></span></p>
+          <p class="price"><?=number_format(hsc($arResult['price']), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
           <p class="aviability">
             <span class="<?=(((int)$el['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
             <?=(((int)$el['availability'] == 1)? '<link itemprop="availability" href="http://schema.org/InStock">' : '<link itemprop="availability" href="http://schema.org/OutOfStock">')?>
@@ -72,7 +72,7 @@
     <p><?=hsc($arResult['description_'.$lang])?></p>
 
     <?php if($arResult['availability'] == 1){ ?>
-    <p class="price"><?=number_format(hsc($arResult['price']), 0, ',', ' ')?> <?=$mess['PRICE'];?></span></p>
+    <p class="price"><?=number_format(hsc($arResult['price']), 0, ',', ' ')?> <?=$mess['PRICE'];?></p>
     <div class="add-shop <?=(!empty($basket)? $basket : '')?>" <?php if(empty($basket)){ ?> onclick="addToCard(<?=(int)$arResult['id']?>,'<?=$mess['BASKETOK']?>','1')"<?php }?>>
         <?=(empty($basket)? '<span class="icon-basket"></span>' : '')?>
         <?=(!empty($basket)? $mess['BASKETOK'] : $mess['ADDSHOP'])?>
