@@ -31,9 +31,26 @@
   <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
   <script src="/skins/default/js/index.js?v=1" defer></script>
   <script src="/skins/default/js/script.js?v=1" defer></script>
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "url" : "<?=Core::$DOCUMENT_ROOT.(($link_langs == '/')? '/' : '/ru/');?>",
+      "logo" : "<?=Core::$DOCUMENT_ROOT;?>/skins/default/img/logo.png",
+      "name": "Children's Dream",
+      "telephone": "+38 (098) 57-04-377",
+      "email": "cdmatrasses@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "<?=$mess['ADDRES_LOCATION']?>",
+        "postalCode": "	46000"
+      }
+    }
+  </script>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
+  <meta itemprop="description" content="<?=Core::$META['description'];?>">
   <header itemscope itemtype="http://schema.org/WPHeader">
     <div class="header-block">
       <a class="logo" href="<?=$link_langs?>"><img src="/skins/default/img/logo.png" alt="Children's Dream" title="Children's Dream"></a>

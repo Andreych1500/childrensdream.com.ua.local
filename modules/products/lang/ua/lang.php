@@ -1,5 +1,6 @@
 <?php
 // products
+$mess['MATRASES'] = 'Дитячі матраци';
 $mess['PRODUCT']      = 'Продукція';
 $mess['DETSKIE_MATRACI'] = 'Дитячі&nbsp;матраци';
 $mess['NO_ELEMETN']   = 'Продукція відсутня';

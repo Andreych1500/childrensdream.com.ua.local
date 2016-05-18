@@ -1,6 +1,10 @@
 <div class="comments">
     <div class="view-comments">
-      <h3 itemscope itemtype="http://schema.org/CreativeWork"><?=$mess['COMMENTS']?> (<span itemprop="commentCount"><?=(int)$res->num_rows;?></span>)</h3>
+      <meta itemprop="name" content="<?=$mess['COMMENTS']?>">
+      <h3 itemscope itemtype="http://schema.org/CreativeWork">
+          <?=$mess['COMMENTS']?> (<span itemprop="commentCount"><?=(int)$res->num_rows;?></span>)
+          <meta itemprop="description" content="<?=$mess['YOUR_REVIEW']?>">
+      </h3>
       <p><?=$mess['YOUR_REVIEW']?></p>
       <?php if($res->num_rows){
        while($row = $res->fetch_assoc()){ ?>
