@@ -36,6 +36,9 @@
 <?php } else { ?>
 
 <div class="mattress-detail" itemscope itemtype="http://schema.org/Product">
+  <meta itemprop="name" content="<?=hsc($arResult['name_'.$lang])?>">
+  <meta itemprop="description" content="<?=hsc($arResult['description_'.$lang])?>">
+  <meta itemprop="brand" content="Children's Dream">
   <?php if(isset($photos)){ ?>
   <div class="slider-detail">
     <div class="slider-nav <?=((count($photos) > 3)? 'center-photo' : 'currenc')?>">
@@ -52,17 +55,17 @@
   </div>
   <?php } ?>
 
-  <div class="goods <?=(!isset($photos)? 'good-view' : '')?>">
+  <div class="goods <?=(!isset($photos)? 'good-view' : '')?>" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
     <h1 itemprop="name"><?=hsc($arResult['name_'.$lang])?></h1>
-    <p itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <p>
       <span class="<?=(((int)$arResult['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
       <?=(((int)$arResult['availability'] == 1)? '<link itemprop="availability" href="http://schema.org/InStock">' : '<link itemprop="availability" href="http://schema.org/OutOfStock">')?>
       <span><?=(((int)$arResult['availability'] == 1)? $mess['AVIABILITY'] : $mess['NOAVIABILITY'])?></span>
     </p>
-    <p itemprop="description"><?=hsc($arResult['description_'.$lang])?></p>
+    <p><?=hsc($arResult['description_'.$lang])?></p>
 
     <?php if($arResult['availability'] == 1){ ?>
-    <p class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+    <p class="price">
       <span itemprop="price" content="<?=hsc($arResult['price'])?>.00"><?=number_format(hsc($arResult['price']), 0, ',', ' ')?></span>
       <span itemprop="priceCurrency" content="UAH"><?=$mess['PRICE'];?></span>
     </p>
@@ -92,42 +95,42 @@
     <p><?=$mess['HARAKTERISTIC']?></p>
     <span class="line"></span>
   </div>
-  <table itemprop="additionalProperty" itemscope itemtype="http://schema.org/PropertyValue">
-    <tr itemprop="valueReference" itemscope itemtype="http://schema.org/PropertyValue">
-      <td itemprop="name"><?=$mess['FORMA']?></td>
-      <td itemprop="value"><?=((empty(hsc($arResult['form_'.$lang])))? '-' : hsc($arResult['form_'.$lang]))?></td>
+  <table>
+    <tr>
+      <td><?=$mess['FORMA']?></td>
+      <td><?=((empty(hsc($arResult['form_'.$lang])))? '-' : hsc($arResult['form_'.$lang]))?></td>
     </tr>
-    <tr itemprop="valueReference" itemscope itemtype="http://schema.org/PropertyValue">
-      <td itemprop="name"><?=$mess['TYPE']?></td>
-      <td itemprop="value"><?=((empty(hsc($arResult['type_'.$lang])))? '-' : hsc($arResult['type_'.$lang]))?></td>
+    <tr>
+      <td><?=$mess['TYPE']?></td>
+      <td><?=((empty(hsc($arResult['type_'.$lang])))? '-' : hsc($arResult['type_'.$lang]))?></td>
     </tr>
-    <tr itemprop="valueReference" itemscope itemtype="http://schema.org/PropertyValue">
-      <td itemprop="name"><?=$mess['SIZE']?></td>
-      <td itemprop="value"><?=((empty($arResult['size']))? '-' : hsc($arResult['size']))?></td>
+    <tr>
+      <td><?=$mess['SIZE']?></td>
+      <td><?=((empty($arResult['size']))? '-' : hsc($arResult['size']))?></td>
     </tr>
-    <tr itemprop="valueReference" itemscope itemtype="http://schema.org/PropertyValue">
-      <td itemprop="name"><?=$mess['WEIGHT']?></td>
-      <td itemprop="value"><?=((empty($arResult['weight']))? '-' : (int)$arResult['weight'].' '.$mess['KG'])?></td>
+    <tr>
+      <td><?=$mess['WEIGHT']?></td>
+      <td><?=((empty($arResult['weight']))? '-' : (int)$arResult['weight'].' '.$mess['KG'])?></td>
     </tr>
-    <tr itemprop="valueReference" itemscope itemtype="http://schema.org/PropertyValue">
-      <td itemprop="name"><?=$mess['HEIGHT']?></td>
-      <td itemprop="value"><?=((empty($arResult['height']))? '-' : (int)$arResult['height'].' '.$mess['SM'])?></td>
+    <tr>
+      <td><?=$mess['HEIGHT']?></td>
+      <td><?=((empty($arResult['height']))? '-' : (int)$arResult['height'].' '.$mess['SM'])?></td>
     </tr>
-    <tr itemprop="valueReference" itemscope itemtype="http://schema.org/PropertyValue">
-      <td itemprop="name"><?=$mess['RIGIDITY']?></td>
-      <td itemprop="value"><?=((empty(hsc($arResult['rigidity_'.$lang])))? '-' : hsc($arResult['rigidity_'.$lang]))?></td>
+    <tr>
+      <td><?=$mess['RIGIDITY']?></td>
+      <td><?=((empty(hsc($arResult['rigidity_'.$lang])))? '-' : hsc($arResult['rigidity_'.$lang]))?></td>
     </tr>
-    <tr itemprop="valueReference" itemscope itemtype="http://schema.org/PropertyValue">
-      <td itemprop="name"><?=$mess['ANATOMING']?></td>
-      <td itemprop="value"><?=((empty($arResult['anatoming']))? '-' : (((int)$arResult['anatoming'] == 1)? $mess['NO'] : $mess['YES'] ))?></td>
+    <tr>
+      <td><?=$mess['ANATOMING']?></td>
+      <td><?=((empty($arResult['anatoming']))? '-' : (((int)$arResult['anatoming'] == 1)? $mess['NO'] : $mess['YES'] ))?></td>
     </tr>
-    <tr itemprop="valueReference" itemscope itemtype="http://schema.org/PropertyValue">
-      <td itemprop="name"><?=$mess['ORTOPEDING']?></td>
-      <td itemprop="value"><?=((empty($arResult['ortopeding']))? '-' : (((int)$arResult['ortopeding'] == 1)? $mess['NO'] : $mess['YES'] ))?></td>
+    <tr>
+      <td><?=$mess['ORTOPEDING']?></td>
+      <td><?=((empty($arResult['ortopeding']))? '-' : (((int)$arResult['ortopeding'] == 1)? $mess['NO'] : $mess['YES'] ))?></td>
     </tr>
-    <tr itemprop="valueReference" itemscope itemtype="http://schema.org/PropertyValue">
-      <td itemprop="name"><?=$mess['GARANTY']?></td>
-      <td itemprop="value"><?=((empty($arResult['garanty']))? '-' : (int)$arResult['garanty'].' '.$mess['MONTH'])?></td>
+    <tr>
+      <td><?=$mess['GARANTY']?></td>
+      <td><?=((empty($arResult['garanty']))? '-' : (int)$arResult['garanty'].' '.$mess['MONTH'])?></td>
     </tr>
   </table>
 </div>
