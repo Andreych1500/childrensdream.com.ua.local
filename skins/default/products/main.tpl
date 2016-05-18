@@ -78,7 +78,7 @@
         <?=(!empty($basket)? $mess['BASKETOK'] : $mess['ADDSHOP'])?>
     </div>
     <?php } ?>
-    <meta itemprop="price" content="<?=hsc($el['price'])?>.00">
+    <meta itemprop="price" content="<?=hsc($arResult['price'])?>.00">
     <meta itemprop="priceCurrency" content="UAH">
     <link itemprop="itemCondition" href="http://schema.org/NewCondition">
     <meta itemprop="seller" content="Children's Dream">
