@@ -38,7 +38,7 @@ if($_GET['page'] == 'main'){
     Core::$META['description'] = $arResult['meta_description_'.$lang];
 
     // --- RDFa OPEN GRAPH ---
-    if($arrOptionModule['open_graph_page']){
+    if($arResult['open_graph_page']){
         $contentOG = '';
 
         $contentOG .= '<meta property="og:title" content="'.hsc($arResult['meta_title_'.$lang]).'">
@@ -48,10 +48,10 @@ if($_GET['page'] == 'main'){
             $contentOG .= '<meta property="og:type" content="'.hsc($arResult['og_type']).'">';
         }
         if(!empty($arResult['og_url'])){
-            $contentOG .= '<meta property="og:url" content="'.$_SERVER['DOCUMENT_ROOT'].$link_langs.hsc($arResult['og_url']).'">';
+            $contentOG .= '<meta property="og:url" content="'.Core::$DOCUMENT_ROOT.$link_langs.hsc($arResult['og_url']).'">';
         }
         if(!empty($arResult['og_image'])){
-            $contentOG .= '<meta property="og:image" content="'.$_SERVER['DOCUMENT_ROOT'].hsc($arResult['og_image']).'">';
+            $contentOG .= '<meta property="og:image" content="'.Core::$DOCUMENT_ROOT.hsc($arResult['og_image']).'">';
         }
     }
 
