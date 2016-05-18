@@ -41,7 +41,9 @@
         <a class="photos" href="<?=$link_langs?>products/<?=hsc($el['seo_name'])?>/" itemprop="url">
           <img src="<?=hsc($el['cAnonsPhoto'])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>" itemprop="image">
         </a>
-        <a class="links" href="<?=$link_langs?>products/<?=hsc($el['seo_name'])?>/"  itemprop="url"><span itemprop="name"><?=hsc($el['name_'.$lang])?></span></a>
+        <a class="links" href="<?=$link_langs?>products/<?=hsc($el['seo_name'])?>/"  itemprop="url">
+          <span itemprop="name"><?=hsc($el['name_'.$lang])?></span>
+        </a>
         <p class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
           <span itemprop="price" content="<?=hsc($el['price'])?>.00"><?=number_format(hsc($el['price']), 0, ',', ' ')?></span>
           <span itemprop="priceCurrency" content="UAH"><?=$mess['PRICE'];?></span>

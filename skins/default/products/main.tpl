@@ -12,7 +12,9 @@
       <a class="photos" href="<?=$link_langs?>products/<?=$arResult['seo_name']?>/" itemprop="url">
         <img src="<?=hsc($arResult['cAnonsPhoto'])?>" alt="<?=hsc($arResult['img_seo_alt_'.$lang])?>" itemprop="image">
       </a>
-      <a class="links" href="<?=$link_langs?>products/<?=$arResult['seo_name']?>/"  itemprop="url"><span itemprop="name"><?=hsc($arResult['name_'.$lang])?></span></a>
+      <a class="links" href="<?=$link_langs?>products/<?=$arResult['seo_name']?>/"  itemprop="url">
+        <span itemprop="name"><?=hsc($arResult['name_'.$lang])?></span>
+      </a>
       <p class="price" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
         <span itemprop="price" content="<?=hsc($arResult['price'])?>.00"><?=number_format(hsc($arResult['price']), 0, ',', ' ')?></span>
         <span itemprop="priceCurrency" content="UAH"><?=$mess['PRICE'];?></span>
