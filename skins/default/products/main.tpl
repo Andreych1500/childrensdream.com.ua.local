@@ -46,6 +46,8 @@
   <meta itemprop="brand" content="Children's Dream">
   <meta itemprop="category" content="<?=$mess['MATRASES'];?>">
   <meta itemprop="manufacturer" content="Children's Dream">
+  <meta itemprop="weight" content="<?=(int)$arResult['weight'].' '.$mess['KG'];?>">
+
   <?php if(isset($photos)){ ?>
   <div class="slider-detail">
     <div class="slider-nav <?=((count($photos) > 3)? 'center-photo' : 'currenc')?>">
