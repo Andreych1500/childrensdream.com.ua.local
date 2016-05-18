@@ -156,3 +156,15 @@ line: 19
 date: 2016-05-16 19:34:25
 ===================================
 
+QUERY:
+    SELECT `id`,`name_ua`,`seo_name`,`price`,`availability`,`cAnonsPhoto`,`name_ru`,`img_seo_alt_ua`,`img_seo_alt_ru`,`description`
+    FROM `products`
+    WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
+    LIMIT 8
+
+Unknown column 'description' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\static\main.php
+line: 96
+date: 2016-05-18 13:54:02
+===================================
+
