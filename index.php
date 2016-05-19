@@ -10,7 +10,7 @@ if(preg_match('#\/catalog\/|\/product\/#ui',$_SERVER['REQUEST_URI'], $matches)){
 	header("Location: http://" . $_SERVER['HTTP_HOST'] . $redirectCatalog);
 	exit();
 }
-exit();
+
 // --- CONFIG SITE ---
 include_once './config.php';
 include_once './libs/default.php';
