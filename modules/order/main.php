@@ -1,5 +1,5 @@
 <?php
-Core::$JS[] =  '<script src="/skins/default/js/chekForm.js?v='.$version.'" defer></script>';
+Core::$JS[] =  '<script src="/skins/default/js/chekForm.js?v='.$vF.'" defer></script>';
 
 // --- ORDER | BASKET ---
 if (isset($_COOKIE['items'])) {

@@ -10,12 +10,11 @@
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
-  <link href="/skins/<?=Core::$SKIN; ?>/css/style.css" rel="stylesheet" type="text/css">
-  <?php if(count(Core::$CSS)){ echo implode("\n",Core::$CSS); } ?>
+  <link href="/skins/<?=Core::$SKIN; ?>/css/style.css?v=<?=$vF?>" rel="stylesheet" type="text/css">
 
-  <script src="/vendor/public/jquery/dist/jquery.min.js?v=<?=$version?>"></script>
-  <script src="/skins/admin/js/script.js?v=<?=$version?>"></script>
-  <script src="/vendor/public/translit/dist/translit.js?v=<?=$version?>"></script>
+  <script src="/vendor/public/jquery/dist/jquery.min.js"></script>
+  <script src="/skins/admin/js/script.js?v=<?=$vF?>"></script>
+  <script src="/vendor/public/translit/dist/translit.js"></script>
   <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
 </head>
 

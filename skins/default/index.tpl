@@ -22,15 +22,12 @@
   <link rel="apple-touch-icon" sizes="120x120" href="/touch-icon-iphone-retina.png">
   <link rel="apple-touch-icon" sizes="152x152" href="/touch-icon-ipad-retina.png">
 
-  <link href="/skins/<?=Core::$SKIN; ?>/css/style.css" rel="stylesheet">
-  <?php if(count(Core::$CSS)){ echo implode("\n",Core::$CSS); } ?>
-
-  <!--[if lt IE 9]><script src="/skins/default/js/ielt9.js?v=1" defer></script><![endif]-->
-
+  <link href="/skins/<?=Core::$SKIN; ?>/css/style.css?v=<?=$vF?>" rel="stylesheet">
+  <!--[if lt IE 9]><script src="/skins/default/js/ielt9.js" defer></script><![endif]-->
   <script src="/vendor/public/jquery/dist/jquery.min.js" defer></script>
   <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
-  <script src="/skins/default/js/index.js?v=<?=$version?>" defer></script>
-  <script src="/skins/default/js/script.js?v=<?=$version?>" defer></script>
+  <script src="/skins/default/js/index.js?v=<?=$vF?>" defer></script>
+  <script src="/skins/default/js/script.js?v=<?=$vF?>" defer></script>
   <script type="application/ld+json">
     {
       "@context": "http://schema.org",

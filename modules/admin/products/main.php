@@ -1,5 +1,5 @@
 <?php
-Core::$JS[] = '<script src="/skins/admin/js/mainEditMenu.js?v='.$version.'"></script>';
+Core::$JS[] = '<script src="/skins/admin/js/mainEditMenu.js?v='.$vF.'"></script>';
 
 // --- EDIT ELEMENT ---
 if(isset($_POST['resArr']) && count($_POST['resArr']) > 0){

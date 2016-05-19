@@ -1,5 +1,5 @@
 <?php
-Core::$JS[] = '<script src="/skins/admin/js/addPhoto.js?v='.$version.'"></script>';
+Core::$JS[] = '<script src="/skins/admin/js/addPhoto.js?v='.$vF.'"></script>';
 
 // --- EDIT MODULE ---
 if(isset($_POST['ok'])){

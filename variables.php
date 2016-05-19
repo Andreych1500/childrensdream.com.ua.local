@@ -36,7 +36,7 @@ if(isset($_GET['route'])){
 }
 
 // нова версія файлів
-$version = chr(rand(97, 122)).rand(0, 100);
+$vF = date_timestamp_get(date_create());
 
 // мовні змінні для сайту
 if(preg_match('#^ru#ius',Core::$LANG)){

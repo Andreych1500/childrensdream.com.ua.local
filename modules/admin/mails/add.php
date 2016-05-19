@@ -1,5 +1,5 @@
 <?php
-Core::$JS[] = '<script src="/skins/admin/js/addPhoto.js?v='.$version.'"></script>';
+Core::$JS[] = '<script src="/skins/admin/js/addPhoto.js?v='.$vF.'"></script>';
 
 // --- ADD NEW ELEMENT ---
 if(isset($_POST['ok'])){
