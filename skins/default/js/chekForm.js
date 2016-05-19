@@ -70,7 +70,7 @@ function checkForm(parents, nameForm){
         if(error == 0){
             $.ajax({
                 type: "POST",
-                url: "/comments?ajax=1",
+                url: "/comments/?ajax=1",
                 cache: false,
                 data: {
                     "name":  $(parents + " input[name='name']").val(),
