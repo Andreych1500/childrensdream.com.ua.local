@@ -1,6 +1,6 @@
 <?php
-Core::$JS[] = '<script src="/skins/default/js/slider.js?v=1" defer></script>';
-Core::$JS[] = '<script src="/skins/default/js/chekForm.js?v=1" defer></script>';
+Core::$JS[] = '<script src="/skins/default/js/slider.js?v='.$version.'" defer></script>';
+Core::$JS[] = '<script src="/skins/default/js/chekForm.js?v='.$version.'" defer></script>';
 
 // --- SEND CALL FORM ---
 if(isset($_POST['ok'], $_POST['name'], $_POST['text'], $_POST['email'], $_POST['thems'])){

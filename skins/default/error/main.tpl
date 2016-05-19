@@ -17,8 +17,8 @@
 
     <script src="/vendor/public/jquery/dist/jquery.min.js" defer></script>
     <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
-    <script src="/skins/default/js/index.js?v=1" defer></script>
-    <script src="/skins/default/js/script.js?v=1" defer></script>
+    <script src="/skins/default/js/index.js?v=<?=$version?>" defer></script>
+    <script src="/skins/default/js/script.js?v=<?=$version?>" defer></script>
 </head>
 
 <body>

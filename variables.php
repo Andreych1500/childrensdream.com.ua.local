@@ -35,6 +35,9 @@ if(isset($_GET['route'])){
 	unset($_GET['route']);
 }
 
+// нова версія файлів
+$version = chr(rand(97, 122)).rand(0, 100);
+
 // мовні змінні для сайту
 if(preg_match('#^ru#ius',Core::$LANG)){
 	$lang = Core::$LANGUAGE['langs']['ru'];

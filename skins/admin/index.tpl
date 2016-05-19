@@ -13,9 +13,9 @@
   <link href="/skins/<?=Core::$SKIN; ?>/css/style.css" rel="stylesheet" type="text/css">
   <?php if(count(Core::$CSS)){ echo implode("\n",Core::$CSS); } ?>
 
-  <script src="/vendor/public/jquery/dist/jquery.min.js?v=1"></script>
-  <script src="/skins/admin/js/script.js?v=1"></script>
-  <script src="/vendor/public/translit/dist/translit.js?v=1"></script>
+  <script src="/vendor/public/jquery/dist/jquery.min.js?v=<?=$version?>"></script>
+  <script src="/skins/admin/js/script.js?v=<?=$version?>"></script>
+  <script src="/vendor/public/translit/dist/translit.js?v=<?=$version?>"></script>
   <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
 </head>
 
