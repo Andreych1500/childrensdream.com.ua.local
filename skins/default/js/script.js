@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    
     // --- mini scroll fixed-menu ---
     var pathname = window.location.pathname;
     var arrPathname = ['/','/ru/'];
