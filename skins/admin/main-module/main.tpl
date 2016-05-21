@@ -35,5 +35,9 @@
 
             </table>
         </form>
+        <div class="dinamicEdit">
+          <a class="reload_file" href="/admin/main-module/?reload=ok">Поновити кеш файлів</a>
+          <?=(isset($info)? '<span class="reload_ok">'.$info.'</span>' : '');?>
+        </div>
     </div>
 </div>

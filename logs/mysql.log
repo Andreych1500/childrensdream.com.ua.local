@@ -168,3 +168,32 @@ line: 96
 date: 2016-05-18 13:54:02
 ===================================
 
+QUERY: UPDATE `main_core` SET
+        `new_resource`  = 1463840339,
+    
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 2
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\main-module\main.php
+line: 7
+date: 2016-05-21 17:18:59
+===================================
+
+QUERY: UPDATE `main_core` SET
+        `new_resource`  = 1463840424,
+        WHERE `id` = 1
+    
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `id` = 1' at line 3
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\main-module\main.php
+line: 8
+date: 2016-05-21 17:20:24
+===================================
+
+QUERY: UPDATE `main_core` SET
+        `new_resource`  = 1463840429,
+        WHERE `id` = 1
+    
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `id` = 1' at line 3
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\main-module\main.php
+line: 8
+date: 2016-05-21 17:20:29
+===================================
+

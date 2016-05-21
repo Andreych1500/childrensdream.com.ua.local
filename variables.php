@@ -36,7 +36,8 @@ if(isset($_GET['route'])){
 }
 
 // нова версія файлів
-$vF = date_timestamp_get(date_create());
+$arrVersion = q('SELECT `new_resource` FROM `main_core` WHERE `id` = 1')->fetch_assoc();
+$vF = $arrVersion['new_resource'];
 
 // мовні змінні для сайту
 if(preg_match('#^ru#ius',Core::$LANG)){
