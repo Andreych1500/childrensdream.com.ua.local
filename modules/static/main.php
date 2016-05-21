@@ -1,5 +1,4 @@
 <?php
-Core::$JS[] = '<script src="/skins/default/js/slider.js?v='.$vF.'" defer></script>';
 Core::$JS[] = '<script src="/skins/default/js/chekForm.js?v='.$vF.'" defer></script>';
 
 // --- SEND CALL FORM ---

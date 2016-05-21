@@ -122,7 +122,7 @@ function isMobile(){
 }
 
 function bufferStartError404($lang,$link_langs){
-ob_start();
+	ob_start();
 		include './'.Core::$CONT.'/lang/'.$lang.'/lang.php';
 		include './'.Core::$CONT.'/error/main.php';
 		include './skins/'.Core::$SKIN.'/error/main.tpl';

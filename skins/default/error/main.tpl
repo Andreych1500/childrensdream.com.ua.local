@@ -11,14 +11,11 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 
     <link href="/skins/<?=Core::$SKIN; ?>/css/style.css" rel="stylesheet">
-    <?php if(count(Core::$CSS)){ echo implode("\n",Core::$CSS); } ?>
-
     <!--[if lt IE 9]><script src="/skins/default/js/ielt9.js?v=1" defer></script><![endif]-->
 
     <script src="/vendor/public/jquery/dist/jquery.min.js" defer></script>
     <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
-    <script src="/skins/default/js/index.js?v=<?=$version?>" defer></script>
-    <script src="/skins/default/js/script.js?v=<?=$version?>" defer></script>
+    <script src="/skins/default/js/script.js?v=<?=$vF?>" defer></script>
 </head>
 
 <body>
