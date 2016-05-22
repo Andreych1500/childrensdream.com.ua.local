@@ -27,9 +27,9 @@ if(isset($_POST['ok'])){
     if(!count($errors)){
         $_POST = mres($_POST);
 
-        q(" UPDATE `mails` SET
+        q(" UPDATE `mails` SET 
             `from_mail`  = '".$_POST['from_mail']."',
-            `to_mail`  = '".$_POST['to_mail']."',
+            `to_mail`    = '".$_POST['to_mail']."',
             `type`       = '".$_POST['type']."',
  			`name_ua`    = '".$_POST['name_ua']."',
  			`name_ru`    = '".$_POST['name_ru']."',
