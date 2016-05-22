@@ -1,6 +1,4 @@
 <?php
-Core::$JS[] = '<script src="/skins/default/js/chekForm.js?v='.$vF.'" defer></script>';
-
 // --- SEND CALL FORM ---
 if(isset($_POST['ok'], $_POST['name'], $_POST['text'], $_POST['email'], $_POST['thems'])){
     $errors = array();

@@ -167,12 +167,98 @@ $(document).ready(function() {
         setTimeout(function(){
             var globPrice = 0;
             $('.line-tab-goods tr').each(function(i,el){
-                globPrice = globPrice + parseInt($(el).find('.el_prive_hidden').attr('rel_aep'))
+                globPrice = globPrice + parseInt($(el).find('.el_prive_hidden').attr('rel_aep'));
                 $('.all-goods-price').text(globPrice.toLocaleString());
             });
         }, 1000);
         // --- emd order price ---
 
+    });
+
+    // --- prev | next ---
+    $(window).keydown(function(eventObject){
+        if($('.fixed-overlay').css('display') == 'block'){
+            if(eventObject.which == 37){
+                $('.btnModal-right').trigger('click');
+            }
+            if(eventObject.which == 39){
+                $('.btnModal-left').trigger('click');
+            }
+        }
+    });
+
+    $('.btnModal-right').click(function () {
+        var blockPhoto = $('.n-ActIndex');
+
+        if($(blockPhoto).prev('div').length){
+            var prevClone = $(blockPhoto).prev('div').find('img').clone(true);
+
+            if(!$('.modalMain').find('img:first-child').is(':animated')){
+                $('.modalMain').find('img:first-child').height(0).animate({
+                    opacity: 0
+                }, 700, 'swing');
+
+                prevClone.css({ opacity: 0 });
+
+                $('.modalMain').append(prevClone);
+
+                prevClone.animate({ opacity: 1 }, 700, 'swing', function () {
+                    $(this).prev().remove();
+                });
+
+                $('.n-ActIndex').removeClass('n-ActIndex');
+                $(blockPhoto).prev('div').addClass('n-ActIndex');
+            }
+        }
+    });
+
+    $('.btnModal-left').click(function () {
+        var blockPhoto = $('.n-ActIndex');
+
+        if ($(blockPhoto).next('div').length) {
+            var nextClone = $(blockPhoto).next('div').find('img').clone(true);
+
+            if (!$('.modalMain').find('img:first-child').is(':animated')) {
+                $('.modalMain').find('img:first-child').height(0).animate({
+                    opacity: 0
+                }, 700, 'swing');
+
+                nextClone.css({opacity: 0});
+
+                $('.modalMain').append(nextClone);
+
+                nextClone.animate({opacity: 1}, 700, 'swing', function () {
+                    $(this).prev().animate({opacity: 0}, function () {
+                        $(this).remove();
+                    });
+                });
+
+                $('.n-ActIndex').removeClass('n-ActIndex');
+                $(blockPhoto).next('div').addClass('n-ActIndex');
+            }
+        }
+    });
+
+    // --- modal close window ---
+    $('.icon-close').click( function(){
+        $('.modal').animate({opacity: 0}, 200, function(){ // після виконання минулої анімації
+            $(this).css('display', 'none');
+            $('.fixed-overlay img').remove();
+            $('.n-ActIndex').removeClass('n-ActIndex');
+            $('.fixed-overlay').fadeOut(400);
+        });
+    });
+
+    $(document).mouseup(function (e){
+        if($('.fixed-overlay').css('display') == 'block'){
+            var elNotBlock = $('.btnModal-left, .btnModal-right, .modal_container');
+            if (!$(elNotBlock).is(e.target) && $(elNotBlock).has(e.target).length === 0) {
+                $('.modal').css('display', 'none');
+                $('.fixed-overlay img').remove();
+                $('.n-ActIndex').removeClass('n-ActIndex');
+                $('.fixed-overlay').fadeOut(400);
+            }
+        }
     });
 
     // --- start resize function ---
@@ -324,11 +410,6 @@ function htmSlider(){
 
     var is_animate = true;
 
-    var slideWidth = $('.slide-list').width();
-
-    // --- animate slide ---
-    var scrollSlider = slideWrap.position().left - (slideWidth);
-
     prevLink.click(function(){
         if(!slideWrap.is(':animated')) {
             slideWrap.animate({left: resizeWidth()}, 1500, function(){
@@ -368,5 +449,136 @@ function htmSlider(){
         timer = setInterval(autoplay, 25000);
     } else {
         clearInterval(timer);
+    }
+}
+
+function removeError(object, parent){
+    var error = 0;
+
+    $(object).each(function(j, index){
+        // --- chek email ---
+        if(index.selector == parent + " input[name='email']"){
+            var atpos = $(index).val().indexOf("@");
+            var dotpos = $(index).val().lastIndexOf(".");
+
+            if(!(atpos<1 || dotpos<atpos+2 || dotpos+2>=$(index).val().length) == false){
+                error = 1;
+                $(index).addClass('errors');
+            }
+        }
+
+        if($(index).val().length == 0){
+            $(index).addClass('errors');
+            error = 1;
+        }
+    });
+
+    setTimeout(function(){
+        $(object).each(function(j, index){
+            if($(index).is('.errors')){
+                $(index).addClass('no-errors');
+            }
+        });
+
+        setTimeout(function(){
+            $(object).each(function(j, index){
+                $(index).removeClass();
+            });
+        }, 1400);
+    }, 2000);
+
+    return error;
+}
+
+function checkForm(parents, nameForm){
+    var object = [];
+
+    if(nameForm == 'form-contact') {
+        object.push(
+            $(parents + " input[name='name']"),
+            $(parents + " textarea[name='text']"),
+            $(parents + " input[name='thems']"),
+            $(parents + " input[name='capcha']"),
+            $(parents + " input[name='email']")
+        );
+    } else if(nameForm == 'form-order'){
+        object.push(
+            $(parents + " input[name='name']"),
+            $(parents + " input[name='email']"),
+            $(parents + " input[name='phone']"),
+            $(parents + " input[name='city']"),
+            $(parents + " input[name='adres']"),
+            $(parents + " input[name='capcha']")
+        );
+    } else if(nameForm == 'form-comment'){
+        object.push(
+            $(parents + " input[name='name']"),
+            $(parents + " input[name='email']"),
+            $(parents + " textarea[name='text']")
+        );
+    }
+
+    var error = removeError(object, parents);
+
+    if(nameForm == 'form-comment') {
+        if(error == 0){
+            $.ajax({
+                type: "POST",
+                url: "/comments/?ajax=1",
+                cache: false,
+                data: {
+                    "name":  $(parents + " input[name='name']").val(),
+                    "email": $(parents + " input[name='email']").val(),
+                    "text":  $(parents + " textarea[name='text']").val()
+                },
+
+                success: function (msg) {
+                    var response = JSON.parse(msg);
+                    if (response.warning == "ok") {
+                        setTimeout(function () {
+                            $(".hack-error").fadeIn("slow").delay(5000).fadeOut(800);
+                        }, 100);
+                    }
+                    if (response.status == "ok") {
+                        $(".form-comment form").hide(600);
+
+                        setTimeout(function () {
+                            $(".thanks").show('drop').delay(5000).fadeOut(800);
+                        }, 1100);
+
+                        setTimeout(function () {
+                            $(".form-comment form").show('drop');
+                        }, 7500);
+
+                        $(".form-comment input[type='text'], .form-comment input[type='email'], .form-comment textarea").val("");
+                    }
+                }
+            });
+        }
+
+        return false;
+
+    } else {
+        if(error == 0){
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+
+function modalPhoto() {
+    var globWindowWidth = $(window).outerWidth(true) + widthScrollY;
+
+    if (globWindowWidth > 800) {
+        $('.slider-nav .slick-current.slick-center').addClass('n-ActIndex');
+
+        var clone = $('.n-ActIndex img').clone();
+
+        $('.modalMain').append(clone);
+
+        $('.fixed-overlay').fadeIn(400, function () {
+            $('.modal').css('display', 'flex').animate({opacity: 1}, 200);
+        });
     }
 }
