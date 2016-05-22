@@ -568,7 +568,7 @@ function checkForm(parents, nameForm){
 }
 
 function modalPhoto() {
-    var globWindowWidth = $(window).outerWidth(true) + widthScrollY;
+    var globWindowWidth = $(window).outerWidth(true) + widthScroll_Y();
 
     if (globWindowWidth > 800) {
         $('.slider-nav .slick-current.slick-center').addClass('n-ActIndex');
