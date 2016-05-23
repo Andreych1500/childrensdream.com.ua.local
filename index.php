@@ -4,7 +4,7 @@ ini_set('display_errors', 0);
 header('Content-Type: text/html; charset=utf-8');
 session_start();
 
-if(preg_match('#\/catalog\/|\/product\/#ui', $_SERVER['REQUEST_URI'], $matches)) {
+if(preg_match('#\/catalog\/|\/product\/#ui', $_SERVER['REQUEST_URI'], $matches)){
     $redirectCatalog = preg_replace('#catalog|product#ui', 'products', $_SERVER['REQUEST_URI']);
     header("HTTP/1.1 301 Moved Permanently");
     header("Location: http://".$_SERVER['HTTP_HOST'].$redirectCatalog);
@@ -24,19 +24,19 @@ if(!file_exists('./'.Core::$CONT.'/'.$_GET['module'].'/'.(((Core::$CONT != 'modu
     !file_exists('./skins/'.Core::$SKIN.'/'.$_GET['module'].'/'.(((Core::$CONT != 'modules/admin' && in_array($_GET['module'], Core::$DATAIL_PAGE)) ? 'main' : $_GET['page']).'.tpl')) ||
     ((Core::$CONT != 'modules/admin') ? !file_exists('./'.Core::$CONT.'/'.$_GET['module'].'/lang/'.$lang.'/lang.php') : false) ||
     $_GET['module'] == 'error'
-) {
+){
     header("HTTP/1.0 404 Not Found");
     echo bufferStartError404($lang, $link_langs);
     exit();
 }
 
 // --- LANGS FILES ---
-if(Core::$CONT != 'modules/admin') {
+if(Core::$CONT != 'modules/admin'){
     include './'.Core::$CONT.'/lang/'.$lang.'/lang.php';
 }
 
-if(isset($_GET['module'])) {
-    if(Core::$CONT != 'modules/admin') {
+if(isset($_GET['module'])){
+    if(Core::$CONT != 'modules/admin'){
         include './'.Core::$CONT.'/'.$_GET['module'].'/lang/'.$lang.'/lang.php';
     }
 }
@@ -53,7 +53,7 @@ $content = ob_get_contents();
 ob_end_clean();
 
 // --- VIEW CONTENT ---
-if(isset($_GET['ajax'])) {
+if(isset($_GET['ajax'])){
     echo $content;
     exit();
 }
