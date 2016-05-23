@@ -36,9 +36,9 @@ if($arrOptionModule['open_graph_page']){
 }
 
 // --- COUNT COOKIE ---
-if (isset($_COOKIE['items'])) {
+if(isset($_COOKIE['items'])){
     $cookies = (array)json_decode($_COOKIE['items']);
     $countG = count($cookies);
-} else {
+} else{
     $countG = 0;
 }

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title><?=hsc(Core::$META['title']);?></title>
-  <meta name="description" content="<?=hsc(Core::$META['description']); ?>">
-  <meta name="keywords" content="<?=hsc(Core::$META['keywords']); ?>">
+  <meta name="description" content="<?=hsc(Core::$META['description']);?>">
+  <meta name="keywords" content="<?=hsc(Core::$META['keywords']);?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="author" content="Савіцький Андрій">
   <meta name="robots" content="index, follow">
@@ -13,7 +13,7 @@
   <meta name="format-detection" content="address=no">
   <meta name="wot-verification" content="bcd94738f88b9e4b84cc">
 
-  <?=(isset($contentOG)? $contentOG : "");?>
+  <?=(isset($contentOG) ? $contentOG : "");?>
 
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
