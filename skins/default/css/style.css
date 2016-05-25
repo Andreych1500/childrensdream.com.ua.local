@@ -1709,6 +1709,11 @@ a[class^="lang_"].lang_ru {
   color: #1a6ab5;
   float: left;
 }
+@media screen and (max-width: 480px) {
+  .comment-item p {
+    text-align: justify;
+  }
+}
 .comment-item time {
   color: #1a6ab5;
   font-size: 14px;
