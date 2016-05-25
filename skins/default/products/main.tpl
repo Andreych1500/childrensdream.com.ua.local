@@ -37,7 +37,7 @@
   <div class="no-element"><?=$mess['NO_ELEMETN']?></div>
   <?php } ?>
 </div>
-<section class="information-shop">
+<section class="information-shop sec-product">
   <div class="information-block">
     <h2><?=$mess['PRODUCTS_CD'];?></h2>
     <?=$mess['TEXT_PRODUCTS_CD'];?>

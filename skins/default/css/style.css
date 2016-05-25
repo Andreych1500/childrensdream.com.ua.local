@@ -1107,6 +1107,10 @@ a[class^="lang_"].lang_ru {
 .information-shop {
   background: url('/skins/default/img/pattern.png') #d4eff4;
 }
+.information-shop.sec-product {
+  margin-bottom: 20px;
+  padding: 10px 0;
+}
 .information-shop .information-block {
   margin: 0 auto;
   width: 1010px;
