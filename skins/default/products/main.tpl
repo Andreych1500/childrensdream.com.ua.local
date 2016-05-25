@@ -1,5 +1,5 @@
 <?php if($_GET['page'] == 'main'){ ?>
-<meta itemprop="name" content="<?=$mess['DETSKIE_MATRACI'];?>">
+<meta itemprop="name" content="<?=$mess['PRODUCTS_CD'];?>">
 <div class="products" itemscope itemtype="http://schema.org/ItemList">
   <div class="block-title">
     <span class="line"></span>
@@ -37,6 +37,13 @@
   <div class="no-element"><?=$mess['NO_ELEMETN']?></div>
   <?php } ?>
 </div>
+<article itemscope itemtype="http://schema.org/Article" class="information-shop">
+  <div class="information-block">
+    <h1 itemprop="name"><?=$mess['PRODUCTS_CD'];?></h1>
+    <meta itemprop="inLanguage" content="<?=(($lang == 'ua')? 'uk' : $lang)?>">
+    <section itemprop="articleBody"><?=$mess['TEXT_PRODUCTS_CD'];?></section>
+  </div>
+</article>
 
 <?php } else { ?>
 

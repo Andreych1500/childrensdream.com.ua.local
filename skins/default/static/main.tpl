@@ -19,11 +19,7 @@
       <p class="title-text"><?=$mess['ABOUT_US'];?></p>
       <span class="line"></span>
     </div>
-    <p><?=$mess['ABOUT_TEXT1'];?></p>
-    <p><?=$mess['ABOUT_TEXT2'];?></p>
-    <p><?=$mess['ABOUT_TEXT3'];?></p>
-    <p><?=$mess['ABOUT_TEXT4'];?></p>
-    <p><?=$mess['ABOUT_TEXT5'];?></p>
+    <?=$mess['ABOUT_TEXT'];?>
     <img src="/skins/default/img/cd-static.png" alt="Children's Dream" title="Children's Dream">
   </div>
 </div>
@@ -74,13 +70,11 @@
 <div class="information-shop">
   <div class="information-block">
     <h1 itemprop="name"><?=$mess['MAIN_TEXT_H1'];?></h1>
-    <p><?=$mess['MAIN_TEXT1'];?><strong><?=$mess['MAIN_TEXT2'];?></strong> <?=$mess['MAIN_TEXT3'];?></p>
-    <p><?=$mess['MAIN_TEXT4'];?></p>
-    <p><?=$mess['MAIN_TEXT5'];?></p>
+    <?=$mess['MAIN_TEXT']?>
     <ul>
-      <li><strong><?=$mess['MAIN_TEXT_LIST1'];?></strong><?=$mess['MAIN_TEXT_LIST2'];?></li>
-      <li><strong><?=$mess['MAIN_TEXT_LIST3'];?></strong><?=$mess['MAIN_TEXT_LIST4'];?></li>
-      <li><strong><?=$mess['MAIN_TEXT_LIST5'];?></strong><?=$mess['MAIN_TEXT_LIST6'];?></li>
+      <li><?=$mess['MAIN_TEXT_LIST1'];?></li>
+      <li><?=$mess['MAIN_TEXT_LIST2'];?></li>
+      <li><?=$mess['MAIN_TEXT_LIST3'];?></li>
     </ul>
   </div>
 </div>
@@ -107,7 +101,7 @@
       <li><?=$mess['SERVICES_TEXT10'];?></li>
       <li><?=$mess['SERVICES_TEXT11'];?></li>
       <li><?=$mess['SERVICES_TEXT12'];?></li>
-      <li><?=$mess['SERVICES_TEXT13'];?><strong><?=$mess['SERVICES_TEXT14'];?></strong></li>
+      <li><?=$mess['SERVICES_TEXT13'];?></li>
     </ul>
     <img src="/skins/default/img/car.png" alt="<?=$mess['SERVICES_TEXT0'];?>" title="<?=$mess['SERVICES_TEXT0'];?>">
   </div>
@@ -124,7 +118,7 @@
     <p class="info-call this-ok"><?=$mess['OK_MESSAGE1']?></p>
     <p><?=$mess['OK_MESSAGE2']?></p>
   <?php } else { ?>
-    <p class="info-call"><?=$mess['CALL_TEXT1']?><b><?=$mess['CALL_TEXT2']?></b><?=$mess['CALL_TEXT3']?><b><?=$mess['CALL_TEXT4']?></b>, <b><?=$mess['CALL_TEXT5']?></b></p>
+    <p class="info-call"><?=$mess['MAIN_CALL_TEXT']?></p>
     <form action="#call" method="post" onsubmit="return checkForm('.contact', 'form-contact');">
       <div class="name-email">
         <p><?=$mess['CALL_NAME']?><span>*</span></p>
