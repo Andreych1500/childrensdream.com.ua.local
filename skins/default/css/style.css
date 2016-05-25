@@ -1676,6 +1676,11 @@ a[class^="lang_"].lang_ru {
   font: 19px ComicSansMS;
   margin-top: 10px;
 }
+@media screen and (max-width: 480px) {
+  .view-comments h3 + p {
+    text-align: justify;
+  }
+}
 .view-comments h3 span {
   font-size: 24px;
 }
