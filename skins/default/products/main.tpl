@@ -37,13 +37,12 @@
   <div class="no-element"><?=$mess['NO_ELEMETN']?></div>
   <?php } ?>
 </div>
-<article itemscope itemtype="http://schema.org/Article" class="information-shop">
+<section class="information-shop">
   <div class="information-block">
-    <h1 itemprop="name"><?=$mess['PRODUCTS_CD'];?></h1>
-    <meta itemprop="inLanguage" content="<?=(($lang == 'ua')? 'uk' : $lang)?>">
-    <section itemprop="articleBody"><?=$mess['TEXT_PRODUCTS_CD'];?></section>
+    <h2><?=$mess['PRODUCTS_CD'];?></h2>
+    <?=$mess['TEXT_PRODUCTS_CD'];?>
   </div>
-</article>
+</section>
 
 <?php } else { ?>
 
