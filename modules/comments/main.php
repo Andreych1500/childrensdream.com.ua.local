@@ -1,5 +1,5 @@
 <?php
-Core::$JS[] =  '<script src="/skins/default/js/chekForm.js?v='.$vF.'" defer></script>';
+Core::$JS[] =  '<script src="/skins/default/js/chekForm.min.js?v='.$vF.'" defer></script>';
 
 // --- ADD COMMENTS ---
 if(isset($_POST['name'], $_POST['text'], $_POST['email'])){

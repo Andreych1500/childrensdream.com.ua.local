@@ -2,7 +2,7 @@
 Core::$JS[] = '<script src="//code.jquery.com/jquery-1.11.0.min.js" defer></script>';
 Core::$JS[] = '<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js" defer></script>';
 Core::$JS[] = '<script src="/vendor/public/slick-carousel/slick/slick.min.js" defer></script>';
-Core::$JS[] = '<script src="/skins/default/js/slide-el.js?v='.$vF.'" defer></script>';
+Core::$JS[] = '<script src="/skins/default/js/slide-el.min.js?v='.$vF.'" defer></script>';
 
 if($_GET['page'] == 'main'){
 
