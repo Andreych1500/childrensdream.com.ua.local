@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title><?=hsc(Core::$META['title']);?></title>
+  <meta name="apple-mobile-web-app-title" content="<?=hsc(Core::$META['title']);?>">
   <meta name="description" content="<?=hsc(Core::$META['description']);?>">
   <meta name="keywords" content="<?=hsc(Core::$META['keywords']);?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
