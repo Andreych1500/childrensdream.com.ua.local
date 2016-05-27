@@ -12,6 +12,8 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="format-detection" content="address=no">
   <meta name="wot-verification" content="bcd94738f88b9e4b84cc">
+  <meta name="yandex-verification" content="5854273bd6955a00">
+  <meta name="google-site-verification" content="NG_BJLREDe6ifpCdXCwIABOgW_P7cRVrcl8lNueh3os">
 
   <?=(isset($contentOG) ? $contentOG : "");?>
 
