@@ -56,7 +56,7 @@
       <a class="logo" href="<?=$link_langs?>"><img src="/skins/default/img/logo.png" alt="Children's Dream" title="Children's Dream"></a>
       <a class="lang_ua <?=(($link_langs == '/')? 'act-lang' : '')?>" href="/<?=Core::$SITE_DIR?>">UA</a>
       <a class="lang_ru <?=(($link_langs == '/ru/')? 'act-lang' : '')?>" href="/ru/<?=Core::$SITE_DIR?>">RU</a>
-      <a class="mobile-basket" href="<?=$link_langs?>order/"><?=$mess['BASKET']?> <span><?=(int)$countG?></span></a>
+      <a class="mobile-basket" href="<?=$link_langs?>order/" rel="nofollow"><?=$mess['BASKET']?> <span><?=(int)$countG?></span></a>
       <div class="mob-menu" onclick="showHide(this);"><span class="icon-mob-menu"></span><?=$mess['MOBILE_MENU']?></div>
       <a class="call-us" href="<?=(isMobile() ? 'tel' : 'callto')?>:38-098-570-43-77"><?=$mess['CONTACT_INFO']?> +38 (098) 570-43-77</a>
 
@@ -67,7 +67,7 @@
           <li><a href="<?=$link_langs?>#payment"  itemprop="url"><span itemprop="name"><?=$mess['SERVICES']?></span></a></li>
           <li><a href="<?=$link_langs?>#call"     itemprop="url"><span itemprop="name"><?=$mess['CONTACTS']?></span></a></li>
           <li><a href="<?=$link_langs?>comments/" itemprop="url"><span itemprop="name"><?=$mess['OTZUVU']?></span></a></li>
-          <li><a href="<?=$link_langs?>order/"    itemprop="url"><?=$mess['BASKET']?><span><?=(int)$countG?></span></a></li>
+          <li><a href="<?=$link_langs?>order/"    itemprop="url" rel="nofollow"><?=$mess['BASKET']?><span><?=(int)$countG?></span></a></li>
         </ul>
         <span class="menu-icon"></span>
       </nav>
