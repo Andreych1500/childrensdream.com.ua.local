@@ -3,7 +3,7 @@
 <div class="products" itemscope itemtype="http://schema.org/ItemList">
   <div class="block-title">
     <span class="line"></span>
-    <h1 itemprop="name"><?=$mess['DETSKIE_MATRACI'];?></h1>
+    <h2 itemprop="name"><?=$mess['DETSKIE_MATRACI'];?></h2>
     <span class="line"></span>
   </div>
 
@@ -39,7 +39,7 @@
 </div>
 <section class="information-shop sec-product">
   <div class="information-block">
-    <h2><?=$mess['PRODUCTS_CD'];?></h2>
+    <h1><?=$mess['PRODUCTS_CD'];?></h1>
     <?=$mess['TEXT_PRODUCTS_CD'];?>
   </div>
 </section>
