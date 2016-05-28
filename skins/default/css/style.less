@@ -153,7 +153,7 @@ main{
   }
 
   @media screen and (max-width: 580px) {
-    padding-bottom: 167px;
+    padding-bottom: 182px;
   }
 }
 
@@ -724,6 +724,10 @@ a[class^="lang_"]{
     margin-top: 20px;
   }
 
+  @media screen and (max-width: 380px){
+    margin-top: 1px;
+  }
+
   p{
     font-size:14px;
     font-weight: bold;
@@ -753,6 +757,32 @@ a[class^="lang_"]{
       .opacity(0.9);
     }
   }
+}
+
+.access_ok{
+  display: inline-block;
+
+  @media screen and (max-width: 400px) {
+    display: block;
+  }
+}
+
+.live-internet{
+  display: inline-block;
+  height: 31px;
+  top: 4px;
+  left: 13px;
+  position: relative;
+
+  @media screen and (max-width: 400px) {
+    display: inline;
+    position: static;
+  }
+}
+
+.yandex-metrika{
+  position:absolute;
+  left:-9999px;
 }
 // --- END FOOTER ---
 
