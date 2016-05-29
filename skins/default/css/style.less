@@ -1395,15 +1395,18 @@ a[class^="lang_"]{
     left: 20px;
     top: 35px;
 
-    @media screen and (max-width: 800px){
-      top: 0;
-      width:90%;
-
+    @media screen and (min-width: 799px){
       .slick-active img{
         &:hover{
           cursor: zoom-in;
         }
       }
+    }
+
+
+    @media screen and (max-width: 800px){
+      top: 0;
+      width:90%;
     }
 
     @media screen and (max-width: 512px){
