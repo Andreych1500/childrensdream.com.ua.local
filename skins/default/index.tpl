@@ -92,8 +92,8 @@
             ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
               screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
             ";"+Math.random()+
-            "' alt='' title='LiveInternet: показано число просмотров за 24"+
-            " часа, посетителей за 24 часа и за сегодня' "+
+            "' alt='' title='LiveInternet: показано число просмотров, "+
+            "посетителей за 24 часа и за сегодня' "+
             "border='0' width='88' height='31'><\/a>")
           //--></script><!--/LiveInternet-->
       </div>
