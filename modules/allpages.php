@@ -22,12 +22,12 @@ Core::$META['description'] = hsc($arrOptionModule['meta_description_'.$lang]);
 Core::$META['keywords'] = hsc($arrOptionModule['meta_keywords_'.$lang]);
 
 // --- CANONICAL ---
-Core::$META['canonical'] = Core::$DOCUMENT_ROOT.(($lang == 'ua')? '/' : '/ru/').(($arrOptionModule['module'] == 'static')? '' : $arrOptionModule['module'].'/');
+Core::$META['canonical'] = Core::$DOCUMENT_ROOT.(($lang == 'ua')? (($arrOptionModule['module'] == 'static')? '' : '/'): '/ru/').(($arrOptionModule['module'] == 'static')? '' : $arrOptionModule['module'].'/');
 
 // --- ALTERNATE LANG ---
 $module_url = (($arrOptionModule['module'] == 'static')? '' : $arrOptionModule['module'].'/');
-Core::$META['alternate'] = Core::$DOCUMENT_ROOT.(($lang == 'ua')? '/' : '/ru/').$module_url;
-Core::$META['alternate_ua'] = Core::$DOCUMENT_ROOT.'/'.$module_url;
+Core::$META['alternate'] = Core::$DOCUMENT_ROOT.(($lang == 'ua')? (($arrOptionModule['module'] == 'static')? '' : '/'): '/ru/').$module_url;
+Core::$META['alternate_ua'] = Core::$DOCUMENT_ROOT.(($arrOptionModule['module'] == 'static')? '' : '/').$module_url;
 Core::$META['alternate_ru'] = Core::$DOCUMENT_ROOT.'/ru/'.$module_url;
 
 
