@@ -2,9 +2,6 @@
 <html lang="<?=(($lang == 'ua')? 'uk' : $lang)?>" <?=(isset($contentOG)? 'prefix="og: http://ogp.me/ns#"' : "");?>>
 <head>
   <meta charset="UTF-8">
-  <?php foreach(Core::$META['dns-prefetch'] as $v){ ?>
-  <link rel="dns-prefetch" href="<?=$v?>">
-  <?php } ?>
   <title><?=hsc(Core::$META['title']);?></title>
   <meta name="apple-mobile-web-app-title" content="<?=hsc(Core::$META['title']);?>">
   <meta name="description" content="<?=hsc(Core::$META['description']);?>">
@@ -18,6 +15,14 @@
   <meta name="wot-verification" content="bcd94738f88b9e4b84cc">
   <meta name="yandex-verification" content="5854273bd6955a00">
   <meta name="google-site-verification" content="NG_BJLREDe6ifpCdXCwIABOgW_P7cRVrcl8lNueh3os">
+
+  <?php foreach(Core::$META['dns-prefetch'] as $v){ ?>
+    <link rel="dns-prefetch" href="<?=$v?>">
+  <?php } ?>
+  <link rel="canonical" href="<?=Core::$META['canonical']?>">
+  <link rel="alternate" href="<?=Core::$META['alternate']?>" hreflang="x-default">
+  <link rel="alternate" href="<?=Core::$META['alternate_ua']?>" hreflang="uk">
+  <link rel="alternate" href="<?=Core::$META['alternate_ru']?>" hreflang="ru">
 
   <?=(isset($contentOG) ? $contentOG : "");?>
 
@@ -119,7 +124,7 @@
     ga('create', 'UA-78459198-1', 'auto');
     ga('send', 'pageview');
   </script>
-  <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter37623530 = new Ya.Metrika({ id:37623530, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script>
+  <script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter37623530 = new Ya.Metrika({ id:37623530, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script>
   <noscript><div><img src="https://mc.yandex.ru/watch/37623530" class="yandex-metrika" alt="Yandex Metrika love Children's Dream"></div></noscript>
 </body>
 </html>

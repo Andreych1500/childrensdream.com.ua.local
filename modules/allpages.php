@@ -1,4 +1,5 @@
 <?php
+// --- DNS LOADING ASYNCHRONOUS
 Core::$META['dns-prefetch'] = array(
     0 => 'https://www.google-analytics.com',
     1 => 'https://mc.yandex.ru',
@@ -19,6 +20,16 @@ $arrOptionModule = $res->fetch_assoc();
 Core::$META['title'] = hsc($arrOptionModule['meta_title_'.$lang]);
 Core::$META['description'] = hsc($arrOptionModule['meta_description_'.$lang]);
 Core::$META['keywords'] = hsc($arrOptionModule['meta_keywords_'.$lang]);
+
+// --- CANONICAL ---
+Core::$META['canonical'] = Core::$DOCUMENT_ROOT.(($lang == 'ua')? '/' : '/ru/').(($arrOptionModule['module'] == 'static')? '' : $arrOptionModule['module'].'/');
+
+// --- ALTERNATE LANG ---
+$module_url = (($arrOptionModule['module'] == 'static')? '' : $arrOptionModule['module'].'/');
+Core::$META['alternate'] = Core::$DOCUMENT_ROOT.(($lang == 'ua')? '/' : '/ru/').$module_url;
+Core::$META['alternate_ua'] = Core::$DOCUMENT_ROOT.'/'.$module_url;
+Core::$META['alternate_ru'] = Core::$DOCUMENT_ROOT.'/ru/'.$module_url;
+
 
 // --- RDFa OPEN GRAPH ---
 if($arrOptionModule['open_graph_page']){
