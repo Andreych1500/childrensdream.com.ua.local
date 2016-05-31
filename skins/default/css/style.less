@@ -533,7 +533,7 @@ a[class^="lang_"]{
   font-family: @font-Comic;
   color:@color-text;
   cursor: pointer;
-  margin: 10px 30px 10px 0;
+  margin: 10px 20px 10px 0;
   .transition(color 0.7s ease);
 
   &.aciveMenu{
@@ -1395,7 +1395,7 @@ a[class^="lang_"]{
     left: 20px;
     top: 35px;
 
-    @media screen and (min-width: 799px){
+    @media screen and (min-width: 801px){
       .slick-active img{
         &:hover{
           cursor: zoom-in;
@@ -1403,10 +1403,15 @@ a[class^="lang_"]{
       }
     }
 
-
     @media screen and (max-width: 800px){
       top: 0;
       width:90%;
+
+      .slick-active img{
+        &:hover{
+          cursor: default;
+        }
+      }
     }
 
     @media screen and (max-width: 512px){

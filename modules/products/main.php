@@ -36,6 +36,15 @@ if($_GET['page'] == 'main'){
     Core::$META['keywords'] = $arResult['meta_keywords_'.$lang];
     Core::$META['description'] = $arResult['meta_description_'.$lang];
 
+    // --- CANONICAL ---
+    Core::$META['canonical'] = Core::$DOCUMENT_ROOT.(($lang == 'ua')? '/' : '/ru/').(($arrOptionModule['module'] == 'static')? '' : $arrOptionModule['module'].'/'.$arResult['seo_name'].'/');
+
+    // --- ALTERNATE LANG ---
+    $module_url = (($arrOptionModule['module'] == 'static')? '' : $arrOptionModule['module'].'/'.$arResult['seo_name'].'/');
+    Core::$META['alternate'] = Core::$DOCUMENT_ROOT.(($lang == 'ua')? '/' : '/ru/').$module_url;
+    Core::$META['alternate_ua'] = Core::$DOCUMENT_ROOT.'/'.$module_url;
+    Core::$META['alternate_ru'] = Core::$DOCUMENT_ROOT.'/ru/'.$module_url;
+
     // --- RDFa OPEN GRAPH ---
     if($arrOptionModule['open_graph_page']){
         $contentOG = '';
