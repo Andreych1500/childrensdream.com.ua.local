@@ -5,10 +5,6 @@ Core::$META['dns-prefetch'] = array(
     2 => 'http://counter.yadro.ru',
     3 => Core::$DOCUMENT_ROOT,
 );
-Core::$META['prefetch'] = array(
-    0 => '/skins/default/img/logo.png',
-    1 => '/skins/default/img/footer-logo.png',
-);
 
 // --- SEO META TAGS ---
 $res = q("
@@ -29,7 +25,7 @@ if($arrOptionModule['open_graph_page']){
     $contentOG = '';
 
     $contentOG .= '<meta property="og:title" content="'.hsc($arrOptionModule['meta_title_'.$lang]).'">
-    <meta property="og:description"  content="'.hsc($arrOptionModule['meta_description_'.$lang]).'">';
+            <meta property="og:description"  content="'.hsc($arrOptionModule['meta_description_'.$lang]).'">';
 
     if(!empty($arrOptionModule['og_type'])){
         $contentOG .= '<meta property="og:type" content="'.hsc($arrOptionModule['og_type']).'">';
@@ -50,6 +46,7 @@ if($arrOptionModule['open_graph_page']){
 if(isset($_COOKIE['items'])){
     $cookies = (array)json_decode($_COOKIE['items']);
     $countG = count($cookies);
-} else{
+}
+else{
     $countG = 0;
 }
