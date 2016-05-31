@@ -2,6 +2,13 @@
 <html lang="<?=(($lang == 'ua')? 'uk' : $lang)?>" <?=(isset($contentOG)? 'prefix="og: http://ogp.me/ns#"' : "");?>>
 <head>
   <meta charset="UTF-8">
+  <?php foreach(Core::$META['dns-prefetch'] as $v){ ?>
+  <link rel="dns-prefetch" href="<?=$v?>">
+  <?php } ?>
+  <?php foreach(Core::$META['prefetch'] as $v){ ?>
+  <link rel="prefetch" href="<?=$v?>">
+  <?php } ?>
+
   <title><?=hsc(Core::$META['title']);?></title>
   <meta name="apple-mobile-web-app-title" content="<?=hsc(Core::$META['title']);?>">
   <meta name="description" content="<?=hsc(Core::$META['description']);?>">

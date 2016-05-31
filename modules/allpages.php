@@ -1,4 +1,15 @@
 <?php
+Core::$META['dns-prefetch'] = array(
+    0 => 'https://www.google-analytics.com',
+    1 => 'https://mc.yandex.ru',
+    2 => 'http://counter.yadro.ru',
+    3 => Core::$DOCUMENT_ROOT,
+);
+Core::$META['prefetch'] = array(
+    0 => '/skins/default/img/logo.png',
+    1 => '/skins/default/img/footer-logo.png',
+);
+
 // --- SEO META TAGS ---
 $res = q("
     SELECT *
