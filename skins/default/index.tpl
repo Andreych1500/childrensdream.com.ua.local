@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="<?=(($lang == 'ua')? 'uk' : $lang)?>" <?=(isset($contentOG)? 'prefix="og: http://ogp.me/ns#"' : "");?>>
+<html lang="<?=(($lang == 'ua')? 'uk' : $lang)?>" <?=(isset($contentOG)? 'prefix="og: http://ogp.me/ns#"' : "")?>>
 <head>
   <meta charset="UTF-8">
-  <title><?=hsc(Core::$META['title']);?></title>
-  <meta name="apple-mobile-web-app-title" content="<?=hsc(Core::$META['title']);?>">
-  <meta name="description" content="<?=hsc(Core::$META['description']);?>">
-  <meta name="keywords" content="<?=hsc(Core::$META['keywords']);?>">
+  <title><?=Core::$META['title']?></title>
+  <meta name="apple-mobile-web-app-title" content="<?=Core::$META['title']?>">
+  <meta name="description" content="<?=Core::$META['description']?>">
+  <meta name="keywords" content="<?=Core::$META['keywords']?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="author" content="Савіцький Андрій">
   <meta name="robots" content="index, follow">
@@ -20,11 +20,13 @@
     <link rel="dns-prefetch" href="<?=$v?>">
   <?php } ?>
   <link rel="canonical" href="<?=Core::$META['canonical']?>">
-  <link rel="alternate" href="<?=Core::$META['alternate']?>" hreflang="x-default">
-  <link rel="alternate" href="<?=Core::$META['alternate_ua']?>" hreflang="uk">
-  <link rel="alternate" href="<?=Core::$META['alternate_ru']?>" hreflang="ru">
 
-  <?=(isset($contentOG) ? $contentOG : "");?>
+  <link rel="alternate" href="<?=Core::$META['alternate']?>" hreflang="x-default">
+  <?php foreach(Core::$LINK_LANG as $k => $v){
+    echo '<link rel="alternate" href="'.Core::$META['alternate_'.$v].'" hreflang="'.(($v == 'ua')? 'uk' : $v).'">';
+  } ?>
+
+  <?=(isset($contentOG)? $contentOG : "")?>
 
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
@@ -33,19 +35,21 @@
   <link rel="apple-touch-icon" sizes="120x120" href="/touch-icon-iphone-retina.png">
   <link rel="apple-touch-icon" sizes="152x152" href="/touch-icon-ipad-retina.png">
 
-  <link href="/skins/<?=Core::$SKIN; ?>/css/style.min.css?v=<?=$vF?>" rel="stylesheet">
-  <!--[if lt IE 9]><script src="/skins/default/js/ielt9.min.js" defer></script><![endif]-->
+  <link href="/skins/<?=Core::$SKIN?>/css/style.min.css?v=<?=$vF?>" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="/skins/default/js/ielt9.min.js" defer></script><![endif]-->
 
   <script src="/vendor/public/jquery/dist/jquery.min.js" defer></script>
-  <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
+  <script src="/vendor/public/jquery.cookie/jquery.cookie.min.js" defer></script>
+  <?=(count(Core::$JS)? implode("\n", Core::$JS) : '')?>
   <script src="/skins/default/js/script.min.js?v=<?=$vF?>" defer></script>
 
   <script type="application/ld+json">
     {
       "@context": "http://schema.org",
       "@type": "Organization",
-      "url" : "<?=Core::$DOCUMENT_ROOT.(($link_langs == '/')? '/' : '/ru/');?>",
-      "logo" : "<?=Core::$DOCUMENT_ROOT;?>/skins/default/img/logo.png",
+      "url" : "<?=$_SERVER['DOCUMENT_ROOT'].$link_lang?>",
+      "logo" : "<?=$_SERVER['DOCUMENT_ROOT']?>/skins/default/img/logo.png",
       "name": "Children's Dream",
       "telephone": "+38 (098) 57-04-377",
       "email": "cdmatrasses@gmail.com",
@@ -59,70 +63,67 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <meta itemprop="description" content="<?=Core::$META['description'];?>">
-  <header itemscope itemtype="http://schema.org/WPHeader">
-    <div class="header-block">
-      <a class="logo" href="<?=$link_langs?>"><img src="/skins/default/img/logo.png" alt="Children's Dream" title="Children's Dream"></a>
-      <a class="lang_ua <?=(($link_langs == '/')? 'act-lang' : '')?>" href="/<?=Core::$SITE_DIR?>">UA</a>
-      <a class="lang_ru <?=(($link_langs == '/ru/')? 'act-lang' : '')?>" href="/ru/<?=Core::$SITE_DIR?>">RU</a>
-      <a class="mobile-basket" href="<?=$link_langs?>order/" rel="nofollow"><?=$mess['BASKET']?> <span><?=(int)$countG?></span></a>
-      <div class="mob-menu" onclick="showHide(this);"><span class="icon-mob-menu"></span><?=$mess['MOBILE_MENU']?></div>
-      <a class="call-us" href="<?=(isMobile() ? 'tel' : 'callto')?>:38-098-570-43-77"><?=$mess['CONTACT_INFO']?> +38 (098) 570-43-77</a>
+<meta itemprop="description" content="<?=Core::$META['description']?>">
+<header itemscope itemtype="http://schema.org/WPHeader">
+  <div class="header-block">
+    <a class="logo" href="<?=$link_lang?>"><img src="/skins/default/img/logo.png" alt="Children's Dream" title="Children's Dream"></a>
+    <?php foreach(Core::$LINK_LANG as $k => $v){ ?>
+      <a class="lang_<?=$v?> <?=(($lang == $v)? 'act-lang' : '')?>" href="<?=(($v == 'ua')? '/' : '/'.$v.'/').Core::$SITE_DIR?>"><?=strtoupper($v)?></a>
+    <?php } ?>
+    <a class="mobile-basket" href="<?=$link_lang?>order/" rel="nofollow"><?=$mess['BASKET']?>
+      <span><?=(int)$countG?></span></a>
+    <div class="mob-menu" onclick="showHide(this);"><span class="icon-mob-menu"></span><?=$mess['MOBILE_MENU']?></div>
+    <a class="call-us" href="<?=(isMobile()? 'tel' : 'callto')?>:38-098-570-43-77"><?=$mess['CONTACT_INFO']?> +38 (098) 570-43-77</a>
 
-      <nav class="top-menu" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
-        <ul>
-          <li><a href="<?=$link_langs?>#about"    itemprop="url"><span itemprop="name"><?=$mess['ABOUT_US']?></span></a></li>
-          <li><a href="<?=$link_langs?>products/" itemprop="url"><span itemprop="name"><?=$mess['PRODUCTION']?></span></a></li>
-          <li><a href="<?=$link_langs?>#payment"  itemprop="url"><span itemprop="name"><?=$mess['SERVICES']?></span></a></li>
-          <li><a href="<?=$link_langs?>#call"     itemprop="url"><span itemprop="name"><?=$mess['CONTACTS']?></span></a></li>
-          <li><a href="<?=$link_langs?>comments/" itemprop="url"><span itemprop="name"><?=$mess['OTZUVU']?></span></a></li>
-          <li><a href="<?=$link_langs?>order/"    itemprop="url" rel="nofollow"><?=$mess['BASKET']?><span><?=(int)$countG?></span></a></li>
-        </ul>
-        <span class="menu-icon"></span>
-      </nav>
+    <nav class="top-menu" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+      <ul>
+        <li><a href="<?=$link_lang?>#about" itemprop="url"><span itemprop="name"><?=$mess['ABOUT_US']?></span></a></li>
+        <li><a href="<?=$link_lang?>products/" itemprop="url"><span itemprop="name"><?=$mess['PRODUCTION']?></span></a>
+        </li>
+        <li><a href="<?=$link_lang?>#payment" itemprop="url"><span itemprop="name"><?=$mess['SERVICES']?></span></a>
+        </li>
+        <li><a href="<?=$link_lang?>#call" itemprop="url"><span itemprop="name"><?=$mess['CONTACTS']?></span></a></li>
+        <li><a href="<?=$link_lang?>comments/" itemprop="url"><span itemprop="name"><?=$mess['OTZUVU']?></span></a></li>
+        <li><a href="<?=$link_lang?>order/" itemprop="url" rel="nofollow"><?=$mess['BASKET']?>
+            <span><?=(int)$countG?></span></a></li>
+      </ul>
+      <span class="menu-icon"></span>
+    </nav>
 
-      <div class="toTop"><?=$mess['TO_TOP']?></div>
+    <div class="toTop"><?=$mess['TO_TOP']?></div>
+  </div>
+</header>
+
+<main><?=$content?></main>
+
+<footer itemscope itemtype="http://schema.org/WPFooter">
+  <div class="footer-block">
+    <img class="logo-img" src="/skins/default/img/footer-logo.png" alt="Children's Dream" title="Children's Dream">
+    <div class="development-site">
+      <p>&copy;<?=data(Core::$DATA).$mess['FOOTER_TOP']?></p>
+      <p class="access_ok"><?=$mess['GOOD_ACCES']?></p>
+      <!--LiveInternet counter-->
+      <script type="text/javascript">document.write("<a class='live-internet' rel='nofollow' href='//www.liveinternet.ru/click' target=_blank><img src='//counter.yadro.ru/hit?t14.11;r" + escape(document.referrer) + ((typeof(screen) == "undefined") ? "" : ";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ? screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) + ";" + Math.random() + "' border=0 width=88 height=31 alt='' title='LiveInternet: показано число просмотров, посетителей за 24 часа и за сегодня'><\/a>")</script>
     </div>
-  </header>
-
-  <main><?=$content?></main>
-
-  <footer itemscope itemtype="http://schema.org/WPFooter">
-    <div class="footer-block">
-      <img class="logo-img" src="/skins/default/img/footer-logo.png" alt="Children's Dream" title="Children's Dream">
-      <div class="development-site">
-        <p>&copy;<?=data(Core::$CREATED).$mess['FOOTER_TOP']?></p>
-        <p class="access_ok"><?=$mess['GOOD_ACCES']?></p>
-        <!--LiveInternet counter--><script type="text/javascript"><!--
-          document.write("<a class='live-internet' rel='nofollow' href='//www.liveinternet.ru/click' "+
-            "target=_blank><img src='//counter.yadro.ru/hit?t14.11;r"+
-            escape(document.referrer)+((typeof(screen)=="undefined")?"":
-            ";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
-              screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
-            ";"+Math.random()+
-            "' alt='' title='LiveInternet: показано число просмотров, "+
-            "посетителей за 24 часа и за сегодня' "+
-            "border='0' width='88' height='31'><\/a>")
-          //--></script><!--/LiveInternet-->
-      </div>
-      <div class="soc-link">
-        <p><?=$mess['SOC_LINK']?></p>
-        <a href="//www.facebook.com/tmchildrensdream" target="_blank" class="icon-facebook"></a>
-        <a href="//vk.com/tmchildrensdream" target="_blank" class="icon-vkontakte"></a>
-        <a href="//plus.google.com/101299485141835241705" target="_blank" class="icon-google-plus3" rel="publisher"></a>
-        <a href="//www.instagram.com/tm_childrens_dream" target="_blank" class="icon-instagram"></a>
-      </div>
+    <div class="soc-link">
+      <p><?=$mess['SOC_LINK']?></p>
+      <a href="//www.facebook.com/tmchildrensdream" target="_blank" class="icon-facebook"></a>
+      <a href="//vk.com/tmchildrensdream" target="_blank" class="icon-vkontakte"></a>
+      <a href="//plus.google.com/101299485141835241705" target="_blank" class="icon-google-plus3" rel="publisher"></a>
+      <a href="//www.instagram.com/tm_childrens_dream" target="_blank" class="icon-instagram"></a>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <script>
-    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-    ga('create', 'UA-78459198-1', 'auto');
-    ga('send', 'pageview');
-  </script>
-  <script src="https://mc.yandex.ru/metrika/watch.js" type="text/javascript"></script><script type="text/javascript"> try { var yaCounter37623530 = new Ya.Metrika({ id:37623530, clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true }); } catch(e) { } </script> <noscript><div><img src="https://mc.yandex.ru/watch/37623530" class="yandex-metrika" alt="Yandex Metrika love Children's Dream"></div></noscript>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-78459198-1', 'auto');
+  ga('send', 'pageview');
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter37623530 = new Ya.Metrika({ id:37623530, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script><noscript><div><img src="https://mc.yandex.ru/watch/37623530" class="yandex-metrika" alt="Yandex Metrika love Children's Dream"></div></noscript>
 </body>
 </html>

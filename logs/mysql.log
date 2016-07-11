@@ -1,199 +1,286 @@
 ﻿QUERY:
-    SELECT `id`,`name_ua`,`seo_name`,`price`,`availability`,`cAnonsPhoto`,`name_ru`,`img_seo_alt_ua`,`img_seo_alt_ru`
-    FROM `products`
-    WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
-    LIMIT -1,8
-
-You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-1,8' at line 4
-file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\static\main.php
-line: 102
-date: 2016-05-03 18:58:38
-===================================
-
-QUERY: UPDATE `pages` SET
-		    `meta_title_ua`       = 'Продукція дитячих матраців | Children\'s Dream',
-		    `meta_keywords_ua`    = 'Дитячі матраци, ортопедичні, екологічно чисті матраци',
-		    `meta_description_ua` = 'Продукція дитячих матраців Children’s Dream. До складу матраців входять якісні матеріали.  Не деформується під впливом довгострокового тиску',
-		    `meta_title_ru`       = 'Продукция детских матрасов | Children\'s Dream',
-		    `meta_keywords_ru`    = 'Детские матрасы, ортопедические, экологически чистые матрасы',
-		    `meta_description_ru` = 'Продукция детских матрасов Children’s Dream. В состав матрасов входят качественные материалы. Не деформируется под воздействием долгосрочного давления',
-		    `user_custom`         = 'Савіцький Андрій',
-		    `open_graph_page`     = '1',
-		    `og_title_ua_ru`      = 'zz',
-			 WHERE `id`    = 16
-		
-You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `id`    = 16' at line 11
-file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\main-module\edit.php
-line: 42
-date: 2016-05-16 16:23:19
-===================================
-
-QUERY: UPDATE `pages` SET
-		    `meta_title_ua`        = 'Продукція дитячих матраців | Children\'s Dream',
-		    `meta_keywords_ua`     = 'Дитячі матраци, ортопедичні, екологічно чисті матраци',
-		    `meta_description_ua`  = 'Продукція дитячих матраців Children’s Dream. До складу матраців входять якісні матеріали.  Не деформується під впливом довгострокового тиску',
-		    `meta_title_ru`        = 'Продукция детских матрасов | Children\'s Dream',
-		    `meta_keywords_ru`     = 'Детские матрасы, ортопедические, экологически чистые матрасы',
-		    `meta_description_ru`  = 'Продукция детских матрасов Children’s Dream. В состав матрасов входят качественные материалы. Не деформируется под воздействием долгосрочного давления',
-		    `user_custom`          = 'Савіцький Андрій',
-		    `open_graph_page`      = '1',
-		    `og_title_ua_ru`       = 'Продукція дитячих матраців | Children\\\\\\\\\\\\\\\'s Dream#Продукция детских матрасов | Children\\\\\\\\\\\\\\\'s Dream',
-		    `og_description_ua_ru` = ''
-			 WHERE `id`    = 16
-		
-Unknown column 'og_description_ua_ru' in 'field list'
-file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\main-module\edit.php
-line: 42
-date: 2016-05-16 16:55:41
-===================================
-
-QUERY: UPDATE `pages` SET
-		    `meta_title_ua`        = 'Продукція дитячих матраців | Children\'s Dream',
-		    `meta_keywords_ua`     = 'Дитячі матраци, ортопедичні, екологічно чисті матраци',
-		    `meta_description_ua`  = 'Продукція дитячих матраців Children’s Dream. До складу матраців входять якісні матеріали.  Не деформується під впливом довгострокового тиску',
-		    `meta_title_ru`        = 'Продукция детских матрасов | Children\'s Dream',
-		    `meta_keywords_ru`     = 'Детские матрасы, ортопедические, экологически чистые матрасы',
-		    `meta_description_ru`  = 'Продукция детских матрасов Children’s Dream. В состав матрасов входят качественные материалы. Не деформируется под воздействием долгосрочного давления',
-		    `user_custom`          = 'Савіцький Андрій',
-		    `open_graph_page`      = '1',
-		    `og_title_ua_ru`       = 'Продукція дитячих матраців | Children\\\\\\\'s Dream#Продукция детских матрасов | Children\\\\\\\'s Dream',
-		    `og_description_ua_ru` = ''
-			 WHERE `id`    = 16
-		
-Unknown column 'og_description_ua_ru' in 'field list'
-file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\main-module\edit.php
-line: 43
-date: 2016-05-16 16:56:59
-===================================
-
-QUERY: UPDATE `pages` SET
-		    `meta_title_ua`        = 'Продукція дитячих матраців | Children\'s Dream',
-		    `meta_keywords_ua`     = 'Дитячі матраци, ортопедичні, екологічно чисті матраци',
-		    `meta_description_ua`  = 'Продукція дитячих матраців Children’s Dream. До складу матраців входять якісні матеріали.  Не деформується під впливом довгострокового тиску',
-		    `meta_title_ru`        = 'Продукция детских матрасов | Children\'s Dream',
-		    `meta_keywords_ru`     = 'Детские матрасы, ортопедические, экологически чистые матрасы',
-		    `meta_description_ru`  = 'Продукция детских матрасов Children’s Dream. В состав матрасов входят качественные материалы. Не деформируется под воздействием долгосрочного давления',
-		    `user_custom`          = 'Савіцький Андрій',
-		    `open_graph_page`      = '1',
-		    `og_title_ua_ru`       = 'Продукція дитячих матраців | Children\'s Dream#Продукция детских матрасов | Children\'s Dream',
-		    `og_description_ua_ru` = 'Продукція дитячих матраців Children’s Dream. До складу матраців входять якісні матеріали.  Не деформується під впливом довгострокового тиску#Продукция детских матрасов Children’s Dream. В состав матрасов входят качественные материалы. Не деформируется под воздействием долгосрочного давления',
-		    `og_type`              = 'product.group',
-		    `og_image`             = '',
-		    `og_url_ua_ru`         = ''
-			 WHERE `id`    = 16
-		
-Unknown column 'og_image' in 'field list'
-file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\main-module\edit.php
-line: 45
-date: 2016-05-16 17:23:54
-===================================
-
-QUERY: UPDATE `pages` SET
-		    `meta_title_ua`        = 'Продукція дитячих матраців | Children\'s Dream',
-		    `meta_keywords_ua`     = 'Дитячі матраци, ортопедичні, екологічно чисті матраци',
-		    `meta_description_ua`  = 'Продукція дитячих матраців Children’s Dream. До складу матраців входять якісні матеріали.  Не деформується під впливом довгострокового тиску',
-		    `meta_title_ru`        = 'Продукция детских матрасов | Children\'s Dream',
-		    `meta_keywords_ru`     = 'Детские матрасы, ортопедические, экологически чистые матрасы',
-		    `meta_description_ru`  = 'Продукция детских матрасов Children’s Dream. В состав матрасов входят качественные материалы. Не деформируется под воздействием долгосрочного давления',
-		    `user_custom`          = 'Савіцький Андрій',
-		    `open_graph_page`      = '1',
-		    `og_title_ua_ru`       = 'Продукція дитячих матраців | Children\'s Dream#Продукция детских матрасов | Children\'s Dream',
-		    `og_description_ua_ru` = 'Продукція дитячих матраців Children’s Dream. До складу матраців входять якісні матеріали.  Не деформується під впливом довгострокового тиску#Продукция детских матрасов Children’s Dream. В состав матрасов входят качественные материалы. Не деформируется под воздействием долгосрочного давления',
-		    `og_type`              = 'product.group',
-		    `og_image`             = '',
-		    `og_url_ua_ru`         = ''
-			 WHERE `id`    = 16
-		
-Unknown column 'og_image' in 'field list'
-file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\main-module\edit.php
-line: 45
-date: 2016-05-16 17:24:35
-===================================
-
-QUERY: UPDATE `pages` SET
-		    `meta_title_ua`        = 'Продукція дитячих матраців | Children\'s Dream',
-		    `meta_keywords_ua`     = 'Дитячі матраци, ортопедичні, екологічно чисті матраци',
-		    `meta_description_ua`  = 'Продукція дитячих матраців Children’s Dream. До складу матраців входять якісні матеріали.  Не деформується під впливом довгострокового тиску',
-		    `meta_title_ru`        = 'Продукция детских матрасов | Children\'s Dream',
-		    `meta_keywords_ru`     = 'Детские матрасы, ортопедические, экологически чистые матрасы',
-		    `meta_description_ru`  = 'Продукция детских матрасов Children’s Dream. В состав матрасов входят качественные материалы. Не деформируется под воздействием долгосрочного давления',
-		    `user_custom`          = 'Савіцький Андрій',
-		    `open_graph_page`      = '1',
-		    `og_title_ua_ru`       = 'Продукція дитячих матраців | Children\'s Dream#Продукция детских матрасов | Children\'s Dream',
-		    `og_description_ua_ru` = 'Продукція дитячих матраців Children’s Dream. До складу матраців входять якісні матеріали.  Не деформується під впливом довгострокового тиску#Продукция детских матрасов Children’s Dream. В состав матрасов входят качественные материалы. Не деформируется под воздействием долгосрочного давления',
-		    `og_type`              = 'product.group',
-		    `og_image`             = '',
-		    `og_url_ua_ru`         = ''
-			 WHERE `id`    = 16
-		
-Unknown column 'og_image' in 'field list'
-file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\main-module\edit.php
-line: 45
-date: 2016-05-16 17:24:39
+            UPDATE `admin_module_pages` SET
+            `active` = CASE  WHEN `id` = 2 THEN '1' END,`module` = CASE  WHEN `id` = 2 THEN 'setting' END,
+            `user_custom` = 'СавіцькийАндрій'
+             WHERE `id` IN (2)
+        
+Duplicate entry 'setting' for key 'module'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_DynamicEditMenu.php
+line: 54
+date: 2016-07-10 12:25:16
 ===================================
 
 QUERY:
-			SELECT `id`
-			FROM `product`
-			WHERE `seo_name` = 'dsadasdsadas'
-			LIMIT 1
-		
-Table 'base_childrens_dream.product' doesn't exist
-file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\products\add.php
-line: 19
-date: 2016-05-16 19:32:44
+            UPDATE `admin_module_pages` SET
+            `active` = CASE  WHEN `id` = 2 THEN '1' END,`module` = CASE  WHEN `id` = 2 THEN 'setting' END,
+            `user_custom` = 'СавіцькийАндрій'
+             WHERE `id` IN (2)
+        
+Duplicate entry 'setting' for key 'module'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_DynamicEditMenu.php
+line: 54
+date: 2016-07-10 12:25:26
 ===================================
 
 QUERY:
-			SELECT `id`
-			FROM `product`
-			WHERE `seo_name` = 'dsfdsfdsfdssd'
-			LIMIT 1
-		
-Table 'base_childrens_dream.product' doesn't exist
-file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\products\add.php
-line: 19
-date: 2016-05-16 19:34:25
+            UPDATE `admin_module_pages` SET
+            `active` = CASE  WHEN `id` = 2 THEN '1' END,`module` = CASE  WHEN `id` = 2 THEN 'setting' END,
+            `user_custom` = 'СавіцькийАндрій'
+             WHERE `id` IN (2)
+        
+Duplicate entry 'setting' for key 'module'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_DynamicEditMenu.php
+line: 54
+date: 2016-07-10 12:25:27
 ===================================
 
 QUERY:
-    SELECT `id`,`name_ua`,`seo_name`,`price`,`availability`,`cAnonsPhoto`,`name_ru`,`img_seo_alt_ua`,`img_seo_alt_ru`,`description`
-    FROM `products`
-    WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
-    LIMIT 8
-
-Unknown column 'description' in 'field list'
-file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\static\main.php
-line: 96
-date: 2016-05-18 13:54:02
+            UPDATE `admin_module_pages` SET
+            `active` = CASE  WHEN `id` = 2 THEN '1' END,`module` = CASE  WHEN `id` = 2 THEN 'setting' END,
+            `user_custom` = 'СавіцькийАндрій'
+             WHERE `id` IN (2)
+        
+Duplicate entry 'setting' for key 'module'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_DynamicEditMenu.php
+line: 54
+date: 2016-07-10 12:25:28
 ===================================
 
-QUERY: UPDATE `main_core` SET
-        `new_resource`  = 1463840339,
-    
-You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 2
-file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\main-module\main.php
-line: 7
-date: 2016-05-21 17:18:59
+QUERY:
+            UPDATE `admin_module_pages` SET
+            `active` = CASE  WHEN `id` = 2 THEN '1' END,`module` = CASE  WHEN `id` = 2 THEN 'setting' END,
+            `user_custom` = 'СавіцькийАндрій'
+             WHERE `id` IN (2)
+        
+Duplicate entry 'setting' for key 'module'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_DynamicEditMenu.php
+line: 54
+date: 2016-07-10 12:25:28
 ===================================
 
-QUERY: UPDATE `main_core` SET
-        `new_resource`  = 1463840424,
-        WHERE `id` = 1
-    
-You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `id` = 1' at line 3
-file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\main-module\main.php
-line: 8
-date: 2016-05-21 17:20:24
+QUERY:
+            UPDATE `admin_module_pages` SET
+            `active` = CASE  WHEN `id` = 2 THEN '1' END,`module` = CASE  WHEN `id` = 2 THEN 'setting' END,
+            `user_custom` = 'СавіцькийАндрій'
+             WHERE `id` IN (2)
+        
+Duplicate entry 'setting' for key 'module'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_DynamicEditMenu.php
+line: 54
+date: 2016-07-10 12:27:53
 ===================================
 
-QUERY: UPDATE `main_core` SET
-        `new_resource`  = 1463840429,
-        WHERE `id` = 1
-    
-You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `id` = 1' at line 3
-file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\main-module\main.php
-line: 8
-date: 2016-05-21 17:20:29
+QUERY:
+            UPDATE `admin_module_pages` SET
+            `active` = CASE  WHEN `id` = 2 THEN '1' END,`module` = CASE  WHEN `id` = 2 THEN 'setting' END,
+            `user_custom` = 'СавіцькийАндрій'
+             WHERE `id` IN (2)
+        
+Duplicate entry 'setting' for key 'module'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_DynamicEditMenu.php
+line: 54
+date: 2016-07-10 12:28:15
+===================================
+
+QUERY:
+            UPDATE `admin_module_pages` SET
+            `active` = CASE  WHEN `id` = 2 THEN '1' END,`module` = CASE  WHEN `id` = 2 THEN 'setting' END,
+            `user_custom` = 'СавіцькийАндрій'
+             WHERE `id` IN (2)
+        
+Duplicate entry 'setting' for key 'module'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_DynamicEditMenu.php
+line: 54
+date: 2016-07-10 12:28:49
+===================================
+
+QUERY:
+            UPDATE `admin_module_pages` SET
+            `active` = CASE  WHEN `id` = 2 THEN '1' END,`module` = CASE  WHEN `id` = 2 THEN 'setting' END,
+            `user_custom` = 'СавіцькийАндрій'
+             WHERE `id` IN (2)
+        
+Duplicate entry 'setting' for key 'module'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_DynamicEditMenu.php
+line: 54
+date: 2016-07-10 12:29:04
+===================================
+
+QUERY:
+            UPDATE `admin_module_pages` SET
+            `active` = CASE  WHEN `id` = 2 THEN '1' END,`module` = CASE  WHEN `id` = 2 THEN 'setting' END,
+            `user_custom` = 'СавіцькийАндрій'
+             WHERE `id` IN (2)
+        
+Duplicate entry 'setting' for key 'module'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_DynamicEditMenu.php
+line: 54
+date: 2016-07-10 12:29:14
+===================================
+
+QUERY:
+            UPDATE `admin_module_pages` SET
+            `active` = CASE  WHEN `id` = 2 THEN '1' END,`module` = CASE  WHEN `id` = 2 THEN 'setting' END,
+            `user_custom` = 'СавіцькийАндрій'
+             WHERE `id` IN (2)
+        
+Duplicate entry 'setting' for key 'module'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_DynamicEditMenu.php
+line: 54
+date: 2016-07-10 12:29:45
+===================================
+
+QUERY:
+            UPDATE `admin_module_pages` SET
+            `active` = CASE  WHEN `id` = 2 THEN '1' END,`module` = CASE  WHEN `id` = 2 THEN 'setting' END,
+            `user_custom` = 'СавіцькийАндрій'
+             WHERE `id` IN (2)
+        
+Duplicate entry 'setting' for key 'module'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_DynamicEditMenu.php
+line: 55
+date: 2016-07-10 12:30:02
+===================================
+
+QUERY:
+            UPDATE `admin_module_pages` SET
+            `active` = CASE  WHEN `id` = 2 THEN '1' END,`module` = CASE  WHEN `id` = 2 THEN 'setting' END,
+            `user_custom` = 'СавіцькийАндрій'
+             WHERE `id` IN (2)
+        
+Duplicate entry 'setting' for key 'module'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_DynamicEditMenu.php
+line: 55
+date: 2016-07-10 12:30:15
+===================================
+
+QUERY:
+            UPDATE `admin_module_pages` SET
+            `active` = CASE  WHEN `id` = 2 THEN '1' END,`module` = CASE  WHEN `id` = 2 THEN 'setting' END,
+            `user_custom` = 'СавіцькийАндрій'
+             WHERE `id` IN (2)
+        
+Duplicate entry 'setting' for key 'module'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_DynamicEditMenu.php
+line: 55
+date: 2016-07-10 12:30:16
+===================================
+
+QUERY:
+            UPDATE `admin_module_pages` SET
+            `active` = CASE  WHEN `id` = 2 THEN '1' END,`module` = CASE  WHEN `id` = 2 THEN 'setting' END,
+            `user_custom` = 'СавіцькийАндрій'
+             WHERE `id` IN (2)
+        
+Duplicate entry 'setting' for key 'module'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_DynamicEditMenu.php
+line: 54
+date: 2016-07-10 12:30:25
+===================================
+
+QUERY:
+            SELECT `module`
+            FROM  `admin_module_pages`
+            WHERE `symbol_code` = ''
+            LIMIT 1
+        
+Unknown column 'symbol_code' in 'where clause'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\setting\modules-pages.php
+line: 14
+date: 2016-07-10 13:45:32
+===================================
+
+QUERY: INSERT INTO `admin_type_mails` SET
+                `active`       = 1,
+                `module`       = 'error',
+                `dinamic_page` = '1',
+                `detail_page`  = '0',
+                `user_custom`  = 'Савіцький Андрій'
+            
+Unknown column 'module' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\setting\modules-pages.php
+line: 37
+date: 2016-07-10 13:47:39
+===================================
+
+QUERY: INSERT INTO `admin_type_mails` SET
+                `active`       = 1,
+                `module`       = 'error',
+                `dinamic_page` = '1',
+                `detail_page`  = '0',
+                `user_custom`  = 'Савіцький Андрій'
+            
+Unknown column 'module' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\setting\modules-pages.php
+line: 37
+date: 2016-07-10 13:50:30
+===================================
+
+QUERY: INSERT INTO `admin_type_mails` SET
+                `active`       = 1,
+                `module`       = 'error',
+                `dinamic_page` = '1',
+                `detail_page`  = '0',
+                `user_custom`  = 'Савіцький Андрій'
+            
+Unknown column 'module' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\setting\modules-pages.php
+line: 37
+date: 2016-07-10 13:50:31
+===================================
+
+QUERY: INSERT INTO `admin_type_mails` SET
+                `active`       = 1,
+                `module`       = 'error',
+                `dinamic_page` = '1',
+                `detail_page`  = '0',
+                `user_custom`  = 'Савіцький Андрій'
+            
+Unknown column 'module' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\setting\modules-pages.php
+line: 37
+date: 2016-07-10 13:50:31
+===================================
+
+QUERY: INSERT INTO `admin_type_mails` SET
+                `active`       = 1,
+                `module`       = 'error',
+                `dinamic_page` = '1',
+                `detail_page`  = '0',
+                `user_custom`  = 'Савіцький Андрій'
+            
+Unknown column 'module' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\setting\modules-pages.php
+line: 37
+date: 2016-07-10 13:50:31
+===================================
+
+QUERY: UPDATE `admin_type_mails` SET
+                `active`           = 1,
+                `module`           = 'error',
+                `list_length`      = 'ua,ru,',
+                `meta_title`       = 'ua#|#ru',
+                `meta_keywords`    = 'ua#|#ru',
+                `meta_description` = 'ua#|#ru',
+                `user_custom`  = 'Савіцький Андрій'
+                WHERE `id` = 3
+            
+Unknown column 'module' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\setting\modules-pages.php
+line: 91
+date: 2016-07-11 12:29:50
+===================================
+
+QUERY: INSERT INTO `admin_module_pages` SET
+                `active`       = 1,
+                `name`         = 'Ідеально для вашого малюка',
+                `sort`         = '100',
+                `list_length`  = 'ua,ru',
+                `user_custom`  = 'Савіцький Андрій'
+            
+Unknown column 'name' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\setting\main-banner.php
+line: 27
+date: 2016-07-11 17:41:33
 ===================================
 

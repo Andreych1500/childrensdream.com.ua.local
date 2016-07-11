@@ -1,90 +1,107 @@
 <?php
-// --- SEND CALL FORM ---
-if(isset($_POST['ok'], $_POST['name'], $_POST['text'], $_POST['email'], $_POST['thems'])){
-    $errors = array();
-    $next_error = array();
+// Ajax More Element
+if(isset($_REQUEST['ajax'])){
+    if(isset($_POST['nextLine'], $_POST['siteLang'])){
+        $countLine = 4;
+        $lastNumber = $countLine * ((int)$_POST['nextLine'] - 1);
+        $allElements = $countLine * (int)$_POST['nextLine'];
 
-    if(empty($_POST['name'])){
-        $errors['name'] = 'errors';
+        $all = q("
+                SELECT `id`
+                FROM `products`
+                WHERE `active` = 1
+            ");
+
+        $products = q("
+                SELECT `id`,`name_ua`,`name_ru`,`seo_name`,`price`,`availability`,`cAnonsPhoto`,`img_seo_alt_ua`,`img_seo_alt_ru`,`description_ua`,`description_ru`
+                FROM `products`
+                WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
+                LIMIT ".$lastNumber.", ".$countLine."
+            ");
+
+        $all_count = $all->num_rows;
+        $count = $products->num_rows;
+        $end = 1;
+        $html = '';
+
+        if($count > 0){
+            while($el = $products->fetch_assoc()){
+                $html .= '<div style="display: none;" class="mattress" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product"><a class="photos" href="'.$link_lang.'products/'.hsc($el['seo_name']).'/" itemprop="url"><img src="'.hsc($el['cAnonsPhoto']).'" alt="'.hsc($el['img_seo_alt_'.$_POST['siteLang']]).'" itemprop="image"></a><a class="links" href="'.$link_lang.'products/'.hsc($el['seo_name']).'/"><span itemprop="name">'.hsc($el['name_'.$_POST['siteLang']]).'</span></a><div itemprop="offers" itemscope itemtype="http://schema.org/Offer"><p class="price">'.number_format(hsc($el['price']), 0, ',', ' ').' '.$mess['PRICE'].'</p><p class="aviability"><span class="'.(((int)$el['availability'] == 1)? 'icon-check-ok' : 'icon-cross').'"> </span>'.(((int)$el['availability'] == 1)? '<link itemprop="availability" href="http://schema.org/InStock">' : '<link itemprop="availability" href="http://schema.org/OutOfStock">').'<span>'.(((int)$el['availability'] == 1)? $mess['AVIABILITY'] : $mess['NOAVIABILITY']).'</span></p><link itemprop="itemCondition" href="http://schema.org/NewCondition"><meta itemprop="seller" content="Children\'s Dream"><meta itemprop="price" content="'.hsc($el['price']).'.00"><meta itemprop="priceCurrency" content="UAH"></div><meta itemprop="description" content="'.hsc($el['description_'.$_POST['siteLang']]).'"><meta itemprop="brand" content="Children\'s Dream"><meta itemprop="manufacturer" content="Children\'s Dream"></div>';
+            }
+
+            if($all_count <= $allElements){
+                $end = 0;
+            }
+
+            echo json_encode(array('html' => $html, 'end' => $end));
+            exit();
+        } else {
+            echo json_encode(array('error' => 'warning'));
+            exit();
+        }
+    } else {
+        echo json_encode(array('error' => 'warning'));
+        exit();
     }
-    if(empty($_POST['email'])){
-        $errors['email'] = 'errors';
-    }
-    if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-        $errors['email'] = 'errors';
-    }
-    if(empty($_POST['text'])){
-        $errors['text'] = 'errors';
-    }
-    if(empty($_POST['thems'])){
-        $errors['thems'] = 'errors';
+}
+
+// Send call from
+if(isset($_POST['ok'])){
+    $error = array();
+    $_POST = trimAll($_POST);
+
+    $check['name'] = (empty($_POST['name'])? 'class="error"' : '');
+    $check['email'] = (empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)? 'class="error"' : '');
+    $check['text'] = (empty($_POST['text'])? 'class="error"' : '');
+    $check['them'] = (empty($_POST['them'])? 'class="error"' : '');
+    $check['capcha'] = (($_POST['capcha'] != $_SESSION['rand_code'])? 'class="error"' : '');
+
+    if(in_array('class="error"', $check)){
+        $error['stop'] = 1;
     }
 
-    if($_POST['capcha'] != $_SESSION['rand_code']){
-        $errors['capcha'] = 'errors';
-    }
-
-    if(!count($errors)){
+    if(!count($error)){
         $limit_access = q("
-          SELECT *
-          FROM `call_me`
-          WHERE `user_ip` = '".mres($_SERVER['REMOTE_ADDR'])."' AND `date_create` >= NOW() - INTERVAL 1 DAY
-          LIMIT 4
+            SELECT `id`
+            FROM `call_me`
+            WHERE `user_ip` = '".mres($_SERVER['REMOTE_ADDR'])."' AND `date_create` >= NOW() - INTERVAL 1 DAY
+            LIMIT 4
         ");
 
-        if($limit_access->num_rows >= 2){
-            $next_error['limit'] = 'Y';
-        }
+        $limit = (($limit_access->num_rows >= 2)? 'N' : 'Y');
 
-        if(!count($next_error)) {
+        if($limit == 'Y'){
             $_POST = mres($_POST);
 
             q(" INSERT INTO `call_me` SET
-                `name`  = '".$_POST['name']."',
-                `thems` = '".$_POST['thems']."',
-                `email` = '".$_POST['email']."',
-                `text`  = '".$_POST['text']."',
-                `user_ip` = '".mres($_SERVER['REMOTE_ADDR'])."',
+                `name`         = '".$_POST['name']."',
+                `them`         = '".$_POST['them']."',
+                `email`        = '".$_POST['email']."',
+                `text`         = '".$_POST['text']."',
+                `user_ip`      = '".mres($_SERVER['REMOTE_ADDR'])."',
                 `date_create`  = NOW()
             ");
 
-            Mail::$to = 'cdmatrasses@gmail.com';
-            Mail::$subject = $_POST['thems'];
-            Mail::$text = '<html>
-<head>
-<title>Замовлення зворотнього звінка</title>
-</head>
-<body>
-<div>
-<img src="http://childrensdream.com.ua/skins/default/img/cd-static.png" alt="childrens-dream" title="childrens-dream">
-</div>
-<hr>
-<div>
-Тема: '.$_POST['thems'].'  <br>
-Відправник: '.$_POST['email'].' <br>
-П.І.П: '.$_POST['name'].' <br>
-Текст: '.$_POST['text'].'
-</div>
-<hr>
-<div>
-<a style="display: block;width: 130px;background-color:#48D2E0;color:#FFF;padding:5px;text-decoration:none;border-radius:4px;text-align: center;" href="http://childrensdream.com.ua">Перейти на сайт</a><br>
-</div>
-<div>
-Дякуємо за співпрацю! <br>
-Лист згенеровано автоматично.
-</div>
-</body>
-</html>';
-            Mail::Send();
+            $param = array(
+                'name' => $_POST['name'],
+                'them'  => $_POST['them'],
+                'email' => $_POST['email'],
+                'text' => $_POST['text']
+            );
 
-            $_SESSION['info'] = "Y";
-            header("Location: ".$link_langs."#call");
-            exit();
+            Mail::$text = TemplateMail::formationMail($param, 'call_me', $lang, $arMainParam);
+
+            if(Mail::$text){
+                Mail::$to = $_POST['email'];
+                Mail::send();
+            }
+
+            sessionInfo($link_lang.'#call', '#call_me', 2);
         }
     }
 }
 
-// --- ALL ELEMENT ---
+// Element products
 $products = q("
     SELECT `id`,`name_ua`,`seo_name`,`price`,`availability`,`cAnonsPhoto`,`name_ru`,`img_seo_alt_ua`,`img_seo_alt_ru`,`description_ua`,`description_ru`
     FROM `products`
@@ -92,15 +109,9 @@ $products = q("
     LIMIT 8
 ");
 
-// --- ALL ELEMENT BANNER ---
+// Element banners
 $main_banner = q("
     SELECT *
     FROM `main_banner`
     WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
 ");
-
-// --- INFORMATION SESSION ---
-if(isset($_SESSION['info'])){
-    $info = $_SESSION['info'];
-    unset($_SESSION['info']);
-}

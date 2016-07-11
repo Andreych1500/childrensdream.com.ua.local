@@ -1,44 +1,42 @@
 <?php
-// --- ADD COMMENTS ---
 if(isset($_POST['name'], $_POST['text'], $_POST['email'])){
-	$errors = array();
-	
-	if(empty($_POST['name'])){
-		$errors['name'] = 'errors';
-	}
-	if(empty($_POST['email'])){
-		$errors['email'] = 'errors';
-	}
-	if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)){
-		$errors['email'] = 'errors';
-	}
-	if(empty($_POST['text'])){
-		$errors['text'] = 'errors';
-	}
+    $error = array();
+    $_POST = trimAll($_POST);
 
-	if(!count($errors)){
-		$_POST = mres($_POST);
+    $check['name'] = (empty($_POST['name'])? 'class="error"' : '');
+    $check['email'] = ((empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))? 'class="error"' : '');
+    $check['text'] = (empty($_POST['text'])? 'class="error"' : '');
 
-		q(" INSERT INTO `comments` SET
-			`name`  = '".$_POST['name']."',
-			`text`  = '".$_POST['text']."',
-			`email` = '".$_POST['email']."',
-			`user_ip` = '".mres($_SERVER['REMOTE_ADDR'])."',
-			`active` = 0,
-			`date_create`  = NOW()
-		");
+    if(in_array('class="error"', $check)){
+        $error['stop'] = 1;
+    }
 
-		echo json_encode(array('status' => 'ok'));
-		exit();
+    if(!count($error)){
+        $_POST = mres($_POST);
 
-	} else {
-		echo json_encode(array('warning' => 'ok'));
-		exit();
-	}
+        q(" INSERT INTO `comments` SET
+          `name`    = '".$_POST['name']."',
+          `text`    = '".$_POST['text']."',
+          `email`   = '".$_POST['email']."',
+          `user_ip` = '".mres($_SERVER['REMOTE_ADDR'])."',
+          `active`  = 0,
+          `date_create`  = NOW()
+        ");
+
+        echo json_encode(array('status' => 'ok'));
+        exit();
+    } else {
+        echo json_encode(array('error' => 'ok'));
+        exit();
+    }
+} else {
+    if(isset($_REQUEST['ajax'])){
+        echo json_encode(array('error' => 'ok'));
+    }
 }
 
-// --- ALL COMMENTS ---
-$res = q("
+// All comments
+$comments = q("
 	SELECT *
 	FROM `comments`
 	WHERE `active` = 1

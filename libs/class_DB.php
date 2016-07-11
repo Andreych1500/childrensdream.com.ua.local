@@ -1,14 +1,5 @@
 <?php
-//DB::_()->query('Запрос');
-//DB::close();
-
 /*
-ALIAS:
-
-q(); Запрос;
-mres(); mysqli_real_escape_string
-
-
 РОБОТА З ОБЄКТОМ ВИБОРКИ
 $res = q(); // Запрос з возвратом результатів
 $res->num_rows; //Кількість повернутих строк - mesqli_num_rows();
@@ -21,9 +12,7 @@ DB::_()->insert_id; // Останій ID вставки
 DB::_()->query; // аналог q
 DB::_()->multi_query(); // кількісний запрос
 DB::_()->real_escape_string(); // аналог mres();
-
 DB::close(); // закриваєм звязок з БД
-
 */
 
 class DB {

@@ -1,80 +1,130 @@
 <!DOCTYPE html>
-<html class="<?=((!isset($_SESSION['user']) || $_SESSION['user']['access'] !=  5)? "connect" : "admin")?>">
+<html class="<?=(($globalAccess)? "admin-panel" : "auth-panel")?>">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title><?=hsc(Core::$META['title'] = 'Адміністрування');?></title>
-  <meta name="description" content="<?=hsc(Core::$META['descrition']); ?>">
-  <meta name="keywords" content="<?=hsc(Core::$META['ketwords']); ?>">
+  <title>Адміністративна панель</title>
 
-  <link type="image/x-icon" rel="shortcut icon" href="/ico/big_smile.ico">
+  <meta name="robots" content="index, nofollow">
+  <meta name="author" content="Савіцький Андрій">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="format-detection" content="address=no">
+
+  <link rel="dns-prefetch" href="http://childrensdream.com.ua">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="apple-touch-icon" href="/touch-icon-iphone.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="/touch-icon-ipad.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="/touch-icon-iphone-retina.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/touch-icon-ipad-retina.png">
 
-  <link href="/skins/<?=Core::$SKIN; ?>/css/style.css?v=<?=$vF?>" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/skins/admin/css/reset.min.css?v=<?=$vF?>">
+  <link rel="stylesheet" href="/skins/admin/css/style.min.css?v=<?=$vF?>">
 
-  <script src="/vendor/public/jquery/dist/jquery.min.js"></script>
-  <script src="/skins/admin/js/script.js?v=<?=$vF?>"></script>
-  <script src="/vendor/public/translit/dist/translit.js"></script>
-  <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
+  <script src="/vendor/public/jquery/dist/jquery.min.js" defer></script>
+  <script src="/vendor/public/jquery.cookie/jquery.cookie.min.js" defer></script>
+  <script src="/vendor/public/translit/dist/translit.js" defer></script>
+  <script src="/skins/admin/js/script-menu.min.js?v=<?=$vF?>" defer></script>
+  <script src="/skins/admin/js/script-click-menu.js?v=<?=$vF?>" defer></script>
 </head>
 
 <body>
-<header>
-  <?php if(!isset($_SESSION['user']) || $_SESSION['user']['access'] !=  5){?>
-    <div class="topPanel no-active">
-      <a href="//<?=$_SERVER['HTTP_HOST']?>"><span class="icon-circle-left">www.<?=$_SERVER['HTTP_HOST']?></span></a>
-    </div>
-  <?php } else { ?>
-    <div class="admin-panel">
-      <div class="left-panel">
-        <a target="_blank" href="//<?=$_SERVER['HTTP_HOST']?>">Сайт</a>
-        <a href="//<?=$_SERVER['HTTP_HOST']?>/admin">Адміністрування</a>
+<?php if($globalAccess) { ?>
 
-        <!-- new info -->
-        <?php if(count($new_el) > 0){ ?>
-        <div class="new-info">
-          <span class="icon-info"></span>
-          <?=count($new_el)?>
-        </div>
-        <div class="info-open-click">
-          <div class="adm-informer-header">Нові сповіщення</div>
-          <?php foreach($new_el as $key => $value){ ?>
-          <div class="informer-item">
-            <span class="icon-<?=(($key == 'order')? "truck" : "form")?>"></span>
-            <a href="/admin/<?=$key?>/?editIfno=<?=$key?>"><?=$value?></a>
+  <header>
+    <div class="container">
+      <div class="nth1-panel">
+        <a href="/admin/setting/user-list/?edit=<?=$_SESSION['user']['id']?>" class="to-cab icon-user-tie"><?=$_SESSION['user']['last_name'].' '.$_SESSION['user']['name']?></a>
+        <a href="/admin/?exit=ok">Вихід</a>
+      </div>
+      <div class="nth2-panel">
+        <a class="to-site" target="_blank" href="//<?=$_SERVER['HTTP_HOST']?>">Сайт</a>
+        <a class="to-admin" href="//<?=$_SERVER['HTTP_HOST']?>/admin">Адміністрування</a>
+
+        <?php if(count($new_el) > 0) { // new info ?>
+          <div class="new-info">
+            <span class="icon-info"></span>
+            <?=count($new_el)?>
           </div>
-          <?php } ?>
-        </div>
+          <div class="info-open-click">
+            <div class="adm-informer-header">Нові сповіщення</div>
+            <?php foreach($new_el as $key => $value) { ?>
+              <div class="informer-item">
+                <span class="icon-<?=(($key == 'order')? "truck" : "form")?>"></span>
+                <a href="/admin/<?=$key?>/?edit_info=<?=$key?>"><?=$value?></a>
+              </div>
+            <?php } ?>
+          </div>
         <?php } ?>
-        <!-- end new info -->
-
       </div>
-      <div class="right-panel">
-        <span class="icon-user-tie"><?=$_SESSION['user']['FIO']?></span>
-        <a href="/cab/exit/">Вихід</a>
-      </div>
-      <div class="adm-header-bottom"></div>
     </div>
-    <div class="admin-left-panel">
-      <ul>
-        <li><a href="/admin/main-banner/"><span class="icon-window"></span>Баннер на головній</a><span class="hov-animation"></span></li>
-        <li><a href="/admin/products/"><span class="icon-content"></span>Продукція</a><span class="hov-animation"></span></li>
-        <li><a href="/admin/call-me/"><span class="icon-academic"></span>Зворотній зв'язок</a><span class="hov-animation"></span></li>
-        <li><a href="/admin/comments/"><span class="icon-form"></span>Відгуки на сайті</a><span class="hov-animation"></span></li>
-        <li><a href="/admin/order/"><span class="icon-truck"></span>Замовлення</a><span class="hov-animation"></span></li>
-        <li><a href="/admin/mails/"><span class="icon-mail4"></span>Листи</a><span class="hov-animation"></span></li>
-        <li><a href="/admin/main-module/"><span class="icon-settings"></span>Настройки</a><span class="hov-animation"></span></li>
+    <div class="adm-header-bottom"></div>
+  </header>
+
+  <main class="pc-version">
+    <aside>
+      <ul class="navigation">
+        <?php foreach(Core::$ARRAY_ADMIN_MENU as $k => $arResult) { ?>
+          <li <?=((isset($_COOKIE['act-menu']) && $_COOKIE['act-menu'] == $k)? 'class="act-navigation"' : '')?>>
+            <p><span class="icon-<?=$arResult['icon']?>"></span><?=$arResult['name']?></p><span
+              class="animate-hover"></span>
+          </li>
+        <?php } ?>
       </ul>
+    </aside>
+    <div class="navigation-lv2 <?=(isset($_COOKIE['act-menu'])? 'act-nav-lv2' : '')?>">
+      <?php foreach(Core::$ARRAY_ADMIN_MENU as $k => $arResult) { ?>
+        <ul class="section-lv2 <?=((isset($_COOKIE['act-menu']) && $_COOKIE['act-menu'] == $k)? 'act-section' : '')?>">
+          &nbsp;<?=$arResult['name']?>
+          <?php
+          $j = 0;
+          foreach($arResult['sections'] as $nameSection => $arSections) { ?>
+            <li class="list-sec-menu <?=(isset($arrayActMenu)? (in_array($k.':'.$j, $arrayActMenu)? 'act-list' : '') : '')?>"><span class="icon-left"></span><?=$nameSection?>
+              <ul class="section-module">
+                <?php foreach($arSections as $name => $link) { ?>
+                  <li><a href="<?=$link?>"><?=$name?></a></li>
+                <?php } ?>
+              </ul>
+            </li>
+          <?php ++$j; } ?>
+        </ul>
+      <?php } ?>
     </div>
-  <?php } ?>
-</header>
 
-<main <?=(isset($_SESSION['user'])? "class='ok-auth'" : "");?>><?=$content; ?></main>
+    <!-- Content --->
+    <div class="content">
+      <?php if(isset($info)) { // Info window ?>
+        <div class="adm-info-block <?=$info['type']?>">
+          <div class="adm-info-text">
+            <span class="icon-<?=$info['icon']?>"></span>
+            <?=$info['text']?>
+          </div>
+        </div>
+      <?php } ?>
+      <?=$content?>
+    </div>
+  </main>
 
-<footer>
-  <div class="bottom-panel <?=(isset($_SESSION['user'])? "new-position" : "no-active");?>">
-    <p>Адміністраторська панель. &copy; <?=data(2015);?> </p>
-  </div>
-</footer>
+  <footer>
+    <div class="adm-header-bottom"></div>
+    <div class="container">Адміністративна панель.<br>Усі права захищені &copy; <?=data($arMainParam['site_data_create']);?>.</div>
+  </footer>
+
+<?php } else { ?>
+
+  <header>
+    <div class="topPanel no-active">
+      <a href="//<?=$_SERVER['HTTP_HOST']?>"><span class="icon-circle-left"></span>www.<?=$_SERVER['HTTP_HOST']?></a>
+    </div>
+  </header>
+
+  <main class="auth-main"><?=$content?></main>
+
+  <footer>
+    <div class="bottom-panel no-active">Адміністративна панель.<br>Усі права захищені &copy; <?=data($arMainParam['site_data_create']);?>.</div>
+  </footer>
+
+<?php } ?>
 </body>
 </html>

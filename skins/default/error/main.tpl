@@ -2,10 +2,10 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title><?=hsc(Core::$META['title']);?></title>
-  <meta name="apple-mobile-web-app-title" content="<?=hsc(Core::$META['title']);?>">
-  <meta name="description" content="<?=hsc(Core::$META['description']);?>">
-  <meta name="keywords" content="<?=hsc(Core::$META['keywords']);?>">
+  <title><?=Core::$META['title']?></title>
+  <meta name="apple-mobile-web-app-title" content="<?=Core::$META['title']?>">
+  <meta name="description" content="<?=Core::$META['description']?>">
+  <meta name="keywords" content="<?=Core::$META['keywords']?>">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="author" content="Савіцький Андрій">
   <meta name="robots" content="index, nofollow">
@@ -20,57 +20,62 @@
   <link rel="apple-touch-icon" sizes="120x120" href="/touch-icon-iphone-retina.png">
   <link rel="apple-touch-icon" sizes="152x152" href="/touch-icon-ipad-retina.png">
 
-  <link href="/skins/<?=Core::$SKIN; ?>/css/style.min.css?v=<?=$vF?>" rel="stylesheet">
-  <!--[if lt IE 9]><script src="/skins/default/js/ielt9.min.js" defer></script><![endif]-->
+  <link href="/skins/<?=Core::$SKIN?>/css/style.min.css?v=<?=$vF?>" rel="stylesheet">
+  <!--[if lt IE 9]>
+  <script src="/skins/default/js/ielt9.min.js" defer></script><![endif]-->
 
   <script src="/vendor/public/jquery/dist/jquery.min.js" defer></script>
-  <?php if(count(Core::$JS)){ echo implode("\n",Core::$JS); } ?>
+  <script src="/vendor/public/jquery.cookie/jquery.cookie.min.js" defer></script>
   <script src="/skins/default/js/script.min.js?v=<?=$vF?>" defer></script>
 </head>
 
 <body>
 <header>
-    <div class="header-block">
-        <a class="logo" href="<?=$link_langs?>"><img src="/skins/default/img/logo.png" alt="Children's Dream" title="Children's Dream"></a>
-        <a class="lang_ua <?=(($link_langs == '/')? 'act-lang' : '')?>" href="/<?=Core::$SITE_DIR?>">UA</a>
-        <a class="lang_ru <?=(($link_langs == '/ru/')? 'act-lang' : '')?>" href="/ru/<?=Core::$SITE_DIR?>">RU</a>
-        <a class="mobile-basket" href="<?=$link_langs?>order/"><?=$mess['BASKET']?> <span><?=(int)$countG?></span></a>
-        <div class="mob-menu" onclick="showHide(this);"><span class="icon-mob-menu"></span><?=$mess['MOBILE_MENU']?></div>
-        <a class="call-us" href="<?=(isMobile() ? 'tel' : 'callto')?>:38-098-570-43-77"><?=$mess['CONTACT_INFO']?> +38 (098) 570-43-77</a>
+  <div class="header-block">
+    <a class="logo" href="<?=$link_lang?>"><img src="/skins/default/img/logo.png" alt="Children's Dream" title="Children's Dream"></a>
+    <?php foreach(Core::$LINK_LANG as $k => $v){ ?>
+      <a class="lang_<?=$v?> <?=(($lang == $v)? 'act-lang' : '')?>" href="<?=(($v == 'ua')? '/' : '/'.$v.'/').Core::$SITE_DIR?>"><?=strtoupper($v)?></a>
+    <?php } ?>
+    <a class="mobile-basket" href="<?=$link_lang?>order/" rel="nofollow"><?=$mess['BASKET']?>
+      <span><?=(int)$countG?></span></a>
+    <div class="mob-menu" onclick="showHide(this);"><span class="icon-mob-menu"></span><?=$mess['MOBILE_MENU']?></div>
+    <a class="call-us" href="<?=(isMobile()? 'tel' : 'callto')?>:38-098-570-43-77"><?=$mess['CONTACT_INFO']?> +38 (098) 570-43-77</a>
 
-        <nav class="top-menu">
-            <ul>
-                <li><a href="<?=$link_langs?>#about"><?=$mess['ABOUT_US']?></a></li>
-                <li><a href="<?=$link_langs?>products/"><?=$mess['PRODUCTION']?></a></li>
-                <li><a href="<?=$link_langs?>#payment"><?=$mess['SERVICES']?></a></li>
-                <li><a href="<?=$link_langs?>#call"><?=$mess['CONTACTS']?></a></li>
-                <li><a href="<?=$link_langs?>comments/"><?=$mess['OTZUVU']?></a></li>
-                <li><a href="<?=$link_langs?>order/"><?=$mess['BASKET']?> <span><?=(int)$countG?></span></a></li>
-            </ul>
-            <span class="menu-icon"></span>
-        </nav>
+    <nav class="top-menu">
+      <ul>
+        <li><a href="<?=$link_lang?>#about"><?=$mess['ABOUT_US']?></a></li>
+        <li><a href="<?=$link_lang?>products/"><?=$mess['PRODUCTION']?></a></li>
+        <li><a href="<?=$link_lang?>#payment"><?=$mess['SERVICES']?></a></li>
+        <li><a href="<?=$link_lang?>#call"><?=$mess['CONTACTS']?></a></li>
+        <li><a href="<?=$link_lang?>comments/"><?=$mess['OTZUVU']?></a></li>
+        <li><a href="<?=$link_lang?>order/"><?=$mess['BASKET']?> <span><?=(int)$countG?></span></a></li>
+      </ul>
+      <span class="menu-icon"></span>
+    </nav>
 
-        <div class="toTop"><?=$mess['TO_TOP']?></div>
-    </div>
+    <div class="toTop"><?=$mess['TO_TOP']?></div>
+  </div>
 </header>
 
-<main><div class="iEror"><?=$status_error;?></div></main>
+<main>
+  <div class="i_Error"><?=$status_error?></div>
+</main>
 
 <footer>
-    <div class="footer-block">
-        <img class="logo-img" src="/skins/default/img/footer-logo.png" alt="Children's Dream" title="Children's Dream">
-        <div class="development-site">
-            <p>&copy;<?=data(Core::$CREATED).$mess['FOOTER_TOP']?></p>
-            <p><?=$mess['GOOD_ACCES']?></p>
-        </div>
-        <div class="soc-link">
-            <p><?=$mess['SOC_LINK']?></p>
-            <a href="//www.facebook.com/tmchildrensdream" target="_blank" class="icon-facebook"></a>
-            <a href="//vk.com/tmchildrensdream" target="_blank" class="icon-vkontakte"></a>
-            <a href="//plus.google.com/u/0/101299485141835241705" target="_blank" class="icon-google-plus3" rel="publisher"></a>
-            <a href="//www.instagram.com/tm_childrens_dream" target="_blank" class="icon-instagram"></a>
-        </div>
+  <div class="footer-block">
+    <img class="logo-img" src="/skins/default/img/footer-logo.png" alt="Children's Dream" title="Children's Dream">
+    <div class="development-site">
+      <p>&copy;<?=data(Core::$DATA).$mess['FOOTER_TOP']?></p>
+      <p><?=$mess['GOOD_ACCES']?></p>
     </div>
+    <div class="soc-link">
+      <p><?=$mess['SOC_LINK']?></p>
+      <a href="//www.facebook.com/tmchildrensdream" target="_blank" class="icon-facebook"></a>
+      <a href="//vk.com/tmchildrensdream" target="_blank" class="icon-vkontakte"></a>
+      <a href="//plus.google.com/u/0/101299485141835241705" target="_blank" class="icon-google-plus3" rel="publisher"></a>
+      <a href="//www.instagram.com/tm_childrens_dream" target="_blank" class="icon-instagram"></a>
+    </div>
+  </div>
 </footer>
 </body>
 </html>

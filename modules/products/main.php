@@ -1,52 +1,51 @@
 <?php
-Core::$JS[] = '<script src="//code.jquery.com/jquery-1.11.0.min.js" defer></script>';
 Core::$JS[] = '<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js" defer></script>';
 Core::$JS[] = '<script src="/vendor/public/slick-carousel/slick/slick.min.js" defer></script>';
 Core::$JS[] = '<script src="/skins/default/js/slide-el.min.js?v='.$vF.'" defer></script>';
 
 if($_GET['page'] == 'main'){
 
-    // --- ALL ELEMENT ---
+    // All elements
     $products = q("
       SELECT `id`,`name_ua`,`seo_name`,`price`,`availability`,`cAnonsPhoto`,`name_ru`,`img_seo_alt_ua`,`img_seo_alt_ru`,`description_ua`,`description_ru`
       FROM `products`
       WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
     ");
-
 } else {
 
-// --- DETAIL ELEMENT ---
+    // Detail element
     $products = q("
       SELECT *
       FROM `products`
-      WHERE `seo_name` = '" . mres($_GET['page']) . "' AND `active` = 1
+      WHERE `seo_name` = '".mres($_GET['page'])."' AND `active` = 1
       LIMIT 1
     ");
 
-    if ($products->num_rows == 0 || isset($_GET['key1'])) {
+    if($products->num_rows < 1 || isset($_GET['key1'])){
         header("HTTP/1.0 404 Not Found");
-        echo bufferStartError404($lang,$link_langs);
+        echo bufferStartError404($lang, $link_lang);
         exit();
     }
 
     $arResult = $products->fetch_assoc();
 
-    // --- SEO ELEMENT META TAGS ---
+    // Seo meta tags
     Core::$META['title'] = $arResult['meta_title_'.$lang];
     Core::$META['keywords'] = $arResult['meta_keywords_'.$lang];
     Core::$META['description'] = $arResult['meta_description_'.$lang];
 
-    // --- CANONICAL ---
-    Core::$META['canonical'] = Core::$DOCUMENT_ROOT.(($lang == 'ua')? '/' : '/ru/').(($arrOptionModule['module'] == 'static')? '' : $arrOptionModule['module'].'/'.$arResult['seo_name'].'/');
+    // Canonical
+    Core::$META['canonical'] = $_SERVER['DOCUMENT_ROOT'].$link_lang.(($GM['module'] == 'static')? '' : $GM['module'].'/'.$arResult['seo_name'].'/');
 
-    // --- ALTERNATE LANG ---
-    $module_url = (($arrOptionModule['module'] == 'static')? '' : $arrOptionModule['module'].'/'.$arResult['seo_name'].'/');
-    Core::$META['alternate'] = Core::$DOCUMENT_ROOT.(($lang == 'ua')? '/' : '/ru/').$module_url;
-    Core::$META['alternate_ua'] = Core::$DOCUMENT_ROOT.'/'.$module_url;
-    Core::$META['alternate_ru'] = Core::$DOCUMENT_ROOT.'/ru/'.$module_url;
+    // Alternate lang
+    $module_url = (($GM['module'] == 'static')? '' : $GM['module'].'/'.$arResult['seo_name'].'/');
+    Core::$META['alternate'] = $_SERVER['DOCUMENT_ROOT'].$link_lang.$module_url;
+    foreach(Core::$LINK_LANG as $k => $v){
+        Core::$META['alternate_'.$v] = $_SERVER['DOCUMENT_ROOT'].$link_lang.$module_url;
+    }
 
     // --- RDFa OPEN GRAPH ---
-    if($arrOptionModule['open_graph_page']){
+    if($GM['open_graph_page']){
         $contentOG = '';
 
         $contentOG .= '<meta property="og:title" content="'.hsc($arResult['meta_title_'.$lang]).'">
@@ -56,27 +55,26 @@ if($_GET['page'] == 'main'){
             $contentOG .= '<meta property="og:type" content="'.hsc($arResult['og_type']).'">';
         }
         if(!empty($arResult['og_url'])){
-            $contentOG .= '<meta property="og:url" content="'.Core::$DOCUMENT_ROOT.$link_langs.hsc($arResult['og_url']).'">';
+            $contentOG .= '<meta property="og:url" content="'.$_SERVER['DOCUMENT_ROOT'].$link_lang.hsc($arResult['og_url']).'">';
         }
         if(!empty($arResult['og_image'])){
-            $contentOG .= '<meta property="og:image" content="'.Core::$DOCUMENT_ROOT.hsc($arResult['og_image']).'">';
+            $contentOG .= '<meta property="og:image" content="'.$_SERVER['DOCUMENT_ROOT'].hsc($arResult['og_image']).'">';
         }
     }
 
-    // --- SLIDER PHOTO ---
+    // Slider photo
     $slidePhoto = explode('#', $arResult['cMorePhoto']);
-    foreach ($slidePhoto as $value) {
-        if (!empty($value)) {
+    foreach($slidePhoto as $value){
+        if(!empty($value)){
             $photos[] = explode('|', $value);
         }
     }
 
-    // --- GOODS IN BASKET ---
-    if (isset($_COOKIE['items'])) {
+    // Goods in basket
+    if(isset($_COOKIE['items'])){
         $cookies = (array)json_decode($_COOKIE['items']);
-        if(array_key_exists('g'.$arResult['id'],$cookies)){
+        if(array_key_exists('g'.$arResult['id'], $cookies)){
             $basket = 'backet-ok';
         }
     }
-
 }

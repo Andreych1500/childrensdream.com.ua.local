@@ -34,16 +34,16 @@ $(document).ready(function(){
     }
 });
 
-function getInfoFile(el){
-    var new_inp = $('#to_file').find('input[type="file"]');
-
-    $(new_inp).attr('rel_size', $(el).parents('.upload_file').attr('rel_size'));
-    $(new_inp).attr('rel_to_set', $(el).parents('.upload_file').attr('id')).trigger("click");
-}
-
-function resetFile(control){
-    control.replaceWith( control = control.clone( true ) );
-}
+// function getInfoFile(el){
+//     var new_inp = $('#to_file').find('input[type="file"]');
+//
+//     $(new_inp).attr('rel_size', $(el).parents('.upload_file').attr('rel_size'));
+//     $(new_inp).attr('rel_to_set', $(el).parents('.upload_file').attr('id')).trigger("click");
+// }
+//
+// function resetFile(control){
+//     control.replaceWith( control = control.clone( true ) );
+// }
 
 function  cancel(){
     var del_files = [];
@@ -56,7 +56,7 @@ function  cancel(){
 
     if (del_files.length > 0){
         $.ajax({
-            url: '/ajax/delete_file.php',
+            url: '/ajax/delete_file.php?ajax=ok',
             type: "POST",
             data: {'del_file': del_files},
             success: function (response) {
@@ -72,69 +72,69 @@ function  cancel(){
     }
 }
 
-function addPhoto(el, stringValue){
-    if(stringValue.length > 1){
-        var dir_name = $('input[name="dir_name"]').val();
-        var files = new FormData($('#to_file')[0]);
-
-        files.append("directory", dir_name);
-        files.append('size', $(el).attr('rel_size'));
-
-        if($('#to_file input[name="isset"]').length > 0){
-            files.append("isset", $('#to_file input[name="isset"]').val());
-        }
-
-        var rel_to_set="#"+$(el).attr('rel_to_set');
-
-        $.ajax({
-            url: "/ajax/addPhoto.php",
-            type: "POST",
-            data: files,
-            enctype: 'multipart/form-data',
-            processData: false,
-            contentType: false,
-            success: function (response) {
-                var res = JSON.parse(response);
-
-                // delete_file
-                var del_files = [];
-
-                if($(rel_to_set).find('input[name^="del"]').val() != '') {
-                    del_files[0] = $(rel_to_set).find('input[name^="del"]').val();
-                }
-
-                if (del_files.length > 0) {
-                    $.ajax({
-                        url: '/ajax/delete_file.php',
-                        type: "POST",
-                        data: {'del_file': del_files},
-                    });
-                }
-
-                if (res.error !== undefined) {
-                    $(rel_to_set).find('button + input').val('');
-                    alert('Загружайте лише фото!');
-                    $(rel_to_set).find('button').text('Вибрати файл');
-                } else {
-                    var name_file = res[0].name_file;
-                    $(rel_to_set).find('button + input[type="hidden"]').attr('value', res[0].file + '|' + res[0].name_dir + '|' + res[0].name_file);
-                    $(rel_to_set).find('button').text(name_file);
-
-                    $(rel_to_set).find('input[name^="del"]').val(res[0].file + '|' + res[0].name_dir + '|' + res[0].name_file);
-                }
-
-                resetFile($("#control")); //reset file input
-
-                // --- update image ---
-                if($('input[name="update"]').length > 0){
-                    if(res.error === undefined){
-                        $(rel_to_set).find('.photos').removeClass('hidden');
-                        $(rel_to_set).find('.photos img').attr('src', res[0].file)
-                    } else {
-                        $(rel_to_set).find('.photos').addClass('hidden');
-                    }
-                }
-            }
-        });
-    }
-}
+// function addPhoto(el, stringValue){
+//     if(stringValue.length > 1){
+//         var dir_name = $('input[name="dir_name"]').val();
+//         var files = new FormData($('#to_file')[0]);
+//
+//         files.append("directory", dir_name);
+//         files.append('size', $(el).attr('rel_size'));
+//
+//         if($('#to_file input[name="isset"]').length > 0){
+//             files.append("isset", $('#to_file input[name="isset"]').val());
+//         }
+//
+//         var rel_to_set="#"+$(el).attr('rel_to_set');
+//
+//         $.ajax({
+//             url: "/ajax/addPhoto.php",
+//             type: "POST",
+//             data: files,
+//             enctype: 'multipart/form-data',
+//             processData: false,
+//             contentType: false,
+//             success: function (response) {
+//                 var res = JSON.parse(response);
+//
+//                 // delete_file
+//                 var del_files = [];
+//
+//                 if($(rel_to_set).find('input[name^="del"]').val() != '') {
+//                     del_files[0] = $(rel_to_set).find('input[name^="del"]').val();
+//                 }
+//
+//                 if (del_files.length > 0) {
+//                     $.ajax({
+//                         url: '/ajax/delete_file.php',
+//                         type: "POST",
+//                         data: {'del_file': del_files},
+//                     });
+//                 }
+//
+//                 if (res.error !== undefined) {
+//                     $(rel_to_set).find('button + input').val('');
+//                     alert('Загружайте лише фото!');
+//                     $(rel_to_set).find('button').text('Вибрати файл');
+//                 } else {
+//                     var name_file = res[0].name_file;
+//                     $(rel_to_set).find('button + input[type="hidden"]').attr('value', res[0].file + '|' + res[0].name_dir + '|' + res[0].name_file);
+//                     $(rel_to_set).find('button').text(name_file);
+//
+//                     $(rel_to_set).find('input[name^="del"]').val(res[0].file + '|' + res[0].name_dir + '|' + res[0].name_file);
+//                 }
+//
+//                 resetFile($("#control")); //reset file input
+//
+//                 // --- update image ---
+//                 if($('input[name="update"]').length > 0){
+//                     if(res.error === undefined){
+//                         $(rel_to_set).find('.photos').removeClass('hidden');
+//                         $(rel_to_set).find('.photos img').attr('src', res[0].file)
+//                     } else {
+//                         $(rel_to_set).find('.photos').addClass('hidden');
+//                     }
+//                 }
+//             }
+//         });
+//     }
+// }

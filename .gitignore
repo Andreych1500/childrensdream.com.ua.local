@@ -3,3 +3,10 @@ config.php
 logs/
 work/
 composer.phar
+uploaded/
+robots.txt
+.htaccess
+.gitignore
+sitemap.xml
+composer.lock
+/skins/admin/img/

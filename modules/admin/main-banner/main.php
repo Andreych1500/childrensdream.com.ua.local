@@ -1,6 +1,4 @@
 <?php
-Core::$JS[] = '<script src="/skins/admin/js/mainEditMenu.js?v='.$vF.'"></script>';
-
 // --- EDIT ELEMENT ---
 if(isset($_POST['resArr']) && count($_POST['resArr']) > 0){
 
@@ -40,9 +38,9 @@ if(isset($_POST['resArr']) && count($_POST['resArr']) > 0){
 // --- DELETE ELEMENT AND FILE ---
 if(isset($_POST['delete']) && isset($_POST['ids'])){
 
-    foreach($_POST['ids'] as $key=>$value){
+    foreach($_POST['ids'] as $key => $value){
         if(!empty($_POST['del'][$value])){
-            $files = explode('|',$_POST['del'][$value]);
+            $files = explode('|', $_POST['del'][$value]);
 
             foreach($files as $key2 => $value2){
                 if(file_exists('.'.$value2)){
@@ -52,7 +50,7 @@ if(isset($_POST['delete']) && isset($_POST['ids'])){
         }
     }
 
-    $ids = implode(',',$_POST['ids']);
+    $ids = implode(',', $_POST['ids']);
 
     q(" DELETE FROM `main_banner`
 		WHERE `id` IN (".$ids.")
@@ -64,11 +62,11 @@ if(isset($_POST['delete']) && isset($_POST['ids'])){
 
 // --- ACTIVE ELEMENT ---
 if(isset($_POST['active']) && isset($_POST['ids'])){
-    foreach($_POST['ids'] as $k=>$v){
+    foreach($_POST['ids'] as $k => $v){
         $_POST['ids'][$k] = (int)$v;
     }
 
-    $ids = implode(',',$_POST['ids']);
+    $ids = implode(',', $_POST['ids']);
 
     q(" UPDATE `main_banner`
         SET `active` = 1
@@ -81,10 +79,10 @@ if(isset($_POST['active']) && isset($_POST['ids'])){
 
 // --- DEACTIVE ELEMENT ---
 if(isset($_POST['deactive']) && isset($_POST['ids'])){
-    foreach($_POST['ids'] as $k=>$v){
+    foreach($_POST['ids'] as $k => $v){
         $_POST['ids'][$k] = (int)$v;
     }
-    $ids = implode(',',$_POST['ids']);
+    $ids = implode(',', $_POST['ids']);
 
     q(" UPDATE `main_banner`
         SET `active` = 0
