@@ -1,0 +1,1 @@
+<div class="activate"><?=((isset($last_info)? $last_info : ''))?></div>

@@ -6,6 +6,9 @@ $(document).ready(function () {
 
     // Active menu
     $('.navigation li').click(function () {
+        var widthScrollY = widthScroll_Y();
+        var widthWindow = $(window).outerWidth(true) + widthScrollY;
+
         if ($('.active-section').length == 0) {
             $.cookie("act-menu", $(this).index(), {expires: 14, path: '/'});
         }
@@ -82,8 +85,9 @@ $(document).ready(function () {
     // Backup check
     $('.reload-file[href$="?backup=ok"]').click(function () {
         if ($('.operation-info').length == 0) {
+            var lang_text = $(this).attr('data-lang-text');
             setTimeout(function () {
-                $('.bottom-table').append('<div class="operation-info">Зачекайте будь-ласка!<img src="/skins/admin/img/load.gif" alt="loading"></div>');
+                $('.bottom-table').append('<div class="operation-info">' + lang_text + '<img src="/skins/admin/img/load.gif" alt="loading"></div>');
                 $('.operation-info').slideDown('middle');
             }, 600);
         }
@@ -109,6 +113,18 @@ $(document).ready(function () {
         } else {
             $('.illustration-table tr:not(:first-child) td:first-child input').each(function () {
                 $(this).prop("checked", false).parents('tr').removeClass('c-checked');
+            });
+        }
+    });
+
+    $('.technik-off-onn input[name="all_cheked"]').click(function () {
+        if ($(this).is(":checked") == true) {
+            $('div[data-result="tables"] input[type="checkbox"]').each(function () {
+                $(this).prop("checked", true);
+            });
+        } else {
+            $('div[data-result="tables"] input[type="checkbox"]').each(function () {
+                $(this).prop("checked", false);
             });
         }
     });
@@ -145,7 +161,7 @@ $(document).ready(function () {
         if ($(el_block).css('display') == 'block') {
             $(document).mouseup(function (e) {
                 if (!$(el_block).is(e.target) && $(el_block).has(e.target).length === 0) {
-                    $(el_block).slideUp('middle', function(){
+                    $(el_block).slideUp('middle', function () {
                         $('.triangle').remove();
                     });
                 }
@@ -202,12 +218,75 @@ $(document).ready(function () {
     // Edit element on window
     $('.illustration-table input[name^="ids"], input[name="all_cheked"]').click(function () {
         if ($('.illustration-table tr:not(:first-child) td:first-child input:checked').length > 0) {
-            $('.dynamicEdit').addClass('dynamicEdit-act').attr('onclick', 'editElements()');
+            var dinamicEdit = $('.dynamicEdit');
+            dinamicEdit.addClass('dynamicEdit-act').attr('onclick', 'editElements("' + dinamicEdit.attr('data-submit-lang') + '")');
         } else {
             $('.dynamicEdit').removeClass('dynamicEdit-act').removeAttr('onclick');
         }
     });
+
+    // Translition no spec simvol
+    var val = $('input[data-symbol-code="ok"]');
+    if (val.length > 0) {
+        var input_code = $('input[name="symbol_code"]');
+
+        val.keyup(function () {
+            if (input_code.val() !== undefined) {
+                input_code.val((translit(val.val().toLowerCase()))
+                    .replace(/\s/g, '-')
+                    .replace(/\*/g, '-')
+                    .replace(/</g, '-')
+                    .replace(/>/g, '-')
+                    .replace(/\//g, '-')
+                    .replace(/\)/g, '')
+                    .replace(/\(/g, '')
+                );
+            }
+        });
+    }
+
+    // More photo add button
+    $('.add_more').click(function () {
+        var input = $('.upload_file[id^="img_more_"]');
+        var onclick = input.last().find('button').attr('onclick');
+        var last_index = input.last().attr('id').split('img_more_')[1];
+        var size = input.last().attr('data-size');
+
+        ++last_index; // new id
+
+        var html = '<div class="input-value upload_file" id="img_more_' + last_index + '" data-size="' + size + '">' +
+            '<button class="icon-link" type="button" onclick="' + onclick + '">' + $(this).text() + '</button><input type="hidden" value="" name="img_more[]"><input type="hidden" value="" name="del[img_more][]"><div class="photos hidden"><img src="" alt=""></div></div>';
+        input.last().after(html);
+    });
+
+    // Onchange and start get dbTable
+    if ($('div[data-get-dbTable-ajax="ok"]').length > 0) {
+        getDataBaseTable();
+    }
 });
+
+function getDataBaseTable() {
+    $.ajax({
+        url: "/admin/setting/export-db/?ajax=ok",
+        type: "POST",
+        data: {},
+        cache: false,
+        success: function (response) {
+            var res = JSON.parse(response);
+
+            if (res['error'] === undefined) {
+                var tables = '';
+                for (var prop in res) {
+                    tables += '<label><input type="checkbox" name="tables[]" value="' + res[prop] + '">' + res[prop] + '</label>';
+                }
+                $('div[data-result="tables"]').html(tables);
+            } else {
+                $('div[data-result="tables"]').html('Error Result!');
+            }
+
+        }
+    });
+}
 
 function getInfoFile(el, dirSave) {
     $('#control').attr({
@@ -258,10 +337,10 @@ function addPhoto(el) {
                     elSet.find('button + input').val('');
                     elSet.find('button').text('Вибрати файл');
                     elSet.find('.photos').addClass('hidden').find('img').removeAttr('src');
-                    alert('Загружайте лише фото!');
+                    alert('Please upload only photos!');
                 } else {
-                    elSet.find('button + input[type="hidden"]').attr('value', res['file'] + '|' + res['name_dir'] + '|' + res['name_file']);
-                    elSet.find('button').text(res['name_file']);
+                    elSet.find('button + input[type="hidden"]').attr('value', res['file']);
+                    elSet.find('button').text(res['file']);
                     elSet.find('input[name^="del"]').val(res['file']);
                     elSet.find('.photos').removeClass('hidden'); // update image
                     elSet.find('.photos img').attr('src', res['file']);
@@ -298,19 +377,19 @@ function openMenuUpdate(el) {
 }
 
 function okFrom() {
-    return confirm('Ви підтверджуєте свою дію?');
+    return confirm('You agree to action?');
 }
 
-function editElements() {
+function editElements(submit_lang) {
     var checked = $('.illustration-table tr:not(:first-child) td:first-child input:checked');
     var obj = {};
     var inputArr = [];
     var resultObj = [];
     var resultArr = [];
-
+    var submit_lang = submit_lang.split('|');
 
     // Add submit
-    $('.dynamicEdit').removeAttr('onclick').removeClass('dynamicEdit').html('<input type="submit" value="Зберегти" name="el-save"><a href="' + document.location.pathname + '" class="no-save">Відмінити</a>');
+    $('.dynamicEdit').removeAttr('onclick').removeClass('dynamicEdit').html('<input type="submit" value="' + submit_lang[0] + '" name="el-save"><a href="' + document.location.pathname + '" class="no-save">' + submit_lang[1] + '</a>');
 
     // Create array inputs
     $(checked).each(function (i, el) {

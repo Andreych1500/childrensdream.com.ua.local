@@ -24,8 +24,9 @@ if(isset($_GET['id'], $_GET['hash'])){
         sessionInfo('/cab/activate/', 'Ви пройшли по неправельній силці!');
     }
 } else {
-    if(isset($info['text'])){
-        $last_info = $info['text'];
+    if(isset($_SESSION['info']['text'])){
+        $last_info = $_SESSION['info']['text'];
+        unset($_SESSION['info']);
     } else {
         header('Location: /');
         exit();

@@ -40,7 +40,7 @@ if(isset($_REQUEST['add'])){
                 `user_custom`  = '".mres($_SESSION['user']['last_name'].' '.$_SESSION['user']['name'])."'
             ");
 
-            sessionInfo('/admin/setting/modules-pages/', 'Модуль створено успішно!', 1);
+            sessionInfo('/admin/setting/modules-pages/', $messG['Елемент створено успішно!'], 1);
         }
     }
 } elseif(isset($_REQUEST['edit'])) {
@@ -81,11 +81,15 @@ if(isset($_REQUEST['add'])){
             $_POST = mres($_POST);
 
             $_POST['active'] = !isset($_POST['active'])? 0 : (int)$_POST['active'];
+            $_POST['detail_page'] = !isset($_POST['detail_page'])? 0 : (int)$_POST['detail_page'];
+            $_POST['dinamic_page'] = !isset($_POST['dinamic_page'])? 0 : (int)$_POST['dinamic_page'];
             $_POST['open_graph_page'] = !isset($_POST['open_graph_page'])? 0 : (int)$_POST['open_graph_page'];
 
             q(" UPDATE `admin_module_pages` SET
                 `active`           = ".$_POST['active'].",
                 `module`           = '".$_POST['module']."',
+                `detail_page`      = '".$_POST['detail_page']."',
+                `dinamic_page`     = '".$_POST['dinamic_page']."',
                 `list_length`      = '".mres($list_length)."',
                 `meta_title`       = '".mres($meta_title)."',
                 `meta_keywords`    = '".mres($meta_keywords)."',
@@ -98,7 +102,7 @@ if(isset($_REQUEST['add'])){
                 WHERE `id` = ".(int)$_REQUEST['edit']."
             ");
 
-            sessionInfo('/admin/setting/modules-pages/', 'Модуль змінено успішно!', 1);
+            sessionInfo('/admin/setting/modules-pages/', $messG['Редагування пройшло успішно!'], 1);
         }
     }
 
@@ -109,32 +113,32 @@ if(isset($_REQUEST['add'])){
     ");
 
     if($arResult->num_rows == 0){
-        sessionInfo('/admin/setting/modules-pages/', 'Помилка, елемента з таким ID неіснує!');
+        sessionInfo('/admin/setting/modules-pages/', $messG['Eлемент з таким ID неіснує!']);
     } else {
         $arResult = $arResult->fetch_assoc();
     }
 } else {
 
     if(isset($_POST['arr']) && count($_POST['arr']) > 0){ // Dynamic edit
-        DynamicEditMenu::edit($_POST['arr'], 'admin_module_pages', '/admin/setting/modules-pages/');
+        DynamicEditMenu::edit($_POST['arr'], 'admin_module_pages', '/admin/setting/modules-pages/', $messG['Редагування пройшло успішно!']);
     }
 
     if(isset($_REQUEST['del'])){ // Delete one
-        deleteElement($_REQUEST['del'], 'admin_module_pages', '/admin/setting/modules-pages/');
+        deleteElement($_REQUEST['del'], 'admin_module_pages', '/admin/setting/modules-pages/', $messG['Видалення пройшло успішно!']);
     }
 
     if(isset($_POST['delete']) && isset($_POST['ids'])){ // Delete ids
-        deleteElement(implode(',', $_POST['ids']), 'admin_module_pages', '/admin/setting/modules-pages/');
+        deleteElement(implode(',', $_POST['ids']), 'admin_module_pages', '/admin/setting/modules-pages/', $messG['Видалення пройшло успішно!']);
     }
 
     if(isset($_POST['deactivate']) && isset($_POST['ids'])){ // Deactivate
         deactivateElement(implode(',', $_POST['ids']), 'admin_module_pages');
-        sessionInfo('/admin/setting/modules-pages/', 'Деактивація пройшла успішно!', 1);
+        sessionInfo('/admin/setting/modules-pages/', $messG['Деактивація пройшла успішно!'], 1);
     }
 
     if(isset($_POST['activate']) && isset($_POST['ids'])){ // Activate
         activeElement(implode(',', $_POST['ids']), 'admin_module_pages');
-        sessionInfo('/admin/setting/modules-pages/', 'Активація пройшла успішно!', 1);
+        sessionInfo('/admin/setting/modules-pages/', $messG['Активація пройшла успішно!'], 1);
     }
 
     // Filter
@@ -156,6 +160,7 @@ if(isset($_REQUEST['add'])){
         'db_table'    => "admin_module_pages",
         'css_class'   => "pagination-admin",
         'filter'      => $filter,
+        'sort'        => '',
         'notFound404' => 'N',
         'lang'        => '',
         'link_lang'   => '',

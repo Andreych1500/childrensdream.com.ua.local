@@ -4,8 +4,8 @@ if(Core::$CONT != 'modules/admin'){
     foreach(explode(',', $GM['list_length']) as $k => $v){
         if($lang == $v){
             Core::$META['title'] = hsc(explode('#|#', $GM['meta_title'])[$k]);
-            Core::$META['keywords'] = hsc(explode('#|#', $GM['meta_title'])[$k]);
-            Core::$META['description'] = hsc(explode('#|#', $GM['meta_title'])[$k]);
+            Core::$META['keywords'] = hsc(explode('#|#', $GM['meta_keywords'])[$k]);
+            Core::$META['description'] = hsc(explode('#|#', $GM['meta_description'])[$k]);
         }
     }
 
@@ -14,17 +14,17 @@ if(Core::$CONT != 'modules/admin'){
         0 => 'https://www.google-analytics.com',
         1 => 'https://mc.yandex.ru',
         2 => 'http://counter.yadro.ru',
-        3 => $_SERVER['DOCUMENT_ROOT'],
+        3 => $arMainParam['url_http_site'],
     );
 
     // Canonical
-    Core::$META['canonical'] = $_SERVER['DOCUMENT_ROOT'].$link_lang.(($GM['module'] == 'static')? '' : $GM['module'].'/');
+    Core::$META['canonical'] = $arMainParam['url_http_site'].$link_lang.(($GM['module'] == 'static')? '' : $GM['module'].'/');
 
     // Alternate lang
     $module_url = (($GM['module'] == 'static')? '' : $GM['module'].'/');
-    Core::$META['alternate'] = $_SERVER['DOCUMENT_ROOT'].$link_lang.$module_url;
+    Core::$META['alternate'] = $arMainParam['url_http_site'].$link_lang.$module_url;
     foreach(Core::$LINK_LANG as $k => $v){
-        Core::$META['alternate_'.$v] = $_SERVER['DOCUMENT_ROOT'].(($v == 'ua')? '/' : '/'.$v.'/').$module_url;
+        Core::$META['alternate_'.$v] = $arMainParam['url_http_site'].(($v == 'ua')? '/' : '/'.$v.'/').$module_url;
     }
 
     // RDFa open graph
@@ -38,10 +38,10 @@ if(Core::$CONT != 'modules/admin'){
             $contentOG .= '<meta property="og:type" content="'.hsc($GM['og_type']).'">';
         }
         if(!empty($GM['og_url'])){
-            $contentOG .= '<meta property="og:url" content="'.$_SERVER['DOCUMENT_ROOT'].(($lang == 'ua')? '' : '/'.$lang).$GM['og_url'].'">';
+            $contentOG .= '<meta property="og:url" content="'.$arMainParam['url_http_site'].(($lang == 'ua')? '' : '/'.$lang).$GM['og_url'].'">';
         }
         if(!empty($GM['og_image'])){
-            $contentOG .= '<meta property="og:image" content="'.$_SERVER['DOCUMENT_ROOT'].$GM['og_image'].'">';
+            $contentOG .= '<meta property="og:image" content="'.$arMainParam['url_http_site'].$GM['og_image'].'">';
         }
     }
 
@@ -132,23 +132,26 @@ if(Core::$CONT != 'modules/admin'){
     ");
 
     if($new_order->num_rows > 0){
-        $new_el['order'] = 'Новий заказ';
+        $new_el['order'] = $messG['Новий заказ'];
     }
 
     if($new_comments->num_rows > 0){
-        $new_el['comments'] = 'Новий відгук';
+        $new_el['comments'] = $messG['Новий відгук'];
     }
 
-    if(isset($_GET['edit_info'])){
-        if(in_array($_GET['edit_info'], array('order', 'comments'))){
+    if(isset($_REQUEST['edit_info'])){
+        if(in_array($_REQUEST['edit_info'], array('order', 'comments'))){
             q(" 
-				        UPDATE `".$_GET['edit_info']."` SET
+				        UPDATE `".$_REQUEST['edit_info']."` SET
 			          `new_massage` = 0
 		            WHERE `new_massage` = 1
 		        ");
 
-            header("Location: /admin/".$_GET['edit_info']);
+            header("Location: /admin/".$_REQUEST['edit_info']."/");
             exit();
         }
     }
+
+    // Admin menu
+    include './modules/admin/admin_menu.php';
 }

@@ -1,14 +1,15 @@
 <div class="section-interface-k1">
   <div class="line-custom">
-    <p class="header-name">Резервне копіювання проекту</p>
+    <p class="header-name"><?=$mess['Резервне копіювання проекту']?></p>
   </div>
+
   <table class="illustration-table">
     <tr>
       <td>№</td>
-      <td>Файл бекапу</td>
-      <td>Об'єм пам'яті</td>
-      <td>Дата створення</td>
-      <td>Ким зроблена</td>
+      <td><?=$mess['Файл бекапу']?></td>
+      <td><?=$mess['Об\'єм пам\'яті']?></td>
+      <td><?=$messG['Дата створення']?></td>
+      <td><?=$messG['Ким оновлений']?></td>
     </tr>
     <?php if($backup['result_DB']->num_rows > 0){
       while($arResult = $backup['result_DB']->fetch_assoc()){ ?>
@@ -31,8 +32,8 @@
     <?php } ?>
   </table>
   <div class="bottom-table">
-    <a class="reload-file" href="/admin/setting/backup/?backup=ok">Запустити backup</a>
-    <a class="reload-file" href="/admin/setting/backup/?downloadBackup=ok">Скачати останній backup</a>
+    <a class="reload-file" data-lang-text="<?=$mess['Зачекайте будь-ласка!']?>" href="/admin/setting/backup/?backup=ok"><?=$mess['Запустити backup']?></a>
+    <a class="reload-file" href="/admin/setting/backup/?downloadBackup=ok"><?=$mess['Скачати останній backup']?></a>
     <?=$backup['pagination']?>
   </div>
 </div>

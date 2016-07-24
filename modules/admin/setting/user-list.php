@@ -1,7 +1,5 @@
 <?php
-
 if(isset($_REQUEST['add'])){
-
     if(isset($_POST['ok'])){
         $error = array();
         $_POST = trimAll($_POST);
@@ -12,10 +10,7 @@ if(isset($_REQUEST['add'])){
         $check['email'] = ((empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))? 'class="error"' : '');
         $check['pass'] = ((empty($_POST['pass']) || strlen($_POST['pass']) < 6)? 'class="error"' : '');
         $check['check_pass'] = ((empty($_POST['check_pass']) || $_POST['pass'] != $_POST['check_pass'])? 'class="error"' : '');
-
-        // Photo
-        $user_avatar = ((isset($_POST['user_avatar']))? explode('|', $_POST['user_avatar']) : '');
-
+        
         if(in_array('class="error"', $check)){
             $error['stop'] = 1;
         } else {
@@ -29,7 +24,7 @@ if(isset($_REQUEST['add'])){
 
             if($res->num_rows){
                 $error['stop'] = 1;
-                sessionInfo('/admin/setting/user-list/?add='.$_REQUEST['add'], 'Користувач з таким логіном або Email вже існує!', 0, 0);
+                sessionInfo('/admin/setting/user-list/?add='.$_REQUEST['add'], $messG['Користувач з таким логіном або Email вже існує!'], 0, 0);
             }
         }
 
@@ -50,12 +45,12 @@ if(isset($_REQUEST['add'])){
                 `email`       = '".$_POST['email']."',
                 `pass`        = '".myHash($_POST['pass'])."',
                 `hash`        = '".myHash($_POST['login'].$_POST['pass'].$_POST['email'])."',
-                `user_avatar` = '".mres($user_avatar[0])."',
+                `user_avatar` = '".$_POST['user_avatar']."',
                 `age`         = '".(int)$_POST['age']."',
                 `phone`       = '".$_POST['phone']."',
                 `profession`  = '".$_POST['profession']."',
                 `web_site`    = '".$_POST['web_site']."',
-                `floor`       = '".(int)$_POST['web_site']."',
+                `floor`       = '".(int)$_POST['floor']."',
                 `country`     = '".$_POST['country']."',
                 `region`      = '".$_POST['region']."',
                 `city`        = '".$_POST['city']."',
@@ -81,7 +76,7 @@ if(isset($_REQUEST['add'])){
                 }
             }
 
-            sessionInfo('/admin/setting/user-list/', 'Користувач успішно створений!', 1);
+            sessionInfo('/admin/setting/user-list/', $messG['Елемент створено успішно!'], 1);
         }
     }
 
@@ -96,7 +91,7 @@ if(isset($_REQUEST['add'])){
 } elseif(isset($_REQUEST['edit'])) {
 
     if($_REQUEST['edit'] == 1 && $_SESSION['user']['id'] != 1){
-        sessionInfo('/admin/setting/user-list/', 'У вас недостатньо прав для редагування користувача');
+        sessionInfo('/admin/setting/user-list/', $mess['У вас недостатньо прав для редагування цього користувача!']);
     }
 
     if(isset($_POST['ok'])){
@@ -125,7 +120,7 @@ if(isset($_REQUEST['add'])){
 
             if($res->num_rows){
                 $error['stop'] = 1;
-                sessionInfo('/admin/setting/user-list/?edit='.$_REQUEST['edit'], 'Користувач з таким логіном або Email вже існує!', 0, 0);
+                sessionInfo('/admin/setting/user-list/?edit='.$_REQUEST['edit'], $messG['Користувач з таким логіном або Email вже існує!'], 0, 0);
             }
         }
 
@@ -160,7 +155,7 @@ if(isset($_REQUEST['add'])){
                  WHERE `id` = ".(int)$_REQUEST['edit']."
             ");
 
-            sessionInfo('/admin/setting/user-list/', 'Редагування пройшло успішно!', 1);
+            sessionInfo('/admin/setting/user-list/', $messG['Редагування пройшло успішно!'], 1);
         }
     }
 
@@ -171,32 +166,32 @@ if(isset($_REQUEST['add'])){
     ");
 
     if($arResult->num_rows == 0){
-        sessionInfo('/admin/setting/user-list/', 'Помилка, елемента з таким ID неіснує!');
+        sessionInfo('/admin/setting/user-list/', $messG['Eлемент з таким ID неіснує!']);
     } else {
         $arResult = hsc($arResult->fetch_assoc());
     }
 } else {
 
     if(isset($_POST['arr']) && count($_POST['arr']) > 0){ // Dynamic edit
-        DynamicEditMenu::edit($_POST['arr'], 'admin_users_list', '/admin/setting/user-list/');
+        DynamicEditMenu::edit($_POST['arr'], 'admin_users_list', '/admin/setting/user-list/', $messG['Редагування пройшло успішно!']);
     }
 
     if(isset($_REQUEST['del'])){ // Delete one
-        deleteElement($_REQUEST['del'], 'admin_users_list', '/admin/setting/user-list/');
+        deleteElement($_REQUEST['del'], 'admin_users_list', '/admin/setting/user-list/', $messG['Видалення пройшло успішно!']);
     }
 
     if(isset($_POST['delete']) && isset($_POST['ids'])){ // Delete ids
-        deleteElement(implode(',', $_POST['ids']), 'admin_users_list', '/admin/setting/user-list/');
+        deleteElement(implode(',', $_POST['ids']), 'admin_users_list', '/admin/setting/user-list/', $messG['Видалення пройшло успішно!']);
     }
 
     if(isset($_POST['deactivate']) && isset($_POST['ids'])){ // Deactivate
         deactivateElement(implode(',', $_POST['ids']), 'admin_users_list');
-        sessionInfo('/admin/setting/user-list/', 'Деактивація пройшла успішно!', 1);
+        sessionInfo('/admin/setting/user-list/', $messG['Деактивація пройшла успішно!'], 1);
     }
 
     if(isset($_POST['activate']) && isset($_POST['ids'])){ // Activate
         activeElement(implode(',', $_POST['ids']), 'admin_users_list');
-        sessionInfo('/admin/setting/user-list/', 'Активація пройшла успішно!', 1);
+        sessionInfo('/admin/setting/user-list/', $messG['Активація пройшла успішно!'], 1);
     }
 
     // Filter
@@ -218,6 +213,7 @@ if(isset($_REQUEST['add'])){
         'db_table'    => "admin_users_list",
         'css_class'   => "pagination-admin",
         'filter'      => $filter,
+        'sort'        => '',
         'notFound404' => 'N',
         'lang'        => '',
         'link_lang'   => '',

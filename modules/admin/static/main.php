@@ -32,7 +32,7 @@ if(!$globalAccess){
             header("Location: /admin/");
             exit();
         } else {
-            $error['notuser'] = 'errors';
+            $error['notuser'] = 'error';
         }
     }
 } else {

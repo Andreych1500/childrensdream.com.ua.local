@@ -1,10 +1,12 @@
 User-agent: *
 Disallow: /*?
+Disallow: //
 Disallow: /ajax
 Disallow: /error
 Disallow: /libs
 Disallow: /logs
 Disallow: /setting
+Disallow: /oferta
 Disallow: /order
 Disallow: /cab
 Disallow: /modules
@@ -17,6 +19,7 @@ Allow: /skins/default/img/*.gif$
 Disallow: /vendor
 Allow: /vendor/public/jquery/dist/jquery.min.js
 Allow: /vendor/public/slick-carousel/slick/slick.min.js
+Allow: /vendor/public/jquery.cookie/jquery.cookie.min.js
 Disallow: /work
 Disallow: /admin
 Disallow: /static

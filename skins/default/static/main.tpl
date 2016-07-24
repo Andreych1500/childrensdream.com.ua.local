@@ -35,29 +35,30 @@
     <span class="line"></span>
   </div>
 
-  <?php if($products->num_rows > 0){ ?><?php while($el = $products->fetch_assoc()){ ?>
-    <div class="mattress" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-      <a class="photos" href="<?=$link_lang?>products/<?=hsc($el['seo_name'])?>/" itemprop="url">
-        <img src="<?=hsc($el['cAnonsPhoto'])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>" itemprop="image"> </a>
-      <a class="links" href="<?=$link_lang?>products/<?=hsc($el['seo_name'])?>/">
-        <span itemprop="name"><?=hsc($el['name_'.$lang])?></span> </a>
-      <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-        <p class="price"><?=number_format(hsc($el['price']), 0, ',', ' ')?> <?=$mess['PRICE']?></p>
-        <p class="aviability">
-          <span class="<?=(((int)$el['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
-          <?=(((int)$el['availability'] == 1)? '<link itemprop="availability" href="http://schema.org/InStock">' : '<link itemprop="availability" href="http://schema.org/OutOfStock">')?>
-          <span><?=(((int)$el['availability'] == 1)? $mess['AVIABILITY'] : $mess['NOAVIABILITY'])?></span>
-        </p>
-        <link itemprop="itemCondition" href="http://schema.org/NewCondition">
-        <meta itemprop="seller" content="Children's Dream">
-        <meta itemprop="price" content="<?=hsc($el['price'])?>.00">
-        <meta itemprop="priceCurrency" content="UAH">
+  <?php if($products->num_rows > 0){
+    while($el = $products->fetch_assoc()){ ?>
+      <div class="mattress" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+        <a class="photos" href="<?=$link_lang?>products/<?=hsc($el['symbol_code'])?>/" itemprop="url">
+          <img src="<?=hsc($el['img_anons'])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>" itemprop="image"> </a>
+        <a class="links" href="<?=$link_lang?>products/<?=hsc($el['symbol_code'])?>/">
+          <span itemprop="name"><?=hsc($el['name_'.$lang])?></span> </a>
+        <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+          <p class="price"><?=number_format(hsc($el['price']), 0, ',', ' ')?> <?=$mess['PRICE']?></p>
+          <p class="aviability">
+            <span class="<?=(((int)$el['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
+            <?=(((int)$el['availability'] == 1)? '<link itemprop="availability" href="http://schema.org/InStock">' : '<link itemprop="availability" href="http://schema.org/OutOfStock">')?>
+            <span><?=(((int)$el['availability'] == 1)? $mess['AVIABILITY'] : $mess['NOAVIABILITY'])?></span>
+          </p>
+          <link itemprop="itemCondition" href="http://schema.org/NewCondition">
+          <meta itemprop="seller" content="Children's Dream">
+          <meta itemprop="price" content="<?=hsc($el['price'])?>.00">
+          <meta itemprop="priceCurrency" content="UAH">
+        </div>
+        <meta itemprop="description" content="<?=hsc($el['description_'.$lang])?>">
+        <meta itemprop="brand" content="Children's Dream">
+        <meta itemprop="manufacturer" content="Children's Dream">
       </div>
-      <meta itemprop="description" content="<?=hsc($el['description_'.$lang])?>">
-      <meta itemprop="brand" content="Children's Dream">
-      <meta itemprop="manufacturer" content="Children's Dream">
-    </div>
-  <?php } ?>
+    <?php } ?>
     <div class="block-title">
       <span class="line"></span>
       <p class="more-el"><?=$mess['MORE']?>

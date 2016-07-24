@@ -7,7 +7,7 @@ if($_GET['page'] == 'main'){
 
     // All elements
     $products = q("
-      SELECT `id`,`name_ua`,`seo_name`,`price`,`availability`,`cAnonsPhoto`,`name_ru`,`img_seo_alt_ua`,`img_seo_alt_ru`,`description_ua`,`description_ru`
+      SELECT `id`,`name_ua`,`symbol_code`,`price`,`availability`,`img_anons`,`name_ru`,`img_seo_alt_ua`,`img_seo_alt_ru`,`description_ua`,`description_ru`
       FROM `products`
       WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
     ");
@@ -17,7 +17,7 @@ if($_GET['page'] == 'main'){
     $products = q("
       SELECT *
       FROM `products`
-      WHERE `seo_name` = '".mres($_GET['page'])."' AND `active` = 1
+      WHERE `symbol_code` = '".mres($_GET['page'])."' AND `active` = 1
       LIMIT 1
     ");
 
@@ -35,13 +35,13 @@ if($_GET['page'] == 'main'){
     Core::$META['description'] = $arResult['meta_description_'.$lang];
 
     // Canonical
-    Core::$META['canonical'] = $_SERVER['DOCUMENT_ROOT'].$link_lang.(($GM['module'] == 'static')? '' : $GM['module'].'/'.$arResult['seo_name'].'/');
+    Core::$META['canonical'] = $arMainParam['url_http_site'].$link_lang.(($GM['module'] == 'static')? '' : $GM['module'].'/'.$arResult['symbol_code'].'/');
 
     // Alternate lang
-    $module_url = (($GM['module'] == 'static')? '' : $GM['module'].'/'.$arResult['seo_name'].'/');
-    Core::$META['alternate'] = $_SERVER['DOCUMENT_ROOT'].$link_lang.$module_url;
+    $module_url = (($GM['module'] == 'static')? '' : $GM['module'].'/'.$arResult['symbol_code'].'/');
+    Core::$META['alternate'] = $arMainParam['url_http_site'].$link_lang.$module_url;
     foreach(Core::$LINK_LANG as $k => $v){
-        Core::$META['alternate_'.$v] = $_SERVER['DOCUMENT_ROOT'].$link_lang.$module_url;
+        Core::$META['alternate_'.$v] = $arMainParam['url_http_site'].(($v == 'ua')? '/' : '/'.$v.'/').$module_url;
     }
 
     // --- RDFa OPEN GRAPH ---
@@ -55,15 +55,15 @@ if($_GET['page'] == 'main'){
             $contentOG .= '<meta property="og:type" content="'.hsc($arResult['og_type']).'">';
         }
         if(!empty($arResult['og_url'])){
-            $contentOG .= '<meta property="og:url" content="'.$_SERVER['DOCUMENT_ROOT'].$link_lang.hsc($arResult['og_url']).'">';
+            $contentOG .= '<meta property="og:url" content="'.$arMainParam['url_http_site'].$link_lang.hsc($arResult['og_url']).'">';
         }
         if(!empty($arResult['og_image'])){
-            $contentOG .= '<meta property="og:image" content="'.$_SERVER['DOCUMENT_ROOT'].hsc($arResult['og_image']).'">';
+            $contentOG .= '<meta property="og:image" content="'.$arMainParam['url_http_site'].hsc($arResult['og_image']).'">';
         }
     }
 
     // Slider photo
-    $slidePhoto = explode('#', $arResult['cMorePhoto']);
+    $slidePhoto = explode('#', $arResult['img_more']);
     foreach($slidePhoto as $value){
         if(!empty($value)){
             $photos[] = explode('|', $value);

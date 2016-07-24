@@ -35,8 +35,6 @@ class UploaderPhotos{
 
                 $name = $_SERVER['DOCUMENT_ROOT'].'/uploaded/'.$directory.'/'.$nameFile;
 
-                self::$info['name_dir'] = $directory;
-                self::$info['name_file'] = $nameFile;
                 self::$info['file'] = '/uploaded/'.$directory.'/'.$nameFile;
 
                 if(!in_array($matches[1], self::$tup)){
@@ -58,6 +56,10 @@ class UploaderPhotos{
                 }
             } else {
                 self::$error = 'Даний файл не є зображенням. Допускається тип файлів: jpeg,jpg,png,gif';
+            }
+
+            if(!empty(self::$error)){
+                return self::$error;
             }
         }
     }

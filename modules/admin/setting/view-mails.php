@@ -25,7 +25,7 @@ if(isset($_REQUEST['view'])){
                 Mail::send();
             }
 
-            sessionInfo('/admin/setting/view-mails/', 'Тестовий лист успішно відправлений!', 1);
+            sessionInfo('/admin/setting/view-mails/', $mess['Тестовий лист успішно відправлений!'], 1);
         }
     }
 
@@ -44,6 +44,7 @@ if(isset($_REQUEST['view'])){
         'db_table'    => "admin_type_mails",
         'css_class'   => "pagination-admin",
         'filter'      => '',
+        'sort'        => '',
         'notFound404' => 'N',
         'lang'        => '',
         'link_lang'   => '',

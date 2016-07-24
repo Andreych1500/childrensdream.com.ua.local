@@ -3,7 +3,7 @@ $(document).ready(function () {
     setTimeout(function () {
         $('.no-active').removeClass('no-active');
     }, 100);
-   
+
     // Active menu
     $(".section-module").each(function () {
         var url = window.location.pathname;
@@ -49,6 +49,8 @@ $(document).ready(function () {
 
         // New information || Mob PC version
         if (widthWindow <= 740) {
+            $('.pc-version aside, .pc-version .navigation').removeAttr('style');
+
             if ($('.nth1-panel .new-info').length == 0) {
                 $('.new-info').insertBefore('.nth1-panel .to-cab', '');
             }
@@ -65,11 +67,11 @@ $(document).ready(function () {
             if ($('.pc-version').length == 0 && $('.auth-panel').length == 0) {
                 $('main').removeClass('mobile-version').addClass('pc-version');
             }
-        }
 
-        // Min height content block
-        $('.pc-version aside').css({'min-height': contentHeight});
-        $('.pc-version .navigation').css('min-height', contentHeight);
+            // Min height content block
+            $('.pc-version aside').css({'min-height': contentHeight});
+            $('.pc-version .navigation').css('min-height', contentHeight);
+        }
     });
 
     $(window).resize();

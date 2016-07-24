@@ -11,10 +11,6 @@ class Mail{
         self::$headers = '=?utf-8?b?'.base64_encode(self::$subject).'?='; //кодіровка
         self::$headers = "Content-type: text/html; charset=\"utf-8\"\r\n";
 
-        if(!empty(self::$from)){
-            self::$from = $arMainParam['from_email'];
-        }
-        
         self::$headers .= "From: ".self::$from."\r\n"; //з якого email було відправлено
         self::$headers .= "MIME-Version: 1.0\r\n"; //тип листа
         self::$headers .= "Date: ".date('D, d M Y h:s:s O')."\r\n"; //дата листа коли було відправлено

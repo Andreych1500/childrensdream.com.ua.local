@@ -1,6 +1,6 @@
 <?php
-error_reporting(-1);
-ini_set('display_errors', 1);
+error_reporting(0);
+ini_set('display_errors', 0);
 header('Content-Type: text/html; charset=utf-8');
 $t = microtime(true);
 session_start();
@@ -41,10 +41,5 @@ if(isset($_GET['ajax'])){
     exit();
 }
 
-//$arMainParam
-//$GM
-//$adminParam
-$end = microtime(true);
-//echo $end - $t;
 include './skins/'.Core::$SKIN.'/'.'index.tpl';
 exit();

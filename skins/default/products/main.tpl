@@ -10,9 +10,9 @@
     <?php if($products->num_rows > 0){
       while($el = $products->fetch_assoc()){ ?>
         <div class="mattress" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-          <a class="photos" href="<?=$link_lang?>products/<?=hsc($el['seo_name'])?>/" itemprop="url">
-            <img src="<?=hsc($el['cAnonsPhoto'])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>" itemprop="image"> </a>
-          <a class="links" href="<?=$link_lang?>products/<?=hsc($el['seo_name'])?>/">
+          <a class="photos" href="<?=$link_lang?>products/<?=hsc($el['symbol_code'])?>/" itemprop="url">
+            <img src="<?=hsc($el['img_anons'])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>" itemprop="image"> </a>
+          <a class="links" href="<?=$link_lang?>products/<?=hsc($el['symbol_code'])?>/">
             <span itemprop="name"><?=hsc($el['name_'.$lang])?></span> </a>
           <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
             <p class="price"><?=number_format(hsc($el['price']), 0, ',', ' ')?> <?=$mess['PRICE']?></p>
@@ -104,7 +104,7 @@
       </div>
       <div class="description-text" itemprop="description"><?=nl2br(hsc($arResult['text_'.$lang]))?></div>
       <div class="circle-photo">
-        <img src="<?=hsc($arResult['cCirklePhoto'])?>" alt="<?=hsc($arResult['name_'.$lang])?>" title="<?=hsc($arResult['img_seo_alt_'.$lang])?>">
+        <img src="<?=hsc($arResult['img_circle'])?>" alt="<?=hsc($arResult['name_'.$lang])?>" title="<?=hsc($arResult['img_seo_alt_'.$lang])?>">
       </div>
     </div>
   </div>

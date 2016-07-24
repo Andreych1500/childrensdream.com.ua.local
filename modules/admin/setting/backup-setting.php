@@ -1,5 +1,5 @@
 <?php
-if(isset($_REQUEST['backup-setting'])){ // Edit setting
+if(isset($_REQUEST['backup-setting'])){
 
     if(isset($_POST['ok'])){
         $error = array();
@@ -26,9 +26,9 @@ if(isset($_REQUEST['backup-setting'])){ // Edit setting
                 `user_custom`          = '".mres($_SESSION['user']['last_name'].' '.$_SESSION['user']['name'])."'
             ");
 
-            sessionInfo('/admin/setting/backup-setting/', 'Редагування успішно проведено!', 1);
+            sessionInfo('/admin/setting/backup-setting/', $messG['Редагування пройшло успішно!'], 1);
         } else {
-            sessionInfo('/admin/setting/backup-setting/', 'Сталася помилка, не заповнено коректно поля!');
+            sessionInfo('/admin/setting/backup-setting/', $mess['Сталася помилка, не заповнено коректно поля!']);
         }
     }
 

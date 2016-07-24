@@ -68,10 +68,12 @@ class TemplateMail{
         'phone'      => $arSetting['phone'],
         'email'      => $arSetting['email'],
         'urlToSite'  => $arMainParam['url_http_site'].'/'.$langUrl,
-        'shops_ua'   => 'Продовжити покупки:',
-        'shops_ru'   => 'Продолжить покупки:',
+        'shops_ua'   => 'Каталог продукції',
+        'shops_ru'   => 'Каталог продукции',
+        'shops_en'   => 'Continue shopping:',
         'popular_ua' => 'Популярні товари:',
-        'popular_ru' => 'Популярные товары:'
+        'popular_ru' => 'Популярные товары:',
+        'popular_en' => 'Popular goods:'
       );
 
       // Goods
@@ -82,6 +84,7 @@ class TemplateMail{
       ");
 
       Mail::$subject = $arSet['theme']; // Headers from list !!!
+      Mail::$from = $arMainParam['from_email'];
       Mail::$hidden_copy = $arType['hidden_copy'];
       $content = explode('#|#', $arType['text'])[$l];
 
@@ -123,13 +126,13 @@ class TemplateMail{
 
         <?=htmlspecialchars_decode($content)?>
 
-        <div style="margin: 10px auto 20px; width: 250px; text-align: center; background: #43D1E0; font-size:20px;">
+        <div style="margin: 10px auto 20px; width: 100%; max-width: 250px; text-align: center; background: #43D1E0; font-size:20px;">
           <a href="<?=hsc($arSet['urlToSite'])?>products/" target="_blank" title="" style="color:#ffffff; padding:5px 0; text-decoration:none; display: inline-block; width: 100%;"><?=hsc($arSet['shops_'.$lang])?></a>
         </div>
         <p style="font-weight:bold; text-align:center; margin:0 0 10px;"><?=hsc($arSet['popular_'.$lang])?></p>
         <?php while($arResult = $arGoods->fetch_assoc()){ ?>
           <div class="goods_children_dream_tm" style="margin: 1% 1% 5%; text-align:center;">
-            <a href="<?=$arSet['urlToSite']?>products/<?=hsc($arResult['seo_name'])?>/" target="_blank" style="display:inline-block; width:100%;"><img src="<?=$arMainParam['url_http_site'].hsc($arResult['cAnonsPhoto'])?>" style="max-width:200px; width:100%;" alt="<?=hsc($arResult['name_'.$lang])?>"></a><a href="<?=hsc($arSet['urlToSite'])?>products/<?=hsc($arResult['seo_name'])?>" target="_blank" style="width:100%; color:#482200;"><?=hsc($arResult['name_'.$lang])?></a>
+            <a href="<?=$arSet['urlToSite']?>products/<?=hsc($arResult['symbol_code'])?>/" target="_blank" style="display:inline-block; width:100%;"><img src="<?=$arMainParam['url_http_site'].hsc($arResult['img_anons'])?>" style="max-width:200px; width:100%;" alt="<?=hsc($arResult['name_'.$lang])?>"></a><a href="<?=hsc($arSet['urlToSite'])?>products/<?=hsc($arResult['symbol_code'])?>/" target="_blank" style="width:100%; color:#482200;"><?=hsc($arResult['name_'.$lang])?></a>
           </div>
         <?php } ?>
         <div style="clear:both;"></div>
@@ -145,7 +148,7 @@ class TemplateMail{
           <?php } ?>
           <div style="clear:both;"></div>
         </div>
-        <p style="font-size:14px;"><?=$arSet['why']?>:
+        <p style="font-size:14px;"><?=$arSet['why']?>
           <a href="<?=$arSet['urlToSite']?>" target="_blank" style="color: #43D1E0; display: inherit;"><?=$arSet['wwwSite']?></a>
         </p>
         <p>&copy; <?=data(2015)?></p>
@@ -159,6 +162,7 @@ class TemplateMail{
       return $html;
     } else {
       Mail::$subject = 'Error '.$arSetting['wwwSite'];
+      Mail::$from = $arMainParam['from_email'];
       Mail::$text = 'Сталася помилка при відправці листа, код: :'.$symbol_code;
       Mail::$to = $arSetting['test_email'];
       Mail::send();

@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['name'], $_POST['text'], $_POST['email'])){
+if(isset($_POST['name'], $_POST['text'], $_POST['email'], $_POST['ok'])){
     $error = array();
     $_POST = trimAll($_POST);
 
@@ -15,12 +15,12 @@ if(isset($_POST['name'], $_POST['text'], $_POST['email'])){
         $_POST = mres($_POST);
 
         q(" INSERT INTO `comments` SET
-          `name`    = '".$_POST['name']."',
-          `text`    = '".$_POST['text']."',
-          `email`   = '".$_POST['email']."',
-          `user_ip` = '".mres($_SERVER['REMOTE_ADDR'])."',
-          `active`  = 0,
-          `date_create`  = NOW()
+            `name`    = '".$_POST['name']."',
+            `text`    = '".$_POST['text']."',
+            `email`   = '".$_POST['email']."',
+            `user_ip` = '".mres($_SERVER['REMOTE_ADDR'])."',
+            `active`  = 0,
+            `data_create`  = NOW()
         ");
 
         echo json_encode(array('status' => 'ok'));
@@ -32,6 +32,7 @@ if(isset($_POST['name'], $_POST['text'], $_POST['email'])){
 } else {
     if(isset($_REQUEST['ajax'])){
         echo json_encode(array('error' => 'ok'));
+        exit();
     }
 }
 

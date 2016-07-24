@@ -284,3 +284,1044 @@ line: 27
 date: 2016-07-11 17:41:33
 ===================================
 
+QUERY: UPDATE `admin_module_pages` SET
+                `active`         = 1,
+                `name`           = 'Ідеально для вашого малюка',
+                `sort`           = '100',
+                `list_length`    = 'ua,ru',
+                `img`            = '/uploaded/main_banner/20160711192336img48776.jpeg#|#/uploaded/main_banner/20160711192339img22008.jpeg',
+                `img_seo_alt`    = 'Ідеально для вашого малюка,Идеально для вашего малыша',
+                `img_seo_title`  = ',',
+                `user_custom`    = 'Савіцький Андрій'
+                WHERE `id` = 1
+            
+Unknown column 'name' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\setting\main-banner.php
+line: 75
+date: 2016-07-11 19:24:07
+===================================
+
+QUERY:SELECT * FROM `admin_main_banner`  ORDER BY `id` DESC AND `sort` DESC 
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'AND `sort` DESC' at line 1
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_Pagination.php
+line: 108
+date: 2016-07-11 20:09:36
+===================================
+
+QUERY:SELECT * FROM `admin_main_banner`  ORDER BY `id` DESC `sort` DESC 
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`sort` DESC' at line 1
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_Pagination.php
+line: 108
+date: 2016-07-11 20:09:42
+===================================
+
+QUERY: INSERT INTO `products` SET
+                `active`       = 1,
+                `name`         = 'Array',
+                `symbol_code`  = 'testing_ua',
+                `list_length`  = 'ua,ru',
+                `user_custom`  = 'Савіцький Андрій',
+                `data_create`  = NOW()
+            
+Unknown column 'name' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\products\main.php
+line: 41
+date: 2016-07-12 23:02:11
+===================================
+
+QUERY: INSERT INTO `products` SET
+                `active`       = 1,
+                `name`         = 'Array',
+                `symbol_code`  = 'testing_ua',
+                `list_length`  = 'ua,ru',
+                `user_custom`  = 'Савіцький Андрій',
+                `data_create`  = NOW()
+            
+Unknown column 'data_create' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\products\main.php
+line: 41
+date: 2016-07-12 23:02:44
+===================================
+
+QUERY:
+            SELECT `symbol_code`
+            FROM `admin_module_pages`
+        
+Unknown column 'symbol_code' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_SearchLangWords.php
+line: 27
+date: 2016-07-14 02:23:23
+===================================
+
+QUERY:
+            SELECT `symbol_code`
+            FROM `admin_module_pages`
+        
+Unknown column 'symbol_code' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_SearchLangWords.php
+line: 27
+date: 2016-07-14 02:23:34
+===================================
+
+QUERY:
+            SELECT `symbol_code`
+            FROM `module`
+        
+Table 'base_childrens_dream.module' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_SearchLangWords.php
+line: 27
+date: 2016-07-14 02:24:03
+===================================
+
+QUERY:
+    SELECT `id`,`name_ua`,`seo_name`,`price`,`availability`,`cAnonsPhoto`,`name_ru`,`img_seo_alt_ua`,`img_seo_alt_ru`,`description_ua`,`description_ru`
+    FROM `products`
+    WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
+    LIMIT 8
+
+Unknown column 'seo_name' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\static\main.php
+line: 110
+date: 2016-07-14 20:13:33
+===================================
+
+QUERY:
+    SELECT `id`,`name_ua`,`seo_name`,`price`,`availability`,`cAnonsPhoto`,`name_ru`,`img_seo_alt_ua`,`img_seo_alt_ru`,`description_ua`,`description_ru`
+    FROM `products`
+    WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
+    LIMIT 8
+
+Unknown column 'seo_name' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\static\main.php
+line: 110
+date: 2016-07-14 20:27:03
+===================================
+
+QUERY:
+    SELECT `id`,`name_ua`,`symbol_code`,`price`,`availability`,`cAnonsPhoto`,`name_ru`,`img_seo_alt_ua`,`img_seo_alt_ru`,`description_ua`,`description_ru`
+    FROM `products`
+    WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
+    LIMIT 8
+
+Unknown column 'cAnonsPhoto' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\static\main.php
+line: 110
+date: 2016-07-14 21:53:04
+===================================
+
+QUERY:
+    SELECT `id`,`name_ua`,`symbol_code`,`price`,`availability`,`img_annons`,`name_ru`,`img_seo_alt_ua`,`img_seo_alt_ru`,`description_ua`,`description_ru`
+    FROM `products`
+    WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
+    LIMIT 8
+
+Unknown column 'img_annons' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\static\main.php
+line: 110
+date: 2016-07-14 21:53:22
+===================================
+
+QUERY:
+      SELECT *
+      FROM `products`
+      WHERE `seo_name` = 'detskii-matras-lux-organic-cotton-kokos-porolon-kokos' AND `active` = 1
+      LIMIT 1
+    
+Unknown column 'seo_name' in 'where clause'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\products\main.php
+line: 22
+date: 2016-07-14 21:58:40
+===================================
+
+QUERY:
+      SELECT *
+      FROM `products`
+      WHERE `seo_name` = 'detskii-matras-lux-aloe-vera-kokos-porolon-kokos' AND `active` = 1
+      LIMIT 1
+    
+Unknown column 'seo_name' in 'where clause'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\products\main.php
+line: 22
+date: 2016-07-14 22:01:19
+===================================
+
+QUERY: UPDATE `admin_site_interface` SET
+            `records_pagination`   = '10',
+            `logo_saviii_size`     = '110',
+            `brand_size`           = '130',
+            `banner_size`          = '1010',
+            `anons_size`           = '200',
+            `circle_size`          = '250',
+            `more_size`           = '650',
+            `rdfa_size`            = '300',
+            `user_avatar_size`     = '150',
+            `logo_saviii_dir`      = 'admin',
+            `brandPhoto_dir`       = 'admin',
+            `user_avatar_dir`      = 'users',
+            `rdfa_dir`             = 'opeg_graph',
+            `banner_dir`           = 'main_banner',
+            `products_dir`         = 'products',
+            `list_error_reporting` = '',
+            `list_logic`           = '',
+            `list_active`          = '',
+            `list_length_admin`    = 'ua,ru,en',
+            `list_male_admin`      = ''
+            WHERE `id` = 1
+        
+Unknown column 'list_error_reporting' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\setting\site-interface.php
+line: 58
+date: 2016-07-16 03:34:59
+===================================
+
+QUERY:
+      SELECT `id`,`name_ua`,`seo_name`,`price`,`availability`,`cAnonsPhoto`,`name_ru`,`img_seo_alt_ua`,`img_seo_alt_ru`,`description_ua`,`description_ru`
+      FROM `products`
+      WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
+    
+Unknown column 'seo_name' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\products\main.php
+line: 13
+date: 2016-07-16 19:22:42
+===================================
+
+QUERY:
+      SELECT *
+      FROM `products`
+      WHERE `seo_name` = 'detskii-matras-lite-organic-cotton-kokos-porolon' AND `active` = 1
+      LIMIT 1
+    
+Unknown column 'seo_name' in 'where clause'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\products\main.php
+line: 22
+date: 2016-07-16 19:22:45
+===================================
+
+QUERY:SELECT * FROM `admin_delivery_service`  ORDER BY `sort` DESC,  `id` DESC 
+Unknown column 'sort' in 'order clause'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_Pagination.php
+line: 110
+date: 2016-07-18 13:22:19
+===================================
+
+QUERY: INSERT INTO `admin_main_banner` SET
+                `name`         = 'Нова пошта',
+                `symbol_code`  = 'new_post'.,
+                `sort`         = '100',
+                `user_custom`  = 'Савіцький Андрій'
+            
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.,
+                `sort`         = '100',
+                `user_custom`  = '' at line 3
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\order\delivery-service.php
+line: 34
+date: 2016-07-18 13:50:31
+===================================
+
+QUERY: INSERT INTO `admin_delivery_service` SET
+                `name`         = 'Нова пошта',
+                `symbol_code`  = 'new_post'.,
+                `sort`         = '100',
+                `user_custom`  = 'Савіцький Андрій'
+            
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.,
+                `sort`         = '100',
+                `user_custom`  = '' at line 3
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\order\delivery-service.php
+line: 34
+date: 2016-07-18 13:51:23
+===================================
+
+QUERY:
+            UPDATE `admin_delivery_service` SET
+            `name` = CASE  WHEN `id` = 4 THEN 'УкрПошта' WHEN `id` = 7 THEN 'Самовивіз' WHEN `id` = 6 THEN 'Кур'єром' WHEN `id` = 5 THEN 'Delivery-auto' END,`symbol_code` = CASE  WHEN `id` = 4 THEN 'ukr_post' WHEN `id` = 7 THEN 'pickup' WHEN `id` = 6 THEN 'messenger' WHEN `id` = 5 THEN 'delivery_auto' END,`sort` = CASE  WHEN `id` = 4 THEN '120' WHEN `id` = 7 THEN '90' WHEN `id` = 6 THEN '100' WHEN `id` = 5 THEN '110' END,`active` = CASE  WHEN `id` = 4 THEN '0' WHEN `id` = 7 THEN '0' WHEN `id` = 6 THEN '0' WHEN `id` = 5 THEN '0' END,
+            `user_custom` = 'СавіцькийАндрій'
+             WHERE `id` IN (4,7,6,5)
+        
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'єром' WHEN `id` = 5 THEN 'Delivery-auto' END,`symbol_code` = CASE  WHEN `id`' at line 2
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_DynamicEditMenu.php
+line: 53
+date: 2016-07-18 15:23:45
+===================================
+
+QUERY:
+            UPDATE `admin_delivery_service` SET
+            `name` = CASE  WHEN `id` = 4 THEN 'УкрПошта' WHEN `id` = 7 THEN 'Самовивіз' WHEN `id` = 6 THEN 'Кур'єром' WHEN `id` = 5 THEN 'Delivery-auto' END,`symbol_code` = CASE  WHEN `id` = 4 THEN 'ukr_post' WHEN `id` = 7 THEN 'pickup' WHEN `id` = 6 THEN 'messenger' WHEN `id` = 5 THEN 'delivery_auto' END,`sort` = CASE  WHEN `id` = 4 THEN '120' WHEN `id` = 7 THEN '90' WHEN `id` = 6 THEN '100' WHEN `id` = 5 THEN '110' END,`active` = CASE  WHEN `id` = 4 THEN '0' WHEN `id` = 7 THEN '0' WHEN `id` = 6 THEN '0' WHEN `id` = 5 THEN '0' END,
+            `user_custom` = 'СавіцькийАндрій'
+             WHERE `id` IN (4,7,6,5)
+        
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'єром' WHEN `id` = 5 THEN 'Delivery-auto' END,`symbol_code` = CASE  WHEN `id`' at line 2
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_DynamicEditMenu.php
+line: 53
+date: 2016-07-18 15:24:25
+===================================
+
+QUERY:
+            UPDATE `admin_delivery_service` SET
+            `name` = CASE  WHEN `id` = 4 THEN 'УкрПошта' WHEN `id` = 7 THEN 'Самовивіз' WHEN `id` = 6 THEN 'Кур'єром' WHEN `id` = 5 THEN 'Delivery-auto' END,`symbol_code` = CASE  WHEN `id` = 4 THEN 'ukr_post' WHEN `id` = 7 THEN 'pickup' WHEN `id` = 6 THEN 'messenger' WHEN `id` = 5 THEN 'delivery_auto' END,`sort` = CASE  WHEN `id` = 4 THEN '120' WHEN `id` = 7 THEN '90' WHEN `id` = 6 THEN '100' WHEN `id` = 5 THEN '110' END,`active` = CASE  WHEN `id` = 4 THEN '0' WHEN `id` = 7 THEN '0' WHEN `id` = 6 THEN '0' WHEN `id` = 5 THEN '0' END,
+            `user_custom` = 'СавіцькийАндрій'
+             WHERE `id` IN (4,7,6,5)
+        
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'єром' WHEN `id` = 5 THEN 'Delivery-auto' END,`symbol_code` = CASE  WHEN `id`' at line 2
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_DynamicEditMenu.php
+line: 53
+date: 2016-07-18 15:25:32
+===================================
+
+QUERY:
+            UPDATE `admin_delivery_service` SET
+            `name` = CASE  WHEN `id` = 4 THEN \'УкрПошта\' WHEN `id` = 7 THEN \'Самовивіз\' WHEN `id` = 6 THEN \'Кур\'єром\' WHEN `id` = 5 THEN \'Delivery-auto\' END,`symbol_code` = CASE  WHEN `id` = 4 THEN \'ukr_post\' WHEN `id` = 7 THEN \'pickup\' WHEN `id` = 6 THEN \'messenger\' WHEN `id` = 5 THEN \'delivery_auto\' END,`sort` = CASE  WHEN `id` = 4 THEN \'120\' WHEN `id` = 7 THEN \'90\' WHEN `id` = 6 THEN \'100\' WHEN `id` = 5 THEN \'110\' END,`active` = CASE  WHEN `id` = 4 THEN \'0\' WHEN `id` = 7 THEN \'0\' WHEN `id` = 6 THEN \'0\' WHEN `id` = 5 THEN \'0\' END,
+            `user_custom` = 'СавіцькийАндрій'
+             WHERE `id` IN (4,7,6,5)
+        
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '\'УкрПошта\' WHEN `id` = 7 THEN \'Самовивіз\' WHEN `id` = 6 THE' at line 2
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_DynamicEditMenu.php
+line: 53
+date: 2016-07-18 15:26:42
+===================================
+
+QUERY:
+        SELECT `id`,`name_ua`,`name_ru`,`price`,`img_anons`,`img_seo_alt_ua`,`img_seo_alt_ru`
+        FROM `products`
+        WHERE `id` IN (133ds5,13)
+    
+Unknown column '133ds5' in 'where clause'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\order\main.php
+line: 21
+date: 2016-07-18 16:16:10
+===================================
+
+QUERY:
+        SELECT `id`,`name_ua`,`name_ru`,`price`,`img_anons`,`img_seo_alt_ua`,`img_seo_alt_ru`
+        FROM `products`
+        WHERE `id` IN (133ds5,13)
+    
+Unknown column '133ds5' in 'where clause'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\order\main.php
+line: 21
+date: 2016-07-18 16:16:33
+===================================
+
+QUERY: UPDATE `admin_payment_type` SET
+                `active`       = 1,
+                `name`         = 'На карту ПриватБанку',
+                `sort`         = '100',
+                `symbol_code`  = 'privat_24',
+                `text`         = '',
+                `user_custom`  = 'Савіцький Андрій'
+                WHERE `id` = 1
+            
+Unknown column 'text' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\order\payment-type.php
+line: 75
+date: 2016-07-18 19:05:51
+===================================
+
+QUERY: INSERT INTO `order` SET
+                `name`        = 'ПІП',
+                `phone`       = 'Телефон',
+                `email`       = 'sdas@dsadas.dsfsd',
+                `city`        = 'Місто',
+                `address`     = 'Адреса або номер складу',
+                `comment`     = 'Коментар',
+                `delivery`    = 'УкрПошта',
+                `payment`     = 'Післяплата',
+                `all_price`   = '5350',
+                `name_el`     = 'Дитячий матрац Lux Gold (кокос-поролон-кокос),Дитячий матрац Lite Organic Cotton (кокос-поролон),Дитячий матрац КПК 11см. (кокос-поролон-кокос)',
+                `count_el`    = '2,4,4',
+                `price_el`    = '555,565,495',
+                `date_create` = NOW()
+            
+Unknown column 'date_create' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\order\main.php
+line: 85
+date: 2016-07-19 12:31:54
+===================================
+
+QUERY: INSERT INTO `admin_policy_certification` SET       
+                `name`         = 'Сертифікат номер 1',
+                `list_length`  = 'ua,ru',
+                `user_custom`  = 'Савіцький Андрій',
+                `data_create`  = NOW()
+            
+Unknown column 'user_custom' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\setting\policy-certification.php
+line: 27
+date: 2016-07-20 11:49:48
+===================================
+
+QUERY: INSERT INTO `admin_policy_certification` SET       
+                `name`         = 'Сертифікат номер 1',
+                `list_length`  = 'ua,ru',
+                `user_custom`  = 'Савіцький Андрій',
+                `data_create`  = NOW()
+            
+Unknown column 'data_create' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\setting\policy-certification.php
+line: 27
+date: 2016-07-20 11:50:11
+===================================
+
+QUERY: INSERT INTO `admin_policy_certification` SET       
+                `name`         = 'sadsadsa',
+                `sort`         = ''
+                `list_length`  = 'ua,ry',
+                `user_custom`  = 'Савіцький Андрій',
+                `data_custom`  = NOW()
+            
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`list_length`  = 'ua,ry',
+                `user_custom`  = 'Савіцький ' at line 4
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\setting\policy-certification.php
+line: 28
+date: 2016-07-20 11:52:12
+===================================
+
+QUERY:
+            SELECT `symbol_code`
+            FROM  `admin_policy_certification`
+            WHERE `symbol_code` = '' AND `id` != 3
+            LIMIT 1
+        
+Unknown column 'symbol_code' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\setting\policy-certification.php
+line: 51
+date: 2016-07-20 11:54:13
+===================================
+
+QUERY:
+            SELECT `symbol_code`
+            FROM  `admin_policy_certification`
+            WHERE `symbol_code` = '' AND `id` != 3
+            LIMIT 1
+        
+Unknown column 'symbol_code' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\setting\policy-certification.php
+line: 49
+date: 2016-07-20 12:12:54
+===================================
+
+QUERY: UPDATE `admin_policy_certification` SET
+                `active`       = 0,
+                `name`         = 'fdsfdsfd',
+                `symbol_code`  = '',
+                `list_length`  = 'ua,dsfds,',
+                `why_list`     = '',
+                `name_list`    = '',
+                `text`         = 'ua#|#dsfds#|#kjk',
+                `theme_list`   = '',
+                `hidden_copy`  = '',
+                `user_custom`  = 'Савіцький Андрій'
+                WHERE `id` = 3
+            
+Unknown column 'symbol_code' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\setting\policy-certification.php
+line: 71
+date: 2016-07-20 12:13:23
+===================================
+
+QUERY: UPDATE `admin_policy_certification` SET
+                `active`       = 0,
+                `name`         = 'fdsfdsfd',
+                `sort`         = '4',
+                `list_length`  = 'ua,dsfds,',
+                `why_list`     = '',
+                `name_list`    = '',
+                `text`         = 'ua#|#dsfds#|#kjk',
+                `theme_list`   = '',
+                `hidden_copy`  = '',
+                `user_custom`  = 'Савіцький Андрій'
+                WHERE `id` = 3
+            
+Unknown column 'why_list' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\setting\policy-certification.php
+line: 71
+date: 2016-07-20 12:14:02
+===================================
+
+QUERY: UPDATE `admin_site_interface` SET
+           `text_ua` = 'h',
+           `text_ru` = 'h'
+            WHERE `id` = 1
+        
+Unknown column 'text_ua' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\setting\privacy-policy.php
+line: 20
+date: 2016-07-20 12:51:32
+===================================
+
+QUERY:
+            SELECT `id`
+            FROM `call_me`
+            WHERE `user_ip` = '127.0.0.1' AND `date_create` >= NOW() - INTERVAL 1 DAY
+            LIMIT 4
+        
+Unknown column 'date_create' in 'where clause'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\static\main.php
+line: 69
+date: 2016-07-20 23:28:19
+===================================
+
+QUERY:
+            SELECT `id`
+            FROM `call_me`
+            WHERE `user_ip` = '127.0.0.1' AND `date_create` >= NOW() - INTERVAL 1 DAY
+            LIMIT 4
+        
+Unknown column 'date_create' in 'where clause'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\static\main.php
+line: 69
+date: 2016-07-20 23:28:46
+===================================
+
+QUERY:
+            SELECT `id`
+            FROM `call_me`
+            WHERE `user_ip` = '127.0.0.1' AND `date_create` >= NOW() - INTERVAL 1 DAY
+            LIMIT 4
+        
+Unknown column 'date_create' in 'where clause'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\static\main.php
+line: 69
+date: 2016-07-20 23:29:03
+===================================
+
+QUERY:
+            SELECT `id`
+            FROM `call_me`
+            WHERE `user_ip` = '127.0.0.1' AND `date_create` >= NOW() - INTERVAL 1 DAY
+            LIMIT 4
+        
+Unknown column 'date_create' in 'where clause'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\static\main.php
+line: 69
+date: 2016-07-20 23:29:29
+===================================
+
+QUERY:SELECT * FROM `comments`  ORDER BY `sort` DESC,  `id` DESC 
+Unknown column 'sort' in 'order clause'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_Pagination.php
+line: 110
+date: 2016-07-21 10:35:59
+===================================
+
+QUERY: UPDATE `products` SET
+ 			          `name`              = '',
+		            `email`    = '',
+ 			          `text`    = '',
+                `img_seo_alt_ua`      = '',
+ 			          `img_seo_alt_ru`      = '',
+ 			          `user_custom`         = 'Савіцький Андрій'
+			          WHERE `id` = 18
+		        
+Unknown column 'name' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\comments\main.php
+line: 39
+date: 2016-07-21 12:04:26
+===================================
+
+QUERY: UPDATE `products` SET
+ 			          `name`              = '',
+		            `email`    = '',
+ 			          `text`    = '',
+ 			          `user_custom`         = 'Савіцький Андрій'
+			          WHERE `id` = 18
+		        
+Unknown column 'name' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\comments\main.php
+line: 37
+date: 2016-07-21 12:04:39
+===================================
+
+QUERY: UPDATE `products` SET
+ 			          `name`              = '',
+		            `email`    = '',
+ 			          `text`    = '',
+ 			          `user_custom`         = 'Савіцький Андрій'
+			          WHERE `id` = 18
+		        
+Unknown column 'name' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\comments\main.php
+line: 37
+date: 2016-07-21 12:05:19
+===================================
+
+QUERY: UPDATE `products` SET
+ 			          `name`     = 'Ромаs',
+		            `email`    = 'petrokushin@gmail.coms',
+ 			          `text`     = 'Замовляв матрацик для свого синочка. Дуже задоволений покупкою. Дитина почала спати спокійніше. Якість на вищому рівні. Окремо дякую за оперативну доставку. Всім раджу замовляти саме тут!s',
+ 			          `user_custom`         = 'Савіцький Андрій'
+			          WHERE `id` = 18
+		        
+Unknown column 'name' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\comments\main.php
+line: 37
+date: 2016-07-21 12:05:40
+===================================
+
+QUERY: UPDATE `products` SET
+ 			          `name`     = 'Ромаs',
+		            `email`    = 'petrokushin@gmail.coms',
+ 			          `text`     = 'Замовляв матрацик для свого синочка. Дуже задоволений покупкою. Дитина почала спати спокійніше. Якість на вищому рівні. Окремо дякую за оперативну доставку. Всім раджу замовляти саме тут!s',
+ 			          `user_custom`         = 'Савіцький Андрій'
+			          WHERE `id` = 18
+		        
+Unknown column 'name' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\comments\main.php
+line: 37
+date: 2016-07-21 12:05:54
+===================================
+
+QUERY: UPDATE `products` SET
+ 			          `name`     = 'Ромаds',
+		            `email`    = 'petrokushin@gmail.comds',
+ 			          `text`     = 'Замовляв матрацик для свого синочка. Дуже задоволений покупкою. Дитина почала спати спокійніше. Якість на вищому рівні. Окремо дякую за оперативну доставку. Всім раджу замовляти саме тут!ds',
+ 			          `user_custom`         = 'Савіцький Андрій'
+			          WHERE `id` = 18
+		        
+Unknown column 'name' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\comments\main.php
+line: 37
+date: 2016-07-21 12:06:07
+===================================
+
+QUERY: UPDATE `products` SET
+ 			          `name`     = 'Ромаds',
+		            `email`    = 'petrokushin@gmail.comds',
+ 			          `text`     = 'Замовляв матрацик для свого синочка. Дуже задоволений покупкою. Дитина почала спати спокійніше. Якість на вищому рівні. Окремо дякую за оперативну доставку. Всім раджу замовляти саме тут!ds',
+ 			          `user_custom`         = 'Савіцький Андрій'
+			          WHERE `id` = 18
+		        
+Unknown column 'name' in 'field list'
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\comments\main.php
+line: 37
+date: 2016-07-21 12:06:32
+===================================
+
+QUERY:SELECT DATABASE
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\setting\ex-im-setting.php
+line: 8
+date: 2016-07-22 15:15:55
+===================================
+
+QUERY:SHOW TABLES; FROM `base_childrens_dream`
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `base_childrens_dream`' at line 1
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 52
+date: 2016-07-22 16:55:23
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 37
+date: 2016-07-22 19:34:22
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`; FROM `andreych1500`
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'FROM `andreych1500`' at line 1
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 37
+date: 2016-07-22 19:37:53
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 37
+date: 2016-07-22 19:39:00
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 38
+date: 2016-07-22 19:43:00
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 39
+date: 2016-07-22 19:43:10
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 38
+date: 2016-07-22 19:44:12
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 38
+date: 2016-07-22 19:44:15
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 38
+date: 2016-07-22 19:44:17
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 38
+date: 2016-07-22 19:44:28
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 38
+date: 2016-07-22 19:44:28
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 38
+date: 2016-07-22 19:44:28
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 38
+date: 2016-07-22 19:44:29
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 38
+date: 2016-07-22 19:44:37
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 38
+date: 2016-07-22 19:44:37
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 39
+date: 2016-07-22 19:44:54
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 39
+date: 2016-07-22 19:46:06
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 39
+date: 2016-07-22 19:46:07
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 39
+date: 2016-07-22 19:46:07
+===================================
+
+QUERY:SELECT COUNT(*) FROM `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 46
+date: 2016-07-22 19:46:12
+===================================
+
+QUERY:SELECT COUNT(*) FROM `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 46
+date: 2016-07-22 19:46:13
+===================================
+
+QUERY:SELECT COUNT(*) FROM `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 46
+date: 2016-07-22 19:46:18
+===================================
+
+QUERY:SELECT COUNT(*) FROM `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 45
+date: 2016-07-22 19:46:26
+===================================
+
+QUERY:SELECT COUNT(*) FROM `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 45
+date: 2016-07-22 19:46:26
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 38
+date: 2016-07-22 19:46:53
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 38
+date: 2016-07-22 19:46:54
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 38
+date: 2016-07-22 19:46:54
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 38
+date: 2016-07-22 19:46:54
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 38
+date: 2016-07-22 19:47:01
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 38
+date: 2016-07-22 19:47:01
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 38
+date: 2016-07-22 19:47:02
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 38
+date: 2016-07-22 19:47:02
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 38
+date: 2016-07-22 19:47:02
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 38
+date: 2016-07-22 19:47:03
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 38
+date: 2016-07-22 19:47:03
+===================================
+
+QUERY:SELECT COUNT(*) FROM `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 45
+date: 2016-07-22 19:47:05
+===================================
+
+QUERY:SELECT COUNT(*) FROM `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 46
+date: 2016-07-22 19:47:36
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 38
+date: 2016-07-22 19:47:42
+===================================
+
+QUERY:SELECT COUNT(*) FROM `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 46
+date: 2016-07-22 19:47:45
+===================================
+
+QUERY:SHOW COLUMNS FROM `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 51
+date: 2016-07-22 19:48:02
+===================================
+
+QUERY:SHOW COLUMNS FROM `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 51
+date: 2016-07-22 19:48:03
+===================================
+
+QUERY:SHOW COLUMNS FROM `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 52
+date: 2016-07-22 19:48:11
+===================================
+
+QUERY:SHOW COLUMNS FROM `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 52
+date: 2016-07-22 19:48:12
+===================================
+
+QUERY:SHOW COLUMNS FROM `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 52
+date: 2016-07-22 19:48:12
+===================================
+
+QUERY:SHOW COLUMNS FROM `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 52
+date: 2016-07-22 19:48:24
+===================================
+
+QUERY:SHOW COLUMNS FROM `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 52
+date: 2016-07-22 19:49:06
+===================================
+
+QUERY:SHOW CREATE TABLE `avtor`;
+Table 'base_childrens_dream.avtor' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 37
+date: 2016-07-22 19:50:55
+===================================
+
+QUERY:
+    SELECT * 
+    FROM `admin_ex_im_setting`
+
+Table 'base_childrens_dream.admin_ex_im_setting' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\setting\export-db.php
+line: 32
+date: 2016-07-22 19:52:11
+===================================
+
+QUERY:
+    SELECT * 
+    FROM `admin_ex_im_setting`
+
+Table 'base_childrens_dream.admin_ex_im_setting' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\setting\export-db.php
+line: 28
+date: 2016-07-22 19:57:06
+===================================
+
+QUERY:
+    SELECT * 
+    FROM `admin_ex_im_setting`
+
+Table 'base_childrens_dream.admin_ex_im_setting' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\setting\export-db.php
+line: 28
+date: 2016-07-22 19:57:08
+===================================
+
+QUERY:
+    SELECT * 
+    FROM `admin_ex_im_setting`
+
+Table 'base_childrens_dream.admin_ex_im_setting' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\setting\export-db.php
+line: 28
+date: 2016-07-22 19:57:19
+===================================
+
+QUERY:
+    SELECT * 
+    FROM `admin_ex_im_setting`
+
+Table 'base_childrens_dream.admin_ex_im_setting' doesn't exist
+file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\setting\export-db.php
+line: 28
+date: 2016-07-22 19:57:21
+===================================
+
+QUERY:dSHOW CREATE TABLE `admin_backup_project`;
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dSHOW CREATE TABLE `admin_backup_project`' at line 1
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 37
+date: 2016-07-22 20:48:13
+===================================
+
+QUERY:SHOW CREATE s TABLE `admin_backup_project`;
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 's TABLE `admin_backup_project`' at line 1
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 37
+date: 2016-07-22 20:48:19
+===================================
+
+QUERY:CREATE TABLE IF NOT EXISTS `admin_backup_project`;
+A table must have at least 1 column
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 37
+date: 2016-07-22 20:50:22
+===================================
+
+QUERY:SELECT * FROM `admin_backup_project` LIMIT , 500;
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' 500' at line 1
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_ExpodtImportDB.php
+line: 52
+date: 2016-07-22 21:09:06
+===================================
+
+QUERY:SHOW COLUMN * FROM `admin_policy_certification`
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'COLUMN * FROM `admin_policy_certification`' at line 1
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_BackupProject.php
+line: 83
+date: 2016-07-23 13:02:57
+===================================
+
+QUERY:SHOW COLUMNS FROM mytable `admin_policy_certification`
+You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '`admin_policy_certification`' at line 1
+file: C:\OpenServer\domains\childrensdream.com.ua.local\libs\class_BackupProject.php
+line: 83
+date: 2016-07-23 13:03:56
+===================================
+

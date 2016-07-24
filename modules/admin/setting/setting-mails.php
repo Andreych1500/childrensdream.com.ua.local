@@ -26,7 +26,7 @@ if(isset($_POST['ok'])){
             WHERE `id` = 1
         ");
 
-        sessionInfo('/admin/setting/setting-mails/', 'Редагування успішно проведено!', 1);
+        sessionInfo('/admin/setting/setting-mails/', $messG['Редагування пройшло успішно!'], 1);
     }
 }
 

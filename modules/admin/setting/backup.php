@@ -7,7 +7,7 @@ if(isset($_REQUEST['backup'])){
         FROM `admin_backup_setting`
     ")->fetch_assoc();
 
-    $return = BackupProject::startBackup($setting['name_db'], $setting['unset_dir_to_zip'], $setting['time_delete_zip'], $setting['name_prefix_dir_zip']);
+    $return = BackupProject::startBackup($setting['name_db'], $setting['unset_dir_to_zip'], $setting['time_delete_zip'], $setting['name_prefix_dir_zip'], $messG);
 
     q(" INSERT INTO `admin_backup_project` SET
         `file_name`      = '".mres($return['file_name'])."',
@@ -15,7 +15,7 @@ if(isset($_REQUEST['backup'])){
         `user_custom`    = '".mres($_SESSION['user']['last_name'].' '.$_SESSION['user']['name'])."'
     ");
 
-    sessionInfo('/admin/setting/backup/', 'Backup успішно зроблений!', 1);
+    sessionInfo('/admin/setting/backup/', $mess['Backup успішно зроблений!'], 1);
 }
 
 // Download last backup
@@ -29,7 +29,7 @@ if(isset($_REQUEST['downloadBackup'])){
     if(file_exists($file)){
         file_force_download($file);
     } else {
-        sessionInfo('/admin/setting/backup/', 'Backup відсутній або видалений якщо термін зберігання застарілий!');
+        sessionInfo('/admin/setting/backup/', $mess['Backup відсутній або видалений якщо термін зберігання застарілий!']);
     }
 }
 
@@ -42,6 +42,7 @@ $backup = Pagination::formNav(array(
     'db_table'    => "admin_backup_project",
     'css_class'   => "pagination-admin",
     'filter'      => '',
+    'sort'        => '',
     'notFound404' => 'N',
     'lang'        => '',
     'link_lang'   => '',

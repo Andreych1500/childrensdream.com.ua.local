@@ -1,54 +1,87 @@
 <?php
-// --- DELETE ELEMENT ---
-if(isset($_POST['delete']) && isset($_POST['ids'])){
-    foreach($_POST['ids'] as $k=>$v){
-        $_POST['ids'][$k] = (int)$v;
+if(isset($_REQUEST['view'])){
+    $arResult = q("
+        SELECT *
+        FROM `comments`
+        WHERE `id` = ".(int)$_REQUEST['view']."
+        LIMIT 1
+    ");
+
+    if($arResult->num_rows == 0){
+        sessionInfo('/admin/comments/', $messG['Eлемент з таким ID неіснує!']);
+    } else {
+        $arResult = hsc($arResult->fetch_assoc());
     }
-    $ids = implode(',',$_POST['ids']);
+} elseif(isset($_REQUEST['edit'])){
+    if(isset($_POST['ok'])){
+        $error = array();
+        $_POST = trimAll($_POST);
 
-    q(" DELETE FROM `comments`
-		WHERE `id` IN (".$ids.")
-	");
+        $check['name'] = (empty($_POST['name'])? 'class="error"' : '');
+        $check['email'] = ((empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))? 'class="error"' : '');
+        $check['text'] = (empty($_POST['text'])? 'class="error"' : '');
 
-    header("Location: /admin/comments/");
-    exit();
-}
+        if(in_array('class="error"', $check)){
+            $error['stop'] = 1;
+        }
 
-// --- ACTIVE ELEMENT ---
-if(isset($_POST['active']) && isset($_POST['ids'])){
-    foreach($_POST['ids'] as $k=>$v){
-        $_POST['ids'][$k] = (int)$v;
+        if(!count($error)){
+            $_POST = mres($_POST);
+
+            q(" UPDATE `comments` SET
+ 			          `name`        = '".$_POST['name']."',
+		            `email`       = '".$_POST['email']."',
+ 			          `text`        = '".$_POST['text']."',
+ 			          `user_custom` = '".mres($_SESSION['user']['last_name'].' '.$_SESSION['user']['name'])."'
+			          WHERE `id` = ".(int)$_REQUEST['edit']."
+		        ");
+
+            sessionInfo('/admin/comments/', $messG['Редагування пройшло успішно!'], 1);
+        }
     }
-    $ids = implode(',',$_POST['ids']);
 
-    q(" UPDATE `comments`
-        SET `active` = 1
-		WHERE `id` IN (".$ids.")
-	");
+    $arResult = q("
+        SELECT * 
+        FROM `comments`
+        WHERE `id` = ".(int)$_REQUEST['edit']."
+    ");
 
-    header("Location: /admin/comments/");
-    exit();
-}
-
-// --- DEACTIVE ELEMENT ---
-if(isset($_POST['deactive']) && isset($_POST['ids'])){
-    foreach($_POST['ids'] as $k=>$v){
-        $_POST['ids'][$k] = (int)$v;
+    if($arResult->num_rows == 0){
+        sessionInfo('/admin/comments/', $messG['Eлемент з таким ID неіснує!']);
+    } else {
+        $arResult = hsc($arResult->fetch_assoc());
     }
-    $ids = implode(',',$_POST['ids']);
+} else {
+    if(isset($_REQUEST['del'])){ // Delete one
+        deleteElement($_REQUEST['del'], 'comments', '/admin/comments/', $messG['Видалення пройшло успішно!']);
+    }
 
-    q(" UPDATE `comments`
-        SET `active` = 0
-		WHERE `id` IN (".$ids.")
-	");
+    if(isset($_POST['delete']) && isset($_POST['ids'])){ // Delete ids
+        deleteElement(implode(',', $_POST['ids']), 'comments', '/admin/comments/', $messG['Видалення пройшло успішно!']);
+    }
 
-    header("Location: /admin/comments/");
-    exit();
+    if(isset($_POST['deactivate']) && isset($_POST['ids'])){ // Deactivate
+        deactivateElement(implode(',', $_POST['ids']), 'comments');
+        sessionInfo('/admin/comments/', $messG['Деактивація пройшла успішно!'], 1);
+    }
+
+    if(isset($_POST['activate']) && isset($_POST['ids'])){ // Activate
+        activeElement(implode(',', $_POST['ids']), 'comments');
+        sessionInfo('/admin/comments/', $messG['Активація пройшла успішно!'], 1);
+    }
+
+    // Pagination
+    $comments = Pagination::formNav(array(
+        'numPage'     => (!isset($_GET['numPage'])? 1 : (int)$_GET['numPage']),
+        'count_show'  => 5,
+        'records_el'  => $adminParam['records_pagination'],
+        'url'         => "/admin/comments/",
+        'db_table'    => "comments",
+        'css_class'   => "pagination-admin",
+        'filter'      => '',
+        'sort'        => '',
+        'notFound404' => 'N',
+        'lang'        => '',
+        'link_lang'   => '',
+    ));
 }
-
-// --- GET ALL ELEMENT OR FILTER---
-$comments = q("
-    SELECT *
-    FROM `comments`
-    ORDER BY `id` DESC
-");

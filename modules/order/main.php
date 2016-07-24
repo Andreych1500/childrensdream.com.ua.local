@@ -1,42 +1,14 @@
 <?php
 if(isset($_COOKIE['items'])){
+    $el = IsGoods::cookieGoods('products', $_COOKIE['items'], $link_lang, '`id`,`name_ua`,`name_ru`,`price`,`img_anons`,`img_seo_alt_ua`,`img_seo_alt_ru`');
 
-    $cookies = (array)json_decode($_COOKIE['items']);
-
-    if(count($cookies) == 0){
-        setcookie('items', '', time() - 16700000, '/');
-        header("Location: ".$link_lang."order/");
-        exit();
-    }
-
-    // Get goods
-    foreach($cookies as $key => $value){
-        $ids[] = trim($key, 'g');
-    }
-
-    $ids = implode(',', $ids);
-
-    $order = q("
-        SELECT `id`,`name_ua`,`name_ru`,`price`,`cAnonsPhoto`,`img_seo_alt_ua`,`img_seo_alt_ru`
-        FROM `products`
-        WHERE `id` IN (".$ids.")
-    ");
-
-    if($order->num_rows == 0){
-        setcookie('items', '', time() - 16700000, '/');
-        header("Location: ".$link_lang."order/");
-        exit();
-    }
-
-    // Info goods
     $all_goods_price = 0;
-    while($row = $order->fetch_assoc()){
+    while($row = $el->fetch_assoc()){
         $row['all_price'] = (isset($_POST['count'][$row['id']])? $_POST['count'][$row['id']] : '1') * $row['price'];
         $goods[] = $row;
         $all_goods_price = $all_goods_price + $row['all_price'];
     }
 
-    // Order
     if(isset($_POST['ok'])){
         $error = array();
         $_POST = trimAll($_POST);
@@ -45,45 +17,38 @@ if(isset($_COOKIE['items'])){
         $check['text'] = (empty($_POST['phone'])? 'class="error"' : '');
         $check['city'] = (empty($_POST['city'])? 'class="error"' : '');
         $check['phone'] = (empty($_POST['phone'])? 'class="error"' : '');
-        $check['adres'] = (empty($_POST['adres'])? 'class="error"' : '');
+        $check['address'] = (empty($_POST['address'])? 'class="error"' : '');
         $check['email'] = (empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)? 'class="error"' : '');
-        $check['delivery'] = (($_POST['delivery'] > 6 || $_POST['delivery'] < 0)? 'class="error"' : '');
-        $check['payment'] = (($_POST['payment'] > 2 || $_POST['payment'] < 0)? 'class="error"' : '');
         $check['capcha'] = ((!isset($_SESSION['rand_code']) || $_SESSION['rand_code'] != $_POST['capcha'])? 'class="error"' : '');
+        $check['oferta'] = (!isset($_POST['oferta'])? 'class="error"' : '');
+
+        // Info select
+        $deliver = q("
+            SELECT *
+            FROM `admin_delivery_service`
+            WHERE `symbol_code` = '".mres($_POST['delivery'])."' AND `active` = 1
+        ");
+
+        if($deliver->num_rows == 0){
+            $check['delivery'] = 'class="error"';
+        } else {
+            $deliver = $deliver->fetch_assoc();
+        }
+
+        $payment = q("
+            SELECT *
+            FROM `admin_payment_type`
+            WHERE `symbol_code` = '".mres($_POST['payment'])."' AND `active` = 1
+        ");
+
+        if($payment->num_rows == 0){
+            $check['payment'] = 'class="error"';
+        } else {
+            $payment = $payment->fetch_assoc();
+        }
 
         if(in_array('class="error"', $check)){
             $error['stop'] = 1;
-        }
-
-        // Info select
-        if($_POST['delivery'] == 0){
-            $_POST['delivery'] = $mess['DEVELORY0'];
-        } elseif($_POST['delivery'] == 1) {
-            $_POST['delivery'] = $mess['DEVELORY1'];
-        } elseif($_POST['delivery'] == 2) {
-            $_POST['delivery'] = $mess['DEVELORY2'];
-        } elseif($_POST['delivery'] == 3) {
-            $_POST['delivery'] = $mess['DEVELORY3'];
-        } elseif($_POST['delivery'] == 4) {
-            $_POST['delivery'] = $mess['DEVELORY4'];
-        } elseif($_POST['delivery'] == 5) {
-            $_POST['delivery'] = $mess['DEVELORY5'];
-        } elseif($_POST['delivery'] == 6) {
-            $_POST['delivery'] = $mess['DEVELORY6'];
-        } else {
-            header("Location: ".$link_lang."order/");
-            exit();
-        }
-
-        if($_POST['payment'] == 0){
-            $_POST['payment'] = $mess['PAYMANT0'];
-        } elseif($_POST['payment'] == 1) {
-            $_POST['payment'] = $mess['PAYMANT1'];
-        } elseif($_POST['payment'] == 2) {
-            $_POST['payment'] = $mess['PAYMANT2'];
-        } else {
-            header("Location: ".$link_lang."order/");
-            exit();
         }
 
         // Elements
@@ -109,15 +74,15 @@ if(isset($_COOKIE['items'])){
                 `phone`       = '".$_POST['phone']."',
                 `email`       = '".$_POST['email']."',
                 `city`        = '".$_POST['city']."',
-                `adres`       = '".$_POST['adres']."',
+                `address`     = '".$_POST['address']."',
                 `comment`     = '".$_POST['comment']."',
-                `delivery`    = '".$_POST['delivery']."',
-                `payment`     = '".$_POST['payment']."',
+                `delivery`    = '".mres($deliver['name'])."',
+                `payment`     = '".mres($payment['name'])."',
                 `all_price`   = '".(int)$all_goods_price."',
                 `name_el`     = '".mres($names_el)."',
                 `count_el`    = '".mres($counts_el)."',
                 `price_el`    = '".mres($prices_el)."',
-                `date_create` = NOW()
+                `data_create` = NOW()
             ");
 
             sort($_POST['count']);
@@ -130,7 +95,8 @@ if(isset($_COOKIE['items'])){
                 'name'      => $_POST['name'],
                 'number'    => DB::_()->insert_id,
                 'all_price' => $all_price,
-                'delivery'  => $_POST['delivery']
+                'delivery'  => $deliver['name'],
+                'payment'   => $payment['name']
             );
 
             Mail::$text = TemplateMail::formationMail($param, 'order_goods', $lang, $arMainParam);
@@ -141,9 +107,21 @@ if(isset($_COOKIE['items'])){
             }
 
             setcookie('items', '', time() - 16700000, '/');
-            sessionInfo($link_lang.'order', 'Y', 2);
+            sessionInfo($link_lang.'order/', 'Y', 2);
         }
     }
+
+    $delivery = q("
+        SELECT * 
+        FROM `admin_delivery_service`
+        WHERE `active` = 1
+    ");
+
+    $payment = q("
+        SELECT *
+        FROM `admin_payment_type`
+        WHERE `active` = 1
+    ");
 } else {
     $cookies = array();
 }

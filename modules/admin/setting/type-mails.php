@@ -41,7 +41,7 @@ if(isset($_REQUEST['add'])){
                 `data_create`  = NOW()
             ");
 
-            sessionInfo('/admin/setting/type-mails/', 'Тип шаблону створено успішно!', 1);
+            sessionInfo('/admin/setting/type-mails/', $messG['Елемент створено успішно!'], 1);
         }
     }
 } elseif(isset($_REQUEST['edit'])) {
@@ -67,7 +67,7 @@ if(isset($_REQUEST['add'])){
         if($primary->num_rows > 0){
             $check['symbol_code'] = 'class="error"';
         }
-
+  
         // list
         $list_length = (isset($_POST['list_length'])? implode(',', $_POST['list_length']) : '');
         $theme_list = (isset($_POST['theme_list'])? implode('#|#', $_POST['theme_list']) : '');
@@ -98,7 +98,7 @@ if(isset($_REQUEST['add'])){
                 WHERE `id` = ".(int)$_REQUEST['edit']."
             ");
 
-            sessionInfo('/admin/setting/type-mails/', 'Тип шаблону змінено успішно!', 1);
+            sessionInfo('/admin/setting/type-mails/', $messG['Редагування пройшло успішно!'], 1);
         }
     }
 
@@ -109,32 +109,32 @@ if(isset($_REQUEST['add'])){
     ");
 
     if($arResult->num_rows == 0){
-        sessionInfo('/admin/setting/type-mails/', 'Помилка, елемента з таким ID неіснує!');
+        sessionInfo('/admin/setting/type-mails/', $messG['Eлемент з таким ID неіснує!']);
     } else {
         $arResult = $arResult->fetch_assoc();
     }
 } else {
 
     if(isset($_POST['arr']) && count($_POST['arr']) > 0){ // Dynamic edit
-        DynamicEditMenu::edit($_POST['arr'], 'admin_type_mails', '/admin/setting/type-mails/');
+        DynamicEditMenu::edit($_POST['arr'], 'admin_type_mails', '/admin/setting/type-mails/', $messG['Редагування пройшло успішно!']);
     }
 
     if(isset($_REQUEST['del'])){ // Delete one
-        deleteElement($_REQUEST['del'], 'admin_type_mails', '/admin/setting/type-mails/');
+        deleteElement($_REQUEST['del'], 'admin_type_mails', '/admin/setting/type-mails/', $messG['Видалення пройшло успішно!']);
     }
 
     if(isset($_POST['delete']) && isset($_POST['ids'])){ // Delete ids
-        deleteElement(implode(',', $_POST['ids']), 'admin_type_mails', '/admin/setting/type-mails/');
+        deleteElement(implode(',', $_POST['ids']), 'admin_type_mails', '/admin/setting/type-mails/', $messG['Видалення пройшло успішно!']);
     }
 
     if(isset($_POST['deactivate']) && isset($_POST['ids'])){ // Deactivate
         deactivateElement(implode(',', $_POST['ids']), 'admin_type_mails');
-        sessionInfo('/admin/setting/type-mails/', 'Деактивація пройшла успішно!', 1);
+        sessionInfo('/admin/setting/type-mails/', $messG['Деактивація пройшла успішно!'], 1);
     }
 
     if(isset($_POST['activate']) && isset($_POST['ids'])){ // Activate
         activeElement(implode(',', $_POST['ids']), 'admin_type_mails');
-        sessionInfo('/admin/setting/type-mails/', 'Активація пройшла успішно!', 1);
+        sessionInfo('/admin/setting/type-mails/', $messG['Активація пройшла успішно!'], 1);
     }
 
     // Filter
@@ -156,6 +156,7 @@ if(isset($_REQUEST['add'])){
         'db_table'    => "admin_type_mails",
         'css_class'   => "pagination-admin",
         'filter'      => $filter,
+        'sort'        => '',
         'notFound404' => 'N',
         'lang'        => '',
         'link_lang'   => '',

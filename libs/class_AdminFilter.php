@@ -6,13 +6,17 @@ class AdminFilter{
     static $j = 0;
 
     static function htmlFormation($db_table, $lang, $post){
-        include '/libs/lang/filter/lang_'.$lang.'.php';
-        include '/libs/lang/filter/inp_lang_'.$lang.'.php';
+        include './libs/filter/lang/inp_lang_'.$lang.'.php';
+        include './libs/filter/param.php';
 
         $columns = q("SHOW COLUMNS FROM `".$db_table."`");
 
         while($arFilter = $columns->fetch_assoc()){
-            self::$filter_inputs .= AdminFilter::inputsFormation($arFilter, $mess[$arFilter['Field']], (isset($post[$arFilter['Field']])? $post[$arFilter['Field']] : ''), $inpMess);
+            if(!key_exists($arFilter['Field'], $filter_object[$db_table][$lang])){
+                continue;
+            }
+
+            self::$filter_inputs .= AdminFilter::inputsFormation($arFilter, $filter_object[$db_table][$lang][$arFilter['Field']], (isset($post[$arFilter['Field']])? $post[$arFilter['Field']] : ''), $inpMess);
         }
 
         return array('filter_inputs' => self::$filter_inputs, 'filter_option' => self::$filter_option);

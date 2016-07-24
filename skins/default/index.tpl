@@ -48,8 +48,8 @@
     {
       "@context": "http://schema.org",
       "@type": "Organization",
-      "url" : "<?=$_SERVER['DOCUMENT_ROOT'].$link_lang?>",
-      "logo" : "<?=$_SERVER['DOCUMENT_ROOT']?>/skins/default/img/logo.png",
+      "url" : "<?=$arMainParam['url_http_site'].$link_lang?>",
+      "logo" : "<?=$arMainParam['url_http_site']?>/skins/default/img/logo.png",
       "name": "Children's Dream",
       "telephone": "+38 (098) 57-04-377",
       "email": "cdmatrasses@gmail.com",
@@ -98,19 +98,22 @@
 
 <footer itemscope itemtype="http://schema.org/WPFooter">
   <div class="footer-block">
-    <img class="logo-img" src="/skins/default/img/footer-logo.png" alt="Children's Dream" title="Children's Dream">
     <div class="development-site">
-      <p>&copy;<?=data(Core::$DATA).$mess['FOOTER_TOP']?></p>
-      <p class="access_ok"><?=$mess['GOOD_ACCES']?></p>
-      <!--LiveInternet counter-->
-      <script type="text/javascript">document.write("<a class='live-internet' rel='nofollow' href='//www.liveinternet.ru/click' target=_blank><img src='//counter.yadro.ru/hit?t14.11;r" + escape(document.referrer) + ((typeof(screen) == "undefined") ? "" : ";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ? screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) + ";" + Math.random() + "' border=0 width=88 height=31 alt='' title='LiveInternet: показано число просмотров, посетителей за 24 часа и за сегодня'><\/a>")</script>
+      <img class="logo-img" src="/skins/default/img/cd-static.png" alt="Children's Dream" title="Children's Dream">
+      <p><?=$mess['GOOD_ACCES']?></p>
+      <p>&copy;<?=data(Core::$DATA)?></p>
+      <p><?=$mess['FOOTER_TOP']?></p>
     </div>
     <div class="soc-link">
+      <a rel="nofollow" href="<?=$link_lang?>oferta/">Оферта</a>
       <p><?=$mess['SOC_LINK']?></p>
       <a href="//www.facebook.com/tmchildrensdream" target="_blank" class="icon-facebook"></a>
       <a href="//vk.com/tmchildrensdream" target="_blank" class="icon-vkontakte"></a>
       <a href="//plus.google.com/101299485141835241705" target="_blank" class="icon-google-plus3" rel="publisher"></a>
       <a href="//www.instagram.com/tm_childrens_dream" target="_blank" class="icon-instagram"></a>
+    </div>
+    <div class="fb-right">
+      <!--LiveInternet counter--><script type="text/javascript">document.write("<a class='live-internet' rel='nofollow' href='//www.liveinternet.ru/click' target=_blank><img src='//counter.yadro.ru/hit?t27.19;r" + escape(document.referrer) + ((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth)) + ";u" + escape(document.URL) + ";" + Math.random() + "' alt='LiveInternet' title='LiveInternet: показано количество просмотров и посетителей'><\/a>")</script><!--/LiveInternet-->
     </div>
   </div>
 </footer>

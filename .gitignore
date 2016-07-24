@@ -1,9 +1,9 @@
-vendor/
+/vendor/
 config.php
-logs/
-work/
+/logs/
+/work/
 composer.phar
-uploaded/
+/uploaded/
 robots.txt
 .htaccess
 .gitignore

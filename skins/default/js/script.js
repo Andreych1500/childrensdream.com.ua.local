@@ -440,7 +440,6 @@ function checkForm(nameForm) {
 
     if (error == 0) {
         if (nameForm == 'form-comment') {
-
             $.ajax({
                 type: "POST",
                 url: "/comments/?ajax=ok",
@@ -448,7 +447,8 @@ function checkForm(nameForm) {
                 data: {
                     "name": $(obj[0]).val(),
                     "email": $(obj[1]).val(),
-                    "text": $(obj[2]).val()
+                    "text": $(obj[2]).val(),
+                    "ok": $(obj[3]).val(),
                 },
 
                 success: function (msg) {

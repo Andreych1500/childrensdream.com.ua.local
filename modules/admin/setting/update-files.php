@@ -8,7 +8,7 @@ if(isset($_REQUEST['reload'])){
          WHERE `id` = 1
     ");
 
-    sessionInfo('/admin/setting/update-files/', 'Кеш файлів успішно поновлений!', 1);
+    sessionInfo('/admin/setting/update-files/', $mess['Кеш файлів успішно поновлений!'], 1);
 }
 
 $arResult = q("

@@ -25,7 +25,7 @@ if(isset($_POST['ok'])){
             WHERE `id` = 1
         ");
 
-        sessionInfo('/admin/setting/main-module/', 'Редагування успішно проведено!', 1);
+        sessionInfo('/admin/setting/main-module/', $messG['Редагування пройшло успішно!'], 1);
     }
 }
 

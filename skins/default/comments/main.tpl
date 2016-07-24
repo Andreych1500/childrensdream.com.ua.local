@@ -11,7 +11,7 @@
         <div class="comment-item" itemscope itemtype="http://schema.org/UserComments">
           <p class="text-coment" itemprop="commentText"><?=nl2br(hsc($arResult['text']))?></p>
           <p itemprop="creator"><?=hsc($arResult['name'])?></p>
-          <time itemprop="commentTime" datetime="<?=substr(hsc($arResult['date_create']), 0, 10)?>T<?=substr(hsc($arResult['date_create']), 11)?>"><?=hsc($arResult['date_create'])?></time>
+          <time itemprop="commentTime" datetime="<?=substr(hsc($arResult['data_create']), 0, 10)?>T<?=substr(hsc($arResult['data_create']), 11)?>"><?=hsc($arResult['data_create'])?></time>
         </div>
       <?php }
     } else { ?>
@@ -23,14 +23,14 @@
     <h3><?=$mess['WORK_COMMENTS']?></h3>
     <div class="thanks"><?=$mess['THANKS']?></div>
     <div class="hack-error"><?=$mess['HACK_ERROR']?></div>
-    <form action="" name="form-comment" method="post" onsubmit="return checkForm('form-comment');">
+    <form action="#" name="form-comment" method="post" onsubmit="return checkForm('form-comment');">
       <p><?=$mess['PLEASE_NAME']?><span> *</span></p>
       <input <?=((isset($check['name']))? $check['name'] : '')?> type="text" name="name" value="<?=(isset($_POST['name'])? hsc($_POST['name']) : "")?>">
       <p><?=$mess['PLEASE_EMAIL']?><span> *</span></p>
       <input <?=((isset($check['email']))? $check['email'] : '')?> type="email" name="email" value="<?=(isset($_POST['email'])? hsc($_POST['email']) : "")?>">
       <p><?=$mess['PLEASE_TEXT']?><span> *</span></p>
       <textarea <?=((isset($check['text']))? $check['text'] : '')?> name="text"><?=(isset($_POST['text'])? hsc($_POST['text']) : "")?></textarea>
-      <input type="submit" value="<?=$mess['SUBMIT']?>" name="submit">
+      <input type="submit" value="<?=$mess['SUBMIT']?>" name="ok">
     </form>
   </div>
 </div>

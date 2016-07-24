@@ -183,19 +183,6 @@ function file_force_download($file){
     exit();
 }
 
-function yesNo($int){
-
-    if($int == 1){
-        $view = 'Ні';
-    } elseif($int == 2) {
-        $view = 'Так';
-    } else {
-        $view = '-';
-    }
-
-    return $view;
-}
-
 function menuExit(){
     q("
         UPDATE `admin_users_list` SET
@@ -212,7 +199,7 @@ function menuExit(){
     exit();
 }
 
-function deleteElement($ids, $db_table, $url){
+function deleteElement($ids, $db_table, $url, $messG){
     $arSel = q("
         SELECT *
         FROM `".$db_table."`
@@ -226,7 +213,7 @@ function deleteElement($ids, $db_table, $url){
     // Delete file
     while($arResult = $arSel->fetch_assoc()){
         foreach($arResult as $k => $v){
-            if(preg_match_all('#\/uploaded\/[\w]+/[\w]+\.jpeg|jpg|png|gif#uis', $v, $matches) > 0){
+            if(preg_match_all('#\/uploaded\/[\w]+/[\w]+\.(jpeg|jpg|png|gif)#uis', $v, $matches) > 0){
                 foreach($matches[0] as $file){
                     if(file_exists($_SERVER['DOCUMENT_ROOT'].$file)){
                         unlink($_SERVER['DOCUMENT_ROOT'].$file);
@@ -243,7 +230,7 @@ function deleteElement($ids, $db_table, $url){
         ");
     }
 
-    sessionInfo($url, 'Видалення пройшло успішно!', 1);
+    sessionInfo($url, $messG, 1);
 }
 
 function activeElement($ids, $db_table){

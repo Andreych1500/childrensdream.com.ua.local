@@ -40,7 +40,7 @@ class DynamicEditMenu{
         foreach($when as $colum => $arrayId){
             self::$qText .= "`".$colum."` = CASE ";
             foreach($arrayId as $id => $value){
-                self::$qText .= " WHEN `id` = ".$id." THEN '".$value."'";
+                self::$qText .= " WHEN `id` = ".$id." THEN '".mres($value)."'";
             }
             self::$qText .= " END,";
         }

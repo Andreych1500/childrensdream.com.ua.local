@@ -1,13 +1,14 @@
 <div class="section-interface-k1">
   <div class="line-custom">
-    <p class="header-name">Оновлення кеш файлів</p>
+    <p class="header-name"><?=$mess['Оновлення кеш файлів']?></p>
   </div>
+
   <table class="illustration-table">
     <tr>
       <td>№</td>
-      <td>Версія кешу</td>
-      <td>Час оновлення</td>
-      <td>Ким оновлена</td>
+      <td><?=$mess['Версія кешу']?></td>
+      <td><?=$messG['Час оновлення']?></td>
+      <td><?=$messG['Ким оновлений']?></td>
     </tr>
     <tr>
       <td><?=(int)$arResult['number_cache']?></td>
@@ -17,6 +18,6 @@
     </tr>
   </table>
   <div class="bottom-table">
-    <a class="reload-file" href="/admin/setting/update-files/?reload=ok">Поновити кеш файлів</a>
+    <a class="reload-file" href="/admin/setting/update-files/?reload=ok"><?=$mess['Поновити кеш файлів']?></a>
   </div>
 </div>

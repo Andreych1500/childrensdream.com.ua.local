@@ -13,8 +13,10 @@ class Pagination{
     if(!$issetTab->num_rows){
       self::$error .= 'Error: no param table '.$arParam['db_table'].'; ';
     }
+    
+    $getPage = (($_GET['page'] == 'main')? '\/' : '\/'.$_GET['page'].'\/');
 
-    if(!preg_match("#\/".$_GET['module']."\/".$_GET['page']."\/#uisU", $arParam['url'])){
+    if(!preg_match("#\/".$_GET['module'].$getPage."#uisU", $arParam['url'])){
       self::$error .= 'Error: no param url '.$arParam['url'].'; ';
     }
 
@@ -95,7 +97,7 @@ class Pagination{
             SELECT *
             FROM `".$arParam['db_table']."`
             ".$arParam['filter']."
-            ORDER BY `id` DESC
+            ORDER BY ".$arParam['sort']." `id` DESC
             LIMIT ".$start_el.", ".(int)$arParam['records_el']."
         ");
 
@@ -105,7 +107,7 @@ class Pagination{
           header('Location: '.$arParam['url']);
           exit();
         } else {
-          self::$pagination['result_DB'] = q("SELECT * FROM `".$arParam['db_table']."` ".$arParam['filter']." ORDER BY `id` DESC");
+          self::$pagination['result_DB'] = q("SELECT * FROM `".$arParam['db_table']."` ".$arParam['filter']." ORDER BY ".$arParam['sort']." `id` DESC ");
           self::$pagination['pagination'] = '<div class="'.$arParam['css_class'].'"><span class="act-nav">1</span></div>';
 
           return self::$pagination;

@@ -1,24 +1,23 @@
 <?php
-
-class BackupProject {
-
+class BackupProject{
     static $allFiles = array(); // Глобальний массив з всіма файлами
     static $fileNotZip = array(); // Файли, які не попадають в архів
     static $dbNames = array(); // Массив баз даних які потраплять у архів
     static $dbFiles = array(); // Массив файлів з дампом баз даних
+    static $delta = 500; // Крок
     static $return = array(
         'file_name'     => '',
         'volume_memory' => 0
     ); // Повернення даних
 
-    static function startBackup($dbNames, $offsetDirs, $timeDirDelete, $namePrefix) {
+    static function startBackup($dbNames, $offsetDirs, $timeDirDelete, $namePrefix, $messG){
         set_time_limit(0); // Забираємо обмеження в часі
 
         self::$fileNotZip = explode(',', $offsetDirs);
 
         $dbNames = explode(',', $dbNames); // Массив получаємих баз даних
 
-        foreach($dbNames as $v) {
+        foreach($dbNames as $v){
             self::$dbNames[] = $v;
         }
 
@@ -40,83 +39,100 @@ class BackupProject {
 
         BackupProject::deleteOldArchive($dump_dir, $time_delete); // Видаленя попередніх архівів
 
-        if(file_exists($dump_dir."/".$file_zip)) {
-            BackupProject::errorBackup('Архів з таким ім\'ям вже існує!', $dump_dir);
+        if(file_exists($dump_dir."/".$file_zip)){
+            BackupProject::errorBackup($messG['Архів з таким ім\'ям вже існує!'], $dump_dir);
         }
 
-        foreach(self::$dbNames as $dataBase) {
-            if(!q("SHOW DATABASES LIKE '".mres($dataBase)."'")->num_rows) {
-                BackupProject::errorBackup('База даних з таким ім\'ям "'.$dataBase.'" відсутня!', $dump_dir);
+        foreach(self::$dbNames as $dataBase){
+            if(!q("SHOW DATABASES LIKE '".mres($dataBase)."'")->num_rows){
+                BackupProject::errorBackup($messG['База даних з таким ім\'ям відсутня:'].$dataBase, $dump_dir);
             }
         }
 
-        foreach(self::$dbNames as $k => $dataBase) {
+        foreach(self::$dbNames as $k => $dataBase){
             self::$dbFiles[] = $dump_dir."/".$dataBase.".sql";
             $fp = fopen(self::$dbFiles[$k], "a"); // Відкриваємо файл або створюємо
 
             $result_set = q("SHOW TABLES"); // Запитуємо всі таблиці з бази
 
-            while(($table = $result_set->fetch_assoc()) != false) {
+            while(($table = $result_set->fetch_assoc()) != false){
+
                 /* Перебір всіх таблиць в базі даних */
-                $table = array_values($table);
+                $table = current($table);
+                $count = current(q("SELECT COUNT(*) FROM `".$table."`;")->fetch_assoc());
+                $result = q("SHOW COLUMNS FROM `".$table."`;");
 
-                if($fp) {
-                    $result_set_table = q("SHOW CREATE TABLE `".$table[0]."`")->fetch_assoc();
+                if($fp){
+                    $start = 0;
+                    $result_set_table = q("SHOW CREATE TABLE `".$table."`;")->fetch_assoc();
                     $result_set_table = array_values($result_set_table);
+                    $result_set_table[1] = preg_replace("#^CREATE TABLE#uis", "CREATE TABLE IF NOT EXISTS", $result_set_table[1]);
 
-                    fwrite($fp, "\n".$result_set_table[1].";\n"); // Результат даних таблиці
+                    fwrite($fp, "--\n-- Структура таблицы `".$table."`\n--\n\n".$result_set_table[1].";\n\n--\n-- Дамп данных таблицы `".$table."`\n--\n\n"); // Результат даних таблиці
 
-                    $result_set_rows = q("SELECT * FROM `".mres($table[0])."`"); // Список всіх записів таблиці
+                    if($count > 0){
+                        $query = "INSERT INTO `".$table."` (";
 
-                    while(($row = $result_set_rows->fetch_assoc()) != false) {
-                        $query = "";
-                        /* Путём перебора всех записей добавляем запросы на их создание в файл */
-                        foreach($row as $field) {
+                        $i = 0;
+                        while($row = $result->fetch_assoc()){
+                            $query .= (($i == 0)? '`'.$row['Field'].'`' : ', `'.$row['Field'].'`');
+                            ++$i;
+                        }
+                        $query .= ") VALUES";
+                    } else {
+                        continue;
+                    }
 
-                            if(is_null($field)) {
-                                $field = "NULL";
-                            } else {
-                                $field = "'".mres($field)."'";
+                    while($count > 0){
+                        $result = q("SELECT * FROM `".$table."` LIMIT ".$start.", ".self::$delta.";");
+
+                        while($row = $result->fetch_assoc()){
+                            $query .= "\n(";
+                            $j = 0;
+
+                            foreach($row as $index => $field){
+                                if (is_null($field)){
+                                    $field = "NULL";
+                                }
+
+                                $query .= (($j == 0)? $field : ', "'.mres($field).'"');
+                                ++$j;
                             }
-
-                            if($query == "") {
-                                $query = $field;
-                            } else {
-                                $query .= ", ".$field;
-                            }
-
+                            $query .= '),';
                         }
 
-                        $query = "INSERT INTO `".$table[0]."` VALUES (".$query.");";
-                        fwrite($fp, $query);
+                        $count -= self::$delta;
+                        $start += self::$delta;
                     }
+
+                    $query = trim($query, ',').";\n\n";
+                    fwrite($fp, $query);
                 } else {
-                    BackupProject::errorBackup('Виникла помилка при створеню ресурса!', $dump_dir);
+                    BackupProject::errorBackup($messG['Виникла помилка при створеню ресурса!'], $dump_dir);
                 }
             }
 
-            /* Закриваєм файл та з'єднання */
             fclose($fp);
             DB::close();
         }
 
         $zip = new ZipArchive();
 
-        if($zip->open($dump_dir."/".$file_zip, ZipArchive::CREATE) === true) {
+        if($zip->open($dump_dir."/".$file_zip, ZipArchive::CREATE) === true){
 
             /* Рекурсивний перебір всіх директорій */
-            if(is_dir($source_dirs)) {
+            if(is_dir($source_dirs)){
                 BackupProject::recoursiveDir($source_dirs);
             } else {
                 self::$allFiles[] = $source_dirs;
             }
 
-            foreach(self::$allFiles as $val) {
+            foreach(self::$allFiles as $val){
                 /* Добавляем в ZIP-архив все полученные файлы */
                 $unsetFile = substr($val, strlen($_SERVER['DOCUMENT_ROOT']));
                 $local = substr($val, $offset_dirs);
 
-                if($unsetFile == $offsetDirs) {
+                if($unsetFile == $offsetDirs){
                     continue;
                 }
 
@@ -126,7 +142,7 @@ class BackupProject {
             }
 
             /* Добавляем в ZIP-архив все дампы баз данных */
-            foreach(self::$dbFiles as $k => $value) {
+            foreach(self::$dbFiles as $k => $value){
                 $local = substr($value, strlen($dump_dir) + 1);
                 $zip->addFile($value, $local);
             }
@@ -134,23 +150,23 @@ class BackupProject {
             $zip->close();
         }
 
-        foreach(self::$dbFiles as $k => $value) { // Очищуємо маcсив
+        foreach(self::$dbFiles as $k => $value){ // Очищуємо маcсив
             unlink($value);
         }
-        
+
         return self::$return;
     }
 
-    static function recoursiveDir($dir) {
-        if($files = glob($dir."/{,.}*", GLOB_BRACE)) {
-            foreach($files as $file) {
+    static function recoursiveDir($dir){
+        if($files = glob($dir."/{,.}*", GLOB_BRACE)){
+            foreach($files as $file){
                 $b_name = basename($file);
 
-                if(in_array($b_name, self::$fileNotZip) || ($b_name == ".") || ($b_name == "..")) {
+                if(in_array($b_name, self::$fileNotZip) || ($b_name == ".") || ($b_name == "..")){
                     continue;
                 }
 
-                if(is_dir($file)) {
+                if(is_dir($file)){
                     BackupProject::recoursiveDir($file);
                 } else {
                     self::$allFiles[] = $file;
@@ -159,19 +175,19 @@ class BackupProject {
         }
     }
 
-    static function deleteOldArchive($dump_dir, $delay_delete) {
+    static function deleteOldArchive($dump_dir, $delay_delete){
         $ts = time();
         $files = glob($dump_dir."/*.zip");
-        foreach($files as $file) {
-            if($ts - filemtime($file) > $delay_delete) {
+        foreach($files as $file){
+            if($ts - filemtime($file) > $delay_delete){
                 unlink($file);
             }
         }
     }
 
-    static function errorBackup($text, $dump_dir) {
+    static function errorBackup($text, $dump_dir){
 
-        foreach(glob($dump_dir.'/*.sql') as $file) {
+        foreach(glob($dump_dir.'/*.sql') as $file){
             unlink($file);
         }
 

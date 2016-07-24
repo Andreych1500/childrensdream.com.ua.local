@@ -61,18 +61,20 @@
   <div class="i_Error"><?=$status_error?></div>
 </main>
 
-<footer>
+<footer itemscope itemtype="http://schema.org/WPFooter">
   <div class="footer-block">
-    <img class="logo-img" src="/skins/default/img/footer-logo.png" alt="Children's Dream" title="Children's Dream">
     <div class="development-site">
-      <p>&copy;<?=data(Core::$DATA).$mess['FOOTER_TOP']?></p>
+      <img class="logo-img" src="/skins/default/img/cd-static.png" alt="Children's Dream" title="Children's Dream">
       <p><?=$mess['GOOD_ACCES']?></p>
+      <p>&copy;<?=data(Core::$DATA)?></p>
+      <p><?=$mess['FOOTER_TOP']?></p>
     </div>
-    <div class="soc-link">
+    <div class="soc-link error">
+      <a rel="nofollow" href="<?=$link_lang?>oferta/">Оферта</a>
       <p><?=$mess['SOC_LINK']?></p>
       <a href="//www.facebook.com/tmchildrensdream" target="_blank" class="icon-facebook"></a>
       <a href="//vk.com/tmchildrensdream" target="_blank" class="icon-vkontakte"></a>
-      <a href="//plus.google.com/u/0/101299485141835241705" target="_blank" class="icon-google-plus3" rel="publisher"></a>
+      <a href="//plus.google.com/101299485141835241705" target="_blank" class="icon-google-plus3" rel="publisher"></a>
       <a href="//www.instagram.com/tm_childrens_dream" target="_blank" class="icon-instagram"></a>
     </div>
   </div>

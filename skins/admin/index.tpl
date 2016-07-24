@@ -2,7 +2,7 @@
 <html class="<?=(($globalAccess)? "admin-panel" : "auth-panel")?>">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <title>Адміністративна панель</title>
+  <title><?=$messG['Адміністративна панель title']?></title>
 
   <meta name="robots" content="index, nofollow">
   <meta name="author" content="Савіцький Андрій">
@@ -30,26 +30,26 @@
 </head>
 
 <body>
-<?php if($globalAccess) { ?>
+<?php if($globalAccess){ ?>
 
   <header>
     <div class="container">
       <div class="nth1-panel">
         <a href="/admin/setting/user-list/?edit=<?=$_SESSION['user']['id']?>" class="to-cab icon-user-tie"><?=$_SESSION['user']['last_name'].' '.$_SESSION['user']['name']?></a>
-        <a href="/admin/?exit=ok">Вихід</a>
+        <a href="/admin/?exit=ok"><?=$messG['Вихід']?></a>
       </div>
       <div class="nth2-panel">
-        <a class="to-site" target="_blank" href="//<?=$_SERVER['HTTP_HOST']?>">Сайт</a>
-        <a class="to-admin" href="//<?=$_SERVER['HTTP_HOST']?>/admin">Адміністрування</a>
+        <a class="to-site" target="_blank" href="//<?=$_SERVER['HTTP_HOST']?>"><?=$messG['Сайт']?></a>
+        <a class="to-admin" href="//<?=$_SERVER['HTTP_HOST']?>/admin"><?=$messG['Адміністрування']?></a>
 
-        <?php if(count($new_el) > 0) { // new info ?>
+        <?php if(isset($new_el) && count($new_el) > 0){ // new info ?>
           <div class="new-info">
             <span class="icon-info"></span>
             <?=count($new_el)?>
           </div>
           <div class="info-open-click">
-            <div class="adm-informer-header">Нові сповіщення</div>
-            <?php foreach($new_el as $key => $value) { ?>
+            <div class="adm-informer-header"><?=$messG['Нові сповіщення']?></div>
+            <?php foreach($new_el as $key => $value){ ?>
               <div class="informer-item">
                 <span class="icon-<?=(($key == 'order')? "truck" : "form")?>"></span>
                 <a href="/admin/<?=$key?>/?edit_info=<?=$key?>"><?=$value?></a>
@@ -65,36 +65,38 @@
   <main class="pc-version">
     <aside>
       <ul class="navigation">
-        <?php foreach(Core::$ARRAY_ADMIN_MENU as $k => $arResult) { ?>
+        <?php foreach($admin_menu as $k => $arResult){ ?>
           <li <?=((isset($_COOKIE['act-menu']) && $_COOKIE['act-menu'] == $k)? 'class="act-navigation"' : '')?>>
-            <p><span class="icon-<?=$arResult['icon']?>"></span><?=$arResult['name']?></p><span
-              class="animate-hover"></span>
+            <p><span class="icon-<?=$arResult['icon']?>"></span><?=$arResult['name']?></p>
+            <span class="animate-hover"></span>
           </li>
         <?php } ?>
       </ul>
     </aside>
     <div class="navigation-lv2 <?=(isset($_COOKIE['act-menu'])? 'act-nav-lv2' : '')?>">
-      <?php foreach(Core::$ARRAY_ADMIN_MENU as $k => $arResult) { ?>
+      <?php foreach($admin_menu as $k => $arResult){ ?>
         <ul class="section-lv2 <?=((isset($_COOKIE['act-menu']) && $_COOKIE['act-menu'] == $k)? 'act-section' : '')?>">
           &nbsp;<?=$arResult['name']?>
           <?php
           $j = 0;
-          foreach($arResult['sections'] as $nameSection => $arSections) { ?>
-            <li class="list-sec-menu <?=(isset($arrayActMenu)? (in_array($k.':'.$j, $arrayActMenu)? 'act-list' : '') : '')?>"><span class="icon-left"></span><?=$nameSection?>
+          foreach($arResult['sections'] as $nameSection => $arSections){ ?>
+            <li class="list-sec-menu <?=(isset($arrayActMenu)? (in_array($k.':'.$j, $arrayActMenu)? 'act-list' : '') : '')?>">
+              <span class="icon-left"></span><?=$nameSection?>
               <ul class="section-module">
-                <?php foreach($arSections as $name => $link) { ?>
+                <?php foreach($arSections as $name => $link){ ?>
                   <li><a href="<?=$link?>"><?=$name?></a></li>
                 <?php } ?>
               </ul>
             </li>
-          <?php ++$j; } ?>
+            <?php ++$j;
+          } ?>
         </ul>
       <?php } ?>
     </div>
 
     <!-- Content --->
     <div class="content">
-      <?php if(isset($info)) { // Info window ?>
+      <?php if(isset($info)){ // Info window ?>
         <div class="adm-info-block <?=$info['type']?>">
           <div class="adm-info-text">
             <span class="icon-<?=$info['icon']?>"></span>
@@ -108,7 +110,8 @@
 
   <footer>
     <div class="adm-header-bottom"></div>
-    <div class="container">Адміністративна панель.<br>Усі права захищені &copy; <?=data($arMainParam['site_data_create']);?>.</div>
+    <div class="container"><?=$messG['Адміністративна панель']?>.<br><?=$messG['Усі права захищені']?> &copy; <?=data(Core::$DATA)?>.
+    </div>
   </footer>
 
 <?php } else { ?>
@@ -122,7 +125,8 @@
   <main class="auth-main"><?=$content?></main>
 
   <footer>
-    <div class="bottom-panel no-active">Адміністративна панель.<br>Усі права захищені &copy; <?=data($arMainParam['site_data_create']);?>.</div>
+    <div class="bottom-panel no-active"><?=$messG['Адміністративна панель']?>.<br><?=$messG['Усі права захищені']?> &copy; <?=data(Core::$DATA)?>.
+    </div>
   </footer>
 
 <?php } ?>
