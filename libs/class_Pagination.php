@@ -4,7 +4,6 @@ class Pagination{
   static $pagination = array();
 
   static function formNav($arParam){
-
     $issetTab = q("
         SHOW TABLES FROM `".Core::$DB_NAME."` 
         LIKE '".mres($arParam['db_table'])."'
@@ -13,7 +12,7 @@ class Pagination{
     if(!$issetTab->num_rows){
       self::$error .= 'Error: no param table '.$arParam['db_table'].'; ';
     }
-    
+
     $getPage = (($_GET['page'] == 'main')? '\/' : '\/'.$_GET['page'].'\/');
 
     if(!preg_match("#\/".$_GET['module'].$getPage."#uisU", $arParam['url'])){
@@ -25,11 +24,11 @@ class Pagination{
     }
 
     if(!mb_strlen(self::$error)){
-      $active = $arParam['numPage']; //-> номер активної сторінки
-      $count_show = $arParam['count_show']; //-> кількість порядкових сторінок які виводяться у пагінаії
-      $url = $arParam['url']; //-> url сторінки від корня
+      $active = $arParam['numPage']; // номер активної сторінки
+      $count_show = $arParam['count_show']; // кількість порядкових сторінок які виводяться у пагінаії
+      $url = $arParam['url']; // url сторінки від корня
 
-      /* -> Кількість усіх записів */
+      /* Кількість усіх записів */
       $all_element = q("
           SELECT `id`
           FROM `".$arParam['db_table']."`
@@ -58,7 +57,7 @@ class Pagination{
           }
         }
 
-        if($arParam['numPage'] > $count_pages || $arParam['numPage'] == 0){
+        if($arParam['numPage'] > $count_pages || $arParam['numPage'] <= 0){
           if($arParam['notFound404'] == 'Y'){
             header("HTTP/1.0 404 Not Found");
             echo bufferStartError404($arParam['lang'], $arParam['link_lang']);
@@ -67,6 +66,12 @@ class Pagination{
             header('Location: '.$arParam['url']);
             exit();
           }
+        }
+
+        if($arParam['seo'] == 'Y'){
+          /*
+           * this seo Prev or Next
+           * */
         }
 
         ob_start(); ?>

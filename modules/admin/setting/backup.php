@@ -43,6 +43,7 @@ $backup = Pagination::formNav(array(
     'css_class'   => "pagination-admin",
     'filter'      => '',
     'sort'        => '',
+    'seo'         => 'N',
     'notFound404' => 'N',
     'lang'        => '',
     'link_lang'   => '',

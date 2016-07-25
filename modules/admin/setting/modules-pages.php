@@ -161,6 +161,7 @@ if(isset($_REQUEST['add'])){
         'css_class'   => "pagination-admin",
         'filter'      => $filter,
         'sort'        => '',
+        'seo'         => 'N',
         'notFound404' => 'N',
         'lang'        => '',
         'link_lang'   => '',
