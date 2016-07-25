@@ -3,50 +3,39 @@ class ExpodtImportDB{
     static $tables = array();
 
     static function table_structureXml($table, $dir){
-        $xml_file = '';
+        //        $xml_file = '';
+        //
+        //        $select = q("SELECT * FROM `".$table."`;")->fetch_assoc();
+        //        $keys = array_keys($select); // Get the Column Names
+        //        $min = ord("A"); // ord returns the ASCII value of the first character of string.
+        //        $max = $min + count($keys);
+        //        $abc = $min;   // Initialize our alphabetical counter
+        //
+        //        for($j = $min; $j <= $max; ++$j){
+        //            $col = $xml_file.chr($abc);   // This is the Column Label.
+        //            $last_char = substr($col, -1);
+        //
+        //            if($last_char > "Z"){ // At the end of the alphabet. Time to Increment the first column letter.
+        //                $abc = $min; // Start Over
+        //
+        //                if(empty($xml_file)){
+        //                    $xml_file = "A";
+        //                } else {
+        //                    $fchrOrd = ord($xml_file);// Get the value of the first character
+        //                    $fchrOrd++; // Move to the next one.
+        //                    $xml_file = chr($fchrOrd); // Reset the first character.
+        //                }
+        //
+        //                $col = $xml_file.chr($abc); // This is the column identifier
+        //            }
+        //
+        //            //            /*
+        //            //               Use the $col here.
+        //            //            */
+        //
+        //            $abc++; // Move on to the next letter
+        //        }
 
-        $select = q("SELECT * FROM `".$table."`;")->fetch_assoc();
-        $keys = array_keys($select); // Get the Column Names
-        $min = ord("A"); // ord returns the ASCII value of the first character of string.
-        $max = $min + count($keys);
-        $abc = $min;   // Initialize our alphabetical counter
-
-        for($j = $min; $j <= $max; ++$j){
-            $col = $xml_file.chr($abc);   // This is the Column Label.
-            $last_char = substr($col, -1);
-
-            if($last_char > "Z"){ // At the end of the alphabet. Time to Increment the first column letter.
-                $abc = $min; // Start Over
-
-                if(empty($xml_file)){
-                    $xml_file = "A";
-                } else {
-                    $fchrOrd = ord($xml_file);// Get the value of the first character
-                    $fchrOrd++; // Move to the next one.
-                    $xml_file = chr($fchrOrd); // Reset the first character.
-                }
-
-                $col = $xml_file.chr($abc); // This is the column identifier
-            }
-
-            //            /*
-            //               Use the $col here.
-            //            */
-
-            $abc++; // Move on to the next letter
-        }
-
-        //require_once 'PHPExcel.php';
-        $phpexcel = new PHPExcel();
-        wtf($phpexcel);
-        $page = $phpexcel->setActiveSheetIndex(0);
-        $page->setCellValue("B2", "время");
-        $page->setCellValue("C5", "привет, я работаю");
-        $page->setCellValue("A8", "результат запроса mysql");
-        $page->setTitle("Test");
-        $objWriter = PHPExcel_IOFactory::createWriter($phpexcel, 'Excel2007');
-        $objWriter->save("test.xlsx");
-        exit();
     }
 
     static function table_dataCsv($table, $dir){
