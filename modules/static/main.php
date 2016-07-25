@@ -1,7 +1,7 @@
 <?php
 // Ajax More Element
 if(isset($_REQUEST['ajax'])){
-    if(isset($_POST['nextLine'], $_POST['siteLang'])){
+    if(isset($_POST['nextLine'], $_POST['siteLang']) && array_search($_POST['siteLang'], explode(',', $GM['list_length'])) !== false && $_POST['nextLine'] > 0){
         $countLine = 4;
         $lastNumber = $countLine * ((int)$_POST['nextLine'] - 1);
         $allElements = $countLine * (int)$_POST['nextLine'];
@@ -10,7 +10,7 @@ if(isset($_REQUEST['ajax'])){
                 SELECT `id`
                 FROM `products`
                 WHERE `active` = 1
-            ");
+        ");
 
         $products = q("
                 SELECT `id`,`name_ua`,`name_ru`,`symbol_code`,`price`,`availability`,`img_anons`,`img_seo_alt_ua`,`img_seo_alt_ru`,`description_ua`,`description_ru`
