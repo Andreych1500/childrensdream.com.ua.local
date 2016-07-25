@@ -394,15 +394,23 @@ function Slider(eq, animate, stop) {
     }
 }
 
-function modalPhoto() {
+function modalPhoto(el, more) {
     var globWindowWidth = $(window).outerWidth(true) + widthScroll_Y();
 
     if (globWindowWidth > 800) {
-        $('.slider-nav .slick-current.slick-center').addClass('n-ActIndex');
 
-        var clone = $('.n-ActIndex img').clone();
+        if(more == 'N'){
+            var clone = $(el).clone();
+            $('span[class^="btnModal-"]').hide();
 
-        $('.modalMain').append(clone);
+            $('.modalMain').append(clone);
+            $('.modal img').css({'max-width':clone[0].naturalWidth, 'max-height':clone[0].naturalHeight});
+        } else {
+            $('.slider-nav .slick-current.slick-center').addClass('n-ActIndex');
+            var clone = $(el).clone();
+
+            $('.modalMain').append(clone);
+        }
 
         $('.fixed-overlay').fadeIn(400, function () {
             $('.modal').css('display', 'flex').animate({opacity: 1}, 200);

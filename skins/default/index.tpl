@@ -55,7 +55,7 @@
       "email": "cdmatrasses@gmail.com",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "<?=$mess['ADDRES_LOCATION']?>",
+        "addressLocality": "<?=$messG['ADDRES_LOCATION']?>",
         "postalCode": "	46000"
       }
     }
@@ -70,27 +70,27 @@
     <?php foreach(Core::$LINK_LANG as $k => $v){ ?>
       <a class="lang_<?=$v?> <?=(($lang == $v)? 'act-lang' : '')?>" href="<?=(($v == 'ua')? '/' : '/'.$v.'/').Core::$SITE_DIR?>"><?=strtoupper($v)?></a>
     <?php } ?>
-    <a class="mobile-basket" href="<?=$link_lang?>order/" rel="nofollow"><?=$mess['BASKET']?>
+    <a class="mobile-basket" href="<?=$link_lang?>order/" rel="nofollow"><?=$messG['BASKET']?>
       <span><?=(int)$countG?></span></a>
-    <div class="mob-menu" onclick="showHide(this);"><span class="icon-mob-menu"></span><?=$mess['MOBILE_MENU']?></div>
-    <a class="call-us" href="<?=(isMobile()? 'tel' : 'callto')?>:38-098-570-43-77"><?=$mess['CONTACT_INFO']?> +38 (098) 570-43-77</a>
+    <div class="mob-menu" onclick="showHide(this);"><span class="icon-mob-menu"></span><?=$messG['MOBILE_MENU']?></div>
+    <a class="call-us" href="<?=(isMobile()? 'tel' : 'callto')?>:38-098-570-43-77"><?=$messG['CONTACT_INFO']?> +38 (098) 570-43-77</a>
 
     <nav class="top-menu" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
       <ul>
-        <li><a href="<?=$link_lang?>#about" itemprop="url"><span itemprop="name"><?=$mess['ABOUT_US']?></span></a></li>
-        <li><a href="<?=$link_lang?>products/" itemprop="url"><span itemprop="name"><?=$mess['PRODUCTION']?></span></a>
+        <li><a href="<?=$link_lang?>#about" itemprop="url"><span itemprop="name"><?=$messG['ABOUT_US']?></span></a></li>
+        <li><a href="<?=$link_lang?>products/" itemprop="url"><span itemprop="name"><?=$messG['PRODUCTION']?></span></a>
         </li>
-        <li><a href="<?=$link_lang?>#payment" itemprop="url"><span itemprop="name"><?=$mess['SERVICES']?></span></a>
+        <li><a href="<?=$link_lang?>#payment" itemprop="url"><span itemprop="name"><?=$messG['SERVICES']?></span></a>
         </li>
-        <li><a href="<?=$link_lang?>#call" itemprop="url"><span itemprop="name"><?=$mess['CONTACTS']?></span></a></li>
-        <li><a href="<?=$link_lang?>comments/" itemprop="url"><span itemprop="name"><?=$mess['OTZUVU']?></span></a></li>
-        <li><a href="<?=$link_lang?>order/" itemprop="url" rel="nofollow"><?=$mess['BASKET']?>
+        <li><a href="<?=$link_lang?>#call" itemprop="url"><span itemprop="name"><?=$messG['CONTACTS']?></span></a></li>
+        <li><a href="<?=$link_lang?>comments/" itemprop="url"><span itemprop="name"><?=$messG['OTZUVU']?></span></a></li>
+        <li><a href="<?=$link_lang?>order/" itemprop="url" rel="nofollow"><?=$messG['BASKET']?>
             <span><?=(int)$countG?></span></a></li>
       </ul>
       <span class="menu-icon"></span>
     </nav>
 
-    <div class="toTop"><?=$mess['TO_TOP']?></div>
+    <div class="toTop"><?=$messG['TO_TOP']?></div>
   </div>
 </header>
 
@@ -100,13 +100,13 @@
   <div class="footer-block">
     <div class="development-site">
       <img class="logo-img" src="/skins/default/img/cd-static.png" alt="Children's Dream" title="Children's Dream">
-      <p><?=$mess['GOOD_ACCES']?></p>
+      <p><?=$messG['GOOD_ACCES']?></p>
       <p>&copy;<?=data(Core::$DATA)?></p>
-      <p><?=$mess['FOOTER_TOP']?></p>
+      <p><?=$messG['FOOTER_TOP']?></p>
     </div>
     <div class="soc-link">
       <a rel="nofollow" href="<?=$link_lang?>oferta/">Оферта</a>
-      <p><?=$mess['SOC_LINK']?></p>
+      <p><?=$messG['SOC_LINK']?></p>
       <a href="//www.facebook.com/tmchildrensdream" target="_blank" class="icon-facebook"></a>
       <a href="//vk.com/tmchildrensdream" target="_blank" class="icon-vkontakte"></a>
       <a href="//plus.google.com/101299485141835241705" target="_blank" class="icon-google-plus3" rel="publisher"></a>

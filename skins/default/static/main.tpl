@@ -20,7 +20,7 @@
   <div class="about-block">
     <div class="block-title">
       <span class="line"></span>
-      <p class="title-text"><?=$mess['ABOUT_US']?></p>
+      <p class="title-text"><?=$messG['ABOUT_US']?></p>
       <span class="line"></span>
     </div>
     <?=$mess['ABOUT_TEXT']?>

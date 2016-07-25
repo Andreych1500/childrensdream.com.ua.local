@@ -36,24 +36,24 @@
     <?php foreach(Core::$LINK_LANG as $k => $v){ ?>
       <a class="lang_<?=$v?> <?=(($lang == $v)? 'act-lang' : '')?>" href="<?=(($v == 'ua')? '/' : '/'.$v.'/').Core::$SITE_DIR?>"><?=strtoupper($v)?></a>
     <?php } ?>
-    <a class="mobile-basket" href="<?=$link_lang?>order/" rel="nofollow"><?=$mess['BASKET']?>
+    <a class="mobile-basket" href="<?=$link_lang?>order/" rel="nofollow"><?=$messG['BASKET']?>
       <span><?=(int)$countG?></span></a>
-    <div class="mob-menu" onclick="showHide(this);"><span class="icon-mob-menu"></span><?=$mess['MOBILE_MENU']?></div>
-    <a class="call-us" href="<?=(isMobile()? 'tel' : 'callto')?>:38-098-570-43-77"><?=$mess['CONTACT_INFO']?> +38 (098) 570-43-77</a>
+    <div class="mob-menu" onclick="showHide(this);"><span class="icon-mob-menu"></span><?=$messG['MOBILE_MENU']?></div>
+    <a class="call-us" href="<?=(isMobile()? 'tel' : 'callto')?>:38-098-570-43-77"><?=$messG['CONTACT_INFO']?> +38 (098) 570-43-77</a>
 
     <nav class="top-menu">
       <ul>
-        <li><a href="<?=$link_lang?>#about"><?=$mess['ABOUT_US']?></a></li>
-        <li><a href="<?=$link_lang?>products/"><?=$mess['PRODUCTION']?></a></li>
-        <li><a href="<?=$link_lang?>#payment"><?=$mess['SERVICES']?></a></li>
-        <li><a href="<?=$link_lang?>#call"><?=$mess['CONTACTS']?></a></li>
-        <li><a href="<?=$link_lang?>comments/"><?=$mess['OTZUVU']?></a></li>
-        <li><a href="<?=$link_lang?>order/"><?=$mess['BASKET']?> <span><?=(int)$countG?></span></a></li>
+        <li><a href="<?=$link_lang?>#about"><?=$messG['ABOUT_US']?></a></li>
+        <li><a href="<?=$link_lang?>products/"><?=$messG['PRODUCTION']?></a></li>
+        <li><a href="<?=$link_lang?>#payment"><?=$messG['SERVICES']?></a></li>
+        <li><a href="<?=$link_lang?>#call"><?=$messG['CONTACTS']?></a></li>
+        <li><a href="<?=$link_lang?>comments/"><?=$messG['OTZUVU']?></a></li>
+        <li><a href="<?=$link_lang?>order/"><?=$messG['BASKET']?> <span><?=(int)$countG?></span></a></li>
       </ul>
       <span class="menu-icon"></span>
     </nav>
 
-    <div class="toTop"><?=$mess['TO_TOP']?></div>
+    <div class="toTop"><?=$messG['TO_TOP']?></div>
   </div>
 </header>
 
@@ -65,13 +65,13 @@
   <div class="footer-block">
     <div class="development-site">
       <img class="logo-img" src="/skins/default/img/cd-static.png" alt="Children's Dream" title="Children's Dream">
-      <p><?=$mess['GOOD_ACCES']?></p>
+      <p><?=$messG['GOOD_ACCES']?></p>
       <p>&copy;<?=data(Core::$DATA)?></p>
-      <p><?=$mess['FOOTER_TOP']?></p>
+      <p><?=$messG['FOOTER_TOP']?></p>
     </div>
     <div class="soc-link error">
       <a rel="nofollow" href="<?=$link_lang?>oferta/">Оферта</a>
-      <p><?=$mess['SOC_LINK']?></p>
+      <p><?=$messG['SOC_LINK']?></p>
       <a href="//www.facebook.com/tmchildrensdream" target="_blank" class="icon-facebook"></a>
       <a href="//vk.com/tmchildrensdream" target="_blank" class="icon-vkontakte"></a>
       <a href="//plus.google.com/101299485141835241705" target="_blank" class="icon-google-plus3" rel="publisher"></a>

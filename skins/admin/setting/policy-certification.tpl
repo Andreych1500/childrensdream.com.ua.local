@@ -96,7 +96,7 @@
 
           <div class="right-position">
             <?php foreach($list as $k => $v){ ?>
-              <input <?=(isset($check['list_title'])? $check['list_title'] : '')?> type="text" name="list_title[<?=$k?>]" value="<?=(isset($error))? (empty($_POST['list_title'][$k])? $v : $_POST['list_title'][$k]) : (!isset($arResult['list_title'][$k])? $v : explode('#|#', $arResult['list_title'])[$k])?>" onkeyup="deleteList(this)">
+              <input <?=(isset($check['list_title'])? $check['list_title'] : '')?> type="text" name="list_title[<?=$k?>]" value="<?=(isset($error))? (empty($_POST['list_title'][$k])? $v : $_POST['list_title'][$k]) : (!isset($arResult['title_img'][$k])? $v : explode('#|#', $arResult['title_img'])[$k])?>" onkeyup="deleteList(this)">
             <?php } ?>
             <div class="add-el-list" data-name="list_title[]" data-type="text" data-attr='onkeyup="deleteList(this)"'><?=$messG['Додати']?></div>
           </div>
@@ -108,7 +108,7 @@
           </div>
           <div class="right-position">
             <?php foreach($list as $k => $v){ ?>
-              <input <?=(isset($check['list_alt'])? $check['list_alt'] : '')?> type="text" name="list_alt[<?=$k?>]" value="<?=(isset($error))? (empty($_POST['list_alt'][$k])? $v : $_POST['list_alt'][$k]) : (!isset($arResult['list_alt'][$k])? $v : explode('#|#', $arResult['list_alt'])[$k])?>" onkeyup="deleteList(this)">
+              <input <?=(isset($check['list_alt'])? $check['list_alt'] : '')?> type="text" name="list_alt[<?=$k?>]" value="<?=(isset($error))? (empty($_POST['list_alt'][$k])? $v : $_POST['list_alt'][$k]) : (!isset($arResult['alt_img'][$k])? $v : explode('#|#', $arResult['alt_img'])[$k])?>" onkeyup="deleteList(this)">
             <?php } ?>
             <div class="add-el-list" data-name="list_alt[]" data-type="text" data-attr='onkeyup="deleteList(this)"'><?=$messG['Додати']?></div>
           </div>
