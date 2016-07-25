@@ -1,5 +1,8 @@
 <?php
 if(Core::$CONT != 'modules/admin'){
+    // Lang key
+    $key_lang = array_search($lang, explode(',', $GM['list_length']));
+
     // Seo meta tags
     foreach(explode(',', $GM['list_length']) as $k => $v){
         if($lang == $v){

@@ -216,15 +216,8 @@
     <span class="line"></span>
   </div>
   <div class="certification">
-    <?
-//    foreach(explode(',', $GM['list_length']) as $k => $v){
-//      if($lang == $v){
-//        Core::$META['title'] = hsc(explode('#|#', $GM['meta_title'])[$k]);
-//      }
-//    }
-    ?>
     <?php while($arResult = hsc($certification->fetch_assoc())){ ?>
-      <img src="<?=$arResult['img_certification']?>" alt="" onclick="modalPhoto(this,'N');">
+      <img src="<?=$arResult['img_certification']?>" alt="<?=explode('#|#', $arResult['alt_img'])[$key_lang]?>" onclick="modalPhoto(this,'N');">
     <?php } ?>
   </div>
 </section>
