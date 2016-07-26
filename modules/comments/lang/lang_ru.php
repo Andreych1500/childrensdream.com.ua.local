@@ -14,3 +14,4 @@ $mess['SUBMIT']       = 'Отправить';
 
 // error
 $mess['HACK_ERROR'] = 'WARNING';
+$mess['MORE'] = 'ЕЩЕ';

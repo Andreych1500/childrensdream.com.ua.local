@@ -261,6 +261,32 @@ $(document).ready(function () {
     $(window).resize();
 });
 
+
+function moreComments(submit) {
+    var rel = $(submit).attr('data-param').split("|");
+
+    $.ajax({
+        url: '/comments/?more=ok&ajax=ok',
+        type: "POST",
+        data: {nextLine: rel[0], siteLang: rel[1]},
+        success: function (response) {
+            var res = JSON.parse(response);
+
+            //$(submit).attr(onclick);
+            if ($(res.html).length > 0) {
+                $(".view-comments .comment-item:last").after($(res.html).fadeIn('fast'));
+
+                var valRel = (+rel[0] + 1) + '|' + rel[1];
+                $(submit).attr('data-param', valRel);
+            }
+
+            if (res.end == 0) {
+                $(submit).remove();
+            }
+        }
+    });
+}
+
 function edit_price(el) {
     var price = parseInt($(el).parents('tr').find('.el_prive_hidden').val());
     var count = $(el).val();
@@ -399,12 +425,12 @@ function modalPhoto(el, more) {
 
     if (globWindowWidth > 800) {
 
-        if(more == 'N'){
+        if (more == 'N') {
             var clone = $(el).clone();
             $('span[class^="btnModal-"]').hide();
 
             $('.modalMain').append(clone);
-            $('.modal img').css({'max-width':clone[0].naturalWidth, 'max-height':clone[0].naturalHeight});
+            $('.modal img').css({'max-width': clone[0].naturalWidth, 'max-height': clone[0].naturalHeight});
         } else {
             $('.slider-nav .slick-current.slick-center').addClass('n-ActIndex');
             var clone = $(el).clone();
@@ -450,7 +476,7 @@ function checkForm(nameForm) {
         if (nameForm == 'form-comment') {
             $.ajax({
                 type: "POST",
-                url: "/comments/?ajax=ok",
+                url: "/comments/?comments=ok&ajax=ok",
                 cache: false,
                 data: {
                     "name": $(obj[0]).val(),
