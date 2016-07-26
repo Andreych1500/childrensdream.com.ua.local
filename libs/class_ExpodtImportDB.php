@@ -2,43 +2,112 @@
 class ExpodtImportDB{
     static $tables = array();
 
-    static function table_structureXml($table, $dir){
-        //        $xml_file = '';
-        //
-        //        $select = q("SELECT * FROM `".$table."`;")->fetch_assoc();
-        //        $keys = array_keys($select); // Get the Column Names
-        //        $min = ord("A"); // ord returns the ASCII value of the first character of string.
-        //        $max = $min + count($keys);
-        //        $abc = $min;   // Initialize our alphabetical counter
-        //
-        //        for($j = $min; $j <= $max; ++$j){
-        //            $col = $xml_file.chr($abc);   // This is the Column Label.
-        //            $last_char = substr($col, -1);
-        //
-        //            if($last_char > "Z"){ // At the end of the alphabet. Time to Increment the first column letter.
-        //                $abc = $min; // Start Over
-        //
-        //                if(empty($xml_file)){
-        //                    $xml_file = "A";
-        //                } else {
-        //                    $fchrOrd = ord($xml_file);// Get the value of the first character
-        //                    $fchrOrd++; // Move to the next one.
-        //                    $xml_file = chr($fchrOrd); // Reset the first character.
-        //                }
-        //
-        //                $col = $xml_file.chr($abc); // This is the column identifier
-        //            }
-        //
-        //            //            /*
-        //            //               Use the $col here.
-        //            //            */
-        //
-        //            $abc++; // Move on to the next letter
-        //        }
+    static function table_structureXls($table, $dir, $file){
+        $table = mres($table);
 
+        require_once('/libs/PHPExcel/Classes/PHPExcel.php');
+        require_once('/libs/PHPExcel/Classes/PHPExcel/Writer/Excel5.php');
+
+        $xls = new PHPExcel();
+
+        // Устанавливаем индекс активного листа
+        $xls->setActiveSheetIndex(0);
+        $sheet = $xls->getActiveSheet();
+
+        $sheet->setTitle('Table');
+
+        // Вставляем текст в ячейку A1
+        $sheet->setCellValue("A2", 'Table `'.$table.'`');
+
+        $sheet->getStyle('A2')->getFill()->setFillType(PHPExcel_Style_Fill::FILL_SOLID);
+        $sheet->getStyle('A2')->getFill()->getStartColor()->setRGB('EEEEEE');
+
+        $i = 4;
+        $select = q("SELECT * FROM `".$table."`");
+
+        while($row = hsc($select->fetch_assoc())){
+
+            $j = 0;
+            foreach($row as $column => $value){
+                if($i == 4){
+                    $sheet->setCellValueByColumnAndRow($j, $i-1, $column);
+                    $sheet->getStyleByColumnAndRow($j, $i-1)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+                }
+
+                $sheet->setCellValueByColumnAndRow($j, $i, $value);
+
+                //Выравнивание текста
+                $sheet->getStyleByColumnAndRow($j, $i)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+                ++$j;
+            }
+
+            ++$i;
+        }
+
+        $last_letter = ExpodtImportDB::getNameFromNumber($j);
+        $last_plus_one = ExpodtImportDB::getNameFromNumber($j + 1);
+
+        // Объединяем ячейки
+        $sheet->mergeCells('A2:'.$last_letter.'2');
+        $sheet->getStyle('A2')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+
+        $styleArray = array(
+            'borders' => array(
+                'allborders' => array(
+                    'style' => PHPExcel_Style_Border::BORDER_THIN,
+                    'color' => array(
+                        'rgb' => '#2A8CFD'
+                    )
+                )
+            )
+        );
+
+        $xls->getActiveSheet()->getStyle('A2:'.$last_letter.'2')->applyFromArray($styleArray);
+        unset($styleArray);
+
+        // Create Logo
+        $img = q("
+            SELECT `brandPhoto`
+            FROM `admin_personal_interface`
+            LIMIT 1
+        ")->fetch_assoc();
+
+        $sheet->mergeCells('A1:'.$last_letter.'1');
+        $imagePath = $_SERVER['DOCUMENT_ROOT'].$img['brandPhoto'];
+
+        if (file_exists($imagePath)) {
+            $logo = new PHPExcel_Worksheet_Drawing();
+            $logo->setPath($imagePath);
+            $logo->setCoordinates("A1");
+            $logo->setOffsetX(10);
+            $logo->setOffsetY(10);
+            $sheet->getRowDimension(1)->setRowHeight(95);
+            $logo->setWorksheet($sheet);
+        }
+
+        for($col = 'A'; $col !== $last_plus_one; $col++) {
+            $sheet->getColumnDimension($col)->setWidth(15);
+        }
+
+        // Выводим содержимое файла
+        $objWriter = new PHPExcel_Writer_Excel5($xls);
+        $objWriter->save($_SERVER['DOCUMENT_ROOT'].'/uploaded/db_tables/'.$table.'.'.$file);
+
+        return true;
     }
 
-    static function table_dataCsv($table, $dir){
+    static function getNameFromNumber($num){
+        $numeric = ($num - 1) % 26;
+        $letter = chr(65 + $numeric);
+        $num2 = intval(($num - 1) / 26);
+        if($num2 > 0){
+            return ExpodtImportDB::getNameFromNumber($num2).$letter;
+        } else {
+            return $letter;
+        }
+    }
+
+    static function table_dataCsv($table, $dir, $file){
         $csv_file = '';
         $delta = 500; // Кількість записів за один раз
         $start = 0;
@@ -68,7 +137,7 @@ class ExpodtImportDB{
             $start += $delta;
         }
 
-        file_put_contents($dir.$table.'.csv', $csv_file, FILE_APPEND);
+        file_put_contents($dir.$table.'.'.$file, $csv_file, FILE_APPEND);
     }
 
     static function table_structureMySql($table, $dir){

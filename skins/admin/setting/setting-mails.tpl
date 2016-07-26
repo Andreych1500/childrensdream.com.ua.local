@@ -37,7 +37,7 @@
 
       <div class="input-value">
         <div class="name-section"><?=$mess['Email для тестових відправок або листів']?>:<span class="accent">*</span></div>
-        <input <?=(isset($check['email'])? $check['email'] : '')?> type="text" name="email" value="<?=(isset($error)? hsc($_POST['email']) : hsc($arResult['email']))?>">
+        <input <?=(isset($check['test_email'])? $check['test_email'] : '')?> type="text" name="test_email" value="<?=(isset($error)? hsc($_POST['test_email']) : hsc($arResult['test_email']))?>">
       </div>
     </div>
 

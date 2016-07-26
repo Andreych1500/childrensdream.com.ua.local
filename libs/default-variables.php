@@ -1,6 +1,8 @@
 <?php
 function __autoload($class){
-    include './libs/class_'.$class.'.php';
+    if(file_exists('./libs/class_'.$class.'.php')){
+        include './libs/class_'.$class.'.php';
+    }
 }
 
 function q($query, $key = 0){

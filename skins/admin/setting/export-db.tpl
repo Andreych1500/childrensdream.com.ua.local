@@ -19,7 +19,7 @@
           <span class="or">|</span>
           <label><span>CSV</span><input type="radio" name="export" value="csv"></label>
           <span class="or">|</span>
-          <label><span>XLSX</span><input type="radio" name="export" value="xlsx"></label>
+          <label><span>XLS</span><input type="radio" name="export" value="xls"></label>
         </div>
       </div>
 

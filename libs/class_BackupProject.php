@@ -108,7 +108,7 @@ class BackupProject{
                     $query = trim($query, ',').";\n\n";
                     fwrite($fp, $query);
                 } else {
-                    BackupProject::errorBackup($messG['Виникла помилка при створеню ресурса!'], $dump_dir);
+                    BackupProject::errorBackup($messG['Виникла помилка при створені ресурса!'], $dump_dir);
                 }
             }
 
