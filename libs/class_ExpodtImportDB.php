@@ -5,8 +5,8 @@ class ExpodtImportDB{
     static function table_structureXls($table, $dir, $file){
         $table = mres($table);
 
-        require_once('/libs/PHPExcel/Classes/PHPExcel.php');
-        require_once('/libs/PHPExcel/Classes/PHPExcel/Writer/Excel5.php');
+        require_once($_SERVER['DOCUMENT_ROOT'].'/libs/PHPExcel/Classes/PHPExcel.php');
+        require_once($_SERVER['DOCUMENT_ROOT'].'/libs/PHPExcel/Classes/PHPExcel/Writer/Excel5.php');
 
         $xls = new PHPExcel();
 
