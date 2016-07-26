@@ -10,3 +10,4 @@ robots.txt
 sitemap.xml
 composer.lock
 /skins/admin/img/
+/libs/PHPExcel/

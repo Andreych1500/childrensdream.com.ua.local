@@ -10,15 +10,11 @@ if(isset($_POST['ok'])){
                 ExpodtImportDB::table_dataMySql($table, $dir);
                 ExpodtImportDB::goToZip($table, $dir, 'sql');
             }
-
-            $_SESSION['tables'] = $dir.'tables.zip';
         } elseif($_POST['export'] == 'csv'){
             foreach($_POST['tables'] as $table){
                ExpodtImportDB::table_dataCsv($table, $dir);
                ExpodtImportDB::goToZip($table, $dir, 'csv');
             }
-
-            $_SESSION['tables'] = $dir.'tables.zip';
         } elseif($_POST['export'] == 'xls'){
             foreach($_POST['tables'] as $table){
                 ExpodtImportDB::table_structureXls($table, $dir, 'xls');
@@ -28,6 +24,7 @@ if(isset($_POST['ok'])){
             sessionInfo('/admin/setting/export-db/', $messG['Виникла помилка при створені ресурса!']);
         }
 
+        $_SESSION['tables'] = $dir.'tables.zip';
         sessionInfo('/admin/setting/export-db/', $mess['Експорт даних пройшов успішно!'], 1);
     } else {
         sessionInfo('/admin/setting/export-db/', $mess['Жодної таблиці не було вибрано!']);
