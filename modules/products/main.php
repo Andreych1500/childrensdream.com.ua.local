@@ -55,7 +55,7 @@ if($_GET['page'] == 'main'){
             $contentOG .= '<meta property="og:type" content="'.hsc($arResult['og_type']).'">';
         }
         if(!empty($arResult['og_url'])){
-            $contentOG .= '<meta property="og:url" content="'.$arMainParam['url_http_site'].$link_lang.hsc($arResult['og_url']).'">';
+            $contentOG .= '<meta property="og:url" content="'.$arMainParam['url_http_site'].'/'.$lang.hsc($arResult['og_url']).'">';
         }
         if(!empty($arResult['og_image'])){
             $contentOG .= '<meta property="og:image" content="'.$arMainParam['url_http_site'].hsc($arResult['og_image']).'">';
