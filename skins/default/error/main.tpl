@@ -74,9 +74,10 @@
       <a rel="nofollow" href="<?=$link_lang?>oferta/">Оферта</a>
       <p><?=$messG['SOC_LINK']?></p>
       <a href="//www.facebook.com/tmchildrensdream" target="_blank" class="icon-facebook"></a>
-      <a href="//vk.com/tmchildrensdream" target="_blank" class="icon-vkontakte"></a>
+      <a href="//vk.com/childrensdream" target="_blank" class="icon-vkontakte"></a>
       <a href="//plus.google.com/+ChildrensdreamUaRU" target="_blank" class="icon-google-plus3"></a>
       <a href="//www.instagram.com/tm_childrens_dream" target="_blank" class="icon-instagram"></a>
+      <a href="//twitter.com/cdmatrasses" target="_blank" class="icon-twitter-with-circle"></a>
     </div>
   </div>
 </footer>
