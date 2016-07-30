@@ -695,12 +695,12 @@ a[class^="lang_"] {
 }
 
 .soc-link {
-  &:extend(.clearfix all);
   float: right;
   font-family: @font-Comic;
   max-width: 300px;
   min-height: 120px;
   text-align: center;
+  font-size: 0;
   line-height: 2;
 
   p {
@@ -710,9 +710,12 @@ a[class^="lang_"] {
   }
 
   a {
-    font-size: 40pt;
+    font-size: 46px;
     text-decoration: none;
-    float: left;
+
+    @media screen and (max-width: 400px) {
+      font-size: 41px;
+    }
 
     &:hover {
       .opacity(0.9);
@@ -739,10 +742,6 @@ a[class^="lang_"] {
       width: 100%;
       float: left;
       max-width: none;
-
-      a {
-        float: none;
-      }
     }
   }
 }
