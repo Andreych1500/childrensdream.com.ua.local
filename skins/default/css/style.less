@@ -645,6 +645,10 @@ a[class^="lang_"] {
   font-weight: bold;
   bottom: 160px;
 
+  @media screen and (max-width: 640px) {
+    display: none !important;
+  }
+
   &:before {
     content: '';
     background: url("/skins/default/img/image.png") 0 -53px no-repeat;

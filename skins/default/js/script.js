@@ -42,7 +42,7 @@ $(document).ready(function () {
         }
 
         // Show or hide toTop
-        if (scrolledY >= 300 && ($(window).outerWidth(true) + widthScroll_Y()) > 640) {
+        if (scrolledY >= 300) {
             $('.toTop').show();
         } else {
             $('.toTop').hide();
@@ -257,8 +257,9 @@ $(document).ready(function () {
         }
     });
 
-    // Start resize
+    // Start
     $(window).resize();
+    $(window).scroll();
 });
 
 
