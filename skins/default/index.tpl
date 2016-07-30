@@ -112,6 +112,7 @@
       <a href="//vk.com/tmchildrensdream" target="_blank" class="icon-vkontakte"></a>
       <a href="//plus.google.com/+ChildrensdreamUaRU" target="_blank" class="icon-google-plus3"></a>
       <a href="//www.instagram.com/tm_childrens_dream" target="_blank" class="icon-instagram"></a>
+      <a href="//twitter.com/cdmatrasses" target="_blank" class="icon-twitter-with-circle"></a>
     </div>
     <div class="fb-right">
       <!--LiveInternet counter--><script type="text/javascript">document.write("<a class='live-internet' rel='nofollow' href='//www.liveinternet.ru/click' target=_blank><img src='//counter.yadro.ru/hit?t27.19;r" + escape(document.referrer) + ((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth)) + ";u" + escape(document.URL) + ";" + Math.random() + "' alt='LiveInternet' title='LiveInternet: показано количество просмотров и посетителей'><\/a>")</script><!--/LiveInternet-->
