@@ -236,7 +236,7 @@ $(document).ready(function () {
     });
 
     // Modal close window
-    $('.icon-close').click(function () {
+    $('.fixed-overlay .icon-cross').click(function () {
         $('.modal').animate({opacity: 0}, 200, function () { // після виконання минулої анімації
             $(this).css('display', 'none');
             $('.fixed-overlay img').remove();
@@ -483,7 +483,7 @@ function checkForm(nameForm) {
                     "name": $(obj[0]).val(),
                     "email": $(obj[1]).val(),
                     "text": $(obj[2]).val(),
-                    "ok": $(obj[3]).val(),
+                    "ok": $(obj[3]).val()
                 },
 
                 success: function (msg) {

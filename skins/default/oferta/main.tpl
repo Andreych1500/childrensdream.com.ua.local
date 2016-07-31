@@ -225,7 +225,7 @@
 <div class="fixed-overlay">
   <div class="modal">
     <div class="modal_container">
-      <span class="icon-close"></span> <span class="btnModal-right icon-top"></span>
+      <span class="icon-cross"></span> <span class="btnModal-right icon-top"></span>
       <div class="modalMain"></div>
       <span class="btnModal-left icon-bottom"></span>
     </div>
