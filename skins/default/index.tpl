@@ -36,7 +36,7 @@
   <link rel="apple-touch-icon" sizes="152x152" href="/touch-icon-ipad-retina.png">
 
   <link rel="publisher" href="//plus.google.com/+ChildrensdreamUaRU">
-
+  <link href="/skins/<?=Core::$SKIN?>/css/style.min.css?v=<?=$vF?>" rel="stylesheet">
   <!--[if lt IE 9]>
   <script src="/skins/default/js/ielt9.min.js" defer></script><![endif]-->
 
@@ -64,7 +64,6 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-<link href="/skins/<?=Core::$SKIN?>/css/style.min.css?v=<?=$vF?>" rel="stylesheet" property='stylesheet'>
 <meta itemprop="description" content="<?=Core::$META['description']?>">
 <header itemscope itemtype="http://schema.org/WPHeader">
   <div class="header-block">
