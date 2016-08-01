@@ -36,7 +36,7 @@
   <link rel="apple-touch-icon" sizes="152x152" href="/touch-icon-ipad-retina.png">
 
   <link rel="publisher" href="//plus.google.com/+ChildrensdreamUaRU">
-  <link href="/skins/<?=Core::$SKIN?>/css/style.min.css?v=<?=$vF?>" rel="stylesheet">
+  <style><?=$style?></style>
   <!--[if lt IE 9]>
   <script src="/skins/default/js/ielt9.min.js" defer></script><![endif]-->
 
@@ -60,6 +60,8 @@
         "postalCode": "	46000"
       }
     }
+
+
   </script>
 </head>
 
@@ -84,7 +86,8 @@
         <li><a href="<?=$link_lang?>#payment" itemprop="url"><span itemprop="name"><?=$messG['SERVICES']?></span></a>
         </li>
         <li><a href="<?=$link_lang?>#call" itemprop="url"><span itemprop="name"><?=$messG['CONTACTS']?></span></a></li>
-        <li><a href="<?=$link_lang?>comments/" itemprop="url"><span itemprop="name"><?=$messG['OTZUVU']?></span></a></li>
+        <li><a href="<?=$link_lang?>comments/" itemprop="url"><span itemprop="name"><?=$messG['OTZUVU']?></span></a>
+        </li>
         <li><a href="<?=$link_lang?>order/" itemprop="url" rel="nofollow"><?=$messG['BASKET']?>
             <span><?=(int)$countG?></span></a></li>
       </ul>
@@ -115,20 +118,55 @@
       <a href="//twitter.com/cdmatrasses" target="_blank" class="icon-twitter-with-circle"></a>
     </div>
     <div class="fb-right">
-      <!--LiveInternet counter--><script type="text/javascript">document.write("<a class='live-internet' rel='nofollow' href='//www.liveinternet.ru/click' target=_blank><img src='//counter.yadro.ru/hit?t27.19;r" + escape(document.referrer) + ((typeof(screen)=="undefined")?"":";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth)) + ";u" + escape(document.URL) + ";" + Math.random() + "' alt='LiveInternet' title='LiveInternet: показано количество просмотров и посетителей'><\/a>")</script><!--/LiveInternet-->
+      <!--LiveInternet counter-->
+      <script type="text/javascript">document.write("<a class='live-internet' rel='nofollow' href='//www.liveinternet.ru/click' target=_blank><img src='//counter.yadro.ru/hit?t27.19;r" + escape(document.referrer) + ((typeof(screen) == "undefined") ? "" : ";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ? screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) + ";" + Math.random() + "' alt='LiveInternet' title='LiveInternet: показано количество просмотров и посетителей'><\/a>")</script><!--/LiveInternet-->
     </div>
   </div>
 </footer>
 
 <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','<?=$arMainParam['url_http_site']?>/skins/default/get-js/analytics.js','ga');
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '<?=$arMainParam['url_http_site']?>/skins/default/get-js/analytics.js', 'ga');
   ga('create', 'UA-78459198-1', 'auto');
   ga('send', 'pageview');
 </script>
 <!-- Yandex.Metrika counter -->
-<script type="text/javascript"> (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter37623530 = new Ya.Metrika({ id:37623530, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "<?=$arMainParam['url_http_site']?>/skins/default/get-js/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script><noscript><div><img src="https://mc.yandex.ru/watch/37623530" class="yandex-metrika" alt="Yandex Metrika love Children's Dream"></div></noscript>
+<script type="text/javascript"> (function (d, w, c) {
+    (w[c] = w[c] || []).push(function () {
+      try {
+        w.yaCounter37623530 = new Ya.Metrika({
+          id: 37623530,
+          clickmap: true,
+          trackLinks: true,
+          accurateTrackBounce: true
+        });
+      } catch (e) {
+      }
+    });
+    var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () {
+      n.parentNode.insertBefore(s, n);
+    };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = "<?=$arMainParam['url_http_site']?>/skins/default/get-js/watch.js";
+    if (w.opera == "[object Opera]") {
+      d.addEventListener("DOMContentLoaded", f, false);
+    } else {
+      f();
+    }
+  })(document, window, "yandex_metrika_callbacks"); </script>
+<noscript>
+  <div><img src="https://mc.yandex.ru/watch/37623530" class="yandex-metrika" alt="Yandex Metrika love Children's Dream">
+  </div>
+</noscript>
 </body>
 </html>

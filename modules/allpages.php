@@ -1,6 +1,7 @@
 <?php
 if(Core::$CONT != 'modules/admin'){
     $key_lang = array_search($lang, explode(',', $GM['list_length']));  // Lang key
+    $style = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/skins/default/css/style.min.css');
 
     // Seo meta tags
     foreach(explode(',', $GM['list_length']) as $k => $v){

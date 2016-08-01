@@ -1,27 +1,28 @@
 @import "../../../vendor/public/lesshat/build/lesshat";
+@urlToDirCss: '/skins/default/css/';
 
 @font-face {
   font-family: 'ComicSansMS';
   font-weight: normal;
   font-style: normal;
-  src: url('font/comic/comic.eot');
-  src: url('font/comic/comic.eot') format('embedded-opentype'),
-  url('font/comic/comic.woff2') format('woff2'),
-  url('font/comic/comic.woff') format('woff'),
-  url('font/comic/comic.ttf') format('truetype'),
-  url('font/comic/comic.svg#comic') format('svg');
+  src: url('@{urlToDirCss}font/comic/comic.eot');
+  src: url('@{urlToDirCss}font/comic/comic.eot') format('embedded-opentype'),
+  url('@{urlToDirCss}font/comic/comic.woff2') format('woff2'),
+  url('@{urlToDirCss}font/comic/comic.woff') format('woff'),
+  url('@{urlToDirCss}font/comic/comic.ttf') format('truetype'),
+  url('@{urlToDirCss}font/comic/comic.svg#comic') format('svg');
 }
 
 @font-face {
   font-family: 'MyriadPro';
   font-weight: normal;
   font-style: normal;
-  src: url('font/myriad/MyriadProRegular.eot');
-  src: url('font/myriad/MyriadProRegular.eot') format('embedded-opentype'),
-  url('font/myriad/MyriadProRegular.woff2') format('woff2'),
-  url('font/myriad/MyriadProRegular.woff') format('woff'),
-  url('font/myriad/MyriadProRegular.ttf') format('truetype'),
-  url('font/myriad/MyriadProRegular.svg#MyriadProRegular') format('svg');
+  src: url('@{urlToDirCss}font/myriad/MyriadProRegular.eot');
+  src: url('@{urlToDirCss}font/myriad/MyriadProRegular.eot') format('embedded-opentype'),
+  url('@{urlToDirCss}font/myriad/MyriadProRegular.woff2') format('woff2'),
+  url('@{urlToDirCss}font/myriad/MyriadProRegular.woff') format('woff'),
+  url('@{urlToDirCss}font/myriad/MyriadProRegular.ttf') format('truetype'),
+  url('@{urlToDirCss}font/myriad/MyriadProRegular.svg#MyriadProRegular') format('svg');
 }
 
 @font-Comic: ComicSansMS;
@@ -2056,11 +2057,11 @@ a[class^="lang_"] {
 
 @font-face {
   font-family: 'icomoon';
-  src: url('font/icomoon.eot?w49gl5');
-  src: url('font/icomoon.eot?w49gl5#iefix') format('embedded-opentype'),
-  url('font/icomoon.ttf?w49gl5') format('truetype'),
-  url('font/icomoon.woff?w49gl5') format('woff'),
-  url('font/icomoon.svg?w49gl5#icomoon') format('svg');
+  src: url('@{urlToDirCss}font/icomoon.eot?w49gl5');
+  src: url('@{urlToDirCss}font/icomoon.eot?w49gl5#iefix') format('embedded-opentype'),
+  url('@{urlToDirCss}font/icomoon.ttf?w49gl5') format('truetype'),
+  url('@{urlToDirCss}font/icomoon.woff?w49gl5') format('woff'),
+  url('@{urlToDirCss}font/icomoon.svg?w49gl5#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
 }
