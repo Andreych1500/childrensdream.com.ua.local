@@ -42,14 +42,16 @@ if(!$globalAccess){
 	      WHERE `id` = 1
 	  ")->fetch_assoc());
 
-    $actProduct = q("
-        SELECT `id`
-        FROM `products`
-    ")->num_rows;
+    if($arResult['active_shop']){
+        $actProduct = q("
+            SELECT `id`
+            FROM `products`
+        ")->num_rows;
 
-    $goodShop = q("
-        SELECT `id`
-        FROM `order`
-        WHERE `active` = 1
-    ")->num_rows;
+        $goodShop = q("
+            SELECT `id`
+            FROM `order`
+            WHERE `active` = 1
+        ")->num_rows;
+    }
 }

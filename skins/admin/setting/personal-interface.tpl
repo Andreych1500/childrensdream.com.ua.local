@@ -83,6 +83,13 @@
 
       <div class="header-line"><?=$mess['Адміністративна панель']?></div>
 
+
+
+      <div class="input-value">
+        <div class="name-section"><?=$mess['Блок магазину']?>:</div>
+        <input type="checkbox" <?=((isset($error, $_POST['active_shop']) || ($arResult['active_shop'] == 1 && !isset($error)))? "checked" : "")?> name="active_shop" value="1">
+      </div>
+
       <div class="input-value upload_file" id="logo_system" data-size="<?=$adminParam['logo_saviii_size']?>">
         <div class="name-section"><?=$mess['Логотип \'MVC\'']?>:<span class="accent">*</span></div>
         <button class="icon-link" type="button" onclick="getInfoFile(this, '<?=$adminParam['logo_saviii_dir']?>')"><?=((isset($error))? (!empty($_POST['logo_system'])? hsc($_POST['logo_system']) : $messG['Вибрати файл']) : (!empty($arResult['logo_system'])? $arResult['logo_system'] : $messG['Вибрати файл']))?>

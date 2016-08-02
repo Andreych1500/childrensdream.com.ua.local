@@ -54,31 +54,33 @@
       </table>
     </div>
   </div>
-  <div class="box-info">
-    <div class="bi-header"><?=$mess['Про магазин']?></div>
-    <div class="bi-text">
-      <table class="bi-table">
-        <tr>
-          <td><?=$mess['Логотип']?>:</td>
-          <td class="reset-td1">
-            <img src="<?=$arResult['brandPhoto']?>" alt="<?=$arResult['brand']?>" title="<?=$arResult['brand']?>">
-          </td>
-        </tr>
-        <tr>
-          <td><?=$mess['Марка магазину']?>:</td>
-          <td><?=$arResult['brand']?></td>
-        </tr>
-        <tr>
-          <td><?=$mess['Покупок']?>:</td>
-          <td><?=$goodShop?></td>
-        </tr>
-        <tr>
-          <td><?=$mess['Активних товарів']?>:</td>
-          <td><?=$actProduct?></td>
-        </tr>
-      </table>
+  <?php if($arResult['active_shop']){ ?>
+    <div class="box-info">
+      <div class="bi-header"><?=$mess['Про магазин']?></div>
+      <div class="bi-text">
+        <table class="bi-table">
+          <tr>
+            <td><?=$mess['Логотип']?>:</td>
+            <td class="reset-td1">
+              <img src="<?=$arResult['brandPhoto']?>" alt="<?=$arResult['brand']?>" title="<?=$arResult['brand']?>">
+            </td>
+          </tr>
+          <tr>
+            <td><?=$mess['Марка магазину']?>:</td>
+            <td><?=$arResult['brand']?></td>
+          </tr>
+          <tr>
+            <td><?=$mess['Покупок']?>:</td>
+            <td><?=$goodShop?></td>
+          </tr>
+          <tr>
+            <td><?=$mess['Активних товарів']?>:</td>
+            <td><?=$actProduct?></td>
+          </tr>
+        </table>
+      </div>
     </div>
-  </div>
+  <?php } ?>
   <div class="box-info">
     <div class="bi-header"><?=$mess['Адміністративна панель']?></div>
     <div class="bi-text">

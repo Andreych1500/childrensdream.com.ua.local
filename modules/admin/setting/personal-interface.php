@@ -13,6 +13,8 @@ if(isset($_POST['ok'])){
     if(!count($error)){
         $_POST = mres($_POST);
 
+        $_POST['active_shop'] = !isset($_POST['active_shop'])? 0 : (int)$_POST['active_shop'];
+
         q(" UPDATE `admin_personal_interface` SET
             `logo_system`       = '".$_POST['logo_system']."',
             `version_php`       = '".$_POST['version_php']."',
@@ -26,6 +28,7 @@ if(isset($_POST['ok'])){
             `monthly_fee`       = '".$_POST['monthly_fee']."',
             `phone`             = '".$_POST['phone']."',
             `email`             = '".$_POST['email']."',
+            `active_shop`       = '".$_POST['active_shop']."',
             `brand`             = '".$_POST['brand']."',
             `brandPhoto`        = '".$_POST['brandPhoto']."'
             WHERE `id` = 1

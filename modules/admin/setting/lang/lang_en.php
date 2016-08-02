@@ -135,3 +135,4 @@ $mess['Тестова відправка листа'] = 'Test sending of the mai
 $mess['Ким відправляється'] = 'Who is sending';
 $mess['Кому'] = 'To whom';
 $mess['Відправити тестовий лист'] = 'Send a test letter ';
+$mess['Блок магазину'] = 'Block shop';
