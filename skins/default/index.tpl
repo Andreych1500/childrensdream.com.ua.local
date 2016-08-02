@@ -60,8 +60,6 @@
         "postalCode": "	46000"
       }
     }
-
-
   </script>
 </head>
 
@@ -165,7 +163,8 @@
     }
   })(document, window, "yandex_metrika_callbacks"); </script>
 <noscript>
-  <div><img src="https://mc.yandex.ru/watch/37623530" class="yandex-metrika" alt="Yandex Metrika love Children's Dream">
+  <div>
+    <img src="https://mc.yandex.ru/watch/37623530" class="yandex-metrika" alt="Yandex Metrika love Children's Dream">
   </div>
 </noscript>
 </body>
