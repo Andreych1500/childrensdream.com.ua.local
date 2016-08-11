@@ -1,5 +1,4 @@
 <?php
-setting:
 $mess['Сталася помилка, не заповнено коректно поля!'] = 'Error has occurred, the fields have not been correctly filled out! ';
 $mess['Backup успішно зроблений!'] = 'Backup has been successfully done';
 $mess['Backup відсутній або видалений якщо термін зберігання застарілий!'] = 'Backup відсутній або видалений якщо термін зберігання застарілий!';
@@ -136,3 +135,21 @@ $mess['Ким відправляється'] = 'Who is sending';
 $mess['Кому'] = 'To whom';
 $mess['Відправити тестовий лист'] = 'Send a test letter ';
 $mess['Блок магазину'] = 'Block shop';
+$mess['Переклад сайту'] = 'Website translation';
+$mess['Текст'] = 'Text';
+$mess['Сертифікати магазину'] = 'Store certificates';
+$mess['Список сертифікатів'] = 'List of certificates';
+$mess['Документація'] = 'Documentation';
+
+// Export
+$mess['Експорт таблиць'] = 'Export tables';
+$mess['Тип експорту'] = 'Export type';
+$mess['База даних'] = 'Database';
+$mess['Настройки експорту та імпорту'] = 'Export and import settings';
+$mess['Сталася помилка, баз даних не було знайдено!'] = 'An error occurred, databases ware not found!';
+$mess['Експорт']= 'Export';
+$mess['Вибір таблиць'] = 'Tables choice';
+$mess['Жодної таблиці не було вибрано!']= 'No table selected!';
+$mess['Експорт даних пройшов успішно!']= 'Data export was successful!';
+$mess['Жодної таблиці не було знайдено!']= 'No table has been found!';
+$mess['Скачати останній файл']= 'Download the latest file';

@@ -21,7 +21,7 @@ if(isset($_POST['ok'])){
                 ExpodtImportDB::goToZip($table, $dir, 'xls');
             }
         } else {
-            sessionInfo('/admin/setting/export-db/', $messG['Виникла помилка при створені ресурса!']);
+            sessionInfo('/admin/setting/export-db/', $messG['Виникла помилка при створенні ресурса!']);
         }
 
         $_SESSION['tables'] = $dir.'tables.zip';

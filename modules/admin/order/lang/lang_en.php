@@ -1,0 +1,21 @@
+<?php
+$mess['Служби доставки'] = 'Delivery service';
+$mess['Назва'] = 'Name';
+$mess['Додаткова інформація'] = 'Additional information';
+$mess['Тип оплати'] = 'Type of payment';
+$mess['Замовлення'] = 'Order';
+$mess['Оброблено'] = 'Processed';
+$mess['Контактна особа'] = 'Contact person';
+$mess['Місто'] = 'City';
+$mess['Ціна'] = 'Price';
+$mess['Дата замовлення'] = 'Order date';
+$mess['Інформація замовлення'] = 'Order information';
+$mess['Телефон'] = 'Telephone';
+$mess['Доставка'] = 'Shipping';
+$mess['Адреса'] = 'Address';
+$mess['Оплата'] = 'Payment';
+$mess['Коментар'] = 'Comment';
+$mess['Назва товару'] = 'Product name';
+$mess['Кількість'] = 'Number';
+$mess['Просумована ціна'] = 'Total price';
+$mess['Повна ціна'] = 'Full price';

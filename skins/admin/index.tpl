@@ -65,7 +65,7 @@
   <main class="pc-version">
     <aside>
       <ul class="navigation">
-        <?php foreach($admin_menu as $k => $arResult){ ?>
+        <?php foreach($admin_menu[$arMainParam['length_admin']] as $k => $arResult){ ?>
           <li <?=((isset($_COOKIE['act-menu']) && $_COOKIE['act-menu'] == $k)? 'class="act-navigation"' : '')?>>
             <p><span class="icon-<?=$arResult['icon']?>"></span><?=$arResult['name']?></p>
             <span class="animate-hover"></span>
@@ -74,7 +74,7 @@
       </ul>
     </aside>
     <div class="navigation-lv2 <?=(isset($_COOKIE['act-menu'])? 'act-nav-lv2' : '')?>">
-      <?php foreach($admin_menu as $k => $arResult){ ?>
+      <?php foreach($admin_menu[$arMainParam['length_admin']] as $k => $arResult){ ?>
         <ul class="section-lv2 <?=((isset($_COOKIE['act-menu']) && $_COOKIE['act-menu'] == $k)? 'act-section' : '')?>">
           &nbsp;<?=$arResult['name']?>
           <?php
