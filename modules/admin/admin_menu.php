@@ -155,11 +155,11 @@ $admin_menu = array(
                     'Персональные настройки' => '/admin/setting/personal-interface/',
                     'Настройки сайта'        => '/admin/setting/site-interface/',
                 ),
-                'Перевод сайта'        => array(
+                'Перевод сайта'         => array(
                     'Перевод слов' => '/admin/setting/lang-words/',
                 ),
-                'Таблицы баз данных'     => array(
-                        'Экспорт' => '/admin/setting/export-db/',
+                'Таблицы баз данных'    => array(
+                    'Экспорт' => '/admin/setting/export-db/',
                 ),
                 'Контроль PHP'          => array(
                     'PhpInfo' => '/admin/setting/php-info/',
@@ -168,5 +168,87 @@ $admin_menu = array(
         ),
     ),
 
-    'en' => array(),
+    'en' => array(
+        0 => array(
+            'name'     => 'Slides',
+            'icon'     => 'window',
+            'sections' => array(
+                'Slides' => array(
+                    'Main banner' => '/admin/setting/main-banner/',
+                ),
+            )
+        ),
+        1 => array(
+            'name'     => 'Content',
+            'icon'     => 'content',
+            'sections' => array(
+                'Items' => array(
+                    'Childrens mattresses' => '/admin/products/',
+                ),
+            )
+        ),
+        2 => array(
+            'name'     => 'Communication',
+            'icon'     => 'form',
+            'sections' => array(
+                'Operations' => array(
+                    'Reviews'  => '/admin/comments/',
+                    'Feedback' => '/admin/comments/call-me/',
+                ),
+            )
+        ),
+        3 => array(
+            'name'     => 'Shop',
+            'icon'     => 'shopping-bag',
+            'sections' => array(
+                'Shop'      => array(
+                    'Order'             => '/admin/order/',
+                    'Delivery services' => '/admin/order/delivery-service/',
+                    'Payment type'      => '/admin/order/payment-type/',
+                ),
+                'Ownership' => array(
+                    'Certifications' => '/admin/setting/policy-certification/',
+                ),
+            )
+        ),
+        4 => array(
+            'name'     => 'Settings',
+            'icon'     => 'settings',
+            'sections' => array(
+                'Modules'          => array(
+                    'Main module' => '/admin/setting/main-module/',
+                    'Modules'     => '/admin/setting/modules-pages/',
+                ),
+                'Users'            => array(
+                    'List'            => '/admin/setting/user-list/',
+                    'Create new user' => '/admin/setting/user-list/?add=ok',
+                ),
+                'Post events'      => array(
+                    'Template type'   => '/admin/setting/type-mails/',
+                    'Mail setting'    => '/admin/setting/setting-mails/',
+                    'Letters preview' => '/admin/setting/view-mails/',
+                ),
+                'Backup'           => array(
+                    'Start Backup'   => '/admin/setting/backup/',
+                    'Setting Backup' => '/admin/setting/backup-setting/',
+                ),
+                'File cache'       => array(
+                    'Cache updates' => '/admin/setting/update-files/',
+                ),
+                'Interface'        => array(
+                    'Personal settings' => '/admin/setting/personal-interface/',
+                    'Site settings'     => '/admin/setting/site-interface/',
+                ),
+                'Translation site' => array(
+                    'Words translation' => '/admin/setting/lang-words/',
+                ),
+                'Database Tables'  => array(
+                    'Export' => '/admin/setting/export-db/',
+                ),
+                'Control PHP'      => array(
+                    'PhpInfo' => '/admin/setting/php-info/',
+                ),
+            )
+        ),
+    ),
 );
