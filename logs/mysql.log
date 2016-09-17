@@ -1,15 +1,1 @@
-﻿QUERY:
-                    UPDATE `admin_users_list` SET
-                    `hash` = 'kd/IIzDt4d7dk',
-                    `user_ip` = '127.0.0.1',
-                    `agent` = 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/52.0.2743.116 Safari/537.36 OPR/39.0.2256.71',
-                    WHERE `login`  = 'andreych1500'
-                    AND `pass`   = 'kd58YuS57i/bA'
-                
-You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'WHERE `login`  = 'andreych1500'
-                    AND `pass`   = 'kd58YuS57i/b' at line 5
-file: C:\OpenServer\domains\childrensdream.com.ua.local\modules\admin\static\main.php
-line: 29
-date: 2016-09-17 18:06:33
-===================================
-
+﻿
