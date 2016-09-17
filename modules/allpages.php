@@ -67,16 +67,35 @@ if(Core::$CONT != 'modules/admin'){
     // Access
     if(isset($_SESSION['user'])){
         $arAccess = q("
-			      SELECT *
-			      FROM `admin_users_list`
-			      WHERE `id` = ".(int)$_SESSION['user']['id']."
-			      AND `active` != 0
-			      AND `access` = 5
-			      LIMIT 1
+            SELECT *
+            FROM `admin_users_list`
+            WHERE `id` = ".(int)$_SESSION['user']['id']."
+            AND `active` != 0
+            AND `access` = 5
+            LIMIT 1
 	      ");
 
         if($arAccess->num_rows){
             $_SESSION['user'] = $arAccess->fetch_assoc();
+            $globalAccess = true;
+        } else {
+            menuExit();
+        }
+    } elseif(isset($_COOKIE['authhash'], $_COOKIE['id'])) {
+        $auth = q("
+            SELECT *
+			      FROM `admin_users_list`
+			      WHERE `hash` = '".mres($_COOKIE['authhash'])."'
+            AND `id`   = ".(int)$_COOKIE['id']."
+            AND `active` != 0
+			      AND `access` = 5
+			      AND `user_ip` = '".mres($_SERVER['REMOTE_ADDR'])."'
+			      AND `agent` = '".mres($_SERVER['HTTP_USER_AGENT'])."'
+			      LIMIT 1
+	      ");
+
+        if($auth->num_rows){
+            $_SESSION['user'] = $auth->fetch_assoc();
             $globalAccess = true;
         } else {
             menuExit();
@@ -87,25 +106,6 @@ if(Core::$CONT != 'modules/admin'){
         if($_GET['module'] != 'static'){
             header("Location: /admin/");
             exit();
-        }
-    }
-
-    if(isset($_COOKIE['authhash'], $_COOKIE['id'])){
-        $auth = q("
-            SELECT *
-			      FROM `admin_users_list`
-			      WHERE `hash` = '".mres($_COOKIE['authhash'])."'
-            AND `id`   = ".(int)$_COOKIE['id']."
-            AND `active` != 0
-			      AND `access` = 5
-			      LIMIT 1
-	      ");
-
-        if($auth->num_rows){
-            $_SESSION['user'] = $auth->fetch_assoc();
-            $globalAccess = true;
-        } else {
-            menuExit();
         }
     }
 

@@ -21,10 +21,13 @@ if(!$globalAccess){
             if(isset($_POST['save'])){
                 q("
                     UPDATE `admin_users_list` SET
-                    `hash` = '".myHash($_SESSION['user']['id'].$_SESSION['user']['login'].$_SESSION['user']['email'])."'
+                    `hash` = '".myHash($_SESSION['user']['id'].$_SESSION['user']['login'].$_SESSION['user']['email'])."',
+                    `user_ip` = '".mres($_SERVER['REMOTE_ADDR'])."',
+                    `agent` = '".mres($_SERVER['HTTP_USER_AGENT'])."'
                     WHERE `login`  = '".mres($_POST['login'])."'
                     AND `pass`   = '".myHash($_POST['pass'])."'
                 ");
+
                 setcookie('authhash', myHash($_SESSION['user']['id'].$_SESSION['user']['login'].$_SESSION['user']['email']), time() + 636000, '/');
                 setcookie('id', $_SESSION['user']['id'], time() + 636000, '/');
             }

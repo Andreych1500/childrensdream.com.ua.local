@@ -1,5 +1,5 @@
 <?php
-class IsGoods{
+class IsGoods {
     static function cookieGoods($db_table, $cookieGoods, $link_lang, $getParamGoods){
         $cookies = (array)json_decode($cookieGoods);
 

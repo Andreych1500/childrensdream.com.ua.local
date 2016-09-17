@@ -84,7 +84,6 @@
       <div class="header-line"><?=$mess['Адміністративна панель']?></div>
 
 
-
       <div class="input-value">
         <div class="name-section"><?=$mess['Блок магазину']?>:</div>
         <input type="checkbox" <?=((isset($error, $_POST['active_shop']) || ($arResult['active_shop'] == 1 && !isset($error)))? "checked" : "")?> name="active_shop" value="1">

@@ -1,5 +1,5 @@
 <?php
-class UploaderPhotos{
+class UploaderPhotos {
     static $error = '';
     static $tmp = array('image/jpeg', 'image/gif', 'image/png');
     static $tup = array('jpg', 'gif', 'jpeg', 'png');
