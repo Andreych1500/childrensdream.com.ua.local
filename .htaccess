@@ -14,10 +14,10 @@ RewriteEngine on
 RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} !(.*)/$
-RewriteRule ^(.*[^/])$ $1/ [L,R=301]
+RewriteRule ^(.*[^/])$ https://childrensdream.com.ua.local/$1/ [L,R=301]
 
 RewriteCond %{HTTP_HOST} ^www\.childrensdream\.com\.ua\.local$ [NC]
-RewriteRule ^(.*)$ http://childrensdream.com.ua.local/$1 [R=301,L]
+RewriteRule ^(.*)$ https://childrensdream.com.ua.local/$1 [L,R=301]
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

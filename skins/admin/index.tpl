@@ -11,7 +11,7 @@
   <meta name="format-detection" content="telephone=no">
   <meta name="format-detection" content="address=no">
 
-  <link rel="dns-prefetch" href="http://childrensdream.com.ua">
+  <link rel="dns-prefetch" href="<?=$arMainParam['url_http_site']?>">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="apple-touch-icon" href="/touch-icon-iphone.png">
