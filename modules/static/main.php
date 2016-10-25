@@ -15,7 +15,8 @@ if(isset($_REQUEST['ajax'])){
         $products = q("
                 SELECT `id`,`name_ua`,`name_ru`,`symbol_code`,`price`,`availability`,`img_anons`,`img_seo_alt_ua`,`img_seo_alt_ru`,`description_ua`,`description_ru`
                 FROM `products`
-                WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
+                WHERE `active` = 1 
+                ORDER BY `availability` DESC, `sort` DESC, `id` DESC
                 LIMIT ".$lastNumber.", ".$countLine."
             ");
 
@@ -98,7 +99,8 @@ if(isset($_POST['ok'])){
 $products = q("
     SELECT `id`,`name_ua`,`symbol_code`,`price`,`availability`,`img_anons`,`name_ru`,`img_seo_alt_ua`,`img_seo_alt_ru`,`description_ua`,`description_ru`
     FROM `products`
-    WHERE `active` = 1 ORDER BY `sort` DESC, `id` DESC
+    WHERE `active` = 1 
+    ORDER BY `availability` DESC, `sort` DESC, `id` DESC
     LIMIT 8
 ");
 
