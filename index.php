@@ -5,12 +5,15 @@ header('Content-Type: text/html; charset=utf-8');
 $t = microtime(true);
 session_start();
 
+if(preg_match('#\/catalog\/|\/product\/#ui', $_SERVER['REQUEST_URI'], $matches)) {
+    $redirectCatalog = preg_replace('#catalog|product#ui', 'products', $_SERVER['REQUEST_URI']);
+    header("HTTP/1.1 301 Moved Permanently");
+    header("Location: https://".$_SERVER['HTTP_HOST'].$redirectCatalog);
+    exit();
+}
+
 // Config
 include_once './config.php';
-if(Core::$HTTPS && (!isset($_SERVER['HTTPS']) || $_SERVER['HTTPS'] != 'on')) {
-    header("Location: https://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'],TRUE,301);
-    exit;
-}
 include_once './libs/default-variables.php';
 
 // Controller

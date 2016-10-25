@@ -8,10 +8,8 @@
     </div>
 
     <?php if($products->num_rows > 0){
-      $n = 1;
       while($el = $products->fetch_assoc()){ ?>
         <div class="mattress" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
-          <meta itemprop="position" content="<?=$n?>">
           <a class="photos" href="<?=$link_lang?>products/<?=hsc($el['symbol_code'])?>/" itemprop="url">
             <img src="<?=hsc($el['img_anons'])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>" itemprop="image"> </a>
           <a class="links" href="<?=$link_lang?>products/<?=hsc($el['symbol_code'])?>/">
@@ -30,10 +28,8 @@
           </div>
           <meta itemprop="description" content="<?=hsc($el['description_'.$lang])?>">
           <meta itemprop="brand" content="Children's Dream">
-          <meta itemprop="manufacturer" content="Children's Dream">
         </div>
       <?php }
-      ++$n;
     } else { ?>
       <div class="no-element"><?=$mess['NO_ELEMETN']?></div>
     <?php } ?>
@@ -52,7 +48,6 @@
     <meta itemprop="description" content="<?=hsc($arResult['description_'.$lang])?>">
     <meta itemprop="brand" content="Children's Dream">
     <meta itemprop="category" content="<?=$mess['MATRASES']?>">
-    <meta itemprop="manufacturer" content="Children's Dream">
     <meta itemprop="weight" content="<?=(int)$arResult['weight'].' '.$mess['KG']?>">
 
     <?php if(isset($photos)){ ?>
