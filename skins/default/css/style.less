@@ -1023,6 +1023,16 @@ a[class^="lang_"] {
   .information-block {
     .central(~'0 auto', ~'97%');
     padding-bottom: 10px;
+
+    a {
+      color: @color-text;
+      border-bottom: 1px dashed @color-text;
+      text-decoration: none;
+
+      &:hover {
+        border-bottom: none;
+      }
+    }
   }
 
   h1 {
