@@ -60,6 +60,9 @@
         "postalCode": "	46000"
       }
     }
+
+
+
   </script>
 </head>
 
@@ -67,26 +70,29 @@
 <meta itemprop="description" content="<?=Core::$META['description']?>">
 <header itemscope itemtype="http://schema.org/WPHeader">
   <div class="header-block">
-    <a class="logo" href="<?=$link_lang?>"><img src="/skins/default/img/logo.png" alt="Children's Dream" title="Children's Dream"></a>
+    <a class="logo" href="<?=$link_lang?>" title="Children's Dream">
+      <img src="/skins/default/img/logo.png" alt="Children's Dream" title="Children's Dream"> </a>
     <?php foreach(Core::$LINK_LANG as $k => $v){ ?>
       <a class="lang_<?=$v?> <?=(($lang == $v)? 'act-lang' : '')?>" href="<?=(($v == 'ua')? '/' : '/'.$v.'/').Core::$SITE_DIR?>"><?=strtoupper($v)?></a>
     <?php } ?>
     <a class="mobile-basket" href="<?=$link_lang?>order/" rel="nofollow"><?=$messG['BASKET']?>
       <span><?=(int)$countG?></span></a>
     <div class="mob-menu" onclick="showHide(this);"><span class="icon-mob-menu"></span><?=$messG['MOBILE_MENU']?></div>
-    <a class="call-us" href="<?=(isMobile()? 'tel' : 'callto')?>:38-098-570-43-77"><?=$messG['CONTACT_INFO']?> +38 (098) 570-43-77</a>
+    <a class="call-us" href="<?=(isMobile()? 'tel' : 'callto')?>:38-098-570-43-77" title="<?=$messG['CN_SHOP']?>"><?=$messG['CONTACT_INFO']?> +38 (098) 570-43-77</a>
 
     <nav class="top-menu" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
       <ul>
-        <li><a href="<?=$link_lang?>#about" itemprop="url"><span itemprop="name"><?=$messG['ABOUT_US']?></span></a></li>
-        <li><a href="<?=$link_lang?>products/" itemprop="url"><span itemprop="name"><?=$messG['PRODUCTION']?></span></a>
-        </li>
-        <li><a href="<?=$link_lang?>#payment" itemprop="url"><span itemprop="name"><?=$messG['SERVICES']?></span></a>
-        </li>
-        <li><a href="<?=$link_lang?>#call" itemprop="url"><span itemprop="name"><?=$messG['CONTACTS']?></span></a></li>
-        <li><a href="<?=$link_lang?>comments/" itemprop="url"><span itemprop="name"><?=$messG['OTZUVU']?></span></a>
-        </li>
-        <li><a href="<?=$link_lang?>order/" itemprop="url" rel="nofollow"><?=$messG['BASKET']?>
+        <li><a href="<?=$link_lang?>#about" title="<?=$messG['ABOUT_US']?>" itemprop="url">
+            <span itemprop="name"><?=$messG['ABOUT_US']?></span></a></li>
+        <li><a href="<?=$link_lang?>products/" title="<?=$messG['PRODUCTION_CH']?>" itemprop="url">
+            <span itemprop="name"><?=$messG['PRODUCTION']?></span> </a></li>
+        <li><a href="<?=$link_lang?>#payment" title="<?=$messG['SERVICES']?>" itemprop="url">
+            <span itemprop="name"><?=$messG['SERVICES']?></span></a></li>
+        <li><a href="<?=$link_lang?>#call" title="<?=$messG['CONTACTS']?>" itemprop="url">
+            <span itemprop="name"><?=$messG['CONTACTS']?></span></a></li>
+        <li><a href="<?=$link_lang?>comments/" title="<?=$messG['OTZUVU_SHOP']?>" itemprop="url">
+            <span itemprop="name"><?=$messG['OTZUVU']?></span></a></li>
+        <li><a href="<?=$link_lang?>order/" rel="nofollow"><?=$messG['BASKET']?>
             <span><?=(int)$countG?></span></a></li>
       </ul>
       <span class="menu-icon"></span>
@@ -107,7 +113,7 @@
       <p><?=$messG['FOOTER_TOP']?></p>
     </div>
     <div class="soc-link">
-      <a rel="nofollow" href="<?=$link_lang?>oferta/">Оферта</a>
+      <a rel="nofollow" href="<?=$link_lang?>oferta/" title="<?=$messG['OFERTA']?>">Оферта</a>
       <p><?=$messG['SOC_LINK']?></p>
       <a href="//www.facebook.com/tmchildrensdream" target="_blank" class="icon-facebook"></a>
       <a href="//vk.com/childrensdream" target="_blank" class="icon-vkontakte"></a>

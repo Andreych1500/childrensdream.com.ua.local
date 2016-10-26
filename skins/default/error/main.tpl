@@ -44,12 +44,22 @@
 
     <nav class="top-menu">
       <ul>
-        <li><a href="<?=$link_lang?>#about"><?=$messG['ABOUT_US']?></a></li>
-        <li><a href="<?=$link_lang?>products/"><?=$messG['PRODUCTION']?></a></li>
-        <li><a href="<?=$link_lang?>#payment"><?=$messG['SERVICES']?></a></li>
-        <li><a href="<?=$link_lang?>#call"><?=$messG['CONTACTS']?></a></li>
-        <li><a href="<?=$link_lang?>comments/"><?=$messG['OTZUVU']?></a></li>
-        <li><a href="<?=$link_lang?>order/"><?=$messG['BASKET']?> <span><?=(int)$countG?></span></a></li>
+        <li>
+          <a href="<?=$link_lang?>#about" title="<?=$messG['ABOUT_US']?>"><span itemprop="name"><?=$messG['ABOUT_US']?></span></a>
+        </li>
+        <li>
+          <a href="<?=$link_lang?>products/" title="<?=$messG['PRODUCTION_CH']?>"><span itemprop="name"><?=$messG['PRODUCTION']?></span>
+          </a></li>
+        <li>
+          <a href="<?=$link_lang?>#payment" title="<?=$messG['SERVICES']?>"><span itemprop="name"><?=$messG['SERVICES']?></span></a>
+        </li>
+        <li>
+          <a href="<?=$link_lang?>#call" title="<?=$messG['CONTACTS']?>"><span itemprop="name"><?=$messG['CONTACTS']?></span></a>
+        </li>
+        <li>
+          <a href="<?=$link_lang?>comments/" title="<?=$messG['OTZUVU_SHOP']?>"><span itemprop="name"><?=$messG['OTZUVU']?></span></a>
+        </li>
+        <li><a href="<?=$link_lang?>order/" rel="nofollow"><?=$messG['BASKET']?><span><?=(int)$countG?></span></a></li>
       </ul>
       <span class="menu-icon"></span>
     </nav>

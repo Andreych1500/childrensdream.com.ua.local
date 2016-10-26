@@ -15,3 +15,7 @@ $messG['TO_TOP'] = 'ВВЕРХ';
 $messG['ADDRES_LOCATION'] = 'Тернопіль, Україна';
 $messG['Новий заказ'] = 'Новий заказ';
 $messG['Новий відгук'] = 'Новий відгук';
+$messG['CN_SHOP'] = 'Контактний телефон Children&lsquo;s Dream';
+$messG['PRODUCTION_CH'] = 'Продукція Children&lsquo;s Dream';
+$messG['OTZUVU_SHOP'] = 'Відгуки про магазин';
+$messG['OFERTA'] = 'Угода користувача';

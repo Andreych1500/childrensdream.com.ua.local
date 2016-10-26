@@ -16,3 +16,7 @@ $messG['TO_TOP'] = 'ВВЕРХ';
 $messG['ADDRES_LOCATION'] = 'Тернополь, Украина';
 $messG['Новий заказ'] = 'Новый заказ';
 $messG['Новий відгук'] = 'Новый отзыв';
+$messG['CN_SHOP'] = 'Контактный телефон Children&lsquo;s Dream';
+$messG['PRODUCTION_CH'] = 'Продукция Children&lsquo;s Dream';
+$messG['OTZUVU_SHOP'] = 'Отзывы о магазине';
+$messG['OFERTA'] = 'Пользовательское соглашение';
