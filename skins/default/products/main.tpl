@@ -1,6 +1,6 @@
 <?php if($_GET['page'] == 'main'){ ?>
   <meta itemprop="name" content="<?=$mess['PRODUCTS_CD']?>">
-  <div class="products" itemscope itemtype="http://schema.org/ItemList">
+  <div class="products">
     <div class="block-title">
       <span class="line"></span>
       <h2 itemprop="name"><?=$mess['DETSKIE_MATRACI']?></h2>
@@ -9,7 +9,7 @@
 
     <?php if($products->num_rows > 0){
       while($el = $products->fetch_assoc()){ ?>
-        <div class="mattress" itemprop="itemListElement" itemscope itemtype="http://schema.org/Product">
+        <div class="mattress" itemscope itemtype="http://schema.org/Product">
           <a class="photos" href="<?=$link_lang?>products/<?=hsc($el['symbol_code'])?>/" itemprop="url">
             <img src="<?=hsc($el['img_anons'])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>" itemprop="image"> </a>
           <a class="links" href="<?=$link_lang?>products/<?=hsc($el['symbol_code'])?>/">
