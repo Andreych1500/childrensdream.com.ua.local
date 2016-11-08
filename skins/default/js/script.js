@@ -261,16 +261,74 @@ $(document).ready(function () {
     $(window).resize();
     $(window).scroll();
 
-    // Map
-    var map;
-    function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-            center: {lat: -34.397, lng: 150.644},
-            zoom: 8
-        });
-    }
+    // Map start
+    // var map = new google.maps.Map(document.getElementById('map-canvas'), {
+    //     center: {lat: 49.550666, lng: 25.586504},
+    //     zoom: 17,
+    //     scrollwheel: false,
+    //     disableDoubleClickZoom: false,
+    //     draggable: true,
+    //     keyboardShortcuts: true,
+    //     mapTypeControl: true,
+    //     zoomControl: true,
+    //     scaleControl: true
+    // });
+    //
+    //
+    // var marker = new google.maps.Marker({
+    //     position: {lat: 49.550666, lng: 25.586504},
+    //     map: map,
+    //     title: 'Інтернет магазин | Children\'s Dream'
+    // });
+    //
+    // var contentString = '<div id="content">' +
+    //     '<div id="siteNotice"></div>' +
+    //     '<h1 id="firstHeading" class="firstHeading">Uluru</h1>' +
+    //     '<div id="bodyContent">' +
+    //     '<p><b>Uluru</b></p>' +
+    //     '<p>Attribution: Uluru</p>' +
+    //     '</div>';
+    //
+    // var infowindow = new google.maps.InfoWindow({
+    //     content: contentString
+    // });
+    //
+    // google.maps.event.addListener(marker, 'click', function() {
+    //     infowindow.open(map,marker);
+    // });
 });
 
+//
+// function initialize() {
+//     var myLatlng = new google.maps.LatLng(48.469575, 34.985112);
+//     var mapOptions = {
+//         center: { lat: 48.469575, lng: 34.985112},
+//         zoom: 15
+//     };
+//     var map = new google.maps.Map(document.getElementById('map-canvas'),
+//         mapOptions);
+//     var contentString = '<div id="content">'+
+//         '<div id="siteNotice"></div>'+
+//         '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
+//         '<div id="bodyContent">'+
+//         '<p><b>Uluru</b></p>'+
+//         '<p>Attribution: Uluru</p>'+
+//         '</div>';
+//
+//     var infowindow = new google.maps.InfoWindow({
+//         content: contentString
+//     });
+//     var marker = new google.maps.Marker({
+//         position: myLatlng,
+//         map: map,
+//         title: 'Hello World!'
+//     });
+//     google.maps.event.addListener(marker, 'click', function() {
+//         infowindow.open(map,marker);
+//     });
+// }
+//
+// google.maps.event.addDomListener(window, 'load', initialize);
 
 function moreComments(submit) {
     var rel = $(submit).attr('data-param').split("|");

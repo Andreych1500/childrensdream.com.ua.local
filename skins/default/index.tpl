@@ -119,7 +119,7 @@
       <li><a href="/privacy-policy/" title="">Політика конфіденційності</a></li>
       <li><a href="/oferta/" title="">Оферта покупця</a></li>
       <li><a href="/certification/" title="">Сертифікати</a></li>
-      <li><a href="/contacts/" title="">Контакти</a></li>
+<!--      <li><a href="/contacts/" title="">Контакти</a></li>-->
     </ul>
   </div>
 </footer>
