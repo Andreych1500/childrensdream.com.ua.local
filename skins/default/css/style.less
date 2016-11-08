@@ -166,7 +166,8 @@ footer {
 .fix-position {
   &:extend(.clearfix all);
   .central(~'0 auto');
-  padding: 5px 0;
+  .box-sizing(border-box);
+  padding: 5px;
 }
 
 // Error
@@ -958,13 +959,18 @@ a[class^="lang_"] {
 
   .links {
     text-decoration: none;
-    margin: 10px 10% 5px 10%;
+    margin: 10px 5% 5px 5%;
     font-family: @font-Comic;
     color: @color-text;
     width: 100%;
     display: inline-block;
     min-height: 50px;
-    max-width: 80%;
+    max-width: 90%;
+
+    @media screen and (max-width: 640px) {
+      width: 80%;
+      margin: 10px 10% 5px 10%;
+    }
   }
 
   @media screen and (max-width: 848px) {
