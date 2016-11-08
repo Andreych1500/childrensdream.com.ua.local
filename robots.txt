@@ -29,5 +29,5 @@ Disallow: /uploaded
 Allow: /uploaded/*.jpeg$
 Allow: /uploaded/*.png$
 Allow: /uploaded/*.gif$
-Sitemap: http://childrensdream.com.ua/sitemap.xml
+Sitemap: https://childrensdream.com.ua/sitemap.xml
 Host: childrensdream.com.ua

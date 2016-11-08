@@ -60,9 +60,6 @@
         "postalCode": "	46000"
       }
     }
-
-
-
   </script>
 </head>
 

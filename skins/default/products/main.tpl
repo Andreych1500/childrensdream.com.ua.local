@@ -140,11 +140,11 @@
       </tr>
       <tr>
         <td><?=$mess['ANATOMING']?></td>
-        <td><?=((empty($arResult['anatoming']))? '-' : (((int)$arResult['anatoming'] == 1)? $mess['NO'] : $mess['YES']))?></td>
+        <td><?=((empty($arResult['anatoming']))? '-' : (((int)$arResult['anatoming'] == 1)? $mess['YES'] : $mess['NO']))?></td>
       </tr>
       <tr>
         <td><?=$mess['ORTOPEDING']?></td>
-        <td><?=((empty($arResult['ortopeding']))? '-' : (((int)$arResult['ortopeding'] == 1)? $mess['NO'] : $mess['YES']))?></td>
+        <td><?=(empty($arResult['ortopeding'])? '-' : (((int)$arResult['ortopeding'] == 1)? $mess['YES'] : $mess['NO']))?></td>
       </tr>
       <tr>
         <td><?=$mess['GARANTY']?></td>
