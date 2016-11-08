@@ -41,6 +41,16 @@
     <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://childrensdream.com.ua/privacy-policy/</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://childrensdream.com.ua/ru/privacy-policy/</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
   <loc>https://childrensdream.com.ua/products/detskii-matras-lite-gold-kokos-porolon/</loc>
   <changefreq>Monthly</changefreq>
   <priority>0.64</priority>

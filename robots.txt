@@ -11,7 +11,6 @@ Disallow: /order
 Disallow: /cab
 Disallow: /modules
 Disallow: /skins
-Disallow: /privacy-policy/
 Allow: /skins/default/css/*$
 Allow: /skins/default/js/*$
 Allow: /skins/default/img/*.png$
