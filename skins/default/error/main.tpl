@@ -72,16 +72,12 @@
   <div class="i_Error"><?=$status_error?></div>
 </main>
 
+
 <footer itemscope itemtype="http://schema.org/WPFooter">
-  <div class="footer-block">
-    <div class="development-site">
-      <img class="logo-img" src="/skins/default/img/cd-static.png" alt="Children's Dream" title="Children's Dream">
-      <p><?=$messG['GOOD_ACCES']?></p>
-      <p>&copy;<?=data(Core::$DATA)?></p>
-      <p><?=$messG['FOOTER_TOP']?></p>
-    </div>
-    <div class="soc-link error">
-      <a rel="nofollow" href="<?=$link_lang?>oferta/">Оферта</a>
+  <div class="fix-position">
+    <p class="development-site">&copy; <?=data(Core::$DATA)?> Інтернет магазин дитячих матраців Children's Dream. Права на всі матеріали сайту захищені та охороняються законом України про авторське право, їх повне або часткове копіювання - заборонено.</p>
+    <img class="logo-img" src="/skins/default/img/cd-static.png" alt="Children's Dream" title="Children's Dream">
+    <div class="soc-link">
       <p><?=$messG['SOC_LINK']?></p>
       <a href="//www.facebook.com/tmchildrensdream" target="_blank" class="icon-facebook"></a>
       <a href="//vk.com/childrensdream" target="_blank" class="icon-vkontakte"></a>
@@ -89,6 +85,16 @@
       <a href="//www.instagram.com/tm_childrens_dream" target="_blank" class="icon-instagram"></a>
       <a href="//twitter.com/cdmatrasses" target="_blank" class="icon-twitter-with-circle"></a>
     </div>
+    <div class="fb-right">
+      <!--LiveInternet counter-->
+      <script type="text/javascript">document.write("<a class='live-internet' rel='nofollow' href='//www.liveinternet.ru/click' target=_blank><img src='//counter.yadro.ru/hit?t27.19;r" + escape(document.referrer) + ((typeof(screen) == "undefined") ? "" : ";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ? screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) + ";" + Math.random() + "' alt='LiveInternet' title='LiveInternet: показано количество просмотров и посетителей'><\/a>")</script><!--/LiveInternet-->
+    </div>
+    <ul class="simple-menu">
+      <li><a href="/privacy-policy/" title="">Політика конфіденційності</a></li>
+      <li><a href="/oferta/" title="">Оферта покупця</a></li>
+      <li><a href="/certification/" title="">Сертифікати</a></li>
+      <li><a href="/contacts/" title="">Контакти</a></li>
+    </ul>
   </div>
 </footer>
 </body>

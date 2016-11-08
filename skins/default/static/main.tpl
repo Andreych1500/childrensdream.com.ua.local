@@ -112,7 +112,7 @@
 <div class="contact" id="call">
   <div class="block-title">
     <span class="line"></span>
-    <p><?=$mess['CONTACTS']?></p>
+    <p><?=$messG['Зв\'язатись з нами']?></p>
     <span class="line"></span>
   </div>
 

@@ -210,24 +210,4 @@
     <p>Фізичної особи - підприємця Ісіченко Андрій Юрійович.<br>Виписки про державну реєстрацію № 2 646 000 0000 011273 від «03» квітня 2008. 46001, м.Тернопіль, вул. Руська, 9
     </p>
   <?php } ?>
-  <div class="block-title">
-    <span class="line"></span>
-    <h2 itemprop="name"><?=$mess['Сертифікати']?></h2>
-    <span class="line"></span>
-  </div>
-  <div class="certification">
-    <?php while($arResult = hsc($certification->fetch_assoc())){ ?>
-      <img src="<?=$arResult['img_certification']?>" alt="<?=explode('#|#', $arResult['alt_img'])[$key_lang]?>" onclick="modalPhoto(this,'N');">
-    <?php } ?>
-  </div>
 </section>
-
-<div class="fixed-overlay">
-  <div class="modal">
-    <div class="modal_container">
-      <span class="icon-cross"></span> <span class="btnModal-right icon-top"></span>
-      <div class="modalMain"></div>
-      <span class="btnModal-left icon-bottom"></span>
-    </div>
-  </div>
-</div>

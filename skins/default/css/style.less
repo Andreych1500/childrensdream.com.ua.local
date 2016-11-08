@@ -148,10 +148,10 @@ header {
 }
 
 main {
-  padding-bottom: 130px;
+  padding-bottom: 192px;
 
-  @media screen and (max-width: 660px) {
-    padding-bottom: 250px;
+  @media screen and (max-width: 640px) {
+    padding-bottom: 364px;
   }
 }
 
@@ -161,12 +161,12 @@ footer {
   left: 0;
   bottom: 0;
   width: 100%;
+}
 
-  .footer-block {
-    &:extend(.clearfix all);
-    .central(~'0 auto');
-    padding: 5px 0;
-  }
+.fix-position {
+  &:extend(.clearfix all);
+  .central(~'0 auto');
+  padding: 5px 0;
 }
 
 // Error
@@ -473,7 +473,7 @@ a[class^="lang_"] {
 
   ul {
     float: left;
-    margin-left: 10px;
+    margin-left: 20px;
   }
 
   li {
@@ -670,44 +670,57 @@ a[class^="lang_"] {
 
 // Footer
 .development-site {
-  &:extend(.clearfix all);
-  font-family: @font-Comic;
-  float: left;
-  font-size: 14px;
-  font-weight: bold;
+  margin: 0 0 5px;
+  min-height: 40px;
+  text-align: justify;
+  font: 14px @font-Comic;
   color: @color-text;
-  margin: 0 0 0 10px;
-  text-align: center;
-  width: 300px;
-  line-height: 2.5;
-  min-height: 120px;
+  .shadow-text();
+}
 
-  p {
-    float: left;
-    width: 165px;
+.simple-menu {
+  float: right;
+  list-style: none inside;
+  font: 700 14px @font-Comic;
+
+  li {
+    margin-bottom: 14px;
+    text-align: right;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
-  @media screen and (max-width: 560px) {
-    float: none;
-    margin: 0 auto;
+  a {
+    color: @color-text;
+
+    &:hover {
+      text-decoration: none;
+    }
   }
 }
 
 .logo-img {
-  max-width: 130px;
+  max-width: 145px;
   display: block;
   float: left;
-  margin-right: 5px;
+  margin-right: 10px;
+
+  @media screen and (max-width: 640px) {
+    max-width: 120px;
+    margin-bottom: 15px;
+  }
 }
 
 .soc-link {
-  float: right;
+  float: left;
   font-family: @font-Comic;
-  max-width: 300px;
-  min-height: 120px;
+  max-width: 170px;
+  min-height: 105px;
   text-align: center;
   font-size: 0;
-  line-height: 2;
+  line-height: 1.7;
 
   p {
     font-size: 14px;
@@ -741,29 +754,19 @@ a[class^="lang_"] {
     }
   }
 
-  @media screen and (max-width: 560px) {
-    float: left;
-
-    &.error {
-      width: 100%;
-      float: left;
-      max-width: none;
-    }
+  @media screen and (max-width: 640px) {
+    float: right;
+    margin-bottom: 10px;
   }
 }
 
 .fb-right {
   float: right;
-  margin-right: 5px;
+  margin-left: 10px;
 
-  @media screen and (max-width: 660px) {
-    width: 100%;
-    text-align: center;
-  }
-
-  @media screen and (max-width: 560px) {
-    width: auto;
-    margin-right: 0;
+  @media screen and (max-width: 640px) {
+    clear: both;
+    float: left;
   }
 }
 
@@ -1985,12 +1988,13 @@ a[class^="lang_"] {
   text-align: justify;
 
   .block-title {
-    margin-bottom: 20px;
+    margin: 20px 0;
 
     h2 {
       text-align: center;
     }
   }
+
   p {
     margin: 10px 0;
   }
@@ -2001,6 +2005,14 @@ a[class^="lang_"] {
 
     &:hover {
       text-decoration: underline;
+    }
+  }
+
+  .header-line {
+    @media screen and (min-width: 801px) {
+      br {
+        display: none;
+      }
     }
   }
 
@@ -2043,7 +2055,7 @@ a[class^="lang_"] {
 
 .certification {
   text-align: center;
-  margin-bottom: 20px;
+  margin-top: 10px;
   font-size: 0;
 
   img {
@@ -2057,6 +2069,38 @@ a[class^="lang_"] {
     @media screen and (min-width: 801px) {
       cursor: zoom-in;
     }
+  }
+}
+
+.text-style {
+  font: 16px @font-Myriad;
+  color: @color-text;
+
+  a {
+    color: #3f627b;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  p {
+    margin: 10px 0;
+  }
+
+  .header-h1 {
+    font-size: 26px;
+    font-weight: bold;
+  }
+
+  .header-p {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  ul {
+    margin: 5px 0;
+    list-style: inside;
   }
 }
 
