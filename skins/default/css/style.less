@@ -648,7 +648,7 @@ a[class^="lang_"] {
   font-weight: bold;
   bottom: 160px;
 
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 670px) {
     display: none !important;
   }
 
@@ -683,13 +683,18 @@ a[class^="lang_"] {
   float: right;
   list-style: none inside;
   font: 700 14px @font-Comic;
+  word-break: break-all;
 
   li {
     margin-bottom: 14px;
-    text-align: right;
+    text-align: center;
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    @media screen and (min-width: 671px) {
+      text-align: right;
     }
   }
 
@@ -700,15 +705,19 @@ a[class^="lang_"] {
       text-decoration: none;
     }
   }
+
+  @media screen and (max-width: 400px) {
+    max-width: 200px;
+  }
 }
 
 .logo-img {
   max-width: 145px;
   display: block;
   float: left;
-  margin-right: 10px;
+  margin-right: 5px;
 
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 670px) {
     max-width: 120px;
     margin-bottom: 15px;
   }
@@ -755,19 +764,20 @@ a[class^="lang_"] {
     }
   }
 
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 670px) {
     float: right;
     margin-bottom: 10px;
   }
 }
 
 .fb-right {
-  float: right;
-  margin-left: 10px;
+  clear: both;
+  float: left;
 
-  @media screen and (max-width: 640px) {
-    clear: both;
-    float: left;
+  @media screen and (min-width: 671px) {
+    float: right;
+    clear: none;
+    margin-left: 10px;
   }
 }
 
@@ -2075,7 +2085,9 @@ a[class^="lang_"] {
     max-width: 300px;
     max-height: 400px;
     padding: 2px;
+    width: 96%;
     border: 1px solid #42d2e1;
+    .box-sizing(border-box);
 
     @media screen and (min-width: 801px) {
       cursor: zoom-in;
@@ -2086,6 +2098,7 @@ a[class^="lang_"] {
 .text-style {
   font: 16px @font-Myriad;
   color: @color-text;
+  text-align: justify;
 
   a {
     color: #3f627b;
@@ -2102,11 +2115,19 @@ a[class^="lang_"] {
   .header-h1 {
     font-size: 26px;
     font-weight: bold;
+
+    @media screen and (max-width: 480px) {
+      text-align: center;
+    }
   }
 
   .header-p {
     font-size: 20px;
     font-weight: bold;
+
+    @media screen and (max-width: 480px) {
+      text-align: center;
+    }
   }
 
   ul {
