@@ -116,10 +116,10 @@
       <script type="text/javascript">document.write("<a class='live-internet' rel='nofollow' href='//www.liveinternet.ru/click' target=_blank><img src='//counter.yadro.ru/hit?t27.19;r" + escape(document.referrer) + ((typeof(screen) == "undefined") ? "" : ";s" + screen.width + "*" + screen.height + "*" + (screen.colorDepth ? screen.colorDepth : screen.pixelDepth)) + ";u" + escape(document.URL) + ";" + Math.random() + "' alt='LiveInternet' title='LiveInternet: показано количество просмотров и посетителей'><\/a>")</script><!--/LiveInternet-->
     </div>
     <ul class="simple-menu">
-      <li><a href="/privacy-policy/" title="">Політика конфіденційності</a></li>
-      <li><a href="/oferta/" title="">Оферта покупця</a></li>
-      <li><a href="/certification/" title="">Сертифікати</a></li>
-<!--      <li><a href="/contacts/" title="">Контакти</a></li>-->
+      <li><a href="/privacy-policy/" title="<?=$messG['Політика конфіденційності']?>"><?=$messG['Політика конфіденційності']?></a></li>
+      <li><a href="/oferta/" title="<?=$messG['Оферта покупця']?>"><?=$messG['Оферта покупця']?></a></li>
+      <li><a href="/certification/" title="<?=$messG['Сертифікати']?>"><?=$messG['Сертифікати']?></a></li>
+<!--      <li><a href="/contacts/" title="<?=$messg['Контакти']?>"><?=$messg['Контакти']?></a></li>-->
     </ul>
   </div>
 </footer>
