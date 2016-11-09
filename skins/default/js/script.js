@@ -261,74 +261,46 @@ $(document).ready(function () {
     $(window).resize();
     $(window).scroll();
 
-    // Map start
-    // var map = new google.maps.Map(document.getElementById('map-canvas'), {
-    //     center: {lat: 49.550666, lng: 25.586504},
-    //     zoom: 17,
-    //     scrollwheel: false,
-    //     disableDoubleClickZoom: false,
-    //     draggable: true,
-    //     keyboardShortcuts: true,
-    //     mapTypeControl: true,
-    //     zoomControl: true,
-    //     scaleControl: true
-    // });
-    //
-    //
-    // var marker = new google.maps.Marker({
-    //     position: {lat: 49.550666, lng: 25.586504},
-    //     map: map,
-    //     title: 'Інтернет магазин | Children\'s Dream'
-    // });
-    //
-    // var contentString = '<div id="content">' +
-    //     '<div id="siteNotice"></div>' +
-    //     '<h1 id="firstHeading" class="firstHeading">Uluru</h1>' +
-    //     '<div id="bodyContent">' +
-    //     '<p><b>Uluru</b></p>' +
-    //     '<p>Attribution: Uluru</p>' +
-    //     '</div>';
-    //
-    // var infowindow = new google.maps.InfoWindow({
-    //     content: contentString
-    // });
-    //
-    // google.maps.event.addListener(marker, 'click', function() {
-    //     infowindow.open(map,marker);
-    // });
+    // Map
+    if (pathname == '/contacts/' || pathname == '/ru/contacts/') {
+        mapStart();
+    }
 });
 
-//
-// function initialize() {
-//     var myLatlng = new google.maps.LatLng(48.469575, 34.985112);
-//     var mapOptions = {
-//         center: { lat: 48.469575, lng: 34.985112},
-//         zoom: 15
-//     };
-//     var map = new google.maps.Map(document.getElementById('map-canvas'),
-//         mapOptions);
-//     var contentString = '<div id="content">'+
-//         '<div id="siteNotice"></div>'+
-//         '<h1 id="firstHeading" class="firstHeading">Uluru</h1>'+
-//         '<div id="bodyContent">'+
-//         '<p><b>Uluru</b></p>'+
-//         '<p>Attribution: Uluru</p>'+
-//         '</div>';
-//
-//     var infowindow = new google.maps.InfoWindow({
-//         content: contentString
-//     });
-//     var marker = new google.maps.Marker({
-//         position: myLatlng,
-//         map: map,
-//         title: 'Hello World!'
-//     });
-//     google.maps.event.addListener(marker, 'click', function() {
-//         infowindow.open(map,marker);
-//     });
-// }
-//
-// google.maps.event.addDomListener(window, 'load', initialize);
+function mapStart() {
+    var map = new google.maps.Map(document.getElementById('map-canvas'), {
+        center: {lat: 49.5504868, lng: 25.5866435},
+        zoom: 17,
+        mapTypeId: google.maps.MapTypeId.ROADMAP, // Відображення карти
+        disableDefaultUI: true, // Відключаєм стандартні настройки
+        zoomControl: true, // Значок + -
+        mapTypeControl: true, // Значок вибір типу карти
+        mapTypeControlOptions: {
+            style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
+            position: google.maps.ControlPosition.LEFT_TOP
+        },
+        scaleControl: false, // Метраж на карті
+        streetViewControl: true, // Мождивість попасти у вулицю онлайн
+        rotateControl: false,
+        scrollwheel: false
+    });
+
+    var marker = new google.maps.Marker({
+        position: {lat: 49.550666, lng: 25.586499},
+        map: map,
+        title: 'Children\'s Dream',
+        animation: google.maps.Animation.DROP
+    });
+
+    var textH2 = (window.location.pathname == '/contacts/'? 'Магазин дитячих матраців' : 'Магазин детских матрасов');
+    var infowindow = new google.maps.InfoWindow({
+        content: '<div class="content-map"><h2>' + textH2 + ' | Children\'s Dream</h2></div>'
+    });
+
+    google.maps.event.addListener(marker, 'click', function () {
+        infowindow.open(map, marker);
+    });
+}
 
 function moreComments(submit) {
     var rel = $(submit).attr('data-param').split("|");

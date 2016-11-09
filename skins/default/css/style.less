@@ -682,7 +682,7 @@ a[class^="lang_"] {
 .simple-menu {
   float: right;
   list-style: none inside;
-  font: 700 14px @font-Comic;
+  font: 700 13px @font-Comic;
   word-break: break-all;
 
   li {
@@ -707,7 +707,7 @@ a[class^="lang_"] {
   }
 
   @media screen and (max-width: 400px) {
-    max-width: 200px;
+    max-width: 205px;
   }
 }
 
@@ -719,7 +719,7 @@ a[class^="lang_"] {
 
   @media screen and (max-width: 670px) {
     max-width: 120px;
-    margin-bottom: 15px;
+    margin: 0 0 15px 0;
   }
 }
 
@@ -1103,7 +1103,24 @@ a[class^="lang_"] {
 
 #map-canvas {
   height: 420px;
+  margin: 20px 0;
   border: 1px solid #7bd7e8;
+}
+
+.massage-click {
+  text-decoration: underline;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.massage-click {
+  font: bold 22px @font-Myriad;
+  margin-top: 20px;
+  display: inline-block;
+  color: @color-text !important;
 }
 
 // Delivery payment
@@ -2133,6 +2150,21 @@ a[class^="lang_"] {
   ul {
     margin: 5px 0;
     list-style: inside;
+  }
+}
+
+.contact-data {
+  width: 100%;
+  max-width: 560px;
+  min-width: 290px;
+  border-collapse: collapse;
+  text-align: center;
+  font: 17px @font-Myriad;
+  .box-sizing(border-box);
+
+  td {
+    border: 1px solid #7bd7e8;
+    padding: 4px;
   }
 }
 
