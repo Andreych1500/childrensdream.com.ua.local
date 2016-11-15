@@ -76,7 +76,7 @@ if(isset($_REQUEST['add'])){
 		            `img_circle`          = '".$_POST['img_circle']."',
 		            `img_more`            = '".mres($img_more)."',
 		            `price`               = '".(int)$_POST['price']."',
-		            `size`                = '".(int)$_POST['size']."',
+		            `size`                = '".$_POST['size']."',
 		            `anatoming`           = '".(int)$_POST['anatoming']."',
                 `ortopeding`          = '".(int)$_POST['ortopeding']."',
 		            `garanty`             = '".(int)$_POST['garanty']."',
