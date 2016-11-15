@@ -18,7 +18,7 @@
 
         <div class="input-value">
           <div class="name-section"><?=$mess['Назва']?> UA:<span class="accent">*</span></div>
-          <input data-symbol-code="ok" <?=(isset($check['name_ua'])? $check['name_ua'] : '')?> type="text" name="name_ua" value="<?=(isset($error)? hsc($_POST['name_ua']) : "")?>">
+          <input <?=(isset($check['name_ua'])? $check['name_ua'] : '')?> type="text" name="name_ua" value="<?=(isset($error)? hsc($_POST['name_ua']) : "")?>">
         </div>
 
         <div class="input-value">
@@ -72,7 +72,7 @@
         </div>
 
         <div class="input-value">
-          <div class="name-section"><?=$mess['Назва']?> UA:<span class="accent">*</span></div>
+          <div class="name-section"><?=$mess['Назва']?> RU:<span class="accent">*</span></div>
           <input <?=(isset($check['name_ru'])? $check['name_ru'] : '')?> type="text" name="name_ru" value="<?=(isset($error)? hsc($_POST['name_ru']) : $arResult['name_ru'])?>">
         </div>
 
