@@ -1,7 +1,13 @@
 <?php
-Core::$JS[] = '<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js" defer></script>';
-Core::$JS[] = '<script src="/vendor/public/slick-carousel/slick/slick.min.js" defer></script>';
-Core::$JS[] = '<script src="/skins/default/js/slide-el.min.js?v='.$vF.'" defer></script>';
+$elRedirect = array(
+	'detskii-ortopedicheskii-matras-lite-organic-cotton' => 'detskii-matras-lite-organic-cotton-kokos-porolon'
+);
+
+if($r = array_search($_GET['page'], $elRedirect)){
+	header("HTTP/1.1 301 Moved Permanently");
+    header("Location: https://childrensdream.com.ua/products/".$r."/");
+    exit();
+}
 
 if($_GET['page'] == 'main'){
 
@@ -79,3 +85,7 @@ if($_GET['page'] == 'main'){
         }
     }
 }
+
+Core::$JS[] = '<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js" defer></script>';
+Core::$JS[] = '<script src="/vendor/public/slick-carousel/slick/slick.min.js" defer></script>';
+Core::$JS[] = '<script src="/skins/default/js/slide-el.min.js?v='.$vF.'" defer></script>';
