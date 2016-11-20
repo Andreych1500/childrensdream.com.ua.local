@@ -77,6 +77,8 @@ if(isset($_REQUEST['add'])){
 		            `img_more`            = '".mres($img_more)."',
 		            `price`               = '".(int)$_POST['price']."',
 		            `size`                = '".$_POST['size']."',
+		            `count_layers_ua`     = '".$_POST['count_layers_ua']."',
+		            `count_layers_ru`     = '".$_POST['count_layers_ru']."',
 		            `anatoming`           = '".(int)$_POST['anatoming']."',
                 `ortopeding`          = '".(int)$_POST['ortopeding']."',
 		            `garanty`             = '".(int)$_POST['garanty']."',

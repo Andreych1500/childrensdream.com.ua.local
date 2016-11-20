@@ -123,6 +123,10 @@
         <td><?=((empty(hsc($arResult['type_'.$lang])))? '-' : hsc($arResult['type_'.$lang]))?></td>
       </tr>
       <tr>
+        <td><?=$mess['LAYER']?></td>
+        <td><?=(empty(hsc($arResult['count_layers_'.$lang]))? '-' : hsc($arResult['count_layers_'.$lang]))?></td>
+      </tr>
+      <tr>
         <td><?=$mess['SIZE']?></td>
         <td><?=((empty($arResult['size']))? '-' : hsc($arResult['size']))?></td>
       </tr>

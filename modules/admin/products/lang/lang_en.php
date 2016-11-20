@@ -27,3 +27,4 @@ $mess['Зображення для слайду'] = 'Image for the slide';
 $mess['Дитячі матраци'] = 'Children\'s mattresses';
 $mess['Ціна'] = 'Price';
 $mess['Зображення'] = 'Image';
+$mess['Кількість слоїв'] = 'Number of layers';

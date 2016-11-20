@@ -123,6 +123,16 @@
         </div>
 
         <div class="input-value">
+          <div class="name-section"><?=$mess['Кількість слоїв']?> UA:</div>
+          <input type="text" name="count_layers_ua" value="<?=(isset($error)? hsc($_POST['count_layers_ua']) : $arResult['count_layers_ua'])?>">
+        </div>
+
+        <div class="input-value">
+          <div class="name-section"><?=$mess['Кількість слоїв']?> RU:</div>
+          <input type="text" name="count_layers_ru" value="<?=(isset($error)? hsc($_POST['count_layers_ru']) : $arResult['count_layers_ru'])?>">
+        </div>
+
+        <div class="input-value">
           <div class="name-section"><?=$mess['Форма матрацу']?> UA:</div>
           <input type="text" name="form_ua" value="<?=(isset($error)? hsc($_POST['form_ua']) : $arResult['form_ua'])?>">
         </div>
