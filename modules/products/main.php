@@ -1,10 +1,12 @@
 <?php
 $elRedirect = array(
-	'detskii-ortopedicheskii-matras-lite-organic-cotton' => 'detskii-matras-lite-organic-cotton-kokos-porolon'
+    'detskii-ortopedicheskii-matras-lite-organic-cotton' => 'detskii-matras-lite-organic-cotton-kokos-porolon',
+    'detskii-matras-novorozhdennykh-lite-aloe-vera'      => 'detskii-matras-lite-aloe-vera-kokos-porolon',
+    'detskii-bespruzhinnyi-matras-lux-organic-cotton'    => 'detskii-matras-lux-organic-cotton-kokos-porolon-kokos'
 );
 
 if($r = array_search($_GET['page'], $elRedirect)){
-	header("HTTP/1.1 301 Moved Permanently");
+    header("HTTP/1.1 301 Moved Permanently");
     header("Location: https://childrensdream.com.ua/products/".$r."/");
     exit();
 }
