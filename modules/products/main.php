@@ -8,7 +8,7 @@ $elRedirect = array(
 
 if($r = array_search($_GET['page'], $elRedirect)){
     header("HTTP/1.1 301 Moved Permanently");
-    header("Location: https://childrensdream.com.ua/products/".$r."/");
+    header("Location: ".$arMainParam['url_http_site']."/products/".$r."/");
     exit();
 }
 

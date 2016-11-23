@@ -85,6 +85,9 @@
           <?=(!empty($basket)? $mess['BASKETOK'] : $mess['ADDSHOP'])?>
         </div>
       <?php } ?>
+      <p class="opt-price"><?=$mess['OPT']?>
+        <a href="<?=(isMobile()? 'tel' : 'callto')?>:38-098-570-43-77" title="<?=$mess['PHONE-OPT']?>">+38 (098) 570-43-77</a>
+      </p>
       <meta itemprop="price" content="<?=hsc($arResult['price'])?>.00">
       <meta itemprop="priceCurrency" content="UAH">
       <link itemprop="itemCondition" href="http://schema.org/NewCondition">
