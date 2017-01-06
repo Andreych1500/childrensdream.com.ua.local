@@ -3,7 +3,8 @@ $elRedirect = array(
     'detskii-ortopedicheskii-matras-lite-organic-cotton' => 'detskii-matras-lite-organic-cotton-kokos-porolon',
     'detskii-matras-novorozhdennykh-lite-aloe-vera'      => 'detskii-matras-lite-aloe-vera-kokos-porolon',
     'detskii-bespruzhinnyi-matras-lux-organic-cotton'    => 'detskii-matras-lux-organic-cotton-kokos-porolon-kokos',
-    'ditiachii-matrats-u-lizhechko-lux-aloe-vera'        => 'detskii-matras-lux-aloe-vera-kokos-porolon-kokos'
+    'ditiachii-matrats-u-lizhechko-lux-aloe-vera'        => 'detskii-matras-lux-aloe-vera-kokos-porolon-kokos',
+	'detskii-matras-ot-odnogo-goda-lite-gold'            => 'detskii-matras-lite-gold-kokos-porolon'
 );
 
 if($r = array_search($_GET['page'], $elRedirect)){

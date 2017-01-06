@@ -16,7 +16,17 @@
   <priority>0.80</priority>
 </url>
 <url>
+  <loc>https://childrensdream.com.ua/ru/products/</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
   <loc>https://childrensdream.com.ua/comments/</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://childrensdream.com.ua/ru/comments/</loc>
   <changefreq>weekly</changefreq>
   <priority>0.80</priority>
 </url>
@@ -41,16 +51,6 @@
   <priority>0.80</priority>
 </url>
 <url>
-    <loc>https://childrensdream.com.ua/ru/products/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-</url>
-<url>
-    <loc>https://childrensdream.com.ua/ru/comments/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.80</priority>
-</url>
-<url>
   <loc>https://childrensdream.com.ua/privacy-policy/</loc>
   <changefreq>weekly</changefreq>
   <priority>0.64</priority>
@@ -61,37 +61,84 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/detskii-matras-lite-gold-kokos-porolon/</loc>
+  <loc>https://childrensdream.com.ua/products/detskii-ortopedicheskii-matras-lite-organic-cotton/</loc>
   <changefreq>Monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/detskii-matras-lite-organic-cotton-kokos-porolon/</loc>
+  <loc>https://childrensdream.com.ua/ru/products/detskii-ortopedicheskii-matras-lite-organic-cotton/</loc>
   <changefreq>Monthly</changefreq>
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/detskii-matras-lite-aloe-vera-kokos-porolon/</loc>
+  <loc>https://childrensdream.com.ua/products/detskii-matras-novorozhdennykh-lite-aloe-vera/</loc>
   <changefreq>Monthly</changefreq>
   <priority>0.64</priority>
 </url>
+<url>
+  <loc>https://childrensdream.com.ua/ru/products/detskii-matras-novorozhdennykh-lite-aloe-vera/</loc>
+  <changefreq>Monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://childrensdream.com.ua/products/detskii-bespruzhinnyi-matras-lux-organic-cotton/</loc>
+  <changefreq>Monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://childrensdream.com.ua/ru/products/detskii-bespruzhinnyi-matras-lux-organic-cotton/</loc>
+  <changefreq>Monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://childrensdream.com.ua/products/ditiachii-matrats-u-lizhechko-lux-aloe-vera/</loc>
+  <changefreq>Monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://childrensdream.com.ua/ru/products/ditiachii-matrats-u-lizhechko-lux-aloe-vera/</loc>
+  <changefreq>Monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://childrensdream.com.ua/products/detskii-matras-ot-odnogo-goda-lite-gold/</loc>
+  <changefreq>Monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://childrensdream.com.ua/ru/products/detskii-matras-ot-odnogo-goda-lite-gold/</loc>
+  <changefreq>Monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://childrensdream.com.ua/products/detskii-matras-lite-silver-care-kokos-porolon-kokos/</loc>
+  <changefreq>Monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://childrensdream.com.ua/ru/products/detskii-matras-lite-silver-care-kokos-porolon-kokos/</loc>
+  <changefreq>Monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://childrensdream.com.ua/products/dvustoronnii-detskii-matras-lux-gold/</loc>
+  <changefreq>Monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://childrensdream.com.ua/ru/products/dvustoronnii-detskii-matras-lux-gold/</loc>
+  <changefreq>Monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+
+
+
+
+
+
+
 <url>
   <loc>https://childrensdream.com.ua/products/detskii-matras-lite-bamboo-kokos-porolon/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://childrensdream.com.ua/products/detskii-matras-lux-gold-kokos-porolon-kokos/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://childrensdream.com.ua/products/detskii-matras-lux-organic-cotton-kokos-porolon-kokos/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://childrensdream.com.ua/products/detskii-matras-lux-aloe-vera-kokos-porolon-kokos/</loc>
   <changefreq>Monthly</changefreq>
   <priority>0.64</priority>
 </url>
@@ -101,40 +148,11 @@
   <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-matras-lite-gold-kokos-porolon/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-matras-lite-organic-cotton-kokos-porolon/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-matras-lite-aloe-vera-kokos-porolon/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
   <loc>https://childrensdream.com.ua/ru/products/detskii-matras-lite-bamboo-kokos-porolon/</loc>
   <changefreq>Monthly</changefreq>
   <priority>0.64</priority>
 </url>
-<url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-matras-lux-gold-kokos-porolon-kokos/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-matras-lux-organic-cotton-kokos-porolon-kokos/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-matras-lux-aloe-vera-kokos-porolon-kokos/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
-</url>
+
 <url>
   <loc>https://childrensdream.com.ua/ru/products/detskii-matras-lux-bamboo-kokos-porolon-kokos/</loc>
   <changefreq>Monthly</changefreq>
