@@ -975,6 +975,11 @@ a[class^="lang_"] {
     width: 80%;
     display: inline-block;
     min-height: 50px;
+
+    @media screen and (max-width: 480px) {
+      width: 60%;
+      margin: 10px 20% 5px 20%;
+    }
   }
 
   @media screen and (max-width: 848px) {
@@ -987,7 +992,8 @@ a[class^="lang_"] {
 
   @media screen and (max-width: 480px) {
     width: 98%;
-    margin-top: 20px;
+    margin-top: 10px;
+    min-height: 275px;
   }
 }
 

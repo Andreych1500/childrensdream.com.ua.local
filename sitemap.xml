@@ -130,9 +130,16 @@
   <changefreq>Monthly</changefreq>
   <priority>0.64</priority>
 </url>
-
-
-
+<url>
+  <loc>https://childrensdream.com.ua/products/zhorstkii-ditiachii-matrats-lux-silver-care/</loc>
+  <changefreq>Monthly</changefreq>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://childrensdream.com.ua/ru/products/zhorstkii-ditiachii-matrats-lux-silver-care/</loc>
+  <changefreq>Monthly</changefreq>
+  <priority>0.64</priority>
+</url>
 
 
 
