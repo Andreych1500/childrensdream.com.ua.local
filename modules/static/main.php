@@ -1,10 +1,12 @@
 <?php
 // Ajax More Element
-if(isset($_REQUEST['ajax'])){
-    if(isset($_POST['nextLine'], $_POST['siteLang']) && array_search($_POST['siteLang'], explode(',', $GM['list_length'])) !== false && $_POST['nextLine'] > 0){
+if (isset($_REQUEST['ajax'])) {
+    if (isset($_POST['nextLine'], $_POST['siteLang']) && array_search($_POST['siteLang'], explode(',', $GM['list_length'])) !== false && $_POST['nextLine'] > 0) {
         $countLine = 4;
         $lastNumber = $countLine * ((int)$_POST['nextLine'] - 1);
         $allElements = $countLine * (int)$_POST['nextLine'];
+        $link_lang = $_POST['siteLang'] == 'ua'? '/' : '/ru/';
+        $lang = $_POST['siteLang'] == 'ua'? 'ua' : 'ru';
 
         $all = q("
                 SELECT `id`
@@ -13,7 +15,7 @@ if(isset($_REQUEST['ajax'])){
         ");
 
         $products = q("
-                SELECT `id`,`name_ua`,`name_ru`,`symbol_code`,`price`,`availability`,`img_anons`,`img_seo_alt_ua`,`img_seo_alt_ru`,`description_ua`,`description_ru`
+                SELECT `id`,`name_ua`,`symbol_code`,`price`,`availability`,`img_anons`,`name_ru`,`img_seo_alt_ua`,`img_seo_alt_ru`,`description_ua`,`description_ru`, `height`, `size`, `count_layers_ru`, `count_layers_ua`
                 FROM `products`
                 WHERE `active` = 1 
                 ORDER BY `availability` DESC, `sort` DESC, `id`
@@ -25,12 +27,47 @@ if(isset($_REQUEST['ajax'])){
         $end = 1;
         $html = '';
 
-        if($count > 0){
-            while($el = $products->fetch_assoc()){
-                $html .= '<div style="display: none;" class="mattress" itemscope itemtype="http://schema.org/Product"><a class="photos" href="'.$link_lang.'products/'.hsc($el['symbol_code']).'/" itemprop="url"><img src="'.hsc($el['img_anons']).'" alt="'.hsc($el['img_seo_alt_'.$_POST['siteLang']]).'" itemprop="image"></a><a class="links" href="'.$link_lang.'products/'.hsc($el['symbol_code']).'/"><span itemprop="name">'.hsc($el['name_'.$_POST['siteLang']]).'</span></a><div itemprop="offers" itemscope itemtype="http://schema.org/Offer"><p class="price">'.number_format(hsc($el['price']), 0, ',', ' ').' '.$mess['PRICE'].'</p><p class="aviability"><span class="'.(((int)$el['availability'] == 1)? 'icon-check-ok' : 'icon-cross').'"> </span>'.(((int)$el['availability'] == 1)? '<link itemprop="availability" href="http://schema.org/InStock">' : '<link itemprop="availability" href="http://schema.org/OutOfStock">').'<span>'.(((int)$el['availability'] == 1)? $mess['AVIABILITY'] : $mess['NOAVIABILITY']).'</span></p><link itemprop="itemCondition" href="http://schema.org/NewCondition"><meta itemprop="seller" content="Children\'s Dream"><meta itemprop="price" content="'.hsc($el['price']).'.00"><meta itemprop="priceCurrency" content="UAH"></div><meta itemprop="description" content="'.hsc($el['description_'.$_POST['siteLang']]).'"><meta itemprop="brand" content="Children\'s Dream"></div>';
-            }
-
-            if($all_count <= $allElements){
+        if ($count > 0) {
+            ob_start();
+            while ($el = $products->fetch_assoc()) { ?>
+              <div style="display: none" class="mattress" itemscope itemtype="http://schema.org/Product">
+                <a class="photos" href="<?=$link_lang?>products/<?=hsc($el['symbol_code'])?>/" itemprop="url">
+                  <img src="<?=hsc($el['img_anons'])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>" itemprop="image">
+                  <span><?=($lang == 'ua'? 'Гарантія' : 'Гарантия')?></span>
+                </a>
+                <a class="links" href="<?=$link_lang?>products/<?=hsc($el['symbol_code'])?>/">
+                  <span itemprop="name"><?=hsc($el['name_'.$lang])?></span>
+                </a>
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                  <div class="price"><?=number_format(hsc($el['price']), 0, ',', ' ')?> <?=$mess['PRICE']?></div>
+                  <div class="aviability">
+                    <span class="<?=(((int)$el['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
+                    <link itemprop="availability" href="<?=((int)$el['availability'] == 1? 'http://schema.org/InStock' : 'http://schema.org/OutOfStock')?>">
+                    <span><?=(((int)$el['availability'] == 1)? $mess['AVIABILITY'] : $mess['NOAVIABILITY'])?></span>
+                  </div>
+                  <div class="anons-characteristic">
+                    <div>
+                        <?=($lang == 'ua'? 'Розмір: ' : 'Размер: ')?><span><?=hsc($el['size'])?> см.</span>
+                    </div>
+                    <div>
+                        <?=($lang == 'ua'? 'Висота: ' : 'Высота: ')?><span><?=hsc($el['height'])?> см.</span>
+                    </div>
+                    <div>
+                        <?=($lang == 'ua'? 'Слої: ' : 'Слои: ')?>
+                      <span><?=hsc(preg_replace('#([0-9]|\(|\)|\\s)#uis', '', $el['count_layers_'.$lang]))?></span>
+                    </div>
+                  </div>
+                  <link itemprop="itemCondition" href="http://schema.org/NewCondition">
+                  <meta itemprop="seller" content="Children's Dream">
+                  <meta itemprop="price" content="<?=hsc($el['price'])?>.00">
+                  <meta itemprop="priceCurrency" content="UAH">
+                </div>
+                <meta itemprop="description" content="<?=hsc($el['description_'.$lang])?>">
+                <meta itemprop="brand" content="Children's Dream">
+              </div>
+            <?php }
+            $html = ob_get_clean();
+            if ($all_count <= $allElements) {
                 $end = 0;
             }
 
@@ -47,7 +84,7 @@ if(isset($_REQUEST['ajax'])){
 }
 
 // Send call from
-if(isset($_POST['ok'])){
+if (isset($_POST['ok'])) {
     $error = array();
     $_POST = trimAll($_POST);
 
@@ -57,11 +94,11 @@ if(isset($_POST['ok'])){
     $check['them'] = (empty($_POST['them'])? 'class="error"' : '');
     $check['capcha'] = (($_POST['capcha'] != $_SESSION['rand_code'])? 'class="error"' : '');
 
-    if(in_array('class="error"', $check)){
+    if (in_array('class="error"', $check)) {
         $error['stop'] = 1;
     }
 
-    if(!count($error)){
+    if (!count($error)) {
         $limit_access = q("
             SELECT `id`
             FROM `call_me`
@@ -71,7 +108,7 @@ if(isset($_POST['ok'])){
 
         $limit = (($limit_access->num_rows >= 2)? 'N' : 'Y');
 
-        if($limit == 'Y'){
+        if ($limit == 'Y') {
             $_POST = mres($_POST);
 
             q(" INSERT INTO `call_me` SET
@@ -85,7 +122,7 @@ if(isset($_POST['ok'])){
 
             Mail::$text = TemplateMail::formationMail('', 'call_me', $lang, $arMainParam);
 
-            if(Mail::$text){
+            if (Mail::$text) {
                 Mail::$to = $_POST['email'];
                 Mail::send();
             }
@@ -97,7 +134,7 @@ if(isset($_POST['ok'])){
 
 // Element products
 $products = q("
-    SELECT `id`,`name_ua`,`symbol_code`,`price`,`availability`,`img_anons`,`name_ru`,`img_seo_alt_ua`,`img_seo_alt_ru`,`description_ua`,`description_ru`
+    SELECT `id`,`name_ua`,`symbol_code`,`price`,`availability`,`img_anons`,`name_ru`,`img_seo_alt_ua`,`img_seo_alt_ru`,`description_ua`,`description_ru`, `height`, `size`, `count_layers_ru`, `count_layers_ua`
     FROM `products`
     WHERE `active` = 1 
     ORDER BY `availability` DESC, `sort` DESC, `id`

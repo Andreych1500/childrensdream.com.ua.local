@@ -105,7 +105,7 @@ class UploaderPhotos {
             $src_image = imagecreatefromjpeg($name);
 
             imagecopyresampled($dst_image, $src_image, $dst_x, $dst_y, $src_x, $src_y, $dst_w, $dst_h, $src_w, $src_h);
-            imagejpeg($dst_image, $name, 85);
+            imagejpeg($dst_image, $name, 80);
         } elseif($temp['mime'] == 'image/gif') {
             $src_image = imagecreatefromgif($name);
 

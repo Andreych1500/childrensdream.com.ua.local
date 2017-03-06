@@ -39,16 +39,31 @@
     while($el = $products->fetch_assoc()){ ?>
       <div class="mattress" itemscope itemtype="http://schema.org/Product">
         <a class="photos" href="<?=$link_lang?>products/<?=hsc($el['symbol_code'])?>/" itemprop="url">
-          <img src="<?=hsc($el['img_anons'])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>" itemprop="image"> </a>
+          <img src="<?=hsc($el['img_anons'])?>" alt="<?=hsc($el['img_seo_alt_'.$lang])?>" itemprop="image">
+          <span><?=$messG['MIN_GARANTY']?></span>
+        </a>
         <a class="links" href="<?=$link_lang?>products/<?=hsc($el['symbol_code'])?>/">
-          <span itemprop="name"><?=hsc($el['name_'.$lang])?></span> </a>
+          <span itemprop="name"><?=hsc($el['name_'.$lang])?></span>
+        </a>
         <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-          <p class="price"><?=number_format(hsc($el['price']), 0, ',', ' ')?> <?=$mess['PRICE']?></p>
-          <p class="aviability">
+          <div class="price"><?=number_format(hsc($el['price']), 0, ',', ' ')?> <?=$mess['PRICE']?></div>
+          <div class="aviability">
             <span class="<?=(((int)$el['availability'] == 1)? 'icon-check-ok' : 'icon-cross')?>"></span>
-            <?=(((int)$el['availability'] == 1)? '<link itemprop="availability" href="http://schema.org/InStock">' : '<link itemprop="availability" href="http://schema.org/OutOfStock">')?>
+            <link itemprop="availability" href="<?=((int)$el['availability'] == 1? 'http://schema.org/InStock' : 'http://schema.org/OutOfStock')?>">
             <span><?=(((int)$el['availability'] == 1)? $mess['AVIABILITY'] : $mess['NOAVIABILITY'])?></span>
-          </p>
+          </div>
+          <div class="anons-characteristic">
+            <div>
+                <?=$messG['SIZE']?><span><?=hsc($el['size'])?> см.</span>
+            </div>
+            <div>
+                <?=$messG['HEIGHT']?><span><?=hsc($el['height'])?> см.</span>
+            </div>
+            <div>
+                <?=$messG['LAYER']?>
+              <span><?=hsc(preg_replace('#([0-9]|\(|\)|\\s)#uis', '', $el['count_layers_'.$lang]))?></span>
+            </div>
+          </div>
           <link itemprop="itemCondition" href="http://schema.org/NewCondition">
           <meta itemprop="seller" content="Children's Dream">
           <meta itemprop="price" content="<?=hsc($el['price'])?>.00">
