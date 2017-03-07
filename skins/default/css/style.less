@@ -973,7 +973,7 @@ a[class^="lang_"] {
     }
 
     .photos span {
-      top: 21px;
+      top: 26px;
       .transition(top 300ms ease-out);
     }
 
@@ -1041,6 +1041,7 @@ a[class^="lang_"] {
   position: relative;
   max-width: 200px;
   width: 100%;
+  text-decoration: none;
 
   &:before {
     content: '';
@@ -1063,18 +1064,18 @@ a[class^="lang_"] {
 
   span {
     .opacity(.77);
-    .transform(rotate(-41deg));
+    .transform(rotate(-45deg) translate3d( 0px, 0px, 1px));
     .transition(top 300ms ease-out);
     font: 14px @font-Comic;
     position: absolute;
     color: #fff;
-    border-bottom: 20px solid @color-sumbit;
-    border-left: 17px solid transparent;
-    border-right: 23px solid transparent;
+    border-bottom: 20px solid #a12a97;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
     height: 0;
-    width: 61px;
-    left: -19px;
-    top: 33px;
+    width: 65px;
+    left: -23px;
+    top: 38px;
     padding: 0 3px;
   }
 }
