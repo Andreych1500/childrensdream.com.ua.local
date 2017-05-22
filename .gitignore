@@ -14,3 +14,5 @@ composer.lock
 .idea
 /skins/default/get-js/
 /skins/default/img/work/
+.bowerrc
+bower.json
