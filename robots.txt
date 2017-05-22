@@ -31,4 +31,4 @@ Allow: /uploaded/*.jpeg$
 Allow: /uploaded/*.png$
 Allow: /uploaded/*.gif$
 Sitemap: https://childrensdream.com.ua/sitemap.xml
-Host: childrensdream.com.ua
+Host: https://childrensdream.com.ua
