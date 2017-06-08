@@ -151,6 +151,7 @@
   ga('create', 'UA-78459198-1', 'auto');
   ga('send', 'pageview');
 </script>
+<?/*
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript"> (function (d, w, c) {
     (w[c] = w[c] || []).push(function () {
@@ -180,6 +181,6 @@
   <div>
     <img src="https://mc.yandex.ru/watch/37623530" class="yandex-metrika" alt="Yandex Metrika love Children's Dream">
   </div>
-</noscript>
+</noscript>*/?>
 </body>
 </html>

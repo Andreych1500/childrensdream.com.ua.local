@@ -2,7 +2,6 @@
 error_reporting(0);
 ini_set('display_errors', 0);
 header('Content-Type: text/html; charset=utf-8');
-$t = microtime(true);
 session_start();
 
 if(preg_match('#\/catalog\/|\/product\/#ui', $_SERVER['REQUEST_URI'], $matches)) {
