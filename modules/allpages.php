@@ -54,6 +54,7 @@ if(Core::$CONT != 'modules/admin'){
         $countG = count($cookies);
     } else {
         $countG = 0;
+        $cookies = array();
     }
 } else {
 

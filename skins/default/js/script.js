@@ -358,7 +358,7 @@ function countCookies(obj) {
     return count;
 }
 
-function addToCard(id_el, text_submit, count) {
+function addToCard(id_el, text_submit, count, this_el) {
     var items = {};
 
     if ($.cookie('items') === undefined) {
@@ -371,7 +371,13 @@ function addToCard(id_el, text_submit, count) {
     }
 
     $('.icon-basket').remove();
-    $('.add-shop').addClass('backet-ok').removeAttr('onclick').text(text_submit);
+
+    if (this_el !== undefined) {
+        $(this_el).addClass('backet-ok').removeAttr('onclick').text(text_submit);
+    } else {
+        $('.add-shop').addClass('backet-ok').removeAttr('onclick').text(text_submit);
+    }
+
     var card = $('a[href$="/order/"]:first-child span').text();
     $('a[href$="/order/"] span').text(++card);
 }

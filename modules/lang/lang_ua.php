@@ -26,3 +26,5 @@ $messG['MIN_GARANTY'] = 'Гарантія';
 $messG['SIZE'] = 'Розмір: ';
 $messG['HEIGHT'] = 'Висота: ';
 $messG['LAYER'] = 'Слої: ';
+$messG['ADDSHOP'] = 'Купити';
+$messG['BASKETOK'] = 'У кошику';

@@ -63,6 +63,18 @@
                 <?=$messG['LAYER']?>
               <span><?=hsc(preg_replace('#([0-9]|\(|\)|\\s)#uis', '', $el['count_layers_'.$lang]))?></span>
             </div>
+
+            <?php if ((int)$el['availability'] == 1) {
+                if (array_key_exists('g'.(int)$el['id'], $cookies)) {
+                    $basket = 'backet-ok';
+                } else {
+                    $basket = '';
+                } ?>
+              <div class="add-shop <?=(!empty($basket)? $basket : '')?>"<?php if (empty($basket)) { ?> onclick="addToCard(<?=(int)$el['id']?>,'<?=$messG['BASKETOK']?>','1', this)"<?php } ?>>
+                  <?=(empty($basket)? '<span class="icon-basket"></span>' : '')?>
+                  <?=(!empty($basket)? $messG['BASKETOK'] : $messG['ADDSHOP'])?>
+              </div>
+            <?php } ?>
           </div>
           <link itemprop="itemCondition" href="http://schema.org/NewCondition">
           <meta itemprop="seller" content="Children's Dream">
