@@ -25,4 +25,5 @@ if($_SERVER['REMOTE_ADDR'] == '5.58.53.67' || $_SERVER['REMOTE_ADDR'] == '178.20
         fwrite($fp, $google);
         fclose($fp);
     }
+
 }
