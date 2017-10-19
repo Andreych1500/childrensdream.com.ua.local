@@ -1,6 +1,6 @@
 <?php
-if(isset($_POST['ok'])){
-    $error = array();
+if (isset($_POST['ok'])) {
+    $error = [];
     $_POST = trimAll($_POST);
 
     $check['records_pagination'] = (empty($_POST['records_pagination'])? 'class="error"' : '');
@@ -24,11 +24,11 @@ if(isset($_POST['ok'])){
     // list
     $list_length_admin = (isset($_POST['list_length_admin'])? implode(',', $_POST['list_length_admin']) : '');
 
-    if(in_array('class="error"', $check)){
+    if (in_array('class="error"', $check)) {
         $error['stop'] = 1;
     }
 
-    if(!count($error)){
+    if (!count($error)) {
         $_POST = mres($_POST);
 
         q(" UPDATE `admin_site_interface` SET

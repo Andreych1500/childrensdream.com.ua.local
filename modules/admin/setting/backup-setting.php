@@ -1,8 +1,8 @@
 <?php
-if(isset($_REQUEST['backup-setting'])){
+if (isset($_REQUEST['backup-setting'])) {
 
-    if(isset($_POST['ok'])){
-        $error = array();
+    if (isset($_POST['ok'])) {
+        $error = [];
         $_POST = trimAll($_POST);
 
         $check['name_db'] = (empty($_POST['name_db'])? 'class="error"' : '');
@@ -11,11 +11,11 @@ if(isset($_REQUEST['backup-setting'])){
         $check['time_delete_zip'] = (($_POST['time_delete_zip'] == 0)? 'class="error"' : '');
         $check['name_prefix_dir_zip'] = (empty($_POST['name_prefix_dir_zip'])? 'class="error"' : '');
 
-        if(in_array('class="error"', $check)){
+        if (in_array('class="error"', $check)) {
             $error['stop'] = 1;
         }
 
-        if(!count($error)){
+        if (!count($error)) {
             $_POST = mres($_POST);
 
             q(" UPDATE `admin_backup_setting` SET

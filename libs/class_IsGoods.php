@@ -1,9 +1,11 @@
 <?php
-class IsGoods {
-    static function cookieGoods($db_table, $cookieGoods, $link_lang, $getParamGoods){
+
+class IsGoods
+{
+    static function cookieGoods($db_table, $cookieGoods, $link_lang, $getParamGoods) {
         $cookies = (array)json_decode($cookieGoods);
 
-        if(count($cookies) == 0){
+        if (count($cookies) == 0) {
             setcookie('items', '', time() - 16700000, '/');
             header("Location: ".$link_lang."order/");
             exit();
@@ -14,13 +16,13 @@ class IsGoods {
             FROM `".mres($db_table)."`
         ");
 
-        while($arElement = $allElement->fetch_assoc()){
+        while ($arElement = $allElement->fetch_assoc()) {
             $arResult[] = $arElement['id'];
         }
 
         // Get goods
-        foreach($cookies as $key => $value){
-            if(!preg_match('#[^\d]#uis', trim($key, 'g')) && in_array(trim($key, 'g'), $arResult)){
+        foreach ($cookies as $key => $value) {
+            if (!preg_match('#[^\d]#uis', trim($key, 'g')) && in_array(trim($key, 'g'), $arResult)) {
                 $ids[] = trim($key, 'g');
             } else {
                 unset($cookies[$key]);
@@ -28,13 +30,13 @@ class IsGoods {
             }
         }
 
-        if(isset($del)){
+        if (isset($del)) {
             setcookie('items', json_encode($cookies), time() + 16700000, '/');
             header("Location: ".$link_lang."order/");
             exit();
         }
 
-        if(count($ids) == 0){
+        if (count($ids) == 0) {
             setcookie('items', '', time() - 16700000, '/');
             header("Location: ".$link_lang."order/");
             exit();
@@ -46,7 +48,7 @@ class IsGoods {
             WHERE `id` IN (".mres(implode(',', $ids)).")
         ");
 
-        if($order->num_rows == 0){
+        if ($order->num_rows == 0) {
             setcookie('items', '', time() - 16700000, '/');
             header("Location: ".$link_lang."order/");
             exit();

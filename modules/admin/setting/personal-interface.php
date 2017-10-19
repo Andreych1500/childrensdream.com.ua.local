@@ -1,16 +1,16 @@
 <?php
-if(isset($_POST['ok'])){
-    $error = array();
+if (isset($_POST['ok'])) {
+    $error = [];
     $_POST = trimAll($_POST);
 
     $check['logo_system'] = (empty($_POST['logo_system'])? 'error' : '');
     $check['brandPhoto'] = (empty($_POST['brandPhoto'])? 'error' : '');
 
-    if(in_array('error', $check)){
+    if (in_array('error', $check)) {
         $error['stop'] = 1;
     }
 
-    if(!count($error)){
+    if (!count($error)) {
         $_POST = mres($_POST);
 
         $_POST['active_shop'] = !isset($_POST['active_shop'])? 0 : (int)$_POST['active_shop'];
@@ -39,21 +39,21 @@ if(isset($_POST['ok'])){
 }
 
 // Ajax
-if(isset($_REQUEST['addPhoto'])){
-    if(count($info = UploaderPhotos::upload($_FILES['photo'], $_POST['size'], $_POST['directory'])) > 0){
+if (isset($_REQUEST['addPhoto'])) {
+    if (count($info = UploaderPhotos::upload($_FILES['photo'], $_POST['size'], $_POST['directory'])) > 0) {
         echo json_encode($info);
     } else {
-        echo json_encode(array('error' => 'warning_file'));
+        echo json_encode(['error' => 'warning_file']);
     }
     exit();
 }
 
-if(isset($_REQUEST['delPhoto']) && !empty($_POST['file_delete'])){
-    if(file_exists($_SERVER['DOCUMENT_ROOT'].$_POST['file_delete'])){
+if (isset($_REQUEST['delPhoto']) && !empty($_POST['file_delete'])) {
+    if (file_exists($_SERVER['DOCUMENT_ROOT'].$_POST['file_delete'])) {
         unlink($_SERVER['DOCUMENT_ROOT'].$_POST['file_delete']);
-        echo json_encode(array('file' => 'delete'));
+        echo json_encode(['file' => 'delete']);
     } else {
-        echo json_encode(array('error' => 'no files'));
+        echo json_encode(['error' => 'no files']);
     }
     exit();
 }

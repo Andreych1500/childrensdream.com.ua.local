@@ -1,318 +1,666 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
-  <loc>https://childrensdream.com.ua/</loc>
-  <changefreq>weekly</changefreq>
-  <priority>1.00</priority>
+    <loc>https://childrensdream.com.ua/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/</loc>
-  <changefreq>weekly</changefreq>
-  <priority>1.00</priority>
+    <loc>https://childrensdream.com.ua/ru/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.00</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+    <loc>https://childrensdream.com.ua/products/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+    <loc>https://childrensdream.com.ua/ru/products/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/comments/</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+    <loc>https://childrensdream.com.ua/comments/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/comments/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/comments/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/comments/</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+    <loc>https://childrensdream.com.ua/ru/comments/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/comments/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/comments/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/certification/</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+    <loc>https://childrensdream.com.ua/certification/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/certification/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/certification/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/certification/</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+    <loc>https://childrensdream.com.ua/ru/certification/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/certification/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/certification/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/contacts/</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+    <loc>https://childrensdream.com.ua/contacts/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/contacts/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/contacts/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/contacts/</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.80</priority>
+    <loc>https://childrensdream.com.ua/ru/contacts/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/contacts/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/contacts/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/privacy-policy/</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/privacy-policy/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/privacy-policy/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/privacy-policy/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/privacy-policy/</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/ru/privacy-policy/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/privacy-policy/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/privacy-policy/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/detskii-ortopedicheskii-matras-lite-organic-cotton/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/products/detskii-ortopedicheskii-matras-lite-organic-cotton/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-ortopedicheskii-matras-lite-organic-cotton/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-ortopedicheskii-matras-lite-organic-cotton/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-ortopedicheskii-matras-lite-organic-cotton/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/ru/products/detskii-ortopedicheskii-matras-lite-organic-cotton/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-ortopedicheskii-matras-lite-organic-cotton/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-ortopedicheskii-matras-lite-organic-cotton/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/detskii-matras-novorozhdennykh-lite-aloe-vera/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/products/detskii-matras-novorozhdennykh-lite-aloe-vera/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-novorozhdennykh-lite-aloe-vera/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-novorozhdennykh-lite-aloe-vera/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-matras-novorozhdennykh-lite-aloe-vera/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/ru/products/detskii-matras-novorozhdennykh-lite-aloe-vera/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-novorozhdennykh-lite-aloe-vera/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-novorozhdennykh-lite-aloe-vera/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/detskii-bespruzhinnyi-matras-lux-organic-cotton/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/products/detskii-bespruzhinnyi-matras-lux-organic-cotton/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-bespruzhinnyi-matras-lux-organic-cotton/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-bespruzhinnyi-matras-lux-organic-cotton/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-bespruzhinnyi-matras-lux-organic-cotton/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/ru/products/detskii-bespruzhinnyi-matras-lux-organic-cotton/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-bespruzhinnyi-matras-lux-organic-cotton/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-bespruzhinnyi-matras-lux-organic-cotton/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/ditiachii-matrats-u-lizhechko-lux-aloe-vera/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/products/ditiachii-matrats-u-lizhechko-lux-aloe-vera/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/ditiachii-matrats-u-lizhechko-lux-aloe-vera/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/ditiachii-matrats-u-lizhechko-lux-aloe-vera/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/ditiachii-matrats-u-lizhechko-lux-aloe-vera/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/ru/products/ditiachii-matrats-u-lizhechko-lux-aloe-vera/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/ditiachii-matrats-u-lizhechko-lux-aloe-vera/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/ditiachii-matrats-u-lizhechko-lux-aloe-vera/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/detskii-matras-ot-odnogo-goda-lite-gold/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/products/detskii-matras-ot-odnogo-goda-lite-gold/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-ot-odnogo-goda-lite-gold/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-ot-odnogo-goda-lite-gold/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-matras-ot-odnogo-goda-lite-gold/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/ru/products/detskii-matras-ot-odnogo-goda-lite-gold/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-ot-odnogo-goda-lite-gold/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-ot-odnogo-goda-lite-gold/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/detskii-matras-lite-silver-care-kokos-porolon-kokos/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/products/detskii-matras-lite-silver-care-kokos-porolon-kokos/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-lite-silver-care-kokos-porolon-kokos/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-lite-silver-care-kokos-porolon-kokos/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-matras-lite-silver-care-kokos-porolon-kokos/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/ru/products/detskii-matras-lite-silver-care-kokos-porolon-kokos/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-lite-silver-care-kokos-porolon-kokos/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-lite-silver-care-kokos-porolon-kokos/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/dvustoronnii-detskii-matras-lux-gold/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/products/dvustoronnii-detskii-matras-lux-gold/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/dvustoronnii-detskii-matras-lux-gold/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/dvustoronnii-detskii-matras-lux-gold/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/dvustoronnii-detskii-matras-lux-gold/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/ru/products/dvustoronnii-detskii-matras-lux-gold/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/dvustoronnii-detskii-matras-lux-gold/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/dvustoronnii-detskii-matras-lux-gold/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/zhorstkii-ditiachii-matrats-lux-silver-care/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/products/zhorstkii-ditiachii-matrats-lux-silver-care/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/zhorstkii-ditiachii-matrats-lux-silver-care/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/zhorstkii-ditiachii-matrats-lux-silver-care/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/zhorstkii-ditiachii-matrats-lux-silver-care/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/ru/products/zhorstkii-ditiachii-matrats-lux-silver-care/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/zhorstkii-ditiachii-matrats-lux-silver-care/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/zhorstkii-ditiachii-matrats-lux-silver-care/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/detskii-matras-kokos-grechka-greco-gold/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/products/detskii-matras-kokos-grechka-greco-gold/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-kokos-grechka-greco-gold/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-kokos-grechka-greco-gold/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-matras-kokos-grechka-greco-gold/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/ru/products/detskii-matras-kokos-grechka-greco-gold/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-kokos-grechka-greco-gold/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-kokos-grechka-greco-gold/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/detskii-kokosovyi-matras-lux-plus-organic-cotton/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/products/detskii-kokosovyi-matras-lux-plus-organic-cotton/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-kokosovyi-matras-lux-plus-organic-cotton/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-kokosovyi-matras-lux-plus-organic-cotton/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-kokosovyi-matras-lux-plus-organic-cotton/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/ru/products/detskii-kokosovyi-matras-lux-plus-organic-cotton/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-kokosovyi-matras-lux-plus-organic-cotton/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-kokosovyi-matras-lux-plus-organic-cotton/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/detskii-kokosovyi-matras-120-na-60-lux-plus-silver-care/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/products/detskii-kokosovyi-matras-120-na-60-lux-plus-silver-care/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-kokosovyi-matras-120-na-60-lux-plus-silver-care/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-kokosovyi-matras-120-na-60-lux-plus-silver-care/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-kokosovyi-matras-120-na-60-lux-plus-silver-care/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/ru/products/detskii-kokosovyi-matras-120-na-60-lux-plus-silver-care/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-kokosovyi-matras-120-na-60-lux-plus-silver-care/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-kokosovyi-matras-120-na-60-lux-plus-silver-care/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/luchshii-ortopedicheskii-detskii-matras-lux-plus-aloe-vera/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/products/luchshii-ortopedicheskii-detskii-matras-lux-plus-aloe-vera/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/luchshii-ortopedicheskii-detskii-matras-lux-plus-aloe-vera/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/luchshii-ortopedicheskii-detskii-matras-lux-plus-aloe-vera/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/luchshii-ortopedicheskii-detskii-matras-lux-plus-aloe-vera/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/ru/products/luchshii-ortopedicheskii-detskii-matras-lux-plus-aloe-vera/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/luchshii-ortopedicheskii-detskii-matras-lux-plus-aloe-vera/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/luchshii-ortopedicheskii-detskii-matras-lux-plus-aloe-vera/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/detskii-anatomicheskii-matras-lux-premium-organic-cotton/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/products/detskii-anatomicheskii-matras-lux-premium-organic-cotton/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-anatomicheskii-matras-lux-premium-organic-cotton/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-anatomicheskii-matras-lux-premium-organic-cotton/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-anatomicheskii-matras-lux-premium-organic-cotton/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/ru/products/detskii-anatomicheskii-matras-lux-premium-organic-cotton/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-anatomicheskii-matras-lux-premium-organic-cotton/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-anatomicheskii-matras-lux-premium-organic-cotton/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/detskii-matras-s-propitkoi-aloe-vera/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/products/detskii-matras-s-propitkoi-aloe-vera/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-s-propitkoi-aloe-vera/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-s-propitkoi-aloe-vera/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-matras-s-propitkoi-aloe-vera/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/ru/products/detskii-matras-s-propitkoi-aloe-vera/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-s-propitkoi-aloe-vera/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-s-propitkoi-aloe-vera/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/komfortnyi-detskii-matras-lux-premium-silver-care/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/products/komfortnyi-detskii-matras-lux-premium-silver-care/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/komfortnyi-detskii-matras-lux-premium-silver-care/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/komfortnyi-detskii-matras-lux-premium-silver-care/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/komfortnyi-detskii-matras-lux-premium-silver-care/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/ru/products/komfortnyi-detskii-matras-lux-premium-silver-care/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/komfortnyi-detskii-matras-lux-premium-silver-care/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/komfortnyi-detskii-matras-lux-premium-silver-care/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/detskii-matras-ekonom-klassa/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/products/detskii-matras-ekonom-klassa/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-ekonom-klassa/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-ekonom-klassa/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-matras-ekonom-klassa/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
-</url>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<url>
-  <loc>https://childrensdream.com.ua/products/detskii-matras-lite-bamboo-kokos-porolon/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/ru/products/detskii-matras-ekonom-klassa/
+    </loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-ekonom-klassa/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-ekonom-klassa/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/detskii-matras-lux-bamboo-kokos-porolon-kokos/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/products/detskii-matras-lite-bamboo-kokos-porolon/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-lite-bamboo-kokos-porolon/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-lite-bamboo-kokos-porolon/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-matras-lite-bamboo-kokos-porolon/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/ru/products/detskii-matras-lite-bamboo-kokos-porolon/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-lite-bamboo-kokos-porolon/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-lite-bamboo-kokos-porolon/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-matras-lux-bamboo-kokos-porolon-kokos/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/products/detskii-matras-lux-bamboo-kokos-porolon-kokos/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-lux-bamboo-kokos-porolon-kokos/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-lux-bamboo-kokos-porolon-kokos/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/detskii-matras-lux-plus-bamboo-kokos-porolon-kokos/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/ru/products/detskii-matras-lux-bamboo-kokos-porolon-kokos/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-lux-bamboo-kokos-porolon-kokos/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-lux-bamboo-kokos-porolon-kokos/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/detskii-matras-lux-premium-bamboo-kokos-porolon-kokos/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/products/detskii-matras-kp-kokos-porolon-grechka/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-kp-kokos-porolon-grechka/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-kp-kokos-porolon-grechka/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/detskii-matras-kp-kokos-porolon/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/ru/products/detskii-matras-kp-kokos-porolon-grechka/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-kp-kokos-porolon-grechka/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-kp-kokos-porolon-grechka/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/detskii-matras-kp-kokos-porolon-grechka/</loc>
-  <changefreq>weekly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/products/detskii-matras-kp-kokos-porolon/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-kp-kokos-porolon/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-kp-kokos-porolon/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/detskii-matras-kpk-kokos-porolon-kokos/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/ru/products/detskii-matras-kp-kokos-porolon/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-kp-kokos-porolon/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-kp-kokos-porolon/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/products/detskii-matras-iunior-5-ti-sl-kokos/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/products/detskii-matras-lux-plus-bamboo-kokos-porolon-kokos/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-lux-plus-bamboo-kokos-porolon-kokos/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-lux-plus-bamboo-kokos-porolon-kokos/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-matras-lux-plus-bamboo-kokos-porolon-kokos/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/ru/products/detskii-matras-lux-plus-bamboo-kokos-porolon-kokos/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-lux-plus-bamboo-kokos-porolon-kokos/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-lux-plus-bamboo-kokos-porolon-kokos/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-matras-lux-premium-bamboo-kokos-porolon-kokos/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/products/detskii-matras-iunior-5-ti-sl-kokos/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-iunior-5-ti-sl-kokos/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-iunior-5-ti-sl-kokos/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-matras-kp-kokos-porolon/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/ru/products/detskii-matras-iunior-5-ti-sl-kokos/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-iunior-5-ti-sl-kokos/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-iunior-5-ti-sl-kokos/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-matras-kp-kokos-porolon-grechka/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/products/detskii-matras-lux-premium-bamboo-kokos-porolon-kokos/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-lux-premium-bamboo-kokos-porolon-kokos/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-lux-premium-bamboo-kokos-porolon-kokos/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-matras-kpk-kokos-porolon-kokos/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/ru/products/detskii-matras-lux-premium-bamboo-kokos-porolon-kokos/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-lux-premium-bamboo-kokos-porolon-kokos/"/>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-lux-premium-bamboo-kokos-porolon-kokos/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 <url>
-  <loc>https://childrensdream.com.ua/ru/products/detskii-matras-iunior-5-ti-sl-kokos/</loc>
-  <changefreq>Monthly</changefreq>
-  <priority>0.64</priority>
+    <loc>https://childrensdream.com.ua/products/detskii-matras-kpk-kokos-porolon-kokos/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-kpk-kokos-porolon-kokos/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-kpk-kokos-porolon-kokos/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
+</url>
+<url>
+    <loc>https://childrensdream.com.ua/ru/products/detskii-matras-kpk-kokos-porolon-kokos/</loc>
+    <xhtml:link rel="alternate"
+                hreflang="ru-UA"
+                href="https://childrensdream.com.ua/ru/products/detskii-matras-kpk-kokos-porolon-kokos/"/>
+    <xhtml:link rel="alternate"
+                hreflang="uk-UA"
+                href="https://childrensdream.com.ua/products/detskii-matras-kpk-kokos-porolon-kokos/"/>
+    <changefreq>Monthly</changefreq>
+    <priority>0.64</priority>
 </url>
 </urlset>

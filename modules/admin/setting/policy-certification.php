@@ -1,8 +1,8 @@
 <?php
-if(isset($_REQUEST['add'])){
+if (isset($_REQUEST['add'])) {
 
-    if(isset($_POST['ok'])){
-        $error = array();
+    if (isset($_POST['ok'])) {
+        $error = [];
         $_POST = trimAll($_POST);
 
         $check['name'] = (empty($_POST['name'])? 'class="error"' : '');
@@ -10,11 +10,11 @@ if(isset($_REQUEST['add'])){
         // list
         $list_length = (isset($_POST['list_length'])? implode(',', $_POST['list_length']) : '');
 
-        if(in_array('class="error"', $check)){
+        if (in_array('class="error"', $check)) {
             $error['stop'] = 1;
         }
 
-        if(!count($error)){
+        if (!count($error)) {
             $_POST = mres($_POST);
 
             $_POST['active'] = !isset($_POST['active'])? 0 : (int)$_POST['active'];
@@ -30,10 +30,10 @@ if(isset($_REQUEST['add'])){
             sessionInfo('/admin/setting/policy-certification/', $messG['Елемент створено успішно!'], 1);
         }
     }
-} elseif(isset($_REQUEST['edit'])) {
+} elseif (isset($_REQUEST['edit'])) {
 
-    if(isset($_POST['ok'])){
-        $error = array();
+    if (isset($_POST['ok'])) {
+        $error = [];
         $_POST = trimAll($_POST);
 
         $check['name'] = (empty($_POST['name'])? 'class="error"' : '');
@@ -47,11 +47,11 @@ if(isset($_REQUEST['add'])){
         $list_alt = (isset($_POST['list_alt'])? implode('#|#', $_POST['list_alt']) : '');
         $text_list = (isset($_POST['text'])? implode('#|#', $_POST['text']) : '');
 
-        if(in_array('class="error"', $check)){
+        if (in_array('class="error"', $check)) {
             $error['stop'] = 1;
         }
 
-        if(!count($error)){
+        if (!count($error)) {
             $_POST = mres($_POST);
 
             $_POST['active'] = !isset($_POST['active'])? 0 : (int)$_POST['active'];
@@ -79,37 +79,37 @@ if(isset($_REQUEST['add'])){
         WHERE `id` = ".(int)$_REQUEST['edit']."
     ");
 
-    if($arResult->num_rows == 0){
+    if ($arResult->num_rows == 0) {
         sessionInfo('/admin/setting/policy-certification/', $messG['Eлемент з таким ID неіснує!']);
     } else {
         $arResult = $arResult->fetch_assoc();
     }
 } else {
 
-    if(isset($_POST['arr']) && count($_POST['arr']) > 0){ // Dynamic edit
+    if (isset($_POST['arr']) && count($_POST['arr']) > 0) { // Dynamic edit
         DynamicEditMenu::edit($_POST['arr'], 'admin_policy_certification', '/admin/setting/policy-certification/', $messG['Редагування пройшло успішно!']);
     }
 
-    if(isset($_REQUEST['del'])){ // Delete one
+    if (isset($_REQUEST['del'])) { // Delete one
         deleteElement($_REQUEST['del'], 'admin_policy_certification', '/admin/setting/policy-certification/', $messG['Видалення пройшло успішно!']);
     }
 
-    if(isset($_POST['delete']) && isset($_POST['ids'])){ // Delete ids
+    if (isset($_POST['delete']) && isset($_POST['ids'])) { // Delete ids
         deleteElement(implode(',', $_POST['ids']), 'admin_policy_certification', '/admin/setting/policy-certification/', $messG['Видалення пройшло успішно!']);
     }
 
-    if(isset($_POST['deactivate']) && isset($_POST['ids'])){ // Deactivate
+    if (isset($_POST['deactivate']) && isset($_POST['ids'])) { // Deactivate
         deactivateElement(implode(',', $_POST['ids']), 'admin_policy_certification');
         sessionInfo('/admin/setting/policy-certification/', $messG['Деактивація пройшла успішно!'], 1);
     }
 
-    if(isset($_POST['activate']) && isset($_POST['ids'])){ // Activate
+    if (isset($_POST['activate']) && isset($_POST['ids'])) { // Activate
         activeElement(implode(',', $_POST['ids']), 'admin_policy_certification');
         sessionInfo('/admin/setting/policy-certification/', $messG['Активація пройшла успішно!'], 1);
     }
-    
+
     // PAGINATION
-    $certification = Pagination::formNav(array(
+    $certification = Pagination::formNav([
         'numPage'     => (!isset($_GET['numPage'])? 1 : (int)$_GET['numPage']),
         'count_show'  => 5,
         'records_el'  => $adminParam['records_pagination'],
@@ -122,5 +122,5 @@ if(isset($_REQUEST['add'])){
         'notFound404' => 'N',
         'lang'        => '',
         'link_lang'   => '',
-    ));
+    ]);
 }

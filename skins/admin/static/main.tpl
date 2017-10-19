@@ -48,7 +48,7 @@
           <td><a href="<?=(isMobile()? 'tel' : 'callto')?>:38-097-996-73-12"><?=$arResult['phone']?></a></td>
         </tr>
         <tr>
-          <td><?=$mess['Email']?>Email:</td>
+          <td><?=$mess['Email']?>:</td>
           <td><a href="mailto:<?=$arResult['email']?>"><?=$arResult['email']?></a></td>
         </tr>
       </table>

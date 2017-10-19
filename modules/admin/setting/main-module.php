@@ -1,6 +1,6 @@
 <?php
-if(isset($_POST['ok'])){
-    $error = array();
+if (isset($_POST['ok'])) {
+    $error = [];
     $_POST = trimAll($_POST);
 
     $check['from_email'] = ((empty($_POST['from_email']) || !filter_var($_POST['from_email'], FILTER_VALIDATE_EMAIL))? 'class="error"' : '');
@@ -8,11 +8,11 @@ if(isset($_POST['ok'])){
     $check['url_site'] = (empty($_POST['url_site'])? 'class="error"' : '');
     $check['url_http_site'] = (empty($_POST['url_http_site'])? 'class="error"' : '');
 
-    if(in_array('class="error"', $check)){
+    if (in_array('class="error"', $check)) {
         $error['stop'] = 1;
     }
 
-    if(!count($error)){
+    if (!count($error)) {
         $_POST = mres($_POST);
 
         q(" UPDATE `admin_main_module` SET
@@ -29,7 +29,7 @@ if(isset($_POST['ok'])){
     }
 }
 
-if(isset($_REQUEST['access_publick_page'])){
+if (isset($_REQUEST['access_publick_page'])) {
     q("
         UPDATE `admin_main_module` SET
         `access_publick_page` = ".(int)$_REQUEST['access_publick_page']."

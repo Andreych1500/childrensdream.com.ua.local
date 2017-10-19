@@ -3,9 +3,9 @@
 class UploaderPhotos
 {
     static $error = '';
-    static $tmp = array('image/jpeg', 'image/gif', 'image/png');
-    static $tup = array('jpg', 'gif', 'jpeg', 'png');
-    static $info = array();
+    static $tmp = ['image/jpeg', 'image/gif', 'image/png'];
+    static $tup = ['jpg', 'gif', 'jpeg', 'png'];
+    static $info = [];
 
     static function upload($file, $width, $directory) {
         if ($file['size'] < 500 || $file['size'] > 50000000) {

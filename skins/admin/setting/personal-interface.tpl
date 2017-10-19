@@ -77,7 +77,7 @@
       </div>
 
       <div class="input-value">
-        <div class="name-section"><?=$mess['Версія PHP']?>Email:</div>
+        <div class="name-section">Email:</div>
         <input type="text" name="email" value="<?=(isset($error)? hsc($_POST['email']) : $arResult['email'])?>">
       </div>
 

@@ -1,22 +1,22 @@
 <?php
-if(isset($_POST['ok'])){
-    if(count($_POST['tables']) > 0){
+if (isset($_POST['ok'])) {
+    if (count($_POST['tables']) > 0) {
         $dir = $_SERVER['DOCUMENT_ROOT'].'/uploaded/db_tables/';
         ExpodtImportDB::removeLastFile($dir);
 
-        if($_POST['export'] == 'mysql'){
-            foreach($_POST['tables'] as $table){
+        if ($_POST['export'] == 'mysql') {
+            foreach ($_POST['tables'] as $table) {
                 ExpodtImportDB::table_structureMySql($table, $dir);
                 ExpodtImportDB::table_dataMySql($table, $dir);
                 ExpodtImportDB::goToZip($table, $dir, 'sql');
             }
-        } elseif($_POST['export'] == 'csv'){
-            foreach($_POST['tables'] as $table){
-               ExpodtImportDB::table_dataCsv($table, $dir);
-               ExpodtImportDB::goToZip($table, $dir, 'csv');
+        } elseif ($_POST['export'] == 'csv') {
+            foreach ($_POST['tables'] as $table) {
+                ExpodtImportDB::table_dataCsv($table, $dir);
+                ExpodtImportDB::goToZip($table, $dir, 'csv');
             }
-        } elseif($_POST['export'] == 'xls'){
-            foreach($_POST['tables'] as $table){
+        } elseif ($_POST['export'] == 'xls') {
+            foreach ($_POST['tables'] as $table) {
                 ExpodtImportDB::table_structureXls($table, $dir, 'xls');
                 ExpodtImportDB::goToZip($table, $dir, 'xls');
             }
@@ -31,8 +31,8 @@ if(isset($_POST['ok'])){
     }
 }
 
-if(isset($_REQUEST['download'])){
-    if(!empty($_SESSION['tables']) && file_exists($_SESSION['tables'])){
+if (isset($_REQUEST['download'])) {
+    if (!empty($_SESSION['tables']) && file_exists($_SESSION['tables'])) {
         $file = $_SESSION['tables'];
         unset($_SESSION['tables']);
         file_force_download($file);
@@ -41,12 +41,12 @@ if(isset($_REQUEST['download'])){
     }
 }
 
-if(isset($_REQUEST['ajax'])){
+if (isset($_REQUEST['ajax'])) {
     $tables = ExpodtImportDB::getTable(Core::$DB_NAME);
-    if(count($tables) > 0){
+    if (count($tables) > 0) {
         echo json_encode($tables);
     } else {
-        echo json_encode(array('error' => 'No tables'));
+        echo json_encode(['error' => 'No tables']);
     }
     exit();
 }

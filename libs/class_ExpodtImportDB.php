@@ -1,8 +1,10 @@
 <?php
-class ExpodtImportDB{
-    static $tables = array();
 
-    static function table_structureXls($table, $dir, $file){
+class ExpodtImportDB
+{
+    static $tables = [];
+
+    static function table_structureXls($table, $dir, $file) {
         $table = mres($table);
 
         require_once($_SERVER['DOCUMENT_ROOT'].'/libs/PHPExcel/Classes/PHPExcel.php');
@@ -25,13 +27,13 @@ class ExpodtImportDB{
         $i = 4;
         $select = q("SELECT * FROM `".$table."`");
 
-        while($row = hsc($select->fetch_assoc())){
+        while ($row = hsc($select->fetch_assoc())) {
 
             $j = 0;
-            foreach($row as $column => $value){
-                if($i == 4){
-                    $sheet->setCellValueByColumnAndRow($j, $i-1, $column);
-                    $sheet->getStyleByColumnAndRow($j, $i-1)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+            foreach ($row as $column => $value) {
+                if ($i == 4) {
+                    $sheet->setCellValueByColumnAndRow($j, $i - 1, $column);
+                    $sheet->getStyleByColumnAndRow($j, $i - 1)->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
                 }
 
                 $sheet->setCellValueByColumnAndRow($j, $i, $value);
@@ -51,16 +53,16 @@ class ExpodtImportDB{
         $sheet->mergeCells('A2:'.$last_letter.'2');
         $sheet->getStyle('A2')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
 
-        $styleArray = array(
-            'borders' => array(
-                'allborders' => array(
+        $styleArray = [
+            'borders' => [
+                'allborders' => [
                     'style' => PHPExcel_Style_Border::BORDER_THIN,
-                    'color' => array(
+                    'color' => [
                         'rgb' => '#2A8CFD'
-                    )
-                )
-            )
-        );
+                    ]
+                ]
+            ]
+        ];
 
         $xls->getActiveSheet()->getStyle('A2:'.$last_letter.'2')->applyFromArray($styleArray);
         unset($styleArray);
@@ -85,7 +87,7 @@ class ExpodtImportDB{
             $logo->setWorksheet($sheet);
         }
 
-        for($col = 'A'; $col !== $last_plus_one; $col++) {
+        for ($col = 'A'; $col !== $last_plus_one; $col++) {
             $sheet->getColumnDimension($col)->setWidth(15);
         }
 
@@ -96,18 +98,18 @@ class ExpodtImportDB{
         return true;
     }
 
-    static function getNameFromNumber($num){
+    static function getNameFromNumber($num) {
         $numeric = ($num - 1) % 26;
         $letter = chr(65 + $numeric);
         $num2 = intval(($num - 1) / 26);
-        if($num2 > 0){
+        if ($num2 > 0) {
             return ExpodtImportDB::getNameFromNumber($num2).$letter;
         } else {
             return $letter;
         }
     }
 
-    static function table_dataCsv($table, $dir, $file){
+    static function table_dataCsv($table, $dir, $file) {
         $csv_file = '';
         $delta = 500; // Кількість записів за один раз
         $start = 0;
@@ -116,18 +118,18 @@ class ExpodtImportDB{
         $result = q("SHOW COLUMNS FROM `".$table."`;");
 
         $i = 0;
-        while($row = $result->fetch_assoc()){
+        while ($row = $result->fetch_assoc()) {
             $csv_file .= (($i == 0)? ''.$row["Field"].'' : ';'.$row["Field"].'');
             ++$i;
         }
         $csv_file .= "\r\n";
 
-        while($count > 0){
+        while ($count > 0) {
             $result = q("SELECT * FROM `".$table."` LIMIT ".$start.", ".$delta.";");
 
-            while($row = $result->fetch_assoc()){
+            while ($row = $result->fetch_assoc()) {
                 $j = 0;
-                foreach($row as $index => $field){
+                foreach ($row as $index => $field) {
                     $csv_file .= (($j == 0)? ''.mres($field).'' : ';'.mres($field).'');
                     ++$j;
                 }
@@ -140,7 +142,7 @@ class ExpodtImportDB{
         file_put_contents($dir.$table.'.'.$file, $csv_file, FILE_APPEND);
     }
 
-    static function table_structureMySql($table, $dir){
+    static function table_structureMySql($table, $dir) {
         $content = "DROP TABLE IF EXISTS `".$table."`;\n\n";
         $result = q("SHOW CREATE TABLE `".$table."`;")->fetch_assoc();
         $content .= $result['Create Table'].";\n\n";
@@ -148,30 +150,30 @@ class ExpodtImportDB{
         file_put_contents($dir.$table.'.sql', $content);
     }
 
-    static function table_dataMySql($table, $dir){
+    static function table_dataMySql($table, $dir) {
         $table = mres($table);
         $count = current(q("SELECT COUNT(*) FROM `".$table."`;")->fetch_assoc());
         $delta = 500; // Кількість записів за один раз
         $start = 0;
 
-        if($count > 0){
+        if ($count > 0) {
             $result = q("SHOW COLUMNS FROM `".$table."`;");
 
             $content = "INSERT INTO `".$table."` (";
             $i = 0;
-            while($row = $result->fetch_assoc()){
+            while ($row = $result->fetch_assoc()) {
                 $content .= (($i == 0)? '`'.$row['Field'].'`' : ', `'.$row['Field'].'`');
                 ++$i;
             }
             $content .= ") VALUES";
 
-            while($count > 0){
+            while ($count > 0) {
                 $result = q("SELECT * FROM `".$table."` LIMIT ".$start.", ".$delta.";");
 
-                while($row = $result->fetch_assoc()){
+                while ($row = $result->fetch_assoc()) {
                     $content .= "\n(";
                     $j = 0;
-                    foreach($row as $index => $field){
+                    foreach ($row as $index => $field) {
                         $content .= (($j == 0)? $field : ', \''.mres($field).'\'');
                         ++$j;
                     }
@@ -186,32 +188,32 @@ class ExpodtImportDB{
         }
     }
 
-    static function goToZip($table, $dir, $file){
+    static function goToZip($table, $dir, $file) {
         $zip = new ZipArchive();
-        if($zip->open($dir.'tables.zip', ZipArchive::CREATE) === true){
+        if ($zip->open($dir.'tables.zip', ZipArchive::CREATE) === true) {
             $offset_dirs = strlen($_SERVER['DOCUMENT_ROOT']) - strlen($_SERVER['HTTP_HOST']);
             $table = $dir.$table.'.'.$file;
             $local = substr($table, strlen($dir));
             $zip->addFile($table, $local);
             $zip->close();
 
-            if(file_exists($table)){
+            if (file_exists($table)) {
                 unlink($table);
             }
         }
     }
 
-    static function removeLastFile($dir){
-        if($objs = glob($dir."*")){
-            foreach($objs as $obj){
+    static function removeLastFile($dir) {
+        if ($objs = glob($dir."*")) {
+            foreach ($objs as $obj) {
                 is_dir($obj)? removeDirectory($obj) : unlink($obj);
             }
         }
     }
 
-    static function getTable($name_db){
+    static function getTable($name_db) {
         $arResult = q("SHOW TABLES FROM `".mres($name_db)."`");
-        while($table = $arResult->fetch_assoc()){
+        while ($table = $arResult->fetch_assoc()) {
             self::$tables[] = current($table);
         }
 

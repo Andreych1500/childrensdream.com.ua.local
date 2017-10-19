@@ -1,8 +1,8 @@
 <?php
-if(!$globalAccess){
+if (!$globalAccess) {
     // Auth form
-    if(isset($_POST['login'], $_POST['pass'])){
-        $error = array();
+    if (isset($_POST['login'], $_POST['pass'])) {
+        $error = [];
 
         $res = q("
             SELECT *
@@ -14,11 +14,11 @@ if(!$globalAccess){
             LIMIT 1  
         ");
 
-        if($res->num_rows){
+        if ($res->num_rows) {
             $_SESSION['user'] = $res->fetch_assoc();
             $status = 'ok';
 
-            if(isset($_POST['save'])){
+            if (isset($_POST['save'])) {
                 q("
                     UPDATE `admin_users_list` SET
                     `hash` = '".myHash($_SESSION['user']['id'].$_SESSION['user']['login'].$_SESSION['user']['email'])."',
@@ -45,7 +45,7 @@ if(!$globalAccess){
 	      WHERE `id` = 1
 	  ")->fetch_assoc());
 
-    if($arResult['active_shop']){
+    if ($arResult['active_shop']) {
         $actProduct = q("
             SELECT `id`
             FROM `products`

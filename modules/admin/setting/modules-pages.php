@@ -1,7 +1,7 @@
 <?php
-if(isset($_REQUEST['add'])){
-    if(isset($_POST['ok'])){
-        $error = array();
+if (isset($_REQUEST['add'])) {
+    if (isset($_POST['ok'])) {
+        $error = [];
         $_POST = trimAll($_POST);
 
         $check['module'] = (empty($_POST['module'])? 'class="error"' : '');
@@ -13,18 +13,18 @@ if(isset($_REQUEST['add'])){
             LIMIT 1
         ");
 
-        if($primary->num_rows > 0){
+        if ($primary->num_rows > 0) {
             $check['module'] = 'class="error"';
         }
 
         // list
         $list_length = (isset($_POST['list_length'])? implode(',', $_POST['list_length']) : '');
 
-        if(in_array('class="error"', $check)){
+        if (in_array('class="error"', $check)) {
             $error['stop'] = 1;
         }
 
-        if(!count($error)){
+        if (!count($error)) {
             $_POST = mres($_POST);
 
             $_POST['active'] = !isset($_POST['active'])? 0 : (int)$_POST['active'];
@@ -43,9 +43,9 @@ if(isset($_REQUEST['add'])){
             sessionInfo('/admin/setting/modules-pages/', $messG['Елемент створено успішно!'], 1);
         }
     }
-} elseif(isset($_REQUEST['edit'])) {
-    if(isset($_POST['ok'])){
-        $error = array();
+} elseif (isset($_REQUEST['edit'])) {
+    if (isset($_POST['ok'])) {
+        $error = [];
         $_POST = trimAll($_POST);
 
         $check['module'] = (empty($_POST['module'])? 'class="error"' : '');
@@ -60,7 +60,7 @@ if(isset($_REQUEST['add'])){
             LIMIT 1
         ");
 
-        if($primary->num_rows > 0){
+        if ($primary->num_rows > 0) {
             $check['module'] = 'class="error"';
         }
 
@@ -73,11 +73,11 @@ if(isset($_REQUEST['add'])){
         // Photo
         $og_image = ((isset($_POST['og_image']))? explode('|', $_POST['og_image']) : '');
 
-        if(in_array('class="error"', $check)){
+        if (in_array('class="error"', $check)) {
             $error['stop'] = 1;
         }
 
-        if(!count($error)){
+        if (!count($error)) {
             $_POST = mres($_POST);
 
             $_POST['active'] = !isset($_POST['active'])? 0 : (int)$_POST['active'];
@@ -112,37 +112,37 @@ if(isset($_REQUEST['add'])){
         WHERE `id` = ".(int)$_REQUEST['edit']."
     ");
 
-    if($arResult->num_rows == 0){
+    if ($arResult->num_rows == 0) {
         sessionInfo('/admin/setting/modules-pages/', $messG['Eлемент з таким ID неіснує!']);
     } else {
         $arResult = $arResult->fetch_assoc();
     }
 } else {
 
-    if(isset($_POST['arr']) && count($_POST['arr']) > 0){ // Dynamic edit
+    if (isset($_POST['arr']) && count($_POST['arr']) > 0) { // Dynamic edit
         DynamicEditMenu::edit($_POST['arr'], 'admin_module_pages', '/admin/setting/modules-pages/', $messG['Редагування пройшло успішно!']);
     }
 
-    if(isset($_REQUEST['del'])){ // Delete one
+    if (isset($_REQUEST['del'])) { // Delete one
         deleteElement($_REQUEST['del'], 'admin_module_pages', '/admin/setting/modules-pages/', $messG['Видалення пройшло успішно!']);
     }
 
-    if(isset($_POST['delete']) && isset($_POST['ids'])){ // Delete ids
+    if (isset($_POST['delete']) && isset($_POST['ids'])) { // Delete ids
         deleteElement(implode(',', $_POST['ids']), 'admin_module_pages', '/admin/setting/modules-pages/', $messG['Видалення пройшло успішно!']);
     }
 
-    if(isset($_POST['deactivate']) && isset($_POST['ids'])){ // Deactivate
+    if (isset($_POST['deactivate']) && isset($_POST['ids'])) { // Deactivate
         deactivateElement(implode(',', $_POST['ids']), 'admin_module_pages');
         sessionInfo('/admin/setting/modules-pages/', $messG['Деактивація пройшла успішно!'], 1);
     }
 
-    if(isset($_POST['activate']) && isset($_POST['ids'])){ // Activate
+    if (isset($_POST['activate']) && isset($_POST['ids'])) { // Activate
         activeElement(implode(',', $_POST['ids']), 'admin_module_pages');
         sessionInfo('/admin/setting/modules-pages/', $messG['Активація пройшла успішно!'], 1);
     }
 
     // Filter
-    if(isset($_REQUEST['filterReset'])){
+    if (isset($_REQUEST['filterReset'])) {
         unset($_SESSION['ADM_filter']['module_pages']);
         header('Location: /admin/setting/modules-pages/');
     }
@@ -152,7 +152,7 @@ if(isset($_REQUEST['add'])){
     $filter = (!empty($_SESSION['ADM_filter']['module_pages'])? AdminFilter::filter($_SESSION['ADM_filter']['module_pages'], 'admin_module_pages') : '');
 
     // Pagination
-    $module = Pagination::formNav(array(
+    $module = Pagination::formNav([
         'numPage'     => (!isset($_GET['numPage'])? 1 : (int)$_GET['numPage']),
         'count_show'  => 5,
         'records_el'  => $adminParam['records_pagination'],
@@ -165,5 +165,5 @@ if(isset($_REQUEST['add'])){
         'notFound404' => 'N',
         'lang'        => '',
         'link_lang'   => '',
-    ));
+    ]);
 }

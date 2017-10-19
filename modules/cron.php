@@ -1,12 +1,12 @@
 <?php
-if($_SERVER['REMOTE_ADDR'] == '5.58.53.67' || $_SERVER['REMOTE_ADDR'] == '178.20.153.111'){
+if ($_SERVER['REMOTE_ADDR'] == '5.58.53.67' || $_SERVER['REMOTE_ADDR'] == '178.20.153.111') {
     // Создаем поток
-    $opts = array(
-        'http' => array(
+    $opts = [
+        'http' => [
             'method' => "GET",
             'header' => "Accept-language: en\r\n"."Cookie: foo=bar\r\n"
-        )
-    );
+        ]
+    ];
 
     $context = stream_context_create($opts);
 
@@ -20,7 +20,7 @@ if($_SERVER['REMOTE_ADDR'] == '5.58.53.67' || $_SERVER['REMOTE_ADDR'] == '178.20
     //     fclose($fp);
     // }
 
-    if($google){
+    if ($google) {
         $fp = fopen($_SERVER['DOCUMENT_ROOT']."/skins/default/get-js/analytics.js", "w");
         fwrite($fp, $google);
         fclose($fp);

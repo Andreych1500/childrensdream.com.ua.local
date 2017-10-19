@@ -1,34 +1,36 @@
 <?php
-class DynamicEditMenu{
+
+class DynamicEditMenu
+{
     static $ids = '';
     static $qText = '';
-    static $primary = array(
+    static $primary = [
         0 => 'symbol_code',
         1 => 'login',
         2 => 'email',
         3 => 'module'
-    );
+    ];
 
-    static function edit($arrPost, $db_table, $url){
+    static function edit($arrPost, $db_table, $url) {
 
-        foreach($arrPost as $k => $array){
+        foreach ($arrPost as $k => $array) {
 
             // No checkbox
-            if(!isset($array['active'])){
+            if (!isset($array['active'])) {
                 $array['active'] = 0;
             }
 
-            foreach($array as $name => $value){
+            foreach ($array as $name => $value) {
                 $when[$name][$k] = $value;
             }
 
             self::$ids .= $k.',';
         }
 
-        for($i = 0; $i < count(self::$primary); ++$i){ // Primary key
-            if(isset($when[self::$primary[$i]])){
-                foreach(array_count_values($when[self::$primary[$i]]) as $v){
-                    if($v > 1){
+        for ($i = 0; $i < count(self::$primary); ++$i) { // Primary key
+            if (isset($when[self::$primary[$i]])) {
+                foreach (array_count_values($when[self::$primary[$i]]) as $v) {
+                    if ($v > 1) {
                         sessionInfo($url, self::$primary[$i].' primary key!');
                     }
                 }
@@ -37,9 +39,9 @@ class DynamicEditMenu{
 
         self::$ids = trim(self::$ids, ',');
 
-        foreach($when as $colum => $arrayId){
+        foreach ($when as $colum => $arrayId) {
             self::$qText .= "`".$colum."` = CASE ";
-            foreach($arrayId as $id => $value){
+            foreach ($arrayId as $id => $value) {
                 self::$qText .= " WHEN `id` = ".$id." THEN '".mres($value)."'";
             }
             self::$qText .= " END,";

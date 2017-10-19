@@ -1,5 +1,5 @@
 <?php
-if(isset($_GET['id'], $_GET['hash'])){
+if (isset($_GET['id'], $_GET['hash'])) {
     $user = q("
         SELECT *
         FROM `admin_users_list`
@@ -9,7 +9,7 @@ if(isset($_GET['id'], $_GET['hash'])){
         LIMIT 1
     ");
 
-    if($user->num_rows){
+    if ($user->num_rows) {
         $active = (isset($_GET['active'])? '`active` = 1,' : '');
 
         q(" UPDATE `admin_users_list` SET
@@ -18,13 +18,13 @@ if(isset($_GET['id'], $_GET['hash'])){
     		    WHERE `id` = ".(int)$_GET['id']."
     		    AND `hash` = '".mres($_GET['hash'])."'
       	");
-        
+
         sessionInfo('/cab/activate/', 'Активація пройшла успішно!');
     } else {
         sessionInfo('/cab/activate/', 'Ви пройшли по неправельній силці!');
     }
 } else {
-    if(isset($_SESSION['info']['text'])){
+    if (isset($_SESSION['info']['text'])) {
         $last_info = $_SESSION['info']['text'];
         unset($_SESSION['info']);
     } else {

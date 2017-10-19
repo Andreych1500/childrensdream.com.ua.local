@@ -1,27 +1,27 @@
 <?php
-$elRedirect = array(
+$elRedirect = [
     'detskii-ortopedicheskii-matras-lite-organic-cotton'         => 'detskii-matras-lite-organic-cotton-kokos-porolon',
     'detskii-matras-novorozhdennykh-lite-aloe-vera'              => 'detskii-matras-lite-aloe-vera-kokos-porolon',
     'detskii-bespruzhinnyi-matras-lux-organic-cotton'            => 'detskii-matras-lux-organic-cotton-kokos-porolon-kokos',
     'ditiachii-matrats-u-lizhechko-lux-aloe-vera'                => 'detskii-matras-lux-aloe-vera-kokos-porolon-kokos',
-	'detskii-matras-ot-odnogo-goda-lite-gold'                    => 'detskii-matras-lite-gold-kokos-porolon',
-	'detskii-matras-serebrianoi-niti-lite-silver-care'           => 'detskii-matras-lite-silver-care-kokos-porolon-kokos',
-	'dvustoronnii-detskii-matras-lux-gold'                       => 'detskii-matras-lux-gold-kokos-porolon-kokos',
-	'zhorstkii-ditiachii-matrats-lux-silver-care'                => 'detskii-matras-lux-silver-care-kokos-porolon',
-	'detskii-matras-kokos-grechka-greco-gold'                    => 'detskii-matras-greco-gold-kokos-porolon-grechka',
-	'detskii-kokosovyi-matras-lux-plus-organic-cotton'           => 'detskii-matras-lux-plus-organic-cotton-kokos-porolon-kokos',
-	'detskii-kokosovyi-matras-120-na-60-lux-plus-silver-care'    => 'detskii-matras-lux-plus-silver-care-kokos-porolon-kokos',
-	'luchshii-ortopedicheskii-detskii-matras-lux-plus-aloe-vera' => 'detskii-matras-lux-plus-aloe-vera-kokos-porolon-kokos',
-	'detskii-anatomicheskii-matras-lux-premium-organic-cotton'   => 'detskii-matras-lux-premium-organic-cotton-kokos-porolon-kokos'
-);
+    'detskii-matras-ot-odnogo-goda-lite-gold'                    => 'detskii-matras-lite-gold-kokos-porolon',
+    'detskii-matras-serebrianoi-niti-lite-silver-care'           => 'detskii-matras-lite-silver-care-kokos-porolon-kokos',
+    'dvustoronnii-detskii-matras-lux-gold'                       => 'detskii-matras-lux-gold-kokos-porolon-kokos',
+    'zhorstkii-ditiachii-matrats-lux-silver-care'                => 'detskii-matras-lux-silver-care-kokos-porolon',
+    'detskii-matras-kokos-grechka-greco-gold'                    => 'detskii-matras-greco-gold-kokos-porolon-grechka',
+    'detskii-kokosovyi-matras-lux-plus-organic-cotton'           => 'detskii-matras-lux-plus-organic-cotton-kokos-porolon-kokos',
+    'detskii-kokosovyi-matras-120-na-60-lux-plus-silver-care'    => 'detskii-matras-lux-plus-silver-care-kokos-porolon-kokos',
+    'luchshii-ortopedicheskii-detskii-matras-lux-plus-aloe-vera' => 'detskii-matras-lux-plus-aloe-vera-kokos-porolon-kokos',
+    'detskii-anatomicheskii-matras-lux-premium-organic-cotton'   => 'detskii-matras-lux-premium-organic-cotton-kokos-porolon-kokos'
+];
 
-if($r = array_search($_GET['page'], $elRedirect)){
+if ($r = array_search($_GET['page'], $elRedirect)) {
     header("HTTP/1.1 301 Moved Permanently");
     header("Location: ".$arMainParam['url_http_site'].$link_lang."products/".$r."/");
     exit();
 }
 
-if($_GET['page'] == 'main'){
+if ($_GET['page'] == 'main') {
     // All elements
     $products = q("
       SELECT `id`,`name_ua`,`symbol_code`,`price`,`availability`,`img_anons`,`name_ru`,`img_seo_alt_ua`,`img_seo_alt_ru`,`description_ua`,`description_ru`, `height`, `size`, `count_layers_ru`, `count_layers_ua`
@@ -39,7 +39,7 @@ if($_GET['page'] == 'main'){
       LIMIT 1
     ");
 
-    if($products->num_rows < 1 || isset($_GET['key1'])){
+    if ($products->num_rows < 1 || isset($_GET['key1'])) {
         header("HTTP/1.0 404 Not Found");
         echo bufferStartError404($lang, $link_lang);
         exit();
@@ -57,41 +57,41 @@ if($_GET['page'] == 'main'){
 
     // Alternate lang
     $module_url = (($GM['module'] == 'static')? '' : $GM['module'].'/'.$arResult['symbol_code'].'/');
-    Core::$META['alternate'] = $arMainParam['url_http_site'].$link_lang.$module_url;
-    foreach(Core::$LINK_LANG as $k => $v){
+    Core::$META['alternate'] = $arMainParam['url_http_site'].'/'.$module_url;
+    foreach (Core::$LINK_LANG as $k => $v) {
         Core::$META['alternate_'.$v] = $arMainParam['url_http_site'].(($v == 'ua')? '/' : '/'.$v.'/').$module_url;
     }
 
     // --- RDFa OPEN GRAPH ---
-    if($GM['open_graph_page']){
+    if ($GM['open_graph_page']) {
         $contentOG = '';
 
         $contentOG .= '<meta property="og:title" content="'.hsc($arResult['meta_title_'.$lang]).'">
         <meta property="og:description"  content="'.hsc($arResult['meta_description_'.$lang]).'">';
 
-        if(!empty($arResult['og_type'])){
+        if (!empty($arResult['og_type'])) {
             $contentOG .= '<meta property="og:type" content="'.hsc($arResult['og_type']).'">';
         }
-        if(!empty($arResult['og_url'])){
+        if (!empty($arResult['og_url'])) {
             $contentOG .= '<meta property="og:url" content="'.$arMainParam['url_http_site'].'/'.$lang.hsc($arResult['og_url']).'">';
         }
-        if(!empty($arResult['og_image'])){
+        if (!empty($arResult['og_image'])) {
             $contentOG .= '<meta property="og:image" content="'.$arMainParam['url_http_site'].hsc($arResult['og_image']).'">';
         }
     }
 
     // Slider photo
     $slidePhoto = explode('#', $arResult['img_more']);
-    foreach($slidePhoto as $value){
-        if(!empty($value)){
+    foreach ($slidePhoto as $value) {
+        if (!empty($value)) {
             $photos[] = explode('|', $value);
         }
     }
 
     // Goods in basket
-    if(isset($_COOKIE['items'])){
+    if (isset($_COOKIE['items'])) {
         $cookies = (array)json_decode($_COOKIE['items']);
-        if(array_key_exists('g'.$arResult['id'], $cookies)){
+        if (array_key_exists('g'.$arResult['id'], $cookies)) {
             $basket = 'backet-ok';
         }
     }

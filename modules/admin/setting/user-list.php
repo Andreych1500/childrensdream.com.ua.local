@@ -1,7 +1,7 @@
 <?php
-if(isset($_REQUEST['add'])){
-    if(isset($_POST['ok'])){
-        $error = array();
+if (isset($_REQUEST['add'])) {
+    if (isset($_POST['ok'])) {
+        $error = [];
         $_POST = trimAll($_POST);
 
         $check['name'] = (empty($_POST['name'])? 'class="error"' : '');
@@ -10,8 +10,8 @@ if(isset($_REQUEST['add'])){
         $check['email'] = ((empty($_POST['email']) || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL))? 'class="error"' : '');
         $check['pass'] = ((empty($_POST['pass']) || strlen($_POST['pass']) < 6)? 'class="error"' : '');
         $check['check_pass'] = ((empty($_POST['check_pass']) || $_POST['pass'] != $_POST['check_pass'])? 'class="error"' : '');
-        
-        if(in_array('class="error"', $check)){
+
+        if (in_array('class="error"', $check)) {
             $error['stop'] = 1;
         } else {
             $res = q("
@@ -22,13 +22,13 @@ if(isset($_REQUEST['add'])){
                 LIMIT 1
             ");
 
-            if($res->num_rows){
+            if ($res->num_rows) {
                 $error['stop'] = 1;
                 sessionInfo('/admin/setting/user-list/?add='.$_REQUEST['add'], $messG['Користувач з таким логіном або Email вже існує!'], 0, 0);
             }
         }
 
-        if(!count($error)){
+        if (!count($error)) {
             $_POST = mres($_POST);
 
             $_POST['active'] = !isset($_POST['active'])? 0 : (int)$_POST['active'];
@@ -58,19 +58,19 @@ if(isset($_REQUEST['add'])){
                 `data_create` = NOW()
             ");
 
-            if(isset($_POST['male']) && (int)$_POST['access'] == 1){
+            if (isset($_POST['male']) && (int)$_POST['access'] == 1) {
                 $id = DB::_()->insert_id;
 
-                $param = array(
+                $param = [
                     'login'    => $_POST['login'],
                     'pass'     => $_POST['pass'],
                     'email'    => $_POST['email'],
                     'link_act' => $arMainParam['url_http_site'].'/cab/activate/?id='.(int)$id.$active_url.urlencode().'hash='.urlencode(myHash($_POST['login'].$_POST['pass'].$_POST['email']))
-                );
+                ];
 
                 Mail::$text = TemplateMail::formationMail($param, 'registration_user', $_POST['mail_lenght'], $arMainParam);
 
-                if(Mail::$text){
+                if (Mail::$text) {
                     Mail::$to = $_POST['email'];
                     Mail::send();
                 }
@@ -88,14 +88,14 @@ if(isset($_REQUEST['add'])){
     ");
 
     $langTestMail = $settingLang->fetch_assoc();
-} elseif(isset($_REQUEST['edit'])) {
+} elseif (isset($_REQUEST['edit'])) {
 
-    if($_REQUEST['edit'] == 1 && $_SESSION['user']['id'] != 1){
+    if ($_REQUEST['edit'] == 1 && $_SESSION['user']['id'] != 1) {
         sessionInfo('/admin/setting/user-list/', $mess['У вас недостатньо прав для редагування цього користувача!']);
     }
 
-    if(isset($_POST['ok'])){
-        $error = array();
+    if (isset($_POST['ok'])) {
+        $error = [];
         $_POST = trimAll($_POST);
 
         $check['name'] = (empty($_POST['name'])? 'class="error"' : '');
@@ -108,7 +108,7 @@ if(isset($_REQUEST['add'])){
         // Photo
         $user_avatar = ((isset($_POST['user_avatar']))? explode('|', $_POST['user_avatar']) : '');
 
-        if(in_array('class="error"', $check)){
+        if (in_array('class="error"', $check)) {
             $error['stop'] = 1;
         } else {
             $res = q("
@@ -118,13 +118,13 @@ if(isset($_REQUEST['add'])){
 			          AND (`login` = '".mres($_POST['login'])."' OR `email` = '".mres($_POST['email'])."')
             ");
 
-            if($res->num_rows){
+            if ($res->num_rows) {
                 $error['stop'] = 1;
                 sessionInfo('/admin/setting/user-list/?edit='.$_REQUEST['edit'], $messG['Користувач з таким логіном або Email вже існує!'], 0, 0);
             }
         }
 
-        if(!count($error)){
+        if (!count($error)) {
             $_POST = mres($_POST);
 
             $new_pass = !empty($_POST['new_pass']) && isset($_POST['new_pass'])? "`pass` = '".myHash($_POST['new_pass'])."', `hash` = '".myHash($_POST['login'].$_POST['new_pass'].$_POST['email'])."'," : '';
@@ -165,37 +165,37 @@ if(isset($_REQUEST['add'])){
         WHERE `id` = ".(int)$_REQUEST['edit']."
     ");
 
-    if($arResult->num_rows == 0){
+    if ($arResult->num_rows == 0) {
         sessionInfo('/admin/setting/user-list/', $messG['Eлемент з таким ID неіснує!']);
     } else {
         $arResult = hsc($arResult->fetch_assoc());
     }
 } else {
 
-    if(isset($_POST['arr']) && count($_POST['arr']) > 0){ // Dynamic edit
+    if (isset($_POST['arr']) && count($_POST['arr']) > 0) { // Dynamic edit
         DynamicEditMenu::edit($_POST['arr'], 'admin_users_list', '/admin/setting/user-list/', $messG['Редагування пройшло успішно!']);
     }
 
-    if(isset($_REQUEST['del'])){ // Delete one
+    if (isset($_REQUEST['del'])) { // Delete one
         deleteElement($_REQUEST['del'], 'admin_users_list', '/admin/setting/user-list/', $messG['Видалення пройшло успішно!']);
     }
 
-    if(isset($_POST['delete']) && isset($_POST['ids'])){ // Delete ids
+    if (isset($_POST['delete']) && isset($_POST['ids'])) { // Delete ids
         deleteElement(implode(',', $_POST['ids']), 'admin_users_list', '/admin/setting/user-list/', $messG['Видалення пройшло успішно!']);
     }
 
-    if(isset($_POST['deactivate']) && isset($_POST['ids'])){ // Deactivate
+    if (isset($_POST['deactivate']) && isset($_POST['ids'])) { // Deactivate
         deactivateElement(implode(',', $_POST['ids']), 'admin_users_list');
         sessionInfo('/admin/setting/user-list/', $messG['Деактивація пройшла успішно!'], 1);
     }
 
-    if(isset($_POST['activate']) && isset($_POST['ids'])){ // Activate
+    if (isset($_POST['activate']) && isset($_POST['ids'])) { // Activate
         activeElement(implode(',', $_POST['ids']), 'admin_users_list');
         sessionInfo('/admin/setting/user-list/', $messG['Активація пройшла успішно!'], 1);
     }
 
     // Filter
-    if(isset($_REQUEST['filterReset'])){
+    if (isset($_REQUEST['filterReset'])) {
         unset($_SESSION['ADM_filter']['users_list']);
         header('Location: /admin/setting/user-list/');
     }
@@ -205,7 +205,7 @@ if(isset($_REQUEST['add'])){
     $filter = (!empty($_SESSION['ADM_filter']['users_list'])? AdminFilter::filter($_SESSION['ADM_filter']['users_list'], 'admin_users_list') : '');
 
     // Pagination
-    $user_list = Pagination::formNav(array(
+    $user_list = Pagination::formNav([
         'numPage'     => (!isset($_GET['numPage'])? 1 : (int)$_GET['numPage']),
         'count_show'  => 5,
         'records_el'  => $adminParam['records_pagination'],
@@ -218,5 +218,5 @@ if(isset($_REQUEST['add'])){
         'notFound404' => 'N',
         'lang'        => '',
         'link_lang'   => '',
-    ));
+    ]);
 }

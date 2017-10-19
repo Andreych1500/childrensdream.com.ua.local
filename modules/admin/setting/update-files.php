@@ -1,5 +1,5 @@
 <?php
-if(isset($_REQUEST['reload'])){
+if (isset($_REQUEST['reload'])) {
 
     q(" UPDATE `admin_site_cache` SET
         `number_cache`  = `number_cache` + 1,

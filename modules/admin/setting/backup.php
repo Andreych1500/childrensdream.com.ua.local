@@ -1,6 +1,6 @@
 <?php
 // Backup project
-if(isset($_REQUEST['backup'])){
+if (isset($_REQUEST['backup'])) {
 
     $setting = q("
         SELECT *
@@ -19,14 +19,14 @@ if(isset($_REQUEST['backup'])){
 }
 
 // Download last backup
-if(isset($_REQUEST['downloadBackup'])){
+if (isset($_REQUEST['downloadBackup'])) {
     $backup = q("
         SELECT * FROM `admin_backup_project` ORDER BY `id` DESC LIMIT 1
     ")->fetch_assoc();
 
     $file = $_SERVER['DOCUMENT_ROOT'].'/uploaded/backup/'.$backup['file_name'];
 
-    if(file_exists($file)){
+    if (file_exists($file)) {
         file_force_download($file);
     } else {
         sessionInfo('/admin/setting/backup/', $mess['Backup відсутній або видалений якщо термін зберігання застарілий!']);
@@ -34,7 +34,7 @@ if(isset($_REQUEST['downloadBackup'])){
 }
 
 // Pagination
-$backup = Pagination::formNav(array(
+$backup = Pagination::formNav([
     'numPage'     => (!isset($_GET['numPage'])? 1 : (int)$_GET['numPage']),
     'count_show'  => 5,
     'records_el'  => $adminParam['records_pagination'],
@@ -47,4 +47,4 @@ $backup = Pagination::formNav(array(
     'notFound404' => 'N',
     'lang'        => '',
     'link_lang'   => '',
-));
+]);
