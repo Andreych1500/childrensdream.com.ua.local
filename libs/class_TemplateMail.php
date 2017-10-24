@@ -124,7 +124,7 @@ class TemplateMail
             </style>
             <div role="header" style="text-align: center; border: 1px dashed #43D1E0; background:#ffffff; padding:10px; margin: auto; max-width: 538px;">
                 <a href="<?=$arSet['urlToSite']?>" target="_blank" title="<?=$arSet['wwwSite']?>" style="outline:none; display:inline-block;">
-                    <img src="<?=$arSet['logoImage']?>" style="width:auto">
+                    <img src="<?=$arSet['logoImage']?>" alt="logo" style="width:auto">
                 </a>
                 <p style="font-size: 26px; margin:0; font-weight:bold;"><?=$arSet['name']?></p>
                 <div style="clear:both;"></div>

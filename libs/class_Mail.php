@@ -10,17 +10,23 @@ class Mail
     static $headers = '';
 
     static function Send() {
-        self::$headers = '=?utf-8?b?'.base64_encode(self::$subject).'?='; //кодіровка
-        self::$headers = "Content-type: text/html; charset=\"utf-8\"\r\n";
+        require_once($_SERVER['DOCUMENT_ROOT'].'/libs/PHPMailer/src/PHPMailer.php');
 
-        self::$headers .= "From: ".self::$from."\r\n"; //з якого email було відправлено
-        self::$headers .= "MIME-Version: 1.0\r\n"; //тип листа
-        self::$headers .= "Date: ".date('D, d M Y h:s:s O')."\r\n"; //дата листа коли було відправлено
-        self::$headers .= "Precedence: bulk\r\n"; //лист в одну сторону...відповіді непотребує...приклад:після реєстрації*
+        $mail = new \PHPMailer\PHPMailer\PHPMailer;
+
+        $mail->CharSet = 'UTF-8';
+        $mail->setFrom(self::$from);
+        $mail->addReplyTo(self::$from);
+        $mail->addAddress(self::$to);
+        $mail->Subject = self::$subject;
+        $mail->msgHTML(self::$text);
+
+        $mail->addCustomHeader("Precedence: bulk");  //лист в одну сторону...відповіді непотребує...приклад:після реєстрації*
+
         if (!empty(self::$hidden_copy)) {
-            self::$headers .= "Bcc: ".self::$hidden_copy."\r\n"; // Скрита копія
+            $mail->addBCC(self::$hidden_copy); // Скрита копія
         }
 
-        return mail(self::$to, self::$subject, self::$text, self::$headers);
+        return $mail->send();
     }
 }
