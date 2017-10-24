@@ -11,6 +11,7 @@ sitemap.xml
 composer.lock
 /skins/admin/img/
 /libs/PHPExcel/
+/libs/PHPMailer/
 .idea
 /skins/default/get-js/
 /skins/default/img/work/
