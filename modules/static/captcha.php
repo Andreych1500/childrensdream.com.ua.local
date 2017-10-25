@@ -1,5 +1,9 @@
 <?php
-session_start();
+
+if (!isset($_SESSION)) {
+    session_start();
+}
+
 $string = "";
 for ($i = 0; $i < 5; $i++) {
     $string .= chr(rand(97, 122));
