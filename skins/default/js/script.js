@@ -42,10 +42,12 @@ $(document).ready(function () {
         }
 
         // Show or hide toTop
-        if (scrolledY >= 300) {
-            $('.toTop').fadeIn();
-        } else {
-            $('.toTop').fadeOut();
+        if ($(window).outerWidth(true) > 670) {
+            if (scrolledY >= 300) {
+                $('.toTop').fadeIn();
+            } else {
+                $('.toTop').fadeOut();
+            }
         }
     });
 
@@ -448,9 +450,9 @@ function hasVerticalScroll (node) {
 }
 
 function scrollMenuPanel () {
-    if (window.location.hash != '') {
+    if (window.location.hash != '' && $('.top-menu a[href*="' + window.location.hash + '"]')) {
         setTimeout(function () {
-            $('.top-menu a[href*=' + window.location.hash + ']').trigger('click');
+            $('.top-menu a[href*="' + window.location.hash + '"]').trigger('click');
         }, 300);
     }
 }

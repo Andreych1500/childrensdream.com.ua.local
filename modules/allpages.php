@@ -1,7 +1,6 @@
 <?php
 if (Core::$CONT != 'modules/admin') {
     $key_lang = array_search($lang, explode(',', $GM['list_length']));  // Lang key
-    $style = file_get_contents($_SERVER['DOCUMENT_ROOT'].'/skins/default/css/style.min.css');
 
     // Seo meta tags
     foreach (explode(',', $GM['list_length']) as $k => $v) {
@@ -14,9 +13,9 @@ if (Core::$CONT != 'modules/admin') {
 
     // Dns loading asynchronous
     Core::$META['dns-prefetch'] = [
-        0 => 'https://www.google-analytics.com',
-        1 => 'https://mc.yandex.ru',
-        2 => 'http://counter.yadro.ru',
+        0 => '//www.google-analytics.com',
+        1 => '//mc.yandex.ru',
+        2 => '//counter.yadro.ru',
         3 => $arMainParam['url_http_site'],
     ];
 
@@ -33,19 +32,12 @@ if (Core::$CONT != 'modules/admin') {
     // RDFa open graph
     if ($GM['open_graph_page']) {
         $contentOG = '';
-
         $contentOG .= '<meta property="og:title" content="'.Core::$META['title'].'">
-            <meta property="og:description"  content="'.Core::$META['description'].'">';
+                       <meta property="og:description"  content="'.Core::$META['description'].'">';
 
-        if (!empty($GM['og_type'])) {
-            $contentOG .= '<meta property="og:type" content="'.hsc($GM['og_type']).'">';
-        }
-        if (!empty($GM['og_url'])) {
-            $contentOG .= '<meta property="og:url" content="'.$arMainParam['url_http_site'].(($lang == 'ua')? '' : '/'.$lang).$GM['og_url'].'">';
-        }
-        if (!empty($GM['og_image'])) {
-            $contentOG .= '<meta property="og:image" content="'.$arMainParam['url_http_site'].$GM['og_image'].'">';
-        }
+        $contentOG .= ($GM['og_type']? '<meta property="og:type" content="'.hsc($GM['og_type']).'">' : '');
+        $contentOG .= ($GM['og_url']? '<meta property="og:url" content="'.$arMainParam['url_http_site'].(($lang == 'ua')? '' : '/'.$lang).$GM['og_url'].'">' : '');
+        $contentOG .= ($GM['og_image']? '<meta property="og:image" content="'.$arMainParam['url_http_site'].$GM['og_image'].'">' : '');
     }
 
     // Count goods in cookie

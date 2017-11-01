@@ -1,6 +1,6 @@
 <?php
-error_reporting(0);
-ini_set('display_errors', 0);
+error_reporting(-1);
+ini_set('display_errors', 1);
 header('Content-Type: text/html; charset=utf-8');
 
 if(!isset($_SESSION)) {
