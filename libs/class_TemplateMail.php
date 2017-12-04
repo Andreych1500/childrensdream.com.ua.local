@@ -114,14 +114,6 @@ class TemplateMail
                 <title><?=$arSet['theme']?></title>
             </head>
             <body style="background: url(<?=$arSet['background']?>) #ffffff; line-height:1.5; color:#482200; padding:30px 20px; font-size:17px;">
-            <style>
-                @media screen and (min-width: 480px) {
-                    .goods_children_dream_tm {
-                        float: left;
-                        width: 48%;
-                    }
-                }
-            </style>
             <div role="header" style="text-align: center; border: 1px dashed #43D1E0; background:#ffffff; padding:10px; margin: auto; max-width: 538px;">
                 <a href="<?=$arSet['urlToSite']?>" target="_blank" title="<?=$arSet['wwwSite']?>" style="outline:none; display:inline-block;">
                     <img src="<?=$arSet['logoImage']?>" alt="logo" style="width:auto">
@@ -140,7 +132,7 @@ class TemplateMail
                 <?php while ($arResult = $arGoods->fetch_assoc()) { ?>
                     <div class="goods_children_dream_tm" style="margin: 1% 1% 5%; text-align:center;">
                         <a href="<?=$arSet['urlToSite']?>products/<?=hsc($arResult['symbol_code'])?>/" target="_blank" style="display:inline-block; width:100%;">
-                            <img src="<?=$arMainParam['url_http_site'].hsc($arResult['img_anons'])?>" style="max-width:200px; width:100%;" alt="<?=hsc($arResult['name_'.$lang])?>">
+                            <img src="<?=$arMainParam['url_http_site'].hsc($arResult['img_anons'])?>" style="max-width:255px; width:100%;" alt="<?=hsc($arResult['name_'.$lang])?>">
                         </a>
                         <a href="<?=hsc($arSet['urlToSite'])?>products/<?=hsc($arResult['symbol_code'])?>/" target="_blank" style="width:100%; color:#482200;"><?=hsc($arResult['name_'.$lang])?></a>
                     </div>

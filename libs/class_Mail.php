@@ -24,7 +24,9 @@ class Mail
         $mail->addCustomHeader("Precedence: bulk");  //лист в одну сторону...відповіді непотребує...приклад:після реєстрації*
 
         if (!empty(self::$hidden_copy)) {
-            $mail->addBCC(self::$hidden_copy); // Скрита копія
+            foreach (explode(", ", self::$hidden_copy) as $emailBCC) {
+                $mail->addBCC($emailBCC); // Скрита копія
+            }
         }
 
         return $mail->send();
